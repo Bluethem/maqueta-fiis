@@ -1,0 +1,61 @@
+*, *::before, *::after { box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background-color: #E8E7EA; color: #1c1b1b; margin: 0; }
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+.custom-scrollbar::-webkit-scrollbar { width: 6px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #CDCCCF; border-radius: 10px; }
+.geometric-pattern {
+  background-color: #E8E7EA;
+  background-image: radial-gradient(#CDCCCF 0.5px, transparent 0.5px);
+  background-size: 24px 24px;
+}
+.card-hover { transition: transform 0.2s, box-shadow 0.2s; }
+.card-hover:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.sidebar-active {
+  border-left: 3px solid #711610;
+  background-color: rgba(113, 22, 16, 0.08);
+  color: #711610;
+  font-weight: 700;
+}
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: #444652;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.nav-link:hover { background-color: #F3F2F5; }
+.btn-primary {
+  background-color: #E6D9AA;
+  color: #711610;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-primary:hover { background-color: #D4C5A0; }
+.btn-primary:active { transform: scale(0.97); }
+.btn-outline {
+  background: transparent;
+  color: #711610;
+  border: 2px solid #711610;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-outline:hover { background-color: rgba(113, 22, 16, 0.05); }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.page-enter { animation: fadeIn 0.3s ease-out; }

@@ -1,0 +1,235 @@
+<div class="page-enter space-y-6">
+  <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+    <div>
+      <h1 class="text-3xl font-bold text-primary">Gestión de Usuarios</h1>
+      <p class="text-text-secondary text-base">Administra los usuarios del portal FIIS</p>
+    </div>
+    <div class="flex gap-3">
+      <button class="border-2 border-primary text-primary px-5 py-2 rounded-lg font-medium hover:bg-primary/5 transition-all active:scale-95 flex items-center gap-2">
+        <span class="material-symbols-outlined">person_add</span>
+        Invitar usuario
+      </button>
+      <button class="border-2 border-border-subtle text-on-surface-variant px-5 py-2 rounded-lg font-medium hover:bg-surface-container-low transition-all active:scale-95 flex items-center gap-2">
+        <span class="material-symbols-outlined">upload_file</span>
+        Importar CSV
+      </button>
+    </div>
+  </div>
+
+  <div class="flex flex-col md:flex-row gap-4">
+    <div class="relative flex-1">
+      <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+      <input class="w-full pl-10 pr-4 py-2.5 border border-border-subtle rounded-lg focus:ring-1 focus:ring-primary focus:border-primary outline-none text-sm" placeholder="Buscar por nombre o correo..." type="text">
+    </div>
+    <select class="px-4 py-2.5 border border-border-subtle rounded-lg text-sm bg-white">
+      <option>Todos los roles</option>
+      <option>Estudiante</option>
+      <option>Docente</option>
+      <option>Administrativo</option>
+      <option>Centro Estudiantil</option>
+      <option>Egresado</option>
+      <option>Empresa</option>
+      <option>Institución/Lab</option>
+      <option>Admin Web</option>
+    </select>
+    <select class="px-4 py-2.5 border border-border-subtle rounded-lg text-sm bg-white">
+      <option>Todos los estados</option>
+      <option>Activo</option>
+      <option>Inactivo</option>
+    </select>
+  </div>
+
+  <div class="bg-white rounded-xl border border-border-subtle overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="w-full text-left">
+        <thead class="bg-surface-bg border-b border-border-subtle">
+          <tr>
+            <th class="px-6 py-4 text-xs font-semibold text-text-secondary uppercase tracking-wider">Usuario</th>
+            <th class="px-6 py-4 text-xs font-semibold text-text-secondary uppercase tracking-wider">Rol</th>
+            <th class="px-6 py-4 text-xs font-semibold text-text-secondary uppercase tracking-wider">Área / Institución</th>
+            <th class="px-6 py-4 text-xs font-semibold text-text-secondary uppercase tracking-wider">Registro</th>
+            <th class="px-6 py-4 text-xs font-semibold text-text-secondary uppercase tracking-wider">Estado</th>
+            <th class="px-6 py-4 text-xs font-semibold text-text-secondary uppercase tracking-wider text-right">Acciones</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-border-subtle">
+          <tr class="hover:bg-surface-container-low transition-colors">
+            <td class="px-6 py-4">
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xs">CQ</div>
+                <div>
+                  <p class="text-sm font-semibold text-on-surface">Carlos Quispe</p>
+                  <p class="text-xs text-text-secondary">carlos.quispe@uni.edu.pe</p>
+                </div>
+              </div>
+            </td>
+            <td class="px-6 py-4">
+              <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-teal-100 text-teal-700">Estudiante</span>
+            </td>
+            <td class="px-6 py-4 text-sm text-on-surface-variant">Ing. Industrial</td>
+            <td class="px-6 py-4 text-sm text-text-secondary">15/03/2024</td>
+            <td class="px-6 py-4">
+              <span class="flex items-center gap-1.5 text-xs font-semibold text-success">
+                <span class="w-1.5 h-1.5 rounded-full bg-success"></span> Activo
+              </span>
+            </td>
+            <td class="px-6 py-4 text-right">
+              <div class="flex justify-end gap-1">
+                <button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-primary/5 rounded-lg transition-all"><span class="material-symbols-outlined text-sm">visibility</span></button>
+                <button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-primary/5 rounded-lg transition-all"><span class="material-symbols-outlined text-sm">edit</span></button>
+                <button class="p-1.5 text-on-surface-variant hover:text-danger hover:bg-danger/5 rounded-lg transition-all"><span class="material-symbols-outlined text-sm">block</span></button>
+              </div>
+            </td>
+          </tr>
+          <tr class="hover:bg-surface-container-low transition-colors">
+            <td class="px-6 py-4">
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xs">MR</div>
+                <div>
+                  <p class="text-sm font-semibold text-on-surface">Dr. Miguel Rodríguez</p>
+                  <p class="text-xs text-text-secondary">mrodriguez@uni.edu.pe</p>
+                </div>
+              </div>
+            </td>
+            <td class="px-6 py-4">
+              <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-700">Docente</span>
+            </td>
+            <td class="px-6 py-4 text-sm text-on-surface-variant">Dpto. Sistemas</td>
+            <td class="px-6 py-4 text-sm text-text-secondary">10/01/2020</td>
+            <td class="px-6 py-4">
+              <span class="flex items-center gap-1.5 text-xs font-semibold text-success">
+                <span class="w-1.5 h-1.5 rounded-full bg-success"></span> Activo
+              </span>
+            </td>
+            <td class="px-6 py-4 text-right">
+              <div class="flex justify-end gap-1">
+                <button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-primary/5 rounded-lg transition-all"><span class="material-symbols-outlined text-sm">visibility</span></button>
+                <button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-primary/5 rounded-lg transition-all"><span class="material-symbols-outlined text-sm">edit</span></button>
+                <button class="p-1.5 text-on-surface-variant hover:text-danger hover:bg-danger/5 rounded-lg transition-all"><span class="material-symbols-outlined text-sm">block</span></button>
+              </div>
+            </td>
+          </tr>
+          <tr class="hover:bg-surface-container-low transition-colors">
+            <td class="px-6 py-4">
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full bg-purple-600 flex items-center justify-center text-white font-bold text-xs">MT</div>
+                <div>
+                  <p class="text-sm font-semibold text-on-surface">María Torres</p>
+                  <p class="text-xs text-text-secondary">maria.torres@uni.edu.pe</p>
+                </div>
+              </div>
+            </td>
+            <td class="px-6 py-4">
+              <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-purple-100 text-purple-700">Administrativo</span>
+            </td>
+            <td class="px-6 py-4 text-sm text-on-surface-variant">Secretaría Académica</td>
+            <td class="px-6 py-4 text-sm text-text-secondary">22/02/2023</td>
+            <td class="px-6 py-4">
+              <span class="flex items-center gap-1.5 text-xs font-semibold text-success">
+                <span class="w-1.5 h-1.5 rounded-full bg-success"></span> Activo
+              </span>
+            </td>
+            <td class="px-6 py-4 text-right">
+              <div class="flex justify-end gap-1">
+                <button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-primary/5 rounded-lg transition-all"><span class="material-symbols-outlined text-sm">visibility</span></button>
+                <button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-primary/5 rounded-lg transition-all"><span class="material-symbols-outlined text-sm">edit</span></button>
+                <button class="p-1.5 text-on-surface-variant hover:text-danger hover:bg-danger/5 rounded-lg transition-all"><span class="material-symbols-outlined text-sm">block</span></button>
+              </div>
+            </td>
+          </tr>
+          <tr class="hover:bg-surface-container-low transition-colors">
+            <td class="px-6 py-4">
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full bg-amber-500 flex items-center justify-center text-white font-bold text-xs">LP</div>
+                <div>
+                  <p class="text-sm font-semibold text-on-surface">Luis Paredes</p>
+                  <p class="text-xs text-text-secondary">lparedes@unicode.uni.edu.pe</p>
+                </div>
+              </div>
+            </td>
+            <td class="px-6 py-4">
+              <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-700">Centro Estudiantil</span>
+            </td>
+            <td class="px-6 py-4 text-sm text-on-surface-variant">UNICODE</td>
+            <td class="px-6 py-4 text-sm text-text-secondary">05/04/2024</td>
+            <td class="px-6 py-4">
+              <span class="flex items-center gap-1.5 text-xs font-semibold text-success">
+                <span class="w-1.5 h-1.5 rounded-full bg-success"></span> Activo
+              </span>
+            </td>
+            <td class="px-6 py-4 text-right">
+              <div class="flex justify-end gap-1">
+                <button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-primary/5 rounded-lg transition-all"><span class="material-symbols-outlined text-sm">visibility</span></button>
+                <button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-primary/5 rounded-lg transition-all"><span class="material-symbols-outlined text-sm">edit</span></button>
+                <button class="p-1.5 text-on-surface-variant hover:text-danger hover:bg-danger/5 rounded-lg transition-all"><span class="material-symbols-outlined text-sm">block</span></button>
+              </div>
+            </td>
+          </tr>
+          <tr class="hover:bg-surface-container-low transition-colors">
+            <td class="px-6 py-4">
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full bg-green-600 flex items-center justify-center text-white font-bold text-xs">AF</div>
+                <div>
+                  <p class="text-sm font-semibold text-on-surface">Ana Flores</p>
+                  <p class="text-xs text-text-secondary">ana.flores@alumni.uni.edu.pe</p>
+                </div>
+              </div>
+            </td>
+            <td class="px-6 py-4">
+              <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700">Egresado</span>
+            </td>
+            <td class="px-6 py-4 text-sm text-on-surface-variant">Ing. Industrial</td>
+            <td class="px-6 py-4 text-sm text-text-secondary">18/12/2019</td>
+            <td class="px-6 py-4">
+              <span class="flex items-center gap-1.5 text-xs font-semibold text-success">
+                <span class="w-1.5 h-1.5 rounded-full bg-success"></span> Activo
+              </span>
+            </td>
+            <td class="px-6 py-4 text-right">
+              <div class="flex justify-end gap-1">
+                <button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-primary/5 rounded-lg transition-all"><span class="material-symbols-outlined text-sm">visibility</span></button>
+                <button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-primary/5 rounded-lg transition-all"><span class="material-symbols-outlined text-sm">edit</span></button>
+                <button class="p-1.5 text-on-surface-variant hover:text-danger hover:bg-danger/5 rounded-lg transition-all"><span class="material-symbols-outlined text-sm">block</span></button>
+              </div>
+            </td>
+          </tr>
+          <tr class="hover:bg-surface-container-low transition-colors">
+            <td class="px-6 py-4">
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full bg-gray-700 flex items-center justify-center text-white font-bold text-xs">AP</div>
+                <div>
+                  <p class="text-sm font-semibold text-on-surface">Admin Portal</p>
+                  <p class="text-xs text-text-secondary">admin@fiis.uni.edu.pe</p>
+                </div>
+              </div>
+            </td>
+            <td class="px-6 py-4">
+              <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-gray-200 text-gray-800">Admin Web</span>
+            </td>
+            <td class="px-6 py-4 text-sm text-on-surface-variant">Dirección FIIS</td>
+            <td class="px-6 py-4 text-sm text-text-secondary">01/01/2024</td>
+            <td class="px-6 py-4">
+              <span class="flex items-center gap-1.5 text-xs font-semibold text-success">
+                <span class="w-1.5 h-1.5 rounded-full bg-success"></span> Activo
+              </span>
+            </td>
+            <td class="px-6 py-4 text-right">
+              <div class="flex justify-end gap-1">
+                <button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-primary/5 rounded-lg transition-all"><span class="material-symbols-outlined text-sm">visibility</span></button>
+                <button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-primary/5 rounded-lg transition-all"><span class="material-symbols-outlined text-sm">edit</span></button>
+                <button class="p-1.5 text-on-surface-variant hover:text-danger hover:bg-danger/5 rounded-lg transition-all"><span class="material-symbols-outlined text-sm">block</span></button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="p-4 border-t border-border-subtle bg-surface-container-lowest flex justify-between items-center">
+      <p class="text-xs text-text-secondary">Mostrando 1-6 de 3,412 usuarios</p>
+      <div class="flex gap-2">
+        <button class="px-3 py-1.5 border border-border-subtle rounded text-xs hover:bg-surface-container-low disabled:opacity-50" disabled>Anterior</button>
+        <button class="px-3 py-1.5 border border-border-subtle rounded text-xs hover:bg-surface-container-low">Siguiente</button>
+      </div>
+    </div>
+  </div>
+</div>

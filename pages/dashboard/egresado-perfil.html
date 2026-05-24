@@ -1,0 +1,102 @@
+<div class="page-enter space-y-6">
+
+  <div>
+    <h1 class="text-2xl md:text-3xl font-extrabold text-primary">Mi Perfil</h1>
+    <p class="text-text-secondary text-sm mt-1">Administra tu información profesional visible para la red de egresados</p>
+  </div>
+
+  <div class="bg-white border border-border-subtle rounded-xl p-6 md:p-8">
+    <div class="flex flex-col md:flex-row items-start gap-6">
+      <div class="w-24 h-24 rounded-full bg-primary flex items-center justify-center text-on-primary text-3xl font-bold shrink-0">
+        AF
+      </div>
+      <div class="flex-1 min-w-0">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <h2 class="text-xl font-extrabold text-on-surface">Ana Flores</h2>
+            <p class="text-text-secondary text-sm">Egresada 2019 · Ingeniería Industrial</p>
+          </div>
+          <a href="#" class="text-primary text-sm font-medium flex items-center gap-1.5 hover:underline shrink-0">
+            <span class="material-symbols-outlined text-sm">open_in_new</span>
+            Sincronizar con LinkedIn
+          </a>
+        </div>
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <p class="text-xs text-text-secondary uppercase tracking-wider font-semibold">Carrera</p>
+            <p class="text-sm font-medium text-on-surface">Ingeniería Industrial</p>
+          </div>
+          <div>
+            <p class="text-xs text-text-secondary uppercase tracking-wider font-semibold">Promoción</p>
+            <p class="text-sm font-medium text-on-surface">2019</p>
+          </div>
+          <div>
+            <p class="text-xs text-text-secondary uppercase tracking-wider font-semibold">Trabajo actual</p>
+            <p class="text-sm font-medium text-on-surface">Analista Senior de Procesos en Alicorp</p>
+          </div>
+          <div>
+            <p class="text-xs text-text-secondary uppercase tracking-wider font-semibold">Ubicación</p>
+            <p class="text-sm font-medium text-on-surface">Lima, Perú</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white border border-border-subtle rounded-xl p-6">
+    <h2 class="text-lg font-bold text-primary flex items-center gap-2 mb-5">
+      <span class="material-symbols-outlined text-primary">edit_square</span>
+      Editar perfil
+    </h2>
+    <form class="space-y-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-semibold text-on-surface mb-1.5">Nombre completo</label>
+          <input type="text" value="Ana Flores" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-on-surface mb-1.5">Promoción</label>
+          <input type="text" value="2019" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-on-surface mb-1.5">Carrera</label>
+          <select class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all">
+            <option selected>Ingeniería Industrial</option>
+            <option>Ingeniería de Sistemas</option>
+            <option>Ingeniería de Software</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-on-surface mb-1.5">Ubicación</label>
+          <input type="text" value="Lima, Perú" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-on-surface mb-1.5">Trabajo actual</label>
+        <input type="text" value="Analista Senior de Procesos en Alicorp" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-on-surface mb-1.5">Resumen profesional</label>
+        <textarea rows="3" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all">Ingeniera Industrial con 6 años de experiencia en optimización de procesos, manufactura esbelta y transformación digital. Especialista en Lean Six Sigma Green Belt y Power BI.</textarea>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-semibold text-on-surface mb-1.5">Correo</label>
+          <input type="email" value="ana.flores@email.com" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-on-surface mb-1.5">LinkedIn</label>
+          <input type="url" value="linkedin.com/in/anaflores" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+        </div>
+      </div>
+      <div class="flex items-center gap-3 pt-2">
+        <button type="submit" class="btn-primary flex items-center gap-2">
+          <span class="material-symbols-outlined text-sm">save</span>
+          Guardar cambios
+        </button>
+        <button type="button" class="btn-outline text-sm">Descartar</button>
+      </div>
+    </form>
+  </div>
+
+</div>

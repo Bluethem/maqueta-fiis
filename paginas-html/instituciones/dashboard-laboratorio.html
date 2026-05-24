@@ -1,0 +1,378 @@
+<!DOCTYPE html><html class="light" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Panel Laboratorio de Inteligencia Artificial - FIIS UNI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #E5E5E5;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "text-secondary": "#6B6B6B",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-secondary-fixed": "#002115",
+                        "on-primary-fixed-variant": "#1c4197",
+                        "success": "#3B9E45",
+                        "secondary-fixed-dim": "#68dbae",
+                        "on-secondary-container": "#007151",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#ffdad5",
+                        "surface-bg": "#F8F9FA",
+                        "tertiary-fixed-dim": "#ffb4a9",
+                        "surface-dim": "#dcd9d9",
+                        "secondary-container": "#83f5c6",
+                        "primary-container": "#003087",
+                        "secondary": "#006c4e",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-secondary-fixed-variant": "#00513a",
+                        "background": "#fcf9f8",
+                        "on-tertiary-container": "#f97b6b",
+                        "on-background": "#1c1b1b",
+                        "border-subtle": "#E5E5E5",
+                        "surface-variant": "#e5e2e1",
+                        "on-error-container": "#93000a",
+                        "surface": "#fcf9f8",
+                        "inverse-surface": "#313030",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-tint": "#3959b0",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "tertiary-container": "#6e140e",
+                        "surface-container-high": "#eae7e7",
+                        "on-tertiary-fixed-variant": "#84241c",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-tertiary": "#ffffff",
+                        "brand-cream": "#E6D9AA",
+                        "on-surface": "#1c1b1b",
+                        "on-surface-variant": "#444652",
+                        "error": "#ba1a1a",
+                        "outline": "#747683",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#7f9df8",
+                        "outline-variant": "#c4c6d4",
+                        "tertiary": "#4d0001",
+                        "on-primary-fixed": "#00174b",
+                        "primary": "#001d59",
+                        "inverse-primary": "#b4c5ff",
+                        "warning": "#E8A838",
+                        "on-tertiary-fixed": "#410001",
+                        "secondary-fixed": "#86f8c9",
+                        "danger": "#E24B4A",
+                        "surface-bright": "#fcf9f8",
+                        "surface-container": "#f0eded"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "max-width": "1200px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface-bg text-on-surface">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-[240px] bg-surface-container-lowest border-r border-border-subtle flex flex-col py-base z-50">
+<div class="px-6 py-8">
+<h1 class="font-headline-sm text-headline-sm font-bold text-secondary">FIIS-UNI</h1>
+<p class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider mt-1">Portal Académico</p>
+</div>
+<nav class="flex-1 px-3 space-y-1 overflow-y-auto custom-scrollbar">
+<!-- Navigation Links -->
+<a class="flex items-center gap-3 px-4 py-3 border-l-4 border-secondary text-secondary font-bold bg-secondary-container/10 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-all duration-200" href="#">
+<span class="material-symbols-outlined">web</span>
+<span class="font-label-md text-label-md">Mi Página</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-all duration-200" href="#">
+<span class="material-symbols-outlined">design_services</span>
+<span class="font-label-md text-label-md">Mis Servicios</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-all duration-200" href="#">
+<span class="material-symbols-outlined">newspaper</span>
+<span class="font-label-md text-label-md">Mis Noticias</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-all duration-200" href="#">
+<span class="material-symbols-outlined">content_paste</span>
+<span class="font-label-md text-label-md">Gestión de Contenido</span>
+</a>
+<div class="pt-4 pb-2 px-4">
+<hr class="border-border-subtle">
+</div>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-all duration-200" href="#">
+<span class="material-symbols-outlined">school</span>
+<span class="font-label-md text-label-md">Cursos</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-all duration-200" href="#">
+<span class="material-symbols-outlined">how_to_reg</span>
+<span class="font-label-md text-label-md">Matrícula</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-all duration-200" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-label-md text-label-md">Horario</span>
+</a>
+</nav>
+<div class="px-3 mt-auto pt-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-all duration-200" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-md text-label-md">Ayuda</span>
+</a>
+<button class="w-full flex items-center gap-3 px-4 py-3 text-danger hover:bg-error-container/10 transition-all duration-200 rounded-lg">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-md text-label-md">Cerrar Sesión</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Shell -->
+<div class="ml-[240px] flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="h-16 bg-surface border-b border-border-subtle flex justify-between items-center px-gutter sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-all active:scale-95">
+<span class="material-symbols-outlined text-secondary">menu</span>
+</button>
+<h2 class="font-headline-md text-headline-md text-on-surface">Dashboard</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 px-3 py-1 bg-surface-container-low rounded-full border border-border-subtle">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-secondary">
+<img alt="Usuario FIIS" data-alt="A professional portrait of a male university administrator with a friendly expression, wearing a navy blue suit and a white shirt. The background is a slightly blurred modern academic office with shelves of books and soft, natural light coming from a large window. High-quality professional photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHszxBsomjuhcvQQRDOqwH5RlrAWmdXw1uAU3GnaF23EGCLpQuofDCigbenhIVNtOQv3tyBE0M3t4-z-v8gi5ZfRVkwvsSXWlHQ9DpG-8XlWpcOqOyGIj8YMx3LtYnP2QoyQ9PIu9GgHghgpyEJ5Bd_mJQOGkYh5ac0_b5MGP31G4eR7s2TZpiEk643jOMSTUp1xxIHIIb4mFJ4XkTBHV8-OY4CYzFWYSm1mk4FOBFF8rtli8mzgR-3mjBOHNTftqP_NXBxmE-bH6h">
+</div>
+<span class="font-label-md text-label-md font-bold text-on-surface">Admin Laboratorio</span>
+</div>
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-all active:scale-95 text-on-surface-variant">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<!-- Canvas -->
+<main class="flex-1 p-margin-desktop max-w-max-width mx-auto w-full">
+<!-- Page Header -->
+<div class="mb-8">
+<h3 class="font-headline-lg text-headline-lg text-primary mb-2">Panel Laboratorio de Inteligencia Artificial</h3>
+<p class="font-body-md text-body-md text-text-secondary">Bienvenido al centro de gestión para el Laboratorio de IA. Administra tu presencia digital y contenido institucional.</p>
+</div>
+<!-- KPI Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-8">
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between mb-4">
+<div class="p-2 bg-secondary/10 rounded-lg">
+<span class="material-symbols-outlined text-secondary">inventory_2</span>
+</div>
+<span class="text-success font-label-sm text-label-sm">+2 este mes</span>
+</div>
+<p class="text-text-secondary font-label-md text-label-md mb-1">Contenido publicado</p>
+<h4 class="font-headline-md text-headline-md font-bold text-on-surface">8 secciones</h4>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between mb-4">
+<div class="p-2 bg-warning/10 rounded-lg">
+<span class="material-symbols-outlined text-warning">update</span>
+</div>
+</div>
+<p class="text-text-secondary font-label-md text-label-md mb-1">Últimas actualizaciones</p>
+<h4 class="font-headline-md text-headline-md font-bold text-on-surface">hace 3 días</h4>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between mb-4">
+<div class="p-2 bg-danger/10 rounded-lg">
+<span class="material-symbols-outlined text-danger">pending_actions</span>
+</div>
+</div>
+<p class="text-text-secondary font-label-md text-label-md mb-1">Solicitudes pendientes</p>
+<h4 class="font-headline-md text-headline-md font-bold text-on-surface">1</h4>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between mb-4">
+<div class="p-2 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">visibility</span>
+</div>
+<span class="text-primary font-label-sm text-label-sm">+15%</span>
+</div>
+<p class="text-text-secondary font-label-md text-label-md mb-1">Visitas a mi página</p>
+<h4 class="font-headline-md text-headline-md font-bold text-on-surface">234</h4>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Checklist: Estado de mi página -->
+<div class="lg:col-span-1">
+<div class="bg-surface-container-lowest rounded-xl border border-border-subtle overflow-hidden h-full">
+<div class="p-6 border-b border-border-subtle bg-surface-container-low">
+<h5 class="font-headline-sm text-headline-sm text-on-surface">Estado de página pública</h5>
+</div>
+<div class="p-6 space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-full bg-success flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-sm">check</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md font-bold">Descripción</p>
+<p class="text-text-secondary text-label-sm">Completado</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-full bg-success flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-sm">check</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md font-bold">Líneas de investigación</p>
+<p class="text-text-secondary text-label-sm">Completado</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-full border-2 border-warning bg-warning/5 flex items-center justify-center text-warning">
+<span class="material-symbols-outlined text-sm">priority_high</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md font-bold">Equipos</p>
+<p class="text-warning text-label-sm">Pendiente de actualización</p>
+</div>
+</div>
+<button class="w-full mt-4 py-3 bg-secondary text-on-primary font-label-md rounded-lg hover:bg-on-secondary-container transition-colors shadow-sm">
+                                Publicar Cambios
+                            </button>
+</div>
+</div>
+</div>
+<!-- Gestión de Contenido List -->
+<div class="lg:col-span-2">
+<div class="bg-surface-container-lowest rounded-xl border border-border-subtle overflow-hidden">
+<div class="p-6 border-b border-border-subtle flex justify-between items-center bg-surface-container-low">
+<h5 class="font-headline-sm text-headline-sm text-on-surface">Gestión de Contenido</h5>
+<button class="text-secondary font-label-md flex items-center gap-1 hover:underline">
+<span class="material-symbols-outlined text-sm">add</span>
+                                Nueva sección
+                            </button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-text-secondary font-label-sm uppercase tracking-wider">
+<th class="px-6 py-4 font-semibold">Nombre de Sección</th>
+<th class="px-6 py-4 font-semibold">Tipo</th>
+<th class="px-6 py-4 font-semibold text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-subtle">
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-6 py-4 font-label-md text-on-surface">Misión y Visión</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-bold uppercase">Texto</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="px-4 py-2 text-secondary border border-secondary rounded-lg hover:bg-secondary/5 transition-all active:scale-95 font-label-sm">Editar</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-6 py-4 font-label-md text-on-surface">Proyectos Destacados</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-secondary/10 text-secondary rounded-full text-[10px] font-bold uppercase">Galería</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="px-4 py-2 text-secondary border border-secondary rounded-lg hover:bg-secondary/5 transition-all active:scale-95 font-label-sm">Editar</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-6 py-4 font-label-md text-on-surface">Miembros del Laboratorio</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-warning/10 text-warning rounded-full text-[10px] font-bold uppercase">Directorio</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="px-4 py-2 text-secondary border border-secondary rounded-lg hover:bg-secondary/5 transition-all active:scale-95 font-label-sm">Editar</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-6 py-4 font-label-md text-on-surface">Publicaciones Recientes</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-bold uppercase">Lista</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="px-4 py-2 text-secondary border border-secondary rounded-lg hover:bg-secondary/5 transition-all active:scale-95 font-label-sm">Editar</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-6 py-4 font-label-md text-on-surface">Recursos Computacionales</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-danger/10 text-danger rounded-full text-[10px] font-bold uppercase">Inventario</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="px-4 py-2 text-secondary border border-secondary rounded-lg hover:bg-secondary/5 transition-all active:scale-95 font-label-sm">Editar</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Section -->
+<footer class="mt-16 border-t border-border-subtle py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex flex-col items-center md:items-start">
+<h6 class="font-headline-sm text-headline-sm font-bold text-secondary">FIIS UNI</h6>
+<p class="font-label-sm text-label-sm text-text-secondary mt-1">© 2024 Facultad de Ingeniería Industrial y de Sistemas - UNI</p>
+</div>
+<div class="flex gap-6">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Contacto</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Mapa de Sitio</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacidad</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Redes Sociales</a>
+</div>
+</footer>
+</main>
+</div>
+<!-- Floating Action Button (Active Context) -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-secondary text-on-primary rounded-full shadow-lg flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50 group">
+<span class="material-symbols-outlined">add</span>
+<span class="absolute right-full mr-4 bg-on-background text-on-primary px-3 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Nuevo Contenido</span>
+</button>
+</body></html>

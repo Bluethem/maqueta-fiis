@@ -1,0 +1,171 @@
+<div class="page-enter space-y-6">
+  <!-- Header -->
+  <div class="flex items-center justify-between">
+    <div>
+      <h1 class="text-2xl font-bold text-[#1C1C1C]">Resoluciones</h1>
+      <p class="text-text-secondary text-sm mt-1">Consulta y gestiona las resoluciones emitidas por la Facultad</p>
+    </div>
+    <button class="bg-brand-cream text-primary text-sm font-semibold px-5 py-2.5 rounded-lg flex items-center gap-2 hover:brightness-95 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+      Nueva Resolución
+    </button>
+  </div>
+
+  <!-- Filters -->
+  <div class="bg-surface-container-lowest rounded-xl border border-border-subtle p-4">
+    <div class="flex flex-wrap items-center gap-3">
+      <div class="relative flex-1 min-w-[200px]">
+        <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-text-secondary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+        <input type="text" placeholder="Buscar resolución..." class="w-full pl-10 pr-4 py-2.5 bg-surface-bg border border-border-subtle rounded-lg text-sm text-[#1C1C1C] placeholder-text-secondary focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+      </div>
+      <select class="px-4 py-2.5 bg-surface-bg border border-border-subtle rounded-lg text-sm text-[#1C1C1C] focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+        <option>Año</option>
+        <option>2024</option>
+        <option>2023</option>
+        <option>2022</option>
+        <option>2021</option>
+        <option>2020</option>
+      </select>
+      <select class="px-4 py-2.5 bg-surface-bg border border-border-subtle rounded-lg text-sm text-[#1C1C1C] focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+        <option>Periodo Académico</option>
+        <option>2024-II</option>
+        <option>2024-I</option>
+        <option>2023-II</option>
+        <option>2023-I</option>
+      </select>
+      <select class="px-4 py-2.5 bg-surface-bg border border-border-subtle rounded-lg text-sm text-[#1C1C1C] focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+        <option>Tipo</option>
+        <option>Decanal</option>
+        <option>Consejo de Facultad</option>
+        <option>Vicerrectorado</option>
+      </select>
+      <button class="bg-primary text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:brightness-110 transition-all">Filtrar</button>
+    </div>
+  </div>
+
+  <!-- Resolution cards -->
+  <div class="space-y-3">
+    <!-- Card 1 -->
+    <div class="bg-surface-container-lowest rounded-xl border border-border-subtle p-5 flex flex-col sm:flex-row sm:items-center gap-4">
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-3 mb-1">
+          <span class="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full">RD-2024-045</span>
+          <span class="bg-success/15 text-success text-xs font-medium px-2.5 py-0.5 rounded-full">Vigente</span>
+        </div>
+        <h3 class="text-[#1C1C1C] font-semibold truncate">Aprobar la designación del Dr. Miguel Rodríguez como Coordinador de la Escuela Profesional de Ingeniería de Sistemas</h3>
+        <p class="text-text-secondary text-xs mt-1">Fecha de emisión: 15/10/2024 · Resolución Decanal</p>
+      </div>
+      <div class="flex items-center gap-2 shrink-0">
+        <button class="bg-brand-cream text-primary text-sm font-semibold px-4 py-2 rounded-lg flex items-center gap-2 hover:brightness-95 transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+          PDF
+        </button>
+        <button class="border border-border-subtle text-text-secondary p-2 rounded-lg hover:bg-surface-bg transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-surface-container-lowest rounded-xl border border-border-subtle p-5 flex flex-col sm:flex-row sm:items-center gap-4">
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-3 mb-1">
+          <span class="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full">RD-2024-044</span>
+          <span class="bg-success/15 text-success text-xs font-medium px-2.5 py-0.5 rounded-full">Vigente</span>
+        </div>
+        <h3 class="text-[#1C1C1C] font-semibold truncate">Aprobar el cronograma académico 2024-II para las tres Escuelas Profesionales de la FIIS</h3>
+        <p class="text-text-secondary text-xs mt-1">Fecha de emisión: 10/10/2024 · Resolución Decanal</p>
+      </div>
+      <div class="flex items-center gap-2 shrink-0">
+        <button class="bg-brand-cream text-primary text-sm font-semibold px-4 py-2 rounded-lg flex items-center gap-2 hover:brightness-95 transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+          PDF
+        </button>
+        <button class="border border-border-subtle text-text-secondary p-2 rounded-lg hover:bg-surface-bg transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-surface-container-lowest rounded-xl border border-border-subtle p-5 flex flex-col sm:flex-row sm:items-center gap-4">
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-3 mb-1">
+          <span class="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full">RC-2024-012</span>
+          <span class="bg-warning/15 text-warning text-xs font-medium px-2.5 py-0.5 rounded-full">Próximo</span>
+        </div>
+        <h3 class="text-[#1C1C1C] font-semibold truncate">Consejo de Facultad — Modificación del Reglamento de Grados y Títulos de la FIIS</h3>
+        <p class="text-text-secondary text-xs mt-1">Fecha de emisión: 28/09/2024 · Consejo de Facultad</p>
+      </div>
+      <div class="flex items-center gap-2 shrink-0">
+        <button class="bg-brand-cream text-primary text-sm font-semibold px-4 py-2 rounded-lg flex items-center gap-2 hover:brightness-95 transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+          PDF
+        </button>
+        <button class="border border-border-subtle text-text-secondary p-2 rounded-lg hover:bg-surface-bg transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="bg-surface-container-lowest rounded-xl border border-border-subtle p-5 flex flex-col sm:flex-row sm:items-center gap-4">
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-3 mb-1">
+          <span class="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full">RV-2024-008</span>
+          <span class="bg-success/15 text-success text-xs font-medium px-2.5 py-0.5 rounded-full">Vigente</span>
+        </div>
+        <h3 class="text-[#1C1C1C] font-semibold truncate">Vicerrectorado — Aprobar la actualización del Plan Curricular 2024 de la Escuela de Ingeniería de Software</h3>
+        <p class="text-text-secondary text-xs mt-1">Fecha de emisión: 20/09/2024 · Resolución Vicerrectorado</p>
+      </div>
+      <div class="flex items-center gap-2 shrink-0">
+        <button class="bg-brand-cream text-primary text-sm font-semibold px-4 py-2 rounded-lg flex items-center gap-2 hover:brightness-95 transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+          PDF
+        </button>
+        <button class="border border-border-subtle text-text-secondary p-2 rounded-lg hover:bg-surface-bg transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="bg-surface-container-lowest rounded-xl border border-border-subtle p-5 flex flex-col sm:flex-row sm:items-center gap-4">
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-3 mb-1">
+          <span class="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full">RD-2024-043</span>
+          <span class="bg-danger/15 text-danger text-xs font-medium px-2.5 py-0.5 rounded-full">Derogado</span>
+        </div>
+        <h3 class="text-[#1C1C1C] font-semibold truncate">Designación de la Comisión de Evaluación para el Concurso de Plazas Docentes 2024</h3>
+        <p class="text-text-secondary text-xs mt-1">Fecha de emisión: 12/09/2024 · Resolución Decanal</p>
+      </div>
+      <div class="flex items-center gap-2 shrink-0">
+        <button class="bg-brand-cream text-primary text-sm font-semibold px-4 py-2 rounded-lg flex items-center gap-2 hover:brightness-95 transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+          PDF
+        </button>
+        <button class="border border-border-subtle text-text-secondary p-2 rounded-lg hover:bg-surface-bg transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="flex items-center justify-between">
+    <p class="text-sm text-text-secondary">Mostrando 1-5 de 23 resoluciones</p>
+    <div class="flex items-center gap-1">
+      <button class="w-9 h-9 flex items-center justify-center rounded-lg border border-border-subtle text-text-secondary hover:bg-surface-bg transition-colors text-sm" disabled>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/></svg>
+      </button>
+      <button class="w-9 h-9 flex items-center justify-center rounded-lg bg-primary text-white text-sm font-semibold">1</button>
+      <button class="w-9 h-9 flex items-center justify-center rounded-lg border border-border-subtle text-text-secondary hover:bg-surface-bg transition-colors text-sm">2</button>
+      <button class="w-9 h-9 flex items-center justify-center rounded-lg border border-border-subtle text-text-secondary hover:bg-surface-bg transition-colors text-sm">3</button>
+      <span class="px-1 text-text-secondary text-sm">...</span>
+      <button class="w-9 h-9 flex items-center justify-center rounded-lg border border-border-subtle text-text-secondary hover:bg-surface-bg transition-colors text-sm">5</button>
+      <button class="w-9 h-9 flex items-center justify-center rounded-lg border border-border-subtle text-text-secondary hover:bg-surface-bg transition-colors text-sm">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+      </button>
+    </div>
+  </div>
+</div>

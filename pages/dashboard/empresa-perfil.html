@@ -1,0 +1,120 @@
+<div class="page-enter space-y-6">
+  <!-- Header -->
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div>
+      <div class="flex items-center gap-2.5">
+        <h2 class="text-2xl font-bold text-on-surface">Perfil Empresarial</h2>
+        <span class="material-symbols-outlined text-success" style="font-variation-settings:'FILL'1;font-size:22px">verified</span>
+      </div>
+      <p class="text-text-secondary text-sm mt-0.5">Gestiona la información pública de tu empresa</p>
+    </div>
+    <button class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-on-primary rounded-lg font-semibold text-sm hover:brightness-110 transition-all shadow-sm active:scale-95">
+      <span class="material-symbols-outlined text-sm">save</span>
+      Guardar cambios
+    </button>
+  </div>
+
+  <!-- Company Profile Card -->
+  <div class="bg-white rounded-xl border border-border-subtle p-6 shadow-sm">
+    <div class="flex flex-col sm:flex-row gap-6">
+      <div class="flex-shrink-0">
+        <div class="w-24 h-24 rounded-xl bg-surface-bg border border-border-subtle flex items-center justify-center">
+          <span class="material-symbols-outlined text-4xl text-text-secondary">business</span>
+        </div>
+      </div>
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-2 mb-1">
+          <h3 class="text-xl font-bold text-on-surface">Industrias Acero SAC</h3>
+          <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-success/10 text-success">
+            <span class="material-symbols-outlined text-xs" style="font-variation-settings:'FILL'1">verified</span>
+            Verificado
+          </span>
+        </div>
+        <p class="text-sm text-text-secondary mb-3">RUC: 20567890123 — Fundada en 1995</p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+          <div class="flex items-center gap-2 text-text-secondary">
+            <span class="material-symbols-outlined text-sm text-primary">category</span>
+            <span>Metalmecánica / Manufactura</span>
+          </div>
+          <div class="flex items-center gap-2 text-text-secondary">
+            <span class="material-symbols-outlined text-sm text-primary">location_on</span>
+            <span>Av. Industrial 420, Callao</span>
+          </div>
+          <div class="flex items-center gap-2 text-text-secondary">
+            <span class="material-symbols-outlined text-sm text-primary">globe</span>
+            <span>www.industriasacero.pe</span>
+          </div>
+        </div>
+        <p class="text-sm text-text-secondary mt-3 leading-relaxed">Empresa líder en fabricación de estructuras metálicas y componentes industriales con más de 25 años de experiencia en el mercado peruano. Aliada estratégica de FIIS desde 2018.</p>
+        <div class="flex items-center gap-3 mt-4">
+          <a href="#" class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary/20 transition-all"><span class="material-symbols-outlined text-sm">link</span></a>
+          <a href="#" class="w-8 h-8 rounded-full bg-[#1877F2]/10 text-[#1877F2] flex items-center justify-center hover:bg-[#1877F2]/20 transition-all"><span class="material-symbols-outlined text-sm">facebook</span></a>
+          <a href="#" class="w-8 h-8 rounded-full bg-[#1DA1F2]/10 text-[#1DA1F2] flex items-center justify-center hover:bg-[#1DA1F2]/20 transition-all"><span class="material-symbols-outlined text-sm">smart_display</span></a>
+          <a href="#" class="w-8 h-8 rounded-full bg-[#0A66C2]/10 text-[#0A66C2] flex items-center justify-center hover:bg-[#0A66C2]/20 transition-all"><span class="material-symbols-outlined text-sm">work</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Form -->
+  <div class="bg-white rounded-xl border border-border-subtle shadow-sm overflow-hidden">
+    <div class="px-5 py-4 border-b border-border-subtle">
+      <h3 class="text-base font-bold text-on-surface">Editar información</h3>
+    </div>
+    <div class="p-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="space-y-1.5">
+          <label class="text-sm font-semibold text-on-surface">Razón social</label>
+          <input type="text" value="Industrias Acero SAC" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
+        </div>
+        <div class="space-y-1.5">
+          <label class="text-sm font-semibold text-on-surface">RUC</label>
+          <input type="text" value="20567890123" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
+        </div>
+        <div class="space-y-1.5">
+          <label class="text-sm font-semibold text-on-surface">Rubro</label>
+          <select class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
+            <option>Metalmecánica / Manufactura</option>
+            <option>Tecnología / Software</option>
+            <option>Consultoría / Servicios</option>
+            <option>Minería / Energía</option>
+            <option>Banca / Finanzas</option>
+          </select>
+        </div>
+        <div class="space-y-1.5">
+          <label class="text-sm font-semibold text-on-surface">Sitio web</label>
+          <input type="text" value="https://www.industriasacero.pe" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
+        </div>
+        <div class="space-y-1.5">
+          <label class="text-sm font-semibold text-on-surface">Ubicación</label>
+          <input type="text" value="Av. Industrial 420, Callao" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
+        </div>
+        <div class="space-y-1.5">
+          <label class="text-sm font-semibold text-on-surface">Teléfono de contacto</label>
+          <input type="text" value="+51 1 555 6789" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
+        </div>
+        <div class="space-y-1.5 md:col-span-2">
+          <label class="text-sm font-semibold text-on-surface">Descripción</label>
+          <textarea rows="4" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30 resize-none">Empresa líder en fabricación de estructuras metálicas y componentes industriales con más de 25 años de experiencia en el mercado peruano. Aliada estratégica de FIIS desde 2018.</textarea>
+        </div>
+        <div class="space-y-1.5">
+          <label class="text-sm font-semibold text-on-surface">Enlace LinkedIn</label>
+          <input type="text" value="https://linkedin.com/company/industrias-acero" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
+        </div>
+        <div class="space-y-1.5">
+          <label class="text-sm font-semibold text-on-surface">Actualizar logo</label>
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-lg bg-surface-bg border border-border-subtle flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-text-secondary">image</span>
+            </div>
+            <button class="px-4 py-2 text-sm border border-border-subtle rounded-lg font-medium text-on-surface-variant hover:bg-surface-container-low transition-all">Cambiar logo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="px-5 py-4 border-t border-border-subtle bg-surface-bg/20 flex items-center justify-end gap-3">
+      <button class="px-4 py-2 text-sm font-semibold text-text-secondary border border-border-subtle rounded-lg hover:bg-surface-container-low transition-all">Cancelar</button>
+      <button class="px-5 py-2 text-sm font-semibold bg-primary text-on-primary rounded-lg hover:brightness-110 transition-all shadow-sm">Guardar cambios</button>
+    </div>
+  </div>
+</div>

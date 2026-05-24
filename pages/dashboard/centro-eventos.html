@@ -1,0 +1,143 @@
+<div class="page-enter space-y-6">
+
+  <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <div>
+      <h1 class="text-2xl md:text-3xl font-extrabold text-primary">Mis Eventos</h1>
+      <p class="text-text-secondary text-sm mt-1">Administra los eventos organizados por tu centro</p>
+    </div>
+    <button class="btn-primary flex items-center gap-2 text-sm">
+      <span class="material-symbols-outlined text-sm">add</span>
+      Crear evento
+    </button>
+  </div>
+
+  <div class="bg-white border border-border-subtle rounded-xl p-6 overflow-x-auto">
+    <h2 class="text-lg font-bold text-primary flex items-center gap-2 mb-5">
+      <span class="material-symbols-outlined text-primary">event_list</span>
+      Todos los eventos
+    </h2>
+    <table class="w-full text-sm">
+      <thead>
+        <tr class="border-b border-border-subtle">
+          <th class="text-left py-3 px-2 font-semibold text-text-secondary text-xs uppercase tracking-wider">Evento</th>
+          <th class="text-left py-3 px-2 font-semibold text-text-secondary text-xs uppercase tracking-wider">Fecha</th>
+          <th class="text-left py-3 px-2 font-semibold text-text-secondary text-xs uppercase tracking-wider">Modalidad</th>
+          <th class="text-center py-3 px-2 font-semibold text-text-secondary text-xs uppercase tracking-wider">Inscritos</th>
+          <th class="text-center py-3 px-2 font-semibold text-text-secondary text-xs uppercase tracking-wider">Estado</th>
+          <th class="text-right py-3 px-2 font-semibold text-text-secondary text-xs uppercase tracking-wider">Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-b border-border-subtle hover:bg-primary/5 transition-colors">
+          <td class="py-4 px-2">
+            <p class="font-semibold text-on-surface">Hackathon FIIS 2026</p>
+            <p class="text-xs text-text-secondary mt-0.5">UNICODE</p>
+          </td>
+          <td class="py-4 px-2 text-text-secondary">28 Oct, 2026</td>
+          <td class="py-4 px-2">
+            <span class="bg-primary/10 text-primary text-xs font-medium px-3 py-1 rounded-full">Presencial</span>
+          </td>
+          <td class="py-4 px-2 text-center font-semibold text-on-surface">48</td>
+          <td class="py-4 px-2 text-center">
+            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold">Publicado</span>
+          </td>
+          <td class="py-4 px-2 text-right">
+            <div class="flex items-center justify-end gap-1">
+              <button class="p-1.5 rounded-lg hover:bg-primary/10 text-text-secondary hover:text-primary transition-all" title="Editar">
+                <span class="material-symbols-outlined text-sm">edit</span>
+              </button>
+              <button class="p-1.5 rounded-lg hover:bg-primary/10 text-text-secondary hover:text-primary transition-all" title="Ver postulaciones">
+                <span class="material-symbols-outlined text-sm">group</span>
+              </button>
+              <button class="p-1.5 rounded-lg hover:bg-red-50 text-text-secondary hover:text-red-600 transition-all" title="Eliminar">
+                <span class="material-symbols-outlined text-sm">delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr class="border-b border-border-subtle hover:bg-primary/5 transition-colors">
+          <td class="py-4 px-2">
+            <p class="font-semibold text-on-surface">Charla: IA Generativa</p>
+            <p class="text-xs text-text-secondary mt-0.5">Ponente: Ing. Ricardo Paredes</p>
+          </td>
+          <td class="py-4 px-2 text-text-secondary">15 Nov, 2026</td>
+          <td class="py-4 px-2">
+            <span class="bg-blue-100 text-blue-700 text-xs font-medium px-3 py-1 rounded-full">Virtual</span>
+          </td>
+          <td class="py-4 px-2 text-center font-semibold text-on-surface">120</td>
+          <td class="py-4 px-2 text-center">
+            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold">Publicado</span>
+          </td>
+          <td class="py-4 px-2 text-right">
+            <div class="flex items-center justify-end gap-1">
+              <button class="p-1.5 rounded-lg hover:bg-primary/10 text-text-secondary hover:text-primary transition-all" title="Editar">
+                <span class="material-symbols-outlined text-sm">edit</span>
+              </button>
+              <button class="p-1.5 rounded-lg hover:bg-primary/10 text-text-secondary hover:text-primary transition-all" title="Ver postulaciones">
+                <span class="material-symbols-outlined text-sm">group</span>
+              </button>
+              <button class="p-1.5 rounded-lg hover:bg-red-50 text-text-secondary hover:text-red-600 transition-all" title="Eliminar">
+                <span class="material-symbols-outlined text-sm">delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr class="border-b border-border-subtle hover:bg-primary/5 transition-colors">
+          <td class="py-4 px-2">
+            <p class="font-semibold text-on-surface">Taller de Flutter</p>
+            <p class="text-xs text-text-secondary mt-0.5">Instructor: Carlos Quispe</p>
+          </td>
+          <td class="py-4 px-2 text-text-secondary">5 Dic, 2026</td>
+          <td class="py-4 px-2">
+            <span class="bg-purple-100 text-purple-700 text-xs font-medium px-3 py-1 rounded-full">Híbrido</span>
+          </td>
+          <td class="py-4 px-2 text-center font-semibold text-on-surface">25</td>
+          <td class="py-4 px-2 text-center">
+            <span class="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-xs font-bold">Borrador</span>
+          </td>
+          <td class="py-4 px-2 text-right">
+            <div class="flex items-center justify-end gap-1">
+              <button class="p-1.5 rounded-lg hover:bg-primary/10 text-text-secondary hover:text-primary transition-all" title="Editar">
+                <span class="material-symbols-outlined text-sm">edit</span>
+              </button>
+              <button class="p-1.5 rounded-lg hover:bg-primary/10 text-text-secondary hover:text-primary transition-all" title="Ver postulaciones">
+                <span class="material-symbols-outlined text-sm">group</span>
+              </button>
+              <button class="p-1.5 rounded-lg hover:bg-red-50 text-text-secondary hover:text-red-600 transition-all" title="Eliminar">
+                <span class="material-symbols-outlined text-sm">delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr class="hover:bg-primary/5 transition-colors">
+          <td class="py-4 px-2">
+            <p class="font-semibold text-on-surface">Workshop de Ciberseguridad</p>
+            <p class="text-xs text-text-secondary mt-0.5">CIBERSEC</p>
+          </td>
+          <td class="py-4 px-2 text-text-secondary">20 Ene, 2027</td>
+          <td class="py-4 px-2">
+            <span class="bg-primary/10 text-primary text-xs font-medium px-3 py-1 rounded-full">Presencial</span>
+          </td>
+          <td class="py-4 px-2 text-center font-semibold text-on-surface">—</td>
+          <td class="py-4 px-2 text-center">
+            <span class="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-xs font-bold">Borrador</span>
+          </td>
+          <td class="py-4 px-2 text-right">
+            <div class="flex items-center justify-end gap-1">
+              <button class="p-1.5 rounded-lg hover:bg-primary/10 text-text-secondary hover:text-primary transition-all" title="Editar">
+                <span class="material-symbols-outlined text-sm">edit</span>
+              </button>
+              <button class="p-1.5 rounded-lg hover:bg-primary/10 text-text-secondary hover:text-primary transition-all" title="Ver postulaciones">
+                <span class="material-symbols-outlined text-sm">group</span>
+              </button>
+              <button class="p-1.5 rounded-lg hover:bg-red-50 text-text-secondary hover:text-red-600 transition-all" title="Eliminar">
+                <span class="material-symbols-outlined text-sm">delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

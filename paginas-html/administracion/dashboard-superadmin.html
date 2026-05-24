@@ -1,0 +1,402 @@
+<!DOCTYPE html><html class="light" lang="es" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Dashboard Admin — Portal FIIS UNI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #F8F9FA; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #E5E5E5; border-radius: 10px; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "text-secondary": "#6B6B6B",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-secondary-fixed": "#002115",
+                        "on-primary-fixed-variant": "#1c4197",
+                        "success": "#3B9E45",
+                        "secondary-fixed-dim": "#68dbae",
+                        "on-secondary-container": "#007151",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#ffdad5",
+                        "surface-bg": "#F8F9FA",
+                        "tertiary-fixed-dim": "#ffb4a9",
+                        "surface-dim": "#dcd9d9",
+                        "secondary-container": "#83f5c6",
+                        "primary-container": "#003087",
+                        "secondary": "#006c4e",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-secondary-fixed-variant": "#00513a",
+                        "background": "#fcf9f8",
+                        "on-tertiary-container": "#f97b6b",
+                        "on-background": "#1c1b1b",
+                        "border-subtle": "#E5E5E5",
+                        "surface-variant": "#e5e2e1",
+                        "on-error-container": "#93000a",
+                        "surface": "#fcf9f8",
+                        "inverse-surface": "#313030",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-tint": "#3959b0",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "tertiary-container": "#6e140e",
+                        "surface-container-high": "#eae7e7",
+                        "on-tertiary-fixed-variant": "#84241c",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-tertiary": "#ffffff",
+                        "brand-cream": "#E6D9AA",
+                        "on-surface": "#1c1b1b",
+                        "on-surface-variant": "#444652",
+                        "error": "#ba1a1a",
+                        "outline": "#747683",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#7f9df8",
+                        "outline-variant": "#c4c6d4",
+                        "tertiary": "#4d0001",
+                        "on-primary-fixed": "#00174b",
+                        "primary": "#001d59",
+                        "inverse-primary": "#b4c5ff",
+                        "warning": "#E8A838",
+                        "on-tertiary-fixed": "#410001",
+                        "secondary-fixed": "#86f8c9",
+                        "danger": "#E24B4A",
+                        "surface-bright": "#fcf9f8",
+                        "surface-container": "#f0eded"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "max-width": "1200px"
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface-bg flex">
+<!-- SideNavBar (Authority: JSON & Strategy) -->
+<aside class="fixed left-0 top-0 h-full w-[240px] bg-surface-container-lowest dark:bg-on-background border-r border-border-subtle dark:border-outline-variant flex flex-col py-base z-50">
+<div class="px-6 mb-8 mt-4">
+<h1 class="font-headline-sm text-headline-sm font-bold text-secondary dark:text-secondary-fixed">Portal Académico</h1>
+<p class="text-text-secondary font-label-sm">FIIS-UNI</p>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Active Tab: Dashboard -->
+<a class="flex items-center gap-3 px-6 py-3 border-l-4 border-secondary text-secondary font-bold bg-secondary-container/10 dark:bg-secondary/20 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-md">Dashboard</span>
+</a>
+<!-- Inactive Tabs (Mapping JSON logic but extended for the Admin request) -->
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-md">Usuarios</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-label-md">Solicitudes</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined">newspaper</span>
+<span class="font-label-md">Noticias</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined">event</span>
+<span class="font-label-md">Eventos</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined">work</span>
+<span class="font-label-md">Vacantes</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-md">Reportes</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md">Configuración</span>
+</a>
+</nav>
+<div class="px-6 py-4 border-t border-border-subtle">
+<button class="flex items-center gap-3 text-danger font-label-md hover:opacity-80 transition-all">
+<span class="material-symbols-outlined">logout</span>
+<span class="">Cerrar Sesión</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Shell -->
+<main class="flex-1 ml-[240px]">
+<!-- TopAppBar (Authority: JSON) -->
+<header class="flex justify-between items-center px-gutter h-16 w-full bg-surface dark:bg-on-background border-b border-border-subtle dark:border-outline-variant fixed top-0 left-[240px] z-40 pr-[240px]">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined p-2 hover:bg-surface-container-high rounded-full active:scale-95 transition-all text-on-surface">menu</button>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface dark:text-on-surface-variant">Dashboard</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative flex items-center bg-surface-container-low px-4 py-1.5 rounded-lg border border-border-subtle">
+<span class="material-symbols-outlined text-text-secondary text-[20px]">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-label-md w-48" placeholder="Buscar..." type="text">
+</div>
+<div class="flex items-center gap-3">
+<button class="material-symbols-outlined p-2 hover:bg-surface-container-high rounded-full text-on-surface relative">
+                        notifications
+                        <span class="absolute top-2 right-2 w-2 h-2 bg-danger rounded-full"></span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-border-subtle">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A close-up high-resolution profile headshot of a professional university administrator in their late 40s. The individual is smiling warmly, wearing a crisp navy blue blazer. The background is a soft-focus office environment with academic textbooks and a small green plant. The lighting is bright and natural, reflecting a clean corporate and modern academic aesthetic consistent with a high-end university portal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-_qe1GUjJGTeck-n4h-I_GodYYtuQ_U4Ofbm2a5GA_IHgM2QdWiYm8rxDgBTHb7QUH7U3xkh7gl-sZHzMl0_jnjBigRgLKcz6GMqAKqTZ9idwnXL6_1ahdF73boiwEgwcp7mfvM3N9XNBVP51mIKjH6uzLPHLCh4SU78K56Dr0tDtGv_zHFKt4exTANlK_LUX6N8-6ZzvgYKuhHIZ7C6tpbYGYHVnR5kxORTFzAn0wpGkszd4y7Ln3cNuIWFeXfiUqrWtnS_Se05t">
+</div>
+</div>
+</div>
+</header>
+<!-- Canvas Area -->
+<div class="pt-24 pb-12 px-margin-desktop max-w-max-width mx-auto">
+<!-- Dashboard Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Panel Administrador — Portal FIIS</h1>
+<div class="flex items-center gap-2 mt-1">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-success"></span>
+</span>
+<span class="bg-secondary-container/20 text-secondary px-3 py-0.5 rounded-full font-label-sm">Sistema operativo</span>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 border-2 border-secondary text-secondary rounded-lg font-label-md hover:bg-secondary-container/10 transition-all">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                        Exportar Reporte
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-secondary text-white rounded-lg font-label-md hover:bg-on-secondary-fixed-variant transition-all">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                        Nueva Noticia
+                    </button>
+</div>
+</div>
+<!-- KPI Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter mb-8">
+<div class="bg-white border border-border-subtle rounded-xl p-6 hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-primary-fixed/20 rounded-lg text-primary">
+<span class="material-symbols-outlined">group</span>
+</div>
+<span class="text-success font-label-sm flex items-center gap-1">+12% <span class="material-symbols-outlined text-[14px]">trending_up</span></span>
+</div>
+<p class="text-text-secondary font-label-md mb-1">Usuarios registrados</p>
+<h3 class="font-headline-md text-headline-md text-on-surface">3,412</h3>
+</div>
+<div class="bg-white border border-border-subtle rounded-xl p-6 hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-warning/10 rounded-lg text-warning">
+<span class="material-symbols-outlined">pending_actions</span>
+</div>
+<span class="text-danger font-label-sm">Urgente</span>
+</div>
+<p class="text-text-secondary font-label-md mb-1">Solicitudes pendientes</p>
+<h3 class="font-headline-md text-headline-md text-on-surface">7</h3>
+</div>
+<div class="bg-white border border-border-subtle rounded-xl p-6 hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-secondary-container/20 rounded-lg text-secondary">
+<span class="material-symbols-outlined">newspaper</span>
+</div>
+<span class="text-text-secondary font-label-sm">Total mes</span>
+</div>
+<p class="text-text-secondary font-label-md mb-1">Noticias publicadas</p>
+<h3 class="font-headline-md text-headline-md text-on-surface">89</h3>
+</div>
+<div class="bg-white border border-border-subtle rounded-xl p-6 hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-tertiary-container/10 rounded-lg text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined">work</span>
+</div>
+<span class="text-secondary font-label-sm">Activas</span>
+</div>
+<p class="text-text-secondary font-label-md mb-1">Vacantes activas</p>
+<h3 class="font-headline-md text-headline-md text-on-surface">31</h3>
+</div>
+</div>
+<!-- Content Row: Main Table & Side Table -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-gutter">
+<!-- Pending Content Requests (2/3 width) -->
+<div class="xl:col-span-2 bg-white border border-border-subtle rounded-xl overflow-hidden flex flex-col" style="transform: translateY(0px);">
+<div class="p-6 border-b border-border-subtle flex justify-between items-center">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Solicitudes de contenido pendientes</h4>
+<button class="text-secondary font-label-md hover:underline">Ver todas</button>
+</div>
+<div class="overflow-x-auto custom-scrollbar">
+<table class="w-full text-left">
+<thead class="bg-surface-bg border-b border-border-subtle">
+<tr>
+<th class="px-6 py-4 font-label-sm text-text-secondary uppercase">Solicitante</th>
+<th class="px-6 py-4 font-label-sm text-text-secondary uppercase">Tipo</th>
+<th class="px-6 py-4 font-label-sm text-text-secondary uppercase">Área</th>
+<th class="px-6 py-4 font-label-sm text-text-secondary uppercase">Fecha</th>
+<th class="px-6 py-4 font-label-sm text-text-secondary uppercase text-center">Prioridad</th>
+<th class="px-6 py-4 font-label-sm text-text-secondary uppercase text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-subtle">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container/30 flex items-center justify-center text-secondary font-bold text-xs">RM</div>
+<span class="font-label-md text-on-surface">Ricardo Mendoza</span>
+</div>
+</td>
+<td class="px-6 py-4 font-label-md text-on-surface">Noticia</td>
+<td class="px-6 py-4 font-label-md text-on-surface">Sistemas</td>
+<td class="px-6 py-4 font-label-md text-on-surface">Hoy, 10:45</td>
+<td class="px-6 py-4 text-center">
+<span class="inline-block px-2 py-1 rounded-pill text-[10px] uppercase font-bold bg-danger/10 text-danger border border-danger/20">Alta</span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-1.5 text-success hover:bg-success/10 rounded-lg transition-all" title="Aprobar"><span class="material-symbols-outlined">check_circle</span></button>
+<button class="p-1.5 text-danger hover:bg-danger/10 rounded-lg transition-all" title="Rechazar"><span class="material-symbols-outlined">cancel</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed/30 flex items-center justify-center text-primary font-bold text-xs">EG</div>
+<span class="font-label-md text-on-surface">Elena García</span>
+</div>
+</td>
+<td class="px-6 py-4 font-label-md text-on-surface">Evento</td>
+<td class="px-6 py-4 font-label-md text-on-surface">Cultura</td>
+<td class="px-6 py-4 font-label-md text-on-surface">Ayer</td>
+<td class="px-6 py-4 text-center">
+<span class="inline-block px-2 py-1 rounded-pill text-[10px] uppercase font-bold bg-warning/10 text-warning border border-warning/20">Media</span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-1.5 text-success hover:bg-success/10 rounded-lg transition-all"><span class="material-symbols-outlined">check_circle</span></button>
+<button class="p-1.5 text-danger hover:bg-danger/10 rounded-lg transition-all"><span class="material-symbols-outlined">cancel</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-on-secondary-container/20 flex items-center justify-center text-secondary font-bold text-xs">JR</div>
+<span class="font-label-md text-on-surface">Juan Rivera</span>
+</div>
+</td>
+<td class="px-6 py-4 font-label-md text-on-surface">Vacante</td>
+<td class="px-6 py-4 font-label-md text-on-surface">Industrial</td>
+<td class="px-6 py-4 font-label-md text-on-surface">24 Oct</td>
+<td class="px-6 py-4 text-center">
+<span class="inline-block px-2 py-1 rounded-pill text-[10px] uppercase font-bold bg-primary/10 text-primary border border-primary/20">Baja</span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-1.5 text-success hover:bg-success/10 rounded-lg transition-all"><span class="material-symbols-outlined">check_circle</span></button>
+<button class="p-1.5 text-danger hover:bg-danger/10 rounded-lg transition-all"><span class="material-symbols-outlined">cancel</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Recent Users (1/3 width) -->
+<div class="bg-white border border-border-subtle rounded-xl overflow-hidden flex flex-col">
+<div class="p-6 border-b border-border-subtle flex justify-between items-center">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Usuarios recientes</h4>
+</div>
+<div class="p-4 space-y-4">
+<!-- User Item -->
+<div class="flex items-center justify-between p-3 hover:bg-surface-container-low rounded-lg transition-all">
+<div class="flex items-center gap-3">
+<img alt="Alvaro" class="w-10 h-10 rounded-full bg-surface-dim" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6W4b1vDqPlSRrYu9NX_ViUOABVhwpVNqTVuhpBFrXsk3ZdSyMUoS8crolU3QzF6G6weUDAiO0AE3GcLPn1baCFM2gXNB7dM-TWu7v38IyFppLLG-zmnE9PWEYYLHabF5XvtKZKYN9pcVaLN_W7mSmDmq72HKASt5Kmx01OKtbZ2IokvjcmgZgBTthoAD_icULZYLS5KVzd8mNcaNcBS73OeGAuvgthDRmqn3jyE4gfTfjrR8DhWGNZgYCa_XNW5yR_Km9paP8mYLG">
+<div>
+<p class="font-label-md text-on-surface">Álvaro Vilca</p>
+<p class="text-[11px] text-text-secondary">Hace 5 min</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-secondary-container/30 text-secondary border border-secondary/20">ESTUDIANTE</span>
+</div>
+<div class="flex items-center justify-between p-3 hover:bg-surface-container-low rounded-lg transition-all">
+<div class="flex items-center gap-3">
+<img alt="Maria" class="w-10 h-10 rounded-full bg-surface-dim" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR81Fl89QttKgtzBClR1_62s-HJ_E0yJQXikkLdaMKRMdeTOhOe8z__LgH585An-CE04TR0iqOEaez6So7YbD6bbH0R9oqqBEApWdFtlELGLkYC-icfZKRO3iTlgwTRhr3GEk8zt84XMf4hpzsTKF4uctJ6ndE1VLM7tatNMXujjaH2VNR1JBuNjKFrmpzxr9WDfxUJCviXgpno2zsmMxwpSH1supDlOnMG8LqETZRY6JkaYPz3z8EFq_uRXn6HjAlHcvmtMB61kqb">
+<div>
+<p class="font-label-md text-on-surface">María Rojas</p>
+<p class="text-[11px] text-text-secondary">Hace 12 min</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-primary-fixed/30 text-primary border border-primary/20">DOCENTE</span>
+</div>
+<div class="flex items-center justify-between p-3 hover:bg-surface-container-low rounded-lg transition-all">
+<div class="flex items-center gap-3">
+<img alt="Carlos" class="w-10 h-10 rounded-full bg-surface-dim" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmkzE2StDFQW6zPI7B5PFaP1veS5TSh7xNgVKDE1UCJAUg0r_mXrnk7QafxyAylabvUaCfffrhBhp05CYt2puUXgBz0JUK4wCrLxrKAFGk6J7PygRlKuRr8soNTq55DgFgrJZ59FbkbJYNFrHgG0WyPhkplSfWjSVDQbh2TfCfolVc9gNLGX7_xoL3CBDgx6G9u6TI4mNnSn4Agog1K_geji_OuGY4agAAxnEHe6N91j3-lqB6rZIjl_3o84aqL1429BiaGQ68LuJd">
+<div>
+<p class="font-label-md text-on-surface">Carlos Soto</p>
+<p class="text-[11px] text-text-secondary">Hace 45 min</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-danger/10 text-danger border border-danger/20">ADMIN</span>
+</div>
+<div class="flex items-center justify-between p-3 hover:bg-surface-container-low rounded-lg transition-all">
+<div class="flex items-center gap-3">
+<img alt="Lucia" class="w-10 h-10 rounded-full bg-surface-dim" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBParE1dc8Gf5kH5vH9g7mHl2roDIutYufCdsdmLU-mTTsRSibTA8wt1gyxLBXCpvmYCVq611ZNaa2q5avRjE0m34jUMYbziKNhH5INjBmYgKdt0FBUg88_JLXAWVH9XgnZbbkwgo3znrYwHeRr4tvCnzl1e0qHdJA8E7_gBb01DjVlyLQvP_OALW_T8MWCwi0pOIfT8sPzDjxrzUzmbJ1YT5SqBN_z-LytX9ad-dnZOjkc1Qdac1eOUZW4lbQavsSxeQN4eKvseglG">
+<div>
+<p class="font-label-md text-on-surface">Lucía Pardo</p>
+<p class="text-[11px] text-text-secondary">Hace 1 hora</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-secondary-container/30 text-secondary border border-secondary/20">ESTUDIANTE</span>
+</div>
+</div>
+<div class="mt-auto p-4 border-t border-border-subtle">
+<button class="w-full py-2 text-primary font-label-md bg-primary-fixed/10 rounded-lg hover:bg-primary-fixed/20 transition-all">Ver Gestión de Usuarios</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer (Authority: JSON) -->
+<footer class="w-full py-8 px-margin-desktop bg-surface-container-high dark:bg-on-background border-t border-border-subtle dark:border-outline-variant flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex flex-col items-center md:items-start">
+<span class="font-headline-sm text-headline-sm font-bold text-secondary dark:text-secondary-fixed">FIIS UNI</span>
+<p class="font-label-sm text-on-surface-variant dark:text-surface-variant">© 2024 Facultad de Ingeniería Industrial y de Sistemas - UNI</p>
+</div>
+<div class="flex gap-6">
+<a class="font-label-sm text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">Contacto</a>
+<a class="font-label-sm text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">Mapa de Sitio</a>
+<a class="font-label-sm text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">Privacidad</a>
+<a class="font-label-sm text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">Redes Sociales</a>
+</div>
+</footer>
+</main>
+<script>
+        // Simple micro-interaction for active card highlight
+        document.querySelectorAll('.bg-white.border').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-4px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body></html>

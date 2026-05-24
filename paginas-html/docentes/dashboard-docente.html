@@ -1,0 +1,348 @@
+<!DOCTYPE html><html class="light" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Portal Académico FIIS UNI - Dashboard Docente</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #E5E5E5; border-radius: 10px; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(8px); }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "text-secondary": "#6B6B6B",
+                      "on-primary": "#ffffff",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "on-secondary-fixed": "#002115",
+                      "on-primary-fixed-variant": "#1c4197",
+                      "success": "#3B9E45",
+                      "secondary-fixed-dim": "#68dbae",
+                      "on-secondary-container": "#007151",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed": "#ffdad5",
+                      "surface-bg": "#F8F9FA",
+                      "tertiary-fixed-dim": "#ffb4a9",
+                      "surface-dim": "#dcd9d9",
+                      "secondary-container": "#83f5c6",
+                      "primary-container": "#003087",
+                      "secondary": "#006c4e",
+                      "inverse-on-surface": "#f3f0ef",
+                      "on-secondary-fixed-variant": "#00513a",
+                      "background": "#fcf9f8",
+                      "on-tertiary-container": "#f97b6b",
+                      "on-background": "#1c1b1b",
+                      "border-subtle": "#E5E5E5",
+                      "surface-variant": "#e5e2e1",
+                      "on-error-container": "#93000a",
+                      "surface": "#fcf9f8",
+                      "inverse-surface": "#313030",
+                      "primary-fixed": "#dbe1ff",
+                      "surface-tint": "#3959b0",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-low": "#f6f3f2",
+                      "tertiary-container": "#6e140e",
+                      "surface-container-high": "#eae7e7",
+                      "on-tertiary-fixed-variant": "#84241c",
+                      "surface-container-highest": "#e5e2e1",
+                      "on-tertiary": "#ffffff",
+                      "brand-cream": "#E6D9AA",
+                      "on-surface": "#1c1b1b",
+                      "on-surface-variant": "#444652",
+                      "error": "#ba1a1a",
+                      "outline": "#747683",
+                      "on-error": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-primary-container": "#7f9df8",
+                      "outline-variant": "#c4c6d4",
+                      "tertiary": "#4d0001",
+                      "on-primary-fixed": "#00174b",
+                      "primary": "#001d59",
+                      "inverse-primary": "#b4c5ff",
+                      "warning": "#E8A838",
+                      "on-tertiary-fixed": "#410001",
+                      "secondary-fixed": "#86f8c9",
+                      "danger": "#E24B4A",
+                      "surface-bright": "#fcf9f8",
+                      "surface-container": "#f0eded"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "32px",
+                      "gutter": "24px",
+                      "base": "8px",
+                      "margin-mobile": "16px",
+                      "max-width": "1200px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-sm": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "500"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-surface-bg text-on-surface flex min-h-screen">
+<!-- SideNavBar Anchor -->
+<aside class="fixed left-0 top-0 h-full w-[240px] bg-surface-container-lowest border-r border-border-subtle flex flex-col py-base z-50">
+<div class="px-6 py-8">
+<h1 class="font-headline-sm text-headline-sm font-bold text-secondary">Portal Académico</h1>
+<p class="font-label-sm text-label-sm text-text-secondary">FIIS-UNI</p>
+</div>
+<nav class="flex-1 px-4 space-y-1 overflow-y-auto custom-scrollbar">
+<!-- Active State: Dashboard -->
+<a class="flex items-center gap-3 px-4 py-3 border-l-4 border-secondary text-secondary font-bold bg-secondary-container/10 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-all duration-200" href="#"><span class="material-symbols-outlined" data-icon="school">school</span><span class="font-label-md text-label-md flex-1">Cursos (Yachay UNI)</span><span class="material-symbols-outlined text-[18px] opacity-70" data-icon="open_in_new">open_in_new</span></a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-all duration-200" href="#"><span class="material-symbols-outlined" data-icon="how_to_reg">how_to_reg</span><span class="font-label-md text-label-md flex-1">Matrícula (Yachay UNI)</span><span class="material-symbols-outlined text-[18px] opacity-70" data-icon="open_in_new">open_in_new</span></a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-md text-label-md flex-1">Horario</span>
+<span class="material-symbols-outlined text-[18px] opacity-70" data-icon="open_in_new">open_in_new</span></a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-label-md text-label-md flex-1">Trámites</span>
+<span class="material-symbols-outlined text-[18px] opacity-70" data-icon="open_in_new">open_in_new</span></a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-all duration-200 border-t border-border-subtle mt-4" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-label-md">Perfil Académico</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md text-label-md">Mis Asesorías</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-all duration-200" href="#"><span class="material-symbols-outlined" data-icon="folder">folder</span><span class="font-label-md text-label-md flex-1">Mis Recursos (Intralu)</span><span class="material-symbols-outlined text-[18px] opacity-70" data-icon="open_in_new">open_in_new</span></a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="event">event</span>
+<span class="font-label-md text-label-md">Eventos</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-all duration-200 border-t border-border-subtle" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Configuración</span>
+</a>
+</nav>
+<div class="px-4 py-6 border-t border-border-subtle">
+<button class="w-full flex items-center justify-center gap-2 px-4 py-2 text-danger hover:bg-error-container transition-all duration-200 rounded-lg font-label-md">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Cerrar Sesión
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1 ml-[240px] flex flex-col min-w-0">
+<!-- TopAppBar Anchor -->
+<header class="h-16 flex justify-between items-center px-gutter bg-surface sticky top-0 z-40 border-b border-border-subtle">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-high p-2 rounded-full active:scale-95 transition-all" data-icon="menu">menu</button>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Dashboard</h2>
+</div>
+<div class="flex items-center gap-2">
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-high p-2 rounded-full active:scale-95 transition-all" data-icon="notifications">notifications</button>
+<div class="flex items-center gap-3 ml-4 pl-4 border-l border-border-subtle">
+<div class="text-right hidden sm:block">
+<p class="font-label-md text-label-md font-bold">Dr. Rodríguez</p>
+<p class="font-label-sm text-label-sm text-text-secondary">Docente Principal</p>
+</div>
+<img alt="User profile" class="w-10 h-10 rounded-full border border-border-subtle object-cover" data-alt="A professional portrait of a senior academic professor in his 50s, wearing glasses and a formal charcoal suit. He is smiling warmly in a bright, modern university office setting with soft, natural lighting. The background features a bookshelf with academic journals and a blurred window view of a campus garden. The overall aesthetic is sober and authoritative yet approachable." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsV402M-BdrcQjHFnCg2q_4cN8VzBddro47h6pbc5ff8GAdFhHmvI2UEro8uOGgrMvGuG6o9LIOupawlCQjughQjiL3OZEwEQS5sPfJPaeeBOHN51CsBYKoiv0vlnrPt8mZlLz_RKw25jXd-LFPryqqHyxmu1_Opr8NO3BV6pIpUF8VcYyBhkO9QyIUnJD3ggIlm3opDBopaoRpzZZGQA-71aUXAwZhQjJpIQ3DOGOx5bVP1BbwOnynQuK8dQSXB0Kcr4kdWVYCmJ-">
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<main class="p-8 max-w-max-width mx-auto w-full">
+<!-- Welcome Header -->
+<div class="mb-10">
+<h3 class="font-headline-lg text-headline-lg text-primary mb-2">Bienvenido, Dr. Rodríguez</h3>
+<p class="font-body-md text-body-md text-text-secondary">Aquí tienes un resumen de tu actividad académica para esta semana.</p>
+</div>
+<!-- KPI Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-10">
+<div class="bg-surface-container-lowest border border-border-subtle p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-secondary bg-secondary-container/20 p-2 rounded-lg" data-icon="group">group</span>
+<span class="font-label-sm text-label-sm text-success bg-success/15 px-2 py-1 rounded-full">+2 hoy</span>
+</div>
+<p class="font-label-md text-label-md text-text-secondary">Asesorías esta semana</p>
+<h4 class="text-[32px] font-bold text-on-surface">4</h4>
+</div>
+<div class="bg-surface-container-lowest border border-border-subtle p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-secondary bg-secondary-container/20 p-2 rounded-lg" data-icon="upload_file">upload_file</span>
+<span class="font-label-sm text-label-sm text-secondary bg-secondary/15 px-2 py-1 rounded-full">Meta: 15</span>
+</div>
+<p class="font-label-md text-label-md text-text-secondary">Recursos publicados</p>
+<h4 class="text-[32px] font-bold text-on-surface">12</h4>
+</div>
+<div class="bg-surface-container-lowest border border-border-subtle p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-secondary bg-secondary-container/20 p-2 rounded-lg" data-icon="calendar_today">calendar_today</span>
+</div>
+<p class="font-label-md text-label-md text-text-secondary">Eventos próximos</p>
+<h4 class="text-[32px] font-bold text-on-surface">2</h4>
+</div>
+<div class="bg-surface-container-lowest border border-border-subtle p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-success bg-success/15 p-2 rounded-lg" data-icon="verified_user">verified_user</span>
+</div>
+<p class="font-label-md text-label-md text-text-secondary">Perfil actualizado</p>
+<h4 class="text-[24px] font-bold text-success flex items-center gap-2">Sí <span class="material-symbols-outlined" data-icon="check_circle">check_circle</span></h4>
+</div>
+</div>
+<!-- Two Column Layout: Schedule and Upload -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter items-start">
+<!-- Próximas Asesorías List -->
+<div class="lg:col-span-2 bg-surface-container-lowest border border-border-subtle rounded-xl overflow-hidden shadow-sm">
+<div class="px-6 py-4 border-b border-border-subtle flex justify-between items-center">
+<h5 class="font-headline-sm text-headline-sm font-bold">Próximas asesorías</h5>
+<button class="text-secondary font-label-md text-label-md hover:underline">Ver calendario completo</button>
+</div>
+<div class="divide-y divide-border-subtle">
+<!-- Item 1 -->
+<div class="px-6 py-5 flex items-center gap-6 hover:bg-surface-container-low transition-colors">
+<div class="text-center min-w-[60px]">
+<p class="font-label-sm text-label-sm text-text-secondary uppercase">Hoy</p>
+<p class="font-headline-sm text-headline-sm font-bold">14:00</p>
+</div>
+<div class="flex-1">
+<h6 class="font-label-md text-label-md font-bold text-on-surface">María García</h6>
+<p class="font-body-md text-body-md text-text-secondary">Tesis de Optimización en Procesos Industriales</p>
+</div>
+<div>
+<span class="bg-primary-container/10 text-primary-container text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Virtual</span>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" data-icon="video_call">video_call</button>
+</div>
+<!-- Item 2 -->
+<div class="px-6 py-5 flex items-center gap-6 hover:bg-surface-container-low transition-colors">
+<div class="text-center min-w-[60px]">
+<p class="font-label-sm text-label-sm text-text-secondary uppercase">Mañ</p>
+<p class="font-headline-sm text-headline-sm font-bold">10:30</p>
+</div>
+<div class="flex-1">
+<h6 class="font-label-md text-label-md font-bold text-on-surface">Jorge Luis Paz</h6>
+<p class="font-body-md text-body-md text-text-secondary">Proyecto de Fin de Carrera - Logística 4.0</p>
+</div>
+<div>
+<span class="bg-secondary-container/20 text-secondary text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Presencial</span>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" data-icon="location_on">location_on</button>
+</div>
+<!-- Item 3 -->
+<div class="px-6 py-5 flex items-center gap-6 hover:bg-surface-container-low transition-colors">
+<div class="text-center min-w-[60px]">
+<p class="font-label-sm text-label-sm text-text-secondary uppercase">Jue</p>
+<p class="font-headline-sm text-headline-sm font-bold">16:00</p>
+</div>
+<div class="flex-1">
+<h6 class="font-label-md text-label-md font-bold text-on-surface">Ana Lucía Torres</h6>
+<p class="font-body-md text-body-md text-text-secondary">Revisión de Marco Teórico - Gestión de Calidad</p>
+</div>
+<div>
+<span class="bg-primary-container/10 text-primary-container text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Virtual</span>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" data-icon="video_call">video_call</button>
+</div>
+</div>
+</div>
+<!-- Subir Recurso Widget -->
+<div class="bg-surface-container-lowest border border-border-subtle rounded-xl p-6 shadow-sm">
+<h5 class="font-headline-sm text-headline-sm font-bold mb-6">Subir recurso académico</h5>
+<div class="border-2 border-dashed border-border-subtle rounded-xl p-8 flex flex-col items-center justify-center text-center cursor-pointer hover:border-secondary hover:bg-secondary/5 transition-all group">
+<div class="bg-surface-container-high rounded-full p-4 mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="cloud_upload">cloud_upload</span>
+</div>
+<p class="font-label-md text-label-md font-bold mb-1">Arrastra tus archivos aquí</p>
+<p class="font-label-sm text-label-sm text-text-secondary mb-6">O haz clic para explorar tus documentos (PDF, PPT, DOCX)</p>
+<button class="bg-secondary text-on-primary px-6 py-2 rounded-lg font-label-md shadow-sm active:scale-95 transition-all">Seleccionar Archivo</button>
+</div>
+<div class="mt-6 space-y-3">
+<div class="flex items-center gap-3 p-3 bg-surface-bg rounded-lg border border-border-subtle">
+<span class="material-symbols-outlined text-text-secondary" data-icon="picture_as_pdf">picture_as_pdf</span>
+<div class="flex-1 overflow-hidden">
+<p class="text-[12px] font-bold truncate">Syllabus_Optimización_2024-II.pdf</p>
+<div class="w-full bg-border-subtle h-1 rounded-full mt-1">
+<div class="bg-success h-1 rounded-full w-[100%]"></div>
+</div>
+</div>
+<span class="material-symbols-outlined text-success text-sm" data-icon="check_circle">check_circle</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Anchor -->
+<footer class="mt-auto border-t border-border-subtle bg-surface-container-high py-8 px-margin-desktop">
+<div class="max-w-max-width mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-secondary">FIIS UNI</span>
+<span class="text-text-secondary">|</span>
+<p class="font-label-sm text-label-sm text-text-secondary">© 2024 Facultad de Ingeniería Industrial y de Sistemas</p>
+</div>
+<nav class="flex gap-6">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Contacto</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Mapa de Sitio</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacidad</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Redes Sociales</a>
+</nav>
+</div>
+</footer>
+</div>
+<!-- Micro-interaction for Drag and Drop -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dropzone = document.querySelector('.border-dashed');
+            if (dropzone) {
+                dropzone.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    dropzone.classList.add('border-secondary', 'bg-secondary/5');
+                });
+                dropzone.addEventListener('dragleave', () => {
+                    dropzone.classList.remove('border-secondary', 'bg-secondary/5');
+                });
+                dropzone.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    dropzone.classList.remove('border-secondary', 'bg-secondary/5');
+                    alert('Archivo cargado exitosamente (Simulación)');
+                });
+            }
+        });
+    </script>
+
+
+</body></html>

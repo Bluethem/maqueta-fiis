@@ -1,0 +1,407 @@
+<!DOCTYPE html><html class="light" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Dashboard UNICODE - Portal FIIS UNI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid #E5E5E5;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #E5E5E5;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "text-secondary": "#6B6B6B",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-secondary-fixed": "#002115",
+                        "on-primary-fixed-variant": "#1c4197",
+                        "success": "#3B9E45",
+                        "secondary-fixed-dim": "#68dbae",
+                        "on-secondary-container": "#007151",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#ffdad5",
+                        "surface-bg": "#F8F9FA",
+                        "tertiary-fixed-dim": "#ffb4a9",
+                        "surface-dim": "#dcd9d9",
+                        "secondary-container": "#83f5c6",
+                        "primary-container": "#003087",
+                        "secondary": "#006c4e",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-secondary-fixed-variant": "#00513a",
+                        "background": "#fcf9f8",
+                        "on-tertiary-container": "#f97b6b",
+                        "on-background": "#1c1b1b",
+                        "border-subtle": "#E5E5E5",
+                        "surface-variant": "#e5e2e1",
+                        "on-error-container": "#93000a",
+                        "surface": "#fcf9f8",
+                        "inverse-surface": "#313030",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-tint": "#3959b0",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "tertiary-container": "#6e140e",
+                        "surface-container-high": "#eae7e7",
+                        "on-tertiary-fixed-variant": "#84241c",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-tertiary": "#ffffff",
+                        "brand-cream": "#E6D9AA",
+                        "on-surface": "#1c1b1b",
+                        "on-surface-variant": "#444652",
+                        "error": "#ba1a1a",
+                        "outline": "#747683",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#7f9df8",
+                        "outline-variant": "#c4c6d4",
+                        "tertiary": "#4d0001",
+                        "on-primary-fixed": "#00174b",
+                        "primary": "#001d59",
+                        "inverse-primary": "#b4c5ff",
+                        "warning": "#E8A838",
+                        "on-tertiary-fixed": "#410001",
+                        "secondary-fixed": "#86f8c9",
+                        "danger": "#E24B4A",
+                        "surface-bright": "#fcf9f8",
+                        "surface-container": "#f0eded"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "max-width": "1200px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface-bg text-on-surface selection:bg-secondary-container">
+<!-- SideNavBar Anchor -->
+<aside class="fixed left-0 top-0 h-full w-[240px] bg-surface-container-lowest border-r border-border-subtle flex flex-col py-base z-50">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-8 h-8 bg-secondary rounded-lg flex items-center justify-center text-white font-bold">U</div>
+<div>
+<h1 class="font-headline-sm text-headline-sm font-bold text-secondary">Portal Académico</h1>
+<p class="text-[10px] text-text-secondary uppercase tracking-widest font-bold">FIIS-UNI</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1 px-3 custom-scrollbar overflow-y-auto">
+<div class="text-[11px] font-bold text-text-secondary px-3 mb-2 uppercase tracking-tighter">Principal</div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg border-l-4 border-secondary text-secondary font-bold bg-secondary-container/10 transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<div class="text-[11px] font-bold text-text-secondary px-3 mt-6 mb-2 uppercase tracking-tighter">UNICODE Centro</div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-label-md text-label-md flex-1">Mesa de Partes</span>
+<span class="material-symbols-outlined text-[16px] opacity-60">open_in_new</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-label-md text-label-md">Eventos</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined">campaign</span>
+<span class="font-label-md text-label-md">Convocatorias</span>
+</a>
+</nav>
+<div class="px-3 mt-auto pt-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-md text-label-md">Ayuda</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Configuración</span>
+</a>
+<button class="w-full flex items-center gap-3 px-3 py-3 rounded-xl bg-danger/10 text-danger font-bold hover:bg-danger/20 transition-all mt-4">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-md text-label-md">Cerrar Sesión</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="ml-[240px] flex flex-col min-h-screen">
+<!-- TopAppBar Anchor -->
+<header class="h-16 flex justify-between items-center px-gutter bg-surface border-b border-border-subtle sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-all active:scale-95">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="font-headline-md text-headline-md text-on-surface">Dashboard</h2>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-all active:scale-95 text-on-surface-variant">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-8 w-px bg-border-subtle mx-2"></div>
+<div class="flex items-center gap-3 pl-2">
+<div class="text-right hidden sm:block">
+<p class="font-label-md text-label-md text-on-surface font-bold">Usuario FIIS</p>
+<p class="text-[11px] text-text-secondary leading-none">Miembro UNICODE</p>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-secondary overflow-hidden">
+<img alt="User profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrTvJ8fOasPGKLDMPFZwOsCL3Sey8UuutBCBxDh4VNWy_Rpa9NW1yMZgRqYanHR2yOUyKBB1O_3aBaDjIL7V7NmFYHIBl8qv0r79dWOa_kJJvX2HWpmNV3sYHONuiiwzXd2VPIsED5GU5eTHPTHU8dbJCOupBivcTrhS4U5xqc5ufSJAb-2gk3FfNyNeNi0Zapg0_lIJ_oIawSdPFUu8jTIR7KwJA29ceFVRabtWhFV1lSSAQ4xlNn1piaaPMSENAYc97wLXZ-MJ2B">
+</div>
+</div>
+</div>
+</header>
+<!-- Canvas -->
+<main class="flex-1 p-margin-desktop max-w-max-width mx-auto w-full">
+<!-- Header Section -->
+<div class="mb-10">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<nav class="flex items-center gap-2 text-text-secondary mb-2">
+<span class="font-label-sm text-label-sm">UNICODE</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="font-label-sm text-label-sm font-bold text-secondary">Centro de Informática</span>
+</nav>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Panel UNICODE — Centro de Informática</h1>
+<p class="text-text-secondary mt-1 font-body-md text-body-md">Gestión centralizada de actividades, recursos y presencia digital.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-5 py-2.5 rounded-lg border-2 border-secondary text-secondary font-bold font-label-md hover:bg-secondary/5 transition-all">
+                        Nuevo Evento
+                    </button>
+<button class="px-5 py-2.5 rounded-lg bg-secondary text-white font-bold font-label-md shadow-lg shadow-secondary/20 hover:bg-on-secondary-container transition-all">
+                        Publicar Noticia
+                    </button>
+</div>
+</div>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter mb-10">
+<div class="bg-surface-container-lowest border border-border-subtle p-6 rounded-xl flex items-center gap-4 hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">groups</span>
+</div>
+<div>
+<p class="text-text-secondary font-label-sm text-label-sm uppercase tracking-wider">Miembros activos</p>
+<p class="font-headline-md text-headline-md font-bold text-on-surface">45</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-border-subtle p-6 rounded-xl flex items-center gap-4 hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+</div>
+<div>
+<p class="text-text-secondary font-label-sm text-label-sm uppercase tracking-wider">Eventos este ciclo</p>
+<p class="font-headline-md text-headline-md font-bold text-on-surface">3</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-border-subtle p-6 rounded-xl flex items-center gap-4 hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-warning/10 text-warning flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">campaign</span>
+</div>
+<div>
+<p class="text-text-secondary font-label-sm text-label-sm uppercase tracking-wider">Convocatorias</p>
+<p class="font-headline-md text-headline-md font-bold text-on-surface">1</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-border-subtle p-6 rounded-xl flex items-center gap-4 hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-success/10 text-success flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">upload_file</span>
+</div>
+<div>
+<p class="text-text-secondary font-label-sm text-label-sm uppercase tracking-wider">Recursos subidos</p>
+<p class="font-headline-md text-headline-md font-bold text-on-surface">28</p>
+</div>
+</div>
+</div>
+<!-- Main Sections Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- My Page State -->
+<div class="lg:col-span-1">
+<div class="bg-surface-container-lowest border border-border-subtle rounded-xl overflow-hidden flex flex-col h-full">
+<div class="p-6 border-b border-border-subtle bg-surface-container-low/50 flex justify-between items-center">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Estado de mi página</h3>
+<span class="w-2.5 h-2.5 rounded-full bg-success animate-pulse"></span>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="relative group rounded-lg overflow-hidden border border-border-subtle mb-6 aspect-video">
+<img alt="Page preview" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAKxWFKpeDzoAoUdpybEQa4q2zHYXypkHwBU_JH9fCDnMsBGYTNuZ-jfL-3fEnBLMVn0YWr-zxalOzm1N7G8Y0WkgASxBv9kyHgIwjBOHwPortK2ihqwzjzmMRrRZ-68CqmZ9NAee8EbReavefei4bIc3mo1yIXhQM48B7U800vLf3nblF-agxhVYMNZOuPS8pkoiCd6ixqmdzHv4oHJD9i3JNVdS_Zkz0gYpK1OkyoleskCXtrdbBzX3YjYHwKpF4559hsYAA2R1E">
+<div class="absolute inset-0 bg-secondary/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+<span class="material-symbols-outlined text-white text-4xl">visibility</span>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center text-label-md font-label-md">
+<span class="text-text-secondary">Visitas totales:</span>
+<span class="text-on-surface font-bold">1,240</span>
+</div>
+<div class="flex justify-between items-center text-label-md font-label-md">
+<span class="text-text-secondary">Última edición:</span>
+<span class="text-on-surface font-bold">Hace 2 días</span>
+</div>
+<button class="w-full py-3 mt-4 rounded-xl bg-secondary text-white font-bold flex items-center justify-center gap-2 hover:bg-on-secondary-container transition-all active:scale-95">
+<span class="material-symbols-outlined">edit</span>
+                                Editar página
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Active Calls -->
+<div class="lg:col-span-2">
+<div class="bg-surface-container-lowest border border-border-subtle rounded-xl overflow-hidden h-full">
+<div class="p-6 border-b border-border-subtle flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">campaign</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Mis convocatorias activas</h3>
+</div>
+<a class="text-secondary font-bold font-label-sm hover:underline" href="#">Ver todas</a>
+</div>
+<div class="p-6">
+<div class="p-5 border border-border-subtle rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-6 hover:border-secondary transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-3xl">code</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-secondary transition-colors">Taller de Flutter</h4>
+<p class="text-text-secondary text-label-md">Cierre: 15 de Noviembre, 2024</p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-6">
+<div class="text-center">
+<p class="text-[10px] text-text-secondary uppercase font-bold">Postulantes</p>
+<p class="text-xl font-bold text-on-surface">12</p>
+</div>
+<div class="px-4 py-1.5 rounded-full bg-success/15 text-success font-bold text-label-sm flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-success"></span>
+                                    En curso
+                                </div>
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-all">
+<span class="material-symbols-outlined text-text-secondary">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Full Width Upcoming Events -->
+<div class="lg:col-span-3">
+<div class="bg-surface-container-lowest border border-border-subtle rounded-xl p-6">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Próximos Eventos</h3>
+<span class="text-secondary material-symbols-outlined text-2xl">event</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex gap-4 p-4 rounded-xl border border-border-subtle hover:bg-surface-container-low transition-colors">
+<div class="min-w-[56px] h-14 bg-surface-container-high rounded-lg flex flex-col items-center justify-center border border-border-subtle">
+<span class="text-[11px] font-bold text-text-secondary uppercase">OCT</span>
+<span class="text-xl font-bold text-primary leading-none">28</span>
+</div>
+<div>
+<p class="font-bold text-on-surface text-body-lg">Hackathon FIIS 2024</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-[16px] text-text-secondary">schedule</span>
+<span class="text-sm text-text-secondary">09:00 AM — Lab de Computo</span>
+</div>
+</div>
+</div>
+<div class="flex gap-4 p-4 rounded-xl border border-border-subtle hover:bg-surface-container-low transition-colors opacity-70">
+<div class="min-w-[56px] h-14 bg-surface-container-high rounded-lg flex flex-col items-center justify-center border border-border-subtle">
+<span class="text-[11px] font-bold text-text-secondary uppercase">NOV</span>
+<span class="text-xl font-bold text-primary leading-none">05</span>
+</div>
+<div>
+<p class="font-bold text-on-surface text-body-lg">Charla: IA en la Industria</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-[16px] text-text-secondary">schedule</span>
+<span class="text-sm text-text-secondary">04:00 PM — Auditorio</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Anchor -->
+<footer class="w-full py-8 px-margin-desktop bg-surface-container-high border-t border-border-subtle flex flex-col md:flex-row justify-between items-center gap-4 mt-auto">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 bg-secondary/20 text-secondary flex items-center justify-center rounded font-bold text-xs">U</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-bold">© 2024 Facultad de Ingeniería Industrial y de Sistemas - UNI</p>
+</div>
+<div class="flex gap-6">
+<a class="text-on-surface-variant font-label-sm text-label-sm hover:text-secondary transition-colors" href="#">Contacto</a>
+<a class="text-on-surface-variant font-label-sm text-label-sm hover:text-secondary transition-colors" href="#">Mapa de Sitio</a>
+<a class="text-on-surface-variant font-label-sm text-label-sm hover:text-secondary transition-colors" href="#">Privacidad</a>
+<a class="text-on-surface-variant font-label-sm text-label-sm hover:text-secondary transition-colors" href="#">Redes Sociales</a>
+</div>
+</footer>
+</div>
+<!-- Micro-interactions Script -->
+<script>
+    document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            if (!el.classList.contains('active')) {
+                el.style.transform = 'translateY(-1px)';
+            }
+        });
+        el.addEventListener('mouseleave', () => {
+            el.style.transform = 'translateY(0)';
+        });
+    });
+    console.log("UNICODE Dashboard Initialized");
+</script>
+</body></html>
