@@ -91,6 +91,7 @@ Los requerimientos se clasifican en tres grupos: requerimientos web, requerimien
 | NÚMERO | Requerimiento web | Usuario beneficiado | Input / entrada | Output / salida | Comportamiento esperado | Prioridad | Fase |
 |--------|-------------------|----------------------|-------------------|-------------------|---------------------------|-----------|------|
 | 1 | Implementar sección de noticias y comunicados institucionales. | Estudiante, docente, administrativo. | Noticias, actividades y comunicados institucionales, mejoras institucionales y contenidos de reconocimiento al personal administrativo. | Publicaciones visibles y organizadas. | La comunidad FIIS accede a información actualizada de gestión y actividades. | Alta | MVP |
+| 2 | Crear intranet o acceso restringido para personal administrativo. | Personal administrativo. | Usuario, contraseña y contenido interno. | Panel privado con información interna. | Solo usuarios autorizados acceden a información interna. | Alta | Fase 2 |
 | 3 | Incorporar indicadores con visualización restringida. | Autoridad, personal administrativo. | Indicadores y reportes administrativos. | Visualización de métricas y seguimiento interno. | El sistema muestra información según permisos asignados. | Media | Fase 3 |
 | 4 | Centralizar información de servicios y áreas de la facultad. | Estudiante | Información de biblioteca, mesa de partes, proyección social y otras áreas. | Directorio y descripción de servicios. | El usuario comprende las funciones y acceso de cada servicio. | Alta | MVP |
 | 5 | Crear secciones informativas de laboratorios FIIS. | Estudiante | Información y funciones de laboratorios. | Fichas informativas de laboratorios. | El usuario conoce actividades y objetivos de cada laboratorio. | Media | MVP |
@@ -504,25 +505,16 @@ Los requerimientos se clasifican en tres grupos: requerimientos web, requerimien
 
 | NÚMERO | Requerimiento web | Usuario beneficiado | Input / entrada | Output / salida | Comportamiento esperado | Prioridad | Fase |
 |--------|-------------------|----------------------|-------------------|-------------------|---------------------------|-----------|------|
-| 1 | Bolsa de Empleabilidad Integrada | Egresado, Empresa | Datos de la oferta, perfil solicitado, modalidad, enlace de postulación. | Lista de vacantes filtradas por carrera (Industrial/Sistemas). | Las empresas registran ofertas; el egresado postula directamente. Incluye métricas de éxito para el Decanato. | Alta | MVP |
 | 2 | Directorio y Perfiles Profesionales | Egresado, Estudiante | LinkedIn URL, promoción, empresa actual, sector de especialidad. | Perfil público dentro de la comunidad digital FIIS. | Permite buscar egresados por empresa o sector para networking. Sincroniza datos básicos de LinkedIn. | Alta | MVP |
 | 3 | Alertas de Empleabilidad por Correo | Egresado | Preferencias de búsqueda, áreas de interés, correo electrónico. | Notificaciones push y correos personalizados. | El sistema envía una alerta automática cuando una nueva oferta coincide con el perfil del egresado. | Media | MVP |
 | 4 | Calendario de Eventos y Webinars | Egresado, Estudiante | Datos del evento, fecha, link de registro, ponente. | Calendario interactivo y formulario de inscripción. | Centraliza ferias laborales, charlas de tendencias y eventos de networking con recordatorios. | Media | Fase 2 |
-| 7 | Enlace a Capacitación Especializada | Egresado, Estudiante | Clic en curso de interés (SAP, Python, Power BI). | Redirección a interfaces de Sistemas UNI u otros centros. | Conecta la web con los centros de capacitación de la facultad para ofrecer descuentos exclusivos. | Baja | Fase 2 |
-| 8 | Módulo de Gestión de Donaciones | Egresado, Facultad | Monto de donación, proyecto elegido (becas, laboratorios). | Comprobante de donación y reporte de impacto. | Permite a los egresados contribuir económicamente al financiamiento de proyectos de la FIIS. | Baja | Fase 3 |
 
 ### Requerimientos de gestión
 
 | NÚMERO | Requerimiento de gestión | Responsable sugerido | Motivo | Relación con la web | Prioridad | Recomendación |
 |--------|----------------------------|----------------------|--------|----------------------|-----------|---------------|
 | 1 | Definir responsable de validación de empresas y vacantes. | Coordinación empresarial / administrador FIIS. | Evitar publicaciones falsas, vencidas o incompletas. | El módulo Empresas necesita aprobación antes de publicar. | Alta | Fase 2 o fase 3 |
-| 2 | Gestión de convenios empresariales exclusivos. | Oficina de Egresados / Decanato FIIS. | Formalizar alianzas con empresas donde laboran alumnos FIIS para ofertas exclusivas. | Alimenta la base de datos de la Bolsa de Trabajo. | Alta | MVP |
-| 4 | Protocolo de seguimiento e impacto (Métricas). | Unidad de Acreditación (ABET/Sunedu). | Justificar la inversión ante el Decanato mediante el conteo de egresados colocados. | Reportes automáticos del Dashboard administrativo. | Alta | MVP |
-| 5 | Moderación y reglas de comunidad digital. | Comité Alumni / Administrador Web. | Evitar spam y mantener la red profesional (estilo LinkedIn) con perfiles reales. | Control del Foro y Red de Contactos. | Media | Fase 2 |
 | 6 | Integración de enlaces con Sistemas UNI/CEPS. | Coordinación de Centros Especializados. | Mantener actualizados los links de cursos (SAP, Python) y códigos de descuento. | Contenido del Módulo de Capacitación. | Baja | Fase 2 |
-| 7 | Marco legal y financiero para Donaciones. | Patronato FIIS / Tesorería. | Garantizar la transparencia y el destino de los fondos para becas o laboratorios. | Proceso de pago del Módulo de Apoyo Institucional. | Media | Fase 3 |
-| 8 | Coordinación de reserva de instalaciones físicas. | Administración de Local / Oficina de Deportes CEIIS. | Fecha de reserva, tipo de instalación (Auditorio/Biblioteca/Deportes). | Ticket de acceso o confirmación de reserva. | Baja | Fase 3 |
-| 9 | Captación de Inversionistas para Proyectos. | Unidad de Investigación / Emprendimiento. | Vincular grandes proyectos de alumnos con egresados senior o empresas top. | Gestión de la sección Feria Laboral y Proyectos. | Media | Fase 3 |
 
 ### Posibles sistemas adicionales / requerimientos de software
 
@@ -590,6 +582,18 @@ Los requerimientos se clasifican en tres grupos: requerimientos web, requerimien
 
 ## Bloque 1 - Empresas
 
+1. Decisión: No implementar en MVP ni Fase 2 inmediata.
+2. Justificación:
+
+    La "capa editorial FIIS sobre la bolsa central UNI" (req #20) implica una integración técnica con un sistema externo del cual no se tiene control ni certeza de disponibilidad técnica. Depende de:
+
+    - Que la Bolsa Central UNI exponga una API pública o gestionable.
+    - Coordinación con OTI UNI y responsables de la bolsa central.
+    - Mantenimiento continuo ante cambios del lado externo.
+
+Dado que el módulo Empresas propio de la FIIS (requerimientos 1-25 del bloque principal) cubre las necesidades inmediatas (publicación de prácticas, ofertas, convenios, eventos y perfil de empresas) sin depender de terceros, se opta por descartar la integración con la bolsa central UNI en esta etapa.
+Si en una fase posterior la Bolsa Central UNI habilita una interfaz de programación de aplicaciones API documentada y estable, se podrá evaluar técnicamente la integración para sincronizar oportunidades, enlaces o filtros relevantes para la FIIS. Hasta entonces, el módulo Empresas FIIS opera de forma independiente y autónoma.
+
 ### Requerimientos web
 
 | NÚMERO | Requerimiento web | Usuario beneficiado | Input / entrada | Output / salida | Comportamiento esperado | Prioridad | Fase |
@@ -610,15 +614,19 @@ Los requerimientos se clasifican en tres grupos: requerimientos web, requerimien
 
 **Secretaria academica**
 
+1. Decisión: No implementar.
+2. Justificación: 
+
+    Este requerimiento depende de una fuente de datos externa (notas, aprobados/desaprobados, cursos críticos) que actualmente no está disponible ni integrada en el sistema. Para generar estos gráficos se requeriría:
+    - Acceso a los sistemas académicos institucionales (matrícula, actas de notas).
+    - Carga periódica de datos externos con procesos de validación.
+    - Definición previa de qué métricas y con qué permisos se visualizan.
+
+El alcance del portal web no incluye la gestión académica ni la centralización de datos de rendimiento. Por tanto, se descarta este requerimiento. Si en una fase posterior se dispone de una fuente de datos estructurada y accesible, podría evaluarse como un módulo de reporting independiente.
+
 | NÚMERO | Requerimiento web | Usuario beneficiado | Input / entrada | Output / salida | Comportamiento esperado | Prioridad | Fase |
 |--------|-------------------|----------------------|-------------------|-------------------|---------------------------|-----------|------|
 | 3 | Incorporar gráficos o paneles de análisis académico. | Estudiantes, autoridad. | Datos de aprobados, desaprobados y cursos críticos. | Paneles estadísticos y gráficos académicos. | El sistema permite visualizar el análisis académico autorizado. | Media | Fase 2 |
-
-**Secretaria administrativa**
-
-| NÚMERO | Requerimiento de gestión | Responsable sugerido | Motivo | Relación con la web | Prioridad | Recomendación |
-|--------|----------------------------|----------------------|--------|----------------------|-----------|---------------|
-| 2 | Crear intranet o acceso restringido para personal administrativo. | Personal administrativo. | Usuario, contraseña y contenido interno. | Panel privado con información interna. | Solo usuarios autorizados acceden a información interna. | Alta | Fase 2 |
 
 ---
 
@@ -630,13 +638,19 @@ Los requerimientos se clasifican en tres grupos: requerimientos web, requerimien
 |--------|----------------------------|----------------------|--------|----------------------|-----------|---------------|
 | 2 | Establecer validación previa para publicar información académica y estadísticas estudiantiles. | Decanato | Saber cómo está la salud de la FIIS. | Los paneles y gráficos académicos requieren aprobación previa. | Alta | Fase 2 |
 
-**Secretaria administrativa**
-
-| NÚMERO | Requerimiento de gestión | Responsable sugerido | Motivo | Relación con la web | Prioridad | Recomendación |
-|--------|----------------------------|----------------------|--------|----------------------|-----------|---------------|
-| 2 | Establecer permisos y niveles de acceso para la intranet administrativa. | Administrador web y Secretaría Administrativa | Proteger información interna y restringida. | La web incluirá un módulo privado para administrativos. | Alta | Fase 2 |
-
 ## Bloque 3 - Docentes, escuelas y departamentos
+
+**Req 4 — Directorio institucional de docentes**
+1. Decisión: No implementar.
+2. Justificación: 
+
+    Los datos docentes (nombres, cursos a cargo, horarios) ya son publicados por los sistemas institucionales existentes en el proceso de matrícula — específicamente en la carga horaria donde los alumnos seleccionan sus cursos y profesores por ciclo. Implementar un directorio independiente implicaría duplicar información que ya está disponible en los canales oficiales de la UNI, sin agregar valor real al usuario. Se descarta.
+
+**Req 8 — Sistema de reserva de asesorías académicas**
+1. Decisión: No implementar.
+2. Justificación: 
+
+    La reserva de asesorías requiere coordinación administrativa y logística fuera del alcance del portal web: disponibilidad de ambientes físicos (salones, oficinas), asignación de horarios docentes, gestión de permisos y flujos de aprobación. Esta funcionalidad corresponde a un sistema de gestión interna de procesos administrativos que se está considerando como un proyecto aparte, donde se centralicen reservas, incidencias y demás operaciones que requieren intervención administrativa. Se descarta del portal web.
 
 ### Requerimientos web
 
@@ -646,6 +660,17 @@ Los requerimientos se clasifican en tres grupos: requerimientos web, requerimien
 | 8 | Sistema de reserva de asesorías académicas | Docentes y estudiantes | Fecha, hora y motivo | Reserva confirmada | Solicitar y gestionar asesorías académicas | Media | Fase 2 |
 
 ## Bloque 4 - Administrativo
+
+**Requerimientos 1–11 y 14 del Bloque 4 — Sistemas administrativos internos**
+1. Decisión: No implementar en el portal web. Se agrupan en un sistema aparte de gestión administrativa interna.
+2. Justificación:
+
+    Todos estos requerimientos corresponden a procesos operativos y administrativos que manejan información sensible, datos personales de personal administrativo y flujos internos de la facultad (asistencia, vacaciones, incidencias, presupuesto, trámites documentarios, reservas). Mezclarlos con el portal web público implicaría:
+    - Exponer datos sensibles en una plataforma de acceso abierto.
+    - Duplicar funcionalidades que ya existen en sistemas institucionales (asistencia por huella digital, control de personal presencial).
+    - Mezclar responsabilidades: el portal web tiene un perfil institucional-informativo y de empleabilidad, no de gestión interna.
+
+Estos requerimientos se consolidan en un Sistema de Gestión Administrativa Interna FIIS, independiente del portal web, con su propia base de datos, control de acceso restringido por roles administrativos y flujos de aprobación. Esto mantiene la separación de concerns y protege la información sensible.
 
 ### Requerimientos web
 
@@ -682,12 +707,21 @@ Los requerimientos se clasifican en tres grupos: requerimientos web, requerimien
 
 ## Bloque 6 - Egresados
 
+1. Decisión: Implementación parcial. Lo que se solapa con el bloque Empresas se cubre desde el portal web. Las funcionalidades exclusivas de egresados se delegan a un Sistema de Egresados FIIS independiente.
+2. Justificación:
+
+    Del bloque de egresados, las funcionalidades de bolsa de empleabilidad, calendario de eventos y casos de éxito ya están contempladas en los requerimientos 6, 7, 10, 14 y 21 del bloque Empresas, por lo que se gestionan desde el portal web sin duplicar esfuerzos.
+    Las funcionalidades restantes —directorio de egresados con networking, alertas personalizadas, asesoría de empleabilidad, mentoría, foro comunitario, donaciones, capacitación especializada y reserva de instalaciones— son componentes altamente especializados con lógica de negocio, moderación y datos propios que no corresponden al perfil del portal web. Estas se agrupan en un Sistema de Egresados FIIS como plataforma independiente, conectable al portal mediante enlaces y autenticación compartida.
+
 ### Requerimientos web
 
 | NÚMERO | Requerimiento web | Usuario beneficiado | Input / entrada | Output / salida | Comportamiento esperado | Prioridad | Fase |
 |--------|-------------------|----------------------|-------------------|-------------------|---------------------------|-----------|------|
+| 1 | Bolsa de Empleabilidad Integrada | Egresado, Empresa | Datos de la oferta, perfil solicitado, modalidad, enlace de postulación. | Lista de vacantes filtradas por carrera (Industrial/Sistemas). | Las empresas registran ofertas; el egresado postula directamente. Incluye métricas de éxito para el Decanato. | Alta | MVP |
 | 5 | Agendamiento de Asesoría de Empleabilidad | Egresado | Selección de horario, carga de CV para revisión. | Cita confirmada en calendario y notificación al orientador. | Permite reservar sesiones con psicólogos para simulacros de entrevista y mejora de perfil profesional. | Alta | Fase 2 |
 | 6 | Módulo de Mentoría Senior-Junior | Egresado (Senior/Junior) | Perfil del mentor, áreas de asesoría, solicitud del mentee. | Conexión directa entre ambos perfiles. | Facilita que egresados con experiencia orienten a los recién egresados en su desarrollo de carrera. | Media | Fase 2 |
+| 7 | Enlace a Capacitación Especializada | Egresado, Estudiante | Clic en curso de interés (SAP, Python, Power BI). | Redirección a interfaces de Sistemas UNI u otros centros. | Conecta la web con los centros de capacitación de la facultad para ofrecer descuentos exclusivos. | Baja | Fase 2 |
+| 8 | Módulo de Gestión de Donaciones | Egresado, Facultad | Monto de donación, proyecto elegido (becas, laboratorios). | Comprobante de donación y reporte de impacto. | Permite a los egresados contribuir económicamente al financiamiento de proyectos de la FIIS. | Baja | Fase 3 |
 | 9 | Foro de Comunidad e Intercambio | Egresado | Publicación de consultas, experiencias o noticias. | Hilo de discusión visible para miembros registrados. | Espacio interno para fortalecer el vínculo y resolver dudas técnicas o laborales entre colegas. | Media | Fase 3 |
 | 10 | Reserva de Instalaciones y Beneficios | Egresado | Fecha de reserva, tipo de instalación (Biblioteca/Deportes). | Ticket de acceso o confirmación de reserva. | Gestiona el acceso físico a la facultad y el uso de servicios como el gimnasio o centro médico UNI. | Baja | Fase 3 |
 
@@ -697,9 +731,25 @@ Los requerimientos se clasifican en tres grupos: requerimientos web, requerimien
 
 | NÚMERO | Requerimiento de gestión | Responsable sugerido | Motivo | Relación con la web | Prioridad | Recomendación |
 |--------|----------------------------|----------------------|--------|----------------------|-----------|---------------|
+| 2 | Gestión de convenios empresariales exclusivos. | Oficina de Egresados / Decanato FIIS. | Formalizar alianzas con empresas donde laboran alumnos FIIS para ofertas exclusivas. | Alimenta la base de datos de la Bolsa de Trabajo. | Alta | MVP |
 | 3 | Asignación de personal para Asesoría de Empleabilidad. | Oficina de Bienestar / Psicólogos de la facultad. | Las citas reservadas en la web requieren personal humano que las atienda. | Soporte operativo del Módulo de Calendario/Citas. | Alta | Fase 2 |
+| 4 | Protocolo de seguimiento e impacto (Métricas). | Unidad de Acreditación (ABET/Sunedu). | Justificar la inversión ante el Decanato mediante el conteo de egresados colocados. | Reportes automáticos del Dashboard administrativo. | Alta | MVP |
+| 5 | Moderación y reglas de comunidad digital. | Comité Alumni / Administrador Web. | Evitar spam y mantener la red profesional (estilo LinkedIn) con perfiles reales. | Control del Foro y Red de Contactos. | Media | Fase 2 |
+| 7 | Marco legal y financiero para Donaciones. | Patronato FIIS / Tesorería. | Garantizar la transparencia y el destino de los fondos para becas o laboratorios. | Proceso de pago del Módulo de Apoyo Institucional. | Media | Fase 3 |
+| 8 | Coordinación de reserva de instalaciones físicas. | Administración de Local / Oficina de Deportes CEIIS. | Fecha de reserva, tipo de instalación (Auditorio/Biblioteca/Deportes). | Ticket de acceso o confirmación de reserva. | Baja | Fase 3 |
+| 9 | Captación de Inversionistas para Proyectos. | Unidad de Investigación / Emprendimiento. | Vincular grandes proyectos de alumnos con egresados senior o empresas top. | Gestión de la sección Feria Laboral y Proyectos. | Media | Fase 3 |
 
 ## Bloque 7 - Centros culturales, organizaciones estudiantiles, agrupaciones académicas y delegaturas
+
+1. Decisión: No implementar.
+2. Justificación:
+
+    Las agrupaciones estudiantiles y delegaturas ya gestionan sus propios canales de distribución de materiales académicos (Google Drive, plataformas propias, grupos cerrados). Implementar un repositorio oficial dentro del portal web implicaría:
+    - Un proceso de validación y moderación constante para evitar duplicados, material no autorizado o desactualizado.
+    - Responsabilidad institucional sobre el contenido subido (exámenes, guías, material de cursos), lo que expone a la FIIS a riesgos legales y de propiedad intelectual.
+    - Carga operativa sin un responsable definido que revise, clasifique y mantenga el repositorio actualizado.
+
+Dado que las soluciones existentes cubren esta necesidad sin intervención institucional, se descarta del portal web.
 
 ### Requerimientos web
 
