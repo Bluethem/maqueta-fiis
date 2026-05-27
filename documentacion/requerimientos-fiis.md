@@ -1,4 +1,4 @@
-# Requerimientos - WEB FIIS
+# Requerimientos - WEB FIIS-UNI
 
 Los requerimientos se clasifican en tres grupos: requerimientos web, requerimientos de gestión y posibles sistemas adicionales. Esta separación permite diferenciar lo que puede implementarse directamente en la página web, lo que requiere procesos internos y lo que podría convertirse en software o fase posterior.
 
@@ -27,7 +27,6 @@ Los requerimientos se clasifican en tres grupos: requerimientos web, requerimien
 | 17 | Permitir que la empresa solicite actualización o validación de su información. | Empresa, administrador FIIS. | Datos modificados, documentos o solicitud de cambio. | Solicitud de actualización pendiente de revisión. | El administrador revisa cambios antes de publicarlos. | Alta | Fase 2 |
 | 18 | Permitir que un administrador FIIS revise y apruebe información antes de publicarla. | Administrador FIIS, empresa. | Contenido enviado por empresa o equipo FIIS. | Contenido aprobado, observado o rechazado. | Todo contenido empresarial pasa por validación antes de ser público. | Alta | MVP |
 | 19 | Mostrar noticias empresariales sin mezclarlas en un feed general. | Estudiante, empresa, egresado. | Noticia, categoría, fecha, empresa o tema. | Feed empresarial separado. | Las noticias de empresas se agrupan por categoría sin saturar portada general. | Media | Fase 2 |
-| 20 | Generar una capa editorial FIIS sobre la bolsa central UNI, sin duplicar infraestructura. | Estudiante, egresado, empresa, administrador. | Enlaces, filtros, curaduría y oportunidades destacadas. | Sección FIIS de oportunidades conectada a bolsa UNI. | La FIIS ordena y comunica oportunidades relevantes sin crear una plataforma duplicada innecesaria. | Alta | MVP |
 | 21 | Mostrar agenda de eventos empresariales, ferias, charlas y actividades de empleabilidad. | Estudiante, egresado, empresa. | Evento, fecha, hora, modalidad, organizador, enlace. | Calendario o agenda visible. | El usuario puede consultar próximas actividades y acceder a inscripción o contacto. | Media | Fase 2 |
 | 22 | Publicar materiales de orientación para empresas: manual, preguntas frecuentes y proceso de vinculación. | Empresa, reclutador, área técnica. | Documentos, guías, FAQs y rutas de contacto. | Repositorio o sección de orientación empresarial. | La empresa encuentra pasos claros para publicar, contactar, proponer o firmar convenios. | Media | Fase 2 |
 | 23 | Permitir consultar indicadores básicos: empresas registradas, vacantes publicadas, convenios y eventos. | Autoridad, equipo de empleabilidad, administrador. | Registros del módulo, publicaciones y estados. | Panel o reporte básico de indicadores. | Responsables visualizan métricas para seguimiento y toma de decisiones. | Media | Fase 2 |
@@ -45,7 +44,6 @@ Los requerimientos se clasifican en tres grupos: requerimientos web, requerimien
 | 5 | Establecer protocolo de privacidad para contacto directo con empresas. | Administrador FIIS / asesoría legal o responsable institucional. | Proteger datos empresariales y personales. | El módulo solo debe mostrar datos autorizados o usar formularios intermediados. | Alta | Fase 2 |
 | 6 | Mantener taxonomía de contenidos empresariales. | Administrador de contenido / comunicaciones FIIS. | Evitar que todo se publique como noticia general. | La web requiere categorías: oportunidades, eventos, convenios, proyectos, empresas aliadas y comunicados. | Alta | MVP |
 | 7 | Definir periodicidad de actualización de perfiles empresariales y convenios. | Equipo de relaciones empresariales. | Reducir información desactualizada o vencida. | Cada perfil, convenio y oportunidad debe revisarse periódicamente. | Alta | Fase 2 |
-| 8 | Coordinar integración con la bolsa central UNI. | FIIS, UNI, OTI y responsables de empleabilidad. | Evitar duplicidad de infraestructura y aprovechar sistemas existentes. | La sección FIIS debe enlazar, ordenar o curar oportunidades sin competir con la bolsa central. | Alta | MVP |
 | 9 | Definir procedimiento para recibir proyectos, retos, tesis o investigaciones aplicadas. | Docentes, investigadores, equipo de relaciones empresariales. | Aprovechar el interés empresarial en colaboración académica. | Las propuestas empresariales deben derivarse a docentes, cursos, tesis o investigación. | Media | Fase 2 |
 | 10 | Designar responsables para agenda de charlas, talleres, webinars y visitas técnicas. | Coordinación académica / centros culturales / relaciones empresariales. | Organizar actividades empresariales y evitar cruces o falta de seguimiento. | La agenda web necesita responsables que confirmen fechas, cupos y difusión. | Media | Fase 2 |
 | 11 | Crear lineamientos de comunicación de propuesta de valor empresarial. | Comunicaciones FIIS / dirección del proyecto. | Comunicar por qué una empresa debe vincularse con la FIIS. | La sección empresas debe tener mensajes claros sobre talento, prestigio, proyectos y convenios. | Alta | MVP |
@@ -84,7 +82,6 @@ Los requerimientos se clasifican en tres grupos: requerimientos web, requerimien
 |--------|-------------------|----------------------|-------------------|-------------------|---------------------------|-----------|------|
 | 1 | Publicar resoluciones, reglamentos y cronogramas académicos. | Estudiante, docente, autoridad. | Documentos académicos y administrativos autorizados. | Sección organizada de documentos oficiales. | El usuario accede rápidamente a información académica vigente. | Alta | MVP |
 | 2 | Mostrar horarios y mallas curriculares de las carreras. | Estudiante, autoridad. | Información académica de cursos y planes de estudio. | Visualización clara de horarios y mallas curriculares. | El usuario consulta la secuencia y organización académica de la carrera. | Alta | MVP |
-| 3 | Incorporar gráficos o paneles de análisis académico. | Estudiantes, autoridad. | Datos de aprobados, desaprobados y cursos críticos. | Paneles estadísticos y gráficos académicos. | El sistema permite visualizar el análisis académico autorizado. | Media | Fase 2 |
 | 4 | Implementar guías y procedimientos académicos paso a paso. | Estudiante, egresado. | Reglamentos, procedimientos y procesos académicos. | Guías visuales e informativas. | El usuario comprende correctamente procesos como prácticas e intercambios. | Alta | MVP |
 | 5 | Crear espacio de difusión de resoluciones y avisos importantes. | Estudiante. | Avisos, resoluciones y comunicados académicos. | Publicaciones visibles dentro de la web. | El estudiante puede acceder directamente a información relevante. | Alta | MVP |
 | 6 | Incorporar formularios de retroalimentación estudiantil. | Estudiante, autoridad. | Opiniones, dificultades académicas y necesidades estudiantiles. | Registro de respuestas y comentarios. | El sistema recopila información para apoyar. | Media | Fase 2 |
@@ -94,7 +91,6 @@ Los requerimientos se clasifican en tres grupos: requerimientos web, requerimien
 | NÚMERO | Requerimiento web | Usuario beneficiado | Input / entrada | Output / salida | Comportamiento esperado | Prioridad | Fase |
 |--------|-------------------|----------------------|-------------------|-------------------|---------------------------|-----------|------|
 | 1 | Implementar sección de noticias y comunicados institucionales. | Estudiante, docente, administrativo. | Noticias, actividades y comunicados institucionales, mejoras institucionales y contenidos de reconocimiento al personal administrativo. | Publicaciones visibles y organizadas. | La comunidad FIIS accede a información actualizada de gestión y actividades. | Alta | MVP |
-| 2 | Crear intranet o acceso restringido para personal administrativo. | Personal administrativo. | Usuario, contraseña y contenido interno. | Panel privado con información interna. | Solo usuarios autorizados acceden a información interna. | Alta | Fase 2 |
 | 3 | Incorporar indicadores con visualización restringida. | Autoridad, personal administrativo. | Indicadores y reportes administrativos. | Visualización de métricas y seguimiento interno. | El sistema muestra información según permisos asignados. | Media | Fase 3 |
 | 4 | Centralizar información de servicios y áreas de la facultad. | Estudiante | Información de biblioteca, mesa de partes, proyección social y otras áreas. | Directorio y descripción de servicios. | El usuario comprende las funciones y acceso de cada servicio. | Alta | MVP |
 | 5 | Crear secciones informativas de laboratorios FIIS. | Estudiante | Información y funciones de laboratorios. | Fichas informativas de laboratorios. | El usuario conoce actividades y objetivos de cada laboratorio. | Media | MVP |
@@ -109,7 +105,6 @@ Los requerimientos se clasifican en tres grupos: requerimientos web, requerimien
 | NÚMERO | Requerimiento de gestión | Responsable sugerido | Motivo | Relación con la web | Prioridad | Recomendación |
 |--------|----------------------------|----------------------|--------|----------------------|-----------|---------------|
 | 1 | Definir responsables para la publicación y actualización de resoluciones, reglamentos y cronogramas. | Secretaría Académica | Evitar información desactualizada o duplicada. | La web mostrará documentos académicos oficiales. | Alta | MVP |
-| 2 | Establecer validación previa para publicar información académica y estadísticas estudiantiles. | Decanato | Saber cómo está la salud de la FIIS. | Los paneles y gráficos académicos requieren aprobación previa. | Alta | Fase 2 |
 | 3 | Definir un flujo de actualización periódica de horarios y mallas curriculares. | Coordinación académica | Mantener información vigente para estudiantes y postulantes. | La web dependerá de datos académicos actualizados. | Alta | MVP |
 | 4 | Estandarizar la difusión de procedimientos académicos y reglamentos. | Secretaría Académica | Reducir errores y confusiones en trámites académicos. | La web mostrará guías y procedimientos paso a paso. | Alta | MVP |
 | 5 | Establecer lineamientos para la publicación de avisos y resoluciones estudiantiles. | Secretaría Académica | Garantizar correcta difusión de información relevante. | La web funcionará como canal alternativo de comunicación. | Media | MVP |
@@ -120,7 +115,6 @@ Los requerimientos se clasifican en tres grupos: requerimientos web, requerimien
 | NÚMERO | Requerimiento de gestión | Responsable sugerido | Motivo | Relación con la web | Prioridad | Recomendación |
 |--------|----------------------------|----------------------|--------|----------------------|-----------|---------------|
 | 1 | Definir responsables de publicación de noticias y comunicados institucionales. | Secretaría Administrativa / Imagen institucional | Mantener información institucional actualizada y validada. | La web difundirá noticias y actividades institucionales. | Alta | MVP |
-| 2 | Establecer permisos y niveles de acceso para la intranet administrativa. | Administrador web y Secretaría Administrativa | Proteger información interna y restringida. | La web incluirá un módulo privado para administrativos. | Alta | Fase 2 |
 | 3 | Definir políticas de acceso y visualización de indicadores administrativos. | Secretaría Administrativa | Evitar acceso no autorizado a información sensible. | Los paneles administrativos requerirán control de permisos. | Alta | Fase 3 |
 | 4 | Asignar responsables para actualizar información de servicios y áreas FIIS. | Responsables de cada área institucional | Mantener información clara y vigente para estudiantes. | La web centralizará servicios institucionales. | Alta | MVP |
 | 5 | Establecer lineamientos para la publicación de información de laboratorios. | Coordinadores de laboratorio | Garantizar contenido uniforme y actualizado. | La web mostrará información de laboratorios FIIS. | Media | MVP |
@@ -148,11 +142,9 @@ Los requerimientos se clasifican en tres grupos: requerimientos web, requerimien
 | 1 | Organigrama institucional interactivo FIIS | Docentes, administrativos y estudiantes | Información de áreas, responsables y cargos | Visualización del organigrama | Navegar jerárquicamente entre áreas de la FIIS | Alta | MVP |
 | 2 | Página institucional por Escuela Profesional | Estudiantes y docentes | Información académica y administrativa | Página institucional de Escuela | Mostrar información académica y administrativa de cada Escuela | Alta | MVP |
 | 3 | Página institucional por Departamento Académico | Docentes e investigadores | Información del departamento | Perfil institucional del Departamento | Mostrar docentes, cursos y líneas de investigación | Alta | MVP |
-| 4 | Directorio institucional de docentes | Estudiantes, docentes e investigadores | Datos académicos del docente | Perfil docente público | Buscar docentes por categoría o especialidad | Alta | Fase 2 |
 | 5 | Integración con ORCID y CTI Vitae | Docentes e investigadores | ORCID, CTI Vitae y publicaciones | Perfil académico sincronizado | Sincronizar publicaciones e investigación docente | Alta | Fase 2 |
 | 6 | Publicación de cronogramas académicos | Docentes y estudiantes | Cronogramas de PCs y exámenes | Calendario académico | Consultar y descargar cronogramas actualizados | Alta | MVP |
 | 7 | Portal de recursos académicos docentes | Docentes | Manuales, reglamentos, enlaces y recursos | Biblioteca digital docente | Centralizar recursos y herramientas académicas | Media | Fase 2 |
-| 8 | Sistema de reserva de asesorías académicas | Docentes y estudiantes | Fecha, hora y motivo | Reserva confirmada | Solicitar y gestionar asesorías académicas | Media | Fase 2 |
 | 9 | Publicación de talleres y capacitaciones docentes | Docentes | Información de talleres y eventos | Calendario de capacitaciones | Difundir talleres y actividades académicas | Media | Fase 2 |
 | 10 | Portal responsive institucional | Todos los usuarios | Resolución del dispositivo | Interfaz adaptada | Adaptar la interfaz a cualquier dispositivo | Alta | MVP |
 
@@ -164,7 +156,6 @@ Los requerimientos se clasifican en tres grupos: requerimientos web, requerimien
 | 2 | Validar publicaciones académicas y científicas | Área de investigación FIIS | Garantizar calidad y autenticidad | Repositorios y perfiles docentes | Alta | Fase 2 |
 | 3 | Gestionar permisos y roles institucionales | Área TI | Restringir accesos administrativos | Módulos internos y edición de contenido | Alta | MVP |
 | 4 | Establecer flujo de actualización de cronogramas académicos | Departamentos académicos | Evitar información desactualizada | Publicación de evaluaciones y horarios | Alta | MVP |
-| 5 | Capacitar docentes y coordinadores en uso del CMS | Coordinación académica | Facilitar administración del portal | Gestión de contenido institucional | Media | Fase 2 |
 | 6 | Definir estándares de perfiles docentes | Decanato y Dirección académica | Uniformizar información institucional | Directorio y perfiles académicos | Media | Fase 2 |
 
 ### Posibles sistemas adicionales / requerimientos de software
@@ -183,20 +174,8 @@ Los requerimientos se clasifican en tres grupos: requerimientos web, requerimien
 
 | NÚMERO | Requerimiento web | Usuario beneficiado | Input / entrada | Output / salida | Comportamiento esperado | Prioridad | Fase |
 |--------|-------------------|----------------------|-------------------|-------------------|---------------------------|-----------|------|
-| 1 | Mesa de Partes virtual | Estudiantes, docentes y administrativos | Datos personales, tipo de trámite, documentos adjuntos y solicitud | Registro digital del trámite con código de seguimiento | El usuario registra su trámite, el sistema genera un código y permite consultar el estado en línea | Alta | MVP |
-| 2 | Sistema de seguimiento de trámites | Estudiantes y administrativos | Código de trámite o DNI | Estado actualizado del trámite | El sistema muestra automáticamente el estado y avance del documento | Alta | MVP |
-| 3 | Módulo de gestión de asistencia | Personal administrativo y RR.HH. | Registro de ingreso, permisos y tardanzas | Historial de asistencia y reportes | El sistema registra y actualiza automáticamente la asistencia del personal | Alta | MVP |
-| 4 | Solicitud digital de vacaciones y licencias | Personal administrativo | Formulario de solicitud y fechas requeridas | Solicitud enviada y notificación de aprobación o rechazo | El sistema deriva automáticamente la solicitud al responsable correspondiente | Media | MVP |
-| 5 | Dashboard de planificación y presupuesto | Autoridades y Oficina OPP | Datos presupuestales y metas institucionales | Indicadores y gráficos en tiempo real | El sistema actualiza automáticamente indicadores y reportes financieros | Alta | MVP |
-| 6 | Sistema de incidencias y mantenimiento | Estudiantes, docentes y administrativos | Reporte de falla con descripción y evidencia | Ticket de atención y seguimiento | El sistema asigna la incidencia y muestra su estado de atención | Alta | MVP |
-| 7 | Calendario de reserva de espacios | Docentes y administrativos | Fecha, hora y ambiente solicitado | Confirmación de reserva | El sistema evita cruces y muestra disponibilidad en tiempo real | Media | MVP |
-| 8 | Sistema de reserva de equipos audiovisuales | Docentes y administrativos | Tipo de equipo, fecha y actividad | Confirmación de préstamo o reserva | El sistema verifica disponibilidad y registra el préstamo | Media | MVP |
-| 9 | Repositorio audiovisual institucional | Comunidad universitaria | Videos, grabaciones y material multimedia | Acceso al contenido audiovisual | El sistema almacena y organiza el material para consulta en línea | Baja | Fase 2 |
-| 10 | Repositorio digital de documentos | Administrativos y autoridades | Documentos escaneados y clasificados | Consulta y descarga de archivos | El sistema permite búsquedas rápidas y acceso seguro a documentos | Alta | MVP |
-| 11 | Sistema de gestión de evidencias de acreditación | Oficina de Calidad y Acreditación | Evidencias, indicadores y reportes | Panel de seguimiento y almacenamiento digital | El sistema organiza información y facilita auditorías | Alta | Fase 2 |
 | 12 | Encuestas virtuales de satisfacción | Estudiantes y egresados | Respuestas a formularios digitales | Resultados estadísticos y reportes | El sistema recopila y procesa automáticamente la información | Media | Fase 2 |
 | 13 | Chatbot institucional | Estudiantes y usuarios externos | Consultas frecuentes escritas | Respuestas automáticas e información rápida | El chatbot responde consultas básicas y deriva casos complejos | Media | MVP |
-| 14 | Sistema de notificaciones automáticas | Toda la comunidad FIIS | Correos, estados de trámites y alertas | Mensajes automáticos enviados al usuario | El sistema informa cambios y recordatorios en tiempo real | Alta | Fase 2 |
 | 15 | Portal de transparencia institucional | Comunidad universitaria | Información presupuestal y documentos oficiales | Publicación de reportes y documentos | El sistema mantiene visible información institucional actualizada | Media | MVP |
 | 16 | Panel de control para actualización web | Responsables de cada área | Noticias, documentos y contenido institucional | Información actualizada en la web | Cada área puede modificar contenido sin depender de terceros | Alta | MVP |
 | 17 | Sistema seguro de validación documental | Administrativos y usuarios | Documentos digitales y códigos de verificación | Validación de autenticidad | El sistema verifica documentos y evita falsificaciones | Alta | Fase 2 |
@@ -207,21 +186,12 @@ Los requerimientos se clasifican en tres grupos: requerimientos web, requerimien
 |--------|----------------------------|----------------------|--------|----------------------|-----------|---------------|
 | 1 | Designar responsables de actualización por cada área administrativa | Jefes de oficina y administrador web FIIS | Mantener información vigente y evitar desactualización | Cada módulo web requiere mantenimiento constante | Alta | MVP |
 | 2 | Establecer políticas de validación de documentos digitales | Secretaría y Mesa de Partes | Evitar falsificación y garantizar autenticidad | Los trámites virtuales requieren validación segura | Alta | MVP |
-| 3 | Definir responsables de supervisión de trámites virtuales | Mesa de Partes y áreas administrativas | Garantizar seguimiento y respuesta oportuna | El sistema de trámites necesita monitoreo permanente | Alta | MVP |
-| 4 | Implementar capacitaciones para el uso de la plataforma web | Oficina de Recursos Humanos y Soporte TI | Facilitar adaptación tecnológica del personal | El correcto uso de la web depende de usuarios capacitados | Alta | MVP |
 | 5 | Establecer protocolos de seguridad informática | Área de TI y administración FIIS | Proteger información institucional y datos personales | La plataforma manejará información sensible | Alta | Fase 2 |
 | 6 | Crear políticas de respaldo y recuperación de información | Área de TI | Evitar pérdida de documentos y registros digitales | La web almacenará bases de datos y archivos importantes | Alta | MVP |
-| 7 | Definir flujos de aprobación de solicitudes y trámites | Oficinas administrativas | Reducir retrasos y desorden operativo | Los módulos digitales requieren validaciones automáticas | Alta | Fase 2 |
-| 8 | Asignar responsables del control de inventarios digitales | Oficina de Abastecimiento | Mantener información precisa sobre stock y bienes | El sistema logístico depende de datos actualizados | Alta | MVP |
 | 9 | Coordinar mantenimiento periódico de la plataforma web | Área de TI y soporte técnico | Evitar fallas técnicas y caídas del sistema | La continuidad operativa depende del mantenimiento | Media | Fase 2 |
 | 10 | Definir responsables del repositorio documental | Oficina de Archivo | Organizar y controlar documentación digitalizada | El repositorio web necesita control de accesos y clasificación | Media | Fase 2 |
 | 11 | Crear lineamientos para publicación de información institucional | Decanato y responsables de áreas | Garantizar información oficial y confiable | La web será un canal institucional público | Alta | MVP |
-| 12 | Establecer políticas de atención y respuesta virtual | Mesa de Partes y atención administrativa | Mejorar experiencia del usuario y tiempos de respuesta | Los usuarios interactuarán mediante canales digitales | Media | Fase 2 |
-| 13 | Designar responsables del sistema de acreditación y calidad | Oficina de Calidad y Acreditación | Garantizar actualización de indicadores y evidencias | Los dashboards y reportes requieren monitoreo constante | Media | Fase 2 |
 | 14 | Definir permisos y niveles de acceso al sistema | Área de TI y administración | Restringir acceso según funciones del usuario | La plataforma tendrá diferentes perfiles de usuario | Alta | MVP |
-| 15 | Coordinar digitalización progresiva de documentos físicos | Oficina de Archivo y autoridades FIIS | Reducir dependencia del archivo físico | La plataforma necesita contenido documental digital | Media | Fase 2 |
-| 16 | Establecer responsables de monitoreo de incidencias | Servicios Generales y Vigilancia | Mejorar tiempos de atención y control de problemas | Los módulos de incidencias requieren supervisión constante | Media | Fase 2 |
-| 17 | Crear protocolos de uso de equipos audiovisuales | Oficina de Medios Audiovisuales | Evitar pérdidas y conflictos de reserva | El sistema de préstamos requiere reglas claras | Media | Fase 2 |
 | 18 | Implementar evaluación periódica del funcionamiento web | Decanato y área TI | Detectar fallas y oportunidades de mejora | La web debe optimizarse continuamente | Media | Fase 2 |
 | 19 | Gestionar presupuesto para modernización tecnológica | Oficina de Planificación y Presupuesto | Garantizar sostenibilidad del proyecto digital | La implementación web requiere recursos tecnológicos | Alta | MVP |
 
@@ -538,12 +508,8 @@ Los requerimientos se clasifican en tres grupos: requerimientos web, requerimien
 | 2 | Directorio y Perfiles Profesionales | Egresado, Estudiante | LinkedIn URL, promoción, empresa actual, sector de especialidad. | Perfil público dentro de la comunidad digital FIIS. | Permite buscar egresados por empresa o sector para networking. Sincroniza datos básicos de LinkedIn. | Alta | MVP |
 | 3 | Alertas de Empleabilidad por Correo | Egresado | Preferencias de búsqueda, áreas de interés, correo electrónico. | Notificaciones push y correos personalizados. | El sistema envía una alerta automática cuando una nueva oferta coincide con el perfil del egresado. | Media | MVP |
 | 4 | Calendario de Eventos y Webinars | Egresado, Estudiante | Datos del evento, fecha, link de registro, ponente. | Calendario interactivo y formulario de inscripción. | Centraliza ferias laborales, charlas de tendencias y eventos de networking con recordatorios. | Media | Fase 2 |
-| 5 | Agendamiento de Asesoría de Empleabilidad | Egresado | Selección de horario, carga de CV para revisión. | Cita confirmada en calendario y notificación al orientador. | Permite reservar sesiones con psicólogos para simulacros de entrevista y mejora de perfil profesional. | Alta | Fase 2 |
-| 6 | Módulo de Mentoría Senior-Junior | Egresado (Senior/Junior) | Perfil del mentor, áreas de asesoría, solicitud del mentee. | Conexión directa entre ambos perfiles. | Facilita que egresados con experiencia orienten a los recién egresados en su desarrollo de carrera. | Media | Fase 2 |
 | 7 | Enlace a Capacitación Especializada | Egresado, Estudiante | Clic en curso de interés (SAP, Python, Power BI). | Redirección a interfaces de Sistemas UNI u otros centros. | Conecta la web con los centros de capacitación de la facultad para ofrecer descuentos exclusivos. | Baja | Fase 2 |
 | 8 | Módulo de Gestión de Donaciones | Egresado, Facultad | Monto de donación, proyecto elegido (becas, laboratorios). | Comprobante de donación y reporte de impacto. | Permite a los egresados contribuir económicamente al financiamiento de proyectos de la FIIS. | Baja | Fase 3 |
-| 9 | Foro de Comunidad e Intercambio | Egresado | Publicación de consultas, experiencias o noticias. | Hilo de discusión visible para miembros registrados. | Espacio interno para fortalecer el vínculo y resolver dudas técnicas o laborales entre colegas. | Media | Fase 3 |
-| 10 | Reserva de Instalaciones y Beneficios | Egresado | Fecha de reserva, tipo de instalación (Biblioteca/Deportes). | Ticket de acceso o confirmación de reserva. | Gestiona el acceso físico a la facultad y el uso de servicios como el gimnasio o centro médico UNI. | Baja | Fase 3 |
 
 ### Requerimientos de gestión
 
@@ -551,7 +517,6 @@ Los requerimientos se clasifican en tres grupos: requerimientos web, requerimien
 |--------|----------------------------|----------------------|--------|----------------------|-----------|---------------|
 | 1 | Definir responsable de validación de empresas y vacantes. | Coordinación empresarial / administrador FIIS. | Evitar publicaciones falsas, vencidas o incompletas. | El módulo Empresas necesita aprobación antes de publicar. | Alta | Fase 2 o fase 3 |
 | 2 | Gestión de convenios empresariales exclusivos. | Oficina de Egresados / Decanato FIIS. | Formalizar alianzas con empresas donde laboran alumnos FIIS para ofertas exclusivas. | Alimenta la base de datos de la Bolsa de Trabajo. | Alta | MVP |
-| 3 | Asignación de personal para Asesoría de Empleabilidad. | Oficina de Bienestar / Psicólogos de la facultad. | Las citas reservadas en la web requieren personal humano que las atienda. | Soporte operativo del Módulo de Calendario/Citas. | Alta | Fase 2 |
 | 4 | Protocolo de seguimiento e impacto (Métricas). | Unidad de Acreditación (ABET/Sunedu). | Justificar la inversión ante el Decanato mediante el conteo de egresados colocados. | Reportes automáticos del Dashboard administrativo. | Alta | MVP |
 | 5 | Moderación y reglas de comunidad digital. | Comité Alumni / Administrador Web. | Evitar spam y mantener la red profesional (estilo LinkedIn) con perfiles reales. | Control del Foro y Red de Contactos. | Media | Fase 2 |
 | 6 | Integración de enlaces con Sistemas UNI/CEPS. | Coordinación de Centros Especializados. | Mantener actualizados los links de cursos (SAP, Python) y códigos de descuento. | Contenido del Módulo de Capacitación. | Baja | Fase 2 |
@@ -582,7 +547,6 @@ Los requerimientos se clasifican en tres grupos: requerimientos web, requerimien
 | 7 | Mostrar convocatorias abiertas de agrupaciones. | Estudiantes y agrupaciones. | Descripción, requisitos, fechas y enlace/postulación. | Convocatoria publicada. | El estudiante encuentra convocatorias vigentes sin depender solo de redes sociales. | Alta | MVP |
 | 8 | Integrar galerías multimedia optimizadas por agrupación. | Postulantes, estudiantes y agrupaciones. | Imágenes, videos, descripciones y fecha. | Galería visible y ligera. | La web muestra actividades ejecutadas sin afectar el rendimiento. | Media | Fase 2 |
 | 9 | Permitir enlaces controlados a redes sociales oficiales. | Estudiantes, visitantes y agrupaciones. | Links de Instagram, Facebook, LinkedIn, GitHub u otros. | Accesos externos visibles. | El usuario accede a redes validadas desde la ficha de cada agrupación. | Alta | MVP |
-| 10 | Crear repositorio de recursos académicos y materiales autorizados. | Estudiantes, delegaturas y agrupaciones. | PDF, guías, exámenes, talleres, enlaces y categorías. | Repositorio organizado. | El usuario encuentra materiales por curso, tipo, agrupación o fecha. | Alta | Fase 2 |
 | 11 | Clasificar documentos por tipo, curso, ciclo, año y agrupación. | Estudiantes y delegaturas. | Metadatos del documento. | Lista filtrada de recursos. | El sistema evita carpetas desordenadas y facilita búsqueda de recursos académicos. | Media | Fase 2 |
 | 12 | Publicar proyectos destacados de centros culturales y agrupaciones. | Postulantes, estudiantes, empresas y visitantes. | Nombre, resumen, integrantes, evidencia y enlace. | Ficha de proyecto destacado. | La web visibiliza producción estudiantil, innovación y participación. | Media | Fase 2 |
 | 13 | Mostrar testimonios o casos de participación estudiantil. | Postulantes y estudiantes. | Testimonio, imagen, agrupación y fecha. | Caso visible en web. | La web comunica valor de pertenecer a organizaciones FIIS. | Media | Fase 2 |
@@ -604,7 +568,6 @@ Los requerimientos se clasifican en tres grupos: requerimientos web, requerimien
 | 4 | Definir periodicidad de actualización de directivas y contactos. | Agrupaciones / administrador funcional. | Evitar datos desactualizados tras cambios de gestión. | Las fichas deben actualizarse por ciclo o periodo directivo. | Alta | MVP |
 | 5 | Asignar permisos diferenciados para administradores y superusuarios de agrupación. | OTI / equipo web / responsables de agrupación. | Controlar quién publica, edita o aprueba contenido. | La web necesita roles para actualización sostenible. | Alta | Fase 2 |
 | 6 | Estandarizar formatos de identidad por agrupación. | Comunicaciones / equipo UX/UI. | Mantener coherencia institucional sin eliminar identidad propia. | Las subpáginas deben respetar estructura, colores y jerarquía visual. | Media | MVP |
-| 7 | Definir normas para carga y uso de documentos académicos. | Delegaturas / responsables académicos. | Evitar material no autorizado o mal clasificado. | El repositorio requiere criterios de validación y categorización. | Alta | Fase 2 |
 | 8 | Establecer protocolo para calendario interagrupaciones. | Agrupaciones / coordinación de espacios. | Evitar cruces de horarios y actividades. | El calendario debe validar fecha, lugar, modalidad y responsable. | Media | Fase 2 |
 | 9 | Definir mantenimiento editorial sin depender siempre de programación. | Administrador web / responsables de contenido. | Facilitar actualizaciones frecuentes. | La web debe actualizar contenido desde CMS o panel sencillo. | Media | Fase 2 |
 | 10 | Capacitar a responsables de agrupaciones en uso del sistema. | Equipo web / Vida Estudiantil. | Reducir errores de publicación y mejorar sostenibilidad. | Cada agrupación debe saber actualizar su información básica. | Media | Fase 2 |
@@ -621,3 +584,133 @@ Los requerimientos se clasifican en tres grupos: requerimientos web, requerimien
 | 6 | Chatbot o asistente de preguntas frecuentes. | Responder dudas frecuentes sobre agrupaciones, eventos y procesos estudiantiles. | Estudiantes y postulantes. | Media | Fase 3 |
 | 7 | PWA o versión instalable del portal estudiantil. | Permitir acceso rápido desde celular y consulta de información frecuente. | Estudiantes. | Media | Fase 3 |
 | 8 | Integración con GitHub para proyectos tecnológicos. | Mostrar proyectos, repositorios y producción técnica de agrupaciones. | Agrupaciones tecnológicas y visitantes. | Media | Fase 3 |
+
+
+# Requerimientos no tomados
+
+## Bloque 1 - Empresas
+
+### Requerimientos web
+
+| NÚMERO | Requerimiento web | Usuario beneficiado | Input / entrada | Output / salida | Comportamiento esperado | Prioridad | Fase |
+|--------|-------------------|----------------------|-------------------|-------------------|---------------------------|-----------|------|
+| 20 | Generar una capa editorial FIIS sobre la bolsa central UNI, sin duplicar infraestructura. | Estudiante, egresado, empresa, administrador. | Enlaces, filtros, curaduría y oportunidades destacadas. | Sección FIIS de oportunidades conectada a bolsa UNI. | La FIIS ordena y comunica oportunidades relevantes sin crear una plataforma duplicada innecesaria. | Alta | MVP |
+
+---
+
+### Requerimientos de gestión
+
+| NÚMERO | Requerimiento de gestión | Responsable sugerido | Motivo | Relación con la web | Prioridad | Recomendación |
+|--------|----------------------------|----------------------|--------|----------------------|-----------|---------------|
+| 8 | Coordinar integración con la bolsa central UNI. | FIIS, UNI, OTI y responsables de empleabilidad. | Evitar duplicidad de infraestructura y aprovechar sistemas existentes. | La sección FIIS debe enlazar, ordenar o curar oportunidades sin competir con la bolsa central. | Alta | MVP |
+
+## Bloque 2 - Altos cargos (secretaria administrativa, academica y decanato)
+
+### Requerimientos web
+
+**Secretaria academica**
+
+| NÚMERO | Requerimiento web | Usuario beneficiado | Input / entrada | Output / salida | Comportamiento esperado | Prioridad | Fase |
+|--------|-------------------|----------------------|-------------------|-------------------|---------------------------|-----------|------|
+| 3 | Incorporar gráficos o paneles de análisis académico. | Estudiantes, autoridad. | Datos de aprobados, desaprobados y cursos críticos. | Paneles estadísticos y gráficos académicos. | El sistema permite visualizar el análisis académico autorizado. | Media | Fase 2 |
+
+**Secretaria administrativa**
+
+| NÚMERO | Requerimiento de gestión | Responsable sugerido | Motivo | Relación con la web | Prioridad | Recomendación |
+|--------|----------------------------|----------------------|--------|----------------------|-----------|---------------|
+| 2 | Crear intranet o acceso restringido para personal administrativo. | Personal administrativo. | Usuario, contraseña y contenido interno. | Panel privado con información interna. | Solo usuarios autorizados acceden a información interna. | Alta | Fase 2 |
+
+---
+
+### Requerimientos de gestión
+
+**Secretaria academica**
+
+| NÚMERO | Requerimiento de gestión | Responsable sugerido | Motivo | Relación con la web | Prioridad | Recomendación |
+|--------|----------------------------|----------------------|--------|----------------------|-----------|---------------|
+| 2 | Establecer validación previa para publicar información académica y estadísticas estudiantiles. | Decanato | Saber cómo está la salud de la FIIS. | Los paneles y gráficos académicos requieren aprobación previa. | Alta | Fase 2 |
+
+**Secretaria administrativa**
+
+| NÚMERO | Requerimiento de gestión | Responsable sugerido | Motivo | Relación con la web | Prioridad | Recomendación |
+|--------|----------------------------|----------------------|--------|----------------------|-----------|---------------|
+| 2 | Establecer permisos y niveles de acceso para la intranet administrativa. | Administrador web y Secretaría Administrativa | Proteger información interna y restringida. | La web incluirá un módulo privado para administrativos. | Alta | Fase 2 |
+
+## Bloque 3 - Docentes, escuelas y departamentos
+
+### Requerimientos web
+
+| NÚMERO | Requerimiento web | Usuario beneficiado | Input / entrada | Output / salida | Comportamiento esperado | Prioridad | Fase |
+|--------|-------------------|----------------------|-------------------|-------------------|---------------------------|-----------|------|
+| 4 | Directorio institucional de docentes | Estudiantes, docentes e investigadores | Datos académicos del docente | Perfil docente público | Buscar docentes por categoría o especialidad | Alta | Fase 2 |
+| 8 | Sistema de reserva de asesorías académicas | Docentes y estudiantes | Fecha, hora y motivo | Reserva confirmada | Solicitar y gestionar asesorías académicas | Media | Fase 2 |
+
+## Bloque 4 - Administrativo
+
+### Requerimientos web
+
+| NÚMERO | Requerimiento web | Usuario beneficiado | Input / entrada | Output / salida | Comportamiento esperado | Prioridad | Fase |
+|--------|-------------------|----------------------|-------------------|-------------------|---------------------------|-----------|------|
+| 1 | Mesa de Partes virtual | Estudiantes, docentes y administrativos | Datos personales, tipo de trámite, documentos adjuntos y solicitud | Registro digital del trámite con código de seguimiento | El usuario registra su trámite, el sistema genera un código y permite consultar el estado en línea | Alta | MVP |
+| 2 | Sistema de seguimiento de trámites | Estudiantes y administrativos | Código de trámite o DNI | Estado actualizado del trámite | El sistema muestra automáticamente el estado y avance del documento | Alta | MVP |
+| 3 | Módulo de gestión de asistencia | Personal administrativo y RR.HH. | Registro de ingreso, permisos y tardanzas | Historial de asistencia y reportes | El sistema registra y actualiza automáticamente la asistencia del personal | Alta | MVP |
+| 4 | Solicitud digital de vacaciones y licencias | Personal administrativo | Formulario de solicitud y fechas requeridas | Solicitud enviada y notificación de aprobación o rechazo | El sistema deriva automáticamente la solicitud al responsable correspondiente | Media | MVP |
+| 5 | Dashboard de planificación y presupuesto | Autoridades y Oficina OPP | Datos presupuestales y metas institucionales | Indicadores y gráficos en tiempo real | El sistema actualiza automáticamente indicadores y reportes financieros | Alta | MVP |
+| 6 | Sistema de incidencias y mantenimiento | Estudiantes, docentes y administrativos | Reporte de falla con descripción y evidencia | Ticket de atención y seguimiento | El sistema asigna la incidencia y muestra su estado de atención | Alta | MVP |
+| 7 | Calendario de reserva de espacios | Docentes y administrativos | Fecha, hora y ambiente solicitado | Confirmación de reserva | El sistema evita cruces y muestra disponibilidad en tiempo real | Media | MVP |
+| 8 | Sistema de reserva de equipos audiovisuales | Docentes y administrativos | Tipo de equipo, fecha y actividad | Confirmación de préstamo o reserva | El sistema verifica disponibilidad y registra el préstamo | Media | MVP |
+| 9 | Repositorio audiovisual institucional | Comunidad universitaria | Videos, grabaciones y material multimedia | Acceso al contenido audiovisual | El sistema almacena y organiza el material para consulta en línea | Baja | Fase 2 |
+| 10 | Repositorio digital de documentos | Administrativos y autoridades | Documentos escaneados y clasificados | Consulta y descarga de archivos | El sistema permite búsquedas rápidas y acceso seguro a documentos | Alta | MVP |
+| 11 | Sistema de gestión de evidencias de acreditación | Oficina de Calidad y Acreditación | Evidencias, indicadores y reportes | Panel de seguimiento y almacenamiento digital | El sistema organiza información y facilita auditorías | Alta | Fase 2 |
+| 14 | Sistema de notificaciones automáticas | Toda la comunidad FIIS | Correos, estados de trámites y alertas | Mensajes automáticos enviados al usuario | El sistema informa cambios y recordatorios en tiempo real | Alta | Fase 2 |
+
+---
+
+### Requerimientos de gestión
+
+| NÚMERO | Requerimiento de gestión | Responsable sugerido | Motivo | Relación con la web | Prioridad | Recomendación |
+|--------|----------------------------|----------------------|--------|----------------------|-----------|---------------|
+| 3 | Definir responsables de supervisión de trámites virtuales | Mesa de Partes y áreas administrativas | Garantizar seguimiento y respuesta oportuna | El sistema de trámites necesita monitoreo permanente | Alta | MVP |
+| 4 | Implementar capacitaciones para el uso de la plataforma web | Oficina de Recursos Humanos y Soporte TI | Facilitar adaptación tecnológica del personal | El correcto uso de la web depende de usuarios capacitados | Alta | MVP |
+| 7 | Definir flujos de aprobación de solicitudes y trámites | Oficinas administrativas | Reducir retrasos y desorden operativo | Los módulos digitales requieren validaciones automáticas | Alta | Fase 2 |
+| 8 | Asignar responsables del control de inventarios digitales | Oficina de Abastecimiento | Mantener información precisa sobre stock y bienes | El sistema logístico depende de datos actualizados | Alta | MVP |
+| 12 | Establecer políticas de atención y respuesta virtual | Mesa de Partes y atención administrativa | Mejorar experiencia del usuario y tiempos de respuesta | Los usuarios interactuarán mediante canales digitales | Media | Fase 2 |
+| 13 | Designar responsables del sistema de acreditación y calidad | Oficina de Calidad y Acreditación | Garantizar actualización de indicadores y evidencias | Los dashboards y reportes requieren monitoreo constante | Media | Fase 2 |
+| 15 | Coordinar digitalización progresiva de documentos físicos | Oficina de Archivo y autoridades FIIS | Reducir dependencia del archivo físico | La plataforma necesita contenido documental digital | Media | Fase 2 |
+| 16 | Establecer responsables de monitoreo de incidencias | Servicios Generales y Vigilancia | Mejorar tiempos de atención y control de problemas | Los módulos de incidencias requieren supervisión constante | Media | Fase 2 |
+| 17 | Crear protocolos de uso de equipos audiovisuales | Oficina de Medios Audiovisuales | Evitar pérdidas y conflictos de reserva | El sistema de préstamos requiere reglas claras | Media | Fase 2 |
+
+## Bloque 6 - Egresados
+
+### Requerimientos web
+
+| NÚMERO | Requerimiento web | Usuario beneficiado | Input / entrada | Output / salida | Comportamiento esperado | Prioridad | Fase |
+|--------|-------------------|----------------------|-------------------|-------------------|---------------------------|-----------|------|
+| 5 | Agendamiento de Asesoría de Empleabilidad | Egresado | Selección de horario, carga de CV para revisión. | Cita confirmada en calendario y notificación al orientador. | Permite reservar sesiones con psicólogos para simulacros de entrevista y mejora de perfil profesional. | Alta | Fase 2 |
+| 6 | Módulo de Mentoría Senior-Junior | Egresado (Senior/Junior) | Perfil del mentor, áreas de asesoría, solicitud del mentee. | Conexión directa entre ambos perfiles. | Facilita que egresados con experiencia orienten a los recién egresados en su desarrollo de carrera. | Media | Fase 2 |
+| 9 | Foro de Comunidad e Intercambio | Egresado | Publicación de consultas, experiencias o noticias. | Hilo de discusión visible para miembros registrados. | Espacio interno para fortalecer el vínculo y resolver dudas técnicas o laborales entre colegas. | Media | Fase 3 |
+| 10 | Reserva de Instalaciones y Beneficios | Egresado | Fecha de reserva, tipo de instalación (Biblioteca/Deportes). | Ticket de acceso o confirmación de reserva. | Gestiona el acceso físico a la facultad y el uso de servicios como el gimnasio o centro médico UNI. | Baja | Fase 3 |
+
+---
+
+### Requerimientos de gestión
+
+| NÚMERO | Requerimiento de gestión | Responsable sugerido | Motivo | Relación con la web | Prioridad | Recomendación |
+|--------|----------------------------|----------------------|--------|----------------------|-----------|---------------|
+| 3 | Asignación de personal para Asesoría de Empleabilidad. | Oficina de Bienestar / Psicólogos de la facultad. | Las citas reservadas en la web requieren personal humano que las atienda. | Soporte operativo del Módulo de Calendario/Citas. | Alta | Fase 2 |
+
+## Bloque 7 - Centros culturales, organizaciones estudiantiles, agrupaciones académicas y delegaturas
+
+### Requerimientos web
+
+| NÚMERO | Requerimiento web | Usuario beneficiado | Input / entrada | Output / salida | Comportamiento esperado | Prioridad | Fase |
+|--------|-------------------|----------------------|-------------------|-------------------|---------------------------|-----------|------|
+| 10 | Crear repositorio de recursos académicos y materiales autorizados. | Estudiantes, delegaturas y agrupaciones. | PDF, guías, exámenes, talleres, enlaces y categorías. | Repositorio organizado. | El usuario encuentra materiales por curso, tipo, agrupación o fecha. | Alta | Fase 2 |
+
+---
+
+### Requerimientos de gestión
+
+| NÚMERO | Requerimiento de gestión | Responsable sugerido | Motivo | Relación con la web | Prioridad | Recomendación |
+|--------|----------------------------|----------------------|--------|----------------------|-----------|---------------|
+| 7 | Definir normas para carga y uso de documentos académicos. | Delegaturas / responsables académicos. | Evitar material no autorizado o mal clasificado. | El repositorio requiere criterios de validación y categorización. | Alta | Fase 2 |
