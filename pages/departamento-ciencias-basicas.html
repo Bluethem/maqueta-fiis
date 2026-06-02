@@ -1,0 +1,168 @@
+<div class="page-enter space-y-8">
+  <section class="relative bg-primary overflow-hidden rounded-2xl min-h-[280px] flex items-center">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
+    <div class="relative z-10 px-8 md:px-16 py-12 w-full">
+      <div class="flex items-center gap-2 mb-3">
+        <a href="#/organigrama" class="text-brand-cream/70 hover:text-brand-cream text-sm flex items-center gap-1 transition-colors">
+          <span class="material-symbols-outlined text-sm">arrow_back</span> Departamentos
+        </a>
+      </div>
+      <div class="max-w-3xl">
+        <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-4 leading-tight">Departamento Académico de Ciencias Básicas</h1>
+        <p class="text-on-primary/90 text-lg md:text-xl leading-relaxed">
+          Unidad académica responsable de la enseñanza de las ciencias fundamentales que sientan las bases del conocimiento científico-tecnológico en la formación de los ingenieros FIIS.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-[1200px] mx-auto px-6 md:px-8 space-y-10">
+    <div class="flex border-b border-border-subtle gap-0 overflow-x-auto">
+      <button class="px-6 py-4 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 transition-colors whitespace-nowrap" data-tab="info">Presentación</button>
+      <button class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-tab="docentes">Docentes</button>
+      <button class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-tab="cursos">Cursos</button>
+      <button class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-tab="contacto">Contacto</button>
+    </div>
+
+    <div id="tab-info" class="tab-content space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-xl border border-border-subtle p-6">
+          <h3 class="text-lg font-bold text-on-surface mb-2">Misión</h3>
+          <p class="text-text-secondary text-sm leading-relaxed">Proporcionar una sólida formación en ciencias básicas a los estudiantes de ingeniería, desarrollando el pensamiento lógico-matemático y la comprensión de los fenómenos físicos y químicos como fundamento para la innovación tecnológica.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-6">
+          <h3 class="text-lg font-bold text-on-surface mb-2">Visión</h3>
+          <p class="text-text-secondary text-sm leading-relaxed">Ser un departamento de referencia nacional en la enseñanza e investigación de ciencias básicas aplicadas a la ingeniería, con docentes altamente calificados y laboratorios modernos que impulsen el desarrollo científico del país.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl border border-border-subtle p-6">
+        <h3 class="text-lg font-bold text-on-surface mb-4">Datos Generales</h3>
+        <dl class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div class="flex justify-between py-2 border-b border-border-subtle">
+            <dt class="text-text-secondary">Jefe del Departamento</dt>
+            <dd class="font-medium text-on-surface">Dr. Ricardo Rojas</dd>
+          </div>
+          <div class="flex justify-between py-2 border-b border-border-subtle">
+            <dt class="text-text-secondary">Categoría</dt>
+            <dd class="font-medium text-on-surface">Docente Principal</dd>
+          </div>
+          <div class="flex justify-between py-2 border-b border-border-subtle">
+            <dt class="text-text-secondary">Áreas</dt>
+            <dd class="font-medium text-on-surface">Matemática, Física, Química, Estadística</dd>
+          </div>
+          <div class="flex justify-between py-2 border-b border-border-subtle">
+            <dt class="text-text-secondary">Laboratorios</dt>
+            <dd class="font-medium text-on-surface">Física, Química, Cómputo</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div id="tab-docentes" class="tab-content hidden space-y-4">
+      <p class="text-text-secondary text-sm">Docentes principales del Departamento Académico de Ciencias Básicas.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+          <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0 mb-3">RR</div>
+          <p class="font-semibold text-on-surface text-sm">Dr. Ricardo Rojas</p>
+          <p class="text-xs text-text-secondary">Jefe del Departamento</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-blue-100 text-blue-700">Docente Principal</span>
+          <p class="text-xs text-text-secondary mt-2">Matemática Aplicada</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+          <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0 mb-3">ML</div>
+          <p class="font-semibold text-on-surface text-sm">Mg. Mario López</p>
+          <p class="text-xs text-text-secondary">Docente Asociado</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-100 text-green-700">Asociado</span>
+          <p class="text-xs text-text-secondary mt-2">Física General</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+          <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0 mb-3">SP</div>
+          <p class="font-semibold text-on-surface text-sm">Dra. Silvia Paredes</p>
+          <p class="text-xs text-text-secondary">Docente Asociada</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-100 text-green-700">Asociado</span>
+          <p class="text-xs text-text-secondary mt-2">Química General</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+          <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0 mb-3">CV</div>
+          <p class="font-semibold text-on-surface text-sm">Mg. Carlos Vega</p>
+          <p class="text-xs text-text-secondary">Docente Asociado</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-100 text-green-700">Asociado</span>
+          <p class="text-xs text-text-secondary mt-2">Estadística Aplicada</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-cursos" class="tab-content hidden space-y-6">
+      <p class="text-text-secondary text-sm">Cursos que el Departamento Académico de Ciencias Básicas ofrece a las distintas escuelas profesionales de la FIIS.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3"><span class="material-symbols-outlined">calculate</span></div>
+          <h4 class="font-semibold text-on-surface text-sm">Matemática Básica</h4>
+          <p class="text-xs text-text-secondary mt-1">Fundamentos de álgebra, trigonometría y geometría analítica.</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-amber-100 text-amber-700">5 créditos</span>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-5 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3"><span class="material-symbols-outlined">functions</span></div>
+          <h4 class="font-semibold text-on-surface text-sm">Cálculo I</h4>
+          <p class="text-xs text-text-secondary mt-1">Límites, derivadas y aplicaciones de funciones reales.</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-amber-100 text-amber-700">5 créditos</span>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-5 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3"><span class="material-symbols-outlined">integral</span></div>
+          <h4 class="font-semibold text-on-surface text-sm">Cálculo II</h4>
+          <p class="text-xs text-text-secondary mt-1">Integrales, series y cálculo multivariable.</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-amber-100 text-amber-700">5 créditos</span>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-5 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3"><span class="material-symbols-outlined">speed</span></div>
+          <h4 class="font-semibold text-on-surface text-sm">Física I</h4>
+          <p class="text-xs text-text-secondary mt-1">Mecánica clásica, cinemática y dinámica de partículas.</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-amber-100 text-amber-700">4 créditos</span>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-5 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3"><span class="material-symbols-outlined">bolt</span></div>
+          <h4 class="font-semibold text-on-surface text-sm">Física II</h4>
+          <p class="text-xs text-text-secondary mt-1">Electromagnetismo, ondas y termodinámica.</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-amber-100 text-amber-700">4 créditos</span>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-5 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3"><span class="material-symbols-outlined">science</span></div>
+          <h4 class="font-semibold text-on-surface text-sm">Química General</h4>
+          <p class="text-xs text-text-secondary mt-1">Estructura atómica, enlaces químicos y reacciones.</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-amber-100 text-amber-700">4 créditos</span>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-5 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3"><span class="material-symbols-outlined">bar_chart</span></div>
+          <h4 class="font-semibold text-on-surface text-sm">Estadística</h4>
+          <p class="text-xs text-text-secondary mt-1">Probabilidades, inferencia estadística y análisis de datos.</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-amber-100 text-amber-700">4 créditos</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-contacto" class="tab-content hidden space-y-4">
+      <div class="bg-white rounded-xl border border-border-subtle p-6 max-w-lg">
+        <h3 class="font-bold text-on-surface mb-4">Información de Contacto</h3>
+        <dl class="space-y-3 text-sm">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">mail</span>
+            <dd class="text-on-surface">ciencias.basicas@fiis.uni.edu.pe</dd>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">phone</span>
+            <dd class="text-on-surface">(01) 481-1070 anexo 5230</dd>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">location_on</span>
+            <dd class="text-on-surface">Pabellón C, 1er piso — Av. Túpac Amaru 210, Rímac</dd>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">schedule</span>
+            <dd class="text-on-surface">Lun — Vie: 08:00 — 17:00</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>

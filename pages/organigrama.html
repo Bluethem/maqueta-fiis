@@ -1,0 +1,190 @@
+<div class="page-enter space-y-8">
+  <section class="relative bg-primary overflow-hidden rounded-2xl min-h-[260px] flex items-center">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
+    <div class="relative z-10 px-8 md:px-16 py-14 w-full">
+      <div class="max-w-2xl">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-brand-cream text-3xl" style="font-variation-settings:'FILL'1;">account_tree</span>
+          <span class="text-brand-cream font-semibold text-sm uppercase tracking-widest">Estructura Institucional</span>
+        </div>
+        <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-4 leading-tight">Organigrama FIIS</h1>
+        <p class="text-on-primary/90 text-lg md:text-xl leading-relaxed max-w-xl">
+          Explora la estructura orgánica de la Facultad. Haz clic en cada categoría para expandir sus dependencias y accede a escuelas, departamentos, cronogramas y más.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-[900px] mx-auto px-6 md:px-8 pb-12">
+    <div class="bg-white rounded-2xl shadow-sm border border-border-subtle p-6 md:p-10">
+      <ul class="tree-list">
+        <li class="tree-root">
+          <div class="root-node">
+            <div class="w-14 h-14 rounded-full bg-white/15 flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-brand-cream text-3xl" style="font-variation-settings:'FILL'1;">workspace_premium</span>
+            </div>
+              <div>
+                <span class="text-xs text-brand-cream/80 font-semibold uppercase tracking-widest">Autoridad Máxima</span>
+                <h2 class="text-2xl font-bold text-white"><a href="#/facultad" class="hover:underline inline-flex items-center gap-2">Decanato FIIS <span class="material-symbols-outlined text-brand-cream text-lg">arrow_outward</span></a></h2>
+              </div>
+          </div>
+
+          <ul class="tree-branch">
+            <li class="tree-category">
+              <button class="cat-btn">
+                <span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings:'FILL'1;">school</span>
+                <span class="cat-btn-label">Escuelas Profesionales</span>
+                <span class="cat-chevron material-symbols-outlined text-text-secondary text-lg ml-auto transition-transform duration-300">chevron_right</span>
+              </button>
+              <ul class="cat-children">
+                <li><a href="#/escuelas/industrial" class="child-link">Ingeniería Industrial <span class="material-symbols-outlined text-sm text-primary -mt-0.5">arrow_outward</span></a></li>
+                <li><a href="#/escuelas/sistemas" class="child-link">Ingeniería de Sistemas <span class="material-symbols-outlined text-sm text-primary -mt-0.5">arrow_outward</span></a></li>
+                <li><a href="#/escuelas/software" class="child-link">Ingeniería de Software <span class="material-symbols-outlined text-sm text-primary -mt-0.5">arrow_outward</span></a></li>
+                <li><a href="#/escuelas/inteligencia-artificial" class="child-link">Ingeniería de Inteligencia Artificial <span class="material-symbols-outlined text-sm text-primary -mt-0.5">arrow_outward</span></a></li>
+              </ul>
+            </li>
+
+            <li class="tree-category">
+              <button class="cat-btn">
+                <span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings:'FILL'1;">account_tree</span>
+                <span class="cat-btn-label">Departamentos Académicos</span>
+                <span class="cat-chevron material-symbols-outlined text-text-secondary text-lg ml-auto transition-transform duration-300">chevron_right</span>
+              </button>
+              <ul class="cat-children">
+                <li><a href="#/departamentos/ciencias-basicas" class="child-link">Ciencias Básicas <span class="material-symbols-outlined text-sm text-primary -mt-0.5">arrow_outward</span></a></li>
+                <li><a href="#/departamentos/gestion-produccion" class="child-link">Gestión de la Producción <span class="material-symbols-outlined text-sm text-primary -mt-0.5">arrow_outward</span></a></li>
+                <li><a href="#/departamentos/humanidades" class="child-link">Humanidades y Ciencias Sociales <span class="material-symbols-outlined text-sm text-primary -mt-0.5">arrow_outward</span></a></li>
+                <li><a href="#/departamentos/sistemas-telematica" class="child-link">Sistemas y Telemática <span class="material-symbols-outlined text-sm text-primary -mt-0.5">arrow_outward</span></a></li>
+                <li><a href="#/departamentos/tecnologia-produccion" class="child-link">Tecnología de la Producción <span class="material-symbols-outlined text-sm text-primary -mt-0.5">arrow_outward</span></a></li>
+              </ul>
+            </li>
+
+            <li class="tree-category">
+              <button class="cat-btn">
+                <span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings:'FILL'1;">science</span>
+                <span class="cat-btn-label">Institutos y Laboratorios</span>
+                <span class="cat-chevron material-symbols-outlined text-text-secondary text-lg ml-auto transition-transform duration-300">chevron_right</span>
+              </button>
+              <ul class="cat-children">
+                <li><span class="child-item" data-tip="Investigación y desarrollo académico en ingeniería y tecnología">Instituto de Investigación <span class="material-symbols-outlined text-sm text-text-secondary -mt-0.5">info</span></span></li>
+                <li><span class="child-item" data-tip="Automatización, control y optimización de procesos industriales">Centro de Automatización Industrial <span class="material-symbols-outlined text-sm text-text-secondary -mt-0.5">info</span></span></li>
+                <li><span class="child-item" data-tip="Biblioteca y centro de recursos de información académica">Centro de Información FIIS (Biblioteca) <span class="material-symbols-outlined text-sm text-text-secondary -mt-0.5">info</span></span></li>
+                <li><span class="child-item" data-tip="Investigación aplicada en inteligencia artificial y machine learning">Laboratorio de IA <span class="material-symbols-outlined text-sm text-text-secondary -mt-0.5">info</span></span></li>
+                <li><span class="child-item" data-tip="Análisis químico, experimentación y servicios analíticos">Laboratorio de Química <span class="material-symbols-outlined text-sm text-text-secondary -mt-0.5">info</span></span></li>
+                <li><span class="child-item" data-tip="Infraestructura de red, laboratorios académicos y conectividad">Laboratorio Académico y Red FIIS <span class="material-symbols-outlined text-sm text-text-secondary -mt-0.5">info</span></span></li>
+                <li><span class="child-item" data-tip="Consultoría y servicios profesionales especializados en ingeniería">Consult FIIS <span class="material-symbols-outlined text-sm text-text-secondary -mt-0.5">info</span></span></li>
+              </ul>
+            </li>
+
+            <li class="tree-category">
+              <button class="cat-btn">
+                <span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings:'FILL'1;">business</span>
+                <span class="cat-btn-label">Unidades</span>
+                <span class="cat-chevron material-symbols-outlined text-text-secondary text-lg ml-auto transition-transform duration-300">chevron_right</span>
+              </button>
+              <ul class="cat-children">
+                <li><span class="child-item" data-tip="Programas de especialización, diplomados y capacitación ejecutiva">CEE — Centro de Especialización Ejecutiva <span class="material-symbols-outlined text-sm text-text-secondary -mt-0.5">info</span></span></li>
+                <li><span class="child-item" data-tip="Extensión cultural, proyección social y vinculación con la comunidad">UECPS — Unidad de Extensión Cultural y Proyección Social <span class="material-symbols-outlined text-sm text-text-secondary -mt-0.5">info</span></span></li>
+                <li><span class="child-item" data-tip="Acompañamiento académico, psicológico y orientación estudiantil">Tutoría FIIS <span class="material-symbols-outlined text-sm text-text-secondary -mt-0.5">info</span></span></li>
+                <li><a href="#/transparencia" class="child-link">Secretarías (Académica / Administrativa) <span class="material-symbols-outlined text-sm text-primary -mt-0.5">arrow_outward</span></a></li>
+              </ul>
+            </li>
+
+            <li class="tree-category">
+              <button class="cat-btn">
+                <span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings:'FILL'1;">groups</span>
+                <span class="cat-btn-label">Organizaciones Estudiantiles</span>
+                <span class="cat-chevron material-symbols-outlined text-text-secondary text-lg ml-auto transition-transform duration-300">chevron_right</span>
+              </button>
+              <ul class="cat-children">
+                <li><span class="child-item" data-tip="Centro de Estudiantes — representación y bienestar estudiantil">CEIIS — Centro de Estudiantes <span class="material-symbols-outlined text-sm text-text-secondary -mt-0.5">info</span></span></li>
+                <li><span class="child-item" data-tip="Tercio Estudiantil — representación ante el Consejo de Facultad">TEFIIS — Tercio Estudiantil <span class="material-symbols-outlined text-sm text-text-secondary -mt-0.5">info</span></span></li>
+                <li><span class="child-item" data-tip="Centro cultural — difusión de arte, música y cultura en la facultad">Núcleo — Centro Cultural <span class="material-symbols-outlined text-sm text-text-secondary -mt-0.5">info</span></span></li>
+                <li><span class="child-item" data-tip="Centro de Cultura y Arte — talleres y actividades artísticas">CCAT — Centro de Cultura y Arte <span class="material-symbols-outlined text-sm text-text-secondary -mt-0.5">info</span></span></li>
+                <li><span class="child-item" data-tip="Centro de Informática — tecnología, desarrollo y comunidades tech">UNICODE — Centro de Informática <span class="material-symbols-outlined text-sm text-text-secondary -mt-0.5">info</span></span></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="max-w-[900px] mx-auto px-6 md:px-8 pb-16">
+    <h3 class="text-xl font-bold text-primary border-l-8 border-brand-cream pl-5 mb-6">Recursos del Bloque Académico</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <a href="#/cronogramas" class="group bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-lg hover:border-primary transition-all">
+        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
+          <span class="material-symbols-outlined text-2xl">calendar_month</span>
+        </div>
+        <div>
+          <p class="font-bold text-on-surface group-hover:text-primary transition-colors">Cronogramas Académicos</p>
+          <p class="text-sm text-text-secondary">PCs, exámenes y calendarios por escuela</p>
+        </div>
+        <span class="material-symbols-outlined text-primary ml-auto group-hover:translate-x-1 transition-transform">arrow_forward</span>
+      </a>
+      <a href="#/directorio-docentes" class="group bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-lg hover:border-primary transition-all">
+        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
+          <span class="material-symbols-outlined text-2xl">badge</span>
+        </div>
+        <div>
+          <p class="font-bold text-on-surface group-hover:text-primary transition-colors">Directorio de Docentes</p>
+          <p class="text-sm text-text-secondary">Busca docentes por escuela, departamento o categoría</p>
+        </div>
+        <span class="material-symbols-outlined text-primary ml-auto group-hover:translate-x-1 transition-transform">arrow_forward</span>
+      </a>
+    </div>
+  </section>
+</div>
+
+<style>
+.tree-list{list-style:none;padding:0;margin:0}
+.tree-root{list-style:none;position:relative}
+
+.root-node{display:flex;align-items:center;gap:1rem;background:#711610;padding:1.25rem 1.75rem;border-radius:1rem;margin-bottom:0;position:relative;z-index:2;box-shadow:0 4px 20px rgba(113,22,16,0.25)}
+
+.tree-branch{list-style:none;padding:0;margin:0;padding-left:2.5rem;position:relative}
+.tree-branch::before{content:'';position:absolute;left:1.125rem;top:0;bottom:0;width:2px;background:#CDCCCF}
+
+.tree-category{position:relative;padding-left:2.25rem;list-style:none}
+.tree-category::before{content:'';position:absolute;left:-1.375rem;top:1.5rem;width:1.375rem;height:2px;background:#CDCCCF}
+.tree-category::after{content:'';position:absolute;left:-1.375rem;top:1.5rem;bottom:0;width:2px;background:#CDCCCF}
+.tree-category:last-child::after{display:none}
+
+.cat-btn{display:flex;align-items:center;gap:0.75rem;width:100%;padding:0.75rem 1rem;background:transparent;border:none;border-radius:0.75rem;cursor:pointer;color:#1c1b1b;font-weight:600;font-size:1rem;text-align:left;transition:background 0.2s;position:relative;z-index:1}
+.cat-btn:hover{background:#F3F2F5}
+.cat-btn:focus-visible{outline:2px solid #711610;outline-offset:2px}
+.cat-btn-label{font-size:1rem;font-weight:600;color:#1c1b1b}
+
+.cat-children{list-style:none;padding:0;margin:0 0 0.25rem 1.5rem;position:relative;max-height:0;overflow:hidden;transition:max-height 0.35s ease,opacity 0.3s ease;opacity:0}
+.cat-children::before{content:'';position:absolute;left:0.375rem;top:0;bottom:0;width:2px;background:#E5E4E8;opacity:0;transition:opacity 0.3s ease}
+.cat-children.expanded{max-height:800px;opacity:1}
+.cat-children.expanded::before{opacity:1}
+
+.cat-children li{position:relative;padding:0.375rem 0 0.375rem 1.5rem;list-style:none}
+.cat-children li::before{content:'';position:absolute;left:-0.625rem;top:50%;width:0.625rem;height:2px;background:#E5E4E8;opacity:0;transition:opacity 0.3s ease 0.1s}
+.cat-children.expanded li::before{opacity:1}
+
+.child-link,.child-item{display:inline-flex;align-items:center;gap:0.375rem;padding:0.375rem 0.75rem;border-radius:0.5rem;font-size:0.95rem;color:#444652;transition:all 0.2s;text-decoration:none;white-space:nowrap}
+.child-link:hover{background:#F3F2F5;color:#711610}
+.child-item{cursor:help;position:relative}
+.child-item:hover{background:#F8F7F4;color:#1c1b1b}
+
+[data-tip]{position:relative}
+[data-tip]:hover::after{content:attr(data-tip);position:absolute;left:calc(100% + 6px);top:50%;transform:translateY(-50%);background:#2D2D2D;color:#fff;padding:6px 12px;border-radius:6px;font-size:13px;font-weight:500;line-height:1.4;white-space:nowrap;z-index:100;box-shadow:0 4px 16px rgba(0,0,0,0.18);pointer-events:none;max-width:320px;white-space:normal}
+[data-tip]:hover::before{content:'';position:absolute;left:calc(100% + 0px);top:50%;transform:translateY(-50%);border:5px solid transparent;border-right-color:#2D2D2D;z-index:100;pointer-events:none}
+
+@media(max-width:640px){
+  .tree-branch{padding-left:1.5rem}
+  .tree-category{padding-left:1.5rem}
+  .tree-category::before{left:-0.875rem;width:0.875rem}
+  .tree-category::after{left:-0.875rem}
+  .cat-children{margin-left:1rem}
+  .child-link,.child-item{white-space:normal;font-size:0.875rem}
+  .root-node{padding:1rem 1.25rem}
+  .root-node h2{font-size:1.25rem}
+  [data-tip]:hover::after{left:0;top:calc(100% + 6px);transform:none;white-space:normal;max-width:260px}
+  [data-tip]:hover::before{left:12px;top:calc(100% + 0px);transform:none;border:5px solid transparent;border-bottom-color:#2D2D2D}
+}
+</style>
+

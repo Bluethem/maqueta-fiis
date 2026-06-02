@@ -1,0 +1,175 @@
+<div class="page-enter space-y-8">
+  <section class="relative bg-primary overflow-hidden rounded-2xl min-h-[280px] flex items-center">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
+    <div class="relative z-10 px-8 md:px-16 py-12 w-full">
+      <div class="flex items-center gap-2 mb-3">
+        <a href="#/organigrama" class="text-brand-cream/70 hover:text-brand-cream text-sm flex items-center gap-1 transition-colors">
+          <span class="material-symbols-outlined text-sm">arrow_back</span> Departamentos
+        </a>
+      </div>
+      <div class="max-w-3xl">
+        <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-4 leading-tight">Departamento Académico de Sistemas y Telemática</h1>
+        <p class="text-on-primary/90 text-lg md:text-xl leading-relaxed">
+          Unidad académica especializada en la formación en tecnologías de información, desarrollo de software, redes de comunicación e inteligencia artificial, impulsando la transformación digital desde la FIIS.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-[1200px] mx-auto px-6 md:px-8 space-y-10">
+    <div class="flex border-b border-border-subtle gap-0 overflow-x-auto">
+      <button class="px-6 py-4 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 transition-colors whitespace-nowrap" data-tab="info">Presentación</button>
+      <button class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-tab="docentes">Docentes</button>
+      <button class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-tab="cursos">Cursos</button>
+      <button class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-tab="contacto">Contacto</button>
+    </div>
+
+    <div id="tab-info" class="tab-content space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-xl border border-border-subtle p-6">
+          <h3 class="text-lg font-bold text-on-surface mb-2">Misión</h3>
+          <p class="text-text-secondary text-sm leading-relaxed">Formar profesionales altamente competentes en sistemas de información, ingeniería de software, redes y telemática, con capacidad para crear soluciones tecnológicas innovadoras que contribuyan al desarrollo digital del país.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-6">
+          <h3 class="text-lg font-bold text-on-surface mb-2">Visión</h3>
+          <p class="text-text-secondary text-sm leading-relaxed">Ser el departamento académico líder en el Perú en la enseñanza e investigación de sistemas y telemática, reconocido por la calidad de sus egresados y su contribución a la innovación tecnológica.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl border border-border-subtle p-6">
+        <h3 class="text-lg font-bold text-on-surface mb-4">Datos Generales</h3>
+        <dl class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div class="flex justify-between py-2 border-b border-border-subtle">
+            <dt class="text-text-secondary">Jefe del Departamento</dt>
+            <dd class="font-medium text-on-surface">Dr. Miguel Rodríguez</dd>
+          </div>
+          <div class="flex justify-between py-2 border-b border-border-subtle">
+            <dt class="text-text-secondary">Categoría</dt>
+            <dd class="font-medium text-on-surface">Docente Principal</dd>
+          </div>
+          <div class="flex justify-between py-2 border-b border-border-subtle">
+            <dt class="text-text-secondary">Áreas</dt>
+            <dd class="font-medium text-on-surface">Programación, Redes, IA, Seguridad, Sistemas</dd>
+          </div>
+          <div class="flex justify-between py-2 border-b border-border-subtle">
+            <dt class="text-text-secondary">Laboratorios</dt>
+            <dd class="font-medium text-on-surface">Lab. Académico, Lab. IA, Redes</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div id="tab-docentes" class="tab-content hidden space-y-4">
+      <p class="text-text-secondary text-sm">Docentes principales del Departamento Académico de Sistemas y Telemática.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+          <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0 mb-3">MR</div>
+          <p class="font-semibold text-on-surface text-sm">Dr. Miguel Rodríguez</p>
+          <p class="text-xs text-text-secondary">Jefe del Departamento</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-blue-100 text-blue-700">Docente Principal</span>
+          <p class="text-xs text-text-secondary mt-2">Ingeniería de Software</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+          <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0 mb-3">EQ</div>
+          <p class="font-semibold text-on-surface text-sm">Dr. Edgar Quispe</p>
+          <p class="text-xs text-text-secondary">Docente Principal</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-blue-100 text-blue-700">Docente Principal</span>
+          <p class="text-xs text-text-secondary mt-2">Inteligencia Artificial</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+          <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0 mb-3">HR</div>
+          <p class="font-semibold text-on-surface text-sm">Mg. Hugo Ramírez</p>
+          <p class="text-xs text-text-secondary">Docente Asociado</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-100 text-green-700">Asociado</span>
+          <p class="text-xs text-text-secondary mt-2">Redes y Seguridad</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+          <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0 mb-3">SM</div>
+          <p class="font-semibold text-on-surface text-sm">Mg. Sara Medina</p>
+          <p class="text-xs text-text-secondary">Docente Asociada</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-100 text-green-700">Asociado</span>
+          <p class="text-xs text-text-secondary mt-2">Base de Datos</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+          <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0 mb-3">PC</div>
+          <p class="font-semibold text-on-surface text-sm">Mg. Paulo Cárdenas</p>
+          <p class="text-xs text-text-secondary">Docente Asociado</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-100 text-green-700">Asociado</span>
+          <p class="text-xs text-text-secondary mt-2">Programación y Sistemas Operativos</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-cursos" class="tab-content hidden space-y-6">
+      <p class="text-text-secondary text-sm">Cursos que el Departamento Académico de Sistemas y Telemática ofrece a las distintas escuelas profesionales de la FIIS.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3"><span class="material-symbols-outlined">code</span></div>
+          <h4 class="font-semibold text-on-surface text-sm">Programación</h4>
+          <p class="text-xs text-text-secondary mt-1">Algoritmos, estructuras de datos y programación orientada a objetos.</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-amber-100 text-amber-700">4 créditos</span>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-5 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3"><span class="material-symbols-outlined">storage</span></div>
+          <h4 class="font-semibold text-on-surface text-sm">Base de Datos</h4>
+          <p class="text-xs text-text-secondary mt-1">Diseño, implementación y administración de bases de datos relacionales y no relacionales.</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-amber-100 text-amber-700">4 créditos</span>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-5 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3"><span class="material-symbols-outlined">wifi</span></div>
+          <h4 class="font-semibold text-on-surface text-sm">Redes</h4>
+          <p class="text-xs text-text-secondary mt-1">Arquitectura de redes, protocolos TCP/IP y comunicaciones.</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-amber-100 text-amber-700">4 créditos</span>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-5 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3"><span class="material-symbols-outlined">settings_applications</span></div>
+          <h4 class="font-semibold text-on-surface text-sm">Ingeniería de Software</h4>
+          <p class="text-xs text-text-secondary mt-1">Metodologías ágiles, diseño de sistemas y gestión de proyectos de software.</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-amber-100 text-amber-700">4 créditos</span>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-5 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3"><span class="material-symbols-outlined">psychology</span></div>
+          <h4 class="font-semibold text-on-surface text-sm">Inteligencia Artificial</h4>
+          <p class="text-xs text-text-secondary mt-1">Machine learning, procesamiento de lenguaje natural y visión computacional.</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-amber-100 text-amber-700">4 créditos</span>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-5 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3"><span class="material-symbols-outlined">security</span></div>
+          <h4 class="font-semibold text-on-surface text-sm">Seguridad Informática</h4>
+          <p class="text-xs text-text-secondary mt-1">Ciberseguridad, criptografía, auditoría y protección de datos.</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-amber-100 text-amber-700">3 créditos</span>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-5 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3"><span class="material-symbols-outlined">computer</span></div>
+          <h4 class="font-semibold text-on-surface text-sm">Sistemas Operativos</h4>
+          <p class="text-xs text-text-secondary mt-1">Gestión de procesos, memoria, archivos y virtualización.</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-amber-100 text-amber-700">3 créditos</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-contacto" class="tab-content hidden space-y-4">
+      <div class="bg-white rounded-xl border border-border-subtle p-6 max-w-lg">
+        <h3 class="font-bold text-on-surface mb-4">Información de Contacto</h3>
+        <dl class="space-y-3 text-sm">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">mail</span>
+            <dd class="text-on-surface">sistemas.telematica@fiis.uni.edu.pe</dd>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">phone</span>
+            <dd class="text-on-surface">(01) 481-1070 anexo 5250</dd>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">location_on</span>
+            <dd class="text-on-surface">Pabellón A, 3er piso — Av. Túpac Amaru 210, Rímac</dd>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">schedule</span>
+            <dd class="text-on-surface">Lun — Vie: 08:00 — 17:00</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
