@@ -161,7 +161,24 @@ async function routeDashboardSub(role, section) {
 
 Router.add('/', routeLanding);
 Router.add('/login', routeLogin);
+Router.add('/facultad', () => routePublic('facultad'));
+Router.add('/transparencia', () => routePublic('transparencia'));
+Router.add('/contacto', () => routePublic('contacto'));
 Router.add('/noticias', () => routePublic('noticias'));
+Router.add('/organigrama', () => routePublic('organigrama'));
+Router.add('/escuelas', () => routePublic('escuelas'));
+Router.add('/escuelas/industrial', () => routePublic('escuela-industrial'));
+Router.add('/escuelas/sistemas', () => routePublic('escuela-sistemas'));
+Router.add('/escuelas/software', () => routePublic('escuela-software'));
+Router.add('/escuelas/inteligencia-artificial', () => routePublic('escuela-inteligencia-artificial'));
+Router.add('/departamentos', () => routePublic('departamentos'));
+Router.add('/departamentos/ciencias-basicas', () => routePublic('departamento-ciencias-basicas'));
+Router.add('/departamentos/gestion-produccion', () => routePublic('departamento-gestion-produccion'));
+Router.add('/departamentos/humanidades', () => routePublic('departamento-humanidades'));
+Router.add('/departamentos/sistemas-telematica', () => routePublic('departamento-sistemas-telematica'));
+Router.add('/departamentos/tecnologia-produccion', () => routePublic('departamento-tecnologia-produccion'));
+Router.add('/cronogramas', () => routePublic('cronogramas'));
+Router.add('/directorio-docentes', () => routePublic('directorio-docentes'));
 Router.add('/empresas', () => routePublic('empresas'));
 Router.add('/egresados', () => routePublic('egresados'));
 Router.add('/vida-estudiantil', () => routePublic('vida-estudiantil'));
