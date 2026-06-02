@@ -5,10 +5,136 @@
       <h2 class="text-2xl font-bold text-on-surface">Mis Vacantes</h2>
       <p class="text-text-secondary text-sm mt-0.5">Administra tus ofertas de prácticas y empleo</p>
     </div>
-    <button class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-on-primary rounded-lg font-semibold text-sm hover:brightness-110 transition-all shadow-sm active:scale-95">
+    <button id="btn-nueva-vacante" class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-on-primary rounded-lg font-semibold text-sm hover:brightness-110 transition-all shadow-sm active:scale-95">
       <span class="material-symbols-outlined text-sm">add</span>
       Publicar nueva vacante
     </button>
+  </div>
+
+  <!-- Formulario publicar vacante (colapsable) -->
+  <div id="form-nueva-vacante" class="hidden bg-white rounded-xl border border-primary/30 shadow-sm overflow-hidden">
+    <div class="px-5 py-4 border-b border-border-subtle flex items-center justify-between bg-primary/5">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-base">work_history</span>
+        <h3 class="text-base font-bold text-on-surface">Nueva vacante</h3>
+      </div>
+      <button id="btn-cerrar-form" class="p-1.5 hover:bg-surface-container-high rounded-lg transition-all">
+        <span class="material-symbols-outlined text-text-secondary text-base">close</span>
+      </button>
+    </div>
+    <div class="p-5 space-y-5">
+
+      <!-- R6 / R7: Tipo de vacante -->
+      <div class="space-y-2">
+        <label class="text-sm font-semibold text-on-surface">Tipo de oferta</label>
+        <div class="flex flex-wrap gap-3">
+          <label class="inline-flex items-center gap-2.5 px-4 py-2.5 border border-border-subtle rounded-lg cursor-pointer hover:bg-surface-container-low transition-all has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="tipo-vacante" value="practica" class="accent-primary" checked>
+            <span class="material-symbols-outlined text-sm text-primary">school</span>
+            <div>
+              <p class="text-sm font-semibold text-on-surface">Práctica preprofesional</p>
+              <p class="text-xs text-text-secondary">Para estudiantes en curso</p>
+            </div>
+          </label>
+          <label class="inline-flex items-center gap-2.5 px-4 py-2.5 border border-border-subtle rounded-lg cursor-pointer hover:bg-surface-container-low transition-all has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="tipo-vacante" value="empleo" class="accent-primary">
+            <span class="material-symbols-outlined text-sm text-tertiary">work</span>
+            <div>
+              <p class="text-sm font-semibold text-on-surface">Oferta laboral</p>
+              <p class="text-xs text-text-secondary">Para egresados y titulados</p>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <!-- Cargo -->
+        <div class="space-y-1.5 md:col-span-2">
+          <label class="text-sm font-semibold text-on-surface">Nombre del cargo / puesto</label>
+          <input type="text" placeholder="Ej: Analista de Planeamiento Industrial" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
+        </div>
+
+        <!-- R8: Carrera dirigida -->
+        <div class="space-y-2 md:col-span-2">
+          <label class="text-sm font-semibold text-on-surface">Carrera(s) dirigida(s)</label>
+          <p class="text-xs text-text-secondary -mt-1">Puedes seleccionar más de una</p>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <label class="inline-flex items-center gap-2 px-3 py-2.5 border border-border-subtle rounded-lg cursor-pointer hover:bg-surface-container-low transition-all has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+              <input type="checkbox" class="accent-primary" checked>
+              <span class="text-sm font-medium text-on-surface">Ing. Industrial</span>
+            </label>
+            <label class="inline-flex items-center gap-2 px-3 py-2.5 border border-border-subtle rounded-lg cursor-pointer hover:bg-surface-container-low transition-all has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+              <input type="checkbox" class="accent-primary">
+              <span class="text-sm font-medium text-on-surface">Ing. Sistemas</span>
+            </label>
+            <label class="inline-flex items-center gap-2 px-3 py-2.5 border border-border-subtle rounded-lg cursor-pointer hover:bg-surface-container-low transition-all has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+              <input type="checkbox" class="accent-primary">
+              <span class="text-sm font-medium text-on-surface">Ing. Software</span>
+            </label>
+            <label class="inline-flex items-center gap-2 px-3 py-2.5 border border-border-subtle rounded-lg cursor-pointer hover:bg-surface-container-low transition-all has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+              <input type="checkbox" class="accent-primary">
+              <span class="text-sm font-medium text-on-surface">Int. Artificial</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Modalidad -->
+        <div class="space-y-2">
+          <label class="text-sm font-semibold text-on-surface">Modalidad</label>
+          <div class="flex flex-wrap gap-3">
+            <label class="inline-flex items-center gap-2 px-3 py-2 border border-border-subtle rounded-lg cursor-pointer hover:bg-surface-container-low transition-all has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+              <input type="radio" name="modalidad-vac" class="accent-primary" checked>
+              <span class="text-sm font-medium text-on-surface">Presencial</span>
+            </label>
+            <label class="inline-flex items-center gap-2 px-3 py-2 border border-border-subtle rounded-lg cursor-pointer hover:bg-surface-container-low transition-all has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+              <input type="radio" name="modalidad-vac" class="accent-primary">
+              <span class="text-sm font-medium text-on-surface">Remoto</span>
+            </label>
+            <label class="inline-flex items-center gap-2 px-3 py-2 border border-border-subtle rounded-lg cursor-pointer hover:bg-surface-container-low transition-all has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+              <input type="radio" name="modalidad-vac" class="accent-primary">
+              <span class="text-sm font-medium text-on-surface">Híbrido</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Fecha límite -->
+        <div class="space-y-1.5">
+          <label class="text-sm font-semibold text-on-surface">Fecha límite de postulación</label>
+          <input type="date" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
+        </div>
+
+        <!-- Requisitos -->
+        <div class="space-y-1.5 md:col-span-2">
+          <label class="text-sm font-semibold text-on-surface">Requisitos y descripción</label>
+          <textarea rows="4" placeholder="Describe el perfil requerido, habilidades técnicas, experiencia previa y funciones del puesto..." class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30 resize-none"></textarea>
+        </div>
+
+        <!-- Contacto / enlace -->
+        <div class="space-y-1.5 md:col-span-2">
+          <label class="text-sm font-semibold text-on-surface">Enlace de postulación o correo de contacto</label>
+          <input type="text" placeholder="Ej: https://jobs.empresa.com/vacante o reclutamiento@empresa.com" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
+        </div>
+      </div>
+
+      <!-- Nota de revisión (R18) -->
+      <div class="flex items-start gap-3 bg-warning/5 border border-warning/20 rounded-lg px-4 py-3">
+        <span class="material-symbols-outlined text-warning text-base shrink-0 mt-0.5">info</span>
+        <p class="text-xs text-text-secondary">Tu vacante será revisada por el equipo FIIS antes de publicarse. Recibirás una notificación cuando sea aprobada, observada o rechazada.</p>
+      </div>
+    </div>
+    <div class="px-5 py-4 border-t border-border-subtle bg-surface-bg/20 flex items-center justify-end gap-3">
+      <button id="btn-cancelar-vac" class="px-4 py-2 text-sm font-semibold text-text-secondary border border-border-subtle rounded-lg hover:bg-surface-container-low transition-all">Cancelar</button>
+      <button id="btn-submit-vac" class="inline-flex items-center gap-2 px-5 py-2 text-sm font-semibold bg-primary text-on-primary rounded-lg hover:brightness-110 transition-all shadow-sm active:scale-95">
+        <span class="material-symbols-outlined text-sm">send</span>
+        Enviar para revisión
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast de éxito -->
+  <div id="vac-toast" class="hidden fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-on-surface text-surface px-5 py-3.5 rounded-xl shadow-xl">
+    <span class="material-symbols-outlined text-success text-base">check_circle</span>
+    <p class="text-sm font-semibold">Vacante enviada para revisión</p>
   </div>
 
   <!-- Table -->
@@ -20,10 +146,6 @@
           <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary text-sm pointer-events-none">search</span>
           <input type="text" placeholder="Buscar vacante..." class="pl-9 pr-3 py-1.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary w-52">
         </div>
-        <button class="flex items-center gap-1.5 px-3 py-1.5 text-sm border border-border-subtle rounded-lg font-medium text-on-surface-variant hover:bg-surface-container-low transition-all">
-          <span class="material-symbols-outlined text-sm">filter_list</span>
-          Filtrar
-        </button>
       </div>
     </div>
     <div class="overflow-x-auto">
@@ -31,6 +153,7 @@
         <thead>
           <tr class="bg-surface-bg/50 border-b border-border-subtle">
             <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Cargo</th>
+            <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Tipo</th>
             <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Carrera</th>
             <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Publicación</th>
             <th class="text-center px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Postulantes</th>
@@ -43,6 +166,9 @@
             <td class="px-5 py-3.5">
               <p class="font-semibold text-on-surface">Analista de Planeamiento Industrial</p>
               <p class="text-xs text-text-secondary mt-0.5">Cód: VAC-2024-081</p>
+            </td>
+            <td class="px-5 py-3.5">
+              <span class="bg-orange-50 text-orange-700 px-2 py-0.5 rounded-full text-[10px] font-semibold">Empleo</span>
             </td>
             <td class="px-5 py-3.5 text-text-secondary">Ing. Industrial</td>
             <td class="px-5 py-3.5 text-text-secondary">12 Oct, 2024</td>
@@ -66,6 +192,9 @@
               <p class="font-semibold text-on-surface">Practicante de Sistemas SAP</p>
               <p class="text-xs text-text-secondary mt-0.5">Cód: VAC-2024-079</p>
             </td>
+            <td class="px-5 py-3.5">
+              <span class="bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full text-[10px] font-semibold">Práctica</span>
+            </td>
             <td class="px-5 py-3.5 text-text-secondary">Ing. Sistemas</td>
             <td class="px-5 py-3.5 text-text-secondary">05 Oct, 2024</td>
             <td class="px-5 py-3.5 text-center">
@@ -88,6 +217,9 @@
               <p class="font-semibold text-on-surface">Supervisor de Control de Calidad</p>
               <p class="text-xs text-text-secondary mt-0.5">Cód: VAC-2024-075</p>
             </td>
+            <td class="px-5 py-3.5">
+              <span class="bg-orange-50 text-orange-700 px-2 py-0.5 rounded-full text-[10px] font-semibold">Empleo</span>
+            </td>
             <td class="px-5 py-3.5 text-text-secondary">Ing. Industrial</td>
             <td class="px-5 py-3.5 text-text-secondary">28 Set, 2024</td>
             <td class="px-5 py-3.5 text-center">
@@ -109,6 +241,9 @@
             <td class="px-5 py-3.5">
               <p class="font-semibold text-on-surface">Data Analyst Junior</p>
               <p class="text-xs text-text-secondary mt-0.5">Cód: VAC-2024-068</p>
+            </td>
+            <td class="px-5 py-3.5">
+              <span class="bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full text-[10px] font-semibold">Práctica</span>
             </td>
             <td class="px-5 py-3.5 text-text-secondary">Ing. Software</td>
             <td class="px-5 py-3.5 text-text-secondary">10 Set, 2024</td>
@@ -139,3 +274,37 @@
     </div>
   </div>
 </div>
+
+<script>
+(function() {
+  var btnNueva = document.getElementById('btn-nueva-vacante');
+  var formPanel = document.getElementById('form-nueva-vacante');
+  var btnCerrar = document.getElementById('btn-cerrar-form');
+  var btnCancelar = document.getElementById('btn-cancelar-vac');
+  var btnSubmit = document.getElementById('btn-submit-vac');
+  var toast = document.getElementById('vac-toast');
+
+  function openForm() {
+    formPanel.classList.remove('hidden');
+    formPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function closeForm() {
+    formPanel.classList.add('hidden');
+  }
+
+  if (btnNueva) btnNueva.addEventListener('click', openForm);
+  if (btnCerrar) btnCerrar.addEventListener('click', closeForm);
+  if (btnCancelar) btnCancelar.addEventListener('click', closeForm);
+
+  if (btnSubmit) {
+    btnSubmit.addEventListener('click', function() {
+      closeForm();
+      if (toast) {
+        toast.classList.remove('hidden');
+        setTimeout(function() { toast.classList.add('hidden'); }, 3500);
+      }
+    });
+  }
+})();
+</script>

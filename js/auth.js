@@ -95,6 +95,7 @@ const ROLES = {
       { icon: 'newspaper', label: 'Gestión de Noticias', route: '/news' },
       { icon: 'event', label: 'Gestión de Calendario', route: '/calendar' },
       { icon: 'work', label: 'Moderación de Vacantes', route: '/dashboard/admin/vacantes' },
+      { icon: 'event_note', label: 'Moderación de Eventos', route: '/dashboard/admin/eventos' },
       { icon: 'analytics', label: 'Reportes Globales', route: '/dashboard/admin/reportes' },
       { icon: 'settings', label: 'Configuración', route: '/dashboard/admin/configuracion' },
     ]
