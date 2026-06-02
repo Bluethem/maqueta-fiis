@@ -1,0 +1,409 @@
+<div class="page-enter space-y-8">
+
+  <section class="relative bg-primary py-16 md:py-20 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
+    <div class="max-w-[1200px] mx-auto px-6 relative z-10">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="material-symbols-outlined text-brand-cream text-3xl">badge</span>
+        <span class="text-brand-cream text-sm font-semibold uppercase tracking-widest">Plana Docente</span>
+      </div>
+      <h1 class="text-on-primary text-4xl md:text-5xl font-bold leading-tight">Directorio de Docentes</h1>
+      <p class="text-on-primary/80 text-lg md:text-xl mt-4 max-w-2xl">Busca y conoce a los docentes de las tres escuelas profesionales de la FIIS.</p>
+    </div>
+  </section>
+
+  <section class="max-w-[1200px] mx-auto px-6">
+    <div class="flex flex-col md:flex-row gap-4 mb-8">
+      <div class="relative flex-1">
+        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg">search</span>
+        <input id="searchInput" class="w-full pl-10 pr-4 py-3 bg-white border border-border-subtle rounded-lg focus:ring-1 focus:ring-primary focus:border-primary transition-all outline-none text-sm" placeholder="Buscar docente por nombre, departamento o categoría..." type="text">
+      </div>
+      <select id="filterEscuela" class="px-4 py-3 bg-white border border-border-subtle rounded-lg focus:ring-1 focus:ring-primary focus:border-primary transition-all outline-none text-sm text-on-surface-variant min-w-[160px]">
+        <option value="">Todas las escuelas</option>
+        <option value="industrial">Industrial</option>
+        <option value="sistemas">Sistemas</option>
+        <option value="software">Software</option>
+      </select>
+      <select id="filterDepartamento" class="px-4 py-3 bg-white border border-border-subtle rounded-lg focus:ring-1 focus:ring-primary focus:border-primary transition-all outline-none text-sm text-on-surface-variant min-w-[200px]">
+        <option value="">Todos los departamentos</option>
+        <option value="Ciencias Básicas">Ciencias Básicas</option>
+        <option value="Gestión Producción">Gestión Producción</option>
+        <option value="Humanidades">Humanidades</option>
+        <option value="Sistemas y Telemática">Sistemas y Telemática</option>
+        <option value="Tecnología Producción">Tecnología Producción</option>
+      </select>
+      <select id="filterCategoria" class="px-4 py-3 bg-white border border-border-subtle rounded-lg focus:ring-1 focus:ring-primary focus:border-primary transition-all outline-none text-sm text-on-surface-variant min-w-[160px]">
+        <option value="">Todas las categorías</option>
+        <option value="Principal">Principal</option>
+        <option value="Asociado">Asociado</option>
+        <option value="Auxiliar">Auxiliar</option>
+        <option value="Investigador">Investigador</option>
+      </select>
+    </div>
+
+    <div id="teachersGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <div class="teacher-card bg-white border border-border-subtle rounded-xl p-5 hover:shadow-lg transition-shadow" data-escuela="industrial" data-departamento="Gestión Producción" data-categoria="Principal">
+        <div class="flex items-start gap-4">
+          <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold text-xl flex-shrink-0">JM</div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-on-surface text-base leading-tight">Dr. Juan Carlos Mendoza</h3>
+            <span class="inline-block mt-1.5 text-[11px] font-bold px-2.5 py-0.5 rounded-full" style="background:#EFF6FF;color:#2563EB">Principal</span>
+            <p class="text-text-secondary text-sm mt-1.5">Departamento de Gestión Producción</p>
+          </div>
+        </div>
+        <div class="mt-4 flex flex-col gap-2 text-sm border-t border-border-subtle pt-4">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-outline text-[16px]">mail</span>
+            <span class="text-text-secondary truncate">jmendoza@uni.edu.pe</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-outline flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947-.947-.431-.947-.947.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-3.903-3.722h-2.416z"/></svg>
+            <a href="#" class="text-text-secondary hover:text-primary transition-colors text-xs truncate">0000-0002-1234-5678</a>
+          </div>
+        </div>
+        <button class="mt-4 w-full border border-primary text-primary font-semibold px-4 py-2 rounded-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 text-sm flex items-center justify-center gap-1.5">
+          Ver perfil
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </button>
+      </div>
+
+      <div class="teacher-card bg-white border border-border-subtle rounded-xl p-5 hover:shadow-lg transition-shadow" data-escuela="industrial" data-departamento="Gestión Producción" data-categoria="Asociado">
+        <div class="flex items-start gap-4">
+          <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold text-xl flex-shrink-0">PM</div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-on-surface text-base leading-tight">Mg. Patricia Maldonado</h3>
+            <span class="inline-block mt-1.5 text-[11px] font-bold px-2.5 py-0.5 rounded-full" style="background:#ECFDF5;color:#059669">Asociado</span>
+            <p class="text-text-secondary text-sm mt-1.5">Departamento de Gestión Producción</p>
+          </div>
+        </div>
+        <div class="mt-4 flex flex-col gap-2 text-sm border-t border-border-subtle pt-4">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-outline text-[16px]">mail</span>
+            <span class="text-text-secondary truncate">pmaldonado@uni.edu.pe</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-outline flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947-.947-.431-.947-.947.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-3.903-3.722h-2.416z"/></svg>
+            <a href="#" class="text-text-secondary hover:text-primary transition-colors text-xs truncate">0000-0003-4567-8901</a>
+          </div>
+        </div>
+        <button class="mt-4 w-full border border-primary text-primary font-semibold px-4 py-2 rounded-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 text-sm flex items-center justify-center gap-1.5">
+          Ver perfil
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </button>
+      </div>
+
+      <div class="teacher-card bg-white border border-border-subtle rounded-xl p-5 hover:shadow-lg transition-shadow" data-escuela="industrial" data-departamento="Ciencias Básicas" data-categoria="Principal">
+        <div class="flex items-start gap-4">
+          <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold text-xl flex-shrink-0">RR</div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-on-surface text-base leading-tight">Dr. Ricardo Rojas</h3>
+            <span class="inline-block mt-1.5 text-[11px] font-bold px-2.5 py-0.5 rounded-full" style="background:#EFF6FF;color:#2563EB">Principal</span>
+            <p class="text-text-secondary text-sm mt-1.5">Departamento de Ciencias Básicas</p>
+          </div>
+        </div>
+        <div class="mt-4 flex flex-col gap-2 text-sm border-t border-border-subtle pt-4">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-outline text-[16px]">mail</span>
+            <span class="text-text-secondary truncate">rrojas@uni.edu.pe</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-outline flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947-.947-.431-.947-.947.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-3.903-3.722h-2.416z"/></svg>
+            <a href="#" class="text-text-secondary hover:text-primary transition-colors text-xs truncate">0000-0001-2345-6789</a>
+          </div>
+        </div>
+        <button class="mt-4 w-full border border-primary text-primary font-semibold px-4 py-2 rounded-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 text-sm flex items-center justify-center gap-1.5">
+          Ver perfil
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </button>
+      </div>
+
+      <div class="teacher-card bg-white border border-border-subtle rounded-xl p-5 hover:shadow-lg transition-shadow" data-escuela="software" data-departamento="Humanidades" data-categoria="Asociado">
+        <div class="flex items-start gap-4">
+          <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold text-xl flex-shrink-0">CG</div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-on-surface text-base leading-tight">Mg. Carmen Gutiérrez</h3>
+            <span class="inline-block mt-1.5 text-[11px] font-bold px-2.5 py-0.5 rounded-full" style="background:#ECFDF5;color:#059669">Asociado</span>
+            <p class="text-text-secondary text-sm mt-1.5">Departamento de Humanidades</p>
+          </div>
+        </div>
+        <div class="mt-4 flex flex-col gap-2 text-sm border-t border-border-subtle pt-4">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-outline text-[16px]">mail</span>
+            <span class="text-text-secondary truncate">cgutierrez@uni.edu.pe</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-outline flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947-.947-.431-.947-.947.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-3.903-3.722h-2.416z"/></svg>
+            <a href="#" class="text-text-secondary hover:text-primary transition-colors text-xs truncate">0000-0002-3456-7890</a>
+          </div>
+        </div>
+        <button class="mt-4 w-full border border-primary text-primary font-semibold px-4 py-2 rounded-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 text-sm flex items-center justify-center gap-1.5">
+          Ver perfil
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </button>
+      </div>
+
+      <div class="teacher-card bg-white border border-border-subtle rounded-xl p-5 hover:shadow-lg transition-shadow" data-escuela="industrial" data-departamento="Tecnología Producción" data-categoria="Asociado">
+        <div class="flex items-start gap-4">
+          <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold text-xl flex-shrink-0">AV</div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-on-surface text-base leading-tight">Mg. Alberto Vargas</h3>
+            <span class="inline-block mt-1.5 text-[11px] font-bold px-2.5 py-0.5 rounded-full" style="background:#ECFDF5;color:#059669">Asociado</span>
+            <p class="text-text-secondary text-sm mt-1.5">Departamento de Tecnología Producción</p>
+          </div>
+        </div>
+        <div class="mt-4 flex flex-col gap-2 text-sm border-t border-border-subtle pt-4">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-outline text-[16px]">mail</span>
+            <span class="text-text-secondary truncate">avargas@uni.edu.pe</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-outline flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947-.947-.431-.947-.947.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-3.903-3.722h-2.416z"/></svg>
+            <a href="#" class="text-text-secondary hover:text-primary transition-colors text-xs truncate">0000-0003-5678-9012</a>
+          </div>
+        </div>
+        <button class="mt-4 w-full border border-primary text-primary font-semibold px-4 py-2 rounded-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 text-sm flex items-center justify-center gap-1.5">
+          Ver perfil
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </button>
+      </div>
+
+      <div class="teacher-card bg-white border border-border-subtle rounded-xl p-5 hover:shadow-lg transition-shadow" data-escuela="industrial" data-departamento="Gestión Producción" data-categoria="Investigador">
+        <div class="flex items-start gap-4">
+          <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold text-xl flex-shrink-0">LF</div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-on-surface text-base leading-tight">Dr. Luis Fernández</h3>
+            <span class="inline-block mt-1.5 text-[11px] font-bold px-2.5 py-0.5 rounded-full" style="background:#F3E8FF;color:#7C3AED">Investigador</span>
+            <p class="text-text-secondary text-sm mt-1.5">Departamento de Gestión Producción</p>
+          </div>
+        </div>
+        <div class="mt-4 flex flex-col gap-2 text-sm border-t border-border-subtle pt-4">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-outline text-[16px]">mail</span>
+            <span class="text-text-secondary truncate">lfernandez@uni.edu.pe</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-outline flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947-.947-.431-.947-.947.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-3.903-3.722h-2.416z"/></svg>
+            <a href="#" class="text-text-secondary hover:text-primary transition-colors text-xs truncate">0000-0001-6789-0123</a>
+          </div>
+        </div>
+        <button class="mt-4 w-full border border-primary text-primary font-semibold px-4 py-2 rounded-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 text-sm flex items-center justify-center gap-1.5">
+          Ver perfil
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </button>
+      </div>
+
+      <div class="teacher-card bg-white border border-border-subtle rounded-xl p-5 hover:shadow-lg transition-shadow" data-escuela="sistemas" data-departamento="Sistemas y Telemática" data-categoria="Principal">
+        <div class="flex items-start gap-4">
+          <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold text-xl flex-shrink-0">MR</div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-on-surface text-base leading-tight">Dr. Miguel Rodríguez</h3>
+            <span class="inline-block mt-1.5 text-[11px] font-bold px-2.5 py-0.5 rounded-full" style="background:#EFF6FF;color:#2563EB">Principal</span>
+            <p class="text-text-secondary text-sm mt-1.5">Departamento de Sistemas y Telemática</p>
+          </div>
+        </div>
+        <div class="mt-4 flex flex-col gap-2 text-sm border-t border-border-subtle pt-4">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-outline text-[16px]">mail</span>
+            <span class="text-text-secondary truncate">mrodriguez@uni.edu.pe</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-outline flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947-.947-.431-.947-.947.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-3.903-3.722h-2.416z"/></svg>
+            <a href="#" class="text-text-secondary hover:text-primary transition-colors text-xs truncate">0000-0002-8901-2345</a>
+          </div>
+        </div>
+        <button class="mt-4 w-full border border-primary text-primary font-semibold px-4 py-2 rounded-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 text-sm flex items-center justify-center gap-1.5">
+          Ver perfil
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </button>
+      </div>
+
+      <div class="teacher-card bg-white border border-border-subtle rounded-xl p-5 hover:shadow-lg transition-shadow" data-escuela="sistemas" data-departamento="Sistemas y Telemática" data-categoria="Asociado">
+        <div class="flex items-start gap-4">
+          <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold text-xl flex-shrink-0">RP</div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-on-surface text-base leading-tight">Mg. Rosa Paredes</h3>
+            <span class="inline-block mt-1.5 text-[11px] font-bold px-2.5 py-0.5 rounded-full" style="background:#ECFDF5;color:#059669">Asociado</span>
+            <p class="text-text-secondary text-sm mt-1.5">Departamento de Sistemas y Telemática</p>
+          </div>
+        </div>
+        <div class="mt-4 flex flex-col gap-2 text-sm border-t border-border-subtle pt-4">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-outline text-[16px]">mail</span>
+            <span class="text-text-secondary truncate">rparedes@uni.edu.pe</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-outline flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947-.947-.431-.947-.947.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-3.903-3.722h-2.416z"/></svg>
+            <a href="#" class="text-text-secondary hover:text-primary transition-colors text-xs truncate">0000-0003-9012-3456</a>
+          </div>
+        </div>
+        <button class="mt-4 w-full border border-primary text-primary font-semibold px-4 py-2 rounded-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 text-sm flex items-center justify-center gap-1.5">
+          Ver perfil
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </button>
+      </div>
+
+      <div class="teacher-card bg-white border border-border-subtle rounded-xl p-5 hover:shadow-lg transition-shadow" data-escuela="sistemas" data-departamento="Sistemas y Telemática" data-categoria="Principal">
+        <div class="flex items-start gap-4">
+          <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold text-xl flex-shrink-0">CM</div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-on-surface text-base leading-tight">Dr. Carlos Meza</h3>
+            <span class="inline-block mt-1.5 text-[11px] font-bold px-2.5 py-0.5 rounded-full" style="background:#EFF6FF;color:#2563EB">Principal</span>
+            <p class="text-text-secondary text-sm mt-1.5">Departamento de Sistemas y Telemática</p>
+          </div>
+        </div>
+        <div class="mt-4 flex flex-col gap-2 text-sm border-t border-border-subtle pt-4">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-outline text-[16px]">mail</span>
+            <span class="text-text-secondary truncate">cmeza@uni.edu.pe</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-outline flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947-.947-.431-.947-.947.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-3.903-3.722h-2.416z"/></svg>
+            <a href="#" class="text-text-secondary hover:text-primary transition-colors text-xs truncate">0000-0001-0123-4567</a>
+          </div>
+        </div>
+        <button class="mt-4 w-full border border-primary text-primary font-semibold px-4 py-2 rounded-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 text-sm flex items-center justify-center gap-1.5">
+          Ver perfil
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </button>
+      </div>
+
+      <div class="teacher-card bg-white border border-border-subtle rounded-xl p-5 hover:shadow-lg transition-shadow" data-escuela="sistemas" data-departamento="Ciencias Básicas" data-categoria="Asociado">
+        <div class="flex items-start gap-4">
+          <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold text-xl flex-shrink-0">SJ</div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-on-surface text-base leading-tight">Mg. Silvia Juárez</h3>
+            <span class="inline-block mt-1.5 text-[11px] font-bold px-2.5 py-0.5 rounded-full" style="background:#ECFDF5;color:#059669">Asociado</span>
+            <p class="text-text-secondary text-sm mt-1.5">Departamento de Ciencias Básicas</p>
+          </div>
+        </div>
+        <div class="mt-4 flex flex-col gap-2 text-sm border-t border-border-subtle pt-4">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-outline text-[16px]">mail</span>
+            <span class="text-text-secondary truncate">sjuarez@uni.edu.pe</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-outline flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947-.947-.431-.947-.947.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-3.903-3.722h-2.416z"/></svg>
+            <a href="#" class="text-text-secondary hover:text-primary transition-colors text-xs truncate">0000-0002-5678-9012</a>
+          </div>
+        </div>
+        <button class="mt-4 w-full border border-primary text-primary font-semibold px-4 py-2 rounded-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 text-sm flex items-center justify-center gap-1.5">
+          Ver perfil
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </button>
+      </div>
+
+      <div class="teacher-card bg-white border border-border-subtle rounded-xl p-5 hover:shadow-lg transition-shadow" data-escuela="sistemas" data-departamento="Sistemas y Telemática" data-categoria="Principal">
+        <div class="flex items-start gap-4">
+          <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold text-xl flex-shrink-0">LP</div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-on-surface text-base leading-tight">Mg. Luis Paredes</h3>
+            <span class="inline-block mt-1.5 text-[11px] font-bold px-2.5 py-0.5 rounded-full" style="background:#EFF6FF;color:#2563EB">Principal</span>
+            <p class="text-text-secondary text-sm mt-1.5">Departamento de Sistemas y Telemática</p>
+          </div>
+        </div>
+        <div class="mt-4 flex flex-col gap-2 text-sm border-t border-border-subtle pt-4">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-outline text-[16px]">mail</span>
+            <span class="text-text-secondary truncate">lparedes@uni.edu.pe</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-outline flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947-.947-.431-.947-.947.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-3.903-3.722h-2.416z"/></svg>
+            <a href="#" class="text-text-secondary hover:text-primary transition-colors text-xs truncate">0000-0001-3456-7890</a>
+          </div>
+        </div>
+        <button class="mt-4 w-full border border-primary text-primary font-semibold px-4 py-2 rounded-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 text-sm flex items-center justify-center gap-1.5">
+          Ver perfil
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </button>
+      </div>
+
+      <div class="teacher-card bg-white border border-border-subtle rounded-xl p-5 hover:shadow-lg transition-shadow" data-escuela="software" data-departamento="Sistemas y Telemática" data-categoria="Asociado">
+        <div class="flex items-start gap-4">
+          <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold text-xl flex-shrink-0">KV</div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-on-surface text-base leading-tight">Mg. Katia Vega</h3>
+            <span class="inline-block mt-1.5 text-[11px] font-bold px-2.5 py-0.5 rounded-full" style="background:#ECFDF5;color:#059669">Asociado</span>
+            <p class="text-text-secondary text-sm mt-1.5">Departamento de Sistemas y Telemática</p>
+          </div>
+        </div>
+        <div class="mt-4 flex flex-col gap-2 text-sm border-t border-border-subtle pt-4">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-outline text-[16px]">mail</span>
+            <span class="text-text-secondary truncate">kvega@uni.edu.pe</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-outline flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947-.947-.431-.947-.947.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-3.903-3.722h-2.416z"/></svg>
+            <a href="#" class="text-text-secondary hover:text-primary transition-colors text-xs truncate">0000-0002-7890-1234</a>
+          </div>
+        </div>
+        <button class="mt-4 w-full border border-primary text-primary font-semibold px-4 py-2 rounded-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 text-sm flex items-center justify-center gap-1.5">
+          Ver perfil
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </button>
+      </div>
+
+    </div>
+
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mt-8 pt-6 border-t border-border-subtle">
+      <p id="counterText" class="text-text-secondary text-sm">Mostrando 12 de 12 docentes</p>
+      <div class="flex items-center gap-2">
+        <button class="w-9 h-9 flex items-center justify-center rounded-lg border border-border-subtle text-on-surface-variant hover:border-primary hover:text-primary transition-colors disabled:opacity-40 disabled:pointer-events-none" disabled>
+          <span class="material-symbols-outlined text-sm">chevron_left</span>
+        </button>
+        <button class="w-9 h-9 flex items-center justify-center rounded-lg bg-primary text-on-primary text-sm font-semibold">1</button>
+        <button class="w-9 h-9 flex items-center justify-center rounded-lg border border-border-subtle text-on-surface-variant hover:border-primary hover:text-primary transition-colors text-sm">2</button>
+        <button class="w-9 h-9 flex items-center justify-center rounded-lg border border-border-subtle text-on-surface-variant hover:border-primary hover:text-primary transition-colors text-sm">3</button>
+        <span class="text-text-secondary text-sm px-1">...</span>
+        <button class="w-9 h-9 flex items-center justify-center rounded-lg border border-border-subtle text-on-surface-variant hover:border-primary hover:text-primary transition-colors">
+          <span class="material-symbols-outlined text-sm">chevron_right</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  const searchInput = document.getElementById('searchInput');
+  const filterEscuela = document.getElementById('filterEscuela');
+  const filterDepartamento = document.getElementById('filterDepartamento');
+  const filterCategoria = document.getElementById('filterCategoria');
+  const cards = document.querySelectorAll('.teacher-card');
+  const counterText = document.getElementById('counterText');
+
+  function filterCards() {
+    const query = searchInput.value.toLowerCase().trim();
+    const escuela = filterEscuela.value;
+    const depto = filterDepartamento.value;
+    const cat = filterCategoria.value;
+
+    let visible = 0;
+    cards.forEach(function(card) {
+      const name = card.querySelector('h3').textContent.toLowerCase();
+      const deptText = card.querySelector('.text-text-secondary').textContent.toLowerCase();
+      const catText = card.querySelector('[class*="rounded-full"]').textContent.toLowerCase();
+      const fullText = name + ' ' + deptText + ' ' + catText;
+      const matchesSearch = !query || fullText.includes(query);
+      const matchesEscuela = !escuela || card.dataset.escuela === escuela;
+      const matchesDepto = !depto || card.dataset.departamento === depto;
+      const matchesCat = !cat || card.dataset.categoria === cat;
+
+      if (matchesSearch && matchesEscuela && matchesDepto && matchesCat) {
+        card.style.display = '';
+        visible++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    counterText.textContent = 'Mostrando ' + visible + ' de ' + cards.length + ' docentes';
+  }
+
+  searchInput.addEventListener('input', filterCards);
+  filterEscuela.addEventListener('change', filterCards);
+  filterDepartamento.addEventListener('change', filterCards);
+  filterCategoria.addEventListener('change', filterCards);
+})();
+</script>

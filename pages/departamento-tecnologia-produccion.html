@@ -1,0 +1,149 @@
+<div class="page-enter space-y-8">
+  <section class="relative bg-primary overflow-hidden rounded-2xl min-h-[280px] flex items-center">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
+    <div class="relative z-10 px-8 md:px-16 py-12 w-full">
+      <div class="flex items-center gap-2 mb-3">
+        <a href="#/organigrama" class="text-brand-cream/70 hover:text-brand-cream text-sm flex items-center gap-1 transition-colors">
+          <span class="material-symbols-outlined text-sm">arrow_back</span> Departamentos
+        </a>
+      </div>
+      <div class="max-w-3xl">
+        <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-4 leading-tight">Departamento Académico de Tecnología de la Producción</h1>
+        <p class="text-on-primary/90 text-lg md:text-xl leading-relaxed">
+          Unidad académica orientada a la enseñanza de procesos industriales, diseño de plantas, seguridad ocupacional y gestión ambiental, formando ingenieros capacitados para liderar la transformación industrial sostenible.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-[1200px] mx-auto px-6 md:px-8 space-y-10">
+    <div class="flex border-b border-border-subtle gap-0 overflow-x-auto">
+      <button class="px-6 py-4 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 transition-colors whitespace-nowrap" data-tab="info">Presentación</button>
+      <button class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-tab="docentes">Docentes</button>
+      <button class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-tab="cursos">Cursos</button>
+      <button class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-tab="contacto">Contacto</button>
+    </div>
+
+    <div id="tab-info" class="tab-content space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-xl border border-border-subtle p-6">
+          <h3 class="text-lg font-bold text-on-surface mb-2">Misión</h3>
+          <p class="text-text-secondary text-sm leading-relaxed">Formar profesionales competentes en el diseño, gestión y mejora de sistemas productivos industriales, integrando criterios de seguridad, calidad y sostenibilidad ambiental para contribuir al desarrollo del sector manufacturero nacional.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-6">
+          <h3 class="text-lg font-bold text-on-surface mb-2">Visión</h3>
+          <p class="text-text-secondary text-sm leading-relaxed">Ser reconocido como un departamento de excelencia en tecnología de la producción a nivel latinoamericano, impulsando la investigación aplicada y la innovación en procesos industriales sostenibles.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl border border-border-subtle p-6">
+        <h3 class="text-lg font-bold text-on-surface mb-4">Datos Generales</h3>
+        <dl class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div class="flex justify-between py-2 border-b border-border-subtle">
+            <dt class="text-text-secondary">Jefe del Departamento</dt>
+            <dd class="font-medium text-on-surface">Mg. Alberto Vargas</dd>
+          </div>
+          <div class="flex justify-between py-2 border-b border-border-subtle">
+            <dt class="text-text-secondary">Categoría</dt>
+            <dd class="font-medium text-on-surface">Docente Asociado</dd>
+          </div>
+          <div class="flex justify-between py-2 border-b border-border-subtle">
+            <dt class="text-text-secondary">Áreas</dt>
+            <dd class="font-medium text-on-surface">Procesos, Plantas, Seguridad, Ambiente, Automatización</dd>
+          </div>
+          <div class="flex justify-between py-2 border-b border-border-subtle">
+            <dt class="text-text-secondary">Laboratorios</dt>
+            <dd class="font-medium text-on-surface">Automatización, Química, Procesos</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div id="tab-docentes" class="tab-content hidden space-y-4">
+      <p class="text-text-secondary text-sm">Docentes del Departamento Académico de Tecnología de la Producción.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+          <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0 mb-3">AV</div>
+          <p class="font-semibold text-on-surface text-sm">Mg. Alberto Vargas</p>
+          <p class="text-xs text-text-secondary">Jefe del Departamento</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-100 text-green-700">Asociado</span>
+          <p class="text-xs text-text-secondary mt-2">Ingeniería de Procesos</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+          <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0 mb-3">RH</div>
+          <p class="font-semibold text-on-surface text-sm">Mg. Rosa Huamán</p>
+          <p class="text-xs text-text-secondary">Docente Asociada</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-100 text-green-700">Asociado</span>
+          <p class="text-xs text-text-secondary mt-2">Seguridad y Gestión Ambiental</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+          <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0 mb-3">JV</div>
+          <p class="font-semibold text-on-surface text-sm">Ing. Javier Villanueva</p>
+          <p class="text-xs text-text-secondary">Docente Auxiliar</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-purple-100 text-purple-700">Auxiliar</span>
+          <p class="text-xs text-text-secondary mt-2">Automatización Industrial</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-cursos" class="tab-content hidden space-y-6">
+      <p class="text-text-secondary text-sm">Cursos que el Departamento Académico de Tecnología de la Producción ofrece a las distintas escuelas profesionales de la FIIS.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3"><span class="material-symbols-outlined">precision_manufacturing</span></div>
+          <h4 class="font-semibold text-on-surface text-sm">Ingeniería de Procesos</h4>
+          <p class="text-xs text-text-secondary mt-1">Diseño, análisis y optimización de procesos productivos industriales.</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-amber-100 text-amber-700">4 créditos</span>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-5 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3"><span class="material-symbols-outlined">factory</span></div>
+          <h4 class="font-semibold text-on-surface text-sm">Ingeniería de Plantas</h4>
+          <p class="text-xs text-text-secondary mt-1">Distribución de planta, localización y diseño de instalaciones industriales.</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-amber-100 text-amber-700">4 créditos</span>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-5 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3"><span class="material-symbols-outlined">health_and_safety</span></div>
+          <h4 class="font-semibold text-on-surface text-sm">Seguridad y Salud Ocupacional</h4>
+          <p class="text-xs text-text-secondary mt-1">Normativa de seguridad industrial, ergonomía y prevención de riesgos laborales.</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-amber-100 text-amber-700">3 créditos</span>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-5 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3"><span class="material-symbols-outlined">eco</span></div>
+          <h4 class="font-semibold text-on-surface text-sm">Gestión Ambiental</h4>
+          <p class="text-xs text-text-secondary mt-1">Sistemas de gestión ambiental, residuos industriales y producción limpia.</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-amber-100 text-amber-700">3 créditos</span>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-5 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3"><span class="material-symbols-outlined">smart_toy</span></div>
+          <h4 class="font-semibold text-on-surface text-sm">Automatización</h4>
+          <p class="text-xs text-text-secondary mt-1">Control de procesos, PLC, SCADA y robótica industrial.</p>
+          <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-amber-100 text-amber-700">3 créditos</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-contacto" class="tab-content hidden space-y-4">
+      <div class="bg-white rounded-xl border border-border-subtle p-6 max-w-lg">
+        <h3 class="font-bold text-on-surface mb-4">Información de Contacto</h3>
+        <dl class="space-y-3 text-sm">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">mail</span>
+            <dd class="text-on-surface">tecnologia.produccion@fiis.uni.edu.pe</dd>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">phone</span>
+            <dd class="text-on-surface">(01) 481-1070 anexo 5235</dd>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">location_on</span>
+            <dd class="text-on-surface">Pabellón A, 1er piso — Av. Túpac Amaru 210, Rímac</dd>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">schedule</span>
+            <dd class="text-on-surface">Lun — Vie: 08:00 — 17:00</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
