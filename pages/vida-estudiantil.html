@@ -1,18 +1,20 @@
-<div class="page-enter space-y-8">
-  <section class="relative h-[320px] md:h-[360px] flex items-center overflow-hidden bg-primary">
+<div class="page-enter space-y-12 pb-16">
+  <!-- Hero Section -->
+  <section class="relative h-[320px] md:h-[360px] flex items-center overflow-hidden bg-primary rounded-b-2xl">
     <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
     <div class="max-w-[1200px] mx-auto px-6 relative z-10 w-full">
       <div class="max-w-2xl">
         <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-4 leading-tight">Vida Estudiantil</h1>
-        <p class="text-on-primary/90 text-lg md:text-xl leading-relaxed">Descubre, participa, transforma</p>
+        <p class="text-on-primary/90 text-lg md:text-xl leading-relaxed">Descubre, participa, aprende y transforma. El espacio oficial para el desarrollo académico, cultural y gremial de la FIIS.</p>
       </div>
     </div>
   </section>
 
+  <!-- Stats Grid -->
   <section class="max-w-[1200px] mx-auto px-6">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
       <div class="bg-white border border-border-subtle rounded-xl p-6 text-center card-hover">
-        <span class="text-4xl font-extrabold text-primary">15+</span>
+        <span class="text-4xl font-extrabold text-primary">8</span>
         <p class="text-sm text-text-secondary mt-2">Agrupaciones activas</p>
       </div>
       <div class="bg-white border border-border-subtle rounded-xl p-6 text-center card-hover">
@@ -30,10 +32,36 @@
     </div>
   </section>
 
+  <!-- Directorio de Agrupaciones -->
   <section class="max-w-[1200px] mx-auto px-6">
-    <h2 class="text-3xl font-bold mb-8 text-primary border-l-8 border-brand-cream pl-6">Directorio de Agrupaciones</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover">
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-8 border-b border-border-subtle pb-6">
+      <div>
+        <h2 class="text-3xl font-bold text-primary border-l-8 border-brand-cream pl-6">Directorio de Agrupaciones</h2>
+        <p class="text-sm text-text-secondary pl-6 mt-1">Encuentra y conoce las comunidades que integran nuestra facultad.</p>
+      </div>
+      <!-- Barra de Filtros y Búsqueda -->
+      <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto items-stretch sm:items-center">
+        <!-- Input de búsqueda -->
+        <div class="relative flex-1 sm:w-64">
+          <span class="material-symbols-outlined absolute left-3 top-2.5 text-text-secondary text-base">search</span>
+          <input type="text" id="search-groups" placeholder="Buscar agrupación..." class="w-full pl-9 pr-4 py-2 border border-border-subtle rounded-lg text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+        </div>
+        <!-- Select/Botones de categoría -->
+        <div class="flex flex-wrap gap-2" id="category-filters">
+          <button class="cat-filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-primary text-white transition-all shadow-sm" data-category="all">Todas</button>
+          <button class="cat-filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-category="tecnologica">Tecnológicas</button>
+          <button class="cat-filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-category="centro-estudiantil">Centros</button>
+          <button class="cat-filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-category="centro-cultural">Culturales</button>
+          <button class="cat-filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-category="delegatura">Delegaturas</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grid de Tarjetas de Agrupaciones -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="groupings-grid">
+      
+      <!-- UNICODE -->
+      <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover grouping-card transition-all duration-300" data-category="tecnologica" data-name="unicode">
         <div class="flex items-start gap-4">
           <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-indigo-600 to-indigo-800 flex items-center justify-center flex-shrink-0 shadow-md">
             <span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings:'FILL'1;">code</span>
@@ -43,18 +71,20 @@
               <h3 class="text-lg font-bold text-on-surface truncate">UNICODE</h3>
               <span class="bg-indigo-100 text-indigo-700 px-2.5 py-0.5 rounded-full text-xs font-semibold">Agrupación Tecnológica</span>
             </div>
-            <p class="text-sm text-text-secondary">Centro de Informática y Desarrollo — comunidad tecnológica que impulsa la innovación en software y hardware libre.</p>
-            <div class="flex items-center gap-2 mt-3">
-              <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">camera</span></a>
-              <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">thumb_up</span></a>
-              <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">terminal</span></a>
+            <p class="text-sm text-text-secondary">Centro de Informática y Desarrollo — comunidad tecnológica que impulsa la innovación en desarrollo de software, algoritmos y hardware libre.</p>
+            <div class="flex items-center justify-between mt-4">
+              <div class="flex items-center gap-1.5">
+                <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="https://facebook.com" target="_blank"><span class="material-symbols-outlined text-base">thumb_up</span></a>
+                <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="https://github.com" target="_blank"><span class="material-symbols-outlined text-base">terminal</span></a>
+              </div>
+              <a class="bg-brand-cream text-primary px-4 py-1.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-all cursor-pointer" href="#/vida-estudiantil/unicode">Conocer más</a>
             </div>
-            <button class="mt-3 bg-brand-cream text-primary px-4 py-1.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-all">Conocer más</button>
           </div>
         </div>
       </div>
 
-      <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover">
+      <!-- CIBERSEC -->
+      <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover grouping-card transition-all duration-300" data-category="tecnologica" data-name="cibersec">
         <div class="flex items-start gap-4">
           <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-red-700 to-red-900 flex items-center justify-center flex-shrink-0 shadow-md">
             <span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings:'FILL'1;">shield</span>
@@ -64,18 +94,20 @@
               <h3 class="text-lg font-bold text-on-surface truncate">CIBERSEC</h3>
               <span class="bg-indigo-100 text-indigo-700 px-2.5 py-0.5 rounded-full text-xs font-semibold">Agrupación Tecnológica</span>
             </div>
-            <p class="text-sm text-text-secondary">Comunidad de ciberseguridad — ethical hacking, CTFs, auditorías y formación en seguridad informática.</p>
-            <div class="flex items-center gap-2 mt-3">
-              <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">camera</span></a>
-              <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">thumb_up</span></a>
-              <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">terminal</span></a>
+            <p class="text-sm text-text-secondary">Comunidad de ciberseguridad — entrenamiento en hacking ético, pentesting, análisis forense digital y participación en CTFs a nivel nacional.</p>
+            <div class="flex items-center justify-between mt-4">
+              <div class="flex items-center gap-1.5">
+                <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="https://facebook.com" target="_blank"><span class="material-symbols-outlined text-base">thumb_up</span></a>
+                <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="https://github.com" target="_blank"><span class="material-symbols-outlined text-base">terminal</span></a>
+              </div>
+              <a class="bg-brand-cream text-primary px-4 py-1.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-all cursor-pointer" href="#/vida-estudiantil/cibersec">Conocer más</a>
             </div>
-            <button class="mt-3 bg-brand-cream text-primary px-4 py-1.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-all">Conocer más</button>
           </div>
         </div>
       </div>
 
-      <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover">
+      <!-- NÚCLEO DE SOFTWARE -->
+      <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover grouping-card transition-all duration-300" data-category="tecnologica" data-name="nucleo de software">
         <div class="flex items-start gap-4">
           <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-800 flex items-center justify-center flex-shrink-0 shadow-md">
             <span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings:'FILL'1;">data_object</span>
@@ -85,18 +117,20 @@
               <h3 class="text-lg font-bold text-on-surface truncate">Núcleo de Software</h3>
               <span class="bg-indigo-100 text-indigo-700 px-2.5 py-0.5 rounded-full text-xs font-semibold">Agrupación Tecnológica</span>
             </div>
-            <p class="text-sm text-text-secondary">Comunidad de desarrollo de software — arquitectura, buenas prácticas y proyectos open source.</p>
-            <div class="flex items-center gap-2 mt-3">
-              <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">camera</span></a>
-              <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">thumb_up</span></a>
-              <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">terminal</span></a>
+            <p class="text-sm text-text-secondary">Comunidad de desarrollo de software — buenas prácticas de programación, arquitectura limpia, computación en la nube y proyectos open source.</p>
+            <div class="flex items-center justify-between mt-4">
+              <div class="flex items-center gap-1.5">
+                <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="https://facebook.com" target="_blank"><span class="material-symbols-outlined text-base">thumb_up</span></a>
+                <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="https://github.com" target="_blank"><span class="material-symbols-outlined text-base">terminal</span></a>
+              </div>
+              <a class="bg-brand-cream text-primary px-4 py-1.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-all cursor-pointer" href="#/vida-estudiantil/nucleo-de-software">Conocer más</a>
             </div>
-            <button class="mt-3 bg-brand-cream text-primary px-4 py-1.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-all">Conocer más</button>
           </div>
         </div>
       </div>
 
-      <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover">
+      <!-- CEIIS -->
+      <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover grouping-card transition-all duration-300" data-category="centro-estudiantil" data-name="ceiis">
         <div class="flex items-start gap-4">
           <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-amber-600 to-amber-800 flex items-center justify-center flex-shrink-0 shadow-md">
             <span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings:'FILL'1;">diversity_3</span>
@@ -106,17 +140,19 @@
               <h3 class="text-lg font-bold text-on-surface truncate">CEIIS</h3>
               <span class="bg-amber-100 text-amber-700 px-2.5 py-0.5 rounded-full text-xs font-semibold">Centro Estudiantil</span>
             </div>
-            <p class="text-sm text-text-secondary">Centro de Estudiantes de Ingeniería Industrial y de Sistemas — representación y bienestar estudiantil.</p>
-            <div class="flex items-center gap-2 mt-3">
-              <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">camera</span></a>
-              <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">thumb_up</span></a>
+            <p class="text-sm text-text-secondary">Centro de Estudiantes de Ingeniería Industrial y de Sistemas — representación oficial ante la facultad, bienestar estudiantil y defensa gremial.</p>
+            <div class="flex items-center justify-between mt-4">
+              <div class="flex items-center gap-1.5">
+                <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="https://facebook.com" target="_blank"><span class="material-symbols-outlined text-base">thumb_up</span></a>
+              </div>
+              <a class="bg-brand-cream text-primary px-4 py-1.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-all cursor-pointer" href="#/vida-estudiantil/ceiis">Conocer más</a>
             </div>
-            <button class="mt-3 bg-brand-cream text-primary px-4 py-1.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-all">Conocer más</button>
           </div>
         </div>
       </div>
 
-      <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover">
+      <!-- TEFIIS -->
+      <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover grouping-card transition-all duration-300" data-category="centro-cultural" data-name="tefiis">
         <div class="flex items-start gap-4">
           <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-600 to-purple-800 flex items-center justify-center flex-shrink-0 shadow-md">
             <span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings:'FILL'1;">masks</span>
@@ -126,17 +162,19 @@
               <h3 class="text-lg font-bold text-on-surface truncate">TEFIIS</h3>
               <span class="bg-purple-100 text-purple-700 px-2.5 py-0.5 rounded-full text-xs font-semibold">Centro Cultural</span>
             </div>
-            <p class="text-sm text-text-secondary">Taller de Teatro FIIS — expresión escénica, dramaturgia y montajes interdisciplinarios.</p>
-            <div class="flex items-center gap-2 mt-3">
-              <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">camera</span></a>
-              <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">thumb_up</span></a>
+            <p class="text-sm text-text-secondary">Taller de Teatro de la FIIS — desarrollo de expresión corporal, dramaturgia, oratoria, confianza escénica y montajes teatrales periódicos.</p>
+            <div class="flex items-center justify-between mt-4">
+              <div class="flex items-center gap-1.5">
+                <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="https://facebook.com" target="_blank"><span class="material-symbols-outlined text-base">thumb_up</span></a>
+              </div>
+              <a class="bg-brand-cream text-primary px-4 py-1.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-all cursor-pointer" href="#/vida-estudiantil/tefiis">Conocer más</a>
             </div>
-            <button class="mt-3 bg-brand-cream text-primary px-4 py-1.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-all">Conocer más</button>
           </div>
         </div>
       </div>
 
-      <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover">
+      <!-- CORO FIIS -->
+      <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover grouping-card transition-all duration-300" data-category="centro-cultural" data-name="coro fiis">
         <div class="flex items-start gap-4">
           <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-rose-600 to-rose-800 flex items-center justify-center flex-shrink-0 shadow-md">
             <span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings:'FILL'1;">music_note</span>
@@ -146,17 +184,19 @@
               <h3 class="text-lg font-bold text-on-surface truncate">Coro FIIS</h3>
               <span class="bg-purple-100 text-purple-700 px-2.5 py-0.5 rounded-full text-xs font-semibold">Centro Cultural</span>
             </div>
-            <p class="text-sm text-text-secondary">Coro Universitario FIIS — voces que interpretan repertorio clásico, popular y académico.</p>
-            <div class="flex items-center gap-2 mt-3">
-              <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">camera</span></a>
-              <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">thumb_up</span></a>
+            <p class="text-sm text-text-secondary">Coro Universitario FIIS — interpretación de música coral clásica, lírica y folklórica peruana. Representación en eventos solemnes UNI.</p>
+            <div class="flex items-center justify-between mt-4">
+              <div class="flex items-center gap-1.5">
+                <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="https://facebook.com" target="_blank"><span class="material-symbols-outlined text-base">thumb_up</span></a>
+              </div>
+              <a class="bg-brand-cream text-primary px-4 py-1.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-all cursor-pointer" href="#/vida-estudiantil/coro-fiis">Conocer más</a>
             </div>
-            <button class="mt-3 bg-brand-cream text-primary px-4 py-1.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-all">Conocer más</button>
           </div>
         </div>
       </div>
 
-      <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover">
+      <!-- DANZA FIIS -->
+      <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover grouping-card transition-all duration-300" data-category="centro-cultural" data-name="danza fiis">
         <div class="flex items-start gap-4">
           <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center flex-shrink-0 shadow-md">
             <span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings:'FILL'1;">dance</span>
@@ -166,17 +206,19 @@
               <h3 class="text-lg font-bold text-on-surface truncate">Danza FIIS</h3>
               <span class="bg-purple-100 text-purple-700 px-2.5 py-0.5 rounded-full text-xs font-semibold">Centro Cultural</span>
             </div>
-            <p class="text-sm text-text-secondary">Ballet Folklórico FIIS — danzas tradicionales peruanas y contemporáneas con proyección nacional.</p>
-            <div class="flex items-center gap-2 mt-3">
-              <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">camera</span></a>
-              <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">thumb_up</span></a>
+            <p class="text-sm text-text-secondary">Ballet Folklórico FIIS — revaloración de danzas andinas, costeñas y amazónicas peruanas, participando en festivales interuniversitarios.</p>
+            <div class="flex items-center justify-between mt-4">
+              <div class="flex items-center gap-1.5">
+                <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="https://facebook.com" target="_blank"><span class="material-symbols-outlined text-base">thumb_up</span></a>
+              </div>
+              <a class="bg-brand-cream text-primary px-4 py-1.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-all cursor-pointer" href="#/vida-estudiantil/danza-fiis">Conocer más</a>
             </div>
-            <button class="mt-3 bg-brand-cream text-primary px-4 py-1.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-all">Conocer más</button>
           </div>
         </div>
       </div>
 
-      <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover">
+      <!-- DELEGATURA INDUSTRIAL -->
+      <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover grouping-card transition-all duration-300" data-category="delegatura" data-name="delegatura de industrial">
         <div class="flex items-start gap-4">
           <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-cyan-600 to-cyan-800 flex items-center justify-center flex-shrink-0 shadow-md">
             <span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings:'FILL'1;">groups</span>
@@ -186,66 +228,259 @@
               <h3 class="text-lg font-bold text-on-surface truncate">Delegatura de Industrial</h3>
               <span class="bg-teal-100 text-teal-700 px-2.5 py-0.5 rounded-full text-xs font-semibold">Delegatura</span>
             </div>
-            <p class="text-sm text-text-secondary">Representación gremial de estudiantes de Ingeniería Industrial — vocería y gestión ante el consejo de facultad.</p>
-            <div class="flex items-center gap-2 mt-3">
-              <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">camera</span></a>
-              <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">thumb_up</span></a>
+            <p class="text-sm text-text-secondary">Representación gremial de la carrera de Ingeniería Industrial — articulación de propuestas académicas ante el Consejo de Facultad.</p>
+            <div class="flex items-center justify-between mt-4">
+              <div class="flex items-center gap-1.5">
+                <a class="w-8 h-8 rounded-full bg-surface-bg flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white transition-all" href="https://facebook.com" target="_blank"><span class="material-symbols-outlined text-base">thumb_up</span></a>
+              </div>
+              <a class="bg-brand-cream text-primary px-4 py-1.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-all cursor-pointer" href="#/vida-estudiantil/delegatura-industrial">Conocer más</a>
             </div>
-            <button class="mt-3 bg-brand-cream text-primary px-4 py-1.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-all">Conocer más</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+    <!-- Mensaje sin resultados -->
+    <div id="no-groups-message" class="hidden text-center py-12 bg-white border border-border-subtle rounded-xl mt-6">
+      <span class="material-symbols-outlined text-text-secondary text-5xl mb-2">sentiment_dissatisfied</span>
+      <p class="text-on-surface font-bold text-lg">No se encontraron agrupaciones</p>
+      <p class="text-text-secondary text-sm">Prueba ajustando los filtros de categoría o el texto del buscador.</p>
+    </div>
+  </section>
+
+  <!-- Requisitos de Gestión: Cómo Registrar Agrupación (Gestión 3) -->
+  <section class="max-w-[1200px] mx-auto px-6">
+    <div class="bg-white border border-border-subtle rounded-2xl p-8 shadow-sm">
+      <h3 class="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
+        <span class="material-symbols-outlined">how_to_reg</span>
+        ¿Cómo registrar una agrupación en el portal oficial FIIS?
+      </h3>
+      <p class="text-sm text-text-secondary mb-6 leading-relaxed">
+        La Facultad de Ingeniería Industrial y de Sistemas apoya la auto-organización de sus estudiantes. Si eres representante de un nuevo grupo de interés académico, tecnológico, cultural o deportivo, puedes solicitar tu inclusión oficial en este portal web cumpliendo con los lineamientos institucionales de Bienestar Estudiantil.
+      </p>
+
+      <!-- Accordion Grid -->
+      <div class="space-y-4">
+        <!-- Requisito 1 -->
+        <div class="border border-border-subtle rounded-xl overflow-hidden">
+          <button class="accordion-trigger w-full flex items-center justify-between p-5 text-left font-bold text-on-surface hover:bg-primary/5 transition-all">
+            <span class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">groups</span> 1. Criterios Mínimos de Constitución</span>
+            <span class="material-symbols-outlined accordion-icon transition-transform">expand_more</span>
+          </button>
+          <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+            <div class="p-5 border-t border-border-subtle text-sm text-text-secondary space-y-2 leading-relaxed bg-surface-container-low">
+              <p>Para ser reconocido oficialmente, el grupo estudiantil debe cumplir con:</p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>Tener una base mínima de <strong>10 miembros activos</strong> matriculados en la FIIS.</li>
+                <li>Contar con un **Docente Asesor** adscrito a algún departamento académico de la facultad.</li>
+                <li>Contar con un Estatuto o Acta de Fundación donde se definan sus fines, organigrama y responsabilidades de la junta directiva.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Requisito 2 -->
+        <div class="border border-border-subtle rounded-xl overflow-hidden">
+          <button class="accordion-trigger w-full flex items-center justify-between p-5 text-left font-bold text-on-surface hover:bg-primary/5 transition-all">
+            <span class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">description</span> 2. Documentación Requerida</span>
+            <span class="material-symbols-outlined accordion-icon transition-transform">expand_more</span>
+          </button>
+          <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+            <div class="p-5 border-t border-border-subtle text-sm text-text-secondary space-y-2 leading-relaxed bg-surface-container-low">
+              <p>Debe presentarse por mesa de partes virtual con atención a Bienestar Estudiantil:</p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>Solicitud firmada por el director/delegado general del grupo.</li>
+                <li>Lista de miembros registrados (con sus códigos y firmas digitales).</li>
+                <li><strong>Plan de Trabajo Anual</strong> que detalle al menos 2 eventos públicos o talleres para beneficio de los estudiantes por ciclo.</li>
+                <li>Carta de aceptación firmada por el Docente Asesor de la agrupación.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Requisito 3 -->
+        <div class="border border-border-subtle rounded-xl overflow-hidden">
+          <button class="accordion-trigger w-full flex items-center justify-between p-5 text-left font-bold text-on-surface hover:bg-primary/5 transition-all">
+            <span class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">published_with_changes</span> 3. Flujo de Registro y Publicación</span>
+            <span class="material-symbols-outlined accordion-icon transition-transform">expand_more</span>
+          </button>
+          <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+            <div class="p-5 border-t border-border-subtle text-sm text-text-secondary space-y-2 leading-relaxed bg-surface-container-low">
+              <ol class="list-decimal pl-5 space-y-1">
+                <li><strong>Evaluación:</strong> Bienestar Estudiantil evalúa los fines del grupo y otorga la resolución de reconocimiento.</li>
+                <li><strong>Capacitación:</strong> El responsable de comunicaciones de la junta directiva recibe accesos al panel institucional del portal.</li>
+                <li><strong>Alta en Web:</strong> Se crea la subpágina del grupo para que la directiva la edite con su logo, misión, visión e integrantes.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Requisito 4 -->
+        <div class="border border-border-subtle rounded-xl overflow-hidden">
+          <button class="accordion-trigger w-full flex items-center justify-between p-5 text-left font-bold text-on-surface hover:bg-primary/5 transition-all">
+            <span class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">update</span> 4. Compromisos de Actualización (Gestión 4)</span>
+            <span class="material-symbols-outlined accordion-icon transition-transform">expand_more</span>
+          </button>
+          <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+            <div class="p-5 border-t border-border-subtle text-sm text-text-secondary space-y-2 leading-relaxed bg-surface-container-low">
+              <p>Las agrupaciones registradas asumen el compromiso de:</p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li><strong>Actualizar obligatoriamente su directiva y contactos</strong> al inicio de cada ciclo académico o cambio de gestión.</li>
+                <li>Mantener la información del canal de soporte vigente para evitar su deshabilitación del portal público.</li>
+                <li>Publicar todas sus convocatorias y actividades en los formatos autorizados, las cuales son validadas por moderación.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="bg-surface-container-low py-16 md:py-20">
+  <!-- Noticias del Gremio Estudiantil (CEE) (Bloque 6 Req 7) -->
+  <section class="max-w-[1200px] mx-auto px-6">
+    <div class="flex items-center gap-4 mb-6">
+      <h2 class="text-3xl font-bold text-primary border-l-8 border-brand-cream pl-6">Noticias del Gremio Estudiantil (CEE)</h2>
+      <div class="flex-grow h-px bg-border-subtle"></div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="cee-news-feed">
+      <!-- Se inyecta dinámicamente por JS -->
+    </div>
+  </section>
+
+  <script>
+  (function() {
+    const noticiasCEE = [
+      {
+        titulo: 'Convocatoria a elecciones del Comité Electoral FIIS 2026',
+        fecha: '18 may 2026',
+        resumen: 'Se convoca a los estudiantes a postular para ser miembros del Comité Electoral encargado de organizar las elecciones gremiales del CEIIS y delegaturas.',
+        area: 'Comité Electoral / CEE',
+        badge: 'Gremial'
+      },
+      {
+        titulo: 'Olimpiadas FIIS 2026: Inscripción de delegaciones abiertas',
+        fecha: '12 may 2026',
+        resumen: 'Inscribe a tu ciclo en las disciplinas de fútbol, básquet, voleibol, ajedrez y videojuegos. ¡Demuestra el talento deportivo de tu promoción!',
+        area: 'Comisión de Deportes CEE',
+        badge: 'Deportes'
+      },
+      {
+        titulo: 'Programa de Tutoría Estudiantil por Pares 2026-I',
+        fecha: '05 may 2026',
+        resumen: '¿Deseas apoyar a tus compañeros de primeros ciclos? Inscríbete como tutor par de materias críticas como Cálculo, Física o Algoritmos.',
+        area: 'Secretaría Académica CEE',
+        badge: 'Académico'
+      }
+    ];
+
+    const container = document.getElementById('cee-news-feed');
+    if (container) {
+      container.innerHTML = noticiasCEE.map(item => `
+        <article class="bg-white rounded-xl border border-border-subtle p-5 hover:shadow-lg transition-all flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="bg-primary/10 text-primary px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase">${item.badge}</span>
+              <span class="text-text-secondary text-xs flex items-center gap-1">
+                <span class="material-symbols-outlined text-xs">calendar_today</span> ${item.fecha}
+              </span>
+            </div>
+            <h3 class="text-base font-bold text-on-surface leading-tight mb-2 group-hover:text-primary transition-colors">${item.titulo}</h3>
+            <p class="text-text-secondary text-xs leading-relaxed line-clamp-3">${item.resumen}</p>
+          </div>
+          <div class="pt-4 border-t border-border-subtle/50 mt-4 flex items-center justify-between text-[10px] text-text-secondary font-medium">
+            <span>Área: ${item.area}</span>
+            <a href="#/noticias" class="text-primary hover:underline flex items-center gap-0.5">Ver más →</a>
+          </div>
+        </article>
+      `).join('');
+    }
+  })();
+  </script>
+
+  <!-- Convocatorias Abiertas (Req 7) -->
+  <section class="bg-surface-container-low py-16">
     <div class="max-w-[1200px] mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-8 text-primary border-l-8 border-brand-cream pl-6">Convocatorias Abiertas</h2>
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-3xl font-bold text-primary border-l-8 border-brand-cream pl-6">Convocatorias Abiertas</h2>
+        <span class="bg-brand-cream text-primary px-3 py-1 rounded-full text-xs font-bold uppercase">Reclutamiento Activo</span>
+      </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover flex flex-col">
-          <div class="flex items-center gap-2 mb-3">
-            <span class="bg-primary/10 text-primary px-3 py-0.5 rounded-full text-xs font-semibold">UNICODE</span>
-            <span class="bg-green-100 text-green-700 px-2.5 py-0.5 rounded-full text-xs font-semibold">Abierta</span>
+        
+        <!-- Unicode Staff -->
+        <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <span class="bg-indigo-100 text-indigo-700 px-3 py-0.5 rounded-full text-xs font-semibold">UNICODE</span>
+              <span class="bg-green-100 text-green-700 px-2.5 py-0.5 rounded-full text-xs font-semibold">Vigente</span>
+            </div>
+            <h3 class="text-lg font-bold text-on-surface mb-2">Staff de Desarrollo 2026-II</h3>
+            <p class="text-sm text-text-secondary">Únete al equipo técnico de UNICODE. Buscamos estudiantes de Sistemas y Software con conocimientos básicos en React, Node.js o diseño UX/UI.</p>
           </div>
-          <h3 class="text-lg font-bold text-on-surface mb-2">Staff de Desarrollo 2024-II</h3>
-          <p class="text-sm text-text-secondary flex-grow">Únete al equipo de desarrollo de UNICODE. Buscamos estudiantes con conocimientos en React, Python o Go para proyectos institucionales.</p>
-          <div class="flex items-center justify-between mt-4 pt-4 border-t border-border-subtle">
-            <span class="text-xs text-text-secondary"><span class="font-semibold text-on-surface">Cierre:</span> 15 jul 2024</span>
-            <button class="bg-brand-cream text-primary px-5 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition-all">Postular</button>
-          </div>
-        </div>
-        <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover flex flex-col">
-          <div class="flex items-center gap-2 mb-3">
-            <span class="bg-purple-100 text-purple-700 px-3 py-0.5 rounded-full text-xs font-semibold">TEFIIS</span>
-            <span class="bg-green-100 text-green-700 px-2.5 py-0.5 rounded-full text-xs font-semibold">Abierta</span>
-          </div>
-          <h3 class="text-lg font-bold text-on-surface mb-2">Taller de Teatro 2024</h3>
-          <p class="text-sm text-text-secondary flex-grow">Convocatoria abierta para nuevos integrantes. No se requiere experiencia previa, solo ganas de actuar y aprender.</p>
-          <div class="flex items-center justify-between mt-4 pt-4 border-t border-border-subtle">
-            <span class="text-xs text-text-secondary"><span class="font-semibold text-on-surface">Cierre:</span> 20 jul 2024</span>
-            <button class="bg-brand-cream text-primary px-5 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition-all">Postular</button>
+          <div class="flex items-center justify-between mt-6 pt-4 border-t border-border-subtle">
+            <span class="text-xs text-text-secondary"><span class="font-semibold text-on-surface">Cierre:</span> 15 Jul 2026</span>
+            <a class="bg-brand-cream text-primary px-5 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition-all" href="#/vida-estudiantil/unicode">Postular</a>
           </div>
         </div>
-        <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover flex flex-col">
-          <div class="flex items-center gap-2 mb-3">
-            <span class="bg-amber-100 text-amber-700 px-3 py-0.5 rounded-full text-xs font-semibold">CEIIS</span>
-            <span class="bg-green-100 text-green-700 px-2.5 py-0.5 rounded-full text-xs font-semibold">Abierta</span>
+
+        <!-- Tefiis -->
+        <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <span class="bg-purple-100 text-purple-700 px-3 py-0.5 rounded-full text-xs font-semibold">TEFIIS</span>
+              <span class="bg-green-100 text-green-700 px-2.5 py-0.5 rounded-full text-xs font-semibold">Vigente</span>
+            </div>
+            <h3 class="text-lg font-bold text-on-surface mb-2">Elenco Actoral 2026</h3>
+            <p class="text-sm text-text-secondary">¿Te apasiona la actuación o la escenografía? TEFIIS abre audiciones. No requieres experiencia previa, solo compromiso y ganas de aprender.</p>
           </div>
-          <h3 class="text-lg font-bold text-on-surface mb-2">Delegados de Aula 2024-II</h3>
-          <p class="text-sm text-text-secondary flex-grow">Elige a tus representantes. Convocatoria para delegados de aula de todas las especialidades y ciclos.</p>
-          <div class="flex items-center justify-between mt-4 pt-4 border-t border-border-subtle">
-            <span class="text-xs text-text-secondary"><span class="font-semibold text-on-surface">Cierre:</span> 30 jun 2024</span>
-            <button class="bg-brand-cream text-primary px-5 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition-all">Postular</button>
+          <div class="flex items-center justify-between mt-6 pt-4 border-t border-border-subtle">
+            <span class="text-xs text-text-secondary"><span class="font-semibold text-on-surface">Cierre:</span> 20 Jul 2026</span>
+            <a class="bg-brand-cream text-primary px-5 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition-all" href="#/vida-estudiantil/tefiis">Postular</a>
           </div>
         </div>
+
+        <!-- CEIIS Delegados -->
+        <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <span class="bg-amber-100 text-amber-700 px-3 py-0.5 rounded-full text-xs font-semibold">CEIIS</span>
+              <span class="bg-green-100 text-green-700 px-2.5 py-0.5 rounded-full text-xs font-semibold">Vigente</span>
+            </div>
+            <h3 class="text-lg font-bold text-on-surface mb-2">Comisiones de Bienestar y Eventos</h3>
+            <p class="text-sm text-text-secondary">Forma parte del equipo representativo de la FIIS. Buscamos delegados proactivos para las áreas de deportes, cultura y convenios académicos.</p>
+          </div>
+          <div class="flex items-center justify-between mt-6 pt-4 border-t border-border-subtle">
+            <span class="text-xs text-text-secondary"><span class="font-semibold text-on-surface">Cierre:</span> 30 Jun 2026</span>
+            <a class="bg-brand-cream text-primary px-5 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition-all" href="#/vida-estudiantil/ceiis">Postular</a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <section class="max-w-[1200px] mx-auto px-6 pb-8">
-    <h2 class="text-3xl font-bold mb-8 text-primary border-l-8 border-brand-cream pl-6">Próximos Eventos Interagrupaciones</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover">
+  <!-- Calendario Interagrupaciones (Req 6) -->
+  <section class="max-w-[1200px] mx-auto px-6">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 border-b border-border-subtle pb-6">
+      <div>
+        <h2 class="text-3xl font-bold text-primary border-l-8 border-brand-cream pl-6">Calendario Interagrupaciones</h2>
+        <p class="text-sm text-text-secondary pl-6 mt-1">Consulta los talleres, webinars y asambleas organizadas por las agrupaciones.</p>
+      </div>
+      <!-- Filtros del Calendario -->
+      <div class="flex flex-wrap gap-2" id="event-filters">
+        <button class="evt-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-primary text-white transition-all shadow-sm" data-type="all">Todos</button>
+        <button class="evt-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-type="tecnologico">Tecnológico</button>
+        <button class="evt-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-type="cultural">Cultural</button>
+        <button class="evt-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-type="gremial">Gremial/Centros</button>
+      </div>
+    </div>
+
+    <!-- Lista de Eventos -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="events-container">
+      
+      <!-- Hackathon Unicode -->
+      <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover event-card transition-all duration-300" data-type="tecnologico">
         <div class="flex items-center gap-3 mb-4">
           <div class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-lg p-3 min-w-[80px]">
             <span class="text-xs font-bold uppercase">Jul</span>
@@ -255,10 +490,13 @@
             <span class="bg-indigo-100 text-indigo-700 px-2.5 py-0.5 rounded-full text-xs font-semibold inline-block">Tecnológico</span>
           </div>
         </div>
-        <h4 class="text-base font-bold text-on-surface mb-1">Hackathon FIIS 2024</h4>
+        <h4 class="text-base font-bold text-on-surface mb-1">Hackathon FIIS 2026</h4>
         <p class="text-xs text-text-secondary">Organizado por UNICODE · Auditorio Central</p>
+        <p class="text-sm text-text-secondary mt-3">Competencia intensiva de desarrollo donde resolverás problemas reales de la facultad. Habrá premios y mentorías.</p>
       </div>
-      <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover">
+
+      <!-- Noche de Talentos -->
+      <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover event-card transition-all duration-300" data-type="cultural">
         <div class="flex items-center gap-3 mb-4">
           <div class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-lg p-3 min-w-[80px]">
             <span class="text-xs font-bold uppercase">Jul</span>
@@ -269,9 +507,12 @@
           </div>
         </div>
         <h4 class="text-base font-bold text-on-surface mb-1">Noche de Talentos FIIS</h4>
-        <p class="text-xs text-text-secondary">Organizado por TEFIIS y Danza FIIS · Auditorio Central</p>
+        <p class="text-xs text-text-secondary">Organizado por TEFIIS, Coro y Danza · Auditorio Central</p>
+        <p class="text-sm text-text-secondary mt-3">Velada cultural con presentaciones de danza folklórica, teatro corto y el coro de la facultad. Ingreso libre.</p>
       </div>
-      <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover">
+
+      <!-- Asamblea General CEIIS -->
+      <div class="bg-white border border-border-subtle rounded-xl p-6 card-hover event-card transition-all duration-300" data-type="gremial">
         <div class="flex items-center gap-3 mb-4">
           <div class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-lg p-3 min-w-[80px]">
             <span class="text-xs font-bold uppercase">Ago</span>
@@ -283,28 +524,187 @@
         </div>
         <h4 class="text-base font-bold text-on-surface mb-1">Asamblea General Estudiantil</h4>
         <p class="text-xs text-text-secondary">Organizado por CEIIS · Sala de Usos Múltiples</p>
+        <p class="text-sm text-text-secondary mt-3">Reunión informativa y debate sobre la infraestructura estudiantil, presupuesto y calendario académico.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Accesos Rápidos Estudiantiles (Req 19) -->
+  <section class="max-w-[1200px] mx-auto px-6 py-4">
+    <div class="bg-white border border-border-subtle rounded-2xl p-8 shadow-sm">
+      <h3 class="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
+        <span class="material-symbols-outlined">link</span>
+        Accesos Rápidos a Sistemas Académicos
+      </h3>
+      <p class="text-sm text-text-secondary mb-6 leading-relaxed">
+        Ingresa directamente a las plataformas institucionales operativas de la Universidad Nacional de Ingeniería. Asegúrate de contar con tus credenciales institucionales actualizadas.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Aula Virtual -->
+        <div class="border border-border-subtle rounded-xl p-5 hover:bg-primary/5 transition-all flex items-start gap-4">
+          <span class="material-symbols-outlined text-primary text-3xl">computer</span>
+          <div>
+            <h4 class="font-bold text-on-surface text-sm mb-1">Aula Virtual FIIS</h4>
+            <p class="text-xs text-text-secondary leading-relaxed mb-3">Accede a tus cursos matriculados, descarga materiales didácticos de docentes y sube tus tareas.</p>
+            <a href="#" class="text-xs text-primary font-bold hover:underline flex items-center gap-1">Ingresar al sistema <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
+          </div>
+        </div>
+
+        <!-- Biblioteca KOHA -->
+        <div class="border border-border-subtle rounded-xl p-5 hover:bg-primary/5 transition-all flex items-start gap-4">
+          <span class="material-symbols-outlined text-primary text-3xl">library_books</span>
+          <div>
+            <h4 class="font-bold text-on-surface text-sm mb-1">Catálogo KOHA (Biblioteca)</h4>
+            <p class="text-xs text-text-secondary leading-relaxed mb-3">Busca la disponibilidad de libros físicos en sala, revisa tesis académicas y haz reservas en línea.</p>
+            <a href="#" class="text-xs text-primary font-bold hover:underline flex items-center gap-1">Buscar catálogo <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
+          </div>
+        </div>
+
+        <!-- Intranet UNI -->
+        <div class="border border-border-subtle rounded-xl p-5 hover:bg-primary/5 transition-all flex items-start gap-4">
+          <span class="material-symbols-outlined text-primary text-3xl">account_circle</span>
+          <div>
+            <h4 class="font-bold text-on-surface text-sm mb-1">Yachay / Intranet ORCE</h4>
+            <p class="text-xs text-text-secondary leading-relaxed mb-3">Consulta tu ficha de matrícula, historial de notas, constancias de egresado e información administrativa.</p>
+            <a href="https://docentes.uni.edu.pe/login" target="_blank" class="text-xs text-primary font-bold hover:underline flex items-center gap-1">Ir a Intranet <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="bg-primary py-16">
+  <!-- Soporte y Contacto General (Req 20) -->
+  <section class="bg-primary rounded-t-2xl py-16">
     <div class="max-w-[1200px] mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold text-on-primary mb-4">Contacto</h2>
-      <p class="text-on-primary/80 text-base max-w-xl mx-auto mb-8">¿Quieres formar parte de alguna agrupación? Escríbenos y te pondremos en contacto con la directiva correspondiente.</p>
-      <div class="flex flex-wrap justify-center gap-8 mb-8">
-        <div class="flex items-center gap-2 text-on-primary/90 text-sm">
+      <h2 class="text-3xl font-bold text-on-primary mb-4">Soporte y Bienestar Estudiantil</h2>
+      <p class="text-on-primary/80 text-base max-w-xl mx-auto mb-8">¿Tienes dudas sobre el proceso de registro, requerimientos de directivas o necesitas apoyo de Bienestar Estudiantil? Escríbenos directamente.</p>
+      
+      <div class="flex flex-wrap justify-center gap-8 mb-8 text-on-primary/90 text-sm">
+        <div class="flex items-center gap-2">
           <span class="material-symbols-outlined text-brand-cream">mail</span>
-          <span>videstudiantil@fiis.uni.edu.pe</span>
+          <span>bienestarfiis@uni.edu.pe</span>
         </div>
-        <div class="flex items-center gap-2 text-on-primary/90 text-sm">
+        <div class="flex items-center gap-2">
           <span class="material-symbols-outlined text-brand-cream">location_on</span>
-          <span>Pabellón B, 2do piso — Of. Bienestar Estudiantil</span>
+          <span>Pabellón B, 2do piso — Oficina de Bienestar FIIS</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-brand-cream">schedule</span>
+          <span>Lun - Vie: 8:00 am a 4:00 pm</span>
         </div>
       </div>
-      <a class="inline-flex items-center gap-2 bg-brand-cream text-primary px-8 py-3 rounded-lg text-base font-semibold hover:opacity-90 transition-all" href="#">
-        Quiero unirme a una agrupación
+      <a class="inline-flex items-center gap-2 bg-brand-cream text-primary px-8 py-3 rounded-lg text-base font-semibold hover:opacity-90 transition-all" href="#/contacto">
+        Contactar Soporte General
         <span class="material-symbols-outlined">arrow_forward</span>
       </a>
     </div>
   </section>
 </div>
+
+<!-- Lógica interactiva de Filtros y Accordion -->
+<script>
+(function() {
+  // --- Filtros de Agrupaciones ---
+  const searchInput = document.getElementById('search-groups');
+  const catFilterBtns = document.querySelectorAll('.cat-filter-btn');
+  const groupingCards = document.querySelectorAll('.grouping-card');
+  const noGroupsMsg = document.getElementById('no-groups-message');
+  let activeCategory = 'all';
+  let searchQuery = '';
+
+  function filterGroupings() {
+    let visibleCount = 0;
+    groupingCards.forEach(card => {
+      const cardCategory = card.getAttribute('data-category');
+      const cardName = card.getAttribute('data-name');
+      const matchesCategory = (activeCategory === 'all' || cardCategory === activeCategory);
+      const matchesSearch = cardName.includes(searchQuery);
+
+      if (matchesCategory && matchesSearch) {
+        card.classList.remove('hidden');
+        card.style.opacity = 1;
+        visibleCount++;
+      } else {
+        card.classList.add('hidden');
+        card.style.opacity = 0;
+      }
+    });
+
+    if (visibleCount === 0) {
+      noGroupsMsg.classList.remove('hidden');
+    } else {
+      noGroupsMsg.classList.add('hidden');
+    }
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.toLowerCase().trim();
+      filterGroupings();
+    });
+  }
+
+  catFilterBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      catFilterBtns.forEach(b => {
+        b.className = 'cat-filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all';
+      });
+      btn.className = 'cat-filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-primary text-white transition-all shadow-sm';
+      activeCategory = btn.getAttribute('data-category');
+      filterGroupings();
+    });
+  });
+
+  // --- Filtros del Calendario ---
+  const evtFilterBtns = document.querySelectorAll('.evt-filter-btn');
+  const eventCards = document.querySelectorAll('.event-card');
+
+  evtFilterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      evtFilterBtns.forEach(b => {
+        b.className = 'evt-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all';
+      });
+      btn.className = 'evt-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-primary text-white transition-all shadow-sm';
+      const selectedType = btn.getAttribute('data-type');
+      
+      eventCards.forEach(card => {
+        const cardType = card.getAttribute('data-type');
+        if (selectedType === 'all' || cardType === selectedType) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // --- Acordeón de Criterios (Gestión 3) ---
+  const accTriggers = document.querySelectorAll('.accordion-trigger');
+  accTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const content = trigger.nextElementSibling;
+      const icon = trigger.querySelector('.accordion-icon');
+      const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+      // Cerrar otros
+      accTriggers.forEach(t => {
+        const c = t.nextElementSibling;
+        const ic = t.querySelector('.accordion-icon');
+        c.style.maxHeight = '0px';
+        if (ic) ic.style.transform = 'rotate(0deg)';
+      });
+
+      if (!isOpen) {
+        content.style.maxHeight = content.scrollHeight + 'px';
+        if (icon) icon.style.transform = 'rotate(180deg)';
+      } else {
+        content.style.maxHeight = '0px';
+        if (icon) icon.style.transform = 'rotate(0deg)';
+      }
+    });
+  });
+
+})();
+</script>
