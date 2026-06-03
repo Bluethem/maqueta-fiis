@@ -1,145 +1,394 @@
 <div class="page-enter space-y-6">
   <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
     <div>
-      <h1 class="text-3xl font-bold text-primary">Gestión de Noticias</h1>
-      <p class="text-text-secondary text-base">Crea y administra las noticias del portal</p>
+      <h1 class="text-3xl font-bold text-primary">Gestión de Contenidos</h1>
+      <p class="text-text-secondary text-base">Administra noticias, comunicados, eventos y convocatorias del portal</p>
     </div>
   </div>
 
   <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">
+    <!-- Lista de publicaciones -->
     <div class="lg:col-span-2 space-y-4">
+      <!-- Buscador -->
       <div class="relative">
         <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
-        <input class="w-full pl-10 pr-4 py-2.5 border border-border-subtle rounded-lg focus:ring-1 focus:ring-primary focus:border-primary outline-none text-sm" placeholder="Buscar noticias..." type="text">
+        <input class="w-full pl-10 pr-4 py-2.5 border border-border-subtle rounded-lg focus:ring-1 focus:ring-primary focus:border-primary outline-none text-sm" placeholder="Buscar publicaciones..." type="text" id="admin-search-input">
       </div>
+
+      <!-- Filtros -->
       <div class="flex gap-2 flex-wrap">
-        <select class="px-3 py-2 border border-border-subtle rounded-lg text-sm bg-white">
-          <option>Todas las categorías</option>
-          <option>Institucional</option>
-          <option>Académica</option>
-          <option>Empresas</option>
-          <option>Estudiantil</option>
+        <!-- Filtro por tipo de contenido (Req 8 / Req 30) -->
+        <select id="filter-tipo" class="px-3 py-2 border border-border-subtle rounded-lg text-sm bg-white">
+          <option value="">Todos los tipos</option>
+          <option value="noticia">Noticia</option>
+          <option value="comunicado">Comunicado</option>
+          <option value="evento">Evento</option>
+          <option value="convocatoria">Convocatoria</option>
         </select>
-        <select class="px-3 py-2 border border-border-subtle rounded-lg text-sm bg-white">
-          <option>Todos los estados</option>
-          <option>Publicado</option>
-          <option>Borrador</option>
-          <option>En revisión</option>
+        <!-- Filtro por estado (Req 18 / Req 37) -->
+        <select id="filter-estado" class="px-3 py-2 border border-border-subtle rounded-lg text-sm bg-white">
+          <option value="">Todos los estados</option>
+          <option value="publicado">Publicado</option>
+          <option value="borrador">Borrador</option>
+          <option value="revision">En revisión</option>
+          <option value="archivado">Archivado</option>
         </select>
       </div>
 
-      <div class="space-y-3">
-        <div class="bg-white border border-border-subtle rounded-xl p-4 hover:border-primary transition-all group cursor-pointer">
-          <div class="flex gap-4">
-            <div class="w-20 h-16 bg-primary-container/30 rounded-lg flex items-center justify-center flex-shrink-0">
-              <span class="material-symbols-outlined text-primary/50">image</span>
+      <!-- Lista de publicaciones -->
+      <div class="space-y-3" id="publications-list">
+
+        <!-- Comunicado (badge diferenciado) -->
+        <div class="bg-white border border-border-subtle rounded-xl p-4 hover:border-primary transition-all cursor-pointer publication-item" data-tipo="comunicado" data-estado="publicado" onclick="cargarFormulario(this)">
+          <div class="flex gap-3">
+            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-primary text-base">campaign</span>
             </div>
             <div class="flex-1 min-w-0">
-              <div class="flex items-center gap-2 mb-1">
-                <span class="text-xs font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full">Institucional</span>
+              <div class="flex items-center gap-1.5 mb-1 flex-wrap">
+                <span class="text-xs font-bold bg-primary text-on-primary px-2 py-0.5 rounded-full">Comunicado</span>
+                <span class="text-xs text-success bg-success/15 px-2 py-0.5 rounded-full">Publicado · Vigente</span>
+              </div>
+              <p class="text-sm font-semibold text-on-surface truncate">N° 012-2026: Modificación Calendario 2026-I</p>
+              <p class="text-xs text-text-secondary mt-0.5">18 may 2026 · Decanatura FIIS</p>
+            </div>
+            <button class="p-1.5 text-on-surface-variant hover:text-primary self-start" title="Editar">
+              <span class="material-symbols-outlined text-sm">edit</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Evento -->
+        <div class="bg-white border border-border-subtle rounded-xl p-4 hover:border-primary transition-all cursor-pointer publication-item" data-tipo="evento" data-estado="publicado" onclick="cargarFormulario(this)">
+          <div class="flex gap-3">
+            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-blue-600 text-base">event</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-1.5 mb-1 flex-wrap">
+                <span class="text-xs font-bold bg-blue-600 text-white px-2 py-0.5 rounded-full">Evento</span>
+                <span class="text-xs text-success bg-success/15 px-2 py-0.5 rounded-full">Publicado · Próximo</span>
+              </div>
+              <p class="text-sm font-semibold text-on-surface truncate">Congreso Internacional FIIS 2026</p>
+              <p class="text-xs text-text-secondary mt-0.5">15 jun 2026 · Decanatura</p>
+            </div>
+            <button class="p-1.5 text-on-surface-variant hover:text-primary self-start" title="Editar">
+              <span class="material-symbols-outlined text-sm">edit</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Noticia Posgrado -->
+        <div class="bg-white border-2 border-primary rounded-xl p-4 hover:border-primary transition-all cursor-pointer publication-item" data-tipo="noticia" data-estado="publicado" onclick="cargarFormulario(this)">
+          <div class="flex gap-3">
+            <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-teal-600 text-base">school</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-1.5 mb-1 flex-wrap">
+                <span class="text-xs font-semibold text-teal-800 bg-teal-100 px-2 py-0.5 rounded-full">Noticia · Posgrado</span>
+                <span class="text-xs text-success bg-success/15 px-2 py-0.5 rounded-full">Publicado</span>
+              </div>
+              <p class="text-sm font-semibold text-on-surface truncate">Nueva Maestría en Ciencia de Datos</p>
+              <p class="text-xs text-text-secondary mt-0.5">20 may 2026</p>
+            </div>
+            <button class="p-1.5 text-on-surface-variant hover:text-primary self-start" title="Editar">
+              <span class="material-symbols-outlined text-sm">edit</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Noticia Institucional -->
+        <div class="bg-white border border-border-subtle rounded-xl p-4 hover:border-primary transition-all cursor-pointer publication-item" data-tipo="noticia" data-estado="publicado" onclick="cargarFormulario(this)">
+          <div class="flex gap-3">
+            <div class="w-10 h-10 bg-primary-container/30 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-primary/50 text-base">newspaper</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-1.5 mb-1 flex-wrap">
+                <span class="text-xs font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full">Noticia · Institucional</span>
                 <span class="text-xs text-success bg-success/15 px-2 py-0.5 rounded-full">Publicado</span>
               </div>
               <p class="text-sm font-semibold text-on-surface truncate">Inauguración del Laboratorio de IA</p>
-              <p class="text-xs text-text-secondary mt-0.5">15 may 2024</p>
+              <p class="text-xs text-text-secondary mt-0.5">15 may 2026</p>
             </div>
-            <button class="p-1.5 text-on-surface-variant hover:text-primary self-start"><span class="material-symbols-outlined text-sm">edit</span></button>
+            <button class="p-1.5 text-on-surface-variant hover:text-primary self-start" title="Editar">
+              <span class="material-symbols-outlined text-sm">edit</span>
+            </button>
           </div>
         </div>
-        <div class="bg-white border border-border-subtle rounded-xl p-4 hover:border-primary transition-all group cursor-pointer">
-          <div class="flex gap-4">
-            <div class="w-20 h-16 bg-primary-container/30 rounded-lg flex items-center justify-center flex-shrink-0">
-              <span class="material-symbols-outlined text-primary/50">image</span>
+
+        <!-- Noticia Académica borrador -->
+        <div class="bg-white border border-border-subtle rounded-xl p-4 hover:border-primary transition-all cursor-pointer publication-item" data-tipo="noticia" data-estado="borrador" onclick="cargarFormulario(this)">
+          <div class="flex gap-3">
+            <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-blue-400 text-base">newspaper</span>
             </div>
             <div class="flex-1 min-w-0">
-              <div class="flex items-center gap-2 mb-1">
-                <span class="text-xs font-semibold text-blue-700 bg-blue-100 px-2 py-0.5 rounded-full">Académica</span>
+              <div class="flex items-center gap-1.5 mb-1 flex-wrap">
+                <span class="text-xs font-semibold text-blue-700 bg-blue-100 px-2 py-0.5 rounded-full">Noticia · Académica</span>
                 <span class="text-xs text-warning bg-warning/15 px-2 py-0.5 rounded-full">Borrador</span>
               </div>
               <p class="text-sm font-semibold text-on-surface truncate">Estudiantes destacan en certamen nacional</p>
-              <p class="text-xs text-text-secondary mt-0.5">12 may 2024</p>
+              <p class="text-xs text-text-secondary mt-0.5">12 may 2026</p>
             </div>
-            <button class="p-1.5 text-on-surface-variant hover:text-primary self-start"><span class="material-symbols-outlined text-sm">edit</span></button>
+            <button class="p-1.5 text-on-surface-variant hover:text-primary self-start" title="Editar">
+              <span class="material-symbols-outlined text-sm">edit</span>
+            </button>
           </div>
         </div>
-        <div class="bg-white border border-border-subtle rounded-xl p-4 hover:border-primary transition-all group cursor-pointer">
-          <div class="flex gap-4">
-            <div class="w-20 h-16 bg-primary-container/30 rounded-lg flex items-center justify-center flex-shrink-0">
-              <span class="material-symbols-outlined text-primary/50">image</span>
+
+        <!-- Convocatoria -->
+        <div class="bg-white border border-border-subtle rounded-xl p-4 hover:border-primary transition-all cursor-pointer publication-item" data-tipo="convocatoria" data-estado="revision" onclick="cargarFormulario(this)">
+          <div class="flex gap-3">
+            <div class="w-10 h-10 bg-amber-50 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-amber-600 text-base">assignment</span>
             </div>
             <div class="flex-1 min-w-0">
-              <div class="flex items-center gap-2 mb-1">
-                <span class="text-xs font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full">Empresas</span>
+              <div class="flex items-center gap-1.5 mb-1 flex-wrap">
+                <span class="text-xs font-bold bg-amber-500 text-white px-2 py-0.5 rounded-full">Convocatoria</span>
                 <span class="text-xs text-primary bg-primary-container/15 px-2 py-0.5 rounded-full">En revisión</span>
               </div>
-              <p class="text-sm font-semibold text-on-surface truncate">Alianza con sector tecnológico</p>
-              <p class="text-xs text-text-secondary mt-0.5">10 may 2024</p>
+              <p class="text-sm font-semibold text-on-surface truncate">Monitores Académicos 2026-II</p>
+              <p class="text-xs text-text-secondary mt-0.5">15 may 2026</p>
             </div>
-            <button class="p-1.5 text-on-surface-variant hover:text-primary self-start"><span class="material-symbols-outlined text-sm">edit</span></button>
+            <button class="p-1.5 text-on-surface-variant hover:text-primary self-start" title="Editar">
+              <span class="material-symbols-outlined text-sm">edit</span>
+            </button>
           </div>
         </div>
+
       </div>
     </div>
 
+    <!-- Formulario de creación/edición -->
     <div class="lg:col-span-3 bg-white rounded-xl border border-border-subtle p-6">
-      <h3 class="text-lg font-bold text-primary mb-6">Nueva noticia</h3>
-      <form class="space-y-4" onsubmit="event.preventDefault(); alert('Noticia enviada a revisión (simulación)');">
+      <h3 class="text-lg font-bold text-primary mb-1">Nueva publicación</h3>
+      <p class="text-xs text-text-secondary mb-5">Completa todos los campos. El contenido pasará por revisión antes de publicarse (Flujo editorial).</p>
+
+      <form class="space-y-4" id="publication-form" onsubmit="event.preventDefault(); submitForm();">
+
+        <!-- Tipo de contenido (Req 8 / Req 30) -->
         <div>
-          <label class="text-sm font-medium text-on-surface block mb-1.5">Título</label>
-          <input class="w-full px-4 py-2.5 border border-border-subtle rounded-lg focus:ring-1 focus:ring-primary focus:border-primary outline-none text-sm" placeholder="Título de la noticia" type="text">
+          <label class="text-sm font-medium text-on-surface block mb-1.5" for="tipo-contenido">
+            Tipo de contenido <span class="text-error">*</span>
+          </label>
+          <select id="tipo-contenido" class="w-full px-4 py-2.5 border border-border-subtle rounded-lg focus:ring-1 focus:ring-primary focus:border-primary outline-none text-sm bg-white" onchange="toggleContenidoFields(this.value)">
+            <option value="">Selecciona un tipo...</option>
+            <option value="noticia">📰 Noticia – relato y contexto</option>
+            <option value="comunicado">📣 Comunicado oficial – oficialidad y vigencia</option>
+            <option value="evento">📅 Evento – fecha, hora, lugar e inscripción</option>
+            <option value="convocatoria">📋 Convocatoria – requisitos y plazo</option>
+          </select>
+          <p class="text-xs text-text-secondary mt-1">Cada tipo tiene su propio formato visual en el portal público.</p>
         </div>
-        <div class="grid grid-cols-2 gap-4">
-          <div>
-            <label class="text-sm font-medium text-on-surface block mb-1.5">Categoría</label>
-            <select class="w-full px-4 py-2.5 border border-border-subtle rounded-lg focus:ring-1 focus:ring-primary focus:border-primary outline-none text-sm bg-white">
-              <option>Institucional</option>
-              <option>Académica</option>
-              <option>Empresarial</option>
-              <option>Estudiantil</option>
+
+        <!-- Título -->
+        <div>
+          <label class="text-sm font-medium text-on-surface block mb-1.5" for="titulo-pub">Título <span class="text-error">*</span></label>
+          <input id="titulo-pub" class="w-full px-4 py-2.5 border border-border-subtle rounded-lg focus:ring-1 focus:ring-primary focus:border-primary outline-none text-sm" placeholder="Título de la publicación" type="text" required>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <!-- Categoría temática (solo para noticias) -->
+          <div id="field-categoria">
+            <label class="text-sm font-medium text-on-surface block mb-1.5" for="categoria-noticia">Categoría temática</label>
+            <select id="categoria-noticia" class="w-full px-4 py-2.5 border border-border-subtle rounded-lg focus:ring-1 focus:ring-primary focus:border-primary outline-none text-sm bg-white">
+              <option value="">Sin categoría</option>
+              <option value="institucional">Institucional</option>
+              <option value="academica">Académica</option>
+              <option value="empresarial">Empresarial</option>
+              <option value="estudiantil">Estudiantil</option>
+              <option value="posgrado">Posgrado</option>
             </select>
           </div>
+          <!-- Fecha de publicación -->
           <div>
-            <label class="text-sm font-medium text-on-surface block mb-1.5">Fecha de publicación</label>
-            <input class="w-full px-4 py-2.5 border border-border-subtle rounded-lg focus:ring-1 focus:ring-primary focus:border-primary outline-none text-sm" type="date">
+            <label class="text-sm font-medium text-on-surface block mb-1.5" for="fecha-pub">Fecha de publicación</label>
+            <input id="fecha-pub" class="w-full px-4 py-2.5 border border-border-subtle rounded-lg focus:ring-1 focus:ring-primary focus:border-primary outline-none text-sm" type="date">
           </div>
         </div>
+
+        <!-- Campos exclusivos de EVENTOS -->
+        <div id="fields-evento" class="hidden space-y-3 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+          <p class="text-xs font-semibold text-blue-700 flex items-center gap-1"><span class="material-symbols-outlined text-sm">event</span> Datos del evento</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="text-xs font-medium text-on-surface block mb-1" for="evento-hora">Hora de inicio</label>
+              <input id="evento-hora" type="time" class="w-full px-3 py-2 border border-border-subtle rounded-lg text-sm outline-none focus:ring-1 focus:ring-primary">
+            </div>
+            <div>
+              <label class="text-xs font-medium text-on-surface block mb-1" for="evento-hora-fin">Hora de fin</label>
+              <input id="evento-hora-fin" type="time" class="w-full px-3 py-2 border border-border-subtle rounded-lg text-sm outline-none focus:ring-1 focus:ring-primary">
+            </div>
+          </div>
+          <div>
+            <label class="text-xs font-medium text-on-surface block mb-1" for="evento-lugar">Lugar / modalidad</label>
+            <input id="evento-lugar" type="text" placeholder="Ej: Auditorio Principal FIIS / Virtual" class="w-full px-3 py-2 border border-border-subtle rounded-lg text-sm outline-none focus:ring-1 focus:ring-primary">
+          </div>
+          <div>
+            <label class="text-xs font-medium text-on-surface block mb-1" for="evento-publico">Público objetivo</label>
+            <input id="evento-publico" type="text" placeholder="Ej: Estudiantes, Egresados, Público General" class="w-full px-3 py-2 border border-border-subtle rounded-lg text-sm outline-none focus:ring-1 focus:ring-primary">
+          </div>
+          <div>
+            <label class="text-xs font-medium text-on-surface block mb-1" for="evento-inscripcion">Enlace de inscripción (opcional)</label>
+            <input id="evento-inscripcion" type="url" placeholder="https://..." class="w-full px-3 py-2 border border-border-subtle rounded-lg text-sm outline-none focus:ring-1 focus:ring-primary">
+          </div>
+        </div>
+
+        <!-- Campos exclusivos de COMUNICADOS -->
+        <div id="fields-comunicado" class="hidden space-y-3 p-4 bg-primary/5 border border-primary/20 rounded-lg">
+          <p class="text-xs font-semibold text-primary flex items-center gap-1"><span class="material-symbols-outlined text-sm">campaign</span> Datos del comunicado oficial</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="text-xs font-medium text-on-surface block mb-1" for="com-numero">N° de comunicado</label>
+              <input id="com-numero" type="text" placeholder="Ej: N° 012-2026-FIIS" class="w-full px-3 py-2 border border-border-subtle rounded-lg text-sm outline-none focus:ring-1 focus:ring-primary">
+            </div>
+            <div>
+              <label class="text-xs font-medium text-on-surface block mb-1" for="com-vencimiento">Fecha de vigencia / vencimiento</label>
+              <input id="com-vencimiento" type="date" class="w-full px-3 py-2 border border-border-subtle rounded-lg text-sm outline-none focus:ring-1 focus:ring-primary">
+            </div>
+          </div>
+          <div>
+            <label class="text-xs font-medium text-on-surface block mb-1" for="com-emisor">Emitido por</label>
+            <input id="com-emisor" type="text" placeholder="Ej: Decanatura FIIS / Secretaría Académica" class="w-full px-3 py-2 border border-border-subtle rounded-lg text-sm outline-none focus:ring-1 focus:ring-primary">
+          </div>
+        </div>
+
+        <!-- Campos exclusivos de CONVOCATORIAS -->
+        <div id="fields-convocatoria" class="hidden space-y-3 p-4 bg-amber-50 border border-amber-200 rounded-lg">
+          <p class="text-xs font-semibold text-amber-700 flex items-center gap-1"><span class="material-symbols-outlined text-sm">assignment</span> Datos de la convocatoria</p>
+          <div>
+            <label class="text-xs font-medium text-on-surface block mb-1" for="conv-cierre">Fecha de cierre de postulaciones</label>
+            <input id="conv-cierre" type="date" class="w-full px-3 py-2 border border-border-subtle rounded-lg text-sm outline-none focus:ring-1 focus:ring-primary">
+          </div>
+          <div>
+            <label class="text-xs font-medium text-on-surface block mb-1" for="conv-requisitos">Requisitos principales (separados por comas)</label>
+            <textarea id="conv-requisitos" class="w-full px-3 py-2 border border-border-subtle rounded-lg text-sm outline-none focus:ring-1 focus:ring-primary resize-none" rows="3" placeholder="Ej: Promedio ≥ 14, No adeudar asignaturas, CV actualizado"></textarea>
+          </div>
+        </div>
+
+        <!-- Imagen destacada -->
         <div>
           <label class="text-sm font-medium text-on-surface block mb-1.5">Imagen destacada</label>
-          <div class="border-2 border-dashed border-border-subtle rounded-lg p-8 text-center hover:border-primary transition-all cursor-pointer">
+          <div class="border-2 border-dashed border-border-subtle rounded-lg p-6 text-center hover:border-primary transition-all cursor-pointer">
             <span class="material-symbols-outlined text-3xl text-text-secondary">add_photo_alternate</span>
             <p class="text-sm font-medium text-on-surface mt-2">Subir imagen destacada</p>
             <p class="text-xs text-text-secondary">PNG, JPG hasta 2MB</p>
           </div>
         </div>
+
+        <!-- Cuerpo del contenido -->
         <div>
-          <label class="text-sm font-medium text-on-surface block mb-1.5">Cuerpo de la noticia</label>
+          <label class="text-sm font-medium text-on-surface block mb-1.5" for="cuerpo-pub">Cuerpo del contenido <span class="text-error">*</span></label>
           <div class="border border-border-subtle rounded-lg overflow-hidden">
             <div class="flex gap-1 p-2 bg-surface-bg border-b border-border-subtle">
-              <button class="p-1.5 hover:bg-surface-container-high rounded transition-all"><span class="material-symbols-outlined text-sm">format_bold</span></button>
-              <button class="p-1.5 hover:bg-surface-container-high rounded transition-all"><span class="material-symbols-outlined text-sm">format_italic</span></button>
-              <button class="p-1.5 hover:bg-surface-container-high rounded transition-all"><span class="material-symbols-outlined text-sm">format_list_bulleted</span></button>
-              <button class="p-1.5 hover:bg-surface-container-high rounded transition-all"><span class="material-symbols-outlined text-sm">format_list_numbered</span></button>
-              <button class="p-1.5 hover:bg-surface-container-high rounded transition-all"><span class="material-symbols-outlined text-sm">link</span></button>
+              <button type="button" class="p-1.5 hover:bg-surface-container-high rounded transition-all" title="Negrita"><span class="material-symbols-outlined text-sm">format_bold</span></button>
+              <button type="button" class="p-1.5 hover:bg-surface-container-high rounded transition-all" title="Cursiva"><span class="material-symbols-outlined text-sm">format_italic</span></button>
+              <button type="button" class="p-1.5 hover:bg-surface-container-high rounded transition-all" title="Lista"><span class="material-symbols-outlined text-sm">format_list_bulleted</span></button>
+              <button type="button" class="p-1.5 hover:bg-surface-container-high rounded transition-all" title="Lista numerada"><span class="material-symbols-outlined text-sm">format_list_numbered</span></button>
+              <button type="button" class="p-1.5 hover:bg-surface-container-high rounded transition-all" title="Enlace"><span class="material-symbols-outlined text-sm">link</span></button>
             </div>
-            <textarea class="w-full px-4 py-3 outline-none text-sm h-40 resize-none" placeholder="Escribe el contenido de la noticia aquí..."></textarea>
+            <textarea id="cuerpo-pub" class="w-full px-4 py-3 outline-none text-sm h-36 resize-none" placeholder="Escribe el contenido aquí..."></textarea>
           </div>
         </div>
-        <div>
-          <label class="text-sm font-medium text-on-surface block mb-1.5">Etiquetas</label>
-          <input class="w-full px-4 py-2.5 border border-border-subtle rounded-lg focus:ring-1 focus:ring-primary focus:border-primary outline-none text-sm" placeholder="Ej: investigación, laboratorio, IA" type="text">
+
+        <!-- Área responsable + Etiquetas -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="text-sm font-medium text-on-surface block mb-1.5" for="area-responsable">Área responsable (Req 23)</label>
+            <input id="area-responsable" class="w-full px-4 py-2.5 border border-border-subtle rounded-lg focus:ring-1 focus:ring-primary focus:border-primary outline-none text-sm" placeholder="Ej: Decanatura FIIS" type="text">
+          </div>
+          <div>
+            <label class="text-sm font-medium text-on-surface block mb-1.5" for="etiquetas-pub">Etiquetas</label>
+            <input id="etiquetas-pub" class="w-full px-4 py-2.5 border border-border-subtle rounded-lg focus:ring-1 focus:ring-primary focus:border-primary outline-none text-sm" placeholder="Ej: investigación, IA, laboratorio" type="text">
+          </div>
         </div>
+
+        <!-- Estado editorial (Req 37 — flujo: borrador → revisión → publicado → archivado) -->
         <div class="flex items-center gap-3">
-          <label class="text-sm font-medium text-on-surface">Estado:</label>
-          <select class="px-3 py-2 border border-border-subtle rounded-lg text-sm bg-white">
-            <option>Borrador</option>
-            <option>Publicar</option>
-            <option>Programar</option>
+          <label class="text-sm font-medium text-on-surface" for="estado-editorial">Estado editorial:</label>
+          <select id="estado-editorial" class="px-3 py-2 border border-border-subtle rounded-lg text-sm bg-white">
+            <option value="borrador">Borrador</option>
+            <option value="revision">Enviar a revisión</option>
+            <option value="publicado">Publicar directamente</option>
+            <option value="programado">Programar publicación</option>
+            <option value="archivado">Archivar</option>
           </select>
         </div>
+
+        <!-- Alerta flujo editorial -->
+        <div class="flex items-start gap-3 p-3 bg-amber-50 border border-amber-200 rounded-lg text-sm">
+          <span class="material-symbols-outlined text-amber-500 mt-0.5 flex-shrink-0">warning</span>
+          <p class="text-amber-800">Todo contenido debe pasar por el flujo: <strong>Borrador → En revisión → Publicado</strong>. Solo administradores pueden publicar directamente.</p>
+        </div>
+
+        <!-- Botones de acción -->
         <div class="flex gap-3 pt-2">
-          <button type="button" class="flex-1 border-2 border-primary text-primary py-2.5 rounded-lg font-medium hover:bg-primary/5 transition-all">Guardar borrador</button>
-          <button type="submit" class="flex-1 bg-primary text-on-primary py-2.5 rounded-lg font-medium hover:opacity-90 transition-all">Enviar a revisión</button>
+          <button type="button" id="btn-guardar-borrador" class="flex-1 border-2 border-primary text-primary py-2.5 rounded-lg font-medium hover:bg-primary/5 transition-all text-sm">
+            Guardar borrador
+          </button>
+          <button type="submit" id="btn-enviar-revision" class="flex-1 bg-primary text-on-primary py-2.5 rounded-lg font-medium hover:opacity-90 transition-all text-sm">
+            Enviar a revisión
+          </button>
         </div>
       </form>
     </div>
   </div>
 </div>
+
+<script>
+// Mostrar/ocultar campos según tipo de contenido
+function toggleContenidoFields(tipo) {
+  const fieldsEvento = document.getElementById('fields-evento');
+  const fieldsComunicado = document.getElementById('fields-comunicado');
+  const fieldsConvocatoria = document.getElementById('fields-convocatoria');
+  const fieldCategoria = document.getElementById('field-categoria');
+
+  fieldsEvento.classList.add('hidden');
+  fieldsComunicado.classList.add('hidden');
+  fieldsConvocatoria.classList.add('hidden');
+  fieldCategoria.classList.toggle('hidden', tipo !== 'noticia');
+
+  if (tipo === 'evento') fieldsEvento.classList.remove('hidden');
+  else if (tipo === 'comunicado') fieldsComunicado.classList.remove('hidden');
+  else if (tipo === 'convocatoria') fieldsConvocatoria.classList.remove('hidden');
+}
+
+// Simulación de envío del formulario
+function submitForm() {
+  const tipo = document.getElementById('tipo-contenido').value || 'publicación';
+  const estado = document.getElementById('estado-editorial').value;
+  let mensaje = '';
+  if (estado === 'revision') mensaje = `${tipo.charAt(0).toUpperCase() + tipo.slice(1)} enviado a revisión correctamente.`;
+  else if (estado === 'publicado') mensaje = `${tipo.charAt(0).toUpperCase() + tipo.slice(1)} publicado directamente.`;
+  else mensaje = `Borrador guardado correctamente.`;
+  alert('✅ ' + mensaje);
+}
+
+// Filtro de la lista
+(function() {
+  const tipoSel = document.getElementById('filter-tipo');
+  const estadoSel = document.getElementById('filter-estado');
+  const items = document.querySelectorAll('.publication-item');
+
+  function applyFilters() {
+    const tipo = tipoSel.value;
+    const estado = estadoSel.value;
+    items.forEach(item => {
+      const matchTipo = !tipo || item.dataset.tipo === tipo;
+      const matchEstado = !estado || item.dataset.estado === estado;
+      item.style.display = matchTipo && matchEstado ? '' : 'none';
+    });
+  }
+
+  tipoSel.addEventListener('change', applyFilters);
+  estadoSel.addEventListener('change', applyFilters);
+})();
+
+// Simular carga de un ítem al formulario
+function cargarFormulario(el) {
+  document.querySelectorAll('.publication-item').forEach(i => i.classList.remove('border-2', 'border-primary'));
+  el.classList.add('border-2', 'border-primary');
+}
+</script>
