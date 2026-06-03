@@ -502,4 +502,69 @@
     </div>
   </section>
 
+  <!-- Actualidad y Eventos de Empleabilidad (Bloque 1 Req 19) -->
+  <section class="max-w-[1200px] mx-auto px-6 md:px-8 pb-12">
+    <div class="flex items-center gap-4 mb-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-primary">Actualidad y Eventos de Empleabilidad</h2>
+      <div class="flex-grow h-px bg-border-subtle"></div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="empresas-news-feed">
+      <!-- Se inyecta dinámicamente por JS -->
+    </div>
+  </section>
+
 </div>
+
+<script>
+(function() {
+  const publicacionesEmpresas = [
+    {
+      tipo: 'noticia',
+      titulo: 'Nueva alianza estratégica con líderes del sector tecnológico',
+      fecha: '10 may 2026',
+      resumen: 'Convenio de cooperación institucional permitirá a estudiantes de la FIIS-UNI realizar prácticas preprofesionales en proyectos reales de transformación digital.',
+      area: 'Relaciones Empresariales',
+      badge: 'Alianza'
+    },
+    {
+      tipo: 'evento',
+      titulo: 'Seminario de Optimización en la Cadena de Suministros 4.0',
+      fecha: '20 jun 2026',
+      resumen: 'Organizado por el Capítulo Estudiantil IISE. Conoce las últimas tendencias de optimización y logística industrial avanzada de la mano de ponentes expertos.',
+      area: 'Capítulo Estudiantil IISE',
+      badge: 'Webinar'
+    },
+    {
+      tipo: 'evento',
+      titulo: 'Conferencia: Aplicaciones de IA en Logística de Consumo Masivo',
+      fecha: '18 may 2026',
+      resumen: 'Alicorp y la Dirección de Relaciones Empresariales presentan un caso real de optimización de rutas usando modelos de aprendizaje automático.',
+      area: 'Alicorp / Relaciones Emp.',
+      badge: 'Charla'
+    }
+  ];
+
+  const container = document.getElementById('empresas-news-feed');
+  if (container) {
+    container.innerHTML = publicacionesEmpresas.map(pub => `
+      <article class="bg-white rounded-xl border border-border-subtle p-5 hover:shadow-lg transition-all flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-3">
+            <span class="bg-primary/10 text-primary px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase">${pub.badge}</span>
+            <span class="text-text-secondary text-xs flex items-center gap-1">
+              <span class="material-symbols-outlined text-xs">calendar_today</span> ${pub.fecha}
+            </span>
+          </div>
+          <h3 class="text-base font-bold text-on-surface leading-tight mb-2 group-hover:text-primary transition-colors">${pub.titulo}</h3>
+          <p class="text-text-secondary text-xs leading-relaxed line-clamp-3">${pub.resumen}</p>
+        </div>
+        <div class="pt-4 border-t border-border-subtle/50 mt-4 flex items-center justify-between text-[10px] text-text-secondary font-medium">
+          <span>Área: ${pub.area}</span>
+          <a href="#/noticias" class="text-primary hover:underline flex items-center gap-0.5">Ver detalles →</a>
+        </div>
+      </article>
+    `).join('');
+  }
+})();
+</script>

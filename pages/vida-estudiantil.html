@@ -337,6 +337,68 @@
     </div>
   </section>
 
+  <!-- Noticias del Gremio Estudiantil (CEE) (Bloque 6 Req 7) -->
+  <section class="max-w-[1200px] mx-auto px-6">
+    <div class="flex items-center gap-4 mb-6">
+      <h2 class="text-3xl font-bold text-primary border-l-8 border-brand-cream pl-6">Noticias del Gremio Estudiantil (CEE)</h2>
+      <div class="flex-grow h-px bg-border-subtle"></div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="cee-news-feed">
+      <!-- Se inyecta dinámicamente por JS -->
+    </div>
+  </section>
+
+  <script>
+  (function() {
+    const noticiasCEE = [
+      {
+        titulo: 'Convocatoria a elecciones del Comité Electoral FIIS 2026',
+        fecha: '18 may 2026',
+        resumen: 'Se convoca a los estudiantes a postular para ser miembros del Comité Electoral encargado de organizar las elecciones gremiales del CEIIS y delegaturas.',
+        area: 'Comité Electoral / CEE',
+        badge: 'Gremial'
+      },
+      {
+        titulo: 'Olimpiadas FIIS 2026: Inscripción de delegaciones abiertas',
+        fecha: '12 may 2026',
+        resumen: 'Inscribe a tu ciclo en las disciplinas de fútbol, básquet, voleibol, ajedrez y videojuegos. ¡Demuestra el talento deportivo de tu promoción!',
+        area: 'Comisión de Deportes CEE',
+        badge: 'Deportes'
+      },
+      {
+        titulo: 'Programa de Tutoría Estudiantil por Pares 2026-I',
+        fecha: '05 may 2026',
+        resumen: '¿Deseas apoyar a tus compañeros de primeros ciclos? Inscríbete como tutor par de materias críticas como Cálculo, Física o Algoritmos.',
+        area: 'Secretaría Académica CEE',
+        badge: 'Académico'
+      }
+    ];
+
+    const container = document.getElementById('cee-news-feed');
+    if (container) {
+      container.innerHTML = noticiasCEE.map(item => `
+        <article class="bg-white rounded-xl border border-border-subtle p-5 hover:shadow-lg transition-all flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="bg-primary/10 text-primary px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase">${item.badge}</span>
+              <span class="text-text-secondary text-xs flex items-center gap-1">
+                <span class="material-symbols-outlined text-xs">calendar_today</span> ${item.fecha}
+              </span>
+            </div>
+            <h3 class="text-base font-bold text-on-surface leading-tight mb-2 group-hover:text-primary transition-colors">${item.titulo}</h3>
+            <p class="text-text-secondary text-xs leading-relaxed line-clamp-3">${item.resumen}</p>
+          </div>
+          <div class="pt-4 border-t border-border-subtle/50 mt-4 flex items-center justify-between text-[10px] text-text-secondary font-medium">
+            <span>Área: ${item.area}</span>
+            <a href="#/noticias" class="text-primary hover:underline flex items-center gap-0.5">Ver más →</a>
+          </div>
+        </article>
+      `).join('');
+    }
+  })();
+  </script>
+
   <!-- Convocatorias Abiertas (Req 7) -->
   <section class="bg-surface-container-low py-16">
     <div class="max-w-[1200px] mx-auto px-6">
