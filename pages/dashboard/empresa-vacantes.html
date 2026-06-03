@@ -184,6 +184,8 @@
   var ESTADO_CFG = {
     activa:    { cls: 'bg-success/10 text-success',  dot: 'bg-success',  label: 'Activa'    },
     pendiente: { cls: 'bg-warning/10 text-warning',  dot: 'bg-warning',  label: 'Pendiente' },
+    observada: { cls: 'bg-primary/10 text-primary',  dot: 'bg-primary',  label: 'Observada' },
+    rechazada: { cls: 'bg-error/10 text-error',      dot: 'bg-error',    label: 'Rechazada' },
     cerrando:  { cls: 'bg-warning/10 text-warning',  dot: 'bg-warning',  label: 'Cerrando'  },
     cerrada:   { cls: 'bg-error/10 text-error',      dot: 'bg-error',    label: 'Cerrada'   },
   };
@@ -244,8 +246,11 @@
 
     var tipoEl = document.querySelector('input[name="tipo-vacante"]:checked');
     var modEl  = document.querySelector('input[name="modalidad-vac"]:checked');
+    var session = (typeof Auth !== 'undefined') ? Auth.getSession() : null;
 
     Store.addVacante({
+      empresa:     session ? session.name : 'Empresa',
+      email:       session ? session.email : '',
       cargo:       cargo,
       tipo:        tipoEl ? tipoEl.value : 'practica',
       carreras:    carreras,

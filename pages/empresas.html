@@ -512,7 +512,7 @@
           <h2 class="text-2xl md:text-3xl font-bold text-primary">Actividades empresariales</h2>
           <div class="flex-grow h-px bg-border-subtle"></div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div id="actividades-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5">
 
           <!-- Evento 1 -->
           <div class="bg-white rounded-xl border border-border-subtle p-5 card-hover flex gap-4">
@@ -1147,11 +1147,74 @@
   var activeOpModalidad = 'todas';
   var activeOpEstado = 'todos';
 
+  function escFiis(s) {
+    return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function rubroFromCarreras(carreras) {
+    if ((carreras || []).indexOf('sistemas') !== -1 || (carreras || []).indexOf('software') !== -1 || (carreras || []).indexOf('ia') !== -1) return 'sistemas';
+    return 'industrial';
+  }
+
+  function carreraLabel(c) {
+    return ({ industrial: 'Ing. Industrial', sistemas: 'Ing. Sistemas', software: 'Ing. Software', ia: 'Int. Artificial' })[c] || c;
+  }
+
+  function modalidadLabel(m) {
+    return ({ presencial: 'Presencial', remoto: 'Remoto', hibrido: 'Hibrido' })[m] || m || '-';
+  }
+
+  function renderStoreVacantes() {
+    var grid = document.getElementById('op-grid');
+    if (!grid || typeof Store === 'undefined') return;
+    var vacantes = Store.getVacantesPublicas().filter(function (v) {
+      return !/^VAC-2024/.test(v.id);
+    });
+    if (vacantes.length === 0) return;
+    var html = vacantes.map(function (v) {
+      var estado = v.estado === 'cerrada' ? 'cerrado' : 'vigente';
+      var estadoLabel = estado === 'vigente' ? 'Vigente' : 'Cerrado';
+      var estadoCls = estado === 'vigente' ? 'bg-success/10 text-success' : 'bg-danger/10 text-danger';
+      var carreras = v.carreras || [];
+      var carreraData = carreras.join(' ') || 'industrial';
+      var carreraBadges = carreras.map(function (c) {
+        return '<span class="bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full text-[10px] font-semibold">' + escFiis(carreraLabel(c)) + '</span>';
+      }).join('');
+      var tipoLabel = v.tipo === 'empleo' ? 'Empleo' : 'Practica';
+      var tipoCls = v.tipo === 'empleo' ? 'bg-violet-50 text-violet-700' : 'bg-orange-50 text-orange-700';
+      var disabled = estado === 'cerrado';
+      return '<div class="op-card bg-white rounded-xl border border-primary/30 p-5 card-hover flex flex-col" data-op-carrera="' + escFiis(carreraData) + '" data-op-rubro="' + escFiis(rubroFromCarreras(carreras)) + '" data-op-tipo="' + escFiis(v.tipo || 'practica') + '" data-op-modalidad="' + escFiis(v.modalidad || 'presencial') + '" data-op-estado="' + estado + '">'
+        + '<div class="flex items-start justify-between mb-3"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm font-extrabold shrink-0">' + escFiis((v.empresa || 'E').charAt(0)) + '</div><div><p class="text-xs text-text-secondary">' + escFiis(v.empresa || 'Empresa') + '</p><h3 class="text-sm font-bold text-on-surface">' + escFiis(v.cargo) + '</h3></div></div><span class="' + estadoCls + ' px-2 py-0.5 rounded-full text-[10px] font-semibold shrink-0">' + estadoLabel + '</span></div>'
+        + '<div class="flex flex-wrap gap-1.5 mb-3">' + carreraBadges + '<span class="' + tipoCls + ' px-2 py-0.5 rounded-full text-[10px] font-semibold">' + tipoLabel + '</span><span class="bg-amber-50 text-amber-700 px-2 py-0.5 rounded-full text-[10px] font-semibold">' + escFiis(modalidadLabel(v.modalidad)) + '</span></div>'
+        + '<p class="text-text-secondary text-xs mb-4 flex-grow">' + escFiis(v.requisitos || 'Vacante aprobada por FIIS para la comunidad estudiantil y de egresados.') + '</p>'
+        + '<div class="flex items-center justify-between pt-3 border-t border-border-subtle mt-auto"><p class="text-text-secondary text-[10px]"><span class="material-symbols-outlined text-[10px] align-middle">calendar_today</span> Cierra: ' + escFiis(v.fechaLimite || '-') + '</p><button class="px-3 py-1.5 ' + (disabled ? 'bg-surface-container-high text-text-secondary cursor-not-allowed' : 'bg-primary text-on-primary hover:brightness-110 active:scale-95') + ' rounded-lg text-xs font-semibold transition-all"' + (disabled ? ' disabled' : '') + '>' + (disabled ? 'Cerrado' : 'Postular') + '</button></div>'
+        + '</div>';
+    }).join('');
+    grid.insertAdjacentHTML('afterbegin', html);
+  }
+
+  function renderStoreEventos() {
+    var grid = document.getElementById('actividades-grid');
+    if (!grid || typeof Store === 'undefined') return;
+    var eventos = Store.getEventos().filter(function (ev) {
+      return ev.estado === 'aprobado' && /^EVT-\d{10,}$/.test(ev.id);
+    });
+    if (eventos.length === 0) return;
+    var html = eventos.map(function (ev) {
+      var parts = (ev.fechaInicio || '').split('-');
+      var mes = parts.length === 3 ? parts[1] : '--';
+      var dia = parts.length === 3 ? parts[2] : '--';
+      return '<div class="bg-white rounded-xl border border-primary/30 p-5 card-hover flex gap-4"><div class="flex flex-col items-center justify-start w-14 shrink-0"><div class="bg-primary rounded-t-lg w-full text-center py-1"><p class="text-[10px] font-bold text-on-primary uppercase">' + escFiis(mes) + '</p></div><div class="bg-primary/10 rounded-b-lg w-full text-center py-1.5"><p class="text-2xl font-extrabold text-primary leading-none">' + escFiis(dia) + '</p></div></div><div><div class="flex flex-wrap gap-1.5 mb-2"><span class="bg-success/10 text-success px-2 py-0.5 rounded-full text-[10px] font-semibold">Aprobado</span><span class="bg-primary/10 text-primary px-2 py-0.5 rounded-full text-[10px] font-semibold">' + escFiis(ev.modalidad) + '</span></div><h3 class="font-bold text-on-surface">' + escFiis(ev.titulo) + '</h3><p class="text-text-secondary text-xs mt-1">' + escFiis(ev.empresa) + ' / ' + escFiis(ev.lugar || '-') + '</p><p class="text-text-secondary text-xs mt-2">' + escFiis(ev.descripcion || '') + '</p></div></div>';
+    }).join('');
+    grid.insertAdjacentHTML('afterbegin', html);
+  }
+
   function applyOpFilter() {
     var cards = document.querySelectorAll('.op-card');
     var visible = 0;
     cards.forEach(function(card) {
-      var matchC = activeOpCarrera === 'todas' || card.dataset.opCarrera === activeOpCarrera;
+      var cardCarreras = (card.dataset.opCarrera || '').split(/\s+/);
+      var matchC = activeOpCarrera === 'todas' || cardCarreras.indexOf(activeOpCarrera) !== -1;
       var matchR = activeOpRubro === 'todos' || card.dataset.opRubro === activeOpRubro;
       var matchT = activeOpTipo === 'todos' || card.dataset.opTipo === activeOpTipo;
       var matchM = activeOpModalidad === 'todas' || card.dataset.opModalidad === activeOpModalidad;
@@ -1219,6 +1282,10 @@
       applyOpFilter();
     });
   });
+
+  renderStoreVacantes();
+  renderStoreEventos();
+  applyOpFilter();
 
 })();
 </script>
