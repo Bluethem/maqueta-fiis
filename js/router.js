@@ -9,6 +9,10 @@ const MEGA_MENU = [
         { label: 'Organigrama', route: '/organigrama', icon: 'account_tree' },
         { label: 'Autoridades', route: '/facultad', icon: 'badge' },
         { label: 'ISO 9001:2015', route: '/facultad', icon: 'verified' },
+<<<<<<< HEAD
+=======
+        { label: 'Noticias FIIS', route: '/noticias', icon: 'newspaper' },
+>>>>>>> main
       ]}
     ]
   },

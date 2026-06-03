@@ -1,0 +1,972 @@
+<!-- Subpágina Detalle de Agrupación -->
+<div class="page-enter space-y-8 pb-16" id="detail-page-container">
+  
+  <!-- Breadcrumbs (Migas de Pan - L10) -->
+  <nav class="max-w-[1200px] mx-auto px-6 pt-4 flex items-center gap-2 text-sm text-text-secondary">
+    <a href="#/" class="hover:text-primary transition-colors">Inicio</a>
+    <span class="material-symbols-outlined text-sm">chevron_right</span>
+    <a href="#/vida-estudiantil" class="hover:text-primary transition-colors">Vida Estudiantil</a>
+    <span class="material-symbols-outlined text-sm">chevron_right</span>
+    <span class="font-medium text-primary" id="breadcrumb-current">[Nombre Agrupación]</span>
+  </nav>
+
+  <!-- Hero Banner de Agrupación -->
+  <section class="max-w-[1200px] mx-auto px-6">
+    <div class="relative overflow-hidden rounded-2xl text-on-primary bg-gradient-to-br p-8 md:p-12 shadow-md" id="banner-hero">
+      <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-20"></div>
+      <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div class="flex items-center gap-5">
+          <!-- Icono / Logo -->
+          <div class="w-20 h-20 rounded-2xl bg-white/20 flex items-center justify-center border border-white/20 shadow-lg shrink-0">
+            <span class="material-symbols-outlined text-white text-5xl" id="hero-icon">groups</span>
+          </div>
+          <div>
+            <div class="flex flex-wrap items-center gap-2 mb-2">
+              <span class="px-3 py-0.5 rounded-full text-xs font-bold text-white bg-black/30 border border-white/10 uppercase tracking-wider" id="hero-type-badge">[Categoría]</span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-green-500/20 text-green-300 border border-green-500/30 flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span> Activa
+              </span>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-extrabold" id="hero-title">[Nombre Agrupación]</h1>
+            <p class="text-on-primary/90 text-base md:text-lg mt-1 font-medium" id="hero-tagline">[Eslogan]</p>
+          </div>
+        </div>
+        <button onclick="document.getElementById('contact-name').focus();" class="w-fit bg-brand-cream text-primary font-bold px-6 py-2.5 rounded-lg hover:brightness-95 transition-all flex items-center gap-2 shadow-md">
+          <span class="material-symbols-outlined text-sm">mail</span>
+          Contactar directiva
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Layout de Dos Columnas -->
+  <section class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
+    
+    <!-- Columna Principal (Tabs - L12 & L16) -->
+    <div class="lg:col-span-2 space-y-6">
+      
+      <!-- Navegación de Pestañas -->
+      <div class="bg-white border border-border-subtle rounded-xl overflow-hidden shadow-sm">
+        <div class="flex border-b border-border-subtle overflow-x-auto scrollbar-hide" id="detail-tabs">
+          <button class="px-5 py-4 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 transition-all whitespace-nowrap" data-target="nosotros">Nosotros</button>
+          <button class="px-5 py-4 text-sm font-medium text-text-secondary hover:text-primary transition-all whitespace-nowrap" data-target="directiva">Directiva</button>
+          <button class="px-5 py-4 text-sm font-medium text-text-secondary hover:text-primary transition-all whitespace-nowrap" data-target="convocatorias">Convocatorias <span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full font-bold ml-1" id="badge-convocatorias-count">0</span></button>
+          <button class="px-5 py-4 text-sm font-medium text-text-secondary hover:text-primary transition-all whitespace-nowrap" data-target="eventos">Eventos <span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full font-bold ml-1" id="badge-eventos-count">0</span></button>
+          <button class="px-5 py-4 text-sm font-medium text-text-secondary hover:text-primary transition-all whitespace-nowrap" data-target="recursos">Recursos <span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full font-bold ml-1" id="badge-recursos-count">0</span></button>
+          <button class="px-5 py-4 text-sm font-medium text-text-secondary hover:text-primary transition-all whitespace-nowrap" data-target="faqs">Preguntas Frecuentes</button>
+        </div>
+
+        <!-- Contenidos de Pestañas -->
+        <div class="p-6">
+          
+          <!-- Pestaña 1: Nosotros -->
+          <div id="tab-content-nosotros" class="tab-panel space-y-6">
+            <div>
+              <h3 class="text-lg font-bold text-primary mb-2 flex items-center gap-2"><span class="material-symbols-outlined">history</span> Historia</h3>
+              <p class="text-sm text-text-secondary leading-relaxed" id="group-history">[Historia]</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-border-subtle">
+              <div>
+                <h4 class="text-sm font-bold text-on-surface mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-primary">visibility</span> Misión</h4>
+                <p class="text-xs text-text-secondary leading-relaxed bg-surface-container-low p-4 rounded-lg" id="group-mission">[Misión]</p>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-on-surface mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-primary">lightbulb</span> Visión</h4>
+                <p class="text-xs text-text-secondary leading-relaxed bg-surface-container-low p-4 rounded-lg" id="group-vision">[Visión]</p>
+              </div>
+            </div>
+
+            <!-- Proyectos Destacados (Req 12 & 17) -->
+            <div class="pt-6 border-t border-border-subtle">
+              <h3 class="text-lg font-bold text-primary mb-4 flex items-center gap-2"><span class="material-symbols-outlined">star</span> Proyectos Destacados</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="projects-list">
+                <!-- Se inyecta dinámicamente -->
+              </div>
+            </div>
+
+            <!-- Testimonios (Req 13) -->
+            <div class="pt-6 border-t border-border-subtle">
+              <h3 class="text-lg font-bold text-primary mb-4 flex items-center gap-2"><span class="material-symbols-outlined">rate_review</span> Testimonios</h3>
+              <div class="grid grid-cols-1 gap-4" id="testimonials-list">
+                <!-- Se inyecta dinámicamente -->
+              </div>
+            </div>
+
+            <!-- Galerías Multimedia (Req 8) -->
+            <div class="pt-6 border-t border-border-subtle">
+              <h3 class="text-lg font-bold text-primary mb-4 flex items-center gap-2"><span class="material-symbols-outlined">photo_library</span> Galería de Actividades</h3>
+              <div class="grid grid-cols-3 gap-2" id="gallery-list">
+                <!-- Se inyecta dinámicamente imágenes simuladas -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Pestaña 2: Directiva (Req 4 & Gestión 4) -->
+          <div id="tab-content-directiva" class="tab-panel hidden space-y-6">
+            <div>
+              <h3 class="text-lg font-bold text-primary mb-2 flex items-center gap-2"><span class="material-symbols-outlined">shield_person</span> Junta Directiva Vigente</h3>
+              <p class="text-xs text-text-secondary mb-4">Nota: La directiva se renueva obligatoriamente al inicio de cada ciclo académico.</p>
+              <div class="overflow-x-auto border border-border-subtle rounded-xl">
+                <table class="w-full text-left border-collapse">
+                  <thead>
+                    <tr class="bg-surface-container-low text-xs font-bold text-primary border-b border-border-subtle">
+                      <th class="p-3">Nombre</th>
+                      <th class="p-3">Cargo / Comisión</th>
+                      <th class="p-3">Contacto</th>
+                    </tr>
+                  </thead>
+                  <tbody id="directiva-table-body" class="text-sm text-text-secondary">
+                    <!-- Se inyecta dinámicamente -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pestaña 3: Convocatorias (Req 7) -->
+          <div id="tab-content-convocatorias" class="tab-panel hidden space-y-6">
+            <h3 class="text-lg font-bold text-primary mb-4 flex items-center gap-2"><span class="material-symbols-outlined">campaign</span> Convocatorias Activas</h3>
+            <div class="space-y-4" id="convocatorias-list">
+              <!-- Se inyecta dinámicamente -->
+            </div>
+          </div>
+
+          <!-- Pestaña 4: Eventos (Req 5) -->
+          <div id="tab-content-eventos" class="tab-panel hidden space-y-6">
+            <h3 class="text-lg font-bold text-primary mb-4 flex items-center gap-2"><span class="material-symbols-outlined">event_note</span> Agenda de Eventos y Talleres</h3>
+            <div class="space-y-4" id="eventos-list">
+              <!-- Se inyecta dinámicamente -->
+            </div>
+          </div>
+
+          <!-- Pestaña 5: Recursos (Req 11) -->
+          <div id="tab-content-recursos" class="tab-panel hidden space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border-subtle pb-4 mb-4">
+              <h3 class="text-lg font-bold text-primary flex items-center gap-2"><span class="material-symbols-outlined">folder</span> Recursos Académicos Autorizados</h3>
+              <!-- Filtros de recursos -->
+              <div class="flex items-center gap-2">
+                <select id="recursos-filter-type" class="border border-border-subtle rounded-lg px-2 py-1 text-xs text-text-secondary bg-white focus:outline-none">
+                  <option value="all">Todos los Tipos</option>
+                  <option value="Examen">Exámenes</option>
+                  <option value="Guía">Guías</option>
+                  <option value="Taller">Talleres</option>
+                </select>
+                <select id="recursos-filter-cycle" class="border border-border-subtle rounded-lg px-2 py-1 text-xs text-text-secondary bg-white focus:outline-none">
+                  <option value="all">Todos los Ciclos</option>
+                  <option value="I">Ciclo I</option>
+                  <option value="II">Ciclo II</option>
+                  <option value="III">Ciclo III</option>
+                  <option value="IV">Ciclo IV</option>
+                  <option value="V">Ciclo V</option>
+                  <option value="Electivo">Electivos</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="overflow-x-auto border border-border-subtle rounded-xl">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="bg-surface-container-low text-xs font-bold text-primary border-b border-border-subtle">
+                    <th class="p-3">Recurso / Nombre</th>
+                    <th class="p-3">Curso</th>
+                    <th class="p-3">Detalles</th>
+                    <th class="p-3 text-center">Acción</th>
+                  </tr>
+                </thead>
+                <tbody id="recursos-table-body" class="text-sm text-text-secondary">
+                  <!-- Se inyecta dinámicamente -->
+                </tbody>
+              </table>
+            </div>
+            
+            <div id="no-recursos-msg" class="hidden text-center py-6 bg-surface-container-low rounded-xl">
+              <p class="text-text-secondary text-xs">No hay recursos académicos que coincidan con los filtros seleccionados.</p>
+            </div>
+          </div>
+
+          <!-- Pestaña 6: FAQs (Req 14) -->
+          <div id="tab-content-faqs" class="tab-panel hidden space-y-6">
+            <h3 class="text-lg font-bold text-primary mb-4 flex items-center gap-2"><span class="material-symbols-outlined">help</span> Preguntas Frecuentes</h3>
+            <div class="space-y-4" id="faqs-accordion">
+              <!-- Se inyecta dinámicamente -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna Lateral (Sidebar) -->
+    <div class="space-y-6">
+      
+      <!-- Redes Sociales Oficiales (Req 9) -->
+      <div class="bg-white border border-border-subtle rounded-xl p-6 shadow-sm">
+        <h3 class="text-md font-bold text-primary mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined">share</span>
+          Enlaces y Redes Oficiales
+        </h3>
+        <div class="grid grid-cols-2 gap-2" id="social-grid">
+          <!-- Se inyecta dinámicamente -->
+        </div>
+      </div>
+
+      <!-- Formulario de Contacto (Req 15 & 20) -->
+      <div class="bg-white border border-border-subtle rounded-xl p-6 shadow-sm">
+        <h3 class="text-md font-bold text-primary mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined">mail</span>
+          Contacto Institucional
+        </h3>
+        <form class="space-y-4" id="group-contact-form">
+          <div>
+            <label class="block text-xs font-semibold text-on-surface mb-1">Nombre Completo</label>
+            <input type="text" id="contact-name" required placeholder="Ingresa tu nombre..." class="w-full border border-border-subtle rounded-lg px-3 py-2 text-xs text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-on-surface mb-1">Correo Institucional</label>
+            <input type="email" id="contact-email" required placeholder="usuario@uni.pe" class="w-full border border-border-subtle rounded-lg px-3 py-2 text-xs text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-on-surface mb-1">Mensaje o Consulta</label>
+            <textarea id="contact-msg" rows="4" required placeholder="¿En qué te podemos ayudar?..." class="w-full border border-border-subtle rounded-lg px-3 py-2 text-xs text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-primary text-white text-xs font-bold py-2 rounded-lg hover:bg-primary-container transition-all flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-sm">send</span>
+            Enviar Solicitud
+          </button>
+        </form>
+        <!-- Toast de confirmación de envío -->
+        <div id="contact-success-toast" class="hidden mt-4 p-4 bg-green-50 border border-green-200 text-green-800 rounded-lg text-xs leading-relaxed flex items-start gap-2">
+          <span class="material-symbols-outlined text-green-600 text-base shrink-0">check_circle</span>
+          <div>
+            <p class="font-bold">¡Mensaje enviado con éxito!</p>
+            <p class="text-[11px] text-green-700 mt-0.5">La junta directiva responderá a tu correo institucional a la brevedad.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Canales Oficiales y Ubicación (Req 20) -->
+      <div class="bg-white border border-border-subtle rounded-xl p-6 shadow-sm space-y-4 text-xs text-text-secondary">
+        <h3 class="text-md font-bold text-primary flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary">location_on</span>
+          Ubicación y Soporte
+        </h3>
+        <div class="flex items-start gap-2.5">
+          <span class="material-symbols-outlined text-primary text-sm mt-0.5">location_on</span>
+          <div>
+            <p class="font-semibold text-on-surface">Ubicación Física</p>
+            <p id="group-location">[Ubicación]</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-2.5">
+          <span class="material-symbols-outlined text-primary text-sm mt-0.5">mail</span>
+          <div>
+            <p class="font-semibold text-on-surface">Correo Electrónico</p>
+            <p id="group-email">[Correo]</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Footer con Responsable y Última Actualización (Gestión 1) -->
+  <footer class="max-w-[1200px] mx-auto px-6 border-t border-border-subtle pt-6 flex flex-col sm:flex-row justify-between text-xs text-text-secondary gap-2">
+    <p id="meta-responsible">Responsable: [Directiva Agrupación]</p>
+    <p id="meta-updated">Última actualización: [Fecha]</p>
+  </footer>
+
+</div>
+
+<!-- Mensaje error: Agrupación no encontrada -->
+<div id="not-found-container" class="hidden max-w-[600px] mx-auto px-6 py-20 text-center space-y-6">
+  <span class="material-symbols-outlined text-text-secondary text-7xl">search_off</span>
+  <h2 class="text-2xl font-bold text-primary">Agrupación no encontrada</h2>
+  <p class="text-text-secondary text-sm leading-relaxed">Lo sentimos, la agrupación estudiantil que buscas no está registrada o ha sido dada de baja temporalmente por Bienestar Estudiantil.</p>
+  <a href="#/vida-estudiantil" class="inline-flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-primary-container transition-all">
+    <span class="material-symbols-outlined text-sm">arrow_back</span>
+    Volver a Vida Estudiantil
+  </a>
+</div>
+
+<!-- Lógica de Carga Dinámica de Datos y Gestión de Pestañas -->
+<script>
+(function() {
+  // --- Diccionario de Datos de Agrupaciones de la FIIS ---
+  const DATA_AGRUPACIONES = {
+    'unicode': {
+      name: 'UNICODE',
+      tagLine: 'Centro de Informática y Desarrollo',
+      category: 'Agrupación Tecnológica',
+      badgeCls: 'bg-indigo-100 text-indigo-700',
+      bannerGradient: 'from-indigo-600 to-indigo-800',
+      icon: 'code',
+      history: 'Fundada en 2012 por iniciativa de estudiantes de Ingeniería de Sistemas y de Software, UNICODE nació con el fin de promover la cultura del desarrollo de software y el aprendizaje colectivo. A lo largo de más de una década, ha capacitado a cientos de estudiantes y ha desarrollado el Sistema de Simulación de Matrícula Auxiliar utilizado internamente en la facultad.',
+      mission: 'Promover la investigación y capacitación constante en informática y tecnologías afines, brindando un entorno colaborativo donde los alumnos desarrollen proyectos reales de software de alto impacto.',
+      vision: 'Ser la comunidad de desarrollo estudiantil referente a nivel universitario, logrando alianzas con la industria tecnológica y destacando por la excelencia de sus proyectos open source.',
+      location: 'Pabellón de Sistemas FIIS, Oficina de Tutoría de Programación L-204.',
+      email: 'unicode@fiis.uni.edu.pe',
+      responsible: 'Junta Directiva UNICODE · Periodo 2026-I',
+      lastUpdated: '12 de Mayo, 2026',
+      social: {
+        facebook: 'https://facebook.com',
+        github: 'https://github.com/unicode-fiis',
+        instagram: 'https://instagram.com',
+        linkedin: 'https://linkedin.com'
+      },
+      directiva: [
+        { name: 'Aldo Rojas Medina', role: 'Presidente / Delegado General', email: 'arojasm@uni.pe' },
+        { name: 'Diana Cáceres Torres', role: 'Subdelegada / Directora Técnica', email: 'dcacerest@uni.pe' },
+        { name: 'Kevin Romero Soto', role: 'Director de Capacitaciones', email: 'kromeros@uni.pe' },
+        { name: 'Milagros Palacios Paz', role: 'Directora de Comunicaciones', email: 'mpalaciosp@uni.pe' }
+      ],
+      projects: [
+        { title: 'Simulador de Matrícula', description: 'Plataforma web que ayuda a los alumnos a simular sus horarios antes de la matrícula oficial.', link: 'https://github.com' },
+        { title: 'API Académica FIIS', description: 'Servicio web para extraer y formatear los planes de estudio y mallas curriculares en formatos amigables.', link: 'https://github.com' }
+      ],
+      convocatorias: [
+        { title: 'Staff de Desarrollo 2026-II', description: 'Convocatoria abierta para estudiantes de todos los ciclos interesados en proyectos de desarrollo web (React/Node) y UI/UX.', deadline: '15 de Julio, 2026', status: 'Vigente' },
+        { title: 'Coordinador de Talleres', description: 'Reclutamiento de expositores internos de lenguajes como Python, C++ o Rust.', deadline: '05 de Julio, 2026', status: 'Vigente' },
+        { title: 'Convocatoria de Diseñadores Web', description: 'Búsqueda de creativos de interfaz móvil.', deadline: '02 de Abril, 2026', status: 'Cerrado' }
+      ],
+      events: [
+        { title: 'Hackathon FIIS 2026', description: 'Desafío intensivo de 24 horas para construir soluciones a problemáticas reales de la facultad.', date: '12 Jul 2026', location: 'Auditorio Central FIIS', type: 'Tecnológico' },
+        { title: 'Taller Fullstack JavaScript', description: 'Curso práctico intermedio sobre Express y MongoDB para desarrollo web.', date: '15 Jun 2026', location: 'Laboratorio L-102', type: 'Tecnológico' }
+      ],
+      recursos: [
+        { name: 'Examen Parcial de Algoritmos', course: 'Algoritmos y Estructuras', type: 'Examen', cycle: 'III', year: '2025-II', link: '#' },
+        { name: 'Guía Rápida de Git y GitHub', course: 'Ninguno (General)', type: 'Guía', cycle: 'I', year: '2026-I', link: '#' },
+        { name: 'Taller Práctico de CSS Grid', course: 'Desarrollo Web', type: 'Taller', cycle: 'IV', year: '2025-I', link: '#' }
+      ],
+      faqs: [
+        { q: '¿Necesito saber programar para unirme?', a: 'No. Contamos con programas de formación e inducción (semilleros) para los alumnos ingresantes o de primeros ciclos.' },
+        { q: '¿Las capacitaciones otorgan certificados?', a: 'Sí, todas nuestras capacitaciones oficiales cuentan con el respaldo académico de la Oficina de Bienestar FIIS.' }
+      ]
+    },
+    'cibersec': {
+      name: 'CIBERSEC',
+      tagLine: 'Comunidad de Ciberseguridad y Ethical Hacking',
+      category: 'Agrupación Tecnológica',
+      badgeCls: 'bg-indigo-100 text-indigo-700',
+      bannerGradient: 'from-red-700 to-red-900',
+      icon: 'shield',
+      history: 'Establecida en 2018 para contrarrestar la falta de espacios dedicados a la seguridad de la información. CIBERSEC entrena a estudiantes en técnicas defensivas y ofensivas (Hacking Ético) y participa activamente en los Capture The Flag (CTF) universitarios de Perú.',
+      mission: 'Formar habilidades críticas en ciberseguridad mediante la práctica en laboratorios controlados, concientizar sobre seguridad digital y promover la ética hacker.',
+      vision: 'Ser la organización estudiantil líder en ciberseguridad a nivel nacional, colaborando con empresas de seguridad y formando especialistas altamente calificados.',
+      location: 'Pabellón de Sistemas FIIS, Laboratorio de Telecomunicaciones L-302.',
+      email: 'cibersec@fiis.uni.edu.pe',
+      responsible: 'Junta Directiva CIBERSEC · Periodo 2026-I',
+      lastUpdated: '18 de Mayo, 2026',
+      social: {
+        facebook: 'https://facebook.com',
+        github: 'https://github.com/cibersec-fiis',
+        linkedin: 'https://linkedin.com'
+      },
+      directiva: [
+        { name: 'Gonzalo Ramos Cruz', role: 'Líder / Delegado General', email: 'gramosc@uni.pe' },
+        { name: 'Milena Prado Vargas', role: 'Directora de CTFs y Pruebas', email: 'mpradov@uni.pe' },
+        { name: 'Carlos Díaz Espinoza', role: 'Director de Comunicaciones', email: 'cdiaze@uni.pe' }
+      ],
+      projects: [
+        { title: 'Plataforma CTF Interna', description: 'Entorno web interactivo con retos de criptografía, esteganografía y web hacking para estudiantes.', link: 'https://github.com' }
+      ],
+      convocatorias: [
+        { title: 'Reclutamiento Junior 2026-II', description: 'Búsqueda de alumnos interesados en capacitarse desde cero en redes de comunicación y Linux.', deadline: '18 de Julio, 2026', status: 'Vigente' }
+      ],
+      events: [
+        { title: 'Workshop: Pentesting Web Avanzado', description: 'Taller de explotación práctica de vulnerabilidades OWASP Top 10.', date: '22 Jun 2026', location: 'Laboratorio L-302', type: 'Tecnológico' }
+      ],
+      recursos: [
+        { name: 'Guía de Comandos Básicos de Linux', course: 'Sistemas Operativos', type: 'Guía', cycle: 'V', year: '2026-I', link: '#' },
+        { name: 'Examen de Redes de Computadoras', course: 'Redes y Telemática', type: 'Examen', cycle: 'VI', year: '2025-II', link: '#' }
+      ],
+      faqs: [
+        { q: '¿Qué herramientas se usan en las sesiones?', a: 'Utilizamos principalmente Kali Linux, Wireshark, Burp Suite y Metasploit en redes locales aisladas.' }
+      ]
+    },
+    'nucleo-de-software': {
+      name: 'Núcleo de Software',
+      tagLine: 'Comunidad de Ingeniería y Arquitectura de Software',
+      category: 'Agrupación Tecnológica',
+      badgeCls: 'bg-indigo-100 text-indigo-700',
+      bannerGradient: 'from-emerald-600 to-emerald-800',
+      icon: 'data_object',
+      history: 'Fundada en 2021 por estudiantes apasionados por la ingeniería de software aplicada. Su objetivo principal es cerrar la brecha entre la teoría curricular de las materias de desarrollo y las metodologías usadas en la industria internacional.',
+      mission: 'Inculcar en los estudiantes buenas prácticas de ingeniería, metodologías ágiles y principios SOLID para construir software escalable y mantenible.',
+      vision: 'Ser la cuna del desarrollo de software de calidad en la FIIS, impulsando el talento de nuestros alumnos a puestos tecnológicos internacionales.',
+      location: 'Pabellón B FIIS, Oficina Conjunta de Proyectos.',
+      email: 'nucleosoftware@fiis.uni.edu.pe',
+      responsible: 'Junta Directiva Núcleo de Software · Periodo 2026-I',
+      lastUpdated: '20 de Mayo, 2026',
+      social: {
+        facebook: 'https://facebook.com',
+        github: 'https://github.com',
+        instagram: 'https://instagram.com'
+      },
+      directiva: [
+        { name: 'Renato Castillo Flores', role: 'Presidente / Delegado', email: 'rcastillof@uni.pe' },
+        { name: 'Fiorella Soto Ruiz', role: 'Directora de Proyectos', email: 'fsotor@uni.pe' }
+      ],
+      projects: [
+        { title: 'Arquitectura Limpia Template', description: 'Template base en .NET y TypeScript estructurado bajo Clean Architecture.', link: 'https://github.com' }
+      ],
+      convocatorias: [
+        { title: 'Convocatoria Staff de Proyectos', description: 'Búsqueda de desarrolladores backend con conocimientos de bases de datos.', deadline: '25 de Julio, 2026', status: 'Vigente' }
+      ],
+      events: [
+        { title: 'Charla: Principios SOLID en la Práctica', description: 'Conferencia virtual para aprender a estructurar código robusto y testeable.', date: '18 Jun 2026', location: 'Plataforma Virtual (MS Teams)', type: 'Tecnológico' }
+      ],
+      recursos: [
+        { name: 'Guía de Principios SOLID y Limpios', course: 'Arquitectura de Software', type: 'Guía', cycle: 'VI', year: '2026-I', link: '#' }
+      ],
+      faqs: [
+        { q: '¿Qué lenguajes de programación utilizan?', a: 'Usamos JavaScript, Go, C# y Python principalmente en desarrollo web moderno.' }
+      ]
+    },
+    'ceiis': {
+      name: 'CEIIS',
+      tagLine: 'Centro de Estudiantes de Ingeniería Industrial y de Sistemas',
+      category: 'Centro Estudiantil',
+      badgeCls: 'bg-amber-100 text-amber-700',
+      bannerGradient: 'from-amber-600 to-amber-800',
+      icon: 'diversity_3',
+      history: 'El CEIIS es la institución máxima de representación gremial y estudiantil de la facultad. Su junta directiva es elegida democráticamente por votación general de los estudiantes y actúa como el nexo principal ante el decanato y consejo de facultad.',
+      mission: 'Velar por la defensa de los derechos estudiantiles, fomentar la integración de las carreras, y organizar proyectos de bienestar, deporte y excelencia académica.',
+      vision: 'Consolidar una representación unida, democrática y transparente que mejore las condiciones de infraestructura, calidad docente y bienestar para toda la comunidad FIIS.',
+      location: 'Pabellón A, 1er piso, Oficina del Centro de Estudiantes (Frente a la losa deportiva).',
+      email: 'ceiis@fiis.uni.edu.pe',
+      responsible: 'Junta Directiva CEIIS · Periodo 2026',
+      lastUpdated: '10 de Mayo, 2026',
+      social: {
+        facebook: 'https://facebook.com',
+        instagram: 'https://instagram.com'
+      },
+      directiva: [
+        { name: 'Bryan Mendoza Orellana', role: 'Presidente General CEIIS', email: 'bmendozao@uni.pe' },
+        { name: 'Lucía Fernández Ramos', role: 'Secretaria de Asuntos Académicos', email: 'lfernandezr@uni.pe' },
+        { name: 'Ricardo Pérez Cueva', role: 'Secretario de Bienestar y Deportes', email: 'rperezc@uni.pe' },
+        { name: 'Sofía Ortiz Luna', role: 'Secretaria de Prensa y Difusión', email: 'sortizl@uni.pe' }
+      ],
+      projects: [
+        { title: 'Programa de Tutoría de Pares', description: 'Red de estudiantes de ciclos superiores que brindan asesorías académicas a alumnos repitentes o en riesgo.', link: '#' }
+      ],
+      convocatorias: [
+        { title: 'Convocatoria del Comité Electoral 2026', description: 'Reclutamiento de miembros titulares para organizar los comicios generales de la facultad.', deadline: '25 de Junio, 2026', status: 'Vigente' },
+        { title: 'Comisiones de Deportes y Eventos', description: 'Únete a los equipos encargados de coordinar las Olimpiadas FIIS.', deadline: '30 de Junio, 2026', status: 'Vigente' }
+      ],
+      events: [
+        { title: 'Asamblea General Estudiantil', description: 'Debate de propuestas sobre infraestructura física y reglamentos de matrícula.', date: '08 Ago 2026', location: 'Sala de Usos Múltiples (SUM)', type: 'Gremial' },
+        { title: 'Olimpiadas FIIS - Inauguración', description: 'Inicio de la tradicional competencia deportiva entre ciclos y especialidades.', date: '28 Jun 2026', location: 'Losa Deportiva FIIS', type: 'Gremial' }
+      ],
+      recursos: [
+        { name: 'Reglamento de Matrícula Vigente', course: 'Ninguno (General)', type: 'Guía', cycle: 'I', year: '2026-I', link: '#' },
+        { name: 'Balotario de Solicitudes Frecuentes', course: 'Ninguno (General)', type: 'Guía', cycle: 'Todos', year: '2025-II', link: '#' }
+      ],
+      faqs: [
+        { q: '¿Cómo puedo canalizar un reclamo académico?', a: 'Puedes comunicarte con la Secretaría de Asuntos Académicos del CEIIS o enviar un correo detallando tu problema.' }
+      ]
+    },
+    'tefiis': {
+      name: 'TEFIIS',
+      tagLine: 'Taller de Teatro FIIS',
+      category: 'Centro Cultural',
+      badgeCls: 'bg-purple-100 text-purple-700',
+      bannerGradient: 'from-purple-600 to-purple-800',
+      icon: 'masks',
+      history: 'Fundado con el objetivo de dotar a los estudiantes de ingeniería de habilidades blandas cruciales. TEFIIS desarrolla la oratoria, la expresión emocional, la improvisación y la destreza escénica, realizando obras teatrales a lo largo de cada año.',
+      mission: 'Enseñar el arte dramático como herramienta de desarrollo personal y profesional, incentivando la creatividad y el trabajo en equipo interdisciplinario.',
+      vision: 'Consolidarse como uno de los talleres teatrales universitarios más representativos de la UNI, promoviendo el acceso a la cultura en nuestra comunidad.',
+      location: 'Sótano del Pabellón B, Sala de Ensayos Culturales.',
+      email: 'tefiis@fiis.uni.edu.pe',
+      responsible: 'Directiva Artística TEFIIS · Periodo 2026-I',
+      lastUpdated: '14 de Mayo, 2026',
+      social: {
+        facebook: 'https://facebook.com',
+        instagram: 'https://instagram.com'
+      },
+      directiva: [
+        { name: 'Mariana Zevallos Polo', role: 'Directora General / Coordinadora', email: 'mzevallosp@uni.pe' },
+        { name: 'Jorge Benavides Solís', role: 'Director de Escenografía y Sonido', email: 'jbenavidess@uni.pe' }
+      ],
+      projects: [
+        { title: 'Obra Teatral Anual', description: 'Producción escénica completa adaptando clásicos dramáticos o guiones originales de miembros.', link: '#' }
+      ],
+      convocatorias: [
+        { title: 'Elenco Actoral 2026', description: 'Audiciones abiertas para nuevos integrantes de la facultad. No se requiere experiencia previa en teatro.', deadline: '20 de Julio, 2026', status: 'Vigente' }
+      ],
+      events: [
+        { title: 'Taller de Expresión Corporal y Voz', description: 'Sesión práctica para aprender proyección vocal y lenguaje no verbal.', date: '10 Jun 2026', location: 'Auditorio Central FIIS', type: 'Cultural' },
+        { title: 'Noche de Talentos - Obra "El Avaro"', description: 'Presentación oficial del taller adaptando el clásico de Molière.', date: '25 Jul 2026', location: 'Auditorio Central FIIS', type: 'Cultural' }
+      ],
+      recursos: [
+        { name: 'Guía de Oratoria y Control de Nervios', course: 'Ninguno (General)', type: 'Guía', cycle: 'I', year: '2026-I', link: '#' }
+      ],
+      faqs: [
+        { q: '¿Puedo ingresar si tengo pánico escénico?', a: '¡Por supuesto! El objetivo del taller es ayudarte de forma progresiva a superar esos temores en un entorno de apoyo.' }
+      ]
+    },
+    'coro-fiis': {
+      name: 'Coro FIIS',
+      tagLine: 'Elenco Vocal Oficial de la Facultad',
+      category: 'Centro Cultural',
+      badgeCls: 'bg-purple-100 text-purple-700',
+      bannerGradient: 'from-rose-600 to-rose-800',
+      icon: 'music_note',
+      history: 'Con más de 15 años de trayectoria musical, el Coro FIIS agrupa a las mejores voces de la facultad. Ha participado en múltiples encuentros corales interuniversitarios y es el encargado de entonar el Himno de la UNI en ceremonias oficiales.',
+      mission: 'Desarrollar la técnica vocal y el canto polifónico entre los estudiantes, enriqueciendo la vida cultural y la representación institucional de la FIIS.',
+      vision: 'Ser reconocido como uno de los coros universitarios de mayor nivel técnico en el país, expandiendo su repertorio lírico y popular.',
+      location: 'Pabellón B, Tercer Piso, Salón de Música FIIS.',
+      email: 'corofiis@fiis.uni.edu.pe',
+      responsible: 'Junta de Elenco Coro FIIS · Periodo 2026-I',
+      lastUpdated: '12 de Mayo, 2026',
+      social: {
+        facebook: 'https://facebook.com',
+        instagram: 'https://instagram.com'
+      },
+      directiva: [
+        { name: 'David Sánchez Vargas', role: 'Director Coral / Director Musical', email: 'dsanchezv@uni.pe' },
+        { name: 'Verónica Castro León', role: 'Coordinadora Administrativa', email: 'vcastrol@uni.pe' }
+      ],
+      projects: [],
+      convocatorias: [
+        { title: 'Audiciones Coro FIIS 2026-II', description: 'Búsqueda de voces (Sopranos, Contraltos, Tenores y Bajos). Se evaluará afinación y ritmo.', deadline: '10 de Julio, 2026', status: 'Vigente' }
+      ],
+      events: [
+        { title: 'Taller de Técnica Vocal Básica', description: 'Ejercicios de respiración diafragmática y afinación vocal dirigidos a la comunidad.', date: '14 Jun 2026', location: 'Salón de Música', type: 'Cultural' }
+      ],
+      recursos: [],
+      faqs: [
+        { q: '¿Necesito saber leer partituras?', a: 'No es un requisito indispensable. Aquí te enseñamos solfeo y lectura musical básica durante los ensayos.' }
+      ]
+    },
+    'danza-fiis': {
+      name: 'Danza FIIS',
+      tagLine: 'Elenco Folklórico y Expresión de Danza',
+      category: 'Centro Cultural',
+      badgeCls: 'bg-purple-100 text-purple-700',
+      bannerGradient: 'from-orange-500 to-orange-700',
+      icon: 'dance',
+      history: 'Danza FIIS es una agrupación nacida con la convicción de preservar la rica identidad cultural de nuestro país a través de la danza folklórica. Ha obtenido importantes galardones en pasacalles y corsos interfacultades de la UNI.',
+      mission: 'Difundir las danzas tradicionales y contemporáneas de las diversas regiones del Perú, promoviendo la identidad y el folklore en la comunidad universitaria.',
+      vision: 'Establecerse como el ballet folklórico líder de la universidad, logrando proyección artística en festivales culturales internacionales.',
+      location: 'Sótano del Pabellón B, Patio de Danzas.',
+      email: 'danzafiis@fiis.uni.edu.pe',
+      responsible: 'Directiva Danza FIIS · Periodo 2026-I',
+      lastUpdated: '16 de Mayo, 2026',
+      social: {
+        facebook: 'https://facebook.com',
+        instagram: 'https://instagram.com'
+      },
+      directiva: [
+        { name: 'Patricia Huamán Mendoza', role: 'Directora General / Caporala', email: 'phuamanm@uni.pe' },
+        { name: 'Miguel Ángel Torres', role: 'Coordinador de Vestuarios', email: 'mtorres@uni.pe' }
+      ],
+      projects: [],
+      convocatorias: [
+        { title: 'Convocatoria de Nuevos Danzantes', description: 'Inscripción abierta para el taller formativo y el elenco oficial. Ensayos en horario flexible.', deadline: '22 de Julio, 2026', status: 'Vigente' }
+      ],
+      events: [
+        { title: 'Taller de Danzas Afroperuanas', description: 'Clase maestra abierta de festejo y ritmo afroperuano.', date: '19 Jun 2026', location: 'Patio de Danzas B', type: 'Cultural' }
+      ],
+      recursos: [],
+      faqs: [
+        { q: '¿Qué vestuarios se utilizan?', a: 'La agrupación cuenta con un guardarropa propio de trajes típicos financiados por Bienestar Estudiantil y autogestión.' }
+      ]
+    },
+    'delegatura-industrial': {
+      name: 'Delegatura de Industrial',
+      tagLine: 'Voz Académica de Ingeniería Industrial',
+      category: 'Delegatura',
+      badgeCls: 'bg-teal-100 text-teal-700',
+      bannerGradient: 'from-cyan-600 to-cyan-800',
+      icon: 'groups',
+      history: 'La Delegatura de Ingeniería Industrial es el órgano de representación de los estudiantes matriculados en dicha especialidad. Su función es velar por la constante actualización curricular, la calidad de la enseñanza de las materias y canalizar solicitudes académicas específicas.',
+      mission: 'Representar de forma técnica y ética a los estudiantes de Ingeniería Industrial, promoviendo mejoras académicas en cursos de especialidad e impulsando el desarrollo estudiantil.',
+      vision: 'Ser una delegatura técnica y organizada que promueva la excelencia académica de la carrera, participando activamente en la acreditación ABET e ISO de la facultad.',
+      location: 'Pabellón A, Cubículo de Delegaturas Estudiantiles.',
+      email: 'delindustrial@fiis.uni.edu.pe',
+      responsible: 'Delegado de Ingeniería Industrial · Periodo 2026',
+      lastUpdated: '22 de Mayo, 2026',
+      social: {
+        facebook: 'https://facebook.com',
+        instagram: 'https://instagram.com'
+      },
+      directiva: [
+        { name: 'Christian Alarcón Prado', role: 'Delegado de Escuela (Industrial)', email: 'calarconp@uni.pe' },
+        { name: 'Diana Rivas Cáceres', role: 'Subdelegada Académica', email: 'drivasc@uni.pe' }
+      ],
+      projects: [
+        { title: 'Banco de Sílabos y Mallas de Industrial', description: 'Plataforma con los sílabos ordenados de todos los planes de estudio vigentes.', link: '#' }
+      ],
+      convocatorias: [
+        { title: 'Convocatoria de Delegados de Ciclo', description: 'Reclutamiento de portavoces académicos por ciclo para articular incidencias con la dirección de escuela.', deadline: '10 de Julio, 2026', status: 'Vigente' }
+      ],
+      events: [
+        { title: 'Foro Curricular de Ing. Industrial', description: 'Mesa de diálogo sobre la integración de tecnologías en los cursos del plan de estudios.', date: '18 Jun 2026', location: 'Sala de Usos Múltiples', type: 'Académico' }
+      ],
+      recursos: [
+        { name: 'Examen Final de Estudio del Trabajo', course: 'Estudio del Trabajo', type: 'Examen', cycle: 'V', year: '2025-II', link: '#' },
+        { name: 'Taller de Simulación de Procesos con Arena', course: 'Simulación de Sistemas', type: 'Taller', cycle: 'VIII', year: '2025-I', link: '#' }
+      ],
+      faqs: [
+        { q: '¿Cuál es la diferencia con el CEIIS?', a: 'El CEIIS representa a toda la facultad de forma general; la delegatura se enfoca de manera específica en las mallas, sílabos e incidencias académicas de la carrera de Ingeniería Industrial.' }
+      ]
+    }
+  };
+
+  // --- Función de Carga Inicial ---
+  window.initVidaEstudiantilDetalle = function(id) {
+    const detailContainer = document.getElementById('detail-page-container');
+    const notFoundContainer = document.getElementById('not-found-container');
+    
+    // Normalizar ID
+    const groupKey = id.toLowerCase().trim();
+    const groupData = DATA_AGRUPACIONES[groupKey];
+
+    if (!groupData) {
+      if (detailContainer) detailContainer.classList.add('hidden');
+      if (notFoundContainer) notFoundContainer.classList.remove('hidden');
+      return;
+    }
+
+    if (notFoundContainer) notFoundContainer.classList.add('hidden');
+    if (detailContainer) detailContainer.classList.remove('hidden');
+
+    // 1. Población de Textos en el DOM
+    document.getElementById('breadcrumb-current').textContent = groupData.name;
+    document.getElementById('hero-title').textContent = groupData.name;
+    document.getElementById('hero-tagline').textContent = groupData.tagLine;
+    document.getElementById('hero-type-badge').textContent = groupData.category;
+    document.getElementById('hero-icon').textContent = groupData.icon;
+    
+    // Colores del banner hero
+    const bannerHero = document.getElementById('banner-hero');
+    if (bannerHero) {
+      bannerHero.className = `relative overflow-hidden rounded-2xl text-on-primary bg-gradient-to-br ${groupData.bannerGradient} p-8 md:p-12 shadow-md`;
+    }
+
+    document.getElementById('group-history').textContent = groupData.history;
+    document.getElementById('group-mission').textContent = groupData.mission;
+    document.getElementById('group-vision').textContent = groupData.vision;
+    document.getElementById('group-location').textContent = groupData.location;
+    document.getElementById('group-email').textContent = groupData.email;
+    
+    // Footers / Metadatos (Gestión 1)
+    document.getElementById('meta-responsible').textContent = `Responsable: ${groupData.responsible}`;
+    document.getElementById('meta-updated').textContent = `Última actualización: ${groupData.lastUpdated}`;
+
+    // 2. Población de Proyectos (Req 12 & 17)
+    const projectsList = document.getElementById('projects-list');
+    if (projectsList) {
+      if (groupData.projects && groupData.projects.length > 0) {
+        projectsList.innerHTML = groupData.projects.map(proj => `
+          <div class="border border-border-subtle rounded-xl p-4 hover:bg-primary/5 transition-all">
+            <h4 class="font-bold text-on-surface text-sm flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-base">star</span> ${proj.title}
+            </h4>
+            <p class="text-xs text-text-secondary mt-1">${proj.description}</p>
+            ${groupKey === 'unicode' || groupKey === 'cibersec' || groupKey === 'nucleo-de-software' 
+              ? `<a href="${proj.link}" target="_blank" class="inline-flex items-center gap-1 text-xs text-primary font-bold mt-3 hover:underline">
+                  <span class="material-symbols-outlined text-xs">terminal</span> Código en GitHub
+                 </a>`
+              : ''}
+          </div>
+        `).join('');
+      } else {
+        projectsList.innerHTML = '<p class="text-xs text-text-secondary">No se han registrado proyectos en este ciclo.</p>';
+      }
+    }
+
+    // 3. Población de Testimonios (Req 13)
+    const testimonialsList = document.getElementById('testimonials-list');
+    if (testimonialsList) {
+      const defaultTestimonial = [
+        { author: 'Estudiante FIIS', role: 'Miembro Activo', text: `Formar parte de ${groupData.name} me ha permitido conectar con compañeros talentosos y llevar a la práctica la teoría de los cursos de ingeniería.` }
+      ];
+      const testList = (groupData.testimonials && groupData.testimonials.length > 0) ? groupData.testimonials : defaultTestimonial;
+      testimonialsList.innerHTML = testList.map(t => `
+        <div class="bg-surface-container-low border-l-4 border-primary p-4 rounded-r-lg text-xs italic text-text-secondary">
+          <p class="mb-2 leading-relaxed">"${t.text}"</p>
+          <p class="text-right font-bold text-on-surface">- ${t.author} (${t.role})</p>
+        </div>
+      `).join('');
+    }
+
+    // 4. Población de Galería de Fotos (Req 8)
+    const galleryList = document.getElementById('gallery-list');
+    if (galleryList) {
+      // Usaremos placeholders temáticos coloreados para simular fotos
+      galleryList.innerHTML = `
+        <div class="h-24 bg-primary/10 rounded-lg flex items-center justify-center text-primary/30 border border-primary/10 hover:bg-primary/20 transition-all"><span class="material-symbols-outlined text-3xl">photo</span></div>
+        <div class="h-24 bg-primary/10 rounded-lg flex items-center justify-center text-primary/30 border border-primary/10 hover:bg-primary/20 transition-all"><span class="material-symbols-outlined text-3xl">photo</span></div>
+        <div class="h-24 bg-primary/10 rounded-lg flex items-center justify-center text-primary/30 border border-primary/10 hover:bg-primary/20 transition-all"><span class="material-symbols-outlined text-3xl">photo</span></div>
+      `;
+    }
+
+    // 5. Población de Directiva (Req 4)
+    const directivaBody = document.getElementById('directiva-table-body');
+    if (directivaBody) {
+      directivaBody.innerHTML = groupData.directiva.map(d => `
+        <tr class="border-b border-border-subtle hover:bg-surface-container-low transition-colors">
+          <td class="p-3 font-semibold text-on-surface flex items-center gap-2">
+            <span class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xs shrink-0">${d.name.charAt(0)}</span>
+            ${d.name}
+          </td>
+          <td class="p-3">${d.role}</td>
+          <td class="p-3"><a href="mailto:${d.email}" class="text-primary hover:underline">${d.email}</a></td>
+        </tr>
+      `).join('');
+    }
+
+    // 6. Convocatorias (Req 7)
+    const convocatoriasList = document.getElementById('convocatorias-list');
+    const badgeConvs = document.getElementById('badge-convocatorias-count');
+    if (convocatoriasList && badgeConvs) {
+      if (groupData.convocatorias && groupData.convocatorias.length > 0) {
+        let activeCount = 0;
+        convocatoriasList.innerHTML = groupData.convocatorias.map(c => {
+          const isVigente = c.status === 'Vigente';
+          if (isVigente) activeCount++;
+          const badgeColor = isVigente ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700';
+          return `
+            <div class="border border-border-subtle rounded-xl p-5 hover:bg-primary/5 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-2 mb-1.5">
+                  <h4 class="font-bold text-on-surface text-sm">${c.title}</h4>
+                  <span class="${badgeColor} px-2.5 py-0.5 rounded-full text-xs font-semibold">${c.status}</span>
+                </div>
+                <p class="text-xs text-text-secondary leading-relaxed">${c.description}</p>
+              </div>
+              <div class="flex flex-col items-end shrink-0">
+                <span class="text-[10px] text-text-secondary font-semibold mb-2">Cierre: ${c.deadline}</span>
+                ${isVigente 
+                  ? `<button onclick="alert('Postulación registrada exitosamente para la agrupación ${groupData.name}');" class="bg-brand-cream text-primary px-4 py-1.5 rounded-lg text-xs font-bold hover:opacity-90 transition-all">Postular</button>`
+                  : `<button disabled class="bg-surface-container-high text-text-secondary px-4 py-1.5 rounded-lg text-xs font-bold cursor-not-allowed">Cerrado</button>`
+                }
+              </div>
+            </div>
+          `;
+        }).join('');
+        badgeConvs.textContent = activeCount;
+      } else {
+        convocatoriasList.innerHTML = '<p class="text-xs text-text-secondary py-4 text-center">No hay convocatorias activas en este momento.</p>';
+        badgeConvs.textContent = 0;
+      }
+    }
+
+    // 7. Eventos (Req 5)
+    const eventosList = document.getElementById('eventos-list');
+    const badgeEvents = document.getElementById('badge-eventos-count');
+    if (eventosList && badgeEvents) {
+      if (groupData.events && groupData.events.length > 0) {
+        eventosList.innerHTML = groupData.events.map(evt => `
+          <div class="border border-border-subtle rounded-xl p-5 hover:bg-primary/5 transition-all flex items-start gap-4">
+            <div class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-lg p-2.5 min-w-[72px] shrink-0 text-center shadow-sm">
+              <span class="text-[10px] font-bold uppercase leading-tight">${evt.date.split(' ')[1]}</span>
+              <span class="text-xl font-extrabold leading-tight">${evt.date.split(' ')[0]}</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 mb-1">
+                <h4 class="font-bold text-on-surface text-sm">${evt.title}</h4>
+                <span class="bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full text-[10px] font-semibold">${evt.type}</span>
+              </div>
+              <p class="text-xs text-text-secondary mb-1">Ubicación: ${evt.location}</p>
+              <p class="text-xs text-text-secondary leading-relaxed">${evt.description}</p>
+            </div>
+          </div>
+        `).join('');
+        badgeEvents.textContent = groupData.events.length;
+      } else {
+        eventosList.innerHTML = '<p class="text-xs text-text-secondary py-4 text-center">No hay eventos próximos agendados.</p>';
+        badgeEvents.textContent = 0;
+      }
+    }
+
+    // 8. Recursos (Req 11)
+    const recursosBody = document.getElementById('recursos-table-body');
+    const badgeRecursos = document.getElementById('badge-recursos-count');
+    const noRecursosMsg = document.getElementById('no-recursos-msg');
+
+    function renderRecursos(typeFilter = 'all', cycleFilter = 'all') {
+      if (!recursosBody) return;
+      if (!groupData.recursos || groupData.recursos.length === 0) {
+        recursosBody.innerHTML = '';
+        if (badgeRecursos) badgeRecursos.textContent = 0;
+        noRecursosMsg.classList.remove('hidden');
+        return;
+      }
+
+      const filtered = groupData.recursos.filter(rec => {
+        const matchesType = (typeFilter === 'all' || rec.type === typeFilter);
+        const matchesCycle = (cycleFilter === 'all' || rec.cycle === cycleFilter);
+        return matchesType && matchesCycle;
+      });
+
+      if (filtered.length > 0) {
+        noRecursosMsg.classList.add('hidden');
+        recursosBody.parentElement.classList.remove('hidden');
+        recursosBody.innerHTML = filtered.map(rec => `
+          <tr class="border-b border-border-subtle hover:bg-surface-container-low transition-colors">
+            <td class="p-3 font-semibold text-on-surface">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-sm">${rec.type === 'Examen' ? 'description' : rec.type === 'Guía' ? 'menu_book' : 'terminal'}</span>
+                ${rec.name}
+              </div>
+            </td>
+            <td class="p-3">${rec.course}</td>
+            <td class="p-3 text-xs">
+              <span class="bg-surface-container-high px-2 py-0.5 rounded text-[10px] font-semibold mr-1">Ciclo ${rec.cycle}</span>
+              <span class="text-text-secondary font-medium">${rec.year}</span>
+            </td>
+            <td class="p-3 text-center">
+              <button onclick="alert('Descargando archivo: ${rec.name}');" class="text-primary hover:text-primary-container flex items-center justify-center w-full">
+                <span class="material-symbols-outlined text-lg">download</span>
+              </button>
+            </td>
+          </tr>
+        `).join('');
+      } else {
+        recursosBody.innerHTML = '';
+        noRecursosMsg.classList.remove('hidden');
+      }
+      
+      if (badgeRecursos) {
+        badgeRecursos.textContent = groupData.recursos.length;
+      }
+    }
+
+    renderRecursos();
+
+    // Hook filters for resources
+    const rfType = document.getElementById('recursos-filter-type');
+    const rfCycle = document.getElementById('recursos-filter-cycle');
+    if (rfType && rfCycle) {
+      const updateRecFilters = () => renderRecursos(rfType.value, rfCycle.value);
+      rfType.addEventListener('change', updateRecFilters);
+      rfCycle.addEventListener('change', updateRecFilters);
+    }
+
+    // 9. FAQs (Req 14)
+    const faqsAccordion = document.getElementById('faqs-accordion');
+    if (faqsAccordion) {
+      const defaultFaqs = [
+        { q: `¿Cómo unirse a ${groupData.name}?`, a: 'Abrimos convocatorias generales a inicios de cada semestre académico. Mantente alerta de la pestaña Convocatorias y de nuestras redes.' },
+        { q: '¿Tiene algún costo pertenecer al grupo?', a: 'Ninguno. Pertenecer a la agrupación es totalmente libre y voluntario para todos los estudiantes matriculados en la FIIS.' }
+      ];
+      const fList = (groupData.faqs && groupData.faqs.length > 0) ? groupData.faqs : defaultFaqs;
+      
+      faqsAccordion.innerHTML = fList.map((faq, index) => `
+        <div class="border border-border-subtle rounded-xl overflow-hidden">
+          <button class="faq-trigger w-full flex items-center justify-between p-4 text-left font-bold text-on-surface hover:bg-primary/5 transition-all" data-faq-index="${index}">
+            <span>${faq.q}</span>
+            <span class="material-symbols-outlined faq-icon transition-transform">expand_more</span>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+            <p class="p-4 border-t border-border-subtle text-xs text-text-secondary leading-relaxed bg-surface-container-low">${faq.a}</p>
+          </div>
+        </div>
+      `).join('');
+
+      // Add listeners to FAQ triggers
+      const triggers = faqsAccordion.querySelectorAll('.faq-trigger');
+      triggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          const content = trigger.nextElementSibling;
+          const icon = trigger.querySelector('.faq-icon');
+          const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+          // Cerrar otros
+          triggers.forEach(t => {
+            const c = t.nextElementSibling;
+            const ic = t.querySelector('.faq-icon');
+            c.style.maxHeight = '0px';
+            if (ic) ic.style.transform = 'rotate(0deg)';
+          });
+
+          if (!isOpen) {
+            content.style.maxHeight = content.scrollHeight + 'px';
+            if (icon) icon.style.transform = 'rotate(180deg)';
+          } else {
+            content.style.maxHeight = '0px';
+            if (icon) icon.style.transform = 'rotate(0deg)';
+          }
+        });
+      });
+    }
+
+    // 10. Redes Sociales (Req 9)
+    const socialGrid = document.getElementById('social-grid');
+    if (socialGrid) {
+      socialGrid.innerHTML = Object.entries(groupData.social).map(([key, url]) => {
+        let label = key.charAt(0).toUpperCase() + key.slice(1);
+        let iconName = 'public';
+        if (key === 'facebook') iconName = 'thumb_up';
+        if (key === 'github') iconName = 'terminal';
+        if (key === 'instagram') iconName = 'camera';
+        if (key === 'linkedin') iconName = 'link';
+
+        return `
+          <a href="${url}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-2 border border-border-subtle rounded-lg hover:bg-primary/5 transition-all text-text-secondary hover:text-primary font-medium text-xs">
+            <span class="material-symbols-outlined text-primary text-sm">${iconName}</span>
+            ${label}
+          </a>
+        `;
+      }).join('');
+    }
+  };
+
+  // --- Manejo del Formulario de Contacto (Req 15 & 20) ---
+  const contactForm = document.getElementById('group-contact-form');
+  const contactSuccess = document.getElementById('contact-success-toast');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const emailInput = document.getElementById('contact-email');
+      const email = emailInput.value.trim().toLowerCase();
+
+      // Validación simple de dominio institucional
+      if (!email.endsWith('@uni.pe') && !email.endsWith('@uni.edu.pe')) {
+        alert('Por favor, ingresa un correo institucional válido con terminación @uni.pe o @uni.edu.pe');
+        return;
+      }
+
+      // Simulación de envío exitoso
+      if (contactSuccess) {
+        contactSuccess.classList.remove('hidden');
+        contactForm.reset();
+        setTimeout(() => {
+          contactSuccess.classList.add('hidden');
+        }, 8000);
+      }
+    });
+  }
+
+  // --- Lógica del Tab Switching (L12) ---
+  const tabContainer = document.getElementById('detail-tabs');
+  if (tabContainer) {
+    const tabButtons = tabContainer.querySelectorAll('button');
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetTab = btn.getAttribute('data-target');
+
+        // Modificar clases del botón activo
+        tabButtons.forEach(b => {
+          b.className = 'px-5 py-4 text-sm font-medium text-text-secondary hover:text-primary transition-all whitespace-nowrap';
+        });
+        btn.className = 'px-5 py-4 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 transition-all whitespace-nowrap';
+
+        // Ocultar/Mostrar paneles
+        const panels = document.querySelectorAll('.tab-panel');
+        panels.forEach(p => p.classList.add('hidden'));
+
+        const activePanel = document.getElementById('tab-content-' + targetTab);
+        if (activePanel) activePanel.classList.remove('hidden');
+      });
+    });
+  }
+
+})();
+</script>
