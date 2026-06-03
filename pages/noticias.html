@@ -1,116 +1,63 @@
 <div class="page-enter space-y-8">
-  <section class="relative overflow-hidden bg-primary rounded-2xl px-8 py-16 md:py-20">
-    <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+');"></div>
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-primary rounded-2xl px-8 py-14 md:py-16">
+    <div class="absolute inset-0 opacity-10"
+      style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+');">
+    </div>
     <div class="relative z-10 text-center">
-      <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-4">Noticias FIIS</h1>
-      <p class="text-on-primary/80 text-lg md:text-xl max-w-2xl mx-auto">Mantente informado sobre los últimos acontecimientos, logros académicos, eventos institucionales y actividades estudiantiles de nuestra facultad.</p>
+      <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-4">Actualidad y Comunicaciones</h1>
+      <p class="text-on-primary/80 text-lg max-w-2xl mx-auto">Entérate de las últimas noticias, comunicados oficiales, agenda de eventos y convocatorias de la FIIS-UNI.</p>
     </div>
   </section>
 
-  <div class="max-w-[1200px] mx-auto px-6 md:px-8 flex flex-wrap gap-2">
-    <button class="px-5 py-2 rounded-full text-sm font-semibold bg-primary text-on-primary transition-all">Todas</button>
-    <button class="px-5 py-2 rounded-full text-sm font-medium bg-white border border-border-subtle text-on-surface-variant hover:border-primary hover:text-primary transition-all">Institucional</button>
-    <button class="px-5 py-2 rounded-full text-sm font-medium bg-white border border-border-subtle text-on-surface-variant hover:border-primary hover:text-primary transition-all">Académica</button>
-    <button class="px-5 py-2 rounded-full text-sm font-medium bg-white border border-border-subtle text-on-surface-variant hover:border-primary hover:text-primary transition-all">Empresarial</button>
-    <button class="px-5 py-2 rounded-full text-sm font-medium bg-white border border-border-subtle text-on-surface-variant hover:border-primary hover:text-primary transition-all">Estudiantil</button>
-  </div>
-
-  <article class="max-w-[1200px] mx-auto px-6 md:px-8 bg-white rounded-2xl overflow-hidden border border-border-subtle shadow-sm hover:shadow-xl transition-all">
-    <div class="grid grid-cols-1 lg:grid-cols-5">
-      <div class="lg:col-span-3 h-64 lg:h-auto bg-primary-container/30 flex items-center justify-center">
-        <span class="material-symbols-outlined text-7xl text-primary/30">precision_manufacturing</span>
-      </div>
-      <div class="lg:col-span-2 p-6 md:p-8 flex flex-col justify-center">
-        <span class="text-xs font-bold bg-primary/10 text-primary px-3 py-1 rounded-full w-fit mb-3">Institucional</span>
-        <p class="text-text-secondary text-sm mb-2">15 may 2024</p>
-        <h2 class="text-2xl font-bold text-primary mb-3 leading-tight">Inauguración del nuevo Laboratorio de Inteligencia Artificial</h2>
-        <p class="text-on-surface-variant mb-6 leading-relaxed">La Facultad de Ingeniería Industrial y de Sistemas inauguró el moderno Laboratorio de Inteligencia Artificial, equipado con estaciones de trabajo de alto rendimiento y servidores GPU para el desarrollo de proyectos de investigación en machine learning, deep learning y visión computacional.</p>
-        <a class="text-primary font-semibold flex items-center gap-1 hover:gap-2 transition-all w-fit" href="#">Leer más <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
-      </div>
+  <!-- Pestañas Principales por Tipo de Publicación (Req 8 / Req 30 / Bloque 7 Req 16) -->
+  <div class="max-w-[1200px] mx-auto px-4">
+    <div class="bg-white border border-border-subtle rounded-xl shadow-sm overflow-hidden flex" id="news-type-tabs">
+      <button class="flex-1 py-4 px-2 text-center text-sm font-semibold border-b-2 border-primary bg-primary/5 text-primary flex items-center justify-center gap-2 hover:bg-primary/5 transition-all" data-type="noticia">
+        <span class="material-symbols-outlined text-xl">newspaper</span>
+        <span class="hidden sm:inline">Noticias</span>
+      </button>
+      <button class="flex-1 py-4 px-2 text-center text-sm font-medium border-b-2 border-transparent text-text-secondary flex items-center justify-center gap-2 hover:text-primary hover:bg-surface-container-low transition-all" data-type="comunicado">
+        <span class="material-symbols-outlined text-xl">campaign</span>
+        <span class="hidden sm:inline">Comunicados</span>
+      </button>
+      <button class="flex-1 py-4 px-2 text-center text-sm font-medium border-b-2 border-transparent text-text-secondary flex items-center justify-center gap-2 hover:text-primary hover:bg-surface-container-low transition-all" data-type="evento">
+        <span class="material-symbols-outlined text-xl">event</span>
+        <span class="hidden sm:inline">Eventos</span>
+      </button>
+      <button class="flex-1 py-4 px-2 text-center text-sm font-medium border-b-2 border-transparent text-text-secondary flex items-center justify-center gap-2 hover:text-primary hover:bg-surface-container-low transition-all" data-type="convocatoria">
+        <span class="material-symbols-outlined text-xl">assignment</span>
+        <span class="hidden sm:inline">Convocatorias</span>
+      </button>
     </div>
-  </article>
-
-  <div class="max-w-[1200px] mx-auto px-6 md:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    <article class="bg-white rounded-xl overflow-hidden border border-border-subtle hover:shadow-lg transition-all group">
-      <div class="h-44 bg-primary-container/30 flex items-center justify-center">
-        <span class="material-symbols-outlined text-5xl text-primary/30 group-hover:scale-110 transition-transform">emoji_events</span>
-      </div>
-      <div class="p-5">
-        <span class="text-xs font-semibold bg-blue-100 text-blue-700 px-2.5 py-0.5 rounded-full">Académica</span>
-        <p class="text-text-secondary text-xs mt-3 mb-1.5">12 may 2024</p>
-        <h3 class="text-base font-bold text-primary leading-tight mb-2">Estudiantes de Industrial destacan en Certamen Nacional de Optimización</h3>
-        <p class="text-on-surface-variant text-sm line-clamp-2">Nuestro equipo obtuvo el primer puesto en la competencia nacional de optimización de procesos industriales 2024.</p>
-        <a class="text-primary text-sm font-medium flex items-center gap-1 mt-3 hover:gap-2 transition-all w-fit" href="#">Leer más <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
-      </div>
-    </article>
-
-    <article class="bg-white rounded-xl overflow-hidden border border-border-subtle hover:shadow-lg transition-all group">
-      <div class="h-44 bg-primary-container/30 flex items-center justify-center">
-        <span class="material-symbols-outlined text-5xl text-primary/30 group-hover:scale-110 transition-transform">handshake</span>
-      </div>
-      <div class="p-5">
-        <span class="text-xs font-semibold bg-amber-100 text-amber-800 px-2.5 py-0.5 rounded-full">Empresarial</span>
-        <p class="text-text-secondary text-xs mt-3 mb-1.5">10 may 2024</p>
-        <h3 class="text-base font-bold text-primary leading-tight mb-2">Nueva alianza estratégica con líderes del sector tecnológico</h3>
-        <p class="text-on-surface-variant text-sm line-clamp-2">Convenio permitirá a estudiantes realizar prácticas preprofesionales en proyectos de transformación digital.</p>
-        <a class="text-primary text-sm font-medium flex items-center gap-1 mt-3 hover:gap-2 transition-all w-fit" href="#">Leer más <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
-      </div>
-    </article>
-
-    <article class="bg-white rounded-xl overflow-hidden border border-border-subtle hover:shadow-lg transition-all group">
-      <div class="h-44 bg-primary-container/30 flex items-center justify-center">
-        <span class="material-symbols-outlined text-5xl text-primary/30 group-hover:scale-110 transition-transform">terminal</span>
-      </div>
-      <div class="p-5">
-        <span class="text-xs font-semibold bg-green-100 text-green-700 px-2.5 py-0.5 rounded-full">Estudiantil</span>
-        <p class="text-text-secondary text-xs mt-3 mb-1.5">08 may 2024</p>
-        <h3 class="text-base font-bold text-primary leading-tight mb-2">UNICODE organiza taller de Flutter para estudiantes de Sistemas</h3>
-        <p class="text-on-surface-variant text-sm line-clamp-2">El centro de informática estudiantil dictó taller práctico de desarrollo móvil con Flutter y Dart.</p>
-        <a class="text-primary text-sm font-medium flex items-center gap-1 mt-3 hover:gap-2 transition-all w-fit" href="#">Leer más <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
-      </div>
-    </article>
-
-    <article class="bg-white rounded-xl overflow-hidden border border-border-subtle hover:shadow-lg transition-all group">
-      <div class="h-44 bg-primary-container/30 flex items-center justify-center">
-        <span class="material-symbols-outlined text-5xl text-primary/30 group-hover:scale-110 transition-transform">award_star</span>
-      </div>
-      <div class="p-5">
-        <span class="text-xs font-semibold bg-blue-100 text-blue-700 px-2.5 py-0.5 rounded-full">Académica</span>
-        <p class="text-text-secondary text-xs mt-3 mb-1.5">05 may 2024</p>
-        <h3 class="text-base font-bold text-primary leading-tight mb-2">Docente FIIS obtiene reconocimiento internacional en investigación</h3>
-        <p class="text-on-surface-variant text-sm line-clamp-2">Investigador del Departamento Académico de Ingeniería de Sistemas recibió premio internacional por su contribución en ciencia de datos.</p>
-        <a class="text-primary text-sm font-medium flex items-center gap-1 mt-3 hover:gap-2 transition-all w-fit" href="#">Leer más <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
-      </div>
-    </article>
-
-    <article class="bg-white rounded-xl overflow-hidden border border-border-subtle hover:shadow-lg transition-all group">
-      <div class="h-44 bg-primary-container/30 flex items-center justify-center">
-        <span class="material-symbols-outlined text-5xl text-primary/30 group-hover:scale-110 transition-transform">rocket_launch</span>
-      </div>
-      <div class="p-5">
-        <span class="text-xs font-semibold bg-green-100 text-green-700 px-2.5 py-0.5 rounded-full">Estudiantil</span>
-        <p class="text-text-secondary text-xs mt-3 mb-1.5">02 may 2024</p>
-        <h3 class="text-base font-bold text-primary leading-tight mb-2">Feria de Proyectos de Innovación Tecnológica 2024</h3>
-        <p class="text-on-surface-variant text-sm line-clamp-2">Estudiantes de ambas escuelas presentaron más de 40 proyectos de innovación tecnológica ante jurados internacionales.</p>
-        <a class="text-primary text-sm font-medium flex items-center gap-1 mt-3 hover:gap-2 transition-all w-fit" href="#">Leer más <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
-      </div>
-    </article>
-
-    <article class="bg-white rounded-xl overflow-hidden border border-border-subtle hover:shadow-lg transition-all group">
-      <div class="h-44 bg-primary-container/30 flex items-center justify-center">
-        <span class="material-symbols-outlined text-5xl text-primary/30 group-hover:scale-110 transition-transform">groups</span>
-      </div>
-      <div class="p-5">
-        <span class="text-xs font-semibold bg-primary/10 text-primary px-2.5 py-0.5 rounded-full">Institucional</span>
-        <p class="text-text-secondary text-xs mt-3 mb-1.5">28 abr 2024</p>
-        <h3 class="text-base font-bold text-primary leading-tight mb-2">Semana de la Ingeniería 2024 congregó a más de 500 asistentes</h3>
-        <p class="text-on-surface-variant text-sm line-clamp-2">Conferencias magistrales, talleres y competencias académicas marcaron las actividades por la Semana de la Ingeniería.</p>
-        <a class="text-primary text-sm font-medium flex items-center gap-1 mt-3 hover:gap-2 transition-all w-fit" href="#">Leer más <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
-      </div>
-    </article>
   </div>
 
-  <nav class="max-w-[1200px] mx-auto px-6 md:px-8 flex items-center justify-center gap-2 pt-4">
+  <!-- Filtros de Categorías de Noticias (Solo visible para pestaña Noticias) -->
+  <div class="max-w-[1200px] mx-auto px-4 flex flex-wrap gap-2 transition-all duration-300" id="news-category-bar">
+    <button class="news-cat-btn px-4 py-2 rounded-full text-xs font-semibold bg-primary text-on-primary transition-all" data-category="all">Todas</button>
+    <button class="news-cat-btn px-4 py-2 rounded-full text-xs font-medium bg-white border border-border-subtle text-on-surface-variant hover:border-primary hover:text-primary transition-all" data-category="institucional">Institucional</button>
+    <button class="news-cat-btn px-4 py-2 rounded-full text-xs font-medium bg-white border border-border-subtle text-on-surface-variant hover:border-primary hover:text-primary transition-all" data-category="academica">Académica</button>
+    <button class="news-cat-btn px-4 py-2 rounded-full text-xs font-medium bg-white border border-border-subtle text-on-surface-variant hover:border-primary hover:text-primary transition-all" data-category="empresarial">Empresarial</button>
+    <button class="news-cat-btn px-4 py-2 rounded-full text-xs font-medium bg-white border border-border-subtle text-on-surface-variant hover:border-primary hover:text-primary transition-all" data-category="estudiantil">Estudiantil</button>
+    <button class="news-cat-btn px-4 py-2 rounded-full text-xs font-medium bg-white border border-border-subtle text-on-surface-variant hover:border-primary hover:text-primary transition-all" data-category="posgrado">Posgrado</button>
+  </div>
+
+  <!-- Grid de Artículos Dinámicos -->
+  <div class="max-w-[1200px] mx-auto px-4 min-h-[400px]">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="publications-grid">
+      <!-- Inyectado dinámicamente por JS -->
+    </div>
+    
+    <!-- Mensaje Sin Resultados -->
+    <div id="no-publications-msg" class="hidden text-center py-16 bg-white border border-border-subtle rounded-2xl">
+      <span class="material-symbols-outlined text-outline text-5xl mb-2">find_in_page</span>
+      <p class="text-on-surface font-bold text-lg">No se encontraron publicaciones</p>
+      <p class="text-text-secondary text-sm">No hay registros vigentes en esta sección en este momento.</p>
+    </div>
+  </div>
+
+  <!-- Paginación -->
+  <nav class="max-w-[1200px] mx-auto px-4 flex items-center justify-center gap-2 pt-4">
     <button class="w-10 h-10 flex items-center justify-center rounded-lg border border-border-subtle bg-white text-on-surface-variant hover:border-primary hover:text-primary transition-all">
       <span class="material-symbols-outlined text-sm">chevron_left</span>
     </button>
@@ -118,9 +65,467 @@
     <button class="w-10 h-10 flex items-center justify-center rounded-lg border border-border-subtle bg-white text-on-surface-variant hover:border-primary hover:text-primary transition-all font-medium text-sm">2</button>
     <button class="w-10 h-10 flex items-center justify-center rounded-lg border border-border-subtle bg-white text-on-surface-variant hover:border-primary hover:text-primary transition-all font-medium text-sm">3</button>
     <span class="text-text-secondary text-sm px-1">...</span>
-    <button class="w-10 h-10 flex items-center justify-center rounded-lg border border-border-subtle bg-white text-on-surface-variant hover:border-primary hover:text-primary transition-all font-medium text-sm">12</button>
+    <button class="w-10 h-10 flex items-center justify-center rounded-lg border border-border-subtle bg-white text-on-surface-variant hover:border-primary hover:text-primary transition-all font-medium text-sm">8</button>
     <button class="w-10 h-10 flex items-center justify-center rounded-lg border border-border-subtle bg-white text-on-surface-variant hover:border-primary hover:text-primary transition-all">
       <span class="material-symbols-outlined text-sm">chevron_right</span>
     </button>
   </nav>
 </div>
+
+<!-- Lógica JS para renderizado dinámico y filtrado -->
+<script>
+(function () {
+  // Pool de Datos de Publicaciones FIIS-UNI (Req 8 / Req 30)
+  const DATOS_PUBLICACIONES = [
+    // --- Noticias (Resaltan relato y contexto) ---
+    {
+      id: 1,
+      tipo: 'noticia',
+      categoria: 'institucional',
+      titulo: 'Inauguración del nuevo Laboratorio de Inteligencia Artificial',
+      fecha: '15 may 2026',
+      resumen: 'La FIIS-UNI inauguró el moderno Laboratorio de Inteligencia Artificial, equipado con servidores GPU avanzados y estaciones de alto rendimiento para proyectos de investigación en machine learning, deep learning y visión computacional.',
+      area: 'Decanatura FIIS',
+      icono: 'precision_manufacturing',
+      badgeCls: 'bg-primary/10 text-primary'
+    },
+    {
+      id: 2,
+      tipo: 'noticia',
+      categoria: 'posgrado',
+      titulo: 'Nueva Maestría en Ciencia de Datos y Analítica Avanzada',
+      fecha: '20 may 2026',
+      resumen: 'La FIIS UNI lanza un nuevo programa de posgrado especializado en el tratamiento de big data, machine learning y analítica predictiva de negocios, con doble certificación opcional.',
+      area: 'Dirección de Posgrado',
+      icono: 'school',
+      badgeCls: 'bg-teal-100 text-teal-800'
+    },
+    {
+      id: 3,
+      tipo: 'noticia',
+      categoria: 'academica',
+      titulo: 'Estudiantes de Industrial destacan en Certamen Nacional de Optimización',
+      fecha: '12 may 2026',
+      resumen: 'Nuestro equipo estudiantil obtuvo el primer puesto en la competencia nacional de optimización de procesos industriales 2026 tras modelar y resolver complejos casos logísticos.',
+      area: 'Escuela de Ing. Industrial',
+      icono: 'emoji_events',
+      badgeCls: 'bg-blue-100 text-blue-800'
+    },
+    {
+      id: 4,
+      tipo: 'noticia',
+      categoria: 'empresarial',
+      titulo: 'Alianza estratégica con líderes del sector tecnológico',
+      fecha: '10 may 2026',
+      resumen: 'La firma de un convenio de cooperación institucional permitirá a estudiantes de Sistemas e Industrial realizar prácticas y pasantías en proyectos reales de transformación digital.',
+      area: 'Relaciones Empresariales',
+      icono: 'handshake',
+      badgeCls: 'bg-amber-100 text-amber-800'
+    },
+    {
+      id: 5,
+      tipo: 'noticia',
+      categoria: 'estudiantil',
+      titulo: 'UNICODE organiza taller de Flutter para desarrollo móvil rápido',
+      fecha: '08 may 2026',
+      resumen: 'El Centro de Informática Estudiantil dictó con éxito un taller práctico de desarrollo multiplataforma orientado a estudiantes de primeros ciclos de la facultad.',
+      area: 'UNICODE / Vida Estudiantil',
+      icono: 'terminal',
+      badgeCls: 'bg-green-100 text-green-800'
+    },
+    {
+      id: 6,
+      tipo: 'noticia',
+      categoria: 'institucional',
+      titulo: 'Semana de la Ingeniería 2026 congregó a más de 500 asistentes',
+      fecha: '28 abr 2026',
+      resumen: 'Conferencias magistrales, exposiciones tecnológicas de proyectos de alumnos e integraciones deportivas marcaron la celebración anual de nuestra facultad.',
+      area: 'Secretaría Administrativa',
+      icono: 'groups',
+      badgeCls: 'bg-primary/10 text-primary'
+    },
+    
+    // --- Comunicados (Resaltan oficialidad y vigencia) ---
+    {
+      id: 7,
+      tipo: 'comunicado',
+      titulo: 'N° 012-2026: Modificación del Calendario Académico Ciclo 2026-I',
+      fecha: '18 may 2026',
+      numero: 'N° 012-2026-FIIS',
+      emisor: 'Decanatura FIIS',
+      vigencia: 'Vigente',
+      contenido: 'Se informa a toda la comunidad docente y estudiantil que, por disposición del Consejo de Facultad, la fecha límite para el retiro parcial de asignaturas se extiende hasta el viernes 05 de junio.',
+      area: 'Decanatura FIIS'
+    },
+    {
+      id: 8,
+      tipo: 'comunicado',
+      titulo: 'N° 011-2026: Horarios de Atención Presencial de Mesa de Partes',
+      fecha: '15 may 2026',
+      numero: 'N° 011-2026-FIIS',
+      emisor: 'Secretaría Administrativa',
+      vigencia: 'Vigente',
+      contenido: 'Se detalla el nuevo rol de atención presencial para trámites documentarios académicos y administrativos: Lunes a Viernes de 09:00 a 13:00 y de 14:00 a 16:30.',
+      area: 'Secretaría Administrativa'
+    },
+    {
+      id: 9,
+      tipo: 'comunicado',
+      titulo: 'N° 009-2026: Mantenimiento del Sistema Académico ORCE-FIIS',
+      fecha: '02 may 2026',
+      numero: 'N° 009-2026-FIIS',
+      emisor: 'Oficina de Tecnologías de la Información (OTI)',
+      vigencia: 'Archivado',
+      contenido: 'Mantenimiento preventivo programado del servidor académico central. El sistema intranet y aula virtual no estuvieron disponibles de 22:00 del sábado hasta las 06:00 del domingo.',
+      area: 'OTI FIIS'
+    },
+
+    // --- Eventos (Resaltan fecha, hora, lugar, público e inscripción) ---
+    {
+      id: 10,
+      tipo: 'evento',
+      titulo: 'Seminario de Optimización en la Cadena de Suministros 4.0',
+      fecha: '20 jun 2026',
+      dia: '20',
+      mes: 'JUN',
+      hora: '16:00 - 19:30',
+      lugar: 'Auditorio Central FIIS (Presencial)',
+      publico: 'Estudiantes de Ing. Industrial y profesionales del sector.',
+      inscripcion: '#',
+      estado: 'Próximo',
+      area: 'Capítulo Estudiantil IISE'
+    },
+    {
+      id: 11,
+      tipo: 'evento',
+      titulo: 'Workshop: Metodologías Ágiles para el Desarrollo de Software',
+      fecha: '24 jun 2026',
+      dia: '24',
+      mes: 'JUN',
+      hora: '18:00 - 20:00',
+      lugar: 'Plataforma Zoom (Virtual)',
+      publico: 'Alumnos de Sistemas/Software e interesados en metodologías Scrum.',
+      inscripcion: '#',
+      estado: 'Próximo',
+      area: 'Escuela de Ing. de Sistemas'
+    },
+    {
+      id: 12,
+      tipo: 'evento',
+      titulo: 'Feria de Proyectos de Innovación Tecnológica FIIS 2026',
+      fecha: '05 jul 2026',
+      dia: '05',
+      mes: 'JUL',
+      hora: '09:00 - 17:00',
+      lugar: 'Explanada del Pabellón B (Presencial)',
+      publico: 'Comunidad UNI, postulantes, representantes de empresas y público general.',
+      inscripcion: '#',
+      estado: 'Próximo',
+      area: 'Dirección de Investigación FIIS'
+    },
+    {
+      id: 13,
+      tipo: 'evento',
+      titulo: 'Conferencia: Aplicaciones de IA en Logística de Consumo Masivo',
+      fecha: '18 may 2026',
+      dia: '18',
+      mes: 'MAY',
+      hora: '15:00 - 17:00',
+      lugar: 'Auditorio Central FIIS (Presencial)',
+      publico: 'Comunidad académica general',
+      inscripcion: null,
+      estado: 'Pasado',
+      area: 'Relaciones Empresariales / Alicorp'
+    },
+
+    // --- Convocatorias (Resaltan cierre de postulaciones, requisitos y estado) ---
+    {
+      id: 14,
+      tipo: 'convocatoria',
+      titulo: 'Monitores Académicos para Laboratorios de Computación 2026-II',
+      fecha: '15 may 2026',
+      cierre: '15 jul 2026',
+      requisitos: ['Promedio ponderado acumulado ≥ 13.5', 'No haber incurrido en riesgo académico', 'Haber aprobado cursos afines al laboratorio con nota ≥ 14'],
+      estado: 'Vigente',
+      area: 'Coordinación de Laboratorios'
+    },
+    {
+      id: 15,
+      tipo: 'convocatoria',
+      titulo: 'Staff de Desarrollo Técnico - Comunidad UNICODE 2026-II',
+      fecha: '18 may 2026',
+      cierre: '15 jul 2026',
+      requisitos: ['Ser estudiante matriculado de la FIIS', 'Interés en desarrollo web (HTML/JS/React) o diseño de interfaces', 'Disponibilidad de 4 horas semanales para reuniones'],
+      estado: 'Vigente',
+      area: 'Agrupación Estudiantil UNICODE'
+    },
+    {
+      id: 16,
+      tipo: 'convocatoria',
+      titulo: 'Becas de Intercambio Académico Internacional FIIS - Alemania',
+      fecha: '10 abr 2026',
+      cierre: '30 may 2026',
+      requisitos: ['Haber completado el 50% de créditos de la carrera', 'Promedio ponderado acumulado superior a 14.5', 'Certificación de idioma inglés nivel intermedio (B2)'],
+      estado: 'Cerrado',
+      area: 'Oficina de Cooperación Internacional'
+    }
+  ];
+
+  let activeType = 'noticia';
+  let activeCategory = 'all';
+
+  const gridContainer = document.getElementById('publications-grid');
+  const noPubsMsg = document.getElementById('no-publications-msg');
+  const categoryBar = document.getElementById('news-category-bar');
+
+  // Renderizar tarjetas según tipo y filtro
+  function renderPublicaciones() {
+    gridContainer.innerHTML = '';
+    
+    // Filtrar publicaciones
+    const filtradas = DATOS_PUBLICACIONES.filter(pub => {
+      const matchesType = pub.tipo === activeType;
+      const matchesCategory = activeType !== 'noticia' || activeCategory === 'all' || pub.categoria === activeCategory;
+      return matchesType && matchesCategory;
+    });
+
+    if (filtradas.length === 0) {
+      noPubsMsg.classList.remove('hidden');
+      gridContainer.classList.add('hidden');
+      return;
+    }
+
+    noPubsMsg.classList.add('hidden');
+    gridContainer.classList.remove('hidden');
+
+    // Cambiar grilla a 1 columna en comunicados y convocatorias para mayor formalidad y espacio
+    if (activeType === 'comunicado' || activeType === 'convocatoria') {
+      gridContainer.className = 'grid grid-cols-1 gap-6 max-w-[900px] mx-auto';
+    } else {
+      gridContainer.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6';
+    }
+
+    // Renderizar tarjetas con plantillas diferenciadas (Req 30)
+    filtradas.forEach(pub => {
+      let cardHtml = '';
+
+      if (pub.tipo === 'noticia') {
+        // --- Formato Noticia: Relato e imagen/contexto ---
+        cardHtml = `
+          <article class="bg-white rounded-xl overflow-hidden border border-border-subtle hover:shadow-xl transition-all duration-300 flex flex-col group">
+            <div class="h-44 bg-primary-container/20 flex items-center justify-center relative shrink-0">
+              <span class="material-symbols-outlined text-5xl text-primary/30 group-hover:scale-110 transition-transform">${pub.icono || 'newspaper'}</span>
+              <span class="absolute top-4 left-4 text-xs font-bold px-3 py-1 rounded-full ${pub.badgeCls}">${pub.categoria.charAt(0).toUpperCase() + pub.categoria.slice(1)}</span>
+            </div>
+            <div class="p-6 flex flex-col flex-grow justify-between">
+              <div>
+                <p class="text-text-secondary text-xs mb-2 flex items-center gap-1">
+                  <span class="material-symbols-outlined text-xs">calendar_today</span> ${pub.fecha}
+                </p>
+                <h3 class="text-lg font-bold text-primary mb-2 line-clamp-2 group-hover:text-primary-container transition-colors">${pub.titulo}</h3>
+                <p class="text-on-surface-variant text-sm line-clamp-3 mb-4 leading-relaxed">${pub.resumen}</p>
+              </div>
+              <div class="pt-4 border-t border-border-subtle/50 flex justify-between items-center mt-auto">
+                <span class="text-[11px] text-text-secondary font-medium">Área: ${pub.area}</span>
+                <a class="text-primary text-xs font-semibold flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                  Leer más
+                  <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        `;
+      } 
+      else if (pub.tipo === 'comunicado') {
+        // --- Formato Comunicado: Oficialidad y vigencia ---
+        const badgeVigencia = pub.vigencia === 'Vigente' 
+          ? '<span class="bg-success/15 text-success px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-success"></span> Vigente</span>'
+          : '<span class="bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full text-xs font-bold">Archivado</span>';
+
+        cardHtml = `
+          <article class="bg-white rounded-xl border-l-8 border-primary border-t border-r border-b border-border-subtle p-6 hover:shadow-lg transition-all flex flex-col sm:flex-row gap-5">
+            <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-primary text-3xl">campaign</span>
+            </div>
+            <div class="flex-grow space-y-3">
+              <div class="flex flex-wrap items-center justify-between gap-2 border-b border-border-subtle/30 pb-2">
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold text-primary tracking-wider">${pub.numero}</span>
+                  <span class="text-text-secondary text-xs font-medium">· Publicado: ${pub.fecha}</span>
+                </div>
+                ${badgeVigencia}
+              </div>
+              <h3 class="text-lg font-bold text-on-surface leading-tight">${pub.titulo}</h3>
+              <p class="text-on-surface-variant text-sm leading-relaxed">${pub.contenido}</p>
+              <div class="flex justify-between items-center pt-2 text-xs text-text-secondary font-medium">
+                <span>Emitido por: ${pub.emisor}</span>
+                <span class="bg-surface-container-low px-2.5 py-1 rounded">Área Responsable: ${pub.area}</span>
+              </div>
+            </div>
+          </article>
+        `;
+      }
+      else if (pub.tipo === 'evento') {
+        // --- Formato Evento: Fecha destacada, hora, lugar, público, inscripción ---
+        const badgeEstado = pub.estado === 'Próximo'
+          ? '<span class="bg-blue-100 text-blue-800 px-2.5 py-0.5 rounded-full text-xs font-semibold">Próximo</span>'
+          : '<span class="bg-surface-variant text-on-surface-variant px-2.5 py-0.5 rounded-full text-xs font-semibold">Pasado</span>';
+
+        cardHtml = `
+          <article class="bg-white rounded-xl border border-border-subtle p-5 hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row gap-5 items-stretch">
+            <!-- Bloque de Calendario -->
+            <div class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-xl p-4 md:w-28 shrink-0 text-center shadow-md">
+              <span class="text-xs font-bold uppercase tracking-wider opacity-90">${pub.mes}</span>
+              <span class="text-4xl font-extrabold my-1">${pub.dia}</span>
+              <span class="text-[10px] font-medium opacity-85">${pub.fecha.split(' ')[2]}</span>
+            </div>
+            <!-- Datos del Evento -->
+            <div class="flex-grow flex flex-col justify-between space-y-3">
+              <div>
+                <div class="flex items-center justify-between gap-2">
+                  <span class="text-xs font-bold text-primary uppercase">Área: ${pub.area}</span>
+                  ${badgeEstado}
+                </div>
+                <h3 class="text-base font-bold text-on-surface mt-1 leading-tight">${pub.titulo}</h3>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-3 text-xs text-text-secondary">
+                  <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-sm text-primary">schedule</span>
+                    <span>Hora: ${pub.hora}</span>
+                  </div>
+                  <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-sm text-primary">location_on</span>
+                    <span class="truncate">${pub.lugar}</span>
+                  </div>
+                </div>
+                <p class="text-xs text-on-surface-variant mt-2.5 leading-relaxed bg-surface-container-low/50 p-2.5 rounded border border-border-subtle/30"><strong class="text-on-surface">Dirigido a:</strong> ${pub.publico}</p>
+              </div>
+              <div class="flex justify-end pt-2">
+                ${pub.inscripcion && pub.estado === 'Próximo'
+                  ? `<a class="bg-primary text-on-primary px-4 py-2 rounded-lg text-xs font-semibold hover:opacity-90 transition-all flex items-center gap-1 shadow-sm" href="${pub.inscripcion}">
+                      Inscribirse
+                      <span class="material-symbols-outlined text-xs">launch</span>
+                     </a>`
+                  : `<button class="border border-border-subtle text-text-secondary px-4 py-2 rounded-lg text-xs font-medium cursor-not-allowed" disabled>
+                      Inscripción no disponible
+                     </button>`
+                }
+              </div>
+            </div>
+          </article>
+        `;
+      }
+      else if (pub.tipo === 'convocatoria') {
+        // --- Formato Convocatoria: Requisitos, Cierre, Botón postulación ---
+        const badgeEstado = pub.estado === 'Vigente'
+          ? '<span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> Abierta</span>'
+          : '<span class="bg-rose-100 text-rose-800 px-3 py-1 rounded-full text-xs font-bold">Cerrada</span>';
+
+        const listRequisitos = pub.requisitos.map(req => `
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-xs text-primary mt-0.5">check_circle</span>
+            <span>${req}</span>
+          </li>
+        `).join('');
+
+        cardHtml = `
+          <article class="bg-white rounded-xl border border-border-subtle p-6 hover:shadow-xl transition-all flex flex-col md:flex-row gap-6">
+            <div class="flex-grow space-y-4">
+              <div class="flex flex-wrap items-center justify-between gap-2 border-b border-border-subtle/30 pb-3">
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold text-primary uppercase">Área: ${pub.area}</span>
+                  <span class="text-text-secondary text-xs">· Publicado: ${pub.fecha}</span>
+                </div>
+                ${badgeEstado}
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-on-surface leading-tight">${pub.titulo}</h3>
+                <div class="mt-4">
+                  <p class="text-xs font-bold text-on-surface uppercase tracking-wider mb-2 flex items-center gap-1.5"><span class="material-symbols-outlined text-sm text-primary">rule</span> Requisitos Mínimos:</p>
+                  <ul class="space-y-1.5 text-xs text-on-surface-variant leading-relaxed">
+                    ${listRequisitos}
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Barra lateral de la convocatoria -->
+            <div class="md:w-56 shrink-0 md:border-l md:border-border-subtle/50 md:pl-6 flex flex-col justify-between pt-4 md:pt-0 border-t md:border-t-0 border-border-subtle/50">
+              <div class="space-y-3">
+                <div class="bg-surface-container-low p-3 rounded-lg text-center">
+                  <p class="text-[10px] text-text-secondary font-semibold uppercase">Cierre de postulaciones</p>
+                  <p class="text-sm font-bold text-on-surface mt-0.5">${pub.cierre}</p>
+                </div>
+              </div>
+              <div class="pt-4 mt-auto">
+                ${pub.estado === 'Vigente'
+                  ? `<a class="w-full bg-primary text-on-primary py-2.5 rounded-lg text-xs font-bold text-center block hover:opacity-90 transition-all shadow-sm" href="#">
+                      Postular en Línea
+                     </a>`
+                  : `<button class="w-full border border-border-subtle text-text-secondary py-2.5 rounded-lg text-xs font-medium cursor-not-allowed" disabled>
+                      Postulación Cerrada
+                     </button>`
+                }
+              </div>
+            </div>
+          </article>
+        `;
+      }
+
+      gridContainer.insertAdjacentHTML('beforeend', cardHtml);
+    });
+  }
+
+  // --- Lógica de Navegación de Pestañas ---
+  const tabButtons = document.querySelectorAll('#news-type-tabs button');
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const type = btn.getAttribute('data-type');
+      
+      // Actualizar botón activo de pestañas
+      tabButtons.forEach(b => {
+        b.className = 'flex-1 py-4 px-2 text-center text-sm font-medium border-b-2 border-transparent text-text-secondary flex items-center justify-center gap-2 hover:text-primary hover:bg-surface-container-low transition-all';
+      });
+      btn.className = 'flex-1 py-4 px-2 text-center text-sm font-semibold border-b-2 border-primary bg-primary/5 text-primary flex items-center justify-center gap-2 hover:bg-primary/5 transition-all';
+      
+      activeType = type;
+      
+      // Mostrar/Ocultar barra de categorías de noticias
+      if (activeType === 'noticia') {
+        categoryBar.classList.remove('hidden');
+      } else {
+        categoryBar.classList.add('hidden');
+      }
+
+      // Reiniciar categoría al cambiar pestaña
+      activeCategory = 'all';
+      const catBtns = document.querySelectorAll('.news-cat-btn');
+      catBtns.forEach(cb => {
+        cb.className = 'news-cat-btn px-4 py-2 rounded-full text-xs font-medium bg-white border border-border-subtle text-on-surface-variant hover:border-primary hover:text-primary transition-all';
+      });
+      if (catBtns.length > 0) {
+        catBtns[0].className = 'news-cat-btn px-4 py-2 rounded-full text-xs font-semibold bg-primary text-on-primary transition-all';
+      }
+
+      renderPublicaciones();
+    });
+  });
+
+  // --- Lógica de Categorías Temáticas ---
+  const catButtons = document.querySelectorAll('.news-cat-btn');
+  catButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      catButtons.forEach(b => {
+        b.className = 'news-cat-btn px-4 py-2 rounded-full text-xs font-medium bg-white border border-border-subtle text-on-surface-variant hover:border-primary hover:text-primary transition-all';
+      });
+      btn.className = 'news-cat-btn px-4 py-2 rounded-full text-xs font-semibold bg-primary text-on-primary transition-all';
+      
+      activeCategory = btn.getAttribute('data-category');
+      renderPublicaciones();
+    });
+  });
+
+  // Carga Inicial
+  renderPublicaciones();
+})();
+</script>
