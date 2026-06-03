@@ -8,10 +8,10 @@
       </div>
       <p class="text-text-secondary text-sm mt-0.5">Gestión de talento y participación académica</p>
     </div>
-    <button class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-on-primary rounded-lg font-semibold text-sm hover:brightness-110 transition-all shadow-sm active:scale-95">
+    <a href="#/dashboard/empresa/vacantes" onclick="sessionStorage.setItem('openVacanteForm','1')" class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-on-primary rounded-lg font-semibold text-sm hover:brightness-110 transition-all shadow-sm active:scale-95">
       <span class="material-symbols-outlined text-sm">add</span>
       Publicar nueva vacante
-    </button>
+    </a>
   </div>
 
   <!-- KPI Grid -->
@@ -63,7 +63,7 @@
   <!-- Table: Mis vacantes -->
   <div class="bg-white rounded-xl border border-border-subtle shadow-sm overflow-hidden">
     <div class="px-5 py-4 border-b border-border-subtle flex flex-wrap items-center justify-between gap-3">
-      <h3 class="text-base font-bold text-on-surface">Mis vacantes</h3>
+      <a href="#/dashboard/empresa/vacantes" class="text-base font-bold text-on-surface hover:text-primary transition-colors">Mis vacantes →</a>
       <div class="flex items-center gap-2">
         <div class="relative">
           <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary text-sm pointer-events-none">search</span>

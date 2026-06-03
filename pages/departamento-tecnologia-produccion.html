@@ -40,8 +40,8 @@
         <h3 class="text-lg font-bold text-on-surface mb-4">Datos Generales</h3>
         <dl class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
           <div class="flex justify-between py-2 border-b border-border-subtle">
-            <dt class="text-text-secondary">Jefe del Departamento</dt>
-            <dd class="font-medium text-on-surface">Mg. Alberto Vargas</dd>
+            <dt class="text-text-secondary">Jefatura</dt>
+            <dd class="font-medium text-on-surface">Jefatura del Departamento</dd>
           </div>
           <div class="flex justify-between py-2 border-b border-border-subtle">
             <dt class="text-text-secondary">Categoría</dt>
@@ -62,21 +62,21 @@
     <div id="tab-docentes" class="tab-content hidden space-y-4">
       <p class="text-text-secondary text-sm">Docentes del Departamento Académico de Tecnología de la Producción.</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow cursor-pointer" onclick="Router.navigate('/docentes/alberto-vargas')">
           <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0 mb-3">AV</div>
           <p class="font-semibold text-on-surface text-sm">Mg. Alberto Vargas</p>
-          <p class="text-xs text-text-secondary">Jefe del Departamento</p>
+           <p class="text-xs text-text-secondary">Docente del Departamento</p>
           <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-100 text-green-700">Asociado</span>
           <p class="text-xs text-text-secondary mt-2">Ingeniería de Procesos</p>
         </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow cursor-pointer" onclick="Router.navigate('/docentes/rosa-huaman')">
           <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0 mb-3">RH</div>
           <p class="font-semibold text-on-surface text-sm">Mg. Rosa Huamán</p>
           <p class="text-xs text-text-secondary">Docente Asociada</p>
           <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-100 text-green-700">Asociado</span>
           <p class="text-xs text-text-secondary mt-2">Seguridad y Gestión Ambiental</p>
         </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow cursor-pointer" onclick="Router.navigate('/docentes/javier-villanueva')">
           <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0 mb-3">JV</div>
           <p class="font-semibold text-on-surface text-sm">Ing. Javier Villanueva</p>
           <p class="text-xs text-text-secondary">Docente Auxiliar</p>

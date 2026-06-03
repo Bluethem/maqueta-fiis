@@ -37,52 +37,22 @@ const MEGA_MENU = [
     ]
   },
   {
-    label: 'Investigación', icon: 'science',
+    label: 'Programas', icon: 'school',
+    children: [
+      { col: 0, title: 'Formación Continua', items: [
+        { label: 'Posgrado (Maestrías y Doctorados)', route: '/posgrado', icon: 'auto_stories' },
+        { label: 'Especializaciones', route: '/posgrado', icon: 'local_library' },
+        { label: 'Cursos y Talleres', route: '/posgrado', icon: 'workshops' },
+      ]}
+    ]
+  },
+  {
+    label: 'Extensión', icon: 'business',
     children: [
       { col: 0, items: [
-        { label: 'Instituto de Investigación', route: '/organigrama', icon: 'science' },
-        { label: 'Laboratorio de IA', route: '/organigrama', icon: 'psychology' },
-        { label: 'Laboratorio de Química', route: '/organigrama', icon: 'biotech' },
+        { label: 'Sistemas UNI', route: '#', icon: 'computer' },
         { label: 'Consult FIIS', route: '/organigrama', icon: 'handshake' },
-        { label: 'Publicaciones', route: '/organigrama', icon: 'description' },
-        { label: 'Proyectos Destacados', route: '/organigrama', icon: 'star' },
-      ]}
-    ]
-  },
-  {
-    label: 'Empresas', icon: 'work',
-    children: [
-      { col: 0, items: [
-        { label: 'Empresas Aliadas', route: '/empresas', icon: 'handshake' },
-        { label: 'Bolsa de Trabajo', route: '/empresas', icon: 'work' },
-        { label: 'Prácticas Preprofesionales', route: '/empresas', icon: 'school' },
-        { label: 'Convenios Vigentes', route: '/empresas', icon: 'description' },
-        { label: 'Ser Empresa Aliada', route: '/empresas', icon: 'partner_exchange' },
-      ]}
-    ]
-  },
-  {
-    label: 'Egresados', icon: 'school',
-    children: [
-      { col: 0, items: [
-        { label: 'Comunidad de Egresados', route: '/egresados', icon: 'groups' },
-        { label: 'Bolsa de Trabajo', route: '/egresados', icon: 'work' },
-        { label: 'Red Alumni', route: '/egresados', icon: 'link' },
-        { label: 'Mentoría', route: '/egresados', icon: 'psychology' },
-        { label: 'Capacitaciones', route: '/egresados', icon: 'school' },
-      ]}
-    ]
-  },
-  {
-    label: 'Vida Estudiantil', icon: 'groups',
-    children: [
-      { col: 0, items: [
-        { label: 'Agrupaciones', route: '/vida-estudiantil', icon: 'groups' },
-        { label: 'Centros Culturales', route: '/vida-estudiantil', icon: 'palette' },
-        { label: 'CEIIS', route: '/vida-estudiantil', icon: 'group' },
-        { label: 'TEFIIS', route: '/vida-estudiantil', icon: 'how_to_vote' },
-        { label: 'Delegaturas', route: '/vida-estudiantil', icon: 'diversity_3' },
-        { label: 'Convocatorias', route: '/vida-estudiantil', icon: 'campaign' },
+        { label: 'CEE', route: '/organigrama', icon: 'school' },
       ]}
     ]
   },
@@ -100,14 +70,62 @@ const MEGA_MENU = [
         { label: 'Tutoría FIIS', route: '/organigrama', icon: 'support' },
         { label: 'UECPS', route: '/organigrama', icon: 'public' },
         { label: 'Centro de Información', route: '/organigrama', icon: 'library_books' },
-        { label: 'CEE', route: '/organigrama', icon: 'school' },
         { label: 'FAQ', route: '#', icon: 'help' },
+      ]}
+    ]
+  },
+  {
+    label: 'Comunidad', icon: 'groups',
+    children: [
+      { col: 0, items: [
+        { label: 'Agrupaciones', route: '/vida-estudiantil', icon: 'groups' },
+        { label: 'Centros Culturales', route: '/vida-estudiantil', icon: 'palette' },
+        { label: 'CEIIS', route: '/vida-estudiantil', icon: 'group' },
+        { label: 'TEFIIS', route: '/vida-estudiantil', icon: 'how_to_vote' },
+        { label: 'Delegaturas', route: '/vida-estudiantil', icon: 'diversity_3' },
+        { label: 'Convocatorias', route: '/vida-estudiantil', icon: 'campaign' },
       ]}
     ]
   },
   {
     label: 'Transparencia', icon: 'visibility',
     route: '/transparencia'
+  },
+  {
+    label: 'Investigación', icon: 'science',
+    children: [
+      { col: 0, items: [
+        { label: 'Instituto de Investigación', route: '/organigrama', icon: 'science' },
+        { label: 'Laboratorio de IA', route: '/organigrama', icon: 'psychology' },
+        { label: 'Laboratorio de Química', route: '/organigrama', icon: 'biotech' },
+        { label: 'Publicaciones', route: '/organigrama', icon: 'description' },
+        { label: 'Proyectos Destacados', route: '/organigrama', icon: 'star' },
+      ]}
+    ]
+  },
+  {
+    label: 'Egresados', icon: 'school',
+    children: [
+      { col: 0, items: [
+        { label: 'Comunidad de Egresados', route: '/egresados', icon: 'groups' },
+        { label: 'Bolsa de Trabajo', route: '/egresados', icon: 'work' },
+        { label: 'Red Alumni', route: '/egresados', icon: 'link' },
+        { label: 'Mentoría', route: '/egresados', icon: 'psychology' },
+        { label: 'Capacitaciones', route: '/egresados', icon: 'school' },
+      ]}
+    ]
+  },
+  {
+    label: 'Empresas', icon: 'work',
+    children: [
+      { col: 0, items: [
+        { label: 'Empresas Aliadas', route: '/empresas', icon: 'handshake' },
+        { label: 'Bolsa de Trabajo', route: '/empresas', icon: 'work' },
+        { label: 'Prácticas Preprofesionales', route: '/empresas', icon: 'school' },
+        { label: 'Convenios Vigentes', route: '/empresas', icon: 'description' },
+        { label: 'Ser Empresa Aliada', route: '/empresas', icon: 'partner_exchange' },
+      ]}
+    ]
   },
   {
     label: 'Contacto', icon: 'contact_support',

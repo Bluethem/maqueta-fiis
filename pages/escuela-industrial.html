@@ -53,8 +53,8 @@
             <dd class="font-medium text-on-surface">10 ciclos académicos (5 años)</dd>
           </div>
           <div class="flex justify-between py-2 border-b border-border-subtle">
-            <dt class="text-text-secondary">Coordinador</dt>
-            <dd class="font-medium text-on-surface">Dr. Juan Carlos Mendoza</dd>
+            <dt class="text-text-secondary">Dirección</dt>
+            <dd class="font-medium text-on-surface">Dirección de Escuela</dd>
           </div>
           <div class="flex justify-between py-2 border-b border-border-subtle">
             <dt class="text-text-secondary">Modalidad</dt>
@@ -160,52 +160,64 @@
     <div id="tab-docentes" class="tab-content hidden space-y-4">
       <p class="text-text-secondary text-sm">Docentes principales de la Escuela Profesional de Ingeniería Industrial.</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow cursor-pointer" onclick="Router.navigate('/docentes/juan-carlos-mendoza')">
           <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0">JM</div>
           <div class="min-w-0">
             <p class="font-semibold text-on-surface text-sm">Dr. Juan Carlos Mendoza</p>
-            <p class="text-xs text-text-secondary">Coordinador · Dpto. Gestión Producción</p>
+            <p class="text-xs text-text-secondary">Dpto. Gestión Producción</p>
             <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-blue-100 text-blue-700">Docente Principal</span>
+            <div class="flex items-center gap-2 mt-2 text-[10px] text-text-secondary">
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">mail</span> jmendoza@uni.edu.pe</span>
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">badge</span> ORCID: 0000-0002-1234-5678</span>
+            </div>
           </div>
         </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow cursor-pointer" onclick="Router.navigate('/docentes/patricia-maldonado')">
           <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0">PM</div>
           <div class="min-w-0">
             <p class="font-semibold text-on-surface text-sm">Mg. Patricia Maldonado</p>
             <p class="text-xs text-text-secondary">Dpto. Gestión Producción</p>
-            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-100 text-green-700">Asociado</span>
+            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-100 text-green-700">Docente Asociado</span>
+            <div class="flex items-center gap-2 mt-2 text-[10px] text-text-secondary">
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">mail</span> pmaldonado@uni.edu.pe</span>
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">badge</span> ORCID: 0000-0003-4567-8901</span>
+            </div>
           </div>
         </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow cursor-pointer" onclick="Router.navigate('/docentes/ricardo-rojas')">
           <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0">RR</div>
           <div class="min-w-0">
             <p class="font-semibold text-on-surface text-sm">Dr. Ricardo Rojas</p>
             <p class="text-xs text-text-secondary">Dpto. Ciencias Básicas</p>
             <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-blue-100 text-blue-700">Docente Principal</span>
+            <div class="flex items-center gap-2 mt-2 text-[10px] text-text-secondary">
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">mail</span> rrojas@uni.edu.pe</span>
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">badge</span> ORCID: 0000-0001-2345-6789</span>
+            </div>
           </div>
         </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow">
-          <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0">CG</div>
-          <div class="min-w-0">
-            <p class="font-semibold text-on-surface text-sm">Mg. Carmen Gutiérrez</p>
-            <p class="text-xs text-text-secondary">Dpto. Humanidades</p>
-            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-100 text-green-700">Asociado</span>
-          </div>
-        </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow cursor-pointer" onclick="Router.navigate('/docentes/alberto-vargas')">
           <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0">AV</div>
           <div class="min-w-0">
             <p class="font-semibold text-on-surface text-sm">Mg. Alberto Vargas</p>
             <p class="text-xs text-text-secondary">Dpto. Tecnología Producción</p>
-            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-100 text-green-700">Asociado</span>
+            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-100 text-green-700">Docente Asociado</span>
+            <div class="flex items-center gap-2 mt-2 text-[10px] text-text-secondary">
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">mail</span> avargas@uni.edu.pe</span>
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">badge</span> ORCID: 0000-0003-5678-9012</span>
+            </div>
           </div>
         </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow cursor-pointer" onclick="Router.navigate('/docentes/luis-fernandez')">
           <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0">LF</div>
           <div class="min-w-0">
             <p class="font-semibold text-on-surface text-sm">Dr. Luis Fernández</p>
             <p class="text-xs text-text-secondary">Dpto. Gestión Producción</p>
             <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-purple-100 text-purple-700">Investigador</span>
+            <div class="flex items-center gap-2 mt-2 text-[10px] text-text-secondary">
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">mail</span> lfernandez@uni.edu.pe</span>
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">badge</span> ORCID: 0000-0001-6789-0123</span>
+            </div>
           </div>
         </div>
       </div>

@@ -64,6 +64,15 @@
 
         <div class="bg-white border border-border-subtle rounded-xl p-6">
           <h2 class="text-lg font-bold text-primary flex items-center gap-2 mb-4">
+            <span class="material-symbols-outlined">rocket_launch</span> Proyectos Destacados
+          </h2>
+          <div class="space-y-4" id="teacher-projects">
+            <p class="text-sm text-text-secondary">Sin proyectos registrados.</p>
+          </div>
+        </div>
+
+        <div class="bg-white border border-border-subtle rounded-xl p-6">
+          <h2 class="text-lg font-bold text-primary flex items-center gap-2 mb-4">
             <span class="material-symbols-outlined">description</span> Publicaciones Destacadas
           </h2>
           <div class="space-y-4" id="teacher-publications">
@@ -167,6 +176,10 @@
         { title: 'Optimización de Redes Neuronales para Sistemas de Recomendación en Tiempo Real', authors: 'Reyes, D., Fernández, L.', year: '2023', journal: 'IEEE Latin America Transactions' },
         { title: 'Evaluación de Algoritmos de Visión Artificial para Control de Calidad Industrial', authors: 'Reyes, D.', year: '2022', journal: 'CIIS Conference Proceedings' }
       ],
+      projects: [
+        { title: 'Sistema de Recomendación Inteligente para la Bolsa Laboral FIIS', desc: 'Plataforma basada en IA que recomienda ofertas laborales personalizadas según el perfil de cada egresado FIIS.', year: '2024 - 2025' },
+        { title: 'Asistente Virtual para Trámites Académicos FIIS', desc: 'Chatbot con procesamiento de lenguaje natural para resolver consultas de estudiantes sobre trámites académicos.', year: '2023 - 2024' }
+      ],
       courses: [
         { name: 'Aprendizaje Automático', for: 'Ing. Inteligencia Artificial · 5° ciclo' },
         { name: 'Procesamiento de Lenguaje Natural', for: 'Ing. Inteligencia Artificial · 7° ciclo' },
@@ -191,6 +204,10 @@
         { title: 'Optimización de la Cadena de Suministro en Empresas Manufactureras Peruanas', authors: 'Mendoza, J., Vargas, A.', year: '2024', journal: 'Revista de Ingeniería UNI' },
         { title: 'Aplicación de Lean Manufacturing en PYMEs Industriales', authors: 'Mendoza, J.', year: '2023', journal: 'Journal of Industrial Engineering' },
         { title: 'Modelo de Gestión de Inventarios Basado en Demanda Estocástica', authors: 'Mendoza, J., Rojas, R.', year: '2022', journal: 'CIIS Proceedings' }
+      ],
+      projects: [
+        { title: 'Optimización Logística para la Red de Laboratorios FIIS', desc: 'Modelo de optimización de rutas y gestión de inventarios para los laboratorios de enseñanza e investigación de la facultad.', year: '2024' },
+        { title: 'Sistema de Gestión de Calidad ISO 9001 para Procesos Administrativos', desc: 'Implementación de mejoras en los procesos administrativos de la facultad alineados a la norma ISO 9001:2015.', year: '2023 - 2024' }
       ],
       courses: [
         { name: 'Gestión de Operaciones', for: 'Ing. Industrial · 7° ciclo' },
@@ -463,9 +480,396 @@
       publications: [
         { title: 'Simulación Numérica de Sistemas Complejos usando Redes Neuronales', authors: 'Castillo, P.', year: '2024', journal: 'Journal of Computational Physics' }
       ],
+      projects: [
+        { title: 'Modelamiento Numérico de Sistemas Térmicos Industriales', desc: 'Desarrollo de modelos computacionales para optimizar procesos térmicos en la industria manufacturera peruana.', year: '2024 - 2025' }
+      ],
       courses: [
         { name: 'Métodos Numéricos', for: 'Todas las escuelas · 4° ciclo' },
         { name: 'Física Computacional', for: 'Ing. Inteligencia Artificial · 6° ciclo' }
+      ]
+    },
+    'pablo-torres': {
+      avatar: 'PT',
+      name: 'Dr. Pablo Torres',
+      category: 'Docente Principal',
+      dept: 'Departamento de Sistemas y Telemática',
+      email: 'ptorres@uni.edu.pe',
+      orcid: '0000-0002-3456-7890',
+      school: 'sistemas',
+      education: [
+        { title: 'Doctorado en Ciencias de la Computación', uni: 'Universidad de São Paulo · 2013 - 2017' },
+        { title: 'Maestría en Redes y Comunicaciones', uni: 'Universidad Nacional de Ingeniería · 2009 - 2012' },
+        { title: 'Ingeniero de Sistemas', uni: 'Universidad Nacional de Ingeniería · 2003 - 2008' }
+      ],
+      research: ['Redes de Comunicaciones', 'Internet de las Cosas', 'Ciberseguridad Industrial'],
+      publications: [
+        { title: 'Arquitectura IoT para Monitoreo de Procesos Industriales en Tiempo Real', authors: 'Torres, P., Rodríguez, M.', year: '2024', journal: 'IEEE Internet of Things Journal' },
+        { title: 'Protocolos de Seguridad para Redes de Sensores Industriales', authors: 'Torres, P.', year: '2023', journal: 'Journal of Network Security' }
+      ],
+      projects: [
+        { title: 'Plataforma IoT para Monitoreo Ambiental en la UNI', desc: 'Implementación de una red de sensores inalámbricos para monitorear calidad del aire y consumo energético en los pabellones de la facultad.', year: '2024 - 2025' },
+        { title: 'Sistema de Detección de Intrusiones para Redes Académicas', desc: 'Desarrollo de un sistema basado en machine learning para detectar anomalías en el tráfico de red de la universidad.', year: '2023 - 2024' }
+      ],
+      courses: [
+        { name: 'Redes de Computadoras Avanzadas', for: 'Ing. de Sistemas · 7° ciclo' },
+        { name: 'Internet de las Cosas', for: 'Ing. de Sistemas · 8° ciclo' },
+        { name: 'Ciberseguridad', for: 'Ing. de Sistemas · 9° ciclo' }
+      ]
+    },
+    'lidia-navarro': {
+      avatar: 'LN',
+      name: 'Mg. Lidia Navarro',
+      category: 'Asociado',
+      dept: 'Departamento de Sistemas y Telemática',
+      email: 'lnavarro@uni.edu.pe',
+      orcid: '0000-0001-7890-1234',
+      school: 'sistemas',
+      education: [
+        { title: 'Maestría en Gestión de TI', uni: 'Universidad del Pacífico · 2014 - 2017' },
+        { title: 'Ingeniera de Sistemas', uni: 'Universidad Nacional de Ingeniería · 2008 - 2013' }
+      ],
+      research: ['Gestión de Servicios TI', 'Gobierno de Datos', 'Arquitectura Empresarial'],
+      publications: [],
+      projects: [
+        { title: 'Modelo de Gobierno de Datos para la FIIS', desc: 'Diseño e implementación de un marco de gobierno de datos institucional para mejorar la calidad y acceso a la información académica.', year: '2024' }
+      ],
+      courses: [
+        { name: 'Gobierno de TI', for: 'Ing. de Sistemas · 9° ciclo' },
+        { name: 'Gestión de Servicios TI', for: 'Ing. de Sistemas · 8° ciclo' }
+      ]
+    },
+    'daniel-montero': {
+      avatar: 'DM',
+      name: 'Dr. Daniel Montero',
+      category: 'Investigador',
+      dept: 'Departamento de Sistemas y Telemática',
+      email: 'dmontero@uni.edu.pe',
+      orcid: '0000-0002-1111-2222',
+      school: 'software',
+      education: [
+        { title: 'Doctorado en Ingeniería de Software', uni: 'Universidad Politécnica de Madrid · 2015 - 2019' },
+        { title: 'Maestría en Ingeniería de Software', uni: 'Universidad Nacional de Ingeniería · 2011 - 2014' },
+        { title: 'Ingeniero de Sistemas', uni: 'Universidad Nacional de Ingeniería · 2005 - 2010' }
+      ],
+      research: ['Calidad de Software', 'Metodologías Ágiles', 'DevOps'],
+      publications: [
+        { title: 'Integración Continua y Despliegue Automatizado en Entornos Universitarios', authors: 'Montero, D., Farfán, R.', year: '2024', journal: 'Software Engineering Journal' }
+      ],
+      projects: [
+        { title: 'Plataforma de Evaluación Automatizada de Código', desc: 'Sistema web para evaluación automática de prácticas de programación usando análisis estático y pruebas unitarias.', year: '2024 - 2025' },
+        { title: 'Framework Ágil para Proyectos de Investigación Estudiantil', desc: 'Metodología adaptada de Scrum para gestionar proyectos de investigación en pregrado, mejorando la tasa de culminación exitosa.', year: '2023' }
+      ],
+      courses: [
+        { name: 'Calidad de Software', for: 'Ing. de Software · 7° ciclo' },
+        { name: 'DevOps', for: 'Ing. de Software · 9° ciclo' },
+        { name: 'Metodologías Ágiles', for: 'Ing. de Software · 5° ciclo' }
+      ]
+    },
+    'renato-farfan': {
+      avatar: 'RF',
+      name: 'Mg. Renato Farfán',
+      category: 'Investigador',
+      dept: 'Departamento de Sistemas y Telemática',
+      email: 'rfarfan@uni.edu.pe',
+      orcid: '0000-0001-5555-6666',
+      school: 'software',
+      education: [
+        { title: 'Maestría en Ciencia de Datos', uni: 'Universidad Nacional de Ingeniería · 2016 - 2019' },
+        { title: 'Ingeniero de Software', uni: 'Universidad Nacional de Ingeniería · 2010 - 2015' }
+      ],
+      research: ['Ciencia de Datos', 'Visualización', 'Procesamiento de Datos Masivos'],
+      publications: [],
+      projects: [
+        { title: 'Dashboard Inteligente para Indicadores Académicos FIIS', desc: 'Plataforma de visualización de datos con inteligencia artificial para monitorear el rendimiento académico estudiantil en tiempo real.', year: '2024' }
+      ],
+      courses: [
+        { name: 'Ciencia de Datos', for: 'Ing. de Software · 8° ciclo' },
+        { name: 'Visualización de Datos', for: 'Ing. de Software · 6° ciclo' }
+      ]
+    },
+    'gabriela-huaman': {
+      avatar: 'GH',
+      name: 'Mg. Gabriela Huamán',
+      category: 'Asociado',
+      dept: 'Departamento de Sistemas y Telemática',
+      email: 'ghuaman@uni.edu.pe',
+      orcid: '0000-0003-3333-4444',
+      school: 'software',
+      education: [
+        { title: 'Maestría en Interacción Humano-Computador', uni: 'Universidad de Chile · 2017 - 2020' },
+        { title: 'Ingeniera de Software', uni: 'Universidad Nacional de Ingeniería · 2011 - 2016' }
+      ],
+      research: ['UX/UI', 'Accesibilidad Web', 'Diseño Centrado en el Usuario'],
+      publications: [
+        { title: 'Evaluación de Accesibilidad Web en Portales Universitarios Peruanos', authors: 'Huamán, G., Vega, K.', year: '2024', journal: 'CHI Latin America' }
+      ],
+      projects: [
+        { title: 'Rediseño UX del Portal Académico FIIS', desc: 'Investigación y rediseño centrado en el usuario para mejorar la experiencia de estudiantes y docentes en el portal institucional.', year: '2024 - 2025' }
+      ],
+      courses: [
+        { name: 'Interacción Humano-Computador', for: 'Ing. de Software · 5° ciclo' },
+        { name: 'Diseño de Interfaces', for: 'Ing. de Software · 6° ciclo' }
+      ]
+    },
+    'cesar-pimentel': {
+      avatar: 'CP',
+      name: 'Mg. César Pimentel',
+      category: 'Asociado',
+      dept: 'Departamento de Ciencias Básicas',
+      email: 'cpimentel@uni.edu.pe',
+      orcid: '0000-0002-7777-8888',
+      school: 'software',
+      education: [
+        { title: 'Maestría en Matemáticas Aplicadas', uni: 'Universidad Nacional de Ingeniería · 2015 - 2018' },
+        { title: 'Licenciado en Matemáticas', uni: 'Universidad Nacional de Ingeniería · 2009 - 2014' }
+      ],
+      research: ['Matemáticas Discretas', 'Lógica Computacional', 'Teoría de Grafos'],
+      publications: [],
+      projects: [],
+      courses: [
+        { name: 'Matemática Discreta', for: 'Ing. de Software · 2° ciclo' },
+        { name: 'Lógica Computacional', for: 'Ing. de Software · 3° ciclo' }
+      ]
+    },
+    'andrea-rios': {
+      avatar: 'AR',
+      name: 'Mg. Andrea Ríos',
+      category: 'Asociado',
+      dept: 'Departamento de Gestión Producción',
+      email: 'arios@uni.edu.pe',
+      orcid: '0000-0002-1111-3333',
+      school: 'industrial',
+      education: [
+        { title: 'Maestría en Ingeniería Industrial', uni: 'Universidad Nacional de Ingeniería · 2015 - 2018' },
+        { title: 'Ingeniera Industrial', uni: 'Universidad Nacional de Ingeniería · 2009 - 2014' }
+      ],
+      research: ['Simulación', 'Planificación y Control de Producción'],
+      publications: [],
+      projects: [],
+      courses: [
+        { name: 'Simulación de Procesos', for: 'Ing. Industrial · 8° ciclo' },
+        { name: 'Planificación y Control de Producción', for: 'Ing. Industrial · 7° ciclo' }
+      ]
+    },
+    'rosa-huaman': {
+      avatar: 'RH',
+      name: 'Mg. Rosa Huamán',
+      category: 'Asociado',
+      dept: 'Departamento de Tecnología Producción',
+      email: 'rhuaman@uni.edu.pe',
+      orcid: '0000-0003-2222-4444',
+      school: 'industrial',
+      education: [
+        { title: 'Maestría en Ingeniería de Manufactura', uni: 'Universidad Nacional de Ingeniería · 2016 - 2019' },
+        { title: 'Ingeniera Industrial', uni: 'Universidad Nacional de Ingeniería · 2010 - 2015' }
+      ],
+      research: ['Procesos de Manufactura', 'Automatización'],
+      publications: [],
+      projects: [],
+      courses: [
+        { name: 'Tecnología de la Producción', for: 'Ing. Industrial · 6° ciclo' },
+        { name: 'Procesos de Manufactura', for: 'Ing. Industrial · 5° ciclo' }
+      ]
+    },
+    'javier-villanueva': {
+      avatar: 'JV',
+      name: 'Ing. Javier Villanueva',
+      category: 'Asociado',
+      dept: 'Departamento de Tecnología Producción',
+      email: 'jvillanueva@uni.edu.pe',
+      orcid: '0000-0001-3333-5555',
+      school: 'industrial',
+      education: [
+        { title: 'Ingeniero Mecánico', uni: 'Universidad Nacional de Ingeniería · 2008 - 2013' }
+      ],
+      research: ['Mantenimiento Industrial', 'Automatización'],
+      publications: [],
+      projects: [],
+      courses: [
+        { name: 'Mantenimiento Industrial', for: 'Ing. Industrial · 8° ciclo' }
+      ]
+    },
+    'roberto-tapia': {
+      avatar: 'RT',
+      name: 'Dr. Roberto Tapia',
+      category: 'Principal',
+      dept: 'Departamento de Humanidades',
+      email: 'rtapia@uni.edu.pe',
+      orcid: '0000-0002-4444-6666',
+      school: 'industrial',
+      education: [
+        { title: 'Doctorado en Ciencias Sociales', uni: 'Universidad Nacional Mayor de San Marcos · 2010 - 2015' },
+        { title: 'Maestría en Sociología', uni: 'Pontificia Universidad Católica del Perú · 2006 - 2009' },
+        { title: 'Licenciado en Sociología', uni: 'Universidad Nacional Mayor de San Marcos · 2000 - 2005' }
+      ],
+      research: ['Sociología Industrial', 'Ética Profesional', 'Responsabilidad Social'],
+      publications: [],
+      projects: [],
+      courses: [
+        { name: 'Realidad Nacional', for: 'Todas las escuelas · 1° ciclo' },
+        { name: 'Ética Profesional', for: 'Todas las escuelas · 4° ciclo' }
+      ]
+    },
+    'daniela-morales': {
+      avatar: 'DM',
+      name: 'Mg. Daniela Morales',
+      category: 'Asociado',
+      dept: 'Departamento de Humanidades',
+      email: 'dmorales@uni.edu.pe',
+      orcid: '0000-0003-5555-7777',
+      school: 'industrial',
+      education: [
+        { title: 'Maestría en Comunicación', uni: 'Universidad de Lima · 2014 - 2017' },
+        { title: 'Licenciada en Comunicación Social', uni: 'Universidad Nacional Mayor de San Marcos · 2008 - 2013' }
+      ],
+      research: ['Comunicación Organizacional', 'Liderazgo'],
+      publications: [],
+      projects: [],
+      courses: [
+        { name: 'Comunicación Empresarial', for: 'Todas las escuelas · 3° ciclo' },
+        { name: 'Liderazgo y Trabajo en Equipo', for: 'Todas las escuelas · 5° ciclo' }
+      ]
+    },
+    'edgar-quispe': {
+      avatar: 'EQ',
+      name: 'Dr. Edgar Quispe',
+      category: 'Principal',
+      dept: 'Departamento de Sistemas y Telemática',
+      email: 'equispe@uni.edu.pe',
+      orcid: '0000-0001-6666-8888',
+      school: 'sistemas',
+      education: [
+        { title: 'Doctorado en Ingeniería de Sistemas', uni: 'Universidad Nacional de Ingeniería · 2012 - 2017' },
+        { title: 'Maestría en Redes y Comunicaciones', uni: 'Universidad Ricardo Palma · 2008 - 2011' },
+        { title: 'Ingeniero de Sistemas', uni: 'Universidad Nacional de Ingeniería · 2002 - 2007' }
+      ],
+      research: ['Redes de Comunicaciones', 'Telecomunicaciones', 'Fibra Óptica'],
+      publications: [],
+      projects: [],
+      courses: [
+        { name: 'Redes de Comunicaciones', for: 'Ing. de Sistemas · 6° ciclo' },
+        { name: 'Telecomunicaciones', for: 'Ing. de Sistemas · 7° ciclo' }
+      ]
+    },
+    'hugo-ramirez': {
+      avatar: 'HR',
+      name: 'Mg. Hugo Ramírez',
+      category: 'Asociado',
+      dept: 'Departamento de Sistemas y Telemática',
+      email: 'hramirez@uni.edu.pe',
+      orcid: '0000-0002-7777-9999',
+      school: 'sistemas',
+      education: [
+        { title: 'Maestría en Ingeniería de Sistemas', uni: 'Universidad Nacional de Ingeniería · 2015 - 2018' },
+        { title: 'Ingeniero de Sistemas', uni: 'Universidad Nacional de Ingeniería · 2009 - 2014' }
+      ],
+      research: ['Bases de Datos', 'Inteligencia de Negocios'],
+      publications: [],
+      projects: [],
+      courses: [
+        { name: 'Bases de Datos Avanzadas', for: 'Ing. de Sistemas · 5° ciclo' },
+        { name: 'Inteligencia de Negocios', for: 'Ing. de Sistemas · 8° ciclo' }
+      ]
+    },
+    'sara-medina': {
+      avatar: 'SM',
+      name: 'Mg. Sara Medina',
+      category: 'Asociado',
+      dept: 'Departamento de Sistemas y Telemática',
+      email: 'smedina@uni.edu.pe',
+      orcid: '0000-0003-8888-0000',
+      school: 'sistemas',
+      education: [
+        { title: 'Maestría en Ciencias de la Computación', uni: 'Universidad de São Paulo · 2016 - 2019' },
+        { title: 'Ingeniera de Sistemas', uni: 'Universidad Nacional de Ingeniería · 2010 - 2015' }
+      ],
+      research: ['Sistemas Operativos', 'Virtualización', 'Cloud Computing'],
+      publications: [],
+      projects: [],
+      courses: [
+        { name: 'Sistemas Operativos', for: 'Ing. de Sistemas · 4° ciclo' },
+        { name: 'Cloud Computing', for: 'Ing. de Sistemas · 9° ciclo' }
+      ]
+    },
+    'paulo-cardenas': {
+      avatar: 'PC',
+      name: 'Mg. Paulo Cárdenas',
+      category: 'Asociado',
+      dept: 'Departamento de Sistemas y Telemática',
+      email: 'pcardenas@uni.edu.pe',
+      orcid: '0000-0001-9999-1111',
+      school: 'sistemas',
+      education: [
+        { title: 'Maestría en Seguridad Informática', uni: 'Universidad Nacional de Ingeniería · 2017 - 2020' },
+        { title: 'Ingeniero de Sistemas', uni: 'Universidad Nacional de Ingeniería · 2011 - 2016' }
+      ],
+      research: ['Seguridad Informática', 'Auditoría de Sistemas'],
+      publications: [],
+      projects: [],
+      courses: [
+        { name: 'Seguridad Informática', for: 'Ing. de Sistemas · 8° ciclo' },
+        { name: 'Auditoría de Sistemas', for: 'Ing. de Sistemas · 9° ciclo' }
+      ]
+    },
+    'mario-lopez': {
+      avatar: 'ML',
+      name: 'Mg. Mario López',
+      category: 'Asociado',
+      dept: 'Departamento de Ciencias Básicas',
+      email: 'mlopez@uni.edu.pe',
+      orcid: '0000-0002-0000-2222',
+      school: 'industrial',
+      education: [
+        { title: 'Maestría en Matemáticas', uni: 'Universidad Nacional de Ingeniería · 2013 - 2016' },
+        { title: 'Licenciado en Matemáticas', uni: 'Universidad Nacional de Ingeniería · 2007 - 2012' }
+      ],
+      research: ['Álgebra Lineal', 'Ecuaciones Diferenciales'],
+      publications: [],
+      projects: [],
+      courses: [
+        { name: 'Álgebra Lineal', for: 'Todas las escuelas · 2° ciclo' },
+        { name: 'Ecuaciones Diferenciales', for: 'Todas las escuelas · 3° ciclo' }
+      ]
+    },
+    'silvia-paredes': {
+      avatar: 'SP',
+      name: 'Dra. Silvia Paredes',
+      category: 'Principal',
+      dept: 'Departamento de Ciencias Básicas',
+      email: 'sparedes@uni.edu.pe',
+      orcid: '0000-0003-1111-3333',
+      school: 'industrial',
+      education: [
+        { title: 'Doctorado en Física', uni: 'Universidad Nacional de Ingeniería · 2011 - 2016' },
+        { title: 'Maestría en Física', uni: 'Universidad Nacional Mayor de San Marcos · 2007 - 2010' },
+        { title: 'Licenciada en Física', uni: 'Universidad Nacional de Ingeniería · 2001 - 2006' }
+      ],
+      research: ['Física Aplicada', 'Termodinámica', 'Mecánica de Fluidos'],
+      publications: [],
+      projects: [],
+      courses: [
+        { name: 'Física II', for: 'Todas las escuelas · 2° ciclo' },
+        { name: 'Física III', for: 'Todas las escuelas · 3° ciclo' }
+      ]
+    },
+    'carlos-vega': {
+      avatar: 'CV',
+      name: 'Mg. Carlos Vega',
+      category: 'Asociado',
+      dept: 'Departamento de Ciencias Básicas',
+      email: 'cvega@uni.edu.pe',
+      orcid: '0000-0001-2222-4444',
+      school: 'industrial',
+      education: [
+        { title: 'Maestría en Estadística', uni: 'Universidad Nacional Agraria La Molina · 2014 - 2017' },
+        { title: 'Licenciado en Estadística', uni: 'Universidad Nacional de Ingeniería · 2008 - 2013' }
+      ],
+      research: ['Estadística Aplicada', 'Diseño de Experimentos'],
+      publications: [],
+      projects: [],
+      courses: [
+        { name: 'Estadística Aplicada I', for: 'Todas las escuelas · 3° ciclo' },
+        { name: 'Diseño de Experimentos', for: 'Ing. Industrial · 7° ciclo' }
       ]
     }
   };
@@ -518,6 +922,19 @@
         <p class="text-xs text-text-secondary">${c.for}</p>
       </div>
     `).join('');
+
+    const projectsEl = document.getElementById('teacher-projects');
+    if (teacher.projects && teacher.projects.length > 0) {
+      projectsEl.innerHTML = teacher.projects.map(p => `
+        <div class="border-l-2 border-primary/30 pl-4 py-1">
+          <p class="font-semibold text-on-surface text-sm">${p.title}</p>
+          <p class="text-xs text-text-secondary mt-1 leading-relaxed">${p.desc}</p>
+          <span class="text-[10px] text-primary font-semibold mt-1 inline-block">${p.year}</span>
+        </div>
+      `).join('');
+    } else {
+      projectsEl.innerHTML = '<p class="text-sm text-text-secondary">Sin proyectos registrados.</p>';
+    }
   }
 })();
 </script>

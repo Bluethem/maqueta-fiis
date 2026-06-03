@@ -53,8 +53,8 @@
             <dd class="font-medium text-on-surface">10 ciclos académicos (5 años)</dd>
           </div>
           <div class="flex justify-between py-2 border-b border-border-subtle">
-            <dt class="text-text-secondary">Coordinador</dt>
-            <dd class="font-medium text-on-surface">Dr. Miguel Rodríguez</dd>
+            <dt class="text-text-secondary">Dirección</dt>
+            <dd class="font-medium text-on-surface">Dirección de Escuela</dd>
           </div>
           <div class="flex justify-between py-2 border-b border-border-subtle">
             <dt class="text-text-secondary">Modalidad</dt>
@@ -160,52 +160,76 @@
     <div id="tab-docentes" class="tab-content hidden space-y-4">
       <p class="text-text-secondary text-sm">Docentes principales de la Escuela Profesional de Ingeniería de Sistemas.</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow cursor-pointer" onclick="Router.navigate('/docentes/miguel-rodriguez')">
           <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0">MR</div>
           <div class="min-w-0">
             <p class="font-semibold text-on-surface text-sm">Dr. Miguel Rodríguez</p>
-            <p class="text-xs text-text-secondary">Coordinador · Dpto. Sistemas y Telemática</p>
+            <p class="text-xs text-text-secondary">Dpto. Sistemas y Telemática</p>
             <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-blue-100 text-blue-700">Docente Principal</span>
+            <div class="flex items-center gap-2 mt-2 text-[10px] text-text-secondary">
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">mail</span> mrodriguez@uni.edu.pe</span>
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">badge</span> ORCID: 0000-0002-8901-2345</span>
+            </div>
           </div>
         </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow cursor-pointer" onclick="Router.navigate('/docentes/rosa-paredes')">
           <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0">RP</div>
           <div class="min-w-0">
             <p class="font-semibold text-on-surface text-sm">Mg. Rosa Paredes</p>
             <p class="text-xs text-text-secondary">Dpto. Sistemas y Telemática</p>
             <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-100 text-green-700">Asociado</span>
+            <div class="flex items-center gap-2 mt-2 text-[10px] text-text-secondary">
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">mail</span> rparedes@uni.edu.pe</span>
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">badge</span> ORCID: 0000-0003-9012-3456</span>
+            </div>
           </div>
         </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow cursor-pointer" onclick="Router.navigate('/docentes/carlos-meza')">
           <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0">CM</div>
           <div class="min-w-0">
             <p class="font-semibold text-on-surface text-sm">Dr. Carlos Meza</p>
             <p class="text-xs text-text-secondary">Dpto. Sistemas y Telemática</p>
             <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-blue-100 text-blue-700">Docente Principal</span>
+            <div class="flex items-center gap-2 mt-2 text-[10px] text-text-secondary">
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">mail</span> cmeza@uni.edu.pe</span>
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">badge</span> ORCID: 0000-0001-0123-4567</span>
+            </div>
           </div>
         </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow cursor-pointer" onclick="Router.navigate('/docentes/silvia-juarez')">
           <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0">SJ</div>
           <div class="min-w-0">
             <p class="font-semibold text-on-surface text-sm">Mg. Silvia Juárez</p>
             <p class="text-xs text-text-secondary">Dpto. Ciencias Básicas</p>
             <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-100 text-green-700">Asociado</span>
+            <div class="flex items-center gap-2 mt-2 text-[10px] text-text-secondary">
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">mail</span> sjuarez@uni.edu.pe</span>
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">badge</span> ORCID: 0000-0002-5678-9012</span>
+            </div>
           </div>
         </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow cursor-pointer" onclick="Router.navigate('/docentes/pablo-torres')">
           <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0">PT</div>
           <div class="min-w-0">
             <p class="font-semibold text-on-surface text-sm">Dr. Pablo Torres</p>
             <p class="text-xs text-text-secondary">Dpto. Sistemas y Telemática</p>
             <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-purple-100 text-purple-700">Investigador</span>
+            <div class="flex items-center gap-2 mt-2 text-[10px] text-text-secondary">
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">mail</span> ptorres@uni.edu.pe</span>
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">badge</span> ORCID: 0000-0002-3456-7890</span>
+            </div>
           </div>
         </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow cursor-pointer" onclick="Router.navigate('/docentes/lidia-navarro')">
           <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0">LN</div>
           <div class="min-w-0">
             <p class="font-semibold text-on-surface text-sm">Mg. Lidia Navarro</p>
             <p class="text-xs text-text-secondary">Dpto. Sistemas y Telemática</p>
             <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-100 text-green-700">Asociado</span>
+            <div class="flex items-center gap-2 mt-2 text-[10px] text-text-secondary">
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">mail</span> lnavarro@uni.edu.pe</span>
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">badge</span> ORCID: 0000-0001-7890-1234</span>
+            </div>
           </div>
         </div>
       </div>
