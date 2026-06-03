@@ -193,6 +193,13 @@ Router.add('/vida-estudiantil', () => routePublic('vida-estudiantil'));
 Router.add('/vida-estudiantil/:id', (id) => routePublicDetail(id));
 Router.add('/directorio', () => routePublic('directorio'));
 Router.add('/calendario', () => routePublic('calendario'));
+Router.add('/docentes/:id', (id) => routePublicDetailDocente(id));
+
+async function routePublicDetailDocente(id) {
+  window.__DOCENTE_ID = id;
+  const html = await loadPage('docente-perfil');
+  renderPublicPage(html);
+}
 Router.add('/dashboard/admin', () => routeDashboard('admin'));
 Router.add('/dashboard/admin-web', () => routeDashboard('admin'));
 Router.add('/dashboard/empresa', () => routeDashboard('empresa'));
