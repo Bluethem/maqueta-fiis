@@ -1,0 +1,219 @@
+<div class="page-enter space-y-8">
+
+  <!-- Hero -->
+  <section class="relative bg-primary overflow-hidden rounded-2xl min-h-[220px] flex items-center">
+    <div class="absolute inset-0 opacity-10" style="background-image:repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%);background-size:20px 20px;"></div>
+    <div class="relative z-10 px-8 md:px-16 py-10 w-full">
+      <div class="max-w-2xl">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="material-symbols-outlined text-brand-cream text-3xl" style="font-variation-settings:'FILL'1;">campaign</span>
+          <span class="text-brand-cream font-semibold text-sm uppercase tracking-widest">Secretaría Académica</span>
+        </div>
+        <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-2 leading-tight">Avisos Académicos</h1>
+        <p class="text-on-primary/90 text-lg leading-relaxed max-w-xl">Resoluciones, comunicados y avisos relevantes para la comunidad estudiantil de la FIIS-UNI.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-[1200px] mx-auto px-6 md:px-8 space-y-6">
+
+    <!-- Filtros -->
+    <div class="flex flex-wrap items-center gap-3">
+      <div class="flex flex-wrap gap-2" id="avisoTipoFilters">
+        <button data-tipo="all" class="aviso-tipo-btn active px-3.5 py-1.5 text-sm font-semibold bg-primary text-on-primary rounded-lg transition-all">Todos</button>
+        <button data-tipo="resolucion" class="aviso-tipo-btn px-3.5 py-1.5 text-sm font-medium border border-border-subtle text-text-secondary rounded-lg hover:border-primary hover:text-primary transition-all">Resoluciones</button>
+        <button data-tipo="aviso" class="aviso-tipo-btn px-3.5 py-1.5 text-sm font-medium border border-border-subtle text-text-secondary rounded-lg hover:border-primary hover:text-primary transition-all">Avisos académicos</button>
+        <button data-tipo="comunicado" class="aviso-tipo-btn px-3.5 py-1.5 text-sm font-medium border border-border-subtle text-text-secondary rounded-lg hover:border-primary hover:text-primary transition-all">Comunicados</button>
+      </div>
+      <div class="ml-auto relative">
+        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary text-sm pointer-events-none">search</span>
+        <input id="avisoSearch" type="text" placeholder="Buscar aviso..." class="pl-9 pr-3 py-1.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary w-56">
+      </div>
+    </div>
+
+    <!-- Lista de avisos -->
+    <div id="avisosList" class="space-y-3">
+
+      <!-- Resolución Decanal -->
+      <div class="aviso-item bg-white rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all" data-tipo="resolucion">
+        <div class="flex items-start gap-4 p-5">
+          <div class="w-10 h-10 rounded-lg bg-error/10 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-error text-lg" style="font-variation-settings:'FILL'1;">gavel</span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex flex-wrap items-center gap-2 mb-1.5">
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-error/10 text-error">Resolución</span>
+              <span class="text-xs text-text-secondary">N.° 0234-2024-FIIS — 28 Oct 2024</span>
+            </div>
+            <h3 class="font-bold text-on-surface text-sm leading-snug">Resolución Decanal que aprueba el Cronograma de Evaluaciones Finales — Semestre 2024-II</h3>
+            <p class="text-xs text-text-secondary mt-1.5 leading-relaxed">Se aprueba el cronograma oficial de exámenes finales para todas las Escuelas Profesionales de la FIIS, correspondiente al semestre académico 2024-II.</p>
+          </div>
+          <a href="#" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold text-primary border border-primary/30 rounded-lg hover:bg-primary/5 transition-all">
+            <span class="material-symbols-outlined text-xs">download</span>PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- Aviso académico -->
+      <div class="aviso-item bg-white rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all" data-tipo="aviso">
+        <div class="flex items-start gap-4 p-5">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings:'FILL'1;">notifications_active</span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex flex-wrap items-center gap-2 mb-1.5">
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-primary/10 text-primary">Aviso académico</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-success/10 text-success">
+                <span class="w-1.5 h-1.5 rounded-full bg-success inline-block"></span>Nuevo
+              </span>
+              <span class="text-xs text-text-secondary">25 Oct 2024</span>
+            </div>
+            <h3 class="font-bold text-on-surface text-sm leading-snug">Ampliación del plazo de sustentación de tesis — Escuelas de Industrial y Sistemas</h3>
+            <p class="text-xs text-text-secondary mt-1.5 leading-relaxed">Se comunica que el plazo para la presentación del informe final de tesis se extiende hasta el 15 de noviembre de 2024 para los bachilleres que hayan cumplido con el 80% de avance certificado.</p>
+          </div>
+          <span class="flex-shrink-0 text-xs text-text-secondary">Comunicado</span>
+        </div>
+      </div>
+
+      <!-- Comunicado -->
+      <div class="aviso-item bg-white rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all" data-tipo="comunicado">
+        <div class="flex items-start gap-4 p-5">
+          <div class="w-10 h-10 rounded-lg bg-warning/10 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-warning text-lg" style="font-variation-settings:'FILL'1;">info</span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex flex-wrap items-center gap-2 mb-1.5">
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-warning/10 text-warning">Comunicado</span>
+              <span class="text-xs text-text-secondary">20 Oct 2024</span>
+            </div>
+            <h3 class="font-bold text-on-surface text-sm leading-snug">Comunicado sobre actualización del Reglamento de Evaluación Académica FIIS 2024</h3>
+            <p class="text-xs text-text-secondary mt-1.5 leading-relaxed">Se pone en conocimiento de la comunidad estudiantil las modificaciones aprobadas al Reglamento de Evaluación Académica, con vigencia a partir del semestre 2025-I.</p>
+          </div>
+          <a href="#" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold text-primary border border-primary/30 rounded-lg hover:bg-primary/5 transition-all">
+            <span class="material-symbols-outlined text-xs">download</span>PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- Resolución -->
+      <div class="aviso-item bg-white rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all" data-tipo="resolucion">
+        <div class="flex items-start gap-4 p-5">
+          <div class="w-10 h-10 rounded-lg bg-error/10 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-error text-lg" style="font-variation-settings:'FILL'1;">gavel</span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex flex-wrap items-center gap-2 mb-1.5">
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-error/10 text-error">Resolución</span>
+              <span class="text-xs text-text-secondary">N.° 0210-2024-FIIS — 15 Oct 2024</span>
+            </div>
+            <h3 class="font-bold text-on-surface text-sm leading-snug">Resolución de aprobación de estudiantes para intercambio académico — Programa Alianzas del Pacífico 2025</h3>
+            <p class="text-xs text-text-secondary mt-1.5 leading-relaxed">Se resuelve aprobar la lista de 12 estudiantes seleccionados para el programa de movilidad estudiantil 2025, correspondientes a las escuelas de Industrial, Sistemas y Software.</p>
+          </div>
+          <a href="#" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold text-primary border border-primary/30 rounded-lg hover:bg-primary/5 transition-all">
+            <span class="material-symbols-outlined text-xs">download</span>PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- Aviso académico -->
+      <div class="aviso-item bg-white rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all" data-tipo="aviso">
+        <div class="flex items-start gap-4 p-5">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings:'FILL'1;">notifications_active</span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex flex-wrap items-center gap-2 mb-1.5">
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-primary/10 text-primary">Aviso académico</span>
+              <span class="text-xs text-text-secondary">10 Oct 2024</span>
+            </div>
+            <h3 class="font-bold text-on-surface text-sm leading-snug">Convocatoria de matrícula para estudiantes observados — Semestre 2024-II</h3>
+            <p class="text-xs text-text-secondary mt-1.5 leading-relaxed">Se convoca a los estudiantes con observaciones académicas a apersonarse a la Dirección de Escuela entre el 12 y 18 de octubre para regularización de matrícula.</p>
+          </div>
+          <span class="flex-shrink-0 text-xs text-text-secondary">Ver más</span>
+        </div>
+      </div>
+
+      <!-- Comunicado -->
+      <div class="aviso-item bg-white rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all" data-tipo="comunicado">
+        <div class="flex items-start gap-4 p-5">
+          <div class="w-10 h-10 rounded-lg bg-warning/10 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-warning text-lg" style="font-variation-settings:'FILL'1;">info</span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex flex-wrap items-center gap-2 mb-1.5">
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-warning/10 text-warning">Comunicado</span>
+              <span class="text-xs text-text-secondary">02 Oct 2024</span>
+            </div>
+            <h3 class="font-bold text-on-surface text-sm leading-snug">Suspensión de clases por actividades académico-administrativas — 07 y 08 de octubre 2024</h3>
+            <p class="text-xs text-text-secondary mt-1.5 leading-relaxed">En el marco de la Semana Institucional FIIS 2024, las actividades académicas se suspenden los días 7 y 8 de octubre. Se recuperarán según cronograma que cada docente comunicará.</p>
+          </div>
+          <span class="flex-shrink-0 text-xs text-text-secondary">Comunicado</span>
+        </div>
+      </div>
+
+      <!-- Resolución -->
+      <div class="aviso-item bg-white rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all" data-tipo="resolucion">
+        <div class="flex items-start gap-4 p-5">
+          <div class="w-10 h-10 rounded-lg bg-error/10 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-error text-lg" style="font-variation-settings:'FILL'1;">gavel</span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex flex-wrap items-center gap-2 mb-1.5">
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-error/10 text-error">Resolución</span>
+              <span class="text-xs text-text-secondary">N.° 0195-2024-FIIS — 25 Sep 2024</span>
+            </div>
+            <h3 class="font-bold text-on-surface text-sm leading-snug">Resolución de nombramiento de docentes asesores de prácticas preprofesionales — Escuelas Industrial y Software 2024-II</h3>
+            <p class="text-xs text-text-secondary mt-1.5 leading-relaxed">Se designa a los docentes responsables de la supervisión de prácticas preprofesionales para el semestre 2024-II, según el listado adjunto.</p>
+          </div>
+          <a href="#" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold text-primary border border-primary/30 rounded-lg hover:bg-primary/5 transition-all">
+            <span class="material-symbols-outlined text-xs">download</span>PDF
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Paginación -->
+    <div class="flex items-center justify-between pt-2">
+      <p class="text-xs text-text-secondary">Mostrando 7 de 42 avisos</p>
+      <div class="flex gap-2">
+        <button class="px-3 py-1 text-xs border border-border-subtle rounded-lg text-text-secondary opacity-50 cursor-not-allowed" disabled>Anterior</button>
+        <button class="px-3 py-1 text-xs border border-border-subtle rounded-lg text-text-secondary hover:bg-surface-container-low transition-all">Siguiente</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function() {
+  var tipoBtns = document.querySelectorAll('.aviso-tipo-btn');
+  var items = document.querySelectorAll('.aviso-item');
+  var searchInput = document.getElementById('avisoSearch');
+  var activeTipo = 'all';
+
+  function applyFilters() {
+    var q = searchInput.value.toLowerCase();
+    items.forEach(function(item) {
+      var matchTipo = activeTipo === 'all' || item.dataset.tipo === activeTipo;
+      var matchSearch = q === '' || item.innerText.toLowerCase().includes(q);
+      item.style.display = (matchTipo && matchSearch) ? '' : 'none';
+    });
+  }
+
+  tipoBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      tipoBtns.forEach(function(b) {
+        b.classList.remove('bg-primary','text-on-primary','active');
+        b.classList.add('border','border-border-subtle','text-text-secondary');
+      });
+      btn.classList.add('bg-primary','text-on-primary','active');
+      btn.classList.remove('border','border-border-subtle','text-text-secondary');
+      activeTipo = btn.dataset.tipo;
+      applyFilters();
+    });
+  });
+
+  searchInput.addEventListener('input', applyFilters);
+})();
+</script>

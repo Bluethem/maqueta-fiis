@@ -1,9 +1,11 @@
 const Components = {
   render(session, contentHtml) {
     const app = document.getElementById('app');
+    const scripts = (typeof extractScripts === 'function') ? extractScripts(contentHtml) : [];
     app.innerHTML = this.layout(session, contentHtml);
     this.bindSidebarEvents(session.role);
     this.bindLogout();
+    if (typeof executeScripts === 'function') executeScripts(scripts);
   },
 
   layout(session, content) {

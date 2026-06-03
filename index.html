@@ -92,6 +92,7 @@ tailwind.config = {
 </head>
 <body>
 <div id="app"></div>
+<script src="js/store.js?v=20260603-admin-vacantes"></script>
 <script src="js/auth.js"></script>
 <script src="js/components.js"></script>
 <script src="js/router.js"></script>
@@ -188,11 +189,22 @@ Router.add('/departamentos/tecnologia-produccion', () => routePublic('departamen
 Router.add('/cronogramas', () => routePublic('cronogramas'));
 Router.add('/directorio-docentes', () => routePublic('directorio-docentes'));
 Router.add('/empresas', () => routePublic('empresas'));
+['industrias-acero','grana-montero','backus','alicorp','scotiabank','komatsu','ferreyros','interbank'].forEach(function(slug) {
+  Router.add('/empresa-detalle/' + slug, async function() {
+    window.__empresaId = slug;
+    const html = await loadPage('empresa-detalle');
+    renderPublicLayout(html, '/empresas');
+  });
+});
 Router.add('/egresados', () => routePublic('egresados'));
 Router.add('/vida-estudiantil', () => routePublic('vida-estudiantil'));
 Router.add('/vida-estudiantil/:id', (id) => routePublicDetail(id));
 Router.add('/directorio', () => routePublic('directorio'));
 Router.add('/calendario', () => routePublic('calendario'));
+Router.add('/guias-academicas', () => routePublic('guias-academicas'));
+Router.add('/avisos-academicos', () => routePublic('avisos-academicos'));
+Router.add('/servicios', () => routePublic('servicios'));
+Router.add('/laboratorios', () => routePublic('laboratorios'));
 Router.add('/dashboard/admin', () => routeDashboard('admin'));
 Router.add('/dashboard/admin-web', () => routeDashboard('admin'));
 Router.add('/dashboard/empresa', () => routeDashboard('empresa'));
@@ -238,6 +250,7 @@ Router.add('/dashboard/empresa/notificaciones', () => routeDashboardSub('empresa
 Router.add('/dashboard/laboratorio/pagina', () => routeDashboardSub('laboratorio', 'pagina'));
 Router.add('/dashboard/laboratorio/servicios', () => routeDashboardSub('laboratorio', 'servicios'));
 Router.add('/dashboard/admin/vacantes', () => routeDashboardSub('admin', 'vacantes'));
+Router.add('/dashboard/admin/eventos', () => routeDashboardSub('admin', 'eventos'));
 Router.add('/dashboard/admin/reportes', () => routeDashboardSub('admin', 'reportes'));
 Router.add('/dashboard/admin/configuracion', () => routeDashboardSub('admin', 'configuracion'));
 Router.add('404', () => document.getElementById('app').innerHTML = '<div class="flex items-center justify-center min-h-screen"><h1 class="text-headline-lg text-primary">404 — Página no encontrada</h1></div>');

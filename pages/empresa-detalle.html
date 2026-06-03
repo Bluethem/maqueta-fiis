@@ -1,0 +1,450 @@
+<div class="page-enter space-y-0" id="empresa-page">
+
+  <!-- Hero dinámico (rellenado por JS) -->
+  <div id="empresa-hero"></div>
+
+  <!-- Tabs + contenido (rellenado por JS) -->
+  <div id="empresa-tabs" class="max-w-[1200px] mx-auto px-6 md:px-8 pb-16"></div>
+
+</div>
+
+<script>
+(function() {
+
+  /* ─── Datos de las 8 empresas ─────────────────────────────────────── */
+  var EMPRESAS_DATA = {
+    'industrias-acero': {
+      nombre: 'Industrias Acero SAC', inicial: 'A',
+      heroBg: '#711610',
+      rubro: 'Industrial', rubroBg: 'bg-blue-50', rubroText: 'text-blue-700',
+      tagline: 'Líder en soluciones de acero para construcción e industria en el Perú.',
+      descripcion: 'Industrias Acero SAC es líder en soluciones de acero para la industria de la construcción y manufactura en el Perú. Con más de 30 años de trayectoria, ha consolidado una cadena de valor integrada que abarca desde la producción de insumos hasta la distribución especializada a nivel nacional.',
+      ubicacion: 'Av. Argentina 2271, Lima', web: 'www.industriasacero.com.pe',
+      correo: 'practicas@industriasacero.com.pe', telefono: '(01) 234-5678',
+      sector: 'Manufactura y Construcción',
+      empleados: '+2,500 colaboradores',
+      fundacion: '1993',
+      beneficios: [
+        { icon: 'factory', titulo: 'Planta de primer nivel', desc: 'Instalaciones modernas con tecnología de punta para la fabricación de acero estructural.' },
+        { icon: 'trending_up', titulo: 'Crecimiento profesional', desc: 'Programa de rotación en distintas áreas de producción, calidad y mantenimiento.' },
+        { icon: 'verified', titulo: 'Certificación ISO', desc: 'Empresa certificada ISO 9001 y OHSAS 18001, comprometida con la calidad y seguridad.' }
+      ],
+      vinculo: 'Prácticas Preprofesionales',
+      convenio: 'Convenio Marco',
+      estadoConvenio: 'Vigente',
+      descripcionVinculo: 'Industrias Acero SAC mantiene un convenio marco con la FIIS que permite a estudiantes de Ingeniería Industrial realizar prácticas preprofesionales. El proceso inicia con la coordinación entre la Oficina de Empleabilidad FIIS y el área de RRHH de la empresa.',
+      oportunidades: [
+        { cargo: 'Practicante de Producción', tipo: 'Práctica', carrera: 'Ing. Industrial', modalidad: 'Presencial', cierre: '30 jun 2025', estado: 'vigente', descripcion: 'Apoyo en líneas de producción, control de calidad en proceso y registro de indicadores de eficiencia.' },
+        { cargo: 'Asistente de Control de Calidad', tipo: 'Práctica', carrera: 'Ing. Industrial', modalidad: 'Presencial', cierre: '15 may 2025', estado: 'cerrado', descripcion: 'Soporte en auditorías internas, análisis estadístico de producto y gestión de no conformidades.' }
+      ]
+    },
+    'grana-montero': {
+      nombre: 'Grupo Graña y Montero', inicial: 'G',
+      heroBg: '#0d7377',
+      rubro: 'Industrial', rubroBg: 'bg-blue-50', rubroText: 'text-blue-700',
+      tagline: 'Holding líder de ingeniería, construcción e infraestructura en Latinoamérica.',
+      descripcion: 'Grupo Graña y Montero es el holding líder de ingeniería, construcción e infraestructura en el Perú, con presencia en más de 10 países. Con más de 80 años de trayectoria, es referente de proyectos de gran envergadura: autopistas, aeropuertos, hospitales, plantas industriales y proyectos mineros de clase mundial.',
+      ubicacion: 'Av. Paseo de la República 4675, Miraflores, Lima', web: 'www.gymlacorp.com',
+      correo: 'relaciones@gymlacorp.com', telefono: '(01) 213-0100',
+      sector: 'Ingeniería y Construcción',
+      empleados: '+12,000 colaboradores',
+      fundacion: '1933',
+      beneficios: [
+        { icon: 'construction', titulo: 'Proyectos de escala nacional', desc: 'Participación en megaproyectos de infraestructura que transforman el país.' },
+        { icon: 'biotech', titulo: 'Investigación aplicada', desc: 'Programas conjuntos de investigación con universidades de primer nivel.' },
+        { icon: 'public', titulo: 'Presencia internacional', desc: 'Oportunidades de movilidad en operaciones en Chile, Colombia y otros países.' }
+      ],
+      vinculo: 'Proyectos de Investigación',
+      convenio: 'Convenio Específico',
+      estadoConvenio: 'Vigente',
+      descripcionVinculo: 'GYM colabora con la FIIS en proyectos de investigación aplicada en ingeniería de infraestructura. Los estudiantes participan como investigadores asociados bajo tutoría docente, con posibilidad de publicación académica.',
+      oportunidades: [
+        { cargo: 'Investigador Asociado — Infraestructura', tipo: 'Proyecto', carrera: 'Ing. Industrial', modalidad: 'Híbrido', cierre: '10 jul 2025', estado: 'vigente', descripcion: 'Participación en proyecto de investigación sobre optimización de procesos constructivos en infraestructura vial.' },
+        { cargo: 'Practicante de Proyectos', tipo: 'Práctica', carrera: 'Ing. Industrial', modalidad: 'Presencial', cierre: '01 mar 2025', estado: 'cerrado', descripcion: 'Soporte en planificación, gestión de costos y control de cronograma en proyectos de construcción.' }
+      ]
+    },
+    'backus': {
+      nombre: 'Backus AB InBev', inicial: 'B',
+      heroBg: '#b45309',
+      rubro: 'Industrial', rubroBg: 'bg-blue-50', rubroText: 'text-blue-700',
+      tagline: 'Cervecera líder del Perú, parte del grupo multinacional AB InBev.',
+      descripcion: 'Backus, miembro de la multinacional AB InBev, es la cervecera líder del Perú. Reconocida por su excelencia operacional, innovación en procesos industriales y compromisos con la sostenibilidad. Su programa de prácticas estructurado ofrece rotación en plantas y áreas funcionales, brindando una experiencia integral de la industria de bebidas.',
+      ubicacion: 'Av. Guillermo Dansey 1480, Lima', web: 'www.backus.pe',
+      correo: 'talento@backus.pe', telefono: '(01) 311-7000',
+      sector: 'Industria de Bebidas',
+      empleados: '+4,000 colaboradores',
+      fundacion: '1879',
+      beneficios: [
+        { icon: 'science', titulo: 'Tecnología de vanguardia', desc: 'Plantas automatizadas con sistemas de control de última generación en producción de bebidas.' },
+        { icon: 'rotate_right', titulo: 'Rotación por áreas', desc: 'Programa de prácticas con exposición a producción, logística, calidad y mantenimiento.' },
+        { icon: 'eco', titulo: 'Compromiso ambiental', desc: 'Empresa líder en sostenibilidad, con metas ambiciosas de reducción de huella de carbono.' }
+      ],
+      vinculo: 'Prácticas Preprofesionales',
+      convenio: 'Convenio Marco',
+      estadoConvenio: 'Vigente',
+      descripcionVinculo: 'Backus tiene un programa de prácticas preprofesionales consolidado con la FIIS. Los estudiantes de Ingeniería Industrial pueden postular semestralmente a vacantes en planta. La coordinación se realiza a través de la Oficina de Empleabilidad FIIS.',
+      oportunidades: [
+        { cargo: 'Practicante de Logística y Supply Chain', tipo: 'Práctica', carrera: 'Ing. Industrial', modalidad: 'Presencial', cierre: '05 jul 2025', estado: 'vigente', descripcion: 'Apoyo en planificación de distribución, control de inventarios y coordinación con proveedores.' },
+        { cargo: 'Practicante de Mejora Continua', tipo: 'Práctica', carrera: 'Ing. Industrial', modalidad: 'Presencial', cierre: '30 abr 2025', estado: 'cerrado', descripcion: 'Soporte en proyectos de mejora de procesos aplicando metodologías Lean y Six Sigma.' }
+      ]
+    },
+    'alicorp': {
+      nombre: 'Alicorp S.A.A.', inicial: 'A',
+      heroBg: '#16a34a',
+      rubro: 'Logística', rubroBg: 'bg-purple-50', rubroText: 'text-purple-700',
+      tagline: 'Corporación multilatina de consumo masivo con cadena de suministro referente en la región.',
+      descripcion: 'Alicorp es una corporación multilatina de consumo masivo líder en alimentos, nutrición animal y cuidado del hogar. Su cadena de suministro integrada y su capacidad de distribución a nivel nacional son consideradas referentes regionales. Constituye uno de los empleadores más importantes para egresados de Ingeniería Industrial de la FIIS.',
+      ubicacion: 'Jr. Bartolomé Herrera 182, Lima', web: 'www.alicorp.com.pe',
+      correo: 'practicasprofesionales@alicorp.com.pe', telefono: '(01) 315-0800',
+      sector: 'Consumo Masivo y Logística',
+      empleados: '+7,000 colaboradores',
+      fundacion: '1956',
+      beneficios: [
+        { icon: 'inventory_2', titulo: 'Supply chain de primer nivel', desc: 'Exposición a una de las cadenas de suministro más complejas y eficientes de Latinoamérica.' },
+        { icon: 'groups', titulo: 'Cultura de desarrollo', desc: 'Programas de mentoría, capacitación y planes de carrera definidos desde el primer día.' },
+        { icon: 'emoji_events', titulo: 'Empleador top del país', desc: 'Reconocida consistentemente como uno de los mejores lugares para trabajar en el Perú.' }
+      ],
+      vinculo: 'Prácticas y Empleos',
+      convenio: 'Convenio Marco',
+      estadoConvenio: 'Vigente',
+      descripcionVinculo: 'Alicorp mantiene un convenio marco con la FIIS que facilita tanto prácticas preprofesionales como contratación directa de egresados. Las convocatorias se publican de forma regular y el proceso de selección involucra coordinación directa entre RRHH de Alicorp y la Oficina de Empleabilidad FIIS.',
+      oportunidades: [
+        { cargo: 'Practicante de Logística', tipo: 'Práctica', carrera: 'Ing. Industrial', modalidad: 'Presencial', cierre: '15 jun 2025', estado: 'vigente', descripcion: 'Apoyo en la planificación y control de inventarios, coordinación con proveedores y optimización de rutas de distribución.' },
+        { cargo: 'Analista de Supply Chain Jr.', tipo: 'Empleo', carrera: 'Ing. Industrial', modalidad: 'Híbrido', cierre: '20 jun 2025', estado: 'vigente', descripcion: 'Gestión de indicadores de la cadena de suministro, análisis de datos y propuestas de mejora continua.' },
+        { cargo: 'Practicante de Operaciones', tipo: 'Práctica', carrera: 'Ing. Industrial', modalidad: 'Presencial', cierre: '15 mar 2025', estado: 'cerrado', descripcion: 'Soporte en la gestión de operaciones de planta, seguimiento de KPIs y proyectos de eficiencia.' }
+      ]
+    },
+    'scotiabank': {
+      nombre: 'Scotiabank Perú', inicial: 'S',
+      heroBg: '#dc2626',
+      rubro: 'Sistemas', rubroBg: 'bg-cyan-50', rubroText: 'text-cyan-700',
+      tagline: 'Banco con transformación digital activa, empleador estratégico para ingenieros de sistemas.',
+      descripcion: 'Scotiabank Perú es uno de los bancos más importantes del país, con un agresivo plan de transformación digital. Su área de tecnología e innovación impulsa el desarrollo de soluciones financieras digitales. Ofrece posiciones en desarrollo de software, ciberseguridad, ciencia de datos, arquitectura de sistemas y gestión de TI.',
+      ubicacion: 'Av. Diagonal 176, Miraflores, Lima', web: 'www.scotiabank.com.pe',
+      correo: 'talento.peru@scotiabank.com', telefono: '(01) 211-6000',
+      sector: 'Banca y Finanzas Digitales',
+      empleados: '+3,500 colaboradores',
+      fundacion: '1943',
+      beneficios: [
+        { icon: 'computer', titulo: 'Transformación digital real', desc: 'Trabajo en proyectos de migración a la nube, APIs financieras y soluciones mobile-first.' },
+        { icon: 'security', titulo: 'Ciberseguridad avanzada', desc: 'Equipos especializados en seguridad bancaria, gestión de identidades y respuesta a incidentes.' },
+        { icon: 'school', titulo: 'Capacitación continua', desc: 'Acceso a plataformas de aprendizaje y certificaciones en tecnologías cloud y ágiles.' }
+      ],
+      vinculo: 'Empleos',
+      convenio: 'Contrato de Colaboración',
+      estadoConvenio: 'Por renovar',
+      descripcionVinculo: 'Scotiabank colabora con la FIIS mediante un contrato de colaboración que facilita la contratación de egresados de Ingeniería de Sistemas y Software. El contrato está actualmente en proceso de renovación para el período 2025-2027.',
+      oportunidades: [
+        { cargo: 'Analista de Sistemas Jr.', tipo: 'Empleo', carrera: 'Ing. de Sistemas', modalidad: 'Híbrido', cierre: '30 jun 2025', estado: 'vigente', descripcion: 'Desarrollo y mantenimiento de aplicaciones bancarias, integración de APIs y soporte a plataformas digitales.' },
+        { cargo: 'Desarrollador Backend', tipo: 'Empleo', carrera: 'Ing. de Software', modalidad: 'Remoto', cierre: '15 may 2025', estado: 'cerrado', descripcion: 'Desarrollo de microservicios, integración con sistemas core bancario y optimización de rendimiento.' }
+      ]
+    },
+    'komatsu': {
+      nombre: 'Komatsu-Mitsui', inicial: 'K',
+      heroBg: '#ea580c',
+      rubro: 'Industrial', rubroBg: 'bg-blue-50', rubroText: 'text-blue-700',
+      tagline: 'Joint venture líder en maquinaria pesada y mantenimiento industrial en el Perú.',
+      descripcion: 'Komatsu-Mitsui es el joint venture entre Komatsu y Mitsui, líder en distribución de maquinaria pesada para minería, construcción e industria en el Perú. Con una extensa red de soporte técnico, es referente en mantenimiento industrial y gestión de activos. Busca ingenieros con perfil técnico-operacional para sus programas de prácticas.',
+      ubicacion: 'Av. Naciones Unidas 1439, Lima', web: 'www.komatsu-mitsui.com',
+      correo: 'rrhh@komatsu-mitsui.com', telefono: '(01) 619-5600',
+      sector: 'Maquinaria Pesada e Industria',
+      empleados: '+1,800 colaboradores',
+      fundacion: '1996',
+      beneficios: [
+        { icon: 'build', titulo: 'Tecnología de clase mundial', desc: 'Trabajo con equipos Komatsu de última generación en entornos mineros e industriales.' },
+        { icon: 'hub', titulo: 'Red nacional de operaciones', desc: 'Presencia en Lima, Arequipa, Cajamarca y otras regiones mineras del Perú.' },
+        { icon: 'safety_check', titulo: 'Cultura de seguridad', desc: 'Estándares internacionales de seguridad industrial y salud ocupacional aplicados en campo.' }
+      ],
+      vinculo: 'Prácticas Preprofesionales',
+      convenio: 'Convenio Específico',
+      estadoConvenio: 'Vigente',
+      descripcionVinculo: 'Komatsu-Mitsui recibe practicantes de Ingeniería Industrial de la FIIS en sus centros de servicio y talleres de mantenimiento. El proceso de postulación se coordina directamente entre la empresa y la Oficina de Empleabilidad de la facultad.',
+      oportunidades: [
+        { cargo: 'Practicante de Mantenimiento Industrial', tipo: 'Práctica', carrera: 'Ing. Industrial', modalidad: 'Presencial', cierre: '25 jun 2025', estado: 'vigente', descripcion: 'Apoyo en planificación de mantenimiento preventivo y correctivo de equipos pesados en centro de servicios.' },
+        { cargo: 'Técnico en Maquinaria Pesada', tipo: 'Empleo', carrera: 'Ing. Industrial', modalidad: 'Presencial', cierre: '01 abr 2025', estado: 'cerrado', descripcion: 'Diagnóstico, reparación y puesta en marcha de equipos Komatsu en proyectos mineros.' }
+      ]
+    },
+    'ferreyros': {
+      nombre: 'Ferreyros S.A.', inicial: 'F',
+      heroBg: '#4338ca',
+      rubro: 'Logística', rubroBg: 'bg-purple-50', rubroText: 'text-purple-700',
+      tagline: 'Distribuidora Caterpillar con la cadena de suministro de repuestos más grande del Perú.',
+      descripcion: 'Ferreyros es la principal distribuidora de maquinaria Caterpillar en el Perú, con la cadena de suministro de repuestos más grande del país. Gestiona más de 70,000 ítems de repuestos con operaciones en múltiples regiones. Su programa de prácticas es reconocido por su enfoque en el desarrollo profesional, en logística, mantenimiento y operaciones.',
+      ubicacion: 'Av. Paseo de la República 3220, San Isidro, Lima', web: 'www.ferreyros.com.pe',
+      correo: 'practicaspro@ferreyros.com.pe', telefono: '(01) 215-6200',
+      sector: 'Distribución y Logística Industrial',
+      empleados: '+3,000 colaboradores',
+      fundacion: '1922',
+      beneficios: [
+        { icon: 'local_shipping', titulo: 'Logística de clase mundial', desc: 'Gestión de una de las redes de distribución de repuestos más complejas del país.' },
+        { icon: 'star', titulo: 'Marca Caterpillar', desc: 'Respaldo de la marca global líder en maquinaria pesada para construcción y minería.' },
+        { icon: 'timeline', titulo: 'Trayectoria centenaria', desc: 'Más de 100 años de presencia en el mercado peruano con crecimiento sostenido.' }
+      ],
+      vinculo: 'Prácticas Preprofesionales',
+      convenio: 'Convenio Marco',
+      estadoConvenio: 'Vigente',
+      descripcionVinculo: 'Ferreyros tiene un programa de prácticas preprofesionales activo con la FIIS para estudiantes de Ingeniería Industrial. Las postulaciones se canalizan a través de la Oficina de Empleabilidad FIIS, con convocatorias periódicas en áreas de logística y operaciones.',
+      oportunidades: [
+        { cargo: 'Asistente de Operaciones', tipo: 'Práctica', carrera: 'Ing. Industrial', modalidad: 'Presencial', cierre: '22 jun 2025', estado: 'vigente', descripcion: 'Soporte en gestión de operaciones logísticas, seguimiento de indicadores y mejora continua de procesos.' },
+        { cargo: 'Analista de Logística Jr.', tipo: 'Empleo', carrera: 'Ing. Industrial', modalidad: 'Presencial', cierre: '10 ene 2025', estado: 'cerrado', descripcion: 'Gestión de inventarios, análisis de demanda y coordinación con proveedores y clientes internos.' }
+      ]
+    },
+    'interbank': {
+      nombre: 'Interbank', inicial: 'I',
+      heroBg: '#e11d48',
+      rubro: 'Sistemas', rubroBg: 'bg-cyan-50', rubroText: 'text-cyan-700',
+      tagline: 'Banco pionero en transformación digital con uno de los centros tecnológicos más modernos de LatAm.',
+      descripcion: 'Interbank es uno de los bancos líderes del Perú, pionero en transformación digital. Su Centro de Tecnología e Innovación Digital es uno de los más modernos de Latinoamérica, con equipos de desarrollo ágil, ciencia de datos, arquitectura cloud e inteligencia artificial. Ofrece reales oportunidades de crecimiento para ingenieros de sistemas y software.',
+      ubicacion: 'Jr. de la Unión 600, Lima', web: 'www.interbank.pe',
+      correo: 'practicas@interbank.pe', telefono: '(01) 219-2000',
+      sector: 'Banca Digital y Tecnología',
+      empleados: '+5,500 colaboradores',
+      fundacion: '1897',
+      beneficios: [
+        { icon: 'bolt', titulo: 'Innovación tecnológica real', desc: 'Desarrollo con metodologías ágiles, DevOps, microservicios y arquitectura cloud-native.' },
+        { icon: 'psychology', titulo: 'IA y Ciencia de Datos', desc: 'Equipos especializados en machine learning aplicado a crédito, fraude y personalización.' },
+        { icon: 'rocket_launch', titulo: 'Cultura de startup en banco', desc: 'Ambiente de trabajo dinámico, squads autónomos y cultura de experimentación e innovación.' }
+      ],
+      vinculo: 'Prácticas y Empleos',
+      convenio: 'Convenio Marco',
+      estadoConvenio: 'Vigente',
+      descripcionVinculo: 'Interbank mantiene un convenio marco con la FIIS que abarca tanto prácticas preprofesionales como contratación de egresados. Las convocatorias son semestrales para prácticas y continuas para posiciones permanentes, con coordinación directa entre el área de Talento de Interbank y la Oficina de Empleabilidad.',
+      oportunidades: [
+        { cargo: 'Analista de Sistemas', tipo: 'Empleo', carrera: 'Ing. de Sistemas', modalidad: 'Híbrido', cierre: '30 jun 2025', estado: 'vigente', descripcion: 'Desarrollo y mantenimiento de aplicaciones bancarias, integración de APIs y soporte a plataformas digitales.' },
+        { cargo: 'Practicante de Desarrollo de Software', tipo: 'Práctica', carrera: 'Ing. de Software', modalidad: 'Híbrido', cierre: '15 jun 2025', estado: 'vigente', descripcion: 'Participación en squads ágiles para el desarrollo de funcionalidades en la app y web del banco.' },
+        { cargo: 'Analista de Ciberseguridad', tipo: 'Empleo', carrera: 'Ing. de Sistemas', modalidad: 'Presencial', cierre: '01 abr 2025', estado: 'cerrado', descripcion: 'Gestión de vulnerabilidades, análisis de amenazas y respuesta a incidentes de seguridad.' }
+      ]
+    }
+  };
+
+  /* ─── Helpers de badges ──────────────────────────────────────────── */
+  function tipoBadge(tipo) {
+    var m = { 'Práctica': 'bg-blue-50 text-blue-700', 'Empleo': 'bg-green-50 text-green-700', 'Proyecto': 'bg-purple-50 text-purple-700' };
+    return m[tipo] || 'bg-surface-container text-text-secondary';
+  }
+  function modalidadBadge(mod) {
+    var m = { 'Presencial': 'bg-amber-50 text-amber-700', 'Híbrido': 'bg-teal-50 text-teal-700', 'Remoto': 'bg-indigo-50 text-indigo-700' };
+    return m[mod] || 'bg-surface-container text-text-secondary';
+  }
+
+  /* ─── Render de una oportunidad ─────────────────────────────────── */
+  function renderOportunidad(op) {
+    var estadoBadge = op.estado === 'vigente'
+      ? '<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-success/10 text-success"><span class="w-1.5 h-1.5 rounded-full bg-success inline-block"></span>Vigente</span>'
+      : '<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-surface-container-high text-text-secondary">Cerrado</span>';
+    var accion = op.estado === 'vigente'
+      ? '<button class="px-4 py-2 bg-primary text-on-primary rounded-lg text-xs font-semibold hover:brightness-110 transition-all active:scale-95">Ver convocatoria</button>'
+      : '<button disabled class="px-4 py-2 bg-surface-container-high text-text-secondary rounded-lg text-xs font-semibold cursor-not-allowed">Cerrado</button>';
+    return '<div class="bg-white rounded-xl border border-border-subtle p-5">' +
+      '<div class="flex flex-col sm:flex-row sm:items-start gap-4">' +
+        '<div class="flex-grow">' +
+          '<h4 class="text-sm font-bold text-on-surface mb-1.5">' + op.cargo + '</h4>' +
+          '<p class="text-xs text-text-secondary leading-relaxed mb-3">' + op.descripcion + '</p>' +
+          '<div class="flex flex-wrap gap-2">' +
+            '<span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-semibold ' + tipoBadge(op.tipo) + '">' + op.tipo + '</span>' +
+            '<span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-surface-container text-text-secondary">' + op.carrera + '</span>' +
+            '<span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-semibold ' + modalidadBadge(op.modalidad) + '">' + op.modalidad + '</span>' +
+          '</div>' +
+        '</div>' +
+        '<div class="flex flex-col items-start sm:items-end gap-2 shrink-0">' +
+          estadoBadge +
+          '<p class="text-[10px] text-text-secondary flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:11px">calendar_today</span>Cierra: ' + op.cierre + '</p>' +
+          accion +
+        '</div>' +
+      '</div>' +
+    '</div>';
+  }
+
+  /* ─── Render principal ───────────────────────────────────────────── */
+  function render() {
+    var id = window.__empresaId || (function() {
+      var p = window.location.hash.split('/');
+      return p[p.length - 1];
+    })();
+
+    var e = EMPRESAS_DATA[id];
+
+    var heroEl = document.getElementById('empresa-hero');
+    var tabsEl = document.getElementById('empresa-tabs');
+
+    if (!e) {
+      if (heroEl) heroEl.innerHTML = '';
+      if (tabsEl) tabsEl.innerHTML =
+        '<div class="text-center py-20">' +
+          '<span class="material-symbols-outlined text-6xl text-border-subtle">search_off</span>' +
+          '<p class="text-on-surface font-bold text-lg mt-4">Empresa no encontrada</p>' +
+          '<a href="#/empresas" class="inline-flex items-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-lg font-semibold text-sm hover:brightness-110 mt-6 transition-all">' +
+            '<span class="material-symbols-outlined text-sm">arrow_back</span>Volver al directorio</a>' +
+        '</div>';
+      return;
+    }
+
+    var convenioEstado = e.estadoConvenio === 'Vigente'
+      ? '<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-success/10 text-success"><span class="w-1.5 h-1.5 rounded-full bg-success inline-block"></span>' + e.estadoConvenio + '</span>'
+      : '<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-warning/10 text-warning"><span class="w-1.5 h-1.5 rounded-full bg-warning inline-block"></span>' + e.estadoConvenio + '</span>';
+
+    var vigentes = e.oportunidades.filter(function(o) { return o.estado === 'vigente'; }).length;
+
+    /* ── Hero ── */
+    heroEl.innerHTML =
+      '<section class="relative overflow-hidden min-h-[260px] flex items-end" style="background:' + e.heroBg + '">' +
+        '<div class="absolute inset-0" style="background:linear-gradient(135deg,' + e.heroBg + ' 0%,rgba(0,0,0,0.35) 100%)"></div>' +
+        '<div class="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-8 py-10">' +
+          '<a href="#/empresas" class="inline-flex items-center gap-1.5 text-white/70 hover:text-white text-sm mb-6 transition-colors">' +
+            '<span class="material-symbols-outlined text-sm">arrow_back</span>Empresas y Empleabilidad' +
+          '</a>' +
+          '<div class="flex flex-col sm:flex-row sm:items-end gap-5">' +
+            '<div class="w-20 h-20 rounded-2xl flex items-center justify-center text-3xl font-extrabold shrink-0 bg-white/20 backdrop-blur-sm text-white border-2 border-white/30" aria-label="Logo institucional de ' + e.nombre + '" title="Logo institucional">' + e.inicial + '</div>' +
+            '<div class="flex-grow">' +
+              '<div class="flex flex-wrap items-center gap-2 mb-2">' +
+                '<span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-white/20 text-white backdrop-blur-sm">' + e.rubro + '</span>' +
+                convenioEstado +
+              '</div>' +
+              '<h1 class="text-white text-3xl md:text-4xl font-bold leading-tight mb-1">' + e.nombre + '</h1>' +
+              '<p class="text-white/80 text-sm md:text-base max-w-xl">' + e.tagline + '</p>' +
+            '</div>' +
+            '<div class="flex gap-4 shrink-0">' +
+              '<div class="text-center">' +
+                '<p class="text-2xl font-bold text-white">' + vigentes + '</p>' +
+                '<p class="text-white/70 text-xs">Vacantes activas</p>' +
+              '</div>' +
+              '<div class="w-px bg-white/20"></div>' +
+              '<div class="text-center">' +
+                '<p class="text-2xl font-bold text-white">' + e.fundacion + '</p>' +
+                '<p class="text-white/70 text-xs">Fundación</p>' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+      '</section>';
+
+    /* ── Beneficios HTML ── */
+    var beneficiosHtml = e.beneficios.map(function(b) {
+      return '<div class="bg-white rounded-xl border border-border-subtle p-5">' +
+        '<div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-3">' +
+          '<span class="material-symbols-outlined">' + b.icon + '</span>' +
+        '</div>' +
+        '<h4 class="font-semibold text-on-surface text-sm mb-1">' + b.titulo + '</h4>' +
+        '<p class="text-xs text-text-secondary leading-relaxed">' + b.desc + '</p>' +
+      '</div>';
+    }).join('');
+
+    /* ── Oportunidades HTML ── */
+    var opHtml = e.oportunidades.map(renderOportunidad).join('');
+
+    /* ── Tabs ── */
+    tabsEl.innerHTML =
+      /* Tab nav */
+      '<div class="flex gap-0 border-b border-border-subtle overflow-x-auto mt-6 mb-8">' +
+        '<button data-tab="sobre" class="px-6 py-4 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 transition-colors whitespace-nowrap">Sobre la empresa</button>' +
+        '<button data-tab="oportunidades" class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface transition-colors whitespace-nowrap">Oportunidades (' + e.oportunidades.length + ')</button>' +
+        '<button data-tab="vinculo" class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface transition-colors whitespace-nowrap">Vínculo con FIIS</button>' +
+        '<button data-tab="contacto" class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface transition-colors whitespace-nowrap">Contacto</button>' +
+      '</div>' +
+
+      /* Tab: Sobre la empresa */
+      '<div id="tab-sobre" class="tab-content space-y-6">' +
+        '<div class="grid grid-cols-1 md:grid-cols-2 gap-6">' +
+          '<div class="bg-white rounded-xl border border-border-subtle p-6">' +
+            '<h3 class="text-base font-bold text-on-surface mb-3 flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">info</span>Sobre nosotros</h3>' +
+            '<p class="text-sm text-text-secondary leading-relaxed">' + e.descripcion + '</p>' +
+          '</div>' +
+          '<div class="bg-white rounded-xl border border-border-subtle p-6">' +
+            '<h3 class="text-base font-bold text-on-surface mb-3 flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">corporate_fare</span>Datos generales</h3>' +
+            '<dl class="space-y-3 text-sm">' +
+              '<div class="flex justify-between py-1.5 border-b border-border-subtle"><dt class="text-text-secondary">Sector</dt><dd class="font-medium text-on-surface text-right">' + e.sector + '</dd></div>' +
+              '<div class="flex justify-between py-1.5 border-b border-border-subtle"><dt class="text-text-secondary">Tamaño</dt><dd class="font-medium text-on-surface">' + e.empleados + '</dd></div>' +
+              '<div class="flex justify-between py-1.5 border-b border-border-subtle"><dt class="text-text-secondary">Fundación</dt><dd class="font-medium text-on-surface">' + e.fundacion + '</dd></div>' +
+              '<div class="flex justify-between py-1.5 border-b border-border-subtle"><dt class="text-text-secondary">Rubro FIIS</dt><dd class="font-medium text-on-surface"><span class="inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold ' + e.rubroBg + ' ' + e.rubroText + '">' + e.rubro + '</span></dd></div>' +
+              '<div class="flex justify-between py-1.5"><dt class="text-text-secondary">Ubicación</dt><dd class="font-medium text-on-surface text-right text-xs">' + e.ubicacion + '</dd></div>' +
+            '</dl>' +
+          '</div>' +
+        '</div>' +
+        '<div>' +
+          '<h3 class="text-base font-bold text-on-surface mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">thumb_up</span>¿Por qué trabajar aquí?</h3>' +
+          '<div class="grid grid-cols-1 md:grid-cols-3 gap-4">' + beneficiosHtml + '</div>' +
+        '</div>' +
+      '</div>' +
+
+      /* Tab: Oportunidades */
+      '<div id="tab-oportunidades" class="tab-content hidden space-y-4">' +
+        '<p class="text-sm text-text-secondary">Convocatorias publicadas por ' + e.nombre + ' para la comunidad FIIS.</p>' +
+        '<div class="space-y-3">' + opHtml + '</div>' +
+      '</div>' +
+
+      /* Tab: Vínculo con FIIS */
+      '<div id="tab-vinculo" class="tab-content hidden space-y-6">' +
+        '<div class="grid grid-cols-1 md:grid-cols-3 gap-5">' +
+          '<div class="bg-white rounded-xl border border-border-subtle p-5">' +
+            '<div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-3"><span class="material-symbols-outlined">handshake</span></div>' +
+            '<p class="text-xs text-text-secondary font-semibold uppercase mb-1">Tipo de vínculo</p>' +
+            '<p class="text-sm font-bold text-on-surface">' + e.vinculo + '</p>' +
+          '</div>' +
+          '<div class="bg-white rounded-xl border border-border-subtle p-5">' +
+            '<div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-3"><span class="material-symbols-outlined">description</span></div>' +
+            '<p class="text-xs text-text-secondary font-semibold uppercase mb-1">Tipo de convenio</p>' +
+            '<p class="text-sm font-bold text-on-surface">' + e.convenio + '</p>' +
+          '</div>' +
+          '<div class="bg-white rounded-xl border border-border-subtle p-5">' +
+            '<div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-3"><span class="material-symbols-outlined">verified</span></div>' +
+            '<p class="text-xs text-text-secondary font-semibold uppercase mb-1">Estado del convenio</p>' +
+            convenioEstado +
+          '</div>' +
+        '</div>' +
+        '<div class="bg-surface-container-low rounded-xl p-6">' +
+          '<h3 class="font-bold text-on-surface mb-3 flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-primary text-sm">info</span>Sobre el vínculo</h3>' +
+          '<p class="text-sm text-text-secondary leading-relaxed">' + e.descripcionVinculo + '</p>' +
+        '</div>' +
+        '<div class="bg-white rounded-xl border border-border-subtle p-6">' +
+          '<h3 class="font-bold text-on-surface mb-4 text-sm flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">route</span>Proceso de postulación</h3>' +
+          '<div class="flex flex-col sm:flex-row gap-0">' +
+            ['Revisa las oportunidades vigentes', 'Contacta a la Oficina de Empleabilidad FIIS', 'La empresa valida tu perfil', 'Entrevista y selección', 'Inicio de actividades'].map(function(paso, i) {
+              return '<div class="flex sm:flex-col items-start sm:items-center gap-3 sm:gap-2 flex-1 relative">' +
+                '<div class="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-on-primary text-xs font-bold shrink-0 z-10">' + (i + 1) + '</div>' +
+                (i < 4 ? '<div class="hidden sm:block absolute top-4 left-1/2 w-full h-0.5 bg-border-subtle -z-0"></div>' : '') +
+                '<p class="text-xs text-text-secondary text-center hidden sm:block">' + paso + '</p>' +
+                '<p class="text-xs text-text-secondary sm:hidden">' + paso + '</p>' +
+              '</div>';
+            }).join('') +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+
+      /* Tab: Contacto */
+      '<div id="tab-contacto" class="tab-content hidden">' +
+        '<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">' +
+          '<div class="bg-white rounded-xl border border-border-subtle p-6">' +
+            '<h3 class="font-bold text-on-surface mb-4 text-sm">Información de contacto</h3>' +
+            '<dl class="space-y-4">' +
+              '<div class="flex items-center gap-3"><div class="w-9 h-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-sm">mail</span></div><div><p class="text-[10px] text-text-secondary font-semibold uppercase">Correo</p><p class="text-sm font-medium text-on-surface">' + e.correo + '</p></div></div>' +
+              '<div class="flex items-center gap-3"><div class="w-9 h-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-sm">phone</span></div><div><p class="text-[10px] text-text-secondary font-semibold uppercase">Teléfono</p><p class="text-sm font-medium text-on-surface">' + e.telefono + '</p></div></div>' +
+              '<div class="flex items-center gap-3"><div class="w-9 h-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-sm">location_on</span></div><div><p class="text-[10px] text-text-secondary font-semibold uppercase">Dirección</p><p class="text-sm font-medium text-on-surface">' + e.ubicacion + '</p></div></div>' +
+              '<div class="flex items-center gap-3"><div class="w-9 h-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-sm">language</span></div><div><p class="text-[10px] text-text-secondary font-semibold uppercase">Web</p><p class="text-sm font-medium text-on-surface">' + e.web + '</p></div></div>' +
+              '<div class="flex items-center gap-3"><div class="w-9 h-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-sm">share</span></div><div><p class="text-[10px] text-text-secondary font-semibold uppercase">Redes</p><p class="text-sm font-medium text-on-surface">LinkedIn corporativo / canal oficial FIIS</p></div></div>' +
+            '</dl>' +
+            '<div class="mt-6 pt-5 border-t border-border-subtle">' +
+              '<p class="text-xs text-text-secondary mb-3">Para consultas sobre prácticas y empleos, comunícate con:</p>' +
+              '<div class="flex items-center gap-3 bg-surface-container-low rounded-lg p-3">' +
+                '<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm shrink-0">OF</div>' +
+                '<div><p class="text-sm font-semibold text-on-surface">Oficina de Empleabilidad FIIS</p><p class="text-xs text-text-secondary">empleabilidad@fiis.uni.edu.pe</p></div>' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+          '<div class="bg-white rounded-xl border border-border-subtle p-6">' +
+            '<h3 class="font-bold text-on-surface mb-4 text-sm">Enviar mensaje de interés</h3>' +
+            '<form class="space-y-4" onsubmit="event.preventDefault();this.innerHTML=\'<div class=\\\"text-center py-6\\\"><span class=\\\"material-symbols-outlined text-success text-4xl\\\">check_circle</span><p class=\\\"font-semibold text-on-surface mt-2\\\">Mensaje enviado</p><p class=\\\"text-xs text-text-secondary mt-1\\\">La Oficina de Empleabilidad FIIS se pondrá en contacto contigo.</p></div>\'">' +
+              '<div><label class="block text-xs font-semibold text-on-surface mb-1.5">Nombre completo <span class="text-error">*</span></label><input type="text" placeholder="Tu nombre" class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"></div>' +
+              '<div><label class="block text-xs font-semibold text-on-surface mb-1.5">Correo electrónico <span class="text-error">*</span></label><input type="email" placeholder="correo@uni.edu.pe" class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"></div>' +
+              '<div><label class="block text-xs font-semibold text-on-surface mb-1.5">Tipo de interés</label><select class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-white"><option>Prácticas preprofesionales</option><option>Oportunidad laboral</option><option>Información general</option></select></div>' +
+              '<div><label class="block text-xs font-semibold text-on-surface mb-1.5">Mensaje</label><textarea rows="3" placeholder="Cuéntanos sobre tu interés..." class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"></textarea></div>' +
+              '<button type="submit" class="w-full inline-flex items-center justify-center gap-2 bg-primary text-on-primary px-6 py-2.5 rounded-lg font-semibold text-sm hover:brightness-110 transition-all active:scale-95"><span class="material-symbols-outlined text-sm">send</span>Enviar mensaje</button>' +
+            '</form>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+  }
+
+  render();
+
+})();
+</script>

@@ -1,0 +1,249 @@
+<div class="page-enter space-y-6">
+  <!-- Header -->
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div>
+      <h2 class="text-2xl font-bold text-on-surface">Moderación de Eventos</h2>
+      <p class="text-text-secondary text-sm mt-0.5">Revisa y aprueba los eventos propuestos por empresas</p>
+    </div>
+    <button id="btn-toggle-config" class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold border border-border-subtle rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-all">
+      <span class="material-symbols-outlined text-sm">settings</span>
+      Configuración
+    </button>
+  </div>
+
+  <!-- Panel de configuración (admin) -->
+  <div id="config-panel" class="hidden bg-white rounded-xl border border-primary/20 shadow-sm overflow-hidden">
+    <div class="px-5 py-4 border-b border-border-subtle bg-primary/5 flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary text-base">tune</span>
+      <h3 class="text-base font-bold text-on-surface">Parámetros de validación de eventos</h3>
+    </div>
+    <div class="p-5 space-y-4">
+      <div class="flex flex-wrap items-end gap-4">
+        <div class="space-y-1.5">
+          <label class="text-sm font-semibold text-on-surface">Duración máxima del evento (días)</label>
+          <p class="text-xs text-text-secondary">Las empresas no podrán proponer eventos con más días de diferencia entre inicio y fin.</p>
+          <div class="flex items-center gap-2 mt-1">
+            <input id="max-dias-input" type="number" min="1" max="365" value="31" class="w-24 px-3 py-2 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+            <span class="text-sm text-text-secondary">días</span>
+          </div>
+        </div>
+        <div class="space-y-1.5">
+          <label class="text-sm font-semibold text-on-surface">Año máximo para fecha fin</label>
+          <p class="text-xs text-text-secondary">La fecha de fin no puede superar el 31 de diciembre de este año.</p>
+          <div class="flex items-center gap-2 mt-1">
+            <input id="max-anio-display" type="text" class="w-24 px-3 py-2 text-sm border border-border-subtle rounded-lg bg-surface-container-low text-text-secondary cursor-not-allowed" readonly>
+            <span class="text-xs text-text-secondary">(no editable)</span>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 pt-2">
+        <button id="btn-save-config" class="inline-flex items-center gap-2 px-5 py-2 text-sm font-semibold bg-primary text-on-primary rounded-lg hover:brightness-110 transition-all shadow-sm active:scale-95">
+          <span class="material-symbols-outlined text-sm">save</span>
+          Guardar configuración
+        </button>
+        <p id="config-saved" class="text-xs text-success hidden">
+          <span class="material-symbols-outlined text-xs align-middle">check</span>
+          Guardado
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nota informativa -->
+  <div class="flex items-start gap-3 bg-primary/5 border border-primary/20 rounded-xl px-5 py-4">
+    <span class="material-symbols-outlined text-primary text-base shrink-0 mt-0.5">info</span>
+    <p class="text-sm text-on-surface">Los eventos <strong>aprobados</strong> aparecen en la sección pública "Actividades empresariales" de la página <a href="#/empresas" class="text-primary font-semibold hover:underline">/empresas</a> y en el calendario institucional.</p>
+  </div>
+
+  <!-- Filtros -->
+  <div class="flex flex-wrap items-center gap-3">
+    <button class="ev-filter-btn bg-primary text-on-primary px-3.5 py-1.5 text-sm font-semibold rounded-lg" data-estado="todos">Todas</button>
+    <button class="ev-filter-btn border border-border-subtle text-text-secondary px-3.5 py-1.5 text-sm font-medium rounded-lg hover:bg-surface-container-low transition-all" data-estado="pendiente">Pendientes</button>
+    <button class="ev-filter-btn border border-border-subtle text-text-secondary px-3.5 py-1.5 text-sm font-medium rounded-lg hover:bg-surface-container-low transition-all" data-estado="aprobado">Aprobadas</button>
+    <button class="ev-filter-btn border border-border-subtle text-text-secondary px-3.5 py-1.5 text-sm font-medium rounded-lg hover:bg-surface-container-low transition-all" data-estado="rechazado">Rechazadas</button>
+    <div class="ml-auto relative">
+      <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary text-sm pointer-events-none">search</span>
+      <input type="text" id="ev-search" placeholder="Buscar evento o empresa..." class="pl-9 pr-3 py-1.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary w-64">
+    </div>
+  </div>
+
+  <!-- Tabla dinámica -->
+  <div class="bg-white rounded-xl border border-border-subtle shadow-sm overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-surface-bg/50 border-b border-border-subtle">
+            <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Empresa</th>
+            <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Evento</th>
+            <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Tipo</th>
+            <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Fechas</th>
+            <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Público</th>
+            <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Flyer</th>
+            <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Estado</th>
+            <th class="px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider text-center">Acción</th>
+          </tr>
+        </thead>
+        <tbody id="eventos-tbody" class="divide-y divide-border-subtle/60"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de flyer -->
+<div id="flyer-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4" style="background:rgba(0,0,0,0.6)">
+  <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full overflow-hidden">
+    <div class="flex items-center justify-between px-5 py-4 border-b border-border-subtle">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-base">image</span>
+        <h3 id="flyer-modal-name" class="text-base font-bold text-on-surface">Flyer</h3>
+      </div>
+      <button id="flyer-modal-close" class="p-1.5 hover:bg-surface-container-high rounded-lg transition-all">
+        <span class="material-symbols-outlined text-text-secondary">close</span>
+      </button>
+    </div>
+    <div id="flyer-modal-body" class="p-5 max-h-[70vh] overflow-auto flex items-center justify-center bg-surface-container-low/30">
+      <!-- contenido inyectado por JS -->
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var TIPO_LABELS = { charla:'Charla', taller:'Taller', webinar:'Webinar', feria:'Feria', conferencia:'Conferencia', visita:'Visita' };
+  var TIPO_COLORS = { charla:'bg-blue-50 text-blue-700', taller:'bg-green-50 text-green-700', webinar:'bg-violet-50 text-violet-700', feria:'bg-red-50 text-red-700', conferencia:'bg-indigo-50 text-indigo-700', visita:'bg-teal-50 text-teal-700' };
+  var ESTADO_CFG  = {
+    pendiente: { cls: 'bg-warning/10 text-warning',  dot: 'bg-warning',  label: 'Pendiente' },
+    aprobado:  { cls: 'bg-success/10 text-success',  dot: 'bg-success',  label: 'Aprobado'  },
+    rechazado: { cls: 'bg-error/10 text-error',      dot: 'bg-error',    label: 'Rechazado' },
+  };
+
+  var activeFilter = 'todos';
+  var searchQuery  = '';
+
+  function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  function fmtFecha(str) {
+    if (!str) return '—';
+    var parts = str.split('-');
+    return parts[2] + '/' + parts[1] + '/' + parts[0];
+  }
+
+  function renderEventosTable() {
+    var eventos = Store.getEventos();
+    var tbody = document.getElementById('eventos-tbody');
+    if (!tbody) return;
+
+    var filtered = eventos.filter(function (ev) {
+      var matchFilter = activeFilter === 'todos' || ev.estado === activeFilter;
+      var matchSearch = !searchQuery || (ev.empresa + ev.titulo + ev.tipo).toLowerCase().includes(searchQuery);
+      return matchFilter && matchSearch;
+    });
+
+    if (filtered.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="8" class="text-center px-5 py-10 text-text-secondary text-sm">No hay eventos que coincidan con el filtro.</td></tr>';
+      return;
+    }
+
+    tbody.innerHTML = filtered.map(function (ev) {
+      var est  = ESTADO_CFG[ev.estado] || ESTADO_CFG.pendiente;
+      var tipo = TIPO_LABELS[ev.tipo] || ev.tipo || '—';
+      var tipoCls = TIPO_COLORS[ev.tipo] || 'bg-surface-container text-text-secondary';
+      var publicoStr = (ev.publico || []).map(function (p) { return p.charAt(0).toUpperCase() + p.slice(1); }).join(', ') || '—';
+      var flyerHtml = ev.flyerDataUrl
+        ? '<button onclick="openFlyerModal(\'' + esc(ev.id) + '\')" class="inline-flex items-center gap-1 text-primary text-xs font-semibold hover:underline"><span class="material-symbols-outlined text-xs">visibility</span>Ver</button>'
+        : '<span class="text-text-secondary text-xs">—</span>';
+      var actionHtml = ev.estado === 'pendiente'
+        ? '<div class="flex items-center justify-center gap-2">'
+          + '<button onclick="approveEvento(\'' + esc(ev.id) + '\')" class="inline-flex items-center gap-1 px-3 py-1.5 bg-success/10 text-success rounded-lg text-xs font-semibold hover:bg-success/20 transition-all"><span class="material-symbols-outlined text-xs">check</span>Aprobar</button>'
+          + '<button onclick="rejectEvento(\'' + esc(ev.id) + '\')" class="inline-flex items-center gap-1 px-3 py-1.5 bg-error/10 text-error rounded-lg text-xs font-semibold hover:bg-error/20 transition-all"><span class="material-symbols-outlined text-xs">close</span>Rechazar</button>'
+          + '</div>'
+        : '<p class="text-center text-xs text-text-secondary">— ' + est.label.toLowerCase() + ' —</p>';
+      var rowOpacity = ev.estado !== 'pendiente' ? ' opacity-70' : '';
+      return '<tr class="hover:bg-surface-container-low/40 transition-colors' + rowOpacity + '">'
+        + '<td class="px-5 py-4"><p class="font-semibold text-on-surface">' + esc(ev.empresa) + '</p><p class="text-xs text-text-secondary">' + esc(ev.email) + '</p></td>'
+        + '<td class="px-5 py-4"><p class="font-medium text-on-surface max-w-[200px]">' + esc(ev.titulo) + '</p><p class="text-xs text-text-secondary mt-0.5">' + esc(ev.modalidad) + ' — ' + esc(ev.lugar || '—') + '</p></td>'
+        + '<td class="px-5 py-4"><span class="px-2 py-0.5 rounded-full text-xs font-semibold ' + tipoCls + '">' + esc(tipo) + '</span></td>'
+        + '<td class="px-5 py-4 text-text-secondary text-xs whitespace-nowrap">' + fmtFecha(ev.fechaInicio) + (ev.fechaFin !== ev.fechaInicio ? '<br>' + fmtFecha(ev.fechaFin) : '') + '</td>'
+        + '<td class="px-5 py-4 text-text-secondary text-xs">' + esc(publicoStr) + '</td>'
+        + '<td class="px-5 py-4">' + flyerHtml + '</td>'
+        + '<td class="px-5 py-4"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold ' + est.cls + '"><span class="w-1.5 h-1.5 rounded-full ' + est.dot + '"></span>' + est.label + '</span></td>'
+        + '<td class="px-5 py-4">' + actionHtml + '</td>'
+        + '</tr>';
+    }).join('');
+  }
+
+  // Aprobar / Rechazar — expuestas como globales para los onclick inline
+  window.approveEvento = function (id) { Store.updateEventoEstado(id, 'aprobado');  renderEventosTable(); };
+  window.rejectEvento  = function (id) { Store.updateEventoEstado(id, 'rechazado'); renderEventosTable(); };
+
+  // Flyer modal
+  window.openFlyerModal = function (id) {
+    var eventos = Store.getEventos();
+    var ev = null;
+    for (var i = 0; i < eventos.length; i++) { if (eventos[i].id === id) { ev = eventos[i]; break; } }
+    if (!ev || !ev.flyerDataUrl) return;
+    var modal = document.getElementById('flyer-modal');
+    var body  = document.getElementById('flyer-modal-body');
+    var name  = document.getElementById('flyer-modal-name');
+    name.textContent = ev.flyerName || 'Flyer';
+    if (ev.flyerDataUrl.startsWith('data:image')) {
+      body.innerHTML = '<img src="' + ev.flyerDataUrl + '" class="max-w-full max-h-[60vh] rounded-lg object-contain">';
+    } else {
+      body.innerHTML = '<embed src="' + ev.flyerDataUrl + '" type="application/pdf" width="100%" height="500px" class="rounded-lg">';
+    }
+    modal.classList.remove('hidden');
+  };
+  document.getElementById('flyer-modal-close').addEventListener('click', function () {
+    document.getElementById('flyer-modal').classList.add('hidden');
+  });
+  document.getElementById('flyer-modal').addEventListener('click', function (e) {
+    if (e.target === this) this.classList.add('hidden');
+  });
+
+  // Filtros
+  document.querySelectorAll('.ev-filter-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      activeFilter = this.dataset.estado;
+      document.querySelectorAll('.ev-filter-btn').forEach(function (b) {
+        b.classList.remove('bg-primary', 'text-on-primary', 'font-semibold');
+        b.classList.add('border', 'border-border-subtle', 'text-text-secondary', 'font-medium');
+      });
+      this.classList.remove('border', 'border-border-subtle', 'text-text-secondary', 'font-medium');
+      this.classList.add('bg-primary', 'text-on-primary', 'font-semibold');
+      renderEventosTable();
+    });
+  });
+
+  // Búsqueda
+  document.getElementById('ev-search').addEventListener('input', function () {
+    searchQuery = this.value.trim().toLowerCase();
+    renderEventosTable();
+  });
+
+  // Config panel toggle
+  document.getElementById('btn-toggle-config').addEventListener('click', function () {
+    document.getElementById('config-panel').classList.toggle('hidden');
+  });
+
+  // Mostrar año actual en config
+  var anioEl = document.getElementById('max-anio-display');
+  if (anioEl) anioEl.value = new Date().getFullYear();
+
+  // Cargar valor actual de maxDias
+  var maxDiasInput = document.getElementById('max-dias-input');
+  if (maxDiasInput) maxDiasInput.value = Store.getConfig().maxDias;
+
+  // Guardar config
+  document.getElementById('btn-save-config').addEventListener('click', function () {
+    var val = parseInt(document.getElementById('max-dias-input').value, 10);
+    if (isNaN(val) || val < 1) return;
+    Store.setConfig({ maxDias: val });
+    var saved = document.getElementById('config-saved');
+    saved.classList.remove('hidden');
+    setTimeout(function () { saved.classList.add('hidden'); }, 2500);
+  });
+
+  // Render inicial
+  renderEventosTable();
+})();
+</script>

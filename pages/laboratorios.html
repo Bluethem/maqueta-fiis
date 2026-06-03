@@ -1,0 +1,420 @@
+<div class="page-enter space-y-8">
+
+  <!-- Hero -->
+  <section class="relative bg-primary overflow-hidden rounded-2xl min-h-[260px] flex items-center">
+    <div class="absolute inset-0 opacity-10" style="background-image:repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%);background-size:20px 20px;"></div>
+    <div class="relative z-10 px-8 md:px-16 py-12 w-full">
+      <div class="max-w-2xl">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-brand-cream text-3xl" style="font-variation-settings:'FILL'1;">science</span>
+          <span class="text-brand-cream font-semibold text-sm uppercase tracking-widest">Secretaría Administrativa</span>
+        </div>
+        <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-3 leading-tight">Laboratorios FIIS</h1>
+        <p class="text-on-primary/90 text-lg leading-relaxed max-w-xl">Infraestructura especializada para la formación práctica, investigación y desarrollo tecnológico de la facultad.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-[1200px] mx-auto px-6 md:px-8 space-y-6">
+
+    <!-- Filtros -->
+    <div class="flex flex-wrap gap-2" id="labFilters">
+      <button data-area="all" class="lab-filter active px-3.5 py-1.5 text-sm font-semibold bg-primary text-on-primary rounded-lg transition-all">Todos</button>
+      <button data-area="industrial" class="lab-filter px-3.5 py-1.5 text-sm font-medium border border-border-subtle text-text-secondary rounded-lg hover:border-primary hover:text-primary transition-all">Ing. Industrial</button>
+      <button data-area="sistemas" class="lab-filter px-3.5 py-1.5 text-sm font-medium border border-border-subtle text-text-secondary rounded-lg hover:border-primary hover:text-primary transition-all">Ing. Sistemas</button>
+      <button data-area="software" class="lab-filter px-3.5 py-1.5 text-sm font-medium border border-border-subtle text-text-secondary rounded-lg hover:border-primary hover:text-primary transition-all">Ing. Software</button>
+      <button data-area="ia" class="lab-filter px-3.5 py-1.5 text-sm font-medium border border-border-subtle text-text-secondary rounded-lg hover:border-primary hover:text-primary transition-all">Inteligencia Artificial</button>
+    </div>
+
+    <!-- Grid de fichas -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="labGrid">
+
+      <!-- Lab 1 — Computación -->
+      <div class="lab-card bg-white rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all overflow-hidden" data-area="sistemas">
+        <div class="flex items-center gap-4 px-5 py-4 border-b border-border-subtle bg-blue-50">
+          <div class="w-11 h-11 rounded-xl bg-blue-700 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-white" style="font-variation-settings:'FILL'1;">computer</span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-on-surface">Laboratorio de Computación General</h3>
+            <p class="text-xs text-text-secondary mt-0.5">Ing. Sistemas · Pabellón B, 2.° piso</p>
+          </div>
+          <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-success/10 text-success flex-shrink-0">
+            <span class="w-1.5 h-1.5 rounded-full bg-success inline-block"></span>Activo
+          </span>
+        </div>
+        <div class="p-5 space-y-3">
+          <div>
+            <p class="text-xs font-bold text-on-surface mb-1">Descripción</p>
+            <p class="text-xs text-text-secondary leading-relaxed">Laboratorio de uso general para cursos de programación, bases de datos, sistemas operativos y redes. Soporte a prácticas de toda la facultad.</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-on-surface mb-1">Objetivos</p>
+            <p class="text-xs text-text-secondary leading-relaxed">Brindar entorno de cómputo actualizado para el aprendizaje práctico de herramientas de ingeniería de sistemas y software.</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-on-surface mb-2">Equipamiento</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 text-xs">40 PCs Intel i7</span>
+              <span class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 text-xs">Windows 11 + Linux</span>
+              <span class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 text-xs">Software Office 365</span>
+              <span class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 text-xs">Visual Studio Code</span>
+              <span class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 text-xs">Proyector 4K</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-between pt-2 border-t border-border-subtle">
+            <div class="text-xs text-text-secondary">
+              <span class="material-symbols-outlined text-xs align-middle">person</span> Resp.: Ing. Carlos Mendoza
+            </div>
+            <div class="text-xs text-text-secondary">
+              <span class="material-symbols-outlined text-xs align-middle">mail</span> lab.comp@fiis.uni.edu.pe
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lab 2 — Redes -->
+      <div class="lab-card bg-white rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all overflow-hidden" data-area="sistemas">
+        <div class="flex items-center gap-4 px-5 py-4 border-b border-border-subtle bg-teal-50">
+          <div class="w-11 h-11 rounded-xl bg-teal-700 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-white" style="font-variation-settings:'FILL'1;">router</span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-on-surface">Laboratorio de Redes y Telecomunicaciones</h3>
+            <p class="text-xs text-text-secondary mt-0.5">Ing. Sistemas · Pabellón B, 3.° piso</p>
+          </div>
+          <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-success/10 text-success flex-shrink-0">
+            <span class="w-1.5 h-1.5 rounded-full bg-success inline-block"></span>Activo
+          </span>
+        </div>
+        <div class="p-5 space-y-3">
+          <div>
+            <p class="text-xs font-bold text-on-surface mb-1">Descripción</p>
+            <p class="text-xs text-text-secondary leading-relaxed">Espacio especializado en configuración de redes LAN/WAN, seguridad perimetral, protocolos TCP/IP y administración de sistemas distribuidos.</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-on-surface mb-1">Objetivos</p>
+            <p class="text-xs text-text-secondary leading-relaxed">Desarrollar competencias prácticas en diseño, implementación y gestión de infraestructura de redes empresariales.</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-on-surface mb-2">Equipamiento</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded-full bg-teal-100 text-teal-800 text-xs">20 Routers Cisco</span>
+              <span class="px-2 py-0.5 rounded-full bg-teal-100 text-teal-800 text-xs">Switches Managed</span>
+              <span class="px-2 py-0.5 rounded-full bg-teal-100 text-teal-800 text-xs">Cisco Packet Tracer</span>
+              <span class="px-2 py-0.5 rounded-full bg-teal-100 text-teal-800 text-xs">Wireshark</span>
+              <span class="px-2 py-0.5 rounded-full bg-teal-100 text-teal-800 text-xs">GNS3 Network Emulator</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-between pt-2 border-t border-border-subtle">
+            <div class="text-xs text-text-secondary">
+              <span class="material-symbols-outlined text-xs align-middle">person</span> Resp.: Ing. Patricia Torres
+            </div>
+            <div class="text-xs text-text-secondary">
+              <span class="material-symbols-outlined text-xs align-middle">mail</span> lab.redes@fiis.uni.edu.pe
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lab 3 — IA -->
+      <div class="lab-card bg-white rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all overflow-hidden" data-area="ia">
+        <div class="flex items-center gap-4 px-5 py-4 border-b border-border-subtle bg-purple-50">
+          <div class="w-11 h-11 rounded-xl bg-purple-700 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-white" style="font-variation-settings:'FILL'1;">psychology</span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-on-surface">Laboratorio de Inteligencia Artificial</h3>
+            <p class="text-xs text-text-secondary mt-0.5">Inteligencia Artificial · Pabellón D, 4.° piso</p>
+          </div>
+          <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-success/10 text-success flex-shrink-0">
+            <span class="w-1.5 h-1.5 rounded-full bg-success inline-block"></span>Activo
+          </span>
+        </div>
+        <div class="p-5 space-y-3">
+          <div>
+            <p class="text-xs font-bold text-on-surface mb-1">Descripción</p>
+            <p class="text-xs text-text-secondary leading-relaxed">Laboratorio de alto rendimiento para investigación y desarrollo en machine learning, visión artificial, NLP y sistemas inteligentes. Inaugurado en 2024.</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-on-surface mb-1">Objetivos</p>
+            <p class="text-xs text-text-secondary leading-relaxed">Proveer infraestructura de cómputo avanzada para proyectos de investigación en IA aplicada a industria, salud y servicios públicos.</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-on-surface mb-2">Equipamiento</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded-full bg-purple-100 text-purple-800 text-xs">16 Workstations GPU NVIDIA A100</span>
+              <span class="px-2 py-0.5 rounded-full bg-purple-100 text-purple-800 text-xs">Clúster 4 nodos HPC</span>
+              <span class="px-2 py-0.5 rounded-full bg-purple-100 text-purple-800 text-xs">TensorFlow / PyTorch</span>
+              <span class="px-2 py-0.5 rounded-full bg-purple-100 text-purple-800 text-xs">Cámaras visión artificial</span>
+              <span class="px-2 py-0.5 rounded-full bg-purple-100 text-purple-800 text-xs">ROS2 / Robótica</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-between pt-2 border-t border-border-subtle">
+            <div class="text-xs text-text-secondary">
+              <span class="material-symbols-outlined text-xs align-middle">person</span> Resp.: Dr. Luis Huanca
+            </div>
+            <div class="text-xs text-text-secondary">
+              <span class="material-symbols-outlined text-xs align-middle">mail</span> lab.ia@fiis.uni.edu.pe
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lab 4 — Control de Calidad -->
+      <div class="lab-card bg-white rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all overflow-hidden" data-area="industrial">
+        <div class="flex items-center gap-4 px-5 py-4 border-b border-border-subtle bg-orange-50">
+          <div class="w-11 h-11 rounded-xl bg-orange-700 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-white" style="font-variation-settings:'FILL'1;">verified</span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-on-surface">Laboratorio de Control de Calidad</h3>
+            <p class="text-xs text-text-secondary mt-0.5">Ing. Industrial · Pabellón E, 1.° piso</p>
+          </div>
+          <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-success/10 text-success flex-shrink-0">
+            <span class="w-1.5 h-1.5 rounded-full bg-success inline-block"></span>Activo
+          </span>
+        </div>
+        <div class="p-5 space-y-3">
+          <div>
+            <p class="text-xs font-bold text-on-surface mb-1">Descripción</p>
+            <p class="text-xs text-text-secondary leading-relaxed">Laboratorio orientado a prácticas de gestión de calidad industrial, metrología, normas ISO y estadística de control de procesos.</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-on-surface mb-1">Objetivos</p>
+            <p class="text-xs text-text-secondary leading-relaxed">Formar ingenieros industriales con competencias en control estadístico de calidad, auditoría de procesos y certificación ISO 9001.</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-on-surface mb-2">Equipamiento</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded-full bg-orange-100 text-orange-800 text-xs">Instrumentos de medición Mitutoyo</span>
+              <span class="px-2 py-0.5 rounded-full bg-orange-100 text-orange-800 text-xs">Máquina de medición CMM</span>
+              <span class="px-2 py-0.5 rounded-full bg-orange-100 text-orange-800 text-xs">Minitab / Statgraphics</span>
+              <span class="px-2 py-0.5 rounded-full bg-orange-100 text-orange-800 text-xs">Kits de control SPC</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-between pt-2 border-t border-border-subtle">
+            <div class="text-xs text-text-secondary">
+              <span class="material-symbols-outlined text-xs align-middle">person</span> Resp.: Mg. Rosa Flores
+            </div>
+            <div class="text-xs text-text-secondary">
+              <span class="material-symbols-outlined text-xs align-middle">mail</span> lab.calidad@fiis.uni.edu.pe
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lab 5 — Automatización -->
+      <div class="lab-card bg-white rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all overflow-hidden" data-area="industrial">
+        <div class="flex items-center gap-4 px-5 py-4 border-b border-border-subtle bg-amber-50">
+          <div class="w-11 h-11 rounded-xl bg-amber-700 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-white" style="font-variation-settings:'FILL'1;">precision_manufacturing</span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-on-surface">Laboratorio de Automatización Industrial</h3>
+            <p class="text-xs text-text-secondary mt-0.5">Ing. Industrial · Pabellón E, 2.° piso</p>
+          </div>
+          <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-success/10 text-success flex-shrink-0">
+            <span class="w-1.5 h-1.5 rounded-full bg-success inline-block"></span>Activo
+          </span>
+        </div>
+        <div class="p-5 space-y-3">
+          <div>
+            <p class="text-xs font-bold text-on-surface mb-1">Descripción</p>
+            <p class="text-xs text-text-secondary leading-relaxed">Laboratorio dedicado a PLC, SCADA, automatización de procesos y manufactura avanzada. Soporte a proyectos IoT y sistemas de control.</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-on-surface mb-1">Objetivos</p>
+            <p class="text-xs text-text-secondary leading-relaxed">Desarrollar competencias en programación de PLCs, diseño de sistemas SCADA e integración de tecnologías Industry 4.0.</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-on-surface mb-2">Equipamiento</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 text-xs">PLCs Siemens S7-1200</span>
+              <span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 text-xs">Sistema SCADA WinCC</span>
+              <span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 text-xs">Robots ABB IRB 140</span>
+              <span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 text-xs">Sensores IoT</span>
+              <span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 text-xs">Arduino / Raspberry Pi</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-between pt-2 border-t border-border-subtle">
+            <div class="text-xs text-text-secondary">
+              <span class="material-symbols-outlined text-xs align-middle">person</span> Resp.: Mg. Jorge Quispe
+            </div>
+            <div class="text-xs text-text-secondary">
+              <span class="material-symbols-outlined text-xs align-middle">mail</span> lab.autom@fiis.uni.edu.pe
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lab 6 — Software -->
+      <div class="lab-card bg-white rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all overflow-hidden" data-area="software">
+        <div class="flex items-center gap-4 px-5 py-4 border-b border-border-subtle bg-green-50">
+          <div class="w-11 h-11 rounded-xl bg-green-700 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-white" style="font-variation-settings:'FILL'1;">code</span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-on-surface">Laboratorio de Ingeniería de Software</h3>
+            <p class="text-xs text-text-secondary mt-0.5">Ing. Software · Pabellón D, 2.° piso</p>
+          </div>
+          <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-success/10 text-success flex-shrink-0">
+            <span class="w-1.5 h-1.5 rounded-full bg-success inline-block"></span>Activo
+          </span>
+        </div>
+        <div class="p-5 space-y-3">
+          <div>
+            <p class="text-xs font-bold text-on-surface mb-1">Descripción</p>
+            <p class="text-xs text-text-secondary leading-relaxed">Laboratorio especializado en desarrollo de software, arquitectura de sistemas, pruebas automatizadas y metodologías ágiles. Soporte a proyectos de tesis y capstone.</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-on-surface mb-1">Objetivos</p>
+            <p class="text-xs text-text-secondary leading-relaxed">Proveer entorno profesional para desarrollo de software con herramientas industry-standard, CI/CD y gestión de proyectos ágiles.</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-on-surface mb-2">Equipamiento</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded-full bg-green-100 text-green-800 text-xs">30 PCs Apple M2</span>
+              <span class="px-2 py-0.5 rounded-full bg-green-100 text-green-800 text-xs">IntelliJ / VS Code</span>
+              <span class="px-2 py-0.5 rounded-full bg-green-100 text-green-800 text-xs">Docker / Kubernetes</span>
+              <span class="px-2 py-0.5 rounded-full bg-green-100 text-green-800 text-xs">GitLab CI/CD</span>
+              <span class="px-2 py-0.5 rounded-full bg-green-100 text-green-800 text-xs">Figma / Jira</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-between pt-2 border-t border-border-subtle">
+            <div class="text-xs text-text-secondary">
+              <span class="material-symbols-outlined text-xs align-middle">person</span> Resp.: Mg. Ana Castro
+            </div>
+            <div class="text-xs text-text-secondary">
+              <span class="material-symbols-outlined text-xs align-middle">mail</span> lab.sw@fiis.uni.edu.pe
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lab 7 — Simulación -->
+      <div class="lab-card bg-white rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all overflow-hidden" data-area="industrial">
+        <div class="flex items-center gap-4 px-5 py-4 border-b border-border-subtle bg-indigo-50">
+          <div class="w-11 h-11 rounded-xl bg-indigo-700 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-white" style="font-variation-settings:'FILL'1;">model_training</span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-on-surface">Laboratorio de Simulación de Sistemas</h3>
+            <p class="text-xs text-text-secondary mt-0.5">Ing. Industrial · Pabellón E, 3.° piso</p>
+          </div>
+          <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-warning/10 text-warning flex-shrink-0">
+            <span class="w-1.5 h-1.5 rounded-full bg-warning inline-block"></span>En renovación
+          </span>
+        </div>
+        <div class="p-5 space-y-3">
+          <div>
+            <p class="text-xs font-bold text-on-surface mb-1">Descripción</p>
+            <p class="text-xs text-text-secondary leading-relaxed">Laboratorio de simulación de procesos industriales y logísticos. Actualmente en proceso de renovación de equipos para el semestre 2025-I.</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-on-surface mb-1">Objetivos</p>
+            <p class="text-xs text-text-secondary leading-relaxed">Modelar y simular sistemas de producción, logística y cadena de suministros para optimización de procesos industriales.</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-on-surface mb-2">Equipamiento</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-800 text-xs">Arena Simulation</span>
+              <span class="px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-800 text-xs">ProModel</span>
+              <span class="px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-800 text-xs">FlexSim</span>
+              <span class="px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-800 text-xs">AnyLogic</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-between pt-2 border-t border-border-subtle">
+            <div class="text-xs text-text-secondary">
+              <span class="material-symbols-outlined text-xs align-middle">person</span> Resp.: Dr. Roberto Vega
+            </div>
+            <div class="text-xs text-text-secondary">
+              <span class="material-symbols-outlined text-xs align-middle">mail</span> lab.sim@fiis.uni.edu.pe
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lab 8 — Big Data -->
+      <div class="lab-card bg-white rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all overflow-hidden" data-area="ia">
+        <div class="flex items-center gap-4 px-5 py-4 border-b border-border-subtle bg-sky-50">
+          <div class="w-11 h-11 rounded-xl bg-sky-700 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-white" style="font-variation-settings:'FILL'1;">database</span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-on-surface">Laboratorio de Big Data y Analytics</h3>
+            <p class="text-xs text-text-secondary mt-0.5">Inteligencia Artificial · Pabellón D, 3.° piso</p>
+          </div>
+          <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-success/10 text-success flex-shrink-0">
+            <span class="w-1.5 h-1.5 rounded-full bg-success inline-block"></span>Activo
+          </span>
+        </div>
+        <div class="p-5 space-y-3">
+          <div>
+            <p class="text-xs font-bold text-on-surface mb-1">Descripción</p>
+            <p class="text-xs text-text-secondary leading-relaxed">Laboratorio para análisis de grandes volúmenes de datos, visualización de información y business intelligence aplicado a industria y servicios.</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-on-surface mb-1">Objetivos</p>
+            <p class="text-xs text-text-secondary leading-relaxed">Desarrollar habilidades en procesamiento masivo de datos, analytics y herramientas de visualización para la toma de decisiones basada en datos.</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-on-surface mb-2">Equipamiento</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded-full bg-sky-100 text-sky-800 text-xs">Clúster Hadoop/Spark</span>
+              <span class="px-2 py-0.5 rounded-full bg-sky-100 text-sky-800 text-xs">Power BI / Tableau</span>
+              <span class="px-2 py-0.5 rounded-full bg-sky-100 text-sky-800 text-xs">Python / R Studio</span>
+              <span class="px-2 py-0.5 rounded-full bg-sky-100 text-sky-800 text-xs">MongoDB / PostgreSQL</span>
+              <span class="px-2 py-0.5 rounded-full bg-sky-100 text-sky-800 text-xs">Kafka / Elasticsearch</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-between pt-2 border-t border-border-subtle">
+            <div class="text-xs text-text-secondary">
+              <span class="material-symbols-outlined text-xs align-middle">person</span> Resp.: Dr. Kenji Tanaka
+            </div>
+            <div class="text-xs text-text-secondary">
+              <span class="material-symbols-outlined text-xs align-middle">mail</span> lab.data@fiis.uni.edu.pe
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA reserva -->
+    <div class="bg-primary/5 border border-primary/20 rounded-xl p-6 flex flex-col sm:flex-row items-center gap-4">
+      <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings:'FILL'1;">event_available</span>
+      </div>
+      <div class="flex-1 text-center sm:text-left">
+        <h3 class="font-bold text-on-surface">¿Necesitas usar un laboratorio?</h3>
+        <p class="text-sm text-text-secondary mt-0.5">Para reservas de espacios y horarios fuera del horario de práctica regular, comunícate con el responsable del laboratorio o con la Secretaría Administrativa.</p>
+      </div>
+      <a href="#/contacto" class="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold bg-primary text-on-primary rounded-lg hover:brightness-110 transition-all shadow-sm">
+        <span class="material-symbols-outlined text-sm">mail</span>Solicitar reserva
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function() {
+  var filters = document.querySelectorAll('.lab-filter');
+  var cards = document.querySelectorAll('.lab-card');
+  filters.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      filters.forEach(function(b) {
+        b.classList.remove('bg-primary','text-on-primary','active');
+        b.classList.add('border','border-border-subtle','text-text-secondary');
+      });
+      btn.classList.add('bg-primary','text-on-primary','active');
+      btn.classList.remove('border','border-border-subtle','text-text-secondary');
+      var f = btn.dataset.area;
+      cards.forEach(function(c) {
+        c.style.display = (f === 'all' || c.dataset.area === f) ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
