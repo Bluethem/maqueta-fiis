@@ -20,6 +20,7 @@ window.Store = (function () {
   var _vacantes = defaultVacantes.slice();
   var _eventos = defaultEventos.slice();
   var _config = { maxDias: 31 };
+  var _deletedIds = [];
 
   function clone(obj) {
     return JSON.parse(JSON.stringify(obj));
@@ -31,6 +32,7 @@ window.Store = (function () {
         vacantes: _vacantes,
         eventos: _eventos,
         config: _config,
+        deletedIds: _deletedIds,
       }));
     } catch (e) {}
   }
@@ -43,14 +45,16 @@ window.Store = (function () {
       if (Array.isArray(data.vacantes)) _vacantes = data.vacantes;
       if (Array.isArray(data.eventos)) _eventos = data.eventos;
       if (data.config) _config = Object.assign(_config, data.config);
+      if (Array.isArray(data.deletedIds)) _deletedIds = data.deletedIds;
       _vacantes.forEach(function (v) {
         if (v.id === 'VAC-2024-079' && v.estado === 'pendiente' && !v.observacion) {
           v.estado = 'activa';
         }
       });
       defaultVacantes.forEach(function (seed) {
+        var isDeleted = _deletedIds.indexOf(seed.id) !== -1;
         var exists = _vacantes.some(function (v) { return v.id === seed.id; });
-        if (!exists) _vacantes.push(Object.assign({}, seed));
+        if (!exists && !isDeleted) _vacantes.push(Object.assign({}, seed));
       });
     } catch (e) {}
   }
@@ -111,6 +115,18 @@ window.Store = (function () {
         estado: estado,
         observacion: observacion || '',
       });
+    },
+
+    deleteVacante: function (id) {
+      var idx = -1;
+      for (var i = 0; i < _vacantes.length; i++) {
+        if (_vacantes[i].id === id) { idx = i; break; }
+      }
+      if (idx === -1) return false;
+      _vacantes.splice(idx, 1);
+      if (_deletedIds.indexOf(id) === -1) _deletedIds.push(id);
+      saveState();
+      return true;
     },
 
     getEventos: function () {
