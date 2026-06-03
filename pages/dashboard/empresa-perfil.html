@@ -56,6 +56,15 @@
     </div>
   </div>
 
+  <!-- Aviso de revisión -->
+  <div class="bg-warning/5 border border-warning/30 rounded-xl p-4 flex items-start gap-3">
+    <span class="material-symbols-outlined text-warning shrink-0">info</span>
+    <div>
+      <p class="text-sm font-semibold text-on-surface">Cambios sujetos a revisión</p>
+      <p class="text-xs text-text-secondary mt-0.5">Cualquier modificación a tu perfil público será enviada como solicitud al administrador FIIS. Los cambios se publicarán una vez aprobados (plazo estimado: 2 días hábiles).</p>
+    </div>
+  </div>
+
   <!-- Edit Form -->
   <div class="bg-white rounded-xl border border-border-subtle shadow-sm overflow-hidden">
     <div class="px-5 py-4 border-b border-border-subtle">
@@ -114,7 +123,12 @@
     </div>
     <div class="px-5 py-4 border-t border-border-subtle bg-surface-bg/20 flex items-center justify-end gap-3">
       <button class="px-4 py-2 text-sm font-semibold text-text-secondary border border-border-subtle rounded-lg hover:bg-surface-container-low transition-all">Cancelar</button>
-      <button class="px-5 py-2 text-sm font-semibold bg-primary text-on-primary rounded-lg hover:brightness-110 transition-all shadow-sm">Guardar cambios</button>
+      <button
+        class="inline-flex items-center gap-2 px-5 py-2 text-sm font-semibold bg-primary text-on-primary rounded-lg hover:brightness-110 transition-all shadow-sm"
+        onclick="var c=this.closest('.bg-white.rounded-xl');c.innerHTML='<div class=\'p-10 text-center\'><span class=\'material-symbols-outlined text-warning\' style=\'font-size:56px\'>pending_actions</span><h3 class=\'font-bold text-on-surface text-lg mt-3\'>Solicitud enviada</h3><p class=\'text-text-secondary text-sm mt-2\'>El administrador FIIS revisará tus cambios antes de publicarlos.</p><span class=\'inline-flex items-center gap-1.5 mt-4 px-3 py-1 rounded-full text-xs font-semibold bg-warning/10 text-warning\'><span class=\\\"w-1.5 h-1.5 rounded-full bg-warning inline-block\\\"></span>Pendiente de revisión</span></div>'">
+        <span class="material-symbols-outlined text-sm">pending_actions</span>
+        Solicitar actualización
+      </button>
     </div>
   </div>
 </div>

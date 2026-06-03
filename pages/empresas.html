@@ -84,13 +84,21 @@
             <button data-vinculo="convenio" class="border border-border-subtle text-on-surface-variant rounded-lg px-4 py-2 text-sm font-medium hover:bg-surface-container-low transition-all">Convenio</button>
             <button data-vinculo="proyecto" class="border border-border-subtle text-on-surface-variant rounded-lg px-4 py-2 text-sm font-medium hover:bg-surface-container-low transition-all">Proyecto</button>
           </div>
+          <!-- Fila 3: Estado de empresa -->
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="text-xs font-semibold text-text-secondary uppercase tracking-wider mr-1">Estado</span>
+            <button data-estado-empresa="todos" class="bg-primary text-on-primary rounded-lg px-4 py-2 text-sm font-semibold transition-all">Todos</button>
+            <button data-estado-empresa="activo" class="border border-border-subtle text-on-surface-variant rounded-lg px-4 py-2 text-sm font-medium hover:bg-surface-container-low transition-all">Aliado activo</button>
+            <button data-estado-empresa="proceso" class="border border-border-subtle text-on-surface-variant rounded-lg px-4 py-2 text-sm font-medium hover:bg-surface-container-low transition-all">En proceso</button>
+            <button data-estado-empresa="inactivo" class="border border-border-subtle text-on-surface-variant rounded-lg px-4 py-2 text-sm font-medium hover:bg-surface-container-low transition-all">Sin convenio vigente</button>
+          </div>
         </div>
 
         <!-- Grid de empresa cards -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
           <!-- Company 1: Industrias Acero SAC -->
-          <div class="company-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-rubro="industrial" data-vinculo="practicas convenio">
+          <div class="company-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-rubro="industrial" data-vinculo="practicas convenio" data-estado-empresa="activo">
             <div class="flex items-center gap-3 mb-3">
               <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center text-lg font-extrabold shrink-0">A</div>
               <div class="min-w-0">
@@ -112,7 +120,7 @@
           </div>
 
           <!-- Company 2: Grupo Graña y Montero -->
-          <div class="company-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-rubro="industrial" data-vinculo="proyecto convenio">
+          <div class="company-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-rubro="industrial" data-vinculo="proyecto convenio" data-estado-empresa="activo">
             <div class="flex items-center gap-3 mb-3">
               <div class="w-12 h-12 rounded-full bg-teal-50 text-teal-700 flex items-center justify-center text-lg font-extrabold shrink-0">G</div>
               <div class="min-w-0">
@@ -134,7 +142,7 @@
           </div>
 
           <!-- Company 3: Backus -->
-          <div class="company-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-rubro="industrial" data-vinculo="practicas convenio">
+          <div class="company-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-rubro="industrial" data-vinculo="practicas convenio" data-estado-empresa="activo">
             <div class="flex items-center gap-3 mb-3">
               <div class="w-12 h-12 rounded-full bg-amber-50 text-amber-700 flex items-center justify-center text-lg font-extrabold shrink-0">B</div>
               <div class="min-w-0">
@@ -156,7 +164,7 @@
           </div>
 
           <!-- Company 4: Alicorp -->
-          <div class="company-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-rubro="logistica" data-vinculo="practicas empleo convenio">
+          <div class="company-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-rubro="logistica" data-vinculo="practicas empleo convenio" data-estado-empresa="activo">
             <div class="flex items-center gap-3 mb-3">
               <div class="w-12 h-12 rounded-full bg-green-50 text-green-700 flex items-center justify-center text-lg font-extrabold shrink-0">A</div>
               <div class="min-w-0">
@@ -179,7 +187,7 @@
           </div>
 
           <!-- Company 5: Scotiabank Perú -->
-          <div class="company-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-rubro="sistemas" data-vinculo="empleo convenio">
+          <div class="company-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-rubro="sistemas" data-vinculo="empleo convenio" data-estado-empresa="proceso">
             <div class="flex items-center gap-3 mb-3">
               <div class="w-12 h-12 rounded-full bg-red-50 text-red-700 flex items-center justify-center text-lg font-extrabold shrink-0">S</div>
               <div class="min-w-0">
@@ -201,7 +209,7 @@
           </div>
 
           <!-- Company 6: Komatsu-Mitsui -->
-          <div class="company-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-rubro="industrial" data-vinculo="practicas convenio">
+          <div class="company-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-rubro="industrial" data-vinculo="practicas convenio" data-estado-empresa="activo">
             <div class="flex items-center gap-3 mb-3">
               <div class="w-12 h-12 rounded-full bg-orange-50 text-orange-700 flex items-center justify-center text-lg font-extrabold shrink-0">K</div>
               <div class="min-w-0">
@@ -223,7 +231,7 @@
           </div>
 
           <!-- Company 7: Ferreyros -->
-          <div class="company-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-rubro="logistica" data-vinculo="practicas convenio">
+          <div class="company-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-rubro="logistica" data-vinculo="practicas convenio" data-estado-empresa="activo">
             <div class="flex items-center gap-3 mb-3">
               <div class="w-12 h-12 rounded-full bg-indigo-50 text-indigo-700 flex items-center justify-center text-lg font-extrabold shrink-0">F</div>
               <div class="min-w-0">
@@ -245,7 +253,7 @@
           </div>
 
           <!-- Company 8: Interbank -->
-          <div class="company-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-rubro="sistemas" data-vinculo="practicas empleo convenio">
+          <div class="company-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-rubro="sistemas" data-vinculo="practicas empleo convenio" data-estado-empresa="activo">
             <div class="flex items-center gap-3 mb-3">
               <div class="w-12 h-12 rounded-full bg-rose-50 text-rose-700 flex items-center justify-center text-lg font-extrabold shrink-0">I</div>
               <div class="min-w-0">
@@ -306,6 +314,15 @@
         <!-- Filtros secundarios (R9) -->
         <div class="flex flex-wrap gap-4 mb-6">
           <div class="flex items-center gap-2">
+            <p class="text-xs font-semibold text-text-secondary uppercase">Rubro:</p>
+            <div class="flex gap-1.5">
+              <button class="op-rubro-btn bg-primary text-on-primary rounded-full px-3 py-1 text-xs font-semibold transition-all" data-op-rubro="todos">Todos</button>
+              <button class="op-rubro-btn border border-border-subtle text-on-surface-variant rounded-full px-3 py-1 text-xs font-medium hover:bg-surface-container-low transition-all" data-op-rubro="industrial">Industrial</button>
+              <button class="op-rubro-btn border border-border-subtle text-on-surface-variant rounded-full px-3 py-1 text-xs font-medium hover:bg-surface-container-low transition-all" data-op-rubro="sistemas">Sistemas</button>
+              <button class="op-rubro-btn border border-border-subtle text-on-surface-variant rounded-full px-3 py-1 text-xs font-medium hover:bg-surface-container-low transition-all" data-op-rubro="logistica">Logistica</button>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
             <p class="text-xs font-semibold text-text-secondary uppercase">Tipo:</p>
             <div class="flex gap-1.5">
               <button class="op-tipo-btn bg-primary text-on-primary rounded-full px-3 py-1 text-xs font-semibold transition-all" data-op-tipo="todos">Todos</button>
@@ -322,13 +339,21 @@
               <button class="op-modalidad-btn border border-border-subtle text-on-surface-variant rounded-full px-3 py-1 text-xs font-medium hover:bg-surface-container-low transition-all" data-op-modalidad="hibrido">Híbrido</button>
             </div>
           </div>
+          <div class="flex items-center gap-2">
+            <p class="text-xs font-semibold text-text-secondary uppercase">Estado:</p>
+            <div class="flex gap-1.5">
+              <button class="op-estado-btn bg-primary text-on-primary rounded-full px-3 py-1 text-xs font-semibold transition-all" data-op-estado-filter="todos">Todos</button>
+              <button class="op-estado-btn border border-border-subtle text-on-surface-variant rounded-full px-3 py-1 text-xs font-medium hover:bg-surface-container-low transition-all" data-op-estado-filter="vigente">Vigente</button>
+              <button class="op-estado-btn border border-border-subtle text-on-surface-variant rounded-full px-3 py-1 text-xs font-medium hover:bg-surface-container-low transition-all" data-op-estado-filter="cerrado">Cerrado</button>
+            </div>
+          </div>
         </div>
 
         <!-- Grid de oportunidades -->
         <div id="op-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
 
           <!-- Op 1 -->
-          <div class="op-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-op-carrera="industrial" data-op-tipo="practica" data-op-modalidad="presencial" data-op-estado="vigente">
+          <div class="op-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-op-carrera="industrial" data-op-rubro="logistica" data-op-tipo="practica" data-op-modalidad="presencial" data-op-estado="vigente">
             <div class="flex items-start justify-between mb-3">
               <div class="flex items-center gap-3">
                 <div class="w-10 h-10 rounded-full bg-green-50 text-green-700 flex items-center justify-center text-sm font-extrabold shrink-0">A</div>
@@ -352,7 +377,7 @@
           </div>
 
           <!-- Op 2 -->
-          <div class="op-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-op-carrera="sistemas" data-op-tipo="empleo" data-op-modalidad="hibrido" data-op-estado="vigente">
+          <div class="op-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-op-carrera="sistemas" data-op-rubro="sistemas" data-op-tipo="empleo" data-op-modalidad="hibrido" data-op-estado="vigente">
             <div class="flex items-start justify-between mb-3">
               <div class="flex items-center gap-3">
                 <div class="w-10 h-10 rounded-full bg-rose-50 text-rose-700 flex items-center justify-center text-sm font-extrabold shrink-0">I</div>
@@ -376,7 +401,7 @@
           </div>
 
           <!-- Op 3 -->
-          <div class="op-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-op-carrera="industrial" data-op-tipo="empleo" data-op-modalidad="presencial" data-op-estado="vigente">
+          <div class="op-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-op-carrera="industrial" data-op-rubro="logistica" data-op-tipo="empleo" data-op-modalidad="presencial" data-op-estado="vigente">
             <div class="flex items-start justify-between mb-3">
               <div class="flex items-center gap-3">
                 <div class="w-10 h-10 rounded-full bg-indigo-50 text-indigo-700 flex items-center justify-center text-sm font-extrabold shrink-0">F</div>
@@ -400,7 +425,7 @@
           </div>
 
           <!-- Op 4 -->
-          <div class="op-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-op-carrera="software" data-op-tipo="practica" data-op-modalidad="remoto" data-op-estado="vigente">
+          <div class="op-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-op-carrera="software" data-op-rubro="sistemas" data-op-tipo="practica" data-op-modalidad="remoto" data-op-estado="vigente">
             <div class="flex items-start justify-between mb-3">
               <div class="flex items-center gap-3">
                 <div class="w-10 h-10 rounded-full bg-sky-50 text-sky-700 flex items-center justify-center text-sm font-extrabold shrink-0">S</div>
@@ -424,7 +449,7 @@
           </div>
 
           <!-- Op 5 -->
-          <div class="op-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-op-carrera="ia" data-op-tipo="practica" data-op-modalidad="hibrido" data-op-estado="vigente">
+          <div class="op-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-op-carrera="ia" data-op-rubro="industrial" data-op-tipo="practica" data-op-modalidad="hibrido" data-op-estado="vigente">
             <div class="flex items-start justify-between mb-3">
               <div class="flex items-center gap-3">
                 <div class="w-10 h-10 rounded-full bg-yellow-50 text-yellow-700 flex items-center justify-center text-sm font-extrabold shrink-0">K</div>
@@ -448,7 +473,7 @@
           </div>
 
           <!-- Op 6 -->
-          <div class="op-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-op-carrera="sistemas" data-op-tipo="practica" data-op-modalidad="presencial" data-op-estado="cerrado">
+          <div class="op-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col" data-op-carrera="sistemas" data-op-rubro="industrial" data-op-tipo="practica" data-op-modalidad="presencial" data-op-estado="cerrado">
             <div class="flex items-start justify-between mb-3">
               <div class="flex items-center gap-3">
                 <div class="w-10 h-10 rounded-full bg-red-50 text-red-700 flex items-center justify-center text-sm font-extrabold shrink-0">B</div>
@@ -477,7 +502,7 @@
         <div id="op-no-results" class="hidden text-center py-10 mt-4">
           <span class="material-symbols-outlined text-4xl text-text-secondary mb-2 block">work_off</span>
           <p class="text-on-surface font-semibold">No hay oportunidades con esos filtros</p>
-          <p class="text-text-secondary text-sm">Intenta con otra carrera o modalidad.</p>
+          <p class="text-text-secondary text-sm">Intenta con otra carrera, rubro, modalidad o estado.</p>
         </div>
       </div>
 
@@ -505,8 +530,10 @@
                 <span class="bg-amber-50 text-amber-700 px-2 py-0.5 rounded-full text-[10px] font-semibold">Presencial</span>
               </div>
               <h3 class="text-sm font-bold text-on-surface mb-1">Lean Six Sigma en la industria alimentaria</h3>
-              <p class="text-text-secondary text-xs mb-2">Por <span class="font-semibold text-primary">Alicorp</span> — Auditorio FIIS, Pab. H</p>
-              <p class="text-text-secondary text-xs">Aplicación de metodologías de mejora continua en líneas de producción de alto volumen.</p>
+              <p class="text-text-secondary text-xs mb-1">Por <span class="font-semibold text-primary">Alicorp</span> — Auditorio FIIS, Pab. H</p>
+              <p class="text-text-secondary text-[10px] mb-2 flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:11px">schedule</span>10:00 a.m. — 12:00 p.m.</p>
+              <p class="text-text-secondary text-xs mb-3">Aplicación de metodologías de mejora continua en líneas de producción de alto volumen.</p>
+              <a href="#" class="inline-flex items-center gap-1 text-[10px] font-semibold text-primary hover:underline">Inscribirse <span class="material-symbols-outlined" style="font-size:11px">open_in_new</span></a>
             </div>
           </div>
 
@@ -526,8 +553,10 @@
                 <span class="bg-teal-50 text-teal-700 px-2 py-0.5 rounded-full text-[10px] font-semibold">Virtual</span>
               </div>
               <h3 class="text-sm font-bold text-on-surface mb-1">Fintech & Sistemas de Pago Digitales</h3>
-              <p class="text-text-secondary text-xs mb-2">Por <span class="font-semibold text-primary">Interbank</span> — Zoom (enlace al registrarte)</p>
-              <p class="text-text-secondary text-xs">Arquitectura de sistemas financieros modernos y oportunidades en el sector bancario digital.</p>
+              <p class="text-text-secondary text-xs mb-1">Por <span class="font-semibold text-primary">Interbank</span> — Zoom</p>
+              <p class="text-text-secondary text-[10px] mb-2 flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:11px">schedule</span>6:00 p.m. — 8:00 p.m.</p>
+              <p class="text-text-secondary text-xs mb-3">Arquitectura de sistemas financieros modernos y oportunidades en el sector bancario digital.</p>
+              <a href="#" class="inline-flex items-center gap-1 text-[10px] font-semibold text-primary hover:underline">Registrarse (Zoom) <span class="material-symbols-outlined" style="font-size:11px">open_in_new</span></a>
             </div>
           </div>
 
@@ -547,8 +576,10 @@
                 <span class="bg-purple-50 text-purple-700 px-2 py-0.5 rounded-full text-[10px] font-semibold">Híbrido</span>
               </div>
               <h3 class="text-sm font-bold text-on-surface mb-1">Workshop de IA para mantenimiento predictivo</h3>
-              <p class="text-text-secondary text-xs mb-2">Por <span class="font-semibold text-primary">Komatsu</span> — Lab. Cómputo 3 + streaming</p>
-              <p class="text-text-secondary text-xs">Casos reales de machine learning aplicado a flotas de equipos pesados en minería.</p>
+              <p class="text-text-secondary text-xs mb-1">Por <span class="font-semibold text-primary">Komatsu</span> — Lab. Cómputo 3 + streaming</p>
+              <p class="text-text-secondary text-[10px] mb-2 flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:11px">schedule</span>9:00 a.m. — 1:00 p.m.</p>
+              <p class="text-text-secondary text-xs mb-3">Casos reales de machine learning aplicado a flotas de equipos pesados en minería.</p>
+              <a href="#" class="inline-flex items-center gap-1 text-[10px] font-semibold text-primary hover:underline">Inscribirse <span class="material-symbols-outlined" style="font-size:11px">open_in_new</span></a>
             </div>
           </div>
 
@@ -568,9 +599,96 @@
                 <span class="bg-amber-50 text-amber-700 px-2 py-0.5 rounded-full text-[10px] font-semibold">Presencial</span>
               </div>
               <h3 class="text-sm font-bold text-on-surface mb-1">Feria de Reclutamiento FIIS 2025</h3>
-              <p class="text-text-secondary text-xs mb-2">Por <span class="font-semibold text-primary">Grana y Montero + Ferreyros</span> — Patio Central UNI</p>
-              <p class="text-text-secondary text-xs">Conecta directamente con reclutadores de empresas líderes. Trae tu CV impreso.</p>
+              <p class="text-text-secondary text-xs mb-1">Por <span class="font-semibold text-primary">Grana y Montero + Ferreyros</span> — Patio Central UNI</p>
+              <p class="text-text-secondary text-[10px] mb-2 flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:11px">schedule</span>10:00 a.m. — 5:00 p.m.</p>
+              <p class="text-text-secondary text-xs mb-3">Conecta directamente con reclutadores de empresas líderes. Trae tu CV impreso.</p>
+              <a href="#" class="inline-flex items-center gap-1 text-[10px] font-semibold text-primary hover:underline">Ver convocatoria <span class="material-symbols-outlined" style="font-size:11px">open_in_new</span></a>
             </div>
+          </div>
+
+          <!-- Evento 5: Visita técnica (R11) -->
+          <div class="bg-white rounded-xl border border-border-subtle p-5 card-hover flex gap-4">
+            <div class="flex flex-col items-center justify-start w-14 shrink-0">
+              <div class="bg-primary rounded-t-lg w-full text-center py-1">
+                <p class="text-[10px] font-bold text-on-primary uppercase">Jul</p>
+              </div>
+              <div class="bg-primary/10 rounded-b-lg w-full text-center py-1.5">
+                <p class="text-2xl font-extrabold text-primary leading-none">17</p>
+              </div>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class="bg-cyan-50 text-cyan-700 px-2 py-0.5 rounded-full text-[10px] font-semibold">Visita técnica</span>
+                <span class="bg-amber-50 text-amber-700 px-2 py-0.5 rounded-full text-[10px] font-semibold">Presencial</span>
+              </div>
+              <h3 class="text-sm font-bold text-on-surface mb-1">Visita a planta de producción Alicorp — Huachipa</h3>
+              <p class="text-text-secondary text-xs mb-1">Por <span class="font-semibold text-primary">Alicorp</span> — Planta Huachipa, Lima Este</p>
+              <p class="text-text-secondary text-[10px] mb-1 flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:11px">schedule</span>8:00 a.m. — 1:00 p.m.</p>
+              <div class="flex flex-wrap gap-2 mb-2 text-[10px] text-text-secondary">
+                <span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:11px">group</span>Cupos: 25 estudiantes</span>
+                <span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:11px">badge</span>Requisito: cursando 6.° ciclo o superior</span>
+              </div>
+              <a href="#" class="inline-flex items-center gap-1 text-[10px] font-semibold text-primary hover:underline">Postular a cupo <span class="material-symbols-outlined" style="font-size:11px">open_in_new</span></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Casos de éxito (R14) -->
+      <div>
+        <div class="flex items-center gap-4 mb-6">
+          <h2 class="text-2xl md:text-3xl font-bold text-primary">Casos de éxito</h2>
+          <div class="flex-grow h-px bg-border-subtle"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+          <div class="bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-full bg-green-50 text-green-700 flex items-center justify-center font-extrabold text-sm shrink-0">A</div>
+              <div>
+                <p class="text-xs text-text-secondary">Egresado · Ing. Industrial</p>
+                <p class="text-sm font-bold text-on-surface">Andrés Vásquez</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1 mb-3">
+              <span class="bg-green-50 text-green-700 px-2 py-0.5 rounded-full text-[10px] font-semibold">Alicorp</span>
+              <span class="bg-surface-container text-text-secondary px-2 py-0.5 rounded-full text-[10px] font-medium">Supply Chain</span>
+            </div>
+            <p class="text-text-secondary text-xs leading-relaxed flex-grow">Practicante FIIS '22 — hoy Jefe de Planeamiento en Alicorp. Lidera un equipo de 12 personas y gestiona la cadena de suministro de productos lácteos a nivel nacional.</p>
+            <p class="text-[10px] text-text-secondary mt-3 border-t border-border-subtle pt-2">«La formación en FIIS me dio la base técnica para crecer rápidamente en la industria.»</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-full bg-rose-50 text-rose-700 flex items-center justify-center font-extrabold text-sm shrink-0">L</div>
+              <div>
+                <p class="text-xs text-text-secondary">Egresada · Ing. de Sistemas</p>
+                <p class="text-sm font-bold text-on-surface">Luciana Paredes</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1 mb-3">
+              <span class="bg-rose-50 text-rose-700 px-2 py-0.5 rounded-full text-[10px] font-semibold">Interbank</span>
+              <span class="bg-surface-container text-text-secondary px-2 py-0.5 rounded-full text-[10px] font-medium">Banca Digital</span>
+            </div>
+            <p class="text-text-secondary text-xs leading-relaxed flex-grow">Egresó en 2021 e ingresó al programa de trainees de Interbank. Actualmente es Tech Lead del squad de pagos digitales, responsable de la app con +2M de usuarios.</p>
+            <p class="text-[10px] text-text-secondary mt-3 border-t border-border-subtle pt-2">«El proyecto de tesis lo desarrollamos con datos reales de Interbank. Eso abrió las puertas.»</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-full bg-orange-50 text-orange-700 flex items-center justify-center font-extrabold text-sm shrink-0">C</div>
+              <div>
+                <p class="text-xs text-text-secondary">Proyecto empresa-FIIS</p>
+                <p class="text-sm font-bold text-on-surface">Optimización de mantenimiento</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1 mb-3">
+              <span class="bg-orange-50 text-orange-700 px-2 py-0.5 rounded-full text-[10px] font-semibold">Komatsu-Mitsui</span>
+              <span class="bg-surface-container text-text-secondary px-2 py-0.5 rounded-full text-[10px] font-medium">IA Aplicada</span>
+            </div>
+            <p class="text-text-secondary text-xs leading-relaxed flex-grow">Investigación conjunta FIIS-Komatsu que desarrolló un modelo predictivo de fallas para equipos pesados. Redujo en 34% las paradas no programadas en mina Antamina.</p>
+            <p class="text-[10px] text-text-secondary mt-3 border-t border-border-subtle pt-2">Publicado en IEEE ICAI 2023 — 3 estudiantes de IA coautores.</p>
           </div>
 
         </div>
@@ -724,6 +842,118 @@
         </div>
       </div>
 
+      <!-- Noticias empresariales (R19) -->
+      <div>
+        <div class="flex items-center gap-4 mb-6">
+          <h2 class="text-2xl md:text-3xl font-bold text-primary">Noticias empresariales</h2>
+          <div class="flex-grow h-px bg-border-subtle"></div>
+          <a href="#/noticias" class="text-xs text-primary font-semibold hover:underline shrink-0">Ver todas</a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+          <div class="bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col">
+            <span class="inline-block bg-primary/10 text-primary px-2 py-0.5 rounded-full text-[10px] font-semibold mb-3 self-start">Nuevo convenio</span>
+            <h3 class="text-sm font-bold text-on-surface mb-2">Backus y FIIS renuevan convenio para prácticas preprofesionales 2025-2027</h3>
+            <p class="text-text-secondary text-xs leading-relaxed flex-grow">El convenio renovado amplía las plazas disponibles para estudiantes de Ing. Industrial e incluye un programa de mentoría con profesionales senior de la empresa.</p>
+            <p class="text-[10px] text-text-secondary mt-3">15 mayo 2025</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col">
+            <span class="inline-block bg-success/10 text-success px-2 py-0.5 rounded-full text-[10px] font-semibold mb-3 self-start">Vinculación</span>
+            <h3 class="text-sm font-bold text-on-surface mb-2">Interbank lanza programa de becas de investigación para estudiantes FIIS</h3>
+            <p class="text-text-secondary text-xs leading-relaxed flex-grow">El programa cubrirá investigaciones en IA aplicada a banca digital. Incluye estipendio mensual, acceso a datos reales y posibilidad de contratación directa al egresar.</p>
+            <p class="text-[10px] text-text-secondary mt-3">08 mayo 2025</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col">
+            <span class="inline-block bg-warning/10 text-warning px-2 py-0.5 rounded-full text-[10px] font-semibold mb-3 self-start">Evento</span>
+            <h3 class="text-sm font-bold text-on-surface mb-2">Ferreyros abre convocatoria para 8 plazas de prácticas en Logística e Industrial</h3>
+            <p class="text-text-secondary text-xs leading-relaxed flex-grow">Las plazas están disponibles para estudiantes de 7.° ciclo en adelante. El proceso incluye evaluación técnica y entrevista con el área de operaciones.</p>
+            <p class="text-[10px] text-text-secondary mt-3">02 mayo 2025</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Materiales de orientación para empresas (R22) -->
+      <div>
+        <div class="flex items-center gap-4 mb-6">
+          <h2 class="text-2xl md:text-3xl font-bold text-primary">Guía de vinculación</h2>
+          <div class="flex-grow h-px bg-border-subtle"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <!-- Proceso de vinculación -->
+          <div class="bg-white rounded-xl border border-border-subtle p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                <span class="material-symbols-outlined">route</span>
+              </div>
+              <h3 class="text-base font-bold text-on-surface">Proceso de vinculación</h3>
+            </div>
+            <ol class="space-y-3">
+              <li class="flex gap-3 text-sm">
+                <span class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</span>
+                <div><p class="font-semibold text-on-surface">Contacto inicial</p><p class="text-text-secondary text-xs">Completa el formulario de contacto o escríbenos a empresas@fiis.uni.edu.pe</p></div>
+              </li>
+              <li class="flex gap-3 text-sm">
+                <span class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span>
+                <div><p class="font-semibold text-on-surface">Reunión de coordinación</p><p class="text-text-secondary text-xs">El equipo FIIS organiza una reunión para definir el tipo de vínculo y condiciones</p></div>
+              </li>
+              <li class="flex gap-3 text-sm">
+                <span class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</span>
+                <div><p class="font-semibold text-on-surface">Firma de convenio</p><p class="text-text-secondary text-xs">Se formaliza el vínculo mediante convenio marco o específico según modalidad</p></div>
+              </li>
+              <li class="flex gap-3 text-sm">
+                <span class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">4</span>
+                <div><p class="font-semibold text-on-surface">Publicación y activación</p><p class="text-text-secondary text-xs">La empresa accede al portal para publicar vacantes, eventos o propuestas de proyecto</p></div>
+              </li>
+            </ol>
+          </div>
+
+          <!-- FAQ -->
+          <div class="bg-white rounded-xl border border-border-subtle p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                <span class="material-symbols-outlined">help</span>
+              </div>
+              <h3 class="text-base font-bold text-on-surface">Preguntas frecuentes</h3>
+            </div>
+            <div class="space-y-3">
+              <details class="group">
+                <summary class="text-sm font-semibold text-on-surface cursor-pointer flex items-center justify-between">
+                  ¿Qué modalidades de vínculo ofrece la FIIS?
+                  <span class="material-symbols-outlined text-text-secondary group-open:rotate-180 transition-transform text-sm">expand_more</span>
+                </summary>
+                <p class="text-xs text-text-secondary mt-2 leading-relaxed">Prácticas preprofesionales, empleos para egresados, convenios marco, proyectos de investigación aplicada, charlas/talleres y propuestas de retos académicos.</p>
+              </details>
+              <details class="group border-t border-border-subtle pt-3">
+                <summary class="text-sm font-semibold text-on-surface cursor-pointer flex items-center justify-between">
+                  ¿Cuánto demora registrar una empresa aliada?
+                  <span class="material-symbols-outlined text-text-secondary group-open:rotate-180 transition-transform text-sm">expand_more</span>
+                </summary>
+                <p class="text-xs text-text-secondary mt-2 leading-relaxed">El proceso desde el primer contacto hasta la firma de convenio toma entre 2 y 4 semanas, dependiendo de la modalidad y del proceso interno de cada empresa.</p>
+              </details>
+              <details class="group border-t border-border-subtle pt-3">
+                <summary class="text-sm font-semibold text-on-surface cursor-pointer flex items-center justify-between">
+                  ¿Tiene costo vincularse con la FIIS?
+                  <span class="material-symbols-outlined text-text-secondary group-open:rotate-180 transition-transform text-sm">expand_more</span>
+                </summary>
+                <p class="text-xs text-text-secondary mt-2 leading-relaxed">No. El convenio y el registro de la empresa son gratuitos. La empresa solo asume los costos propios del programa de prácticas o actividades que decida ofrecer.</p>
+              </details>
+              <details class="group border-t border-border-subtle pt-3">
+                <summary class="text-sm font-semibold text-on-surface cursor-pointer flex items-center justify-between">
+                  ¿Quién valida la información antes de publicarla?
+                  <span class="material-symbols-outlined text-text-secondary group-open:rotate-180 transition-transform text-sm">expand_more</span>
+                </summary>
+                <p class="text-xs text-text-secondary mt-2 leading-relaxed">El equipo de la Oficina de Empleabilidad y Vinculación Empresarial de la FIIS revisa y aprueba toda la información antes de ser visible en el portal.</p>
+              </details>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
       <!-- Contacto institucional -->
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 bg-surface-container-low rounded-2xl p-6 md:p-8">
         <div class="lg:col-span-2">
@@ -768,15 +998,35 @@
           </div>
         </div>
         <div class="lg:col-span-3 bg-white rounded-xl border border-border-subtle p-6 shadow-sm">
-          <form class="space-y-4">
+          <form class="space-y-4" onsubmit="event.preventDefault();this.innerHTML='<div class=\'text-center py-8\'><span class=\'material-symbols-outlined text-success\' style=\'font-size:48px\'>check_circle</span><p class=\'font-bold text-on-surface mt-3 text-base\'>Solicitud enviada</p><p class=\'text-sm text-text-secondary mt-1\'>Nuestro equipo de vinculación se comunicará con usted a la brevedad.</p></div>'">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="block text-sm font-semibold text-on-surface mb-1.5">Nombre completo <span class="text-error">*</span></label>
+                <label class="block text-sm font-semibold text-on-surface mb-1.5">Nombre del contacto <span class="text-error">*</span></label>
                 <input type="text" placeholder="Ej: Carlos Mendoza" class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
               </div>
               <div>
-                <label class="block text-sm font-semibold text-on-surface mb-1.5">Empresa <span class="text-error">*</span></label>
-                <input type="text" placeholder="Nombre de su empresa" class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                <label class="block text-sm font-semibold text-on-surface mb-1.5">Cargo <span class="text-error">*</span></label>
+                <input type="text" placeholder="Ej: Jefe de RRHH" class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-semibold text-on-surface mb-1.5">Razón social <span class="text-error">*</span></label>
+                <input type="text" placeholder="Nombre legal de la empresa" class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-on-surface mb-1.5">Rubro / Sector <span class="text-error">*</span></label>
+                <select class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-white">
+                  <option value="" disabled selected>Seleccione un rubro</option>
+                  <option>Industrial / Manufactura</option>
+                  <option>Sistemas / Tecnología</option>
+                  <option>Logística / Supply Chain</option>
+                  <option>Banca / Finanzas</option>
+                  <option>Consultoría</option>
+                  <option>Energía / Minería</option>
+                  <option>Construcción / Infraestructura</option>
+                  <option>Otro</option>
+                </select>
               </div>
             </div>
             <div>
@@ -784,14 +1034,34 @@
               <input type="email" placeholder="correo@empresa.com" class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
             </div>
             <div>
+              <label class="block text-sm font-semibold text-on-surface mb-1.5">Tipo de interés <span class="text-error">*</span></label>
+              <div class="flex flex-wrap gap-2">
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" class="rounded border-border-subtle text-primary focus:ring-primary/20"> <span class="text-sm text-on-surface">Prácticas preprofesionales</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" class="rounded border-border-subtle text-primary focus:ring-primary/20"> <span class="text-sm text-on-surface">Ofertas laborales</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" class="rounded border-border-subtle text-primary focus:ring-primary/20"> <span class="text-sm text-on-surface">Convenio institucional</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" class="rounded border-border-subtle text-primary focus:ring-primary/20"> <span class="text-sm text-on-surface">Charla / Evento</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" class="rounded border-border-subtle text-primary focus:ring-primary/20"> <span class="text-sm text-on-surface">Proyecto de investigación</span>
+                </label>
+              </div>
+            </div>
+            <div>
               <label class="block text-sm font-semibold text-on-surface mb-1.5">Mensaje</label>
-              <textarea rows="4" placeholder="Cuéntenos sobre su interés: vacantes, convenios, eventos, proyectos conjuntos..." class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"></textarea>
+              <textarea rows="3" placeholder="Cuéntenos sobre su interés y cómo le gustaría vincularse con la FIIS..." class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"></textarea>
             </div>
             <div class="flex items-center justify-between pt-2">
               <p class="text-[10px] text-text-secondary">Campos marcados con <span class="text-error">*</span> son obligatorios</p>
               <button type="submit" class="inline-flex items-center gap-2 bg-primary text-on-primary px-6 py-2.5 rounded-lg font-semibold text-sm hover:brightness-110 transition-all active:scale-95">
                 <span class="material-symbols-outlined text-sm">send</span>
-                Enviar mensaje
+                Enviar solicitud
               </button>
             </div>
           </form>
@@ -809,6 +1079,7 @@
 (function() {
   var activeRubro = 'todos';
   var activeVinculo = 'todos';
+  var activeEstadoEmpresa = 'todos';
 
   function applyFilter() {
     var cards = document.querySelectorAll('.company-card');
@@ -816,9 +1087,11 @@
     cards.forEach(function(card) {
       var rubro = card.dataset.rubro || '';
       var vinculo = card.dataset.vinculo || '';
+      var estado = card.dataset.estadoEmpresa || '';
       var matchRubro = activeRubro === 'todos' || rubro === activeRubro;
       var matchVinculo = activeVinculo === 'todos' || vinculo.indexOf(activeVinculo) !== -1;
-      var show = matchRubro && matchVinculo;
+      var matchEstado = activeEstadoEmpresa === 'todos' || estado === activeEstadoEmpresa;
+      var show = matchRubro && matchVinculo && matchEstado;
       card.style.display = show ? '' : 'none';
       if (show) visible++;
     });
@@ -859,19 +1132,31 @@
     }
   });
 
+  document.querySelectorAll('[data-estado-empresa]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      setActiveDirBtn('data-estado-empresa', this);
+      activeEstadoEmpresa = this.dataset.estadoEmpresa;
+      applyFilter();
+    });
+  });
+
   // Oportunidades filters (R8, R9)
   var activeOpCarrera = 'todas';
+  var activeOpRubro = 'todos';
   var activeOpTipo = 'todos';
   var activeOpModalidad = 'todas';
+  var activeOpEstado = 'todos';
 
   function applyOpFilter() {
     var cards = document.querySelectorAll('.op-card');
     var visible = 0;
     cards.forEach(function(card) {
       var matchC = activeOpCarrera === 'todas' || card.dataset.opCarrera === activeOpCarrera;
+      var matchR = activeOpRubro === 'todos' || card.dataset.opRubro === activeOpRubro;
       var matchT = activeOpTipo === 'todos' || card.dataset.opTipo === activeOpTipo;
       var matchM = activeOpModalidad === 'todas' || card.dataset.opModalidad === activeOpModalidad;
-      var show = matchC && matchT && matchM;
+      var matchE = activeOpEstado === 'todos' || card.dataset.opEstado === activeOpEstado;
+      var show = matchC && matchR && matchT && matchM && matchE;
       card.style.display = show ? '' : 'none';
       if (show) visible++;
     });
@@ -911,10 +1196,26 @@
     });
   });
 
+  document.querySelectorAll('.op-rubro-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      setActiveBtn('op-rubro-btn', this, 'pill');
+      activeOpRubro = this.dataset.opRubro;
+      applyOpFilter();
+    });
+  });
+
   document.querySelectorAll('.op-modalidad-btn').forEach(function(btn) {
     btn.addEventListener('click', function() {
       setActiveBtn('op-modalidad-btn', this, 'pill');
       activeOpModalidad = this.dataset.opModalidad;
+      applyOpFilter();
+    });
+  });
+
+  document.querySelectorAll('.op-estado-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      setActiveBtn('op-estado-btn', this, 'pill');
+      activeOpEstado = this.dataset.opEstadoFilter;
       applyOpFilter();
     });
   });
