@@ -30,29 +30,19 @@ const MEGA_MENU = [
         { label: 'Tecnología de la Producción', route: '/departamentos/tecnologia-produccion', icon: 'biotech' },
       ]},
       { col: 0, title: 'Recursos', items: [
-        { label: 'Mallas Curriculares', route: '/escuelas', icon: 'calendar_view_month' },
         { label: 'Cronogramas', route: '/cronogramas', icon: 'calendar_month' },
-        { label: 'Directorio Docentes', route: '/directorio-docentes', icon: 'badge' },
       ]}
     ]
   },
   {
-    label: 'Programas', icon: 'school',
+    label: 'Posgrado', icon: 'school',
     children: [
       { col: 0, title: 'Formación Continua', items: [
-        { label: 'Posgrado (Maestrías y Doctorados)', route: '/posgrado', icon: 'auto_stories' },
-        { label: 'Especializaciones', route: '/posgrado', icon: 'local_library' },
-        { label: 'Cursos y Talleres', route: '/posgrado', icon: 'workshops' },
-      ]}
-    ]
-  },
-  {
-    label: 'Extensión', icon: 'business',
-    children: [
-      { col: 0, items: [
-        { label: 'Sistemas UNI', route: '#', icon: 'computer' },
-        { label: 'Consult FIIS', route: '/organigrama', icon: 'handshake' },
-        { label: 'CEE', route: '/organigrama', icon: 'school' },
+        { label: 'Maestría', route: '/posgrado', icon: 'auto_stories' },
+        { label: 'Doctorado', route: '/posgrado', icon: 'local_library' },
+        { label: 'Diplomados', route: '/posgrado', icon: 'workshops' },
+        { label: 'Programas de Especialización', route: '/posgrado', icon: 'school' },
+        { label: 'Cursos y Talleres', route: '/posgrado', icon: 'extension' },
       ]}
     ]
   },
@@ -71,6 +61,11 @@ const MEGA_MENU = [
         { label: 'UECPS', route: '/organigrama', icon: 'public' },
         { label: 'Centro de Información', route: '/organigrama', icon: 'library_books' },
         { label: 'FAQ', route: '#', icon: 'help' },
+      ]},
+      { col: 2, title: 'Extensión', items: [
+        { label: 'Sistemas UNI', route: '#', icon: 'computer' },
+        { label: 'Consult FIIS', route: '/organigrama', icon: 'handshake' },
+        { label: 'CEE', route: '/organigrama', icon: 'school' },
       ]}
     ]
   },
@@ -126,10 +121,6 @@ const MEGA_MENU = [
         { label: 'Ser Empresa Aliada', route: '/empresas', icon: 'partner_exchange' },
       ]}
     ]
-  },
-  {
-    label: 'Contacto', icon: 'contact_support',
-    route: '/contacto'
   },
   { label: 'Portal Académico', route: '/login', icon: 'login' },
 ];
@@ -264,9 +255,10 @@ function publicFooter() {
             </span>
             <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Facultad de Ingeniería Industrial y de Sistemas — Universidad Nacional de Ingeniería.</p>
             <div class="flex gap-4">
-              <a class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:bg-primary-container transition-colors" href="#/contacto"><span class="material-symbols-outlined">public</span></a>
-              <a class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:bg-primary-container transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
-              <a class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:bg-primary-container transition-colors" href="#/contacto"><span class="material-symbols-outlined">contact_support</span></a>
+              <a class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:bg-primary-container transition-colors" href="https://www.facebook.com/fiisunioficial" target="_blank" rel="noopener noreferrer" title="Facebook"><span class="material-symbols-outlined">groups</span></a>
+              <a class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:bg-primary-container transition-colors" href="#" title="YouTube"><span class="material-symbols-outlined">play_circle</span></a>
+              <a class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:bg-primary-container transition-colors" href="#" title="LinkedIn"><span class="material-symbols-outlined">work</span></a>
+              <a class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:bg-primary-container transition-colors" href="#" title="Instagram"><span class="material-symbols-outlined">photo_camera</span></a>
             </div>
           </div>
           <div class="flex flex-col gap-4">
@@ -274,7 +266,7 @@ function publicFooter() {
             <a href="#/contacto" class="flex items-center gap-2 text-on-surface-variant text-sm hover:text-primary"><span class="material-symbols-outlined text-primary text-base">location_on</span> Av. Túpac Amaru 210, Rímac</a>
             <a href="#/contacto" class="flex items-center gap-2 text-on-surface-variant text-sm hover:text-primary"><span class="material-symbols-outlined text-primary text-base">phone</span> (01) 481-1070</a>
             <a href="mailto:informes@fiis.uni.edu.pe" class="flex items-center gap-2 text-on-surface-variant text-sm hover:text-primary"><span class="material-symbols-outlined text-primary text-base">mail</span> informes@fiis.uni.edu.pe</a>
-            <a href="#/contacto" class="text-primary font-semibold text-sm hover:underline mt-1">Ver directorio completo →</a>
+            <a href="#/contacto" class="text-primary font-semibold text-sm hover:underline mt-1">Ver contacto completo →</a>
           </div>
           <div class="flex flex-col gap-2">
             <h5 class="text-sm font-bold text-primary uppercase mb-2">Enlaces de Interés</h5>
