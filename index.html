@@ -171,6 +171,8 @@ async function routeDashboardSub(role, section) {
 Router.add('/', routeLanding);
 Router.add('/login', routeLogin);
 Router.add('/facultad', () => routePublic('facultad'));
+Router.add('/acreditacion', () => routePublic('acreditacion'));
+Router.add('/autoridades', () => routePublic('autoridades'));
 Router.add('/transparencia', () => routePublic('transparencia'));
 Router.add('/contacto', () => routePublic('contacto'));
 Router.add('/noticias', () => routePublic('noticias'));
@@ -237,7 +239,7 @@ Router.add('/dashboard/administrativo/resoluciones', () => routeDashboardSub('ad
 Router.add('/dashboard/administrativo/horarios', () => routeDashboardSub('administrativo', 'horarios'));
 Router.add('/dashboard/administrativo/reportes', () => routeDashboardSub('administrativo', 'reportes'));
 Router.add('/dashboard/docente/perfil', () => routeDashboardSub('docente', 'perfil'));
-Router.add('/dashboard/docente/asesorias', () => routeDashboardSub('docente', 'asesorias'));
+Router.add('/dashboard/docente/capacitaciones', () => routeDashboardSub('docente', 'capacitaciones'));
 Router.add('/dashboard/docente/recursos', () => routeDashboardSub('docente', 'recursos'));
 Router.add('/dashboard/docente/eventos', () => routeDashboardSub('docente', 'eventos'));
 Router.add('/dashboard/docente/configuracion', () => routeDashboardSub('docente', 'configuracion'));

@@ -32,7 +32,7 @@ const ROLES = {
     sidebar: [
       { icon: 'dashboard', label: 'Dashboard', route: '/dashboard/docente' },
       { icon: 'person', label: 'Perfil Académico', route: '/dashboard/docente/perfil' },
-      { icon: 'group', label: 'Mis Asesorías', route: '/dashboard/docente/asesorias' },
+      { icon: 'school', label: 'Capacitaciones', route: '/dashboard/docente/capacitaciones' },
       { icon: 'folder', label: 'Mis Recursos', route: '/dashboard/docente/recursos' },
       { icon: 'event', label: 'Mis Eventos', route: '/dashboard/docente/eventos' },
       { icon: 'settings', label: 'Configuración', route: '/dashboard/docente/configuracion' },

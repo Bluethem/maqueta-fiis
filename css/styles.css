@@ -104,6 +104,7 @@ body { font-family: 'Inter', sans-serif; background-color: #E8E7EA; color: #1c1b
 .mega-nav:hover > .mega-dropdown{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto}
 .mega-dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);background:#fff;border:1px solid #CDCCCF;border-radius:12px;padding:24px;box-shadow:0 12px 40px rgba(0,0,0,0.12);opacity:0;visibility:hidden;transition:all 0.2s ease;z-index:100;min-width:600px;pointer-events:none}
 .mega-dropdown::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%) rotate(45deg);width:12px;height:12px;background:#fff;border-left:1px solid #CDCCCF;border-top:1px solid #CDCCCF}
+.mega-nav{display:inline-flex}
 .mega-grid{display:grid;gap:8px}
 .mega-col{display:flex;flex-direction:column;gap:2px}
 .mega-col-title{font-size:11px;font-weight:700;color:#711610;text-transform:uppercase;letter-spacing:0.05em;padding:6px 10px 4px;border-bottom:1px solid #E5E4E8;margin-bottom:4px}

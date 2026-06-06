@@ -4,11 +4,10 @@ const MEGA_MENU = [
     children: [
       { col: 0, items: [
         { label: 'Nuestra Facultad', route: '/facultad', icon: 'school' },
-        { label: 'Historia', route: '/facultad', icon: 'history' },
-        { label: 'Misión y Visión', route: '/facultad', icon: 'visibility' },
+        { label: 'Directorio Docentes', route: '/directorio-docentes', icon: 'badge' },
         { label: 'Organigrama', route: '/organigrama', icon: 'account_tree' },
-        { label: 'Autoridades', route: '/facultad', icon: 'badge' },
-        { label: 'ISO 9001:2015', route: '/facultad', icon: 'verified' },
+        { label: 'Autoridades', route: '/autoridades', icon: 'group' },
+        { label: 'Oficina de Acreditación', route: '/acreditacion', icon: 'verified' },
         { label: 'Noticias FIIS', route: '/noticias', icon: 'newspaper' },
       ]}
     ]
@@ -90,9 +89,11 @@ const MEGA_MENU = [
     label: 'Investigación', icon: 'science',
     children: [
       { col: 0, items: [
-        { label: 'Instituto de Investigación', route: '/organigrama', icon: 'science' },
-        { label: 'Laboratorio de IA', route: '/organigrama', icon: 'psychology' },
-        { label: 'Laboratorio de Química', route: '/organigrama', icon: 'biotech' },
+        { label: 'Instituto de Investigación', route: '/laboratorios', icon: 'science' },
+        { label: 'Centro de Automatización Industrial', route: '/laboratorios', icon: 'precision_manufacturing' },
+        { label: 'Laboratorio Académico y Red FIIS', route: '/laboratorios', icon: 'router' },
+        { label: 'Laboratorio de IA', route: '/laboratorios', icon: 'psychology' },
+        { label: 'Laboratorio de Química', route: '/laboratorios', icon: 'biotech' },
         { label: 'Publicaciones', route: '/organigrama', icon: 'description' },
         { label: 'Proyectos Destacados', route: '/organigrama', icon: 'star' },
       ]}
