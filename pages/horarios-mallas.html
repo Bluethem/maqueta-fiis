@@ -1,0 +1,148 @@
+<div class="page-enter space-y-8">
+  <section class="relative bg-primary overflow-hidden rounded-2xl min-h-[260px] flex items-center">
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 30%, #E6D9AA 0%, transparent 50%), radial-gradient(circle at 75% 65%, #fff 0%, transparent 44%);"></div>
+    <div class="relative z-10 px-8 py-12 md:px-12 max-w-[1200px] mx-auto w-full">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="material-symbols-outlined text-brand-cream text-3xl" style="font-variation-settings:'FILL'1;">calendar_month</span>
+        <span class="text-brand-cream font-semibold text-sm uppercase tracking-widest">Secretaria Academica</span>
+      </div>
+      <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-3 leading-tight">Horarios y mallas curriculares</h1>
+      <p class="text-on-primary/90 text-lg leading-relaxed max-w-2xl">Consulta horarios referenciales por escuela y accede a la malla curricular vigente de cada carrera FIIS.</p>
+    </div>
+  </section>
+
+  <section class="max-w-[1200px] mx-auto px-6 md:px-8 space-y-6">
+    <div class="flex flex-wrap gap-2">
+      <button data-school="all" class="school-filter bg-primary text-on-primary rounded-lg px-4 py-2 text-sm font-semibold transition-all">Todas</button>
+      <button data-school="industrial" class="school-filter border border-border-subtle text-text-secondary rounded-lg px-4 py-2 text-sm font-medium hover:border-primary hover:text-primary transition-all">Industrial</button>
+      <button data-school="sistemas" class="school-filter border border-border-subtle text-text-secondary rounded-lg px-4 py-2 text-sm font-medium hover:border-primary hover:text-primary transition-all">Sistemas</button>
+      <button data-school="software" class="school-filter border border-border-subtle text-text-secondary rounded-lg px-4 py-2 text-sm font-medium hover:border-primary hover:text-primary transition-all">Software</button>
+      <button data-school="ia" class="school-filter border border-border-subtle text-text-secondary rounded-lg px-4 py-2 text-sm font-medium hover:border-primary hover:text-primary transition-all">Inteligencia Artificial</button>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5" id="hm-grid">
+      <article class="hm-card bg-white rounded-xl border border-border-subtle shadow-sm overflow-hidden" data-school="industrial">
+        <div class="p-5 border-b border-border-subtle flex items-start justify-between gap-4">
+          <div>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-50 text-blue-700 mb-2">Ing. Industrial</span>
+            <h2 class="text-lg font-bold text-on-surface">Horario referencial 2024-II</h2>
+            <p class="text-sm text-text-secondary mt-1">Cursos obligatorios y de especialidad publicados por Secretaria Academica.</p>
+          </div>
+          <a href="#/escuelas/industrial" class="shrink-0 inline-flex items-center gap-1 text-sm text-primary font-semibold hover:underline">Malla <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-surface-container-low text-text-secondary text-xs uppercase">
+              <tr><th class="text-left px-5 py-3">Curso</th><th class="text-left px-5 py-3">Seccion</th><th class="text-left px-5 py-3">Horario</th></tr>
+            </thead>
+            <tbody class="divide-y divide-border-subtle">
+              <tr><td class="px-5 py-3 font-medium">Investigacion de Operaciones II</td><td class="px-5 py-3">A</td><td class="px-5 py-3 text-text-secondary">Lun/Mie 08:00-10:00</td></tr>
+              <tr><td class="px-5 py-3 font-medium">Gestion de la Produccion</td><td class="px-5 py-3">B</td><td class="px-5 py-3 text-text-secondary">Mar/Jue 10:00-12:00</td></tr>
+              <tr><td class="px-5 py-3 font-medium">Logistica Integral</td><td class="px-5 py-3">A</td><td class="px-5 py-3 text-text-secondary">Vie 14:00-17:00</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="hm-card bg-white rounded-xl border border-border-subtle shadow-sm overflow-hidden" data-school="sistemas">
+        <div class="p-5 border-b border-border-subtle flex items-start justify-between gap-4">
+          <div>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-cyan-50 text-cyan-700 mb-2">Ing. Sistemas</span>
+            <h2 class="text-lg font-bold text-on-surface">Horario referencial 2024-II</h2>
+            <p class="text-sm text-text-secondary mt-1">Cursos por ciclo, seccion y bloque horario.</p>
+          </div>
+          <a href="#/escuelas/sistemas" class="shrink-0 inline-flex items-center gap-1 text-sm text-primary font-semibold hover:underline">Malla <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-surface-container-low text-text-secondary text-xs uppercase">
+              <tr><th class="text-left px-5 py-3">Curso</th><th class="text-left px-5 py-3">Seccion</th><th class="text-left px-5 py-3">Horario</th></tr>
+            </thead>
+            <tbody class="divide-y divide-border-subtle">
+              <tr><td class="px-5 py-3 font-medium">Arquitectura de Software</td><td class="px-5 py-3">A</td><td class="px-5 py-3 text-text-secondary">Lun/Mie 10:00-12:00</td></tr>
+              <tr><td class="px-5 py-3 font-medium">Base de Datos II</td><td class="px-5 py-3">B</td><td class="px-5 py-3 text-text-secondary">Mar/Jue 08:00-10:00</td></tr>
+              <tr><td class="px-5 py-3 font-medium">Gestion de Proyectos TI</td><td class="px-5 py-3">A</td><td class="px-5 py-3 text-text-secondary">Vie 09:00-12:00</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="hm-card bg-white rounded-xl border border-border-subtle shadow-sm overflow-hidden" data-school="software">
+        <div class="p-5 border-b border-border-subtle flex items-start justify-between gap-4">
+          <div>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-green-50 text-green-700 mb-2">Ing. Software</span>
+            <h2 class="text-lg font-bold text-on-surface">Horario referencial 2024-II</h2>
+            <p class="text-sm text-text-secondary mt-1">Bloques de laboratorio, teoria y practica.</p>
+          </div>
+          <a href="#/escuelas/software" class="shrink-0 inline-flex items-center gap-1 text-sm text-primary font-semibold hover:underline">Malla <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-surface-container-low text-text-secondary text-xs uppercase">
+              <tr><th class="text-left px-5 py-3">Curso</th><th class="text-left px-5 py-3">Seccion</th><th class="text-left px-5 py-3">Horario</th></tr>
+            </thead>
+            <tbody class="divide-y divide-border-subtle">
+              <tr><td class="px-5 py-3 font-medium">Desarrollo Web Avanzado</td><td class="px-5 py-3">A</td><td class="px-5 py-3 text-text-secondary">Lun/Jue 14:00-16:00</td></tr>
+              <tr><td class="px-5 py-3 font-medium">Calidad de Software</td><td class="px-5 py-3">A</td><td class="px-5 py-3 text-text-secondary">Mar 16:00-19:00</td></tr>
+              <tr><td class="px-5 py-3 font-medium">DevOps y Cloud</td><td class="px-5 py-3">B</td><td class="px-5 py-3 text-text-secondary">Vie 08:00-11:00</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="hm-card bg-white rounded-xl border border-border-subtle shadow-sm overflow-hidden" data-school="ia">
+        <div class="p-5 border-b border-border-subtle flex items-start justify-between gap-4">
+          <div>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-purple-50 text-purple-700 mb-2">Inteligencia Artificial</span>
+            <h2 class="text-lg font-bold text-on-surface">Horario referencial 2024-II</h2>
+            <p class="text-sm text-text-secondary mt-1">Cursos de modelamiento, datos y aprendizaje automatico.</p>
+          </div>
+          <a href="#/escuelas/inteligencia-artificial" class="shrink-0 inline-flex items-center gap-1 text-sm text-primary font-semibold hover:underline">Malla <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-surface-container-low text-text-secondary text-xs uppercase">
+              <tr><th class="text-left px-5 py-3">Curso</th><th class="text-left px-5 py-3">Seccion</th><th class="text-left px-5 py-3">Horario</th></tr>
+            </thead>
+            <tbody class="divide-y divide-border-subtle">
+              <tr><td class="px-5 py-3 font-medium">Machine Learning II</td><td class="px-5 py-3">A</td><td class="px-5 py-3 text-text-secondary">Lun/Mie 16:00-18:00</td></tr>
+              <tr><td class="px-5 py-3 font-medium">Vision Computacional</td><td class="px-5 py-3">A</td><td class="px-5 py-3 text-text-secondary">Mar/Jue 12:00-14:00</td></tr>
+              <tr><td class="px-5 py-3 font-medium">Procesamiento de Lenguaje Natural</td><td class="px-5 py-3">B</td><td class="px-5 py-3 text-text-secondary">Vie 15:00-18:00</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </div>
+
+    <div class="bg-surface-container-low rounded-xl border border-border-subtle p-5 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div>
+        <h3 class="font-bold text-on-surface">Actualizacion y responsabilidad</h3>
+        <p class="text-sm text-text-secondary mt-1">Los horarios son referenciales y deben ser validados por Secretaria Academica antes de matricula.</p>
+      </div>
+      <a href="#/documentos-academicos" class="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-semibold bg-primary text-on-primary rounded-lg hover:brightness-110 transition-all"><span class="material-symbols-outlined text-sm">description</span>Ver documentos oficiales</a>
+    </div>
+  </section>
+</div>
+
+<script>
+(function () {
+  function setActive(selected) {
+    document.querySelectorAll('.school-filter').forEach(function (btn) {
+      btn.classList.remove('bg-primary', 'text-on-primary', 'font-semibold');
+      btn.classList.add('border', 'border-border-subtle', 'text-text-secondary', 'font-medium');
+    });
+    selected.classList.remove('border', 'border-border-subtle', 'text-text-secondary', 'font-medium');
+    selected.classList.add('bg-primary', 'text-on-primary', 'font-semibold');
+  }
+
+  document.querySelectorAll('.school-filter').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var school = this.dataset.school;
+      setActive(this);
+      document.querySelectorAll('.hm-card').forEach(function (card) {
+        card.style.display = school === 'all' || card.dataset.school === school ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>

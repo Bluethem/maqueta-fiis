@@ -30,8 +30,10 @@ const MEGA_MENU = [
         { label: 'Tecnología de la Producción', route: '/departamentos/tecnologia-produccion', icon: 'biotech' },
       ]},
       { col: 0, title: 'Recursos', items: [
-        { label: 'Mallas Curriculares', route: '/escuelas', icon: 'calendar_view_month' },
+        { label: 'Horarios y Mallas', route: '/horarios-mallas', icon: 'calendar_view_month' },
         { label: 'Cronogramas', route: '/cronogramas', icon: 'calendar_month' },
+        { label: 'Documentos Académicos', route: '/documentos-academicos', icon: 'gavel' },
+        { label: 'Guías Académicas', route: '/guias-academicas', icon: 'menu_book' },
         { label: 'Directorio Docentes', route: '/directorio-docentes', icon: 'badge' },
       ]}
     ]
@@ -97,6 +99,9 @@ const MEGA_MENU = [
         { label: 'Mesa de Partes', route: '#', icon: 'mail' },
       ]},
       { col: 1, title: 'Atención', items: [
+        { label: 'Servicios FIIS', route: '/servicios', icon: 'apartment' },
+        { label: 'Laboratorios FIIS', route: '/laboratorios', icon: 'science' },
+        { label: 'Avisos Administrativos', route: '/avisos-administrativos', icon: 'campaign' },
         { label: 'Tutoría FIIS', route: '/organigrama', icon: 'support' },
         { label: 'UECPS', route: '/organigrama', icon: 'public' },
         { label: 'Centro de Información', route: '/organigrama', icon: 'library_books' },

@@ -998,25 +998,25 @@
           </div>
         </div>
         <div class="lg:col-span-3 bg-white rounded-xl border border-border-subtle p-6 shadow-sm">
-          <form class="space-y-4" onsubmit="event.preventDefault();this.innerHTML='<div class=\'text-center py-8\'><span class=\'material-symbols-outlined text-success\' style=\'font-size:48px\'>check_circle</span><p class=\'font-bold text-on-surface mt-3 text-base\'>Solicitud enviada</p><p class=\'text-sm text-text-secondary mt-1\'>Nuestro equipo de vinculación se comunicará con usted a la brevedad.</p></div>'">
+          <form class="space-y-4" onsubmit="event.preventDefault();if(!this.checkValidity()){this.reportValidity();return;}this.innerHTML='<div class=\'text-center py-8\'><span class=\'material-symbols-outlined text-success\' style=\'font-size:48px\'>check_circle</span><p class=\'font-bold text-on-surface mt-3 text-base\'>Solicitud enviada</p><p class=\'text-sm text-text-secondary mt-1\'>Nuestro equipo de vinculación se comunicará con usted a la brevedad.</p></div>'">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label class="block text-sm font-semibold text-on-surface mb-1.5">Nombre del contacto <span class="text-error">*</span></label>
-                <input type="text" placeholder="Ej: Carlos Mendoza" class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                <input type="text" placeholder="Ej: Carlos Mendoza" required class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
               </div>
               <div>
                 <label class="block text-sm font-semibold text-on-surface mb-1.5">Cargo <span class="text-error">*</span></label>
-                <input type="text" placeholder="Ej: Jefe de RRHH" class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                <input type="text" placeholder="Ej: Jefe de RRHH" required class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
               </div>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label class="block text-sm font-semibold text-on-surface mb-1.5">Razón social <span class="text-error">*</span></label>
-                <input type="text" placeholder="Nombre legal de la empresa" class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                <input type="text" placeholder="Nombre legal de la empresa" required class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
               </div>
               <div>
                 <label class="block text-sm font-semibold text-on-surface mb-1.5">Rubro / Sector <span class="text-error">*</span></label>
-                <select class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-white">
+                <select required class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-white">
                   <option value="" disabled selected>Seleccione un rubro</option>
                   <option>Industrial / Manufactura</option>
                   <option>Sistemas / Tecnología</option>
@@ -1031,7 +1031,7 @@
             </div>
             <div>
               <label class="block text-sm font-semibold text-on-surface mb-1.5">Correo electrónico <span class="text-error">*</span></label>
-              <input type="email" placeholder="correo@empresa.com" class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+              <input type="email" placeholder="correo@empresa.com" required class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
             </div>
             <div>
               <label class="block text-sm font-semibold text-on-surface mb-1.5">Tipo de interés <span class="text-error">*</span></label>
