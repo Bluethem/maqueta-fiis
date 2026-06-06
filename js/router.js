@@ -11,6 +11,7 @@ const MEGA_MENU = [
         { label: 'Oficina de Acreditación', route: '/acreditacion', icon: 'verified' },
         { label: 'Directorio Docentes', route: '/directorio-docentes', icon: 'badge' },
         { label: 'Noticias FIIS', route: '/noticias', icon: 'newspaper' },
+        { label: 'Portal de Transparencia', route: '/transparencia', icon: 'visibility' },
       ]}
     ]
   },
@@ -80,6 +81,10 @@ const MEGA_MENU = [
     ]
   },
   {
+    label: 'Calendario', icon: 'calendar_month',
+    route: '/calendario'
+  },
+  {
     label: 'Comunidad', icon: 'groups', route: '/comunidad',
     children: [
       { col: 0, title: 'Organismos de la Facultad', items: [
@@ -95,10 +100,6 @@ const MEGA_MENU = [
         { label: 'Directorio Completo', route: '/comunidad', icon: 'groups' },
       ]}
     ]
-  },
-  {
-    label: 'Transparencia', icon: 'visibility',
-    route: '/transparencia'
   },
   {
     label: 'Investigación', icon: 'science', route: '/investigacion',
@@ -119,14 +120,11 @@ const MEGA_MENU = [
     ]
   },
   {
-    label: 'Egresados', icon: 'school',
+    label: 'Egresados', icon: 'school', route: '/egresados',
     children: [
       { col: 0, items: [
         { label: 'Comunidad de Egresados', route: '/egresados', icon: 'groups' },
-        { label: 'Bolsa de Trabajo', route: '/egresados', icon: 'work' },
-        { label: 'Red Alumni', route: '/egresados', icon: 'link' },
-        { label: 'Mentoría', route: '/egresados', icon: 'psychology' },
-        { label: 'Capacitaciones', route: '/egresados', icon: 'school' },
+        { label: 'Red Alumni', route: 'https://alumni.fiis.uni.edu.pe', icon: 'link', external: true },
       ]}
     ]
   },
@@ -262,7 +260,10 @@ function navbar(active) {
           </a>
           <div class="hidden lg:flex items-center gap-4 xl:gap-5 text-sm font-medium">${items}</div>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-1">
+          <button class="p-2 hover:bg-surface-container-low rounded-full transition-all" id="btn-search" title="Buscar">
+            <span class="material-symbols-outlined text-on-surface-variant">search</span>
+          </button>
           <button class="lg:hidden p-2 hover:bg-surface-container-low rounded-full" id="nav-menu-toggle">
             <span class="material-symbols-outlined text-on-surface-variant">menu</span>
           </button>
@@ -272,6 +273,31 @@ function navbar(active) {
         <div class="flex flex-col gap-2">${mobileItems}</div>
       </div>
     </nav>
+
+    <!-- Search Overlay -->
+    <div id="search-overlay" class="hidden fixed inset-0 z-[60]">
+      <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" id="search-backdrop"></div>
+      <div class="relative z-10 max-w-[700px] mx-auto px-4 pt-[15vh]">
+        <div class="bg-white rounded-2xl shadow-2xl border border-border-subtle overflow-hidden">
+          <div class="flex items-center gap-3 px-5 py-4 border-b border-border-subtle">
+            <span class="material-symbols-outlined text-text-secondary">search</span>
+            <input type="text" id="search-input" class="flex-1 text-base text-on-surface bg-transparent border-none outline-none placeholder:text-text-secondary" placeholder="Buscar páginas, docentes, laboratorios, servicios..." autocomplete="off" />
+            <button class="p-1 hover:bg-surface-container-low rounded-full transition-all" id="btn-search-close">
+              <span class="material-symbols-outlined text-text-secondary">close</span>
+            </button>
+          </div>
+          <div class="px-5 py-3 border-b border-border-subtle flex flex-wrap gap-2" id="search-filters">
+            <button class="search-filter px-3 py-1 rounded-full text-xs font-semibold bg-primary text-white transition-all" data-type="todos">Todos</button>
+          </div>
+          <div id="search-results" class="max-h-[50vh] overflow-y-auto p-2">
+            <div class="text-center py-10 text-text-secondary">
+              <span class="material-symbols-outlined text-4xl">search</span>
+              <p class="text-sm mt-2">Escribe al menos 2 caracteres para buscar</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   `;
 }
 
@@ -325,6 +351,47 @@ function publicFooter() {
         </div>
       </div>
     </footer>
+
+    <!-- FAQ Button -->
+    <button id="btn-faq" class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-lg hover:bg-primary-container transition-all z-50 hover:scale-110 active:scale-95" title="Preguntas frecuentes">
+      <span class="material-symbols-outlined text-2xl" style="font-variation-settings:'FILL'1;">help</span>
+    </button>
+
+    <!-- FAQ Overlay -->
+    <div id="faq-overlay" class="hidden fixed inset-0 z-[70]">
+      <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" id="faq-backdrop"></div>
+      <div class="relative z-10 max-w-[700px] mx-auto px-4 pt-[10vh] pb-8">
+        <div class="bg-white rounded-2xl shadow-2xl border border-border-subtle overflow-hidden max-h-[75vh] flex flex-col">
+          <div class="flex items-center justify-between px-6 py-4 border-b border-border-subtle shrink-0">
+            <div class="flex items-center gap-3">
+              <span class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined" style="font-variation-settings:'FILL'1;">help</span>
+              </span>
+              <div>
+                <h2 class="text-base font-bold text-on-surface">Preguntas Frecuentes</h2>
+                <p class="text-xs text-text-secondary">Selecciona un módulo para ver sus preguntas</p>
+              </div>
+            </div>
+            <button class="p-1.5 hover:bg-surface-container-low rounded-full transition-all" id="faq-close">
+              <span class="material-symbols-outlined text-text-secondary">close</span>
+            </button>
+          </div>
+          <div class="px-6 py-4 border-b border-border-subtle overflow-x-auto shrink-0">
+            <div class="flex gap-2" id="faq-tabs">
+              <button class="faq-tab px-4 py-2 text-sm font-semibold bg-primary text-white rounded-lg transition-all shadow-sm" data-module="Facultad">Facultad</button>
+              <button class="faq-tab px-4 py-2 text-sm font-medium text-text-secondary bg-surface-container-low hover:bg-surface-container hover:text-primary rounded-lg transition-all whitespace-nowrap" data-module="Académico">Académico</button>
+              <button class="faq-tab px-4 py-2 text-sm font-medium text-text-secondary bg-surface-container-low hover:bg-surface-container hover:text-primary rounded-lg transition-all whitespace-nowrap" data-module="Posgrado">Posgrado</button>
+              <button class="faq-tab px-4 py-2 text-sm font-medium text-text-secondary bg-surface-container-low hover:bg-surface-container hover:text-primary rounded-lg transition-all whitespace-nowrap" data-module="Servicios">Servicios</button>
+              <button class="faq-tab px-4 py-2 text-sm font-medium text-text-secondary bg-surface-container-low hover:bg-surface-container hover:text-primary rounded-lg transition-all whitespace-nowrap" data-module="Comunidad">Comunidad</button>
+              <button class="faq-tab px-4 py-2 text-sm font-medium text-text-secondary bg-surface-container-low hover:bg-surface-container hover:text-primary rounded-lg transition-all whitespace-nowrap" data-module="Investigación">Investigación</button>
+              <button class="faq-tab px-4 py-2 text-sm font-medium text-text-secondary bg-surface-container-low hover:bg-surface-container hover:text-primary rounded-lg transition-all whitespace-nowrap" data-module="Egresados">Egresados</button>
+              <button class="faq-tab px-4 py-2 text-sm font-medium text-text-secondary bg-surface-container-low hover:bg-surface-container hover:text-primary rounded-lg transition-all whitespace-nowrap" data-module="Empresas">Empresas</button>
+            </div>
+          </div>
+          <div class="flex-1 overflow-y-auto p-4" id="faq-content"></div>
+        </div>
+      </div>
+    </div>
   `;
 }
 
@@ -334,6 +401,8 @@ function renderPublicLayout(content, activeSection) {
   document.getElementById('app').innerHTML = html;
   executeScripts(scripts);
   bindDynamicHandlers();
+  initSearch();
+  if (typeof FAQ !== 'undefined') FAQ.init();
   const toggle = document.getElementById('nav-menu-toggle');
   const mobileNav = document.getElementById('mobile-nav');
   if (toggle && mobileNav) {
@@ -348,6 +417,8 @@ function renderPublicPage(html) {
   document.getElementById('app').innerHTML = html;
   executeScripts(scripts);
   bindDynamicHandlers();
+  initSearch();
+  if (typeof FAQ !== 'undefined') FAQ.init();
 }
 
 async function renderDashboard(role, html) {
@@ -392,6 +463,117 @@ function bindDynamicHandlers() {
     btn.removeEventListener('click', tabHandler);
     btn.addEventListener('click', tabHandler);
   });
+}
+
+function initSearch() {
+  if (document.getElementById('btn-search')) {
+    document.getElementById('btn-search').removeEventListener('click', searchToggleHandler);
+    document.getElementById('btn-search').addEventListener('click', searchToggleHandler);
+  }
+  if (document.getElementById('btn-search-close')) {
+    document.getElementById('btn-search-close').removeEventListener('click', searchCloseHandler);
+    document.getElementById('btn-search-close').addEventListener('click', searchCloseHandler);
+  }
+  if (document.getElementById('search-backdrop')) {
+    document.getElementById('search-backdrop').removeEventListener('click', searchCloseHandler);
+    document.getElementById('search-backdrop').addEventListener('click', searchCloseHandler);
+  }
+  if (document.getElementById('search-input')) {
+    document.getElementById('search-input').removeEventListener('input', searchInputHandler);
+    document.getElementById('search-input').addEventListener('input', searchInputHandler);
+    document.getElementById('search-input').removeEventListener('keydown', searchKeyHandler);
+    document.getElementById('search-input').addEventListener('keydown', searchKeyHandler);
+  }
+  buildSearchFilters();
+}
+
+function buildSearchFilters() {
+  var container = document.getElementById('search-filters');
+  if (!container || typeof SearchEngine === 'undefined') return;
+  var types = SearchEngine.getTypes();
+  var html = '<button class="search-filter px-3 py-1 rounded-full text-xs font-semibold bg-primary text-white transition-all" data-type="todos">Todos</button>';
+  types.forEach(function(t) {
+    html += '<button class="search-filter px-3 py-1 rounded-full text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-type="' + t + '">' + t + '</button>';
+  });
+  container.innerHTML = html;
+  container.querySelectorAll('.search-filter').forEach(function(btn) {
+    btn.removeEventListener('click', searchFilterHandler);
+    btn.addEventListener('click', searchFilterHandler);
+  });
+}
+
+var _searchFilter = 'todos';
+var _searchTimer = null;
+
+function searchFilterHandler(e) {
+  var container = document.getElementById('search-filters');
+  container.querySelectorAll('.search-filter').forEach(function(b) {
+    b.className = 'search-filter px-3 py-1 rounded-full text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all';
+  });
+  e.currentTarget.className = 'search-filter px-3 py-1 rounded-full text-xs font-semibold bg-primary text-white transition-all';
+  _searchFilter = e.currentTarget.getAttribute('data-type');
+  doSearch();
+}
+
+function searchToggleHandler() {
+  var overlay = document.getElementById('search-overlay');
+  var input = document.getElementById('search-input');
+  if (overlay) overlay.classList.remove('hidden');
+  if (input) { setTimeout(function() { input.focus(); }, 100); }
+  document.body.style.overflow = 'hidden';
+  doSearch();
+}
+
+function searchCloseHandler() {
+  var overlay = document.getElementById('search-overlay');
+  if (overlay) overlay.classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+function searchInputHandler() {
+  if (_searchTimer) clearTimeout(_searchTimer);
+  _searchTimer = setTimeout(doSearch, 200);
+}
+
+function searchKeyHandler(e) {
+  if (e.key === 'Escape') searchCloseHandler();
+}
+
+function doSearch() {
+  var input = document.getElementById('search-input');
+  var results = document.getElementById('search-results');
+  if (!input || !results || typeof SearchEngine === 'undefined') return;
+  var q = input.value.trim();
+  if (q.length < 2) {
+    results.innerHTML = '<div class="text-center py-10 text-text-secondary"><span class="material-symbols-outlined text-4xl">search</span><p class="text-sm mt-2">Escribe al menos 2 caracteres para buscar</p></div>';
+    return;
+  }
+  var items = SearchEngine.search(q, _searchFilter);
+  if (items.length === 0) {
+    results.innerHTML = '<div class="text-center py-10 text-text-secondary"><span class="material-symbols-outlined text-4xl">sentiment_dissatisfied</span><p class="text-sm mt-2">No se encontraron resultados para "' + q + '"</p></div>';
+    return;
+  }
+
+  var grouped = {};
+  items.forEach(function(item) {
+    if (!grouped[item.type]) grouped[item.type] = [];
+    if (grouped[item.type].length < 6) grouped[item.type].push(item);
+  });
+
+  var html = '';
+  Object.keys(grouped).forEach(function(type) {
+    html += '<div class="px-3 pt-4 pb-2"><span class="text-[10px] font-bold text-text-secondary uppercase tracking-widest">' + type + '</span></div>';
+    grouped[type].forEach(function(item) {
+      var icon = SearchEngine.getIcon(item.type);
+      html += '<a href="#' + item.route + '" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-surface-container-low transition-all group" onclick="searchCloseHandler()">';
+      html += '<span class="material-symbols-outlined text-primary text-sm mt-0.5">' + icon + '</span>';
+      html += '<div class="flex-1 min-w-0"><p class="text-sm font-bold text-on-surface group-hover:text-primary transition-colors truncate">' + item.title + '</p>';
+      html += '<p class="text-xs text-text-secondary truncate">' + item.desc + '</p></div>';
+      html += '<span class="material-symbols-outlined text-text-secondary text-sm opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>';
+      html += '</a>';
+    });
+  });
+  results.innerHTML = html;
 }
 
 function toggleTreeHandler(e) {
