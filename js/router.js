@@ -4,10 +4,10 @@ const MEGA_MENU = [
     children: [
       { col: 0, items: [
         { label: 'Nuestra Facultad', route: '/facultad', icon: 'school' },
-        { label: 'Directorio Docentes', route: '/directorio-docentes', icon: 'badge' },
-        { label: 'Organigrama', route: '/organigrama', icon: 'account_tree' },
         { label: 'Autoridades', route: '/autoridades', icon: 'group' },
+        { label: 'Organigrama', route: '/organigrama', icon: 'account_tree' },
         { label: 'Oficina de Acreditación', route: '/acreditacion', icon: 'verified' },
+        { label: 'Directorio Docentes', route: '/directorio-docentes', icon: 'badge' },
         { label: 'Noticias FIIS', route: '/noticias', icon: 'newspaper' },
       ]}
     ]
@@ -36,12 +36,21 @@ const MEGA_MENU = [
   {
     label: 'Posgrado', icon: 'school',
     children: [
-      { col: 0, title: 'Formación Continua', items: [
-        { label: 'Maestría', route: '/posgrado', icon: 'auto_stories' },
-        { label: 'Doctorado', route: '/posgrado', icon: 'local_library' },
-        { label: 'Diplomados', route: '/posgrado', icon: 'workshops' },
-        { label: 'Programas de Especialización', route: '/posgrado', icon: 'school' },
-        { label: 'Cursos y Talleres', route: '/posgrado', icon: 'extension' },
+      { col: 0, title: 'Maestrías', items: [
+        { label: 'Ingeniería Industrial', route: '/posgrado/maestria-industrial', icon: 'precision_manufacturing' },
+        { label: 'Ingeniería de Sistemas', route: '/posgrado/maestria-sistemas', icon: 'computer' },
+        { label: 'Inteligencia Artificial', route: '/posgrado/maestria-ia', icon: 'psychology' },
+        { label: 'Supply Chain Management', route: '/posgrado/maestria-supply-chain', icon: 'local_shipping' },
+        { label: 'Business Analytics e IA Aplicada', route: '/posgrado/maestria-business-analytics', icon: 'analytics' },
+        { label: 'Gestión de Operaciones', route: '/posgrado/maestria-gestion-operaciones', icon: 'settings' },
+      ]},
+      { col: 1, title: 'Doctorados', items: [
+        { label: 'Doctorado en Ingeniería Industrial', route: '/posgrado/doctorado-industrial', icon: 'auto_stories' },
+        { label: 'Doctorado en Ingeniería de Sistemas', route: '/posgrado/doctorado-sistemas', icon: 'auto_stories' },
+      ]},
+      { col: 1, title: 'Otros Programas', items: [
+        { label: 'Diplomados', route: '/posgrado/diplomados', icon: 'workshop' },
+        { label: 'Información General', route: '/posgrado', icon: 'info' },
       ]}
     ]
   },

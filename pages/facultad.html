@@ -80,69 +80,75 @@
     <section>
       <h2 class="text-2xl md:text-3xl font-bold text-primary border-l-8 border-brand-cream pl-5 mb-8">Pregrado</h2>
       <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
-        <div class="bg-white rounded-xl border border-border-subtle p-6 hover:shadow-lg hover:border-primary transition-all">
+        <a href="#/escuelas/industrial" class="block bg-white rounded-xl border border-border-subtle p-6 hover:shadow-lg hover:border-primary transition-all group">
           <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
             <span class="material-symbols-outlined">precision_manufacturing</span>
           </div>
-          <h3 class="font-bold text-on-surface mb-2">Ingeniería Industrial</h3>
+          <h3 class="font-bold text-on-surface mb-2 group-hover:text-primary transition-colors">Ingeniería Industrial</h3>
           <p class="text-text-secondary text-xs leading-relaxed">Optimización de procesos, gestión de operaciones y toma de decisiones estratégicas.</p>
-        </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-6 hover:shadow-lg hover:border-primary transition-all">
+        </a>
+        <a href="#/escuelas/sistemas" class="block bg-white rounded-xl border border-border-subtle p-6 hover:shadow-lg hover:border-primary transition-all group">
           <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
             <span class="material-symbols-outlined">computer</span>
           </div>
-          <h3 class="font-bold text-on-surface mb-2">Ingeniería de Sistemas</h3>
+          <h3 class="font-bold text-on-surface mb-2 group-hover:text-primary transition-colors">Ingeniería de Sistemas</h3>
           <p class="text-text-secondary text-xs leading-relaxed">Tecnologías de información, arquitectura de software y transformación digital.</p>
-        </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-6 hover:shadow-lg hover:border-primary transition-all">
+        </a>
+        <a href="#/escuelas/software" class="block bg-white rounded-xl border border-border-subtle p-6 hover:shadow-lg hover:border-primary transition-all group">
           <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
             <span class="material-symbols-outlined">terminal</span>
           </div>
-          <h3 class="font-bold text-on-surface mb-2">Ingeniería de Software</h3>
+          <h3 class="font-bold text-on-surface mb-2 group-hover:text-primary transition-colors">Ingeniería de Software</h3>
           <p class="text-text-secondary text-xs leading-relaxed">Desarrollo de software, metodologías ágiles y calidad de aplicaciones.</p>
-        </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-6 hover:shadow-lg hover:border-primary transition-all relative overflow-hidden">
+        </a>
+        <a href="#/escuelas/inteligencia-artificial" class="block bg-white rounded-xl border border-border-subtle p-6 hover:shadow-lg hover:border-primary transition-all group relative overflow-hidden">
           <div class="absolute top-3 right-3 bg-success/15 text-success text-[10px] font-bold px-2 py-0.5 rounded-full">Nueva</div>
           <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
             <span class="material-symbols-outlined">psychology</span>
           </div>
-          <h3 class="font-bold text-on-surface mb-2">Ingeniería de Inteligencia Artificial</h3>
+          <h3 class="font-bold text-on-surface mb-2 group-hover:text-primary transition-colors">Ingeniería de Inteligencia Artificial</h3>
           <p class="text-text-secondary text-xs leading-relaxed">Machine learning, deep learning, procesamiento de lenguaje natural y visión computacional.</p>
-        </div>
+        </a>
       </div>
     </section>
 
     <section>
       <h2 class="text-2xl md:text-3xl font-bold text-primary border-l-8 border-brand-cream pl-5 mb-8">Posgrado</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-white rounded-xl border border-border-subtle p-6">
-          <h3 class="font-bold text-on-surface mb-4">Maestrías</h3>
-          <div class="space-y-3">
-            <div class="flex items-center gap-3 p-3 bg-surface-bg rounded-lg">
-              <span class="material-symbols-outlined text-primary">school</span>
-              <span class="text-sm text-on-surface">Maestría en Ingeniería Industrial</span>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-surface-bg rounded-lg">
-              <span class="material-symbols-outlined text-primary">school</span>
-              <span class="text-sm text-on-surface">Maestría en Ingeniería de Sistemas</span>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-surface-bg rounded-lg">
-              <span class="material-symbols-outlined text-primary">school</span>
-              <span class="text-sm text-on-surface">Maestría en Inteligencia Artificial</span>
-            </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-6 hover:shadow-lg transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="font-bold text-on-surface">Maestrías</h3>
+            <a href="#/posgrado" class="text-xs text-primary font-semibold hover:underline flex items-center gap-1">Ver todo <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+          </div>
+          <div class="space-y-2">
+            <a href="#/posgrado/maestria-industrial" class="flex items-center gap-3 p-3 bg-surface-bg rounded-lg hover:bg-primary/5 transition-colors">
+              <span class="material-symbols-outlined text-primary text-sm">school</span>
+              <span class="text-sm text-on-surface font-medium">Ingeniería Industrial</span>
+            </a>
+            <a href="#/posgrado/maestria-sistemas" class="flex items-center gap-3 p-3 bg-surface-bg rounded-lg hover:bg-primary/5 transition-colors">
+              <span class="material-symbols-outlined text-primary text-sm">school</span>
+              <span class="text-sm text-on-surface font-medium">Ingeniería de Sistemas</span>
+            </a>
+            <a href="#/posgrado/maestria-ia" class="flex items-center gap-3 p-3 bg-surface-bg rounded-lg hover:bg-primary/5 transition-colors">
+              <span class="material-symbols-outlined text-primary text-sm">school</span>
+              <span class="text-sm text-on-surface font-medium">Inteligencia Artificial</span>
+            </a>
           </div>
         </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-6">
-          <h3 class="font-bold text-on-surface mb-4">Doctorados</h3>
-          <div class="space-y-3">
-            <div class="flex items-center gap-3 p-3 bg-surface-bg rounded-lg">
-              <span class="material-symbols-outlined text-primary">auto_stories</span>
-              <span class="text-sm text-on-surface">Doctorado en Ingeniería Industrial</span>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-surface-bg rounded-lg">
-              <span class="material-symbols-outlined text-primary">auto_stories</span>
-              <span class="text-sm text-on-surface">Doctorado en Ingeniería de Sistemas</span>
-            </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-6 hover:shadow-lg transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="font-bold text-on-surface">Doctorados</h3>
+            <a href="#/posgrado" class="text-xs text-primary font-semibold hover:underline flex items-center gap-1">Ver todo <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+          </div>
+          <div class="space-y-2">
+            <a href="#/posgrado/doctorado-industrial" class="flex items-center gap-3 p-3 bg-surface-bg rounded-lg hover:bg-primary/5 transition-colors">
+              <span class="material-symbols-outlined text-primary text-sm">auto_stories</span>
+              <span class="text-sm text-on-surface font-medium">Doctorado en Ingeniería Industrial</span>
+            </a>
+            <a href="#/posgrado/doctorado-sistemas" class="flex items-center gap-3 p-3 bg-surface-bg rounded-lg hover:bg-primary/5 transition-colors">
+              <span class="material-symbols-outlined text-primary text-sm">auto_stories</span>
+              <span class="text-sm text-on-surface font-medium">Doctorado en Ingeniería de Sistemas</span>
+            </a>
           </div>
         </div>
       </div>
@@ -233,14 +239,30 @@
     </section>
 
     <section class="pb-8">
-      <div class="bg-gradient-to-br from-primary to-primary-container rounded-xl p-6 md:p-8 text-center">
-        <div class="w-16 h-16 rounded-full bg-brand-cream/20 flex items-center justify-center mx-auto mb-4">
-          <span class="material-symbols-outlined text-brand-cream text-3xl" style="font-variation-settings:'FILL'1;">school</span>
+      <div class="bg-gradient-to-br from-primary to-primary-container rounded-xl p-6 md:p-8 md:flex md:items-center md:gap-8 text-center md:text-left">
+        <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-brand-cream/20 flex items-center justify-center mx-auto md:mx-0 mb-4 md:mb-0 shrink-0">
+          <span class="material-symbols-outlined text-brand-cream text-4xl" style="font-variation-settings:'FILL'1;">person</span>
         </div>
-        <h3 class="text-on-primary text-xl md:text-2xl font-bold mb-2">Mensaje del Decano</h3>
-        <p class="text-on-primary/80 text-sm leading-relaxed max-w-2xl mx-auto">
-          "La FIIS-UNI se caracteriza por su gran sentido innovador y permanente actualización científica y tecnológica, lo cual le permite formar profesionales de elevado nivel en sus respectivas especialidades, dotados de sólidos principios éticos, morales, culturales y de protección ambiental para enfrentar con éxito las exigencias del mundo moderno y contribuir con el desarrollo del país."
-        </p>
+        <div>
+          <div class="flex items-center justify-center md:justify-start gap-2 mb-2">
+            <span class="text-xs font-semibold text-brand-cream/80 uppercase tracking-wider">Mensaje de la Decana</span>
+          </div>
+          <h3 class="text-on-primary text-xl md:text-2xl font-bold mb-2">Dra. Mery Noemi Morales Cuellar</h3>
+          <p class="text-on-primary/70 text-sm mb-3">Decana de la Facultad de Ingeniería Industrial y de Sistemas</p>
+          <p class="text-on-primary/80 text-sm leading-relaxed max-w-3xl">
+            "En la FIIS-UNI estamos comprometidos con la excelencia académica y la mejora continua. La acreditación no solo certifica la calidad de nuestros programas, sino que refleja nuestro compromiso con formar profesionales competentes, éticos y preparados para enfrentar los desafíos globales. Invito a toda nuestra comunidad a sumarse a este proceso de aseguramiento de la calidad que nos distingue como facultad líder a nivel nacional e internacional."
+          </p>
+          <div class="flex flex-wrap justify-center md:justify-start gap-3 mt-5">
+            <a href="mailto:decana@fiis.uni.edu.pe" class="inline-flex items-center gap-1.5 bg-white/15 text-on-primary text-xs px-4 py-2 rounded-lg hover:bg-white/25 transition-all">
+              <span class="material-symbols-outlined text-sm">mail</span>
+              decana@fiis.uni.edu.pe
+            </a>
+            <a href="#/autoridades" class="inline-flex items-center gap-1.5 bg-brand-cream text-primary text-xs px-4 py-2 rounded-lg font-semibold hover:brightness-95 transition-all">
+              <span class="material-symbols-outlined text-sm">group</span>
+              Ver autoridades
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
