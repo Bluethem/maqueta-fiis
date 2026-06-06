@@ -103,10 +103,10 @@ async function routePublic(section) {
 }
 
 async function routePublicDetail(id) {
-  const html = await loadPage('vida-estudiantil-detalle');
-  renderPublicLayout(html, '/vida-estudiantil');
-  if (typeof initVidaEstudiantilDetalle === 'function') {
-    initVidaEstudiantilDetalle(id);
+  const html = await loadPage('comunidad-detalle');
+  renderPublicLayout(html, '/comunidad');
+  if (typeof initComunidadDetalle === 'function') {
+    initComunidadDetalle(id);
   }
 }
 
@@ -199,8 +199,8 @@ Router.add('/empresas', () => routePublic('empresas'));
   });
 });
 Router.add('/egresados', () => routePublic('egresados'));
-Router.add('/vida-estudiantil', () => routePublic('vida-estudiantil'));
-Router.add('/vida-estudiantil/:id', (id) => routePublicDetail(id));
+Router.add('/comunidad', () => routePublic('comunidad'));
+Router.add('/comunidad/:id', (id) => routePublicDetail(id));
 Router.add('/directorio', () => routePublic('directorio'));
 Router.add('/calendario', () => routePublic('calendario'));
 Router.add('/docentes/:id', (id) => routePublicDetailDocente(id));
@@ -223,6 +223,16 @@ Router.add('/posgrado/doctorado-sistemas', () => routePublic('doctorado-sistemas
 Router.add('/posgrado/diplomados', () => routePublic('diplomado-project-management'));
 Router.add('/avisos-academicos', () => routePublic('avisos-academicos'));
 Router.add('/servicios', () => routePublic('servicios'));
+Router.add('/centro-informacion', () => routePublic('centro-informacion'));
+Router.add('/uecps', () => routePublic('uecps'));
+Router.add('/tutoria', () => routePublic('tutoria'));
+Router.add('/centro-automatizacion', () => routePublic('centro-automatizacion'));
+Router.add('/cee', () => routePublic('cee'));
+Router.add('/instituto-investigacion', () => routePublic('instituto-investigacion'));
+Router.add('/laboratorio-quimica', () => routePublic('laboratorio-quimica'));
+Router.add('/laboratorio-academico', () => routePublic('laboratorio-academico'));
+Router.add('/laboratorio-ia', () => routePublic('laboratorio-ia'));
+Router.add('/consult-fiis', () => routePublic('consult-fiis'));
 Router.add('/laboratorios', () => routePublic('laboratorios'));
 Router.add('/dashboard/admin', () => routeDashboard('admin'));
 Router.add('/dashboard/admin-web', () => routeDashboard('admin'));

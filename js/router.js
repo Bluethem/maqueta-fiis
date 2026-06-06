@@ -2,10 +2,12 @@ const MEGA_MENU = [
   {
     label: 'Facultad', icon: 'account_balance',
     children: [
-      { col: 0, items: [
+      { col: 0, title: 'La Facultad', items: [
         { label: 'Nuestra Facultad', route: '/facultad', icon: 'school' },
         { label: 'Autoridades', route: '/autoridades', icon: 'group' },
         { label: 'Organigrama', route: '/organigrama', icon: 'account_tree' },
+      ]},
+      { col: 1, title: 'Gestión', items: [
         { label: 'Oficina de Acreditación', route: '/acreditacion', icon: 'verified' },
         { label: 'Directorio Docentes', route: '/directorio-docentes', icon: 'badge' },
         { label: 'Noticias FIIS', route: '/noticias', icon: 'newspaper' },
@@ -65,28 +67,32 @@ const MEGA_MENU = [
         { label: 'Mesa de Partes', route: '#', icon: 'mail' },
       ]},
       { col: 1, title: 'Atención', items: [
-        { label: 'Tutoría FIIS', route: '/organigrama', icon: 'support' },
-        { label: 'UECPS', route: '/organigrama', icon: 'public' },
-        { label: 'Centro de Información', route: '/organigrama', icon: 'library_books' },
+        { label: 'Tutoría FIIS', route: '/tutoria', icon: 'support' },
+        { label: 'UECPS', route: '/uecps', icon: 'public' },
+        { label: 'Centro de Información', route: '/centro-informacion', icon: 'library_books' },
         { label: 'FAQ', route: '#', icon: 'help' },
       ]},
       { col: 2, title: 'Extensión', items: [
         { label: 'Sistemas UNI', route: '#', icon: 'computer' },
-        { label: 'Consult FIIS', route: '/organigrama', icon: 'handshake' },
-        { label: 'CEE', route: '/organigrama', icon: 'school' },
+        { label: 'Consult FIIS', route: '/consult-fiis', icon: 'handshake' },
+        { label: 'CEE', route: '/cee', icon: 'school' },
       ]}
     ]
   },
   {
     label: 'Comunidad', icon: 'groups',
     children: [
-      { col: 0, items: [
-        { label: 'Agrupaciones', route: '/vida-estudiantil', icon: 'groups' },
-        { label: 'Centros Culturales', route: '/vida-estudiantil', icon: 'palette' },
-        { label: 'CEIIS', route: '/vida-estudiantil', icon: 'group' },
-        { label: 'TEFIIS', route: '/vida-estudiantil', icon: 'how_to_vote' },
-        { label: 'Delegaturas', route: '/vida-estudiantil', icon: 'diversity_3' },
-        { label: 'Convocatorias', route: '/vida-estudiantil', icon: 'campaign' },
+      { col: 0, title: 'Organismos de la Facultad', items: [
+        { label: 'CEIIS', route: '/comunidad/ceiis', icon: 'group' },
+        { label: 'TEFIIS', route: '/comunidad/tefiis', icon: 'how_to_vote' },
+        { label: 'Delegaturas', route: '/comunidad/delegatura-industrial', icon: 'diversity_3' },
+      ]},
+      { col: 1, title: 'Agrupaciones Estudiantiles', items: [
+        { label: 'UNICODE', route: '/comunidad/unicode', icon: 'code' },
+        { label: 'CIBERSEC', route: '/comunidad/cibersec', icon: 'shield' },
+        { label: 'Núcleo', route: '/comunidad/nucleo', icon: 'data_object' },
+        { label: 'CCAT', route: '/comunidad/ccat', icon: 'palette' },
+        { label: 'Directorio Completo', route: '/comunidad', icon: 'groups' },
       ]}
     ]
   },
@@ -97,12 +103,16 @@ const MEGA_MENU = [
   {
     label: 'Investigación', icon: 'science',
     children: [
-      { col: 0, items: [
-        { label: 'Instituto de Investigación', route: '/laboratorios', icon: 'science' },
-        { label: 'Centro de Automatización Industrial', route: '/laboratorios', icon: 'precision_manufacturing' },
-        { label: 'Laboratorio Académico y Red FIIS', route: '/laboratorios', icon: 'router' },
-        { label: 'Laboratorio de IA', route: '/laboratorios', icon: 'psychology' },
-        { label: 'Laboratorio de Química', route: '/laboratorios', icon: 'biotech' },
+      { col: 0, title: 'Laboratorios', items: [
+        { label: 'Laboratorio de IA', route: '/laboratorio-ia', icon: 'psychology' },
+        { label: 'Laboratorio de Química', route: '/laboratorio-quimica', icon: 'biotech' },
+        { label: 'Laboratorio Académico y Red FIIS', route: '/laboratorio-academico', icon: 'router' },
+      ]},
+      { col: 1, title: 'Centros e Instituto', items: [
+        { label: 'Instituto de Investigación', route: '/instituto-investigacion', icon: 'science' },
+        { label: 'Centro de Automatización Industrial', route: '/centro-automatizacion', icon: 'precision_manufacturing' },
+      ]},
+      { col: 1, title: 'Recursos', items: [
         { label: 'Publicaciones', route: '/organigrama', icon: 'description' },
         { label: 'Proyectos Destacados', route: '/organigrama', icon: 'star' },
       ]}
