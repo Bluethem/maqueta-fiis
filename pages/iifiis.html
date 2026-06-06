@@ -1,0 +1,194 @@
+<div class="page-enter space-y-8">
+  <section class="relative bg-primary overflow-hidden rounded-2xl min-h-[320px] flex items-center">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
+    <div class="relative z-10 px-8 md:px-16 py-14 w-full">
+      <div class="flex items-center gap-2 mb-3">
+        <a href="#/investigacion" class="text-brand-cream/70 hover:text-brand-cream text-sm flex items-center gap-1 transition-colors">
+          <span class="material-symbols-outlined text-sm">arrow_back</span> Investigación
+        </a>
+      </div>
+      <div class="max-w-3xl">
+        <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-4 leading-tight">IIFIIS</h1>
+        <p class="text-on-primary/90 text-lg md:text-xl leading-relaxed">Publicaciones, revistas y artículos de investigación del Instituto de Investigación de la FIIS.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-[1200px] mx-auto px-6 md:px-8 space-y-10 pb-12">
+    <div class="flex border-b border-border-subtle gap-0 overflow-x-auto">
+      <button class="px-6 py-4 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 transition-colors whitespace-nowrap" data-tab="revista">Revista IIFIIS</button>
+      <button class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-tab="tecnia">Revista TECNIA</button>
+      <button class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-tab="articulos">Artículos Destacados</button>
+      <button class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-tab="repositorio">Repositorio</button>
+    </div>
+
+    <div id="tab-revista" class="tab-content space-y-6">
+      <div class="bg-white rounded-xl border border-border-subtle p-6 md:p-8">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+            <span class="material-symbols-outlined text-3xl" style="font-variation-settings:'FILL'1;">auto_stories</span>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-on-surface">Revista IIFIIS</h2>
+            <p class="text-sm text-text-secondary">"Industria, Sociedad y Sistemas"</p>
+          </div>
+        </div>
+        <p class="text-text-secondary text-sm leading-relaxed mb-6">La Revista IIFIIS contiene los Artículos de Investigación producto de los Proyectos aprobados en el Instituto de Investigación de la Facultad de Ingeniería Industrial y de Sistemas de la UNI. En esta oportunidad la revista es difundida de forma virtual y ha sido elaborada con interactividad.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="border border-border-subtle rounded-xl p-5">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined">description</span>
+              </div>
+              <div>
+                <h3 class="text-sm font-bold text-on-surface">IIFIIS 2022</h3>
+                <p class="text-xs text-text-secondary">Artículos de proyectos 2019</p>
+              </div>
+            </div>
+            <button onclick="alert('Descargando Revista IIFIIS 2022...')" class="w-full mt-2 px-4 py-2 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-primary-container transition-all flex items-center justify-center gap-1">
+              <span class="material-symbols-outlined text-sm">download</span> Descargar
+            </button>
+          </div>
+          <div class="border border-border-subtle rounded-xl p-5">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined">description</span>
+              </div>
+              <div>
+                <h3 class="text-sm font-bold text-on-surface">IIFIIS 2021</h3>
+                <p class="text-xs text-text-secondary">Artículos de proyectos 2018</p>
+              </div>
+            </div>
+            <button onclick="alert('Descargando Revista IIFIIS 2021...')" class="w-full mt-2 px-4 py-2 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-primary-container transition-all flex items-center justify-center gap-1">
+              <span class="material-symbols-outlined text-sm">download</span> Descargar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-tecnia" class="tab-content hidden space-y-6">
+      <div class="bg-white rounded-xl border border-border-subtle p-6 md:p-8">
+        <h2 class="text-xl font-bold text-on-surface mb-1">Revista TECNIA</h2>
+        <p class="text-sm text-text-secondary mb-6">Órgano de divulgación científica de la Universidad Nacional de Ingeniería.</p>
+        <div class="space-y-4">
+          <div class="border border-border-subtle rounded-xl p-5">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h3 class="text-sm font-bold text-on-surface">Instrucciones para la publicación de artículos de investigación</h3>
+                <p class="text-xs text-text-secondary mt-1">Guía para autores sobre formato, estructura y proceso de revisión de artículos en la revista TECNIA.</p>
+              </div>
+              <button onclick="alert('Descargando instrucciones...')" class="shrink-0 px-4 py-2 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-primary-container transition-all flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm">download</span> PDF
+              </button>
+            </div>
+          </div>
+          <div class="border border-border-subtle rounded-xl p-5">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h3 class="text-sm font-bold text-on-surface">Modelo Artículo TECNIA 2020</h3>
+                <p class="text-xs text-text-secondary mt-1">Plantilla oficial para la presentación de artículos según el formato de la revista.</p>
+              </div>
+              <button onclick="alert('Descargando modelo...')" class="shrink-0 px-4 py-2 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-primary-container transition-all flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm">download</span> PDF
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-articulos" class="tab-content hidden space-y-6">
+      <div class="bg-white rounded-xl border border-border-subtle p-6 md:p-8">
+        <h2 class="text-xl font-bold text-on-surface mb-1">Artículos Destacados</h2>
+        <p class="text-sm text-text-secondary mb-6">Artículos de investigación producidos por docentes e investigadores de la FIIS.</p>
+        <div class="space-y-4">
+          <div class="border border-border-subtle rounded-xl p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-blue-100 text-blue-700">2021</span>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-green-100 text-green-700">Docentes</span>
+            </div>
+            <h3 class="text-sm font-bold text-on-surface">Concurso de Artículos de Investigación 2021 — Docentes FIIS</h3>
+            <p class="text-xs text-text-secondary mt-1">Bases, declaración jurada y formato modelo revista TECNIA para la convocatoria docente.</p>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <button onclick="alert('Descargando...')" class="px-3 py-1 border border-border-subtle rounded-lg text-[10px] text-text-secondary hover:bg-surface-container-low">Bases</button>
+              <button onclick="alert('Descargando...')" class="px-3 py-1 border border-border-subtle rounded-lg text-[10px] text-text-secondary hover:bg-surface-container-low">Declaración Jurada</button>
+              <button onclick="alert('Descargando...')" class="px-3 py-1 border border-border-subtle rounded-lg text-[10px] text-text-secondary hover:bg-surface-container-low">Formato TECNIA</button>
+            </div>
+          </div>
+          <div class="border border-border-subtle rounded-xl p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-blue-100 text-blue-700">2021</span>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-amber-100 text-amber-700">Estudiantes</span>
+            </div>
+            <h3 class="text-sm font-bold text-on-surface">Concurso de Artículos de Investigación 2021 — Estudiantes FIIS</h3>
+            <p class="text-xs text-text-secondary mt-1">Convocatoria estudiantil para la publicación de artículos de investigación en la revista TECNIA.</p>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <button onclick="alert('Descargando...')" class="px-3 py-1 border border-border-subtle rounded-lg text-[10px] text-text-secondary hover:bg-surface-container-low">Bases</button>
+              <button onclick="alert('Descargando...')" class="px-3 py-1 border border-border-subtle rounded-lg text-[10px] text-text-secondary hover:bg-surface-container-low">Declaración Jurada</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-repositorio" class="tab-content hidden space-y-6">
+      <div class="bg-white rounded-xl border border-border-subtle p-6 md:p-8">
+        <h2 class="text-xl font-bold text-on-surface mb-4">Documentos de Interés</h2>
+        <div class="space-y-3">
+          <div class="flex justify-between items-center p-4 bg-surface-container-low rounded-xl">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary">description</span>
+              <div>
+                <p class="text-sm font-bold text-on-surface">Política de Investigación en la UNI</p>
+                <p class="text-xs text-text-secondary">Documento oficial de políticas de investigación</p>
+              </div>
+            </div>
+            <button onclick="alert('Descargando...')" class="px-4 py-2 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-primary-container transition-all"><span class="material-symbols-outlined text-sm">download</span></button>
+          </div>
+          <div class="flex justify-between items-center p-4 bg-surface-container-low rounded-xl">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary">description</span>
+              <div>
+                <p class="text-sm font-bold text-on-surface">Estatuto de la UNI — Título IV: Investigación</p>
+                <p class="text-xs text-text-secondary">Marco normativo de la investigación en la UNI</p>
+              </div>
+            </div>
+            <button onclick="alert('Descargando...')" class="px-4 py-2 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-primary-container transition-all"><span class="material-symbols-outlined text-sm">download</span></button>
+          </div>
+          <div class="flex justify-between items-center p-4 bg-surface-container-low rounded-xl">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary">description</span>
+              <div>
+                <p class="text-sm font-bold text-on-surface">Plan Único de Investigación 2018</p>
+                <p class="text-xs text-text-secondary">Plan de desarrollo de investigación institucional</p>
+              </div>
+            </div>
+            <button onclick="alert('Descargando...')" class="px-4 py-2 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-primary-container transition-all"><span class="material-symbols-outlined text-sm">download</span></button>
+          </div>
+          <div class="flex justify-between items-center p-4 bg-surface-container-low rounded-xl">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary">description</span>
+              <div>
+                <p class="text-sm font-bold text-on-surface">Código de Ética del Investigador</p>
+                <p class="text-xs text-text-secondary">Principios éticos para la investigación</p>
+              </div>
+            </div>
+            <button onclick="alert('Descargando...')" class="px-4 py-2 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-primary-container transition-all"><span class="material-symbols-outlined text-sm">download</span></button>
+          </div>
+          <div class="flex justify-between items-center p-4 bg-surface-container-low rounded-xl">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary">description</span>
+              <div>
+                <p class="text-sm font-bold text-on-surface">Reglamento de Propiedad Intelectual</p>
+                <p class="text-xs text-text-secondary">Normativa de propiedad intelectual UNI</p>
+              </div>
+            </div>
+            <button onclick="alert('Descargando...')" class="px-4 py-2 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-primary-container transition-all"><span class="material-symbols-outlined text-sm">download</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

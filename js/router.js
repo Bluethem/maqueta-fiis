@@ -1,6 +1,6 @@
 const MEGA_MENU = [
   {
-    label: 'Facultad', icon: 'account_balance',
+    label: 'Facultad', icon: 'account_balance', route: '/facultad',
     children: [
       { col: 0, title: 'La Facultad', items: [
         { label: 'Nuestra Facultad', route: '/facultad', icon: 'school' },
@@ -15,7 +15,7 @@ const MEGA_MENU = [
     ]
   },
   {
-    label: 'Académico', icon: 'menu_book',
+    label: 'Académico', icon: 'menu_book', route: '/academico',
     children: [
       { col: 0, title: 'Escuelas Profesionales', items: [
         { label: 'Ing. Industrial', route: '/escuelas/industrial', icon: 'precision_manufacturing' },
@@ -36,7 +36,7 @@ const MEGA_MENU = [
     ]
   },
   {
-    label: 'Posgrado', icon: 'school',
+    label: 'Posgrado', icon: 'school', route: '/posgrado',
     children: [
       { col: 0, title: 'Maestrías', items: [
         { label: 'Ingeniería Industrial', route: '/posgrado/maestria-industrial', icon: 'precision_manufacturing' },
@@ -57,7 +57,7 @@ const MEGA_MENU = [
     ]
   },
   {
-    label: 'Servicios', icon: 'support',
+    label: 'Servicios', icon: 'support', route: '/servicios',
     children: [
       { col: 0, title: 'Plataformas', items: [
         { label: 'Aula Virtual', route: '#', icon: 'computer' },
@@ -80,7 +80,7 @@ const MEGA_MENU = [
     ]
   },
   {
-    label: 'Comunidad', icon: 'groups',
+    label: 'Comunidad', icon: 'groups', route: '/comunidad',
     children: [
       { col: 0, title: 'Organismos de la Facultad', items: [
         { label: 'CEIIS', route: '/comunidad/ceiis', icon: 'group' },
@@ -101,7 +101,7 @@ const MEGA_MENU = [
     route: '/transparencia'
   },
   {
-    label: 'Investigación', icon: 'science',
+    label: 'Investigación', icon: 'science', route: '/investigacion',
     children: [
       { col: 0, title: 'Laboratorios', items: [
         { label: 'Laboratorio de IA', route: '/laboratorio-ia', icon: 'psychology' },
@@ -113,8 +113,8 @@ const MEGA_MENU = [
         { label: 'Centro de Automatización Industrial', route: '/centro-automatizacion', icon: 'precision_manufacturing' },
       ]},
       { col: 1, title: 'Recursos', items: [
-        { label: 'Publicaciones', route: '/organigrama', icon: 'description' },
-        { label: 'Proyectos Destacados', route: '/organigrama', icon: 'star' },
+        { label: 'IIFIIS', route: '/iifiis', icon: 'auto_stories' },
+        { label: 'Proyectos Destacados', route: '/proyectos-destacados', icon: 'star' },
       ]}
     ]
   },
@@ -203,42 +203,54 @@ async function loadPage(path) {
 
 function navbar(active) {
     const items = MEGA_MENU.map(item => {
-    if (item.route) {
+    const hasChildren = item.children && item.children.length > 0;
+    const isSimpleLink = item.route && !hasChildren;
+    if (isSimpleLink) {
       const isPortal = item.route === '/login';
       const cls = isPortal
         ? 'text-sm bg-brand-cream text-primary font-bold px-4 py-1.5 rounded-lg hover:brightness-95 transition-all'
         : `text-sm ${item.route === active ? 'text-primary font-bold' : 'text-on-surface-variant hover:text-primary'} transition-colors`;
       return `<a class="${cls}" href="#${item.route}">${item.label}</a>`;
     }
-    const cols = item.children || [];
-    const maxCol = Math.max(...cols.map(c => c.col + 1), 1);
-    const gridCols = Math.min(maxCol, 3);
-    const sizeClass = gridCols <= 1 ? 'mega-dropdown-sm' : gridCols <= 2 ? 'mega-dropdown-md' : '';
-    const sortedCols = [];
-    cols.forEach(c => { if (!sortedCols[c.col]) sortedCols[c.col] = []; sortedCols[c.col].push(c); });
-    const colHtml = sortedCols.map(colItems => {
-      return `<div class="mega-col">${colItems.map(c => `
-        ${c.title ? `<span class="mega-col-title">${c.title}</span>` : ''}
-        ${c.items.map(sub => {
-          const href = sub.external ? sub.route : '#' + sub.route;
-          return `<a class="mega-link" href="${href}"${sub.external ? ' target="_blank" rel="noopener"' : ''}>
-            <span class="material-symbols-outlined">${sub.icon}</span>${sub.label}
-          </a>`;
-        }).join('')}
-      `).join('')}</div>`;
-    }).join('');
-    return `<div class="mega-nav">
-      <span class="mega-trigger text-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1">${item.label} <span class="material-symbols-outlined text-sm">expand_more</span></span>
-      <div class="mega-dropdown ${sizeClass}"><div class="mega-grid" style="grid-template-columns:repeat(${gridCols},1fr)">${colHtml}</div></div>
-    </div>`;
+    if (hasChildren) {
+      const cols = item.children || [];
+      const maxCol = Math.max(...cols.map(c => c.col + 1), 1);
+      const gridCols = Math.min(maxCol, 3);
+      const sizeClass = gridCols <= 1 ? 'mega-dropdown-sm' : gridCols <= 2 ? 'mega-dropdown-md' : '';
+      const sortedCols = [];
+      cols.forEach(c => { if (!sortedCols[c.col]) sortedCols[c.col] = []; sortedCols[c.col].push(c); });
+      const colHtml = sortedCols.map(colItems => {
+        return `<div class="mega-col">${colItems.map(c => `
+          ${c.title ? `<span class="mega-col-title">${c.title}</span>` : ''}
+          ${c.items.map(sub => {
+            const href = sub.external ? sub.route : '#' + sub.route;
+            return `<a class="mega-link" href="${href}"${sub.external ? ' target="_blank" rel="noopener"' : ''}>
+              <span class="material-symbols-outlined">${sub.icon}</span>${sub.label}
+            </a>`;
+          }).join('')}
+        `).join('')}</div>`;
+      }).join('');
+      const trigger = item.route
+        ? `<a class="mega-trigger text-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1" href="#${item.route}">${item.label} <span class="material-symbols-outlined text-sm">expand_more</span></a>`
+        : `<span class="mega-trigger text-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1">${item.label} <span class="material-symbols-outlined text-sm">expand_more</span></span>`;
+      return `<div class="mega-nav">${trigger}<div class="mega-dropdown ${sizeClass}"><div class="mega-grid" style="grid-template-columns:repeat(${gridCols},1fr)">${colHtml}</div></div></div>`;
+    }
+    return '';
   }).join('');
   const mobileItems = MEGA_MENU.map(item => {
-    if (item.route) return `<a class="text-sm text-on-surface-variant transition-colors py-1" href="#${item.route}">${item.label}</a>`;
-    const links = (item.children || []).flatMap(c => (c.items || []).map(sub => {
-      const href = sub.external ? sub.route : '#' + sub.route;
-      return `<a class="text-sm text-on-surface-variant transition-colors py-1 pl-4" href="${href}"${sub.external ? ' target="_blank"' : ''}><span class="material-symbols-outlined text-sm align-middle mr-1">${sub.icon}</span>${sub.label}</a>`;
-    })).join('');
-    return `<div class="py-1"><span class="text-sm font-bold text-primary">${item.label}</span>${links}</div>`;
+    const hasChildren = item.children && item.children.length > 0;
+    if (!hasChildren && item.route) return `<a class="text-sm text-on-surface-variant transition-colors py-1" href="#${item.route}">${item.label}</a>`;
+    if (hasChildren) {
+      const links = item.children.flatMap(c => (c.items || []).map(sub => {
+        const href = sub.external ? sub.route : '#' + sub.route;
+        return `<a class="text-sm text-on-surface-variant transition-colors py-1 pl-4" href="${href}"${sub.external ? ' target="_blank"' : ''}><span class="material-symbols-outlined text-sm align-middle mr-1">${sub.icon}</span>${sub.label}</a>`;
+      })).join('');
+      const label = item.route
+        ? `<a class="text-sm font-bold text-primary hover:text-primary transition-colors" href="#${item.route}">${item.label}</a>`
+        : `<span class="text-sm font-bold text-primary">${item.label}</span>`;
+      return `<div class="py-1">${label}${links}</div>`;
+    }
+    return '';
   }).join('');
   return `
     <nav class="bg-surface border-b border-border-subtle sticky top-0 z-50">
