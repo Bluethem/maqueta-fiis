@@ -101,8 +101,8 @@ body { font-family: 'Inter', sans-serif; background-color: #E8E7EA; color: #1c1b
 .mega-nav{position:relative}
 .mega-nav > .mega-trigger{cursor:pointer;position:relative}
 .mega-nav > .mega-trigger::after{content:'';position:absolute;bottom:-8px;left:0;right:0;height:8px}
-.mega-nav:hover > .mega-dropdown{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto}
-.mega-dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);background:#fff;border:1px solid #CDCCCF;border-radius:12px;padding:24px;box-shadow:0 12px 40px rgba(0,0,0,0.12);opacity:0;visibility:hidden;transition:all 0.2s ease;z-index:100;min-width:600px;pointer-events:none}
+.mega-nav:hover > .mega-dropdown{opacity:1;visibility:visible;transform:translateX(-50%);pointer-events:auto}
+.mega-dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid #CDCCCF;border-radius:12px;padding:24px;box-shadow:0 12px 40px rgba(0,0,0,0.12);opacity:0;visibility:hidden;transition:all 0.2s ease;z-index:100;min-width:600px;pointer-events:none}
 .mega-dropdown::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%) rotate(45deg);width:12px;height:12px;background:#fff;border-left:1px solid #CDCCCF;border-top:1px solid #CDCCCF}
 .mega-grid{display:grid;gap:8px}
 .mega-col{display:flex;flex-direction:column;gap:2px}
@@ -140,3 +140,40 @@ body { font-family: 'Inter', sans-serif; background-color: #E8E7EA; color: #1c1b
   .carousel-btn-prev{left:8px}
   .carousel-btn-next{right:8px}
 }
+
+/* ===== Eventos responsive ===== */
+@media(max-width:640px){
+  .event-card{flex-wrap:wrap}
+  .event-card .countdown{width:100%;justify-content:flex-start;padding-top:8px;border-top:1px solid #E5E4E8;margin-top:8px}
+  .event-card .flex-grow .flex.items-start{flex-wrap:wrap}
+  .event-card .flex-grow .flex.items-start .countdown{width:100%;justify-content:flex-start;padding-top:6px;margin-top:6px;border-top:1px solid #E5E4E8}
+}
+
+/* ===== Carousel Overlay ===== */
+.carousel-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,0.65),rgba(0,0,0,0.3));z-index:1}
+
+/* ===== Mini Carousel (perfiles, reconocimientos) ===== */
+.mini-carousel{position:relative;overflow:hidden;border-radius:16px}
+.mini-carousel .carousel-inner{display:flex;transition:transform 0.6s cubic-bezier(0.4,0,0.2,1);will-change:transform}
+.mini-carousel .carousel-slide{min-width:100%;position:relative;min-height:320px}
+.mini-carousel .carousel-slide > img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.mini-carousel .carousel-content{position:relative;z-index:2;padding:48px 40px;min-height:320px;display:flex;flex-direction:column;justify-content:center}
+.mini-carousel .carousel-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.85);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#1c1b1b;box-shadow:0 2px 8px rgba(0,0,0,0.1);transition:all 0.2s}
+.mini-carousel .carousel-btn:hover{background:#fff;transform:translateY(-50%) scale(1.05)}
+.mini-carousel .carousel-btn-prev{left:12px}
+.mini-carousel .carousel-btn-next{right:12px}
+.mini-carousel .carousel-dots{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:10}
+.mini-carousel .carousel-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.4);border:2px solid rgba(255,255,255,0.6);cursor:pointer;transition:all 0.3s}
+.mini-carousel .carousel-dot.active{background:#fff;border-color:#fff;transform:scale(1.2)}
+@media(max-width:768px){
+  .mini-carousel .carousel-slide{min-height:260px}
+  .mini-carousel .carousel-content{padding:28px 20px;min-height:260px}
+  .mini-carousel .carousel-btn{width:30px;height:30px}
+}
+
+/* ===== Countdown ===== */
+.countdown{display:flex;gap:8px;align-items:center}
+.countdown-item{display:flex;flex-direction:column;align-items:center;min-width:40px}
+.countdown-number{font-size:18px;font-weight:800;color:#711610;line-height:1}
+.countdown-label{font-size:9px;color:#6B6B6B;text-transform:uppercase;letter-spacing:0.05em;margin-top:2px}
+.countdown-sep{font-size:18px;font-weight:700;color:#CDCCCF;margin:0 2px}

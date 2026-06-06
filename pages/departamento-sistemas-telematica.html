@@ -16,7 +16,7 @@
     </div>
   </section>
 
-  <div class="max-w-[1200px] mx-auto px-6 md:px-8 space-y-10">
+  <div class="max-w-[1200px] mx-auto px-6 md:px-8 space-y-10 pb-12">
     <div class="flex border-b border-border-subtle gap-0 overflow-x-auto">
       <button class="px-6 py-4 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 transition-colors whitespace-nowrap" data-tab="info">Presentación</button>
       <button class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-tab="docentes">Docentes</button>
@@ -40,8 +40,8 @@
         <h3 class="text-lg font-bold text-on-surface mb-4">Datos Generales</h3>
         <dl class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
           <div class="flex justify-between py-2 border-b border-border-subtle">
-            <dt class="text-text-secondary">Jefe del Departamento</dt>
-            <dd class="font-medium text-on-surface">Dr. Miguel Rodríguez</dd>
+            <dt class="text-text-secondary">Jefatura</dt>
+            <dd class="font-medium text-on-surface">Jefatura del Departamento</dd>
           </div>
           <div class="flex justify-between py-2 border-b border-border-subtle">
             <dt class="text-text-secondary">Categoría</dt>
@@ -62,35 +62,35 @@
     <div id="tab-docentes" class="tab-content hidden space-y-4">
       <p class="text-text-secondary text-sm">Docentes principales del Departamento Académico de Sistemas y Telemática.</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow cursor-pointer" onclick="Router.navigate('/docentes/miguel-rodriguez')">
           <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0 mb-3">MR</div>
           <p class="font-semibold text-on-surface text-sm">Dr. Miguel Rodríguez</p>
-          <p class="text-xs text-text-secondary">Jefe del Departamento</p>
+           <p class="text-xs text-text-secondary">Docente del Departamento</p>
           <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-blue-100 text-blue-700">Docente Principal</span>
           <p class="text-xs text-text-secondary mt-2">Ingeniería de Software</p>
         </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow cursor-pointer" onclick="Router.navigate('/docentes/edgar-quispe')">
           <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0 mb-3">EQ</div>
           <p class="font-semibold text-on-surface text-sm">Dr. Edgar Quispe</p>
           <p class="text-xs text-text-secondary">Docente Principal</p>
           <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-blue-100 text-blue-700">Docente Principal</span>
           <p class="text-xs text-text-secondary mt-2">Inteligencia Artificial</p>
         </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow cursor-pointer" onclick="Router.navigate('/docentes/hugo-ramirez')">
           <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0 mb-3">HR</div>
           <p class="font-semibold text-on-surface text-sm">Mg. Hugo Ramírez</p>
           <p class="text-xs text-text-secondary">Docente Asociado</p>
           <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-100 text-green-700">Asociado</span>
           <p class="text-xs text-text-secondary mt-2">Redes y Seguridad</p>
         </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow cursor-pointer" onclick="Router.navigate('/docentes/sara-medina')">
           <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0 mb-3">SM</div>
           <p class="font-semibold text-on-surface text-sm">Mg. Sara Medina</p>
           <p class="text-xs text-text-secondary">Docente Asociada</p>
           <span class="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-100 text-green-700">Asociado</span>
           <p class="text-xs text-text-secondary mt-2">Base de Datos</p>
         </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex flex-col items-center text-center hover:shadow-md transition-shadow cursor-pointer" onclick="Router.navigate('/docentes/paulo-cardenas')">
           <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0 mb-3">PC</div>
           <p class="font-semibold text-on-surface text-sm">Mg. Paulo Cárdenas</p>
           <p class="text-xs text-text-secondary">Docente Asociado</p>

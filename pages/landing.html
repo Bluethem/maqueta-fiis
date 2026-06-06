@@ -1,153 +1,168 @@
 <!-- Content starts here - nav is rendered by SPA layout -->
 
-<!-- ===== Carrusel y Cartelera de Avisos (S. Administrativa Req 6) ===== -->
+<!-- ===== Carrusel Hero a ancho completo ===== -->
 <section class="max-w-[1200px] mx-auto px-6 pt-8">
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-    
-    <!-- Carrusel (2/3 ancho en desktop) -->
-    <div class="lg:col-span-2">
-      <div class="carousel" id="heroCarousel">
-        <div class="carousel-inner" id="carouselInner">
-          <!-- Slide 1 -->
-          <div class="carousel-slide">
-            <div class="carousel-bg" style="background:linear-gradient(135deg,#711610,#8B2D26)"></div>
-            <div class="carousel-content">
-              <span class="material-symbols-outlined text-brand-cream text-5xl mb-4" style="font-variation-settings:'FILL'1;">architecture</span>
-              <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-4 leading-tight">Bienvenidos a la FIIS - UNI</h1>
-              <p class="text-on-primary/85 text-lg md:text-xl leading-relaxed max-w-xl mb-8">Formando ingenieros industriales y de sistemas de excelencia, comprometidos con la innovación tecnológica y el desarrollo sostenible del país.</p>
-              <div class="flex flex-wrap gap-3">
-                <a href="#/facultad" class="bg-brand-cream text-primary px-6 py-3 rounded-lg font-semibold hover:brightness-95 transition-all flex items-center gap-2">Conoce la facultad <span class="material-symbols-outlined">arrow_forward</span></a>
-                <a href="#/login" class="border-2 border-on-primary/40 text-on-primary px-6 py-3 rounded-lg font-semibold hover:bg-on-primary/10 transition-all flex items-center gap-2">Portal de ingreso <span class="material-symbols-outlined">login</span></a>
-              </div>
-            </div>
-          </div>
-          <!-- Slide 2 -->
-          <div class="carousel-slide">
-            <div class="carousel-bg" style="background:linear-gradient(135deg,#1a1a2e,#16213e)"></div>
-            <div class="carousel-content">
-              <span class="material-symbols-outlined text-brand-cream text-5xl mb-4" style="font-variation-settings:'FILL'1;">science</span>
-              <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-4 leading-tight">Investigación e Innovación</h1>
-              <p class="text-on-primary/85 text-lg md:text-xl leading-relaxed max-w-xl mb-8">Laboratorios equipados con tecnología de punta para el desarrollo de investigación aplicada en IA, automatización y ciencias básicas.</p>
-              <a href="#/organigrama" class="bg-brand-cream text-primary px-6 py-3 rounded-lg font-semibold hover:brightness-95 transition-all inline-flex items-center gap-2">Conoce nuestros laboratorios <span class="material-symbols-outlined">arrow_forward</span></a>
-            </div>
-          </div>
-          <!-- Slide 3 -->
-          <div class="carousel-slide">
-            <div class="carousel-bg" style="background:linear-gradient(135deg,#0f3443,#0b5e42)"></div>
-            <div class="carousel-content">
-              <span class="material-symbols-outlined text-brand-cream text-5xl mb-4" style="font-variation-settings:'FILL'1;">school</span>
-              <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-4 leading-tight">Formación de Excelencia</h1>
-              <p class="text-on-primary/85 text-lg md:text-xl leading-relaxed max-w-xl mb-8">Cuatro escuelas profesionales, programas de posgrado y certificación ISO 9001:2015 que avalan la calidad de nuestra enseñanza.</p>
-              <a href="#/escuelas" class="bg-brand-cream text-primary px-6 py-3 rounded-lg font-semibold hover:brightness-95 transition-all inline-flex items-center gap-2">Nuestras escuelas <span class="material-symbols-outlined">arrow_forward</span></a>
-            </div>
-          </div>
-          <!-- Slide 4 -->
-          <div class="carousel-slide">
-            <div class="carousel-bg" style="background:linear-gradient(135deg,#3d0a1e,#711610)"></div>
-            <div class="carousel-content">
-              <span class="material-symbols-outlined text-brand-cream text-5xl mb-4" style="font-variation-settings:'FILL'1;">groups</span>
-              <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-4 leading-tight">+4,000 Egresados</h1>
-              <p class="text-on-primary/85 text-lg md:text-xl leading-relaxed max-w-xl mb-8">Una comunidad de profesionales que transforman el país. Conecta con la Red Alumni y accede a oportunidades laborales exclusivas.</p>
-              <a href="#/egresados" class="bg-brand-cream text-primary px-6 py-3 rounded-lg font-semibold hover:brightness-95 transition-all inline-flex items-center gap-2">Red Alumni <span class="material-symbols-outlined">arrow_forward</span></a>
-            </div>
+  <div class="carousel" id="heroCarousel">
+    <div class="carousel-inner" id="carouselInner">
+      <!-- Slide 1 -->
+      <div class="carousel-slide" style="background:linear-gradient(135deg,#711610,#8B2D26)">
+        <img src="assets/hero-slide-1.jpg" alt="Bienvenidos a la FIIS - UNI" loading="lazy" onerror="this.style.display='none'">
+        <div class="carousel-overlay"></div>
+        <div class="carousel-content">
+          <span class="material-symbols-outlined text-brand-cream text-5xl mb-4" style="font-variation-settings:'FILL'1;">architecture</span>
+          <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-4 leading-tight">Bienvenidos a la FIIS - UNI</h1>
+          <p class="text-on-primary/85 text-lg md:text-xl leading-relaxed max-w-xl mb-8">Formando ingenieros industriales y de sistemas de excelencia, comprometidos con la innovación tecnológica y el desarrollo sostenible del país.</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="#/facultad" class="bg-brand-cream text-primary px-6 py-3 rounded-lg font-semibold hover:brightness-95 transition-all flex items-center gap-2">Conoce la facultad <span class="material-symbols-outlined">arrow_forward</span></a>
+            <a href="#/login" class="border-2 border-on-primary/40 text-on-primary px-6 py-3 rounded-lg font-semibold hover:bg-on-primary/10 transition-all flex items-center gap-2">Portal de ingreso <span class="material-symbols-outlined">login</span></a>
           </div>
         </div>
-        <button class="carousel-btn carousel-btn-prev" id="carouselPrev"><span class="material-symbols-outlined">chevron_left</span></button>
-        <button class="carousel-btn carousel-btn-next" id="carouselNext"><span class="material-symbols-outlined">chevron_right</span></button>
-        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="carousel-slide" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">
+        <img src="assets/hero-slide-2.jpg" alt="Investigación e Innovación" loading="lazy" onerror="this.style.display='none'">
+        <div class="carousel-overlay"></div>
+        <div class="carousel-content">
+          <span class="material-symbols-outlined text-brand-cream text-5xl mb-4" style="font-variation-settings:'FILL'1;">science</span>
+          <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-4 leading-tight">Investigación e Innovación</h1>
+          <p class="text-on-primary/85 text-lg md:text-xl leading-relaxed max-w-xl mb-8">Laboratorios equipados con tecnología de punta para el desarrollo de investigación aplicada en IA, automatización y ciencias básicas.</p>
+          <a href="#/organigrama" class="bg-brand-cream text-primary px-6 py-3 rounded-lg font-semibold hover:brightness-95 transition-all inline-flex items-center gap-2">Conoce nuestros laboratorios <span class="material-symbols-outlined">arrow_forward</span></a>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="carousel-slide" style="background:linear-gradient(135deg,#0f3443,#0b5e42)">
+        <img src="assets/hero-slide-3.jpg" alt="Formación de Excelencia" loading="lazy" onerror="this.style.display='none'">
+        <div class="carousel-overlay"></div>
+        <div class="carousel-content">
+          <span class="material-symbols-outlined text-brand-cream text-5xl mb-4" style="font-variation-settings:'FILL'1;">school</span>
+          <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-4 leading-tight">Formación de Excelencia</h1>
+          <p class="text-on-primary/85 text-lg md:text-xl leading-relaxed max-w-xl mb-8">Cuatro escuelas profesionales, programas de posgrado y certificación ISO 9001:2015 que avalan la calidad de nuestra enseñanza.</p>
+          <a href="#/escuelas" class="bg-brand-cream text-primary px-6 py-3 rounded-lg font-semibold hover:brightness-95 transition-all inline-flex items-center gap-2">Nuestras escuelas <span class="material-symbols-outlined">arrow_forward</span></a>
+        </div>
+      </div>
+      <!-- Slide 4 -->
+      <div class="carousel-slide" style="background:linear-gradient(135deg,#3d0a1e,#711610)">
+        <img src="assets/hero-slide-4.jpg" alt="+4,000 Egresados" loading="lazy" onerror="this.style.display='none'">
+        <div class="carousel-overlay"></div>
+        <div class="carousel-content">
+          <span class="material-symbols-outlined text-brand-cream text-5xl mb-4" style="font-variation-settings:'FILL'1;">groups</span>
+          <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-4 leading-tight">+4,000 Egresados</h1>
+          <p class="text-on-primary/85 text-lg md:text-xl leading-relaxed max-w-xl mb-8">Una comunidad de profesionales que transforman el país. Conecta con la Red Alumni y accede a oportunidades laborales exclusivas.</p>
+          <a href="#/egresados" class="bg-brand-cream text-primary px-6 py-3 rounded-lg font-semibold hover:brightness-95 transition-all inline-flex items-center gap-2">Red Alumni <span class="material-symbols-outlined">arrow_forward</span></a>
+        </div>
       </div>
     </div>
-    
-    <!-- Cartelera de Avisos Diarios (1/3 ancho en desktop) (Secretaría Administrativa Req 6 / Gestión 6) -->
-    <div class="bg-white border border-border-subtle rounded-2xl p-5 flex flex-col justify-between shadow-sm h-full">
-      <div>
-        <div class="flex items-center justify-between border-b border-border-subtle pb-3 mb-4">
-          <h3 class="text-sm font-bold text-primary flex items-center gap-1.5 uppercase tracking-wide">
-            <span class="material-symbols-outlined text-primary text-base animate-pulse">campaign</span>
-            Avisos del Día
-          </h3>
-          <span class="bg-primary/10 text-primary text-[10px] font-bold px-2.5 py-0.5 rounded-full">Operativo</span>
-        </div>
-        
-        <div class="space-y-4">
-          <!-- Aviso 1 -->
-          <div class="hover:bg-surface-container-low/50 p-2.5 rounded-lg transition-all border border-transparent hover:border-border-subtle/40">
-            <div class="flex items-center justify-between gap-2 mb-1">
-              <span class="text-[9px] font-extrabold uppercase bg-error/15 text-error px-2 py-0.5 rounded-full">Urgente</span>
-              <span class="text-text-secondary text-[10px]">Hoy</span>
-            </div>
-            <p class="text-xs font-bold text-on-surface line-clamp-2">Recepción de solicitudes de reingreso académico</p>
-            <p class="text-[11px] text-text-secondary mt-1">Plazo final para enviar expediente por mesa de partes virtual.</p>
-            <div class="text-[10px] text-primary font-semibold mt-1 flex items-center gap-0.5">
-              <span>Plazo: Hasta 05 Jun 2026</span>
-            </div>
-          </div>
-          
-          <!-- Aviso 2 -->
-          <div class="hover:bg-surface-container-low/50 p-2.5 rounded-lg transition-all border border-transparent hover:border-border-subtle/40">
-            <div class="flex items-center justify-between gap-2 mb-1">
-              <span class="text-[9px] font-extrabold uppercase bg-warning/15 text-warning px-2 py-0.5 rounded-full">Importante</span>
-              <span class="text-text-secondary text-[10px]">Ayer</span>
-            </div>
-            <p class="text-xs font-bold text-on-surface line-clamp-2">Mantenimiento programado de Intranet Yachay</p>
-            <p class="text-[11px] text-text-secondary mt-1">Los servidores no estarán disponibles el sábado 06 de junio de 22:00 a 06:00.</p>
-          </div>
-
-          <!-- Aviso 3 -->
-          <div class="hover:bg-surface-container-low/50 p-2.5 rounded-lg transition-all border border-transparent hover:border-border-subtle/40">
-            <div class="flex items-center justify-between gap-2 mb-1">
-              <span class="text-[9px] font-extrabold uppercase bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full">Informativo</span>
-              <span class="text-text-secondary text-[10px]">Hace 3 días</span>
-            </div>
-            <p class="text-xs font-bold text-on-surface line-clamp-2">Publicación de horarios y cronograma de exámenes finales</p>
-            <p class="text-[11px] text-text-secondary mt-1">Disponible en la pestaña de Cronogramas oficiales de la facultad.</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="pt-4 border-t border-border-subtle mt-4">
-        <a href="#/noticias" class="w-full text-center bg-primary/5 hover:bg-primary text-primary hover:text-white py-2 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-1">
-          Ver todos los comunicados
-          <span class="material-symbols-outlined text-xs">arrow_forward</span>
-        </a>
-      </div>
-    </div>
-    
+    <button class="carousel-btn carousel-btn-prev" id="carouselPrev"><span class="material-symbols-outlined">chevron_left</span></button>
+    <button class="carousel-btn carousel-btn-next" id="carouselNext"><span class="material-symbols-outlined">chevron_right</span></button>
+    <div class="carousel-dots" id="carouselDots"></div>
   </div>
 </section>
 
-<!-- ===== Perfiles de Usuario (Req 5) ===== -->
+<!-- ===== Perfiles de Usuario — Carrusel de fotos ===== -->
 <section class="py-12 md:py-16 max-w-[1200px] mx-auto px-6">
-  <h2 class="text-3xl font-bold mb-8 text-primary border-l-8 border-brand-cream pl-6">¿Qué tipo de usuario eres?</h2>
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-    <a href="#/escuelas" class="bg-white border border-border-subtle rounded-xl p-6 text-center hover:shadow-lg hover:border-primary transition-all group">
-      <div class="w-14 h-14 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center mx-auto mb-3 group-hover:bg-teal-600 group-hover:text-white transition-colors">
-        <span class="material-symbols-outlined text-2xl" style="font-variation-settings:'FILL'1;">school</span>
+  <h2 class="text-3xl font-bold mb-8 text-primary border-l-8 border-brand-cream pl-6">Encuentra tu espacio en la FIIS</h2>
+  <div class="mini-carousel" id="usuariosCarousel">
+    <div class="carousel-inner" id="usuariosInner">
+      <div class="carousel-slide" style="background:linear-gradient(135deg,#0d9488,#0f766e)">
+        <img src="assets/usuario-estudiante.jpg" alt="Estudiante" loading="lazy" onerror="this.style.display='none'">
+        <div class="carousel-overlay"></div>
+        <div class="carousel-content">
+          <div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur flex items-center justify-center mb-4 shadow-lg">
+            <span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings:'FILL'1;">school</span>
+          </div>
+          <h3 class="text-on-primary text-3xl font-bold mb-2">Estudiante</h3>
+          <p class="text-on-primary/85 text-base max-w-md leading-relaxed">Accede a recursos académicos, trámites en línea, convocatorias y tutoría.</p>
+          <a href="#/escuelas" class="mt-4 inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-sm text-white border border-white/30 px-5 py-2 rounded-lg text-sm font-semibold hover:bg-white/30 transition-all">Explorar <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        </div>
       </div>
-      <h3 class="font-bold text-on-surface text-sm">Soy Estudiante</h3>
-      <p class="text-xs text-text-secondary mt-1">Conoce las escuelas y recursos académicos</p>
-    </a>
-    <a href="#/directorio-docentes" class="bg-white border border-border-subtle rounded-xl p-6 text-center hover:shadow-lg hover:border-primary transition-all group">
-      <div class="w-14 h-14 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center mx-auto mb-3 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-        <span class="material-symbols-outlined text-2xl" style="font-variation-settings:'FILL'1;">badge</span>
+      <div class="carousel-slide" style="background:linear-gradient(135deg,#2563eb,#1d4ed8)">
+        <img src="assets/usuario-docente.jpg" alt="Docente" loading="lazy" onerror="this.style.display='none'">
+        <div class="carousel-overlay"></div>
+        <div class="carousel-content">
+          <div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur flex items-center justify-center mb-4 shadow-lg">
+            <span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings:'FILL'1;">badge</span>
+          </div>
+          <h3 class="text-on-primary text-3xl font-bold mb-2">Docente</h3>
+          <p class="text-on-primary/85 text-base max-w-md leading-relaxed">Directorio académico, publicaciones y perfil sincronizado con ORCID.</p>
+          <a href="#/directorio-docentes" class="mt-4 inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-sm text-white border border-white/30 px-5 py-2 rounded-lg text-sm font-semibold hover:bg-white/30 transition-all">Explorar <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        </div>
       </div>
-      <h3 class="font-bold text-on-surface text-sm">Soy Docente</h3>
-      <p class="text-xs text-text-secondary mt-1">Directorio y recursos académicos</p>
-    </a>
-    <a href="#/egresados" class="bg-white border border-border-subtle rounded-xl p-6 text-center hover:shadow-lg hover:border-primary transition-all group">
-      <div class="w-14 h-14 rounded-full bg-green-100 text-green-700 flex items-center justify-center mx-auto mb-3 group-hover:bg-green-600 group-hover:text-white transition-colors">
-        <span class="material-symbols-outlined text-2xl" style="font-variation-settings:'FILL'1;">work</span>
+      <div class="carousel-slide" style="background:linear-gradient(135deg,#7c3aed,#6d28d9)">
+        <img src="assets/usuario-administrativo.jpg" alt="Administrativo" loading="lazy" onerror="this.style.display='none'">
+        <div class="carousel-overlay"></div>
+        <div class="carousel-content">
+          <div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur flex items-center justify-center mb-4 shadow-lg">
+            <span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings:'FILL'1;">badge</span>
+          </div>
+          <h3 class="text-on-primary text-3xl font-bold mb-2">Administrativo</h3>
+          <p class="text-on-primary/85 text-base max-w-md leading-relaxed">Gestión de trámites, resoluciones, horarios y contenido institucional.</p>
+          <a href="#/dashboard/administrativo" class="mt-4 inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-sm text-white border border-white/30 px-5 py-2 rounded-lg text-sm font-semibold hover:bg-white/30 transition-all">Explorar <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        </div>
       </div>
-      <h3 class="font-bold text-on-surface text-sm">Soy Egresado</h3>
-      <p class="text-xs text-text-secondary mt-1">Bolsa de trabajo y red alumni</p>
-    </a>
-    <a href="#/empresas" class="bg-white border border-border-subtle rounded-xl p-6 text-center hover:shadow-lg hover:border-primary transition-all group">
-      <div class="w-14 h-14 rounded-full bg-orange-100 text-orange-700 flex items-center justify-center mx-auto mb-3 group-hover:bg-orange-600 group-hover:text-white transition-colors">
-        <span class="material-symbols-outlined text-2xl" style="font-variation-settings:'FILL'1;">handshake</span>
+      <div class="carousel-slide" style="background:linear-gradient(135deg,#d97706,#b45309)">
+        <img src="assets/usuario-centro.jpg" alt="Centro Estudiantil" loading="lazy" onerror="this.style.display='none'">
+        <div class="carousel-overlay"></div>
+        <div class="carousel-content">
+          <div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur flex items-center justify-center mb-4 shadow-lg">
+            <span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings:'FILL'1;">groups</span>
+          </div>
+          <h3 class="text-on-primary text-3xl font-bold mb-2">Centro Estudiantil</h3>
+          <p class="text-on-primary/85 text-base max-w-md leading-relaxed">Gestiona tu agrupación, publica eventos y convocatorias.</p>
+          <a href="#/vida-estudiantil" class="mt-4 inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-sm text-white border border-white/30 px-5 py-2 rounded-lg text-sm font-semibold hover:bg-white/30 transition-all">Explorar <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        </div>
       </div>
-      <h3 class="font-bold text-on-surface text-sm">Soy Empresa</h3>
-      <p class="text-xs text-text-secondary mt-1">Publica vacantes y sé aliado</p>
-    </a>
+      <div class="carousel-slide" style="background:linear-gradient(135deg,#16a34a,#15803d)">
+        <img src="assets/usuario-egresado.jpg" alt="Egresado" loading="lazy" onerror="this.style.display='none'">
+        <div class="carousel-overlay"></div>
+        <div class="carousel-content">
+          <div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur flex items-center justify-center mb-4 shadow-lg">
+            <span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings:'FILL'1;">work</span>
+          </div>
+          <h3 class="text-on-primary text-3xl font-bold mb-2">Egresado</h3>
+          <p class="text-on-primary/85 text-base max-w-md leading-relaxed">Bolsa de trabajo, red alumni, mentoría y capacitaciones.</p>
+          <a href="#/egresados" class="mt-4 inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-sm text-white border border-white/30 px-5 py-2 rounded-lg text-sm font-semibold hover:bg-white/30 transition-all">Explorar <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        </div>
+      </div>
+      <div class="carousel-slide" style="background:linear-gradient(135deg,#ea580c,#c2410c)">
+        <img src="assets/usuario-empresa.jpg" alt="Empresa" loading="lazy" onerror="this.style.display='none'">
+        <div class="carousel-overlay"></div>
+        <div class="carousel-content">
+          <div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur flex items-center justify-center mb-4 shadow-lg">
+            <span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings:'FILL'1;">handshake</span>
+          </div>
+          <h3 class="text-on-primary text-3xl font-bold mb-2">Empresa</h3>
+          <p class="text-on-primary/85 text-base max-w-md leading-relaxed">Publica vacantes, eventos y sé parte de la red aliada FIIS.</p>
+          <a href="#/empresas" class="mt-4 inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-sm text-white border border-white/30 px-5 py-2 rounded-lg text-sm font-semibold hover:bg-white/30 transition-all">Explorar <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        </div>
+      </div>
+      <div class="carousel-slide" style="background:linear-gradient(135deg,#6366f1,#4f46e5)">
+        <img src="assets/usuario-institucion.jpg" alt="Institución / Laboratorio" loading="lazy" onerror="this.style.display='none'">
+        <div class="carousel-overlay"></div>
+        <div class="carousel-content">
+          <div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur flex items-center justify-center mb-4 shadow-lg">
+            <span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings:'FILL'1;">science</span>
+          </div>
+          <h3 class="text-on-primary text-3xl font-bold mb-2">Institución / Laboratorio</h3>
+          <p class="text-on-primary/85 text-base max-w-md leading-relaxed">Administra tu página institucional, servicios y contenido.</p>
+          <a href="#/laboratorios" class="mt-4 inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-sm text-white border border-white/30 px-5 py-2 rounded-lg text-sm font-semibold hover:bg-white/30 transition-all">Explorar <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        </div>
+      </div>
+      <div class="carousel-slide" style="background:linear-gradient(135deg,#374151,#1f2937)">
+        <img src="assets/usuario-admin.jpg" alt="Admin Web" loading="lazy" onerror="this.style.display='none'">
+        <div class="carousel-overlay"></div>
+        <div class="carousel-content">
+          <div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur flex items-center justify-center mb-4 shadow-lg">
+            <span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings:'FILL'1;">admin_panel_settings</span>
+          </div>
+          <h3 class="text-on-primary text-3xl font-bold mb-2">Admin Web</h3>
+          <p class="text-on-primary/85 text-base max-w-md leading-relaxed">Supervisa usuarios, modera contenido y gestiona el portal.</p>
+          <a href="#/dashboard/admin-web" class="mt-4 inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-sm text-white border border-white/30 px-5 py-2 rounded-lg text-sm font-semibold hover:bg-white/30 transition-all">Explorar <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-btn carousel-btn-prev" id="usuariosPrev"><span class="material-symbols-outlined">chevron_left</span></button>
+    <button class="carousel-btn carousel-btn-next" id="usuariosNext"><span class="material-symbols-outlined">chevron_right</span></button>
+    <div class="carousel-dots" id="usuariosDots"></div>
   </div>
 </section>
 
@@ -196,43 +211,49 @@
   </div>
 </section>
 
-<!-- ===== Reconocimientos FIIS ===== -->
+<!-- ===== Reconocimientos FIIS — Carrusel de fotos ===== -->
 <section class="py-16 md:py-20 max-w-[1200px] mx-auto px-6">
-  <div class="flex justify-between items-end mb-12">
-    <h2 class="text-3xl font-bold text-primary border-l-8 border-brand-cream pl-6">Reconocimientos FIIS</h2>
-  </div>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <div class="bg-white rounded-xl border border-border-subtle p-6 hover:shadow-lg transition-all">
-      <div class="w-14 h-14 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center mb-4">
-        <span class="material-symbols-outlined text-2xl" style="font-variation-settings:'FILL'1;">emoji_events</span>
+  <h2 class="text-3xl font-bold mb-8 text-primary border-l-8 border-brand-cream pl-6">Reconocimientos FIIS</h2>
+  <div class="mini-carousel" id="reconocimientosCarousel">
+    <div class="carousel-inner" id="reconocimientosInner">
+      <div class="carousel-slide" style="background:linear-gradient(135deg,#d97706,#b45309)">
+        <img src="assets/reconocimiento-1.jpg" alt="Equipo FIIS gana Hackathon" loading="lazy" onerror="this.style.display='none'">
+        <div class="carousel-overlay" style="background:linear-gradient(135deg,rgba(0,0,0,0.55),rgba(0,0,0,0.25))"></div>
+        <div class="carousel-content">
+          <span class="inline-block w-fit px-3 py-1 rounded-full text-xs font-bold bg-amber-400 text-amber-900 mb-3">Competencia Académica</span>
+          <h3 class="text-on-primary text-2xl md:text-3xl font-bold mb-3">Equipo FIIS gana Hackathon Nacional 2025</h3>
+          <p class="text-on-primary/85 text-sm md:text-base max-w-xl leading-relaxed">Estudiantes de Ingeniería de Software obtuvieron el primer puesto en el Hackathon Nacional organizado por la IEEE, presentando una solución basada en IA para la gestión de residuos sólidos.</p>
+          <p class="text-on-primary/60 text-xs mt-4">Mayo 2025</p>
+        </div>
       </div>
-      <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-700 mb-3">Competencia Académica</span>
-      <h3 class="font-bold text-on-surface mb-2">Equipo FIIS gana Hackathon Nacional 2025</h3>
-      <p class="text-text-secondary text-sm leading-relaxed">Estudiantes de Ingeniería de Software obtuvieron el primer puesto en el Hackathon Nacional organizado por la IEEE, presentando una solución basada en IA para la gestión de residuos sólidos.</p>
-      <p class="text-xs text-text-secondary mt-4">Mayo 2025</p>
-    </div>
-    <div class="bg-white rounded-xl border border-border-subtle p-6 hover:shadow-lg transition-all">
-      <div class="w-14 h-14 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center mb-4">
-        <span class="material-symbols-outlined text-2xl" style="font-variation-settings:'FILL'1;">sports_score</span>
+      <div class="carousel-slide" style="background:linear-gradient(135deg,#2563eb,#1d4ed8)">
+        <img src="assets/reconocimiento-2.jpg" alt="Selección de básquet campeona" loading="lazy" onerror="this.style.display='none'">
+        <div class="carousel-overlay" style="background:linear-gradient(135deg,rgba(0,0,0,0.55),rgba(0,0,0,0.25))"></div>
+        <div class="carousel-content">
+          <span class="inline-block w-fit px-3 py-1 rounded-full text-xs font-bold bg-blue-400 text-blue-900 mb-3">Deportes</span>
+          <h3 class="text-on-primary text-2xl md:text-3xl font-bold mb-3">Selección de básquet campeona interfacultades</h3>
+          <p class="text-on-primary/85 text-sm md:text-base max-w-xl leading-relaxed">El equipo de básquet varones de la FIIS se coronó campeón del torneo interfacultades UNI 2025, tras una imbatible campaña de 8 victorias consecutivas.</p>
+          <p class="text-on-primary/60 text-xs mt-4">Abril 2025</p>
+        </div>
       </div>
-      <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-100 text-blue-700 mb-3">Deportes</span>
-      <h3 class="font-bold text-on-surface mb-2">Selección de básquet campeona interfacultades</h3>
-      <p class="text-text-secondary text-sm leading-relaxed">El equipo de básquet varones de la FIIS se coronó campeón del torneo interfacultades UNI 2025, tras una imbatible campaña de 8 victorias consecutivas.</p>
-      <p class="text-xs text-text-secondary mt-4">Abril 2025</p>
-    </div>
-    <div class="bg-white rounded-xl border border-border-subtle p-6 hover:shadow-lg transition-all">
-      <div class="w-14 h-14 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center mb-4">
-        <span class="material-symbols-outlined text-2xl" style="font-variation-settings:'FILL'1;">lightbulb</span>
+      <div class="carousel-slide" style="background:linear-gradient(135deg,#7c3aed,#6d28d9)">
+        <img src="assets/reconocimiento-3.jpg" alt="Proyecto Smart Irrigation premiado" loading="lazy" onerror="this.style.display='none'">
+        <div class="carousel-overlay" style="background:linear-gradient(135deg,rgba(0,0,0,0.55),rgba(0,0,0,0.25))"></div>
+        <div class="carousel-content">
+          <span class="inline-block w-fit px-3 py-1 rounded-full text-xs font-bold bg-purple-400 text-purple-900 mb-3">Innovación</span>
+          <h3 class="text-on-primary text-2xl md:text-3xl font-bold mb-3">Proyecto Smart Irrigation premiado por IEEE CIS</h3>
+          <p class="text-on-primary/85 text-sm md:text-base max-w-xl leading-relaxed">Sistema de riego inteligente basado en IoT y machine learning desarrollado por estudiantes de Industrial y Sistemas, ganador del IEEE Computational Intelligence Society Award.</p>
+          <p class="text-on-primary/60 text-xs mt-4">Marzo 2025</p>
+        </div>
       </div>
-      <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold bg-purple-100 text-purple-700 mb-3">Innovación</span>
-      <h3 class="font-bold text-on-surface mb-2">Proyecto Smart Irrigation premiado por IEEE CIS</h3>
-      <p class="text-text-secondary text-sm leading-relaxed">Sistema de riego inteligente basado en IoT y machine learning desarrollado por estudiantes de Industrial y Sistemas, ganador del IEEE Computational Intelligence Society Award.</p>
-      <p class="text-xs text-text-secondary mt-4">Marzo 2025</p>
     </div>
+    <button class="carousel-btn carousel-btn-prev" id="reconocimientosPrev"><span class="material-symbols-outlined">chevron_left</span></button>
+    <button class="carousel-btn carousel-btn-next" id="reconocimientosNext"><span class="material-symbols-outlined">chevron_right</span></button>
+    <div class="carousel-dots" id="reconocimientosDots"></div>
   </div>
 </section>
 
-<!-- ===== Próximos Eventos ===== -->
+<!-- ===== Próximos Eventos con contador regresivo ===== -->
 <section class="py-16 md:py-20 bg-surface-container-low">
   <div class="max-w-[1200px] mx-auto px-6">
     <h2 class="text-3xl font-bold mb-12 text-primary border-l-8 border-brand-cream pl-6">Próximos Eventos</h2>
@@ -242,45 +263,60 @@
           <span class="text-xs font-bold uppercase">Jun</span>
           <span class="text-3xl font-extrabold">20</span>
         </div>
-        <div class="flex-grow">
-          <div class="flex items-center gap-3 mb-2">
-            <span class="bg-primary/10 text-primary px-3 py-0.5 rounded-full text-xs font-bold uppercase">Presencial</span>
-            <span class="text-text-secondary text-xs">Auditorio Central FIIS</span>
+        <div class="flex-grow min-w-0">
+          <div class="flex items-start justify-between gap-4">
+            <div class="min-w-0">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="bg-primary/10 text-primary px-3 py-0.5 rounded-full text-xs font-bold uppercase">Presencial</span>
+                <span class="text-text-secondary text-xs">Auditorio Central FIIS</span>
+              </div>
+              <h4 class="text-lg font-bold text-on-surface mb-1 leading-snug">Seminario de Optimización en la Cadena de Suministros</h4>
+              <p class="text-text-secondary text-sm">Organizado por el Capítulo Estudiantil IISE</p>
+            </div>
+            <div class="countdown flex-shrink-0 pt-1" data-date="2026-06-20T09:00:00"></div>
           </div>
-          <h4 class="text-lg font-bold text-on-surface mb-1">Seminario de Optimización en la Cadena de Suministros</h4>
-          <p class="text-text-secondary text-sm">Organizado por el Capítulo Estudiantil IISE</p>
         </div>
-        <button class="bg-surface-container-high text-on-surface px-6 py-2 rounded-lg text-sm font-medium hover:bg-primary hover:text-white transition-all">Detalles</button>
+        <button class="bg-surface-container-high text-on-surface px-6 py-2 rounded-lg text-sm font-medium hover:bg-primary hover:text-white transition-all flex-shrink-0">Detalles</button>
       </div>
       <div class="flex items-center gap-6 bg-white border border-border-subtle p-6 rounded-xl hover:border-primary transition-all">
         <div class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-lg p-4 min-w-[100px]">
           <span class="text-xs font-bold uppercase">Jun</span>
           <span class="text-3xl font-extrabold">24</span>
         </div>
-        <div class="flex-grow">
-          <div class="flex items-center gap-3 mb-2">
-            <span class="bg-brand-cream text-primary px-3 py-0.5 rounded-full text-xs font-bold uppercase">Virtual</span>
-            <span class="text-text-secondary text-xs">Zoom Institucional</span>
+        <div class="flex-grow min-w-0">
+          <div class="flex items-start justify-between gap-4">
+            <div class="min-w-0">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="bg-brand-cream text-primary px-3 py-0.5 rounded-full text-xs font-bold uppercase">Virtual</span>
+                <span class="text-text-secondary text-xs">Zoom Institucional</span>
+              </div>
+              <h4 class="text-lg font-bold text-on-surface mb-1 leading-snug">Workshop: Metodologías Ágiles para el Desarrollo de Software</h4>
+              <p class="text-text-secondary text-sm">Facultad de Ingeniería de Sistemas</p>
+            </div>
+            <div class="countdown flex-shrink-0 pt-1" data-date="2026-06-24T15:00:00"></div>
           </div>
-          <h4 class="text-lg font-bold text-on-surface mb-1">Workshop: Metodologías Ágiles para el Desarrollo de Software</h4>
-          <p class="text-text-secondary text-sm">Facultad de Ingeniería de Sistemas</p>
         </div>
-        <button class="bg-surface-container-high text-on-surface px-6 py-2 rounded-lg text-sm font-medium hover:bg-primary hover:text-white transition-all">Detalles</button>
+        <button class="bg-surface-container-high text-on-surface px-6 py-2 rounded-lg text-sm font-medium hover:bg-primary hover:text-white transition-all flex-shrink-0">Detalles</button>
       </div>
       <div class="flex items-center gap-6 bg-white border border-border-subtle p-6 rounded-xl hover:border-primary transition-all">
         <div class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-lg p-4 min-w-[100px]">
           <span class="text-xs font-bold uppercase">Jul</span>
           <span class="text-3xl font-extrabold">05</span>
         </div>
-        <div class="flex-grow">
-          <div class="flex items-center gap-3 mb-2">
-            <span class="bg-primary/10 text-primary px-3 py-0.5 rounded-full text-xs font-bold uppercase">Presencial</span>
-            <span class="text-text-secondary text-xs">Laboratorio L1</span>
+        <div class="flex-grow min-w-0">
+          <div class="flex items-start justify-between gap-4">
+            <div class="min-w-0">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="bg-primary/10 text-primary px-3 py-0.5 rounded-full text-xs font-bold uppercase">Presencial</span>
+                <span class="text-text-secondary text-xs">Laboratorio L1</span>
+              </div>
+              <h4 class="text-lg font-bold text-on-surface mb-1 leading-snug">Feria de Proyectos de Innovación Tecnológica FIIS</h4>
+              <p class="text-text-secondary text-sm">Dirección de Investigación</p>
+            </div>
+            <div class="countdown flex-shrink-0 pt-1" data-date="2026-07-05T10:00:00"></div>
           </div>
-          <h4 class="text-lg font-bold text-on-surface mb-1">Feria de Proyectos de Innovación Tecnológica FIIS</h4>
-          <p class="text-text-secondary text-sm">Dirección de Investigación</p>
         </div>
-        <button class="bg-surface-container-high text-on-surface px-6 py-2 rounded-lg text-sm font-medium hover:bg-primary hover:text-white transition-all">Detalles</button>
+        <button class="bg-surface-container-high text-on-surface px-6 py-2 rounded-lg text-sm font-medium hover:bg-primary hover:text-white transition-all flex-shrink-0">Detalles</button>
       </div>
     </div>
   </div>
@@ -401,40 +437,86 @@
 
 <script>
 (function() {
-  var inner = document.getElementById('carouselInner');
-  var dots = document.getElementById('carouselDots');
-  var slides = inner.querySelectorAll('.carousel-slide');
-  var total = slides.length;
-  var current = 0;
-  var timer;
+  function initCarousel(containerId, innerId, prevId, nextId, dotsId, interval) {
+    const inner = document.getElementById(innerId);
+    const dots = document.getElementById(dotsId);
+    if (!inner || !dots) return;
+    const slides = inner.querySelectorAll('.carousel-slide');
+    const total = slides.length;
+    if (total === 0) return;
+    let current = 0;
+    let timer;
 
-  for (var i = 0; i < total; i++) {
-    var dot = document.createElement('button');
-    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-    dot.setAttribute('data-index', i);
-    dots.appendChild(dot);
+    for (let i = 0; i < total; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('data-index', i);
+      dots.appendChild(dot);
+    }
+
+    function goTo(index) {
+      if (index < 0) index = total - 1;
+      if (index >= total) index = 0;
+      current = index;
+      inner.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dots.querySelectorAll('.carousel-dot').forEach(function(d, i) {
+        d.classList.toggle('active', i === current);
+      });
+    }
+
+    const prevBtn = document.getElementById(prevId);
+    const nextBtn = document.getElementById(nextId);
+    if (prevBtn) prevBtn.addEventListener('click', function() { goTo(current - 1); resetTimer(); });
+    if (nextBtn) nextBtn.addEventListener('click', function() { goTo(current + 1); resetTimer(); });
+    dots.addEventListener('click', function(e) {
+      if (e.target.classList.contains('carousel-dot')) {
+        goTo(parseInt(e.target.getAttribute('data-index')));
+        resetTimer();
+      }
+    });
+
+    function resetTimer() { clearInterval(timer); timer = setInterval(function() { goTo(current + 1); }, interval || 5000); }
+    resetTimer();
   }
 
-  function goTo(index) {
-    if (index < 0) index = total - 1;
-    if (index >= total) index = 0;
-    current = index;
-    inner.style.transform = 'translateX(-' + (current * 100) + '%)';
-    dots.querySelectorAll('.carousel-dot').forEach(function(d, i) {
-      d.classList.toggle('active', i === current);
+  initCarousel('heroCarousel', 'carouselInner', 'carouselPrev', 'carouselNext', 'carouselDots', 5000);
+  initCarousel('usuariosCarousel', 'usuariosInner', 'usuariosPrev', 'usuariosNext', 'usuariosDots', 4000);
+  initCarousel('reconocimientosCarousel', 'reconocimientosInner', 'reconocimientosPrev', 'reconocimientosNext', 'reconocimientosDots', 4500);
+
+  // Countdown
+  function initCountdowns() {
+    document.querySelectorAll('.countdown').forEach(function(el) {
+      var targetDate = new Date(el.getAttribute('data-date')).getTime();
+
+      function update() {
+        var now = new Date().getTime();
+        var diff = targetDate - now;
+
+        if (diff <= 0) {
+          el.innerHTML = '<span class="text-sm font-bold text-primary">Evento en curso</span>';
+          return;
+        }
+
+        var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        el.innerHTML =
+          '<div class="countdown-item"><span class="countdown-number">' + days + '</span><span class="countdown-label">Días</span></div>' +
+          '<span class="countdown-sep">:</span>' +
+          '<div class="countdown-item"><span class="countdown-number">' + String(hours).padStart(2, '0') + '</span><span class="countdown-label">Horas</span></div>' +
+          '<span class="countdown-sep">:</span>' +
+          '<div class="countdown-item"><span class="countdown-number">' + String(minutes).padStart(2, '0') + '</span><span class="countdown-label">Min</span></div>' +
+          '<span class="countdown-sep">:</span>' +
+          '<div class="countdown-item"><span class="countdown-number">' + String(seconds).padStart(2, '0') + '</span><span class="countdown-label">Seg</span></div>';
+      }
+
+      update();
+      setInterval(update, 1000);
     });
   }
 
-  document.getElementById('carouselPrev').addEventListener('click', function() { goTo(current - 1); resetTimer(); });
-  document.getElementById('carouselNext').addEventListener('click', function() { goTo(current + 1); resetTimer(); });
-  dots.addEventListener('click', function(e) {
-    if (e.target.classList.contains('carousel-dot')) {
-      goTo(parseInt(e.target.getAttribute('data-index')));
-      resetTimer();
-    }
-  });
-
-  function resetTimer() { clearInterval(timer); timer = setInterval(function() { goTo(current + 1); }, 5000); }
-  resetTimer();
+  initCountdowns();
 })();
 </script>

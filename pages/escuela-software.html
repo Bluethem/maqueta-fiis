@@ -16,12 +16,11 @@
     </div>
   </section>
 
-  <div class="max-w-[1200px] mx-auto px-6 md:px-8 space-y-10">
+  <div class="max-w-[1200px] mx-auto px-6 md:px-8 space-y-10 pb-12">
     <div class="flex border-b border-border-subtle gap-0 overflow-x-auto">
       <button class="px-6 py-4 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 transition-colors whitespace-nowrap" data-tab="info">Presentación</button>
       <button class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-tab="malla">Malla Curricular</button>
       <button class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-tab="docentes">Docentes</button>
-      <button class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-tab="investigacion">Investigación</button>
       <button class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-tab="contacto">Contacto</button>
     </div>
 
@@ -41,20 +40,16 @@
         <h3 class="text-lg font-bold text-on-surface mb-4">Datos Generales</h3>
         <dl class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
           <div class="flex justify-between py-2 border-b border-border-subtle">
-            <dt class="text-text-secondary">Grado</dt>
-            <dd class="font-medium text-on-surface">Bachiller en Ingeniería de Software</dd>
-          </div>
-          <div class="flex justify-between py-2 border-b border-border-subtle">
-            <dt class="text-text-secondary">Título</dt>
-            <dd class="font-medium text-on-surface">Ingeniero de Software</dd>
+            <dt class="text-text-secondary">Grado / Título</dt>
+            <dd class="font-medium text-on-surface">Bachiller en Ingeniería de Software / Ingeniero de Software</dd>
           </div>
           <div class="flex justify-between py-2 border-b border-border-subtle">
             <dt class="text-text-secondary">Duración</dt>
             <dd class="font-medium text-on-surface">10 ciclos académicos (5 años)</dd>
           </div>
           <div class="flex justify-between py-2 border-b border-border-subtle">
-            <dt class="text-text-secondary">Coordinador</dt>
-            <dd class="font-medium text-on-surface">Mg. Luis Paredes</dd>
+            <dt class="text-text-secondary">Dirección</dt>
+            <dd class="font-medium text-on-surface">Dirección de Escuela</dd>
           </div>
           <div class="flex justify-between py-2 border-b border-border-subtle">
             <dt class="text-text-secondary">Modalidad</dt>
@@ -160,82 +155,81 @@
     <div id="tab-docentes" class="tab-content hidden space-y-4">
       <p class="text-text-secondary text-sm">Docentes principales de la Escuela Profesional de Ingeniería de Software.</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow cursor-pointer" onclick="Router.navigate('/docentes/luis-paredes')">
           <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0">LP</div>
           <div class="min-w-0">
             <p class="font-semibold text-on-surface text-sm">Mg. Luis Paredes</p>
-            <p class="text-xs text-text-secondary">Coordinador · Dpto. Sistemas y Telemática</p>
+            <p class="text-xs text-text-secondary">Dpto. Sistemas y Telemática</p>
             <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-blue-100 text-blue-700">Docente Principal</span>
+            <div class="flex items-center gap-2 mt-2 text-[10px] text-text-secondary">
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">mail</span> lparedes@uni.edu.pe</span>
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">badge</span> ORCID: 0000-0001-3456-7890</span>
+            </div>
           </div>
         </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow cursor-pointer" onclick="Router.navigate('/docentes/katia-vega')">
           <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0">KV</div>
           <div class="min-w-0">
             <p class="font-semibold text-on-surface text-sm">Mg. Katia Vega</p>
             <p class="text-xs text-text-secondary">Dpto. Sistemas y Telemática</p>
             <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-100 text-green-700">Asociado</span>
+            <div class="flex items-center gap-2 mt-2 text-[10px] text-text-secondary">
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">mail</span> kvega@uni.edu.pe</span>
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">badge</span> ORCID: 0000-0002-7890-1234</span>
+            </div>
           </div>
         </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow cursor-pointer" onclick="Router.navigate('/docentes/daniel-montero')">
           <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0">DM</div>
           <div class="min-w-0">
             <p class="font-semibold text-on-surface text-sm">Dr. Daniel Montero</p>
             <p class="text-xs text-text-secondary">Dpto. Sistemas y Telemática</p>
             <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-blue-100 text-blue-700">Docente Principal</span>
+            <div class="flex items-center gap-2 mt-2 text-[10px] text-text-secondary">
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">mail</span> dmontero@uni.edu.pe</span>
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">badge</span> ORCID: 0000-0002-1111-2222</span>
+            </div>
           </div>
         </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow cursor-pointer" onclick="Router.navigate('/docentes/gabriela-huaman')">
           <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0">GH</div>
           <div class="min-w-0">
             <p class="font-semibold text-on-surface text-sm">Mg. Gabriela Huamán</p>
             <p class="text-xs text-text-secondary">Dpto. Sistemas y Telemática</p>
             <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-100 text-green-700">Asociado</span>
+            <div class="flex items-center gap-2 mt-2 text-[10px] text-text-secondary">
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">mail</span> ghuaman@uni.edu.pe</span>
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">badge</span> ORCID: 0000-0003-3333-4444</span>
+            </div>
           </div>
         </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow cursor-pointer" onclick="Router.navigate('/docentes/renato-farfan')">
           <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0">RF</div>
           <div class="min-w-0">
             <p class="font-semibold text-on-surface text-sm">Mg. Renato Farfán</p>
             <p class="text-xs text-text-secondary">Dpto. Sistemas y Telemática</p>
             <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-purple-100 text-purple-700">Investigador</span>
+            <div class="flex items-center gap-2 mt-2 text-[10px] text-text-secondary">
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">mail</span> rfarfan@uni.edu.pe</span>
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">badge</span> ORCID: 0000-0001-5555-6666</span>
+            </div>
           </div>
         </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl border border-border-subtle p-5 flex items-center gap-4 hover:shadow-md transition-shadow cursor-pointer" onclick="Router.navigate('/docentes/cesar-pimentel')">
           <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shrink-0">CP</div>
           <div class="min-w-0">
             <p class="font-semibold text-on-surface text-sm">Mg. César Pimentel</p>
             <p class="text-xs text-text-secondary">Dpto. Ciencias Básicas</p>
             <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-100 text-green-700">Asociado</span>
+            <div class="flex items-center gap-2 mt-2 text-[10px] text-text-secondary">
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">mail</span> cpimentel@uni.edu.pe</span>
+              <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">badge</span> ORCID: 0000-0002-7777-8888</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div id="tab-investigacion" class="tab-content hidden space-y-4">
-      <p class="text-text-secondary text-sm">Líneas de investigación activas de la Escuela de Ingeniería de Software.</p>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="bg-white rounded-xl border border-border-subtle p-5">
-          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3"><span class="material-symbols-outlined">code</span></div>
-          <h4 class="font-semibold text-on-surface text-sm">Ingeniería de Software Ágil</h4>
-          <p class="text-xs text-text-secondary mt-1">Metodologías ágiles, desarrollo iterativo, integración continua y entrega continua (CI/CD).</p>
-        </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-5">
-          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3"><span class="material-symbols-outlined">smartphone</span></div>
-          <h4 class="font-semibold text-on-surface text-sm">Desarrollo Móvil y Web</h4>
-          <p class="text-xs text-text-secondary mt-1">Arquitecturas modernas para aplicaciones móviles nativas e híbridas, progressive web apps.</p>
-        </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-5">
-          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3"><span class="material-symbols-outlined">verified</span></div>
-          <h4 class="font-semibold text-on-surface text-sm">Calidad y Pruebas de Software</h4>
-          <p class="text-xs text-text-secondary mt-1">Automatización de pruebas, aseguramiento de calidad, testing funcional y no funcional.</p>
-        </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-5">
-          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3"><span class="material-symbols-outlined">groups</span></div>
-          <h4 class="font-semibold text-on-surface text-sm">Gestión de Proyectos de Software</h4>
-          <p class="text-xs text-text-secondary mt-1">Estimación, planificación, riesgos y métricas en proyectos de desarrollo de software.</p>
-        </div>
-      </div>
-    </div>
 
     <div id="tab-contacto" class="tab-content hidden space-y-4">
       <div class="bg-white rounded-xl border border-border-subtle p-6 max-w-lg">

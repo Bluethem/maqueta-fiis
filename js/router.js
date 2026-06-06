@@ -4,11 +4,10 @@ const MEGA_MENU = [
     children: [
       { col: 0, items: [
         { label: 'Nuestra Facultad', route: '/facultad', icon: 'school' },
-        { label: 'Historia', route: '/facultad', icon: 'history' },
-        { label: 'Misión y Visión', route: '/facultad', icon: 'visibility' },
+        { label: 'Autoridades', route: '/autoridades', icon: 'group' },
         { label: 'Organigrama', route: '/organigrama', icon: 'account_tree' },
-        { label: 'Autoridades', route: '/facultad', icon: 'badge' },
-        { label: 'ISO 9001:2015', route: '/facultad', icon: 'verified' },
+        { label: 'Oficina de Acreditación', route: '/acreditacion', icon: 'verified' },
+        { label: 'Directorio Docentes', route: '/directorio-docentes', icon: 'badge' },
         { label: 'Noticias FIIS', route: '/noticias', icon: 'newspaper' },
       ]}
     ]
@@ -30,59 +29,28 @@ const MEGA_MENU = [
         { label: 'Tecnología de la Producción', route: '/departamentos/tecnologia-produccion', icon: 'biotech' },
       ]},
       { col: 0, title: 'Recursos', items: [
-        { label: 'Mallas Curriculares', route: '/escuelas', icon: 'calendar_view_month' },
         { label: 'Cronogramas', route: '/cronogramas', icon: 'calendar_month' },
-        { label: 'Directorio Docentes', route: '/directorio-docentes', icon: 'badge' },
       ]}
     ]
   },
   {
-    label: 'Investigación', icon: 'science',
+    label: 'Posgrado', icon: 'school',
     children: [
-      { col: 0, items: [
-        { label: 'Instituto de Investigación', route: '/organigrama', icon: 'science' },
-        { label: 'Laboratorio de IA', route: '/organigrama', icon: 'psychology' },
-        { label: 'Laboratorio de Química', route: '/organigrama', icon: 'biotech' },
-        { label: 'Consult FIIS', route: '/organigrama', icon: 'handshake' },
-        { label: 'Publicaciones', route: '/organigrama', icon: 'description' },
-        { label: 'Proyectos Destacados', route: '/organigrama', icon: 'star' },
-      ]}
-    ]
-  },
-  {
-    label: 'Empresas', icon: 'work',
-    children: [
-      { col: 0, items: [
-        { label: 'Empresas Aliadas', route: '/empresas', icon: 'handshake' },
-        { label: 'Bolsa de Trabajo', route: '/empresas', icon: 'work' },
-        { label: 'Prácticas Preprofesionales', route: '/empresas', icon: 'school' },
-        { label: 'Convenios Vigentes', route: '/empresas', icon: 'description' },
-        { label: 'Ser Empresa Aliada', route: '/empresas', icon: 'partner_exchange' },
-      ]}
-    ]
-  },
-  {
-    label: 'Egresados', icon: 'school',
-    children: [
-      { col: 0, items: [
-        { label: 'Comunidad de Egresados', route: '/egresados', icon: 'groups' },
-        { label: 'Bolsa de Trabajo', route: '/egresados', icon: 'work' },
-        { label: 'Red Alumni', route: '/egresados', icon: 'link' },
-        { label: 'Mentoría', route: '/egresados', icon: 'psychology' },
-        { label: 'Capacitaciones', route: '/egresados', icon: 'school' },
-      ]}
-    ]
-  },
-  {
-    label: 'Vida Estudiantil', icon: 'groups',
-    children: [
-      { col: 0, items: [
-        { label: 'Agrupaciones', route: '/vida-estudiantil', icon: 'groups' },
-        { label: 'Centros Culturales', route: '/vida-estudiantil', icon: 'palette' },
-        { label: 'CEIIS', route: '/vida-estudiantil', icon: 'group' },
-        { label: 'TEFIIS', route: '/vida-estudiantil', icon: 'how_to_vote' },
-        { label: 'Delegaturas', route: '/vida-estudiantil', icon: 'diversity_3' },
-        { label: 'Convocatorias', route: '/vida-estudiantil', icon: 'campaign' },
+      { col: 0, title: 'Maestrías', items: [
+        { label: 'Ingeniería Industrial', route: '/posgrado/maestria-industrial', icon: 'precision_manufacturing' },
+        { label: 'Ingeniería de Sistemas', route: '/posgrado/maestria-sistemas', icon: 'computer' },
+        { label: 'Inteligencia Artificial', route: '/posgrado/maestria-ia', icon: 'psychology' },
+        { label: 'Supply Chain Management', route: '/posgrado/maestria-supply-chain', icon: 'local_shipping' },
+        { label: 'Business Analytics e IA Aplicada', route: '/posgrado/maestria-business-analytics', icon: 'analytics' },
+        { label: 'Gestión de Operaciones', route: '/posgrado/maestria-gestion-operaciones', icon: 'settings' },
+      ]},
+      { col: 1, title: 'Doctorados', items: [
+        { label: 'Doctorado en Ingeniería Industrial', route: '/posgrado/doctorado-industrial', icon: 'auto_stories' },
+        { label: 'Doctorado en Ingeniería de Sistemas', route: '/posgrado/doctorado-sistemas', icon: 'auto_stories' },
+      ]},
+      { col: 1, title: 'Otros Programas', items: [
+        { label: 'Diplomados', route: '/posgrado/diplomados', icon: 'workshop' },
+        { label: 'Información General', route: '/posgrado', icon: 'info' },
       ]}
     ]
   },
@@ -100,8 +68,25 @@ const MEGA_MENU = [
         { label: 'Tutoría FIIS', route: '/organigrama', icon: 'support' },
         { label: 'UECPS', route: '/organigrama', icon: 'public' },
         { label: 'Centro de Información', route: '/organigrama', icon: 'library_books' },
-        { label: 'CEE', route: '/organigrama', icon: 'school' },
         { label: 'FAQ', route: '#', icon: 'help' },
+      ]},
+      { col: 2, title: 'Extensión', items: [
+        { label: 'Sistemas UNI', route: '#', icon: 'computer' },
+        { label: 'Consult FIIS', route: '/organigrama', icon: 'handshake' },
+        { label: 'CEE', route: '/organigrama', icon: 'school' },
+      ]}
+    ]
+  },
+  {
+    label: 'Comunidad', icon: 'groups',
+    children: [
+      { col: 0, items: [
+        { label: 'Agrupaciones', route: '/vida-estudiantil', icon: 'groups' },
+        { label: 'Centros Culturales', route: '/vida-estudiantil', icon: 'palette' },
+        { label: 'CEIIS', route: '/vida-estudiantil', icon: 'group' },
+        { label: 'TEFIIS', route: '/vida-estudiantil', icon: 'how_to_vote' },
+        { label: 'Delegaturas', route: '/vida-estudiantil', icon: 'diversity_3' },
+        { label: 'Convocatorias', route: '/vida-estudiantil', icon: 'campaign' },
       ]}
     ]
   },
@@ -110,8 +95,42 @@ const MEGA_MENU = [
     route: '/transparencia'
   },
   {
-    label: 'Contacto', icon: 'contact_support',
-    route: '/contacto'
+    label: 'Investigación', icon: 'science',
+    children: [
+      { col: 0, items: [
+        { label: 'Instituto de Investigación', route: '/laboratorios', icon: 'science' },
+        { label: 'Centro de Automatización Industrial', route: '/laboratorios', icon: 'precision_manufacturing' },
+        { label: 'Laboratorio Académico y Red FIIS', route: '/laboratorios', icon: 'router' },
+        { label: 'Laboratorio de IA', route: '/laboratorios', icon: 'psychology' },
+        { label: 'Laboratorio de Química', route: '/laboratorios', icon: 'biotech' },
+        { label: 'Publicaciones', route: '/organigrama', icon: 'description' },
+        { label: 'Proyectos Destacados', route: '/organigrama', icon: 'star' },
+      ]}
+    ]
+  },
+  {
+    label: 'Egresados', icon: 'school',
+    children: [
+      { col: 0, items: [
+        { label: 'Comunidad de Egresados', route: '/egresados', icon: 'groups' },
+        { label: 'Bolsa de Trabajo', route: '/egresados', icon: 'work' },
+        { label: 'Red Alumni', route: '/egresados', icon: 'link' },
+        { label: 'Mentoría', route: '/egresados', icon: 'psychology' },
+        { label: 'Capacitaciones', route: '/egresados', icon: 'school' },
+      ]}
+    ]
+  },
+  {
+    label: 'Empresas', icon: 'work',
+    children: [
+      { col: 0, items: [
+        { label: 'Empresas Aliadas', route: '/empresas', icon: 'handshake' },
+        { label: 'Bolsa de Trabajo', route: '/empresas', icon: 'work' },
+        { label: 'Prácticas Preprofesionales', route: '/empresas', icon: 'school' },
+        { label: 'Convenios Vigentes', route: '/empresas', icon: 'description' },
+        { label: 'Ser Empresa Aliada', route: '/empresas', icon: 'partner_exchange' },
+      ]}
+    ]
   },
   { label: 'Portal Académico', route: '/login', icon: 'login' },
 ];
@@ -246,9 +265,10 @@ function publicFooter() {
             </span>
             <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Facultad de Ingeniería Industrial y de Sistemas — Universidad Nacional de Ingeniería.</p>
             <div class="flex gap-4">
-              <a class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:bg-primary-container transition-colors" href="#/contacto"><span class="material-symbols-outlined">public</span></a>
-              <a class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:bg-primary-container transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
-              <a class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:bg-primary-container transition-colors" href="#/contacto"><span class="material-symbols-outlined">contact_support</span></a>
+              <a class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:bg-primary-container transition-colors" href="https://www.facebook.com/fiisunioficial" target="_blank" rel="noopener noreferrer" title="Facebook"><span class="material-symbols-outlined">groups</span></a>
+              <a class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:bg-primary-container transition-colors" href="#" title="YouTube"><span class="material-symbols-outlined">play_circle</span></a>
+              <a class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:bg-primary-container transition-colors" href="#" title="LinkedIn"><span class="material-symbols-outlined">work</span></a>
+              <a class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:bg-primary-container transition-colors" href="#" title="Instagram"><span class="material-symbols-outlined">photo_camera</span></a>
             </div>
           </div>
           <div class="flex flex-col gap-4">
@@ -256,7 +276,7 @@ function publicFooter() {
             <a href="#/contacto" class="flex items-center gap-2 text-on-surface-variant text-sm hover:text-primary"><span class="material-symbols-outlined text-primary text-base">location_on</span> Av. Túpac Amaru 210, Rímac</a>
             <a href="#/contacto" class="flex items-center gap-2 text-on-surface-variant text-sm hover:text-primary"><span class="material-symbols-outlined text-primary text-base">phone</span> (01) 481-1070</a>
             <a href="mailto:informes@fiis.uni.edu.pe" class="flex items-center gap-2 text-on-surface-variant text-sm hover:text-primary"><span class="material-symbols-outlined text-primary text-base">mail</span> informes@fiis.uni.edu.pe</a>
-            <a href="#/contacto" class="text-primary font-semibold text-sm hover:underline mt-1">Ver directorio completo →</a>
+            <a href="#/contacto" class="text-primary font-semibold text-sm hover:underline mt-1">Ver contacto completo →</a>
           </div>
           <div class="flex flex-col gap-2">
             <h5 class="text-sm font-bold text-primary uppercase mb-2">Enlaces de Interés</h5>

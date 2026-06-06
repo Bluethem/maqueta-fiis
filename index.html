@@ -171,6 +171,8 @@ async function routeDashboardSub(role, section) {
 Router.add('/', routeLanding);
 Router.add('/login', routeLogin);
 Router.add('/facultad', () => routePublic('facultad'));
+Router.add('/acreditacion', () => routePublic('acreditacion'));
+Router.add('/autoridades', () => routePublic('autoridades'));
 Router.add('/transparencia', () => routePublic('transparencia'));
 Router.add('/contacto', () => routePublic('contacto'));
 Router.add('/noticias', () => routePublic('noticias'));
@@ -201,7 +203,24 @@ Router.add('/vida-estudiantil', () => routePublic('vida-estudiantil'));
 Router.add('/vida-estudiantil/:id', (id) => routePublicDetail(id));
 Router.add('/directorio', () => routePublic('directorio'));
 Router.add('/calendario', () => routePublic('calendario'));
+Router.add('/docentes/:id', (id) => routePublicDetailDocente(id));
+
+async function routePublicDetailDocente(id) {
+  window.__DOCENTE_ID = id;
+  const html = await loadPage('docente-perfil');
+  renderPublicPage(html);
+}
 Router.add('/guias-academicas', () => routePublic('guias-academicas'));
+Router.add('/posgrado', () => routePublic('posgrado'));
+Router.add('/posgrado/maestria-industrial', () => routePublic('maestria-industrial'));
+Router.add('/posgrado/maestria-sistemas', () => routePublic('maestria-sistemas'));
+Router.add('/posgrado/maestria-ia', () => routePublic('maestria-ia'));
+Router.add('/posgrado/maestria-supply-chain', () => routePublic('maestria-supply-chain'));
+Router.add('/posgrado/maestria-business-analytics', () => routePublic('maestria-business-analytics'));
+Router.add('/posgrado/maestria-gestion-operaciones', () => routePublic('maestria-gestion-operaciones'));
+Router.add('/posgrado/doctorado-industrial', () => routePublic('doctorado-industrial'));
+Router.add('/posgrado/doctorado-sistemas', () => routePublic('doctorado-sistemas'));
+Router.add('/posgrado/diplomados', () => routePublic('diplomado-project-management'));
 Router.add('/avisos-academicos', () => routePublic('avisos-academicos'));
 Router.add('/servicios', () => routePublic('servicios'));
 Router.add('/laboratorios', () => routePublic('laboratorios'));
@@ -229,7 +248,7 @@ Router.add('/dashboard/administrativo/resoluciones', () => routeDashboardSub('ad
 Router.add('/dashboard/administrativo/horarios', () => routeDashboardSub('administrativo', 'horarios'));
 Router.add('/dashboard/administrativo/reportes', () => routeDashboardSub('administrativo', 'reportes'));
 Router.add('/dashboard/docente/perfil', () => routeDashboardSub('docente', 'perfil'));
-Router.add('/dashboard/docente/asesorias', () => routeDashboardSub('docente', 'asesorias'));
+Router.add('/dashboard/docente/capacitaciones', () => routeDashboardSub('docente', 'capacitaciones'));
 Router.add('/dashboard/docente/recursos', () => routeDashboardSub('docente', 'recursos'));
 Router.add('/dashboard/docente/eventos', () => routeDashboardSub('docente', 'eventos'));
 Router.add('/dashboard/docente/configuracion', () => routeDashboardSub('docente', 'configuracion'));
