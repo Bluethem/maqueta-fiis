@@ -9,9 +9,9 @@ const MEGA_MENU = [
       ]},
       { col: 1, title: 'Gestión', items: [
         { label: 'Oficina de Acreditación', route: '/acreditacion', icon: 'verified' },
-        { label: 'Directorio Docentes', route: '/directorio-docentes', icon: 'badge' },
-        { label: 'Noticias FIIS', route: '/noticias', icon: 'newspaper' },
         { label: 'Portal de Transparencia', route: '/transparencia', icon: 'visibility' },
+        { label: 'Noticias FIIS', route: '/noticias', icon: 'newspaper' },
+        { label: 'Directorio Docentes', route: '/directorio-docentes', icon: 'badge' },
       ]}
     ]
   },
@@ -71,7 +71,7 @@ const MEGA_MENU = [
         { label: 'Tutoría FIIS', route: '/tutoria', icon: 'support' },
         { label: 'UECPS', route: '/uecps', icon: 'public' },
         { label: 'Centro de Información', route: '/centro-informacion', icon: 'library_books' },
-        { label: 'FAQ', route: '#', icon: 'help' },
+        { label: 'Repositorio Central', route: '/repositorio', icon: 'folder_open' },
       ]},
       { col: 2, title: 'Extensión', items: [
         { label: 'Sistemas UNI', route: '#', icon: 'computer' },
@@ -140,7 +140,6 @@ const MEGA_MENU = [
       ]}
     ]
   },
-  { label: 'Portal Académico', route: '/login', icon: 'login' },
 ];
 
 const Router = {
@@ -261,6 +260,9 @@ function navbar(active) {
           <div class="hidden lg:flex items-center gap-4 xl:gap-5 text-sm font-medium">${items}</div>
         </div>
         <div class="flex items-center gap-1">
+          <a href="#/login" class="p-2 hover:bg-surface-container-low rounded-full transition-all" title="Iniciar sesión">
+            <span class="material-symbols-outlined text-on-surface-variant">login</span>
+          </a>
           <button class="p-2 hover:bg-surface-container-low rounded-full transition-all" id="btn-search" title="Buscar">
             <span class="material-symbols-outlined text-on-surface-variant">search</span>
           </button>
