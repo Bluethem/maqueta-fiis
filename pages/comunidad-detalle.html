@@ -5,7 +5,7 @@
   <nav class="max-w-[1200px] mx-auto px-6 pt-4 flex items-center gap-2 text-sm text-text-secondary">
     <a href="#/" class="hover:text-primary transition-colors">Inicio</a>
     <span class="material-symbols-outlined text-sm">chevron_right</span>
-    <a href="#/vida-estudiantil" class="hover:text-primary transition-colors">Vida Estudiantil</a>
+    <a href="#/comunidad" class="hover:text-primary transition-colors">Comunidad</a>
     <span class="material-symbols-outlined text-sm">chevron_right</span>
     <span class="font-medium text-primary" id="breadcrumb-current">[Nombre Agrupación]</span>
   </nav>
@@ -46,27 +46,27 @@
     <div class="lg:col-span-2 space-y-6">
       
       <!-- Navegación de Pestañas -->
-      <div class="bg-white border border-border-subtle rounded-xl overflow-hidden shadow-sm">
-        <div class="flex border-b border-border-subtle overflow-x-auto scrollbar-hide" id="detail-tabs">
-          <button class="px-5 py-4 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 transition-all whitespace-nowrap" data-target="nosotros">Nosotros</button>
-          <button class="px-5 py-4 text-sm font-medium text-text-secondary hover:text-primary transition-all whitespace-nowrap" data-target="directiva">Directiva</button>
-          <button class="px-5 py-4 text-sm font-medium text-text-secondary hover:text-primary transition-all whitespace-nowrap" data-target="convocatorias">Convocatorias <span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full font-bold ml-1" id="badge-convocatorias-count">0</span></button>
-          <button class="px-5 py-4 text-sm font-medium text-text-secondary hover:text-primary transition-all whitespace-nowrap" data-target="eventos">Eventos <span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full font-bold ml-1" id="badge-eventos-count">0</span></button>
-          <button class="px-5 py-4 text-sm font-medium text-text-secondary hover:text-primary transition-all whitespace-nowrap" data-target="recursos">Recursos <span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full font-bold ml-1" id="badge-recursos-count">0</span></button>
-          <button class="px-5 py-4 text-sm font-medium text-text-secondary hover:text-primary transition-all whitespace-nowrap" data-target="faqs">Preguntas Frecuentes</button>
+      <div class="bg-white border border-border-subtle rounded-xl shadow-sm">
+        <div class="flex gap-1.5 p-3 pb-0 overflow-x-auto" id="detail-tabs">
+          <button class="px-4 py-2 text-sm font-semibold bg-primary text-white rounded-lg transition-all whitespace-nowrap shadow-sm" data-target="nosotros">Nosotros</button>
+          <button class="px-4 py-2 text-sm font-medium text-text-secondary bg-surface-container-low hover:bg-surface-container hover:text-primary rounded-lg transition-all whitespace-nowrap" data-target="directiva">Directiva</button>
+          <button class="px-4 py-2 text-sm font-medium text-text-secondary bg-surface-container-low hover:bg-surface-container hover:text-primary rounded-lg transition-all whitespace-nowrap" data-target="convocatorias">Convocatorias <span class="bg-primary/15 text-primary text-xs px-1.5 py-0.5 rounded-full font-bold ml-1" id="badge-convocatorias-count">0</span></button>
+          <button class="px-4 py-2 text-sm font-medium text-text-secondary bg-surface-container-low hover:bg-surface-container hover:text-primary rounded-lg transition-all whitespace-nowrap" data-target="eventos">Eventos <span class="bg-primary/15 text-primary text-xs px-1.5 py-0.5 rounded-full font-bold ml-1" id="badge-eventos-count">0</span></button>
+          <button class="px-4 py-2 text-sm font-medium text-text-secondary bg-surface-container-low hover:bg-surface-container hover:text-primary rounded-lg transition-all whitespace-nowrap" data-target="recursos">Recursos <span class="bg-primary/15 text-primary text-xs px-1.5 py-0.5 rounded-full font-bold ml-1" id="badge-recursos-count">0</span></button>
+          <button class="px-4 py-2 text-sm font-medium text-text-secondary bg-surface-container-low hover:bg-surface-container hover:text-primary rounded-lg transition-all whitespace-nowrap" data-target="faqs">FAQ</button>
         </div>
 
         <!-- Contenidos de Pestañas -->
-        <div class="p-6">
+        <div class="p-8">
           
           <!-- Pestaña 1: Nosotros -->
-          <div id="tab-content-nosotros" class="tab-panel space-y-6">
+          <div id="tab-content-nosotros" class="tab-panel space-y-10">
             <div>
-              <h3 class="text-lg font-bold text-primary mb-2 flex items-center gap-2"><span class="material-symbols-outlined">history</span> Historia</h3>
+              <h3 class="text-lg font-bold text-on-surface mb-3 flex items-center gap-2"><span class="material-symbols-outlined text-primary">history</span> Historia</h3>
               <p class="text-sm text-text-secondary leading-relaxed" id="group-history">[Historia]</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-border-subtle">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 border-t border-border-subtle">
               <div>
                 <h4 class="text-sm font-bold text-on-surface mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-primary">visibility</span> Misión</h4>
                 <p class="text-xs text-text-secondary leading-relaxed bg-surface-container-low p-4 rounded-lg" id="group-mission">[Misión]</p>
@@ -78,42 +78,42 @@
             </div>
 
             <!-- Proyectos Destacados (Req 12 & 17) -->
-            <div class="pt-6 border-t border-border-subtle">
-              <h3 class="text-lg font-bold text-primary mb-4 flex items-center gap-2"><span class="material-symbols-outlined">star</span> Proyectos Destacados</h3>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="projects-list">
+            <div class="pt-8 border-t border-border-subtle">
+              <h3 class="text-lg font-bold text-on-surface mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-primary">star</span> Proyectos Destacados</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="projects-list">
                 <!-- Se inyecta dinámicamente -->
               </div>
             </div>
 
             <!-- Testimonios (Req 13) -->
-            <div class="pt-6 border-t border-border-subtle">
-              <h3 class="text-lg font-bold text-primary mb-4 flex items-center gap-2"><span class="material-symbols-outlined">rate_review</span> Testimonios</h3>
-              <div class="grid grid-cols-1 gap-4" id="testimonials-list">
+            <div class="pt-8 border-t border-border-subtle">
+              <h3 class="text-lg font-bold text-on-surface mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-primary">rate_review</span> Testimonios</h3>
+              <div class="grid grid-cols-1 gap-6" id="testimonials-list">
                 <!-- Se inyecta dinámicamente -->
               </div>
             </div>
 
             <!-- Galerías Multimedia (Req 8) -->
-            <div class="pt-6 border-t border-border-subtle">
-              <h3 class="text-lg font-bold text-primary mb-4 flex items-center gap-2"><span class="material-symbols-outlined">photo_library</span> Galería de Actividades</h3>
-              <div class="grid grid-cols-3 gap-2" id="gallery-list">
+            <div class="pt-8 border-t border-border-subtle">
+              <h3 class="text-lg font-bold text-on-surface mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-primary">photo_library</span> Galería de Actividades</h3>
+              <div class="grid grid-cols-3 gap-3" id="gallery-list">
                 <!-- Se inyecta dinámicamente imágenes simuladas -->
               </div>
             </div>
           </div>
 
           <!-- Pestaña 2: Directiva (Req 4 & Gestión 4) -->
-          <div id="tab-content-directiva" class="tab-panel hidden space-y-6">
+          <div id="tab-content-directiva" class="tab-panel hidden space-y-8">
             <div>
-              <h3 class="text-lg font-bold text-primary mb-2 flex items-center gap-2"><span class="material-symbols-outlined">shield_person</span> Junta Directiva Vigente</h3>
+              <h3 class="text-lg font-bold text-on-surface mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-primary">shield_person</span> Junta Directiva Vigente</h3>
               <p class="text-xs text-text-secondary mb-4">Nota: La directiva se renueva obligatoriamente al inicio de cada ciclo académico.</p>
               <div class="overflow-x-auto border border-border-subtle rounded-xl">
                 <table class="w-full text-left border-collapse">
                   <thead>
                     <tr class="bg-surface-container-low text-xs font-bold text-primary border-b border-border-subtle">
-                      <th class="p-3">Nombre</th>
-                      <th class="p-3">Cargo / Comisión</th>
-                      <th class="p-3">Contacto</th>
+                      <th class="p-4">Nombre</th>
+                      <th class="p-4">Cargo / Comisión</th>
+                      <th class="p-4">Contacto</th>
                     </tr>
                   </thead>
                   <tbody id="directiva-table-body" class="text-sm text-text-secondary">
@@ -125,25 +125,25 @@
           </div>
 
           <!-- Pestaña 3: Convocatorias (Req 7) -->
-          <div id="tab-content-convocatorias" class="tab-panel hidden space-y-6">
-            <h3 class="text-lg font-bold text-primary mb-4 flex items-center gap-2"><span class="material-symbols-outlined">campaign</span> Convocatorias Activas</h3>
+          <div id="tab-content-convocatorias" class="tab-panel hidden space-y-8">
+            <h3 class="text-lg font-bold text-on-surface mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-primary">campaign</span> Convocatorias Activas</h3>
             <div class="space-y-4" id="convocatorias-list">
               <!-- Se inyecta dinámicamente -->
             </div>
           </div>
 
           <!-- Pestaña 4: Eventos (Req 5) -->
-          <div id="tab-content-eventos" class="tab-panel hidden space-y-6">
-            <h3 class="text-lg font-bold text-primary mb-4 flex items-center gap-2"><span class="material-symbols-outlined">event_note</span> Agenda de Eventos y Talleres</h3>
+          <div id="tab-content-eventos" class="tab-panel hidden space-y-8">
+            <h3 class="text-lg font-bold text-on-surface mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-primary">event_note</span> Agenda de Eventos y Talleres</h3>
             <div class="space-y-4" id="eventos-list">
               <!-- Se inyecta dinámicamente -->
             </div>
           </div>
 
           <!-- Pestaña 5: Recursos (Req 11) -->
-          <div id="tab-content-recursos" class="tab-panel hidden space-y-6">
+          <div id="tab-content-recursos" class="tab-panel hidden space-y-8">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border-subtle pb-4 mb-4">
-              <h3 class="text-lg font-bold text-primary flex items-center gap-2"><span class="material-symbols-outlined">folder</span> Recursos Académicos Autorizados</h3>
+              <h3 class="text-lg font-bold text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary">folder</span> Recursos Académicos Autorizados</h3>
               <!-- Filtros de recursos -->
               <div class="flex items-center gap-2">
                 <select id="recursos-filter-type" class="border border-border-subtle rounded-lg px-2 py-1 text-xs text-text-secondary bg-white focus:outline-none">
@@ -168,10 +168,10 @@
               <table class="w-full text-left border-collapse">
                 <thead>
                   <tr class="bg-surface-container-low text-xs font-bold text-primary border-b border-border-subtle">
-                    <th class="p-3">Recurso / Nombre</th>
-                    <th class="p-3">Curso</th>
-                    <th class="p-3">Detalles</th>
-                    <th class="p-3 text-center">Acción</th>
+                      <th class="p-4">Recurso / Nombre</th>
+                    <th class="p-4">Curso</th>
+                    <th class="p-4">Detalles</th>
+                    <th class="p-4 text-center">Acción</th>
                   </tr>
                 </thead>
                 <tbody id="recursos-table-body" class="text-sm text-text-secondary">
@@ -186,8 +186,8 @@
           </div>
 
           <!-- Pestaña 6: FAQs (Req 14) -->
-          <div id="tab-content-faqs" class="tab-panel hidden space-y-6">
-            <h3 class="text-lg font-bold text-primary mb-4 flex items-center gap-2"><span class="material-symbols-outlined">help</span> Preguntas Frecuentes</h3>
+          <div id="tab-content-faqs" class="tab-panel hidden space-y-8">
+            <h3 class="text-lg font-bold text-on-surface mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-primary">help</span> Preguntas Frecuentes</h3>
             <div class="space-y-4" id="faqs-accordion">
               <!-- Se inyecta dinámicamente -->
             </div>
@@ -202,35 +202,35 @@
       
       <!-- Redes Sociales Oficiales (Req 9) -->
       <div class="bg-white border border-border-subtle rounded-xl p-6 shadow-sm">
-        <h3 class="text-md font-bold text-primary mb-4 flex items-center gap-2">
-          <span class="material-symbols-outlined">share</span>
+        <h3 class="text-base font-bold text-on-surface mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary">share</span>
           Enlaces y Redes Oficiales
         </h3>
-        <div class="grid grid-cols-2 gap-2" id="social-grid">
+        <div class="grid grid-cols-2 gap-3" id="social-grid">
           <!-- Se inyecta dinámicamente -->
         </div>
       </div>
 
       <!-- Formulario de Contacto (Req 15 & 20) -->
       <div class="bg-white border border-border-subtle rounded-xl p-6 shadow-sm">
-        <h3 class="text-md font-bold text-primary mb-4 flex items-center gap-2">
-          <span class="material-symbols-outlined">mail</span>
+        <h3 class="text-base font-bold text-on-surface mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary">mail</span>
           Contacto Institucional
         </h3>
         <form class="space-y-4" id="group-contact-form">
           <div>
-            <label class="block text-xs font-semibold text-on-surface mb-1">Nombre Completo</label>
-            <input type="text" id="contact-name" required placeholder="Ingresa tu nombre..." class="w-full border border-border-subtle rounded-lg px-3 py-2 text-xs text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+            <label class="block text-sm font-semibold text-on-surface mb-1">Nombre Completo</label>
+            <input type="text" id="contact-name" required placeholder="Ingresa tu nombre..." class="w-full border border-border-subtle rounded-lg px-4 py-3 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
           </div>
           <div>
-            <label class="block text-xs font-semibold text-on-surface mb-1">Correo Institucional</label>
-            <input type="email" id="contact-email" required placeholder="usuario@uni.pe" class="w-full border border-border-subtle rounded-lg px-3 py-2 text-xs text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+            <label class="block text-sm font-semibold text-on-surface mb-1">Correo Institucional</label>
+            <input type="email" id="contact-email" required placeholder="usuario@uni.pe" class="w-full border border-border-subtle rounded-lg px-4 py-3 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
           </div>
           <div>
-            <label class="block text-xs font-semibold text-on-surface mb-1">Mensaje o Consulta</label>
-            <textarea id="contact-msg" rows="4" required placeholder="¿En qué te podemos ayudar?..." class="w-full border border-border-subtle rounded-lg px-3 py-2 text-xs text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"></textarea>
+            <label class="block text-sm font-semibold text-on-surface mb-1">Mensaje o Consulta</label>
+            <textarea id="contact-msg" rows="4" required placeholder="¿En qué te podemos ayudar?..." class="w-full border border-border-subtle rounded-lg px-4 py-3 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"></textarea>
           </div>
-          <button type="submit" class="w-full bg-primary text-white text-xs font-bold py-2 rounded-lg hover:bg-primary-container transition-all flex items-center justify-center gap-2">
+          <button type="submit" class="w-full bg-primary text-white text-sm font-bold py-3 rounded-lg hover:bg-primary-container transition-all flex items-center justify-center gap-2">
             <span class="material-symbols-outlined text-sm">send</span>
             Enviar Solicitud
           </button>
@@ -246,20 +246,20 @@
       </div>
 
       <!-- Canales Oficiales y Ubicación (Req 20) -->
-      <div class="bg-white border border-border-subtle rounded-xl p-6 shadow-sm space-y-4 text-xs text-text-secondary">
-        <h3 class="text-md font-bold text-primary flex items-center gap-2">
+      <div class="bg-white border border-border-subtle rounded-xl p-6 shadow-sm space-y-5 text-sm text-text-secondary">
+        <h3 class="text-base font-bold text-on-surface flex items-center gap-2">
           <span class="material-symbols-outlined text-primary">location_on</span>
           Ubicación y Soporte
         </h3>
-        <div class="flex items-start gap-2.5">
-          <span class="material-symbols-outlined text-primary text-sm mt-0.5">location_on</span>
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-primary text-base mt-0.5">location_on</span>
           <div>
             <p class="font-semibold text-on-surface">Ubicación Física</p>
             <p id="group-location">[Ubicación]</p>
           </div>
         </div>
-        <div class="flex items-start gap-2.5">
-          <span class="material-symbols-outlined text-primary text-sm mt-0.5">mail</span>
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-primary text-base mt-0.5">mail</span>
           <div>
             <p class="font-semibold text-on-surface">Correo Electrónico</p>
             <p id="group-email">[Correo]</p>
@@ -284,9 +284,9 @@
   <span class="material-symbols-outlined text-text-secondary text-7xl">search_off</span>
   <h2 class="text-2xl font-bold text-primary">Agrupación no encontrada</h2>
   <p class="text-text-secondary text-sm leading-relaxed">Lo sentimos, la agrupación estudiantil que buscas no está registrada o ha sido dada de baja temporalmente por Bienestar Estudiantil.</p>
-  <a href="#/vida-estudiantil" class="inline-flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-primary-container transition-all">
+  <a href="#/comunidad" class="inline-flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-primary-container transition-all">
     <span class="material-symbols-outlined text-sm">arrow_back</span>
-    Volver a Vida Estudiantil
+    Volver a Comunidad
   </a>
 </div>
 
@@ -385,43 +385,49 @@
         { q: '¿Qué herramientas se usan en las sesiones?', a: 'Utilizamos principalmente Kali Linux, Wireshark, Burp Suite y Metasploit en redes locales aisladas.' }
       ]
     },
-    'nucleo-de-software': {
-      name: 'Núcleo de Software',
-      tagLine: 'Comunidad de Ingeniería y Arquitectura de Software',
-      category: 'Agrupación Tecnológica',
-      badgeCls: 'bg-indigo-100 text-indigo-700',
+    'nucleo': {
+      name: 'Núcleo',
+      tagLine: 'Centro Cultural — Desarrollo Intelectual y Liderazgo',
+      category: 'Centro Cultural',
+      badgeCls: 'bg-purple-100 text-purple-700',
       bannerGradient: 'from-emerald-600 to-emerald-800',
       icon: 'data_object',
-      history: 'Fundada en 2021 por estudiantes apasionados por la ingeniería de software aplicada. Su objetivo principal es cerrar la brecha entre la teoría curricular de las materias de desarrollo y las metodologías usadas en la industria internacional.',
-      mission: 'Inculcar en los estudiantes buenas prácticas de ingeniería, metodologías ágiles y principios SOLID para construir software escalable y mantenible.',
-      vision: 'Ser la cuna del desarrollo de software de calidad en la FIIS, impulsando el talento de nuestros alumnos a puestos tecnológicos internacionales.',
-      location: 'Pabellón B FIIS, Oficina Conjunta de Proyectos.',
-      email: 'nucleosoftware@fiis.uni.edu.pe',
-      responsible: 'Junta Directiva Núcleo de Software · Periodo 2026-I',
+      history: 'Somos una institución conformada por estudiantes y egresados de la Facultad de Ingeniería Industrial y de Sistemas de la UNI, dedicada desde el año 1989 a la realización de actividades de diversa índole con orientación hacia el desarrollo intelectual de los estudiantes de nuestra casa de estudios. Nos dedicamos también a la organización de proyectos de investigación, buscando cumplir con nuestra misión de contribuir con el desarrollo personal y profesional de estudiantes universitarios, promoviendo la investigación con énfasis en nuestro rol social como ciudadanos del Perú y del mundo.',
+      mission: 'Formar a los miembros del Centro Cultural Núcleo como líderes agentes de cambio con sólidos valores, a través de la promoción y fomento de formas innovadoras y disruptivas de resolver problemáticas actuales.',
+      vision: 'Ser reconocido a nivel nacional como el principal centro universitario en formación de líderes con impacto social, promoviendo la cultura nuclear basada en el principio de "mínimo da lo máximo respetando los principios morales".',
+      location: 'Pabellón de Sistemas FIIS, ambiente cultural compartido.',
+      email: 'nucleo@fiis.uni.edu.pe',
+      responsible: 'Junta Directiva Núcleo · Periodo 2026-I',
       lastUpdated: '20 de Mayo, 2026',
       social: {
-        facebook: 'https://facebook.com',
+        facebook: 'https://www.facebook.com/CentroCulturalNucleo',
         github: 'https://github.com',
         instagram: 'https://instagram.com'
       },
       directiva: [
-        { name: 'Renato Castillo Flores', role: 'Presidente / Delegado', email: 'rcastillof@uni.pe' },
-        { name: 'Fiorella Soto Ruiz', role: 'Directora de Proyectos', email: 'fsotor@uni.pe' }
+        { name: 'Carlos Quispe Huamán', role: 'Presidente General', email: 'cquispeh@uni.pe' },
+        { name: 'Ana Lucía Torres', role: 'Vicepresidenta de Proyectos', email: 'atorres@uni.pe' },
+        { name: 'Luis Paredes Rivas', role: 'Director de Capacitaciones', email: 'lparedesr@uni.pe' }
       ],
       projects: [
-        { title: 'Arquitectura Limpia Template', description: 'Template base en .NET y TypeScript estructurado bajo Clean Architecture.', link: 'https://github.com' }
+        { title: 'Programa de Inducción FIIS', description: 'Ciclo de conferencias de 6 a 8 ponencias durante un ciclo académico para ayudar al ingresante a adaptarse a la vida universitaria mediante casos de éxito.', link: '#' },
+        { title: 'Semana Nuclear', description: 'Evento emblema con ponencias y talleres en relación a un eje temático anual, difundiendo nuevas tendencias en organizaciones competitivas.', link: '#' }
       ],
       convocatorias: [
-        { title: 'Convocatoria Staff de Proyectos', description: 'Búsqueda de desarrolladores backend con conocimientos de bases de datos.', deadline: '25 de Julio, 2026', status: 'Vigente' }
+        { title: 'Staff de Organización Semana Nuclear 2026', description: 'Búsqueda de estudiantes proactivos para coordinar logística, ponencias y talleres.', deadline: '30 de Junio, 2026', status: 'Vigente' },
+        { title: 'Programa de Inducción — Monitores', description: 'Reclutamiento de monitores para guiar a los ingresantes durante las primeras semanas.', deadline: '15 de Julio, 2026', status: 'Vigente' }
       ],
       events: [
-        { title: 'Charla: Principios SOLID en la Práctica', description: 'Conferencia virtual para aprender a estructurar código robusto y testeable.', date: '18 Jun 2026', location: 'Plataforma Virtual (MS Teams)', type: 'Tecnológico' }
+        { title: 'Choconúcleo 2026', description: 'Evento de integración con participación de miembros activos, inactivos y egresados. Dinámicas, compartir navideño y reporte anual.', date: 'Dic 2026', location: 'Auditorio Central FIIS', type: 'Cultural' },
+        { title: 'Semana Nuclear 2026', description: 'Ponencias magistrales, talleres, coffee break y full day con certificación.', date: 'Nov 2026', location: 'Auditorio Central FIIS', type: 'Cultural' }
       ],
       recursos: [
-        { name: 'Guía de Principios SOLID y Limpios', course: 'Arquitectura de Software', type: 'Guía', cycle: 'VI', year: '2026-I', link: '#' }
+        { name: 'Guía del Programa de Inducción 2026', course: 'Ninguno (General)', type: 'Guía', cycle: 'I', year: '2026-I', link: '#' },
+        { name: 'Presentación Semana Nuclear 2025', course: 'Ninguno (General)', type: 'Taller', cycle: 'Todos', year: '2025-II', link: '#' }
       ],
       faqs: [
-        { q: '¿Qué lenguajes de programación utilizan?', a: 'Usamos JavaScript, Go, C# y Python principalmente en desarrollo web moderno.' }
+        { q: '¿Qué es la "cultura nuclear"?', a: 'Es nuestro principio fundamental: "Mínimo da lo máximo respetando los principios morales que te gustarían ver en tu entorno".' },
+        { q: '¿Cómo puedo unirme al Centro Cultural Núcleo?', a: 'Las convocatorias se abren al inicio de cada ciclo. Puedes seguirnos en nuestras redes o escribirnos a nucleo@fiis.uni.edu.pe.' }
       ]
     },
     'ceiis': {
@@ -469,109 +475,42 @@
     },
     'tefiis': {
       name: 'TEFIIS',
-      tagLine: 'Taller de Teatro FIIS',
-      category: 'Centro Cultural',
-      badgeCls: 'bg-purple-100 text-purple-700',
-      bannerGradient: 'from-purple-600 to-purple-800',
-      icon: 'masks',
-      history: 'Fundado con el objetivo de dotar a los estudiantes de ingeniería de habilidades blandas cruciales. TEFIIS desarrolla la oratoria, la expresión emocional, la improvisación y la destreza escénica, realizando obras teatrales a lo largo de cada año.',
-      mission: 'Enseñar el arte dramático como herramienta de desarrollo personal y profesional, incentivando la creatividad y el trabajo en equipo interdisciplinario.',
-      vision: 'Consolidarse como uno de los talleres teatrales universitarios más representativos de la UNI, promoviendo el acceso a la cultura en nuestra comunidad.',
-      location: 'Sótano del Pabellón B, Sala de Ensayos Culturales.',
+      tagLine: 'Tercio Estudiantil FIIS',
+      category: 'Tercio Estudiantil',
+      badgeCls: 'bg-slate-100 text-slate-700',
+      bannerGradient: 'from-slate-700 to-slate-900',
+      icon: 'how_to_vote',
+      history: 'El Tercio Estudiantil de la Facultad de Ingeniería Industrial y de Sistemas (TEFIIS) es la representación estudiantil ante el órgano de gobierno de la FIIS, el Consejo de Facultad. El TEFIIS lleva la posición de los estudiantes en la toma de decisiones. Estas decisiones repercuten de manera general en toda la comunidad universitaria; por ende, el TEFIIS tiene responsabilidad en el desarrollo de la Facultad, así como un carácter fiscalizador. Esto conlleva a que pueda exigir un mejor servicio de enseñanza. Este cargo estudiantil es asumido mediante votación universal y democrática de los alumnos de la FIIS y tiene una duración de un año calendario.',
+      mission: 'Representar, transmitir la opinión y posición de los estudiantes en el Consejo de Facultad mediante voz y voto. Aprobar la currícula y planes de estudio elaborados por las Escuelas Profesionales que integran la Facultad. Dictar el Reglamento Académico de la Facultad que comprende las responsabilidades de docentes y estudiantes, así como los regímenes de estudio, evaluación, promoción y sanciones, dentro de las normas establecidas por el Estatuto de la Universidad.',
+      vision: 'Ser un órgano fiscalizador y justo ante los diferentes asuntos de la Facultad, supervisando el adecuado funcionamiento del sistema de gestión de la información de la universidad y sus correspondientes componentes, garantizando la transparencia y divulgación de la información.',
+      location: 'Pabellón A, 2do piso — Oficina del Tercio Estudiantil, FIIS UNI.',
       email: 'tefiis@fiis.uni.edu.pe',
-      responsible: 'Directiva Artística TEFIIS · Periodo 2026-I',
+      responsible: 'Tercio Estudiantil FIIS · Periodo 2026',
       lastUpdated: '14 de Mayo, 2026',
       social: {
-        facebook: 'https://facebook.com',
-        instagram: 'https://instagram.com'
+        facebook: 'https://www.facebook.com/Tercio-Estudiantil'
       },
       directiva: [
-        { name: 'Mariana Zevallos Polo', role: 'Directora General / Coordinadora', email: 'mzevallosp@uni.pe' },
-        { name: 'Jorge Benavides Solís', role: 'Director de Escenografía y Sonido', email: 'jbenavidess@uni.pe' }
+        { name: 'Representante TEFIIS', role: 'Miembro del Consejo de Facultad', email: 'tefiis@fiis.uni.edu.pe' }
       ],
       projects: [
-        { title: 'Obra Teatral Anual', description: 'Producción escénica completa adaptando clásicos dramáticos o guiones originales de miembros.', link: '#' }
+        { title: 'Aprobación Nueva Malla Curricular', description: 'La gestión 2017-2018 logró la aprobación de las nuevas mallas curriculares de Ingeniería Industrial e Ingeniería de Sistemas.', link: '#' },
+        { title: 'Cursos de Nivelación de Verano', description: 'Implementación y gestión de los cursos de nivelación académica para estudiantes, facilitando la nivelación antes del inicio del ciclo regular.', link: '#' }
       ],
       convocatorias: [
-        { title: 'Elenco Actoral 2026', description: 'Audiciones abiertas para nuevos integrantes de la facultad. No se requiere experiencia previa en teatro.', deadline: '20 de Julio, 2026', status: 'Vigente' }
+        { title: 'Representantes Estudiantiles 2026-II', description: 'Convocatoria abierta para estudiantes interesados en postular al Tercio Estudiantil y representar a la FIIS ante el Consejo de Facultad.', deadline: '20 de Julio, 2026', status: 'Vigente' }
       ],
       events: [
-        { title: 'Taller de Expresión Corporal y Voz', description: 'Sesión práctica para aprender proyección vocal y lenguaje no verbal.', date: '10 Jun 2026', location: 'Auditorio Central FIIS', type: 'Cultural' },
-        { title: 'Noche de Talentos - Obra "El Avaro"', description: 'Presentación oficial del taller adaptando el clásico de Molière.', date: '25 Jul 2026', location: 'Auditorio Central FIIS', type: 'Cultural' }
+        { title: 'Sesión Ordinaria de Consejo', description: 'Sesión mensual del Consejo de Facultad con participación del Tercio Estudiantil para tratar agenda académica y administrativa.', date: '15 Jun 2026', location: 'Sala de Consejo, Pabellón A', type: 'Gremial' },
+        { title: 'Audiencia Pública Estudiantil', description: 'Espacio abierto para que los estudiantes expongan sus inquietudes y propuestas ante el Tercio Estudiantil.', date: '25 Jul 2026', location: 'Auditorio Central FIIS', type: 'Gremial' }
       ],
       recursos: [
-        { name: 'Guía de Oratoria y Control de Nervios', course: 'Ninguno (General)', type: 'Guía', cycle: 'I', year: '2026-I', link: '#' }
+        { name: 'Reglamento del Tercio Estudiantil', course: 'Ninguno (General)', type: 'Guía', cycle: 'I', year: '2026-I', link: '#' },
+        { name: 'Acta de Sesión de Consejo', course: 'Ninguno (General)', type: 'Guía', cycle: 'I', year: '2025-II', link: '#' }
       ],
       faqs: [
-        { q: '¿Puedo ingresar si tengo pánico escénico?', a: '¡Por supuesto! El objetivo del taller es ayudarte de forma progresiva a superar esos temores en un entorno de apoyo.' }
-      ]
-    },
-    'coro-fiis': {
-      name: 'Coro FIIS',
-      tagLine: 'Elenco Vocal Oficial de la Facultad',
-      category: 'Centro Cultural',
-      badgeCls: 'bg-purple-100 text-purple-700',
-      bannerGradient: 'from-rose-600 to-rose-800',
-      icon: 'music_note',
-      history: 'Con más de 15 años de trayectoria musical, el Coro FIIS agrupa a las mejores voces de la facultad. Ha participado en múltiples encuentros corales interuniversitarios y es el encargado de entonar el Himno de la UNI en ceremonias oficiales.',
-      mission: 'Desarrollar la técnica vocal y el canto polifónico entre los estudiantes, enriqueciendo la vida cultural y la representación institucional de la FIIS.',
-      vision: 'Ser reconocido como uno de los coros universitarios de mayor nivel técnico en el país, expandiendo su repertorio lírico y popular.',
-      location: 'Pabellón B, Tercer Piso, Salón de Música FIIS.',
-      email: 'corofiis@fiis.uni.edu.pe',
-      responsible: 'Junta de Elenco Coro FIIS · Periodo 2026-I',
-      lastUpdated: '12 de Mayo, 2026',
-      social: {
-        facebook: 'https://facebook.com',
-        instagram: 'https://instagram.com'
-      },
-      directiva: [
-        { name: 'David Sánchez Vargas', role: 'Director Coral / Director Musical', email: 'dsanchezv@uni.pe' },
-        { name: 'Verónica Castro León', role: 'Coordinadora Administrativa', email: 'vcastrol@uni.pe' }
-      ],
-      projects: [],
-      convocatorias: [
-        { title: 'Audiciones Coro FIIS 2026-II', description: 'Búsqueda de voces (Sopranos, Contraltos, Tenores y Bajos). Se evaluará afinación y ritmo.', deadline: '10 de Julio, 2026', status: 'Vigente' }
-      ],
-      events: [
-        { title: 'Taller de Técnica Vocal Básica', description: 'Ejercicios de respiración diafragmática y afinación vocal dirigidos a la comunidad.', date: '14 Jun 2026', location: 'Salón de Música', type: 'Cultural' }
-      ],
-      recursos: [],
-      faqs: [
-        { q: '¿Necesito saber leer partituras?', a: 'No es un requisito indispensable. Aquí te enseñamos solfeo y lectura musical básica durante los ensayos.' }
-      ]
-    },
-    'danza-fiis': {
-      name: 'Danza FIIS',
-      tagLine: 'Elenco Folklórico y Expresión de Danza',
-      category: 'Centro Cultural',
-      badgeCls: 'bg-purple-100 text-purple-700',
-      bannerGradient: 'from-orange-500 to-orange-700',
-      icon: 'dance',
-      history: 'Danza FIIS es una agrupación nacida con la convicción de preservar la rica identidad cultural de nuestro país a través de la danza folklórica. Ha obtenido importantes galardones en pasacalles y corsos interfacultades de la UNI.',
-      mission: 'Difundir las danzas tradicionales y contemporáneas de las diversas regiones del Perú, promoviendo la identidad y el folklore en la comunidad universitaria.',
-      vision: 'Establecerse como el ballet folklórico líder de la universidad, logrando proyección artística en festivales culturales internacionales.',
-      location: 'Sótano del Pabellón B, Patio de Danzas.',
-      email: 'danzafiis@fiis.uni.edu.pe',
-      responsible: 'Directiva Danza FIIS · Periodo 2026-I',
-      lastUpdated: '16 de Mayo, 2026',
-      social: {
-        facebook: 'https://facebook.com',
-        instagram: 'https://instagram.com'
-      },
-      directiva: [
-        { name: 'Patricia Huamán Mendoza', role: 'Directora General / Caporala', email: 'phuamanm@uni.pe' },
-        { name: 'Miguel Ángel Torres', role: 'Coordinador de Vestuarios', email: 'mtorres@uni.pe' }
-      ],
-      projects: [],
-      convocatorias: [
-        { title: 'Convocatoria de Nuevos Danzantes', description: 'Inscripción abierta para el taller formativo y el elenco oficial. Ensayos en horario flexible.', deadline: '22 de Julio, 2026', status: 'Vigente' }
-      ],
-      events: [
-        { title: 'Taller de Danzas Afroperuanas', description: 'Clase maestra abierta de festejo y ritmo afroperuano.', date: '19 Jun 2026', location: 'Patio de Danzas B', type: 'Cultural' }
-      ],
-      recursos: [],
-      faqs: [
-        { q: '¿Qué vestuarios se utilizan?', a: 'La agrupación cuenta con un guardarropa propio de trajes típicos financiados por Bienestar Estudiantil y autogestión.' }
+        { q: '¿Cómo puedo postular al TEFIIS?', a: 'Las elecciones del Tercio Estudiantil se realizan anualmente mediante votación universal y democrática de todos los alumnos de la FIIS. Mantente atento a las convocatorias oficiales.' },
+        { q: '¿Cuál es la diferencia entre TEFIIS y CEIIS?', a: 'El TEFIIS es la representación estudiantil ante el Consejo de Facultad con voz y voto en decisiones académicas y administrativas. El CEIIS es el centro de estudiantes que vela por el bienestar estudiantil y organiza actividades gremiales y culturales.' }
       ]
     },
     'delegatura-industrial': {
@@ -612,11 +551,54 @@
       faqs: [
         { q: '¿Cuál es la diferencia con el CEIIS?', a: 'El CEIIS representa a toda la facultad de forma general; la delegatura se enfoca de manera específica en las mallas, sílabos e incidencias académicas de la carrera de Ingeniería Industrial.' }
       ]
+    },
+    'ccat': {
+      name: 'CCAT',
+      tagLine: 'Centro Cultural Avanzada Tecnológica',
+      category: 'Centro Cultural',
+      badgeCls: 'bg-purple-100 text-purple-700',
+      bannerGradient: 'from-orange-500 to-orange-700',
+      icon: 'palette',
+      history: 'El Centro Cultural Avanzada Tecnológica (CCAT) es una organización de estudiantes y egresados fundada en la Facultad de Ingeniería Industrial y de Sistemas de la Universidad Nacional de Ingeniería, el 22 de mayo de 1991, como una iniciativa estudiantil. Actualmente contamos con más de doscientos miembros que trabajan en los diferentes grupos de desarrollo de nuestro centro cultural.',
+      mission: 'Contribuir con la formación humana de profesionales y líderes empresariales con vocación de servicio y actitud de trabajo en equipo, preparados para emprender y enfrentar los retos que nuestra sociedad requiere.',
+      vision: 'Ser reconocido a nivel nacional como el principal centro universitario en formación empresarial, profesional y de investigación.',
+      location: 'Pabellón de Sistemas FIIS.',
+      email: 'ccat@fiis.uni.edu.pe',
+      responsible: 'Junta Directiva CCAT · Periodo 2026-I',
+      lastUpdated: '22 de Mayo, 2026',
+      social: {
+        facebook: 'https://www.facebook.com/ccat.uni.fiis',
+        instagram: 'https://instagram.com'
+      },
+      directiva: [
+        { name: 'Andrea Castillo Rivas', role: 'Presidenta General', email: 'acastillor@uni.pe' },
+        { name: 'Fernando Morales López', role: 'Director de Proyectos', email: 'fmoralesl@uni.pe' },
+        { name: 'Paola Sánchez Vega', role: 'Directora de Comunicaciones', email: 'psanchezv@uni.pe' }
+      ],
+      projects: [
+        { title: 'Revista Competitividad', description: 'Publicación semestral especializada en gestión empresarial, elaborada por estudiantes. Ha ganado el Premio Equipu Summit en tres ocasiones.', link: '#' },
+        { title: 'Congreso de Desarrollo Emprendedor', description: 'Evento anual que acerca a los universitarios las novedades del mundo del emprendimiento y la innovación.', link: '#' }
+      ],
+      convocatorias: [
+        { title: 'Staff Revista Competitividad', description: 'Convocatoria para redactores, diseñadores y fotógrafos para la próxima edición semestral.', deadline: '15 de Julio, 2026', status: 'Vigente' }
+      ],
+      events: [
+        { title: 'Congreso de Desarrollo Emprendedor 2026', description: 'Ponencias magistrales, talleres y networking con empresarios exitosos.', date: 'Ago 2026', location: 'Auditorio Central FIIS', type: 'Cultural' },
+        { title: 'Semana Cultural CCAT', description: 'Conciertos, presentaciones artísticas y actividades culturales por aniversario.', date: 'Set 2026', location: 'Instalaciones FIIS', type: 'Cultural' }
+      ],
+      recursos: [
+        { name: 'Guía de Emprendimiento Universitario', course: 'Ninguno (General)', type: 'Guía', cycle: 'I', year: '2026-I', link: '#' },
+        { name: 'Taller de Business Model Canvas', course: 'Ninguno (General)', type: 'Taller', cycle: 'Todos', year: '2025-II', link: '#' }
+      ],
+      faqs: [
+        { q: '¿Qué actividades realiza el CCAT?', a: 'Organizamos la Revista Competitividad, el Congreso de Desarrollo Emprendedor, la Semana Cultural, conferencias, talleres y proyectos de investigación.' },
+        { q: '¿Cómo puedo ser parte del CCAT?', a: 'Las convocatorias se publican al inicio de cada ciclo. Contáctanos en ccat@fiis.uni.edu.pe o sigue nuestra fan page.' }
+      ]
     }
   };
 
   // --- Función de Carga Inicial ---
-  window.initVidaEstudiantilDetalle = function(id) {
+  window.initComunidadDetalle = function(id) {
     const detailContainer = document.getElementById('detail-page-container');
     const notFoundContainer = document.getElementById('not-found-container');
     
@@ -661,13 +643,13 @@
     if (projectsList) {
       if (groupData.projects && groupData.projects.length > 0) {
         projectsList.innerHTML = groupData.projects.map(proj => `
-          <div class="border border-border-subtle rounded-xl p-4 hover:bg-primary/5 transition-all">
+          <div class="border border-border-subtle rounded-xl p-5 hover:bg-primary/5 transition-all">
             <h4 class="font-bold text-on-surface text-sm flex items-center gap-2">
               <span class="material-symbols-outlined text-primary text-base">star</span> ${proj.title}
             </h4>
-            <p class="text-xs text-text-secondary mt-1">${proj.description}</p>
-            ${groupKey === 'unicode' || groupKey === 'cibersec' || groupKey === 'nucleo-de-software' 
-              ? `<a href="${proj.link}" target="_blank" class="inline-flex items-center gap-1 text-xs text-primary font-bold mt-3 hover:underline">
+            <p class="text-sm text-text-secondary mt-2 leading-relaxed">${proj.description}</p>
+            ${groupKey === 'unicode' || groupKey === 'cibersec' || groupKey === 'nucleo' || groupKey === 'ccat' 
+              ? `<a href="${proj.link}" target="_blank" class="inline-flex items-center gap-1 text-sm text-primary font-bold mt-3 hover:underline">
                   <span class="material-symbols-outlined text-xs">terminal</span> Código en GitHub
                  </a>`
               : ''}
@@ -686,8 +668,8 @@
       ];
       const testList = (groupData.testimonials && groupData.testimonials.length > 0) ? groupData.testimonials : defaultTestimonial;
       testimonialsList.innerHTML = testList.map(t => `
-        <div class="bg-surface-container-low border-l-4 border-primary p-4 rounded-r-lg text-xs italic text-text-secondary">
-          <p class="mb-2 leading-relaxed">"${t.text}"</p>
+        <div class="bg-surface-container-low border-l-4 border-primary p-5 rounded-r-lg text-sm italic text-text-secondary">
+          <p class="mb-3 leading-relaxed">"${t.text}"</p>
           <p class="text-right font-bold text-on-surface">- ${t.author} (${t.role})</p>
         </div>
       `).join('');
@@ -709,12 +691,12 @@
     if (directivaBody) {
       directivaBody.innerHTML = groupData.directiva.map(d => `
         <tr class="border-b border-border-subtle hover:bg-surface-container-low transition-colors">
-          <td class="p-3 font-semibold text-on-surface flex items-center gap-2">
-            <span class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xs shrink-0">${d.name.charAt(0)}</span>
+          <td class="p-4 font-semibold text-on-surface flex items-center gap-3">
+            <span class="w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xs shrink-0">${d.name.charAt(0)}</span>
             ${d.name}
           </td>
-          <td class="p-3">${d.role}</td>
-          <td class="p-3"><a href="mailto:${d.email}" class="text-primary hover:underline">${d.email}</a></td>
+          <td class="p-4">${d.role}</td>
+          <td class="p-4"><a href="mailto:${d.email}" class="text-primary hover:underline">${d.email}</a></td>
         </tr>
       `).join('');
     }
@@ -730,19 +712,19 @@
           if (isVigente) activeCount++;
           const badgeColor = isVigente ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700';
           return `
-            <div class="border border-border-subtle rounded-xl p-5 hover:bg-primary/5 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="border border-border-subtle rounded-xl p-6 hover:bg-primary/5 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6">
               <div>
-                <div class="flex items-center gap-2 mb-1.5">
+                <div class="flex items-center gap-2 mb-2">
                   <h4 class="font-bold text-on-surface text-sm">${c.title}</h4>
                   <span class="${badgeColor} px-2.5 py-0.5 rounded-full text-xs font-semibold">${c.status}</span>
                 </div>
-                <p class="text-xs text-text-secondary leading-relaxed">${c.description}</p>
+                <p class="text-sm text-text-secondary leading-relaxed">${c.description}</p>
               </div>
               <div class="flex flex-col items-end shrink-0">
-                <span class="text-[10px] text-text-secondary font-semibold mb-2">Cierre: ${c.deadline}</span>
+                <span class="text-xs text-text-secondary font-semibold mb-2">Cierre: ${c.deadline}</span>
                 ${isVigente 
-                  ? `<button onclick="alert('Postulación registrada exitosamente para la agrupación ${groupData.name}');" class="bg-brand-cream text-primary px-4 py-1.5 rounded-lg text-xs font-bold hover:opacity-90 transition-all">Postular</button>`
-                  : `<button disabled class="bg-surface-container-high text-text-secondary px-4 py-1.5 rounded-lg text-xs font-bold cursor-not-allowed">Cerrado</button>`
+                  ? `<button onclick="alert('Postulación registrada exitosamente para la agrupación ${groupData.name}');" class="bg-brand-cream text-primary px-5 py-2 rounded-lg text-xs font-bold hover:opacity-90 transition-all">Postular</button>`
+                  : `<button disabled class="bg-surface-container-high text-text-secondary px-5 py-2 rounded-lg text-xs font-bold cursor-not-allowed">Cerrado</button>`
                 }
               </div>
             </div>
@@ -761,18 +743,18 @@
     if (eventosList && badgeEvents) {
       if (groupData.events && groupData.events.length > 0) {
         eventosList.innerHTML = groupData.events.map(evt => `
-          <div class="border border-border-subtle rounded-xl p-5 hover:bg-primary/5 transition-all flex items-start gap-4">
-            <div class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-lg p-2.5 min-w-[72px] shrink-0 text-center shadow-sm">
+          <div class="border border-border-subtle rounded-xl p-6 hover:bg-primary/5 transition-all flex items-start gap-5">
+            <div class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-lg p-3 min-w-[80px] shrink-0 text-center shadow-sm">
               <span class="text-[10px] font-bold uppercase leading-tight">${evt.date.split(' ')[1]}</span>
               <span class="text-xl font-extrabold leading-tight">${evt.date.split(' ')[0]}</span>
             </div>
             <div class="flex-1 min-w-0">
-              <div class="flex items-center gap-2 mb-1">
+              <div class="flex items-center gap-2 mb-2">
                 <h4 class="font-bold text-on-surface text-sm">${evt.title}</h4>
                 <span class="bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full text-[10px] font-semibold">${evt.type}</span>
               </div>
-              <p class="text-xs text-text-secondary mb-1">Ubicación: ${evt.location}</p>
-              <p class="text-xs text-text-secondary leading-relaxed">${evt.description}</p>
+              <p class="text-sm text-text-secondary mb-1">Ubicación: ${evt.location}</p>
+              <p class="text-sm text-text-secondary leading-relaxed">${evt.description}</p>
             </div>
           </div>
         `).join('');
@@ -808,18 +790,18 @@
         recursosBody.parentElement.classList.remove('hidden');
         recursosBody.innerHTML = filtered.map(rec => `
           <tr class="border-b border-border-subtle hover:bg-surface-container-low transition-colors">
-            <td class="p-3 font-semibold text-on-surface">
-              <div class="flex items-center gap-2">
+            <td class="p-4 font-semibold text-on-surface">
+              <div class="flex items-center gap-3">
                 <span class="material-symbols-outlined text-primary text-sm">${rec.type === 'Examen' ? 'description' : rec.type === 'Guía' ? 'menu_book' : 'terminal'}</span>
                 ${rec.name}
               </div>
             </td>
-            <td class="p-3">${rec.course}</td>
-            <td class="p-3 text-xs">
+            <td class="p-4">${rec.course}</td>
+            <td class="p-4 text-xs">
               <span class="bg-surface-container-high px-2 py-0.5 rounded text-[10px] font-semibold mr-1">Ciclo ${rec.cycle}</span>
               <span class="text-text-secondary font-medium">${rec.year}</span>
             </td>
-            <td class="p-3 text-center">
+            <td class="p-4 text-center">
               <button onclick="alert('Descargando archivo: ${rec.name}');" class="text-primary hover:text-primary-container flex items-center justify-center w-full">
                 <span class="material-symbols-outlined text-lg">download</span>
               </button>
@@ -858,12 +840,12 @@
       
       faqsAccordion.innerHTML = fList.map((faq, index) => `
         <div class="border border-border-subtle rounded-xl overflow-hidden">
-          <button class="faq-trigger w-full flex items-center justify-between p-4 text-left font-bold text-on-surface hover:bg-primary/5 transition-all" data-faq-index="${index}">
+          <button class="faq-trigger w-full flex items-center justify-between p-5 text-left font-bold text-on-surface hover:bg-primary/5 transition-all" data-faq-index="${index}">
             <span>${faq.q}</span>
             <span class="material-symbols-outlined faq-icon transition-transform">expand_more</span>
           </button>
           <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
-            <p class="p-4 border-t border-border-subtle text-xs text-text-secondary leading-relaxed bg-surface-container-low">${faq.a}</p>
+            <p class="p-5 border-t border-border-subtle text-sm text-text-secondary leading-relaxed bg-surface-container-low">${faq.a}</p>
           </div>
         </div>
       `).join('');
@@ -907,7 +889,7 @@
         if (key === 'linkedin') iconName = 'link';
 
         return `
-          <a href="${url}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-2 border border-border-subtle rounded-lg hover:bg-primary/5 transition-all text-text-secondary hover:text-primary font-medium text-xs">
+          <a href="${url}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-3 border border-border-subtle rounded-lg hover:bg-primary/5 transition-all text-text-secondary hover:text-primary font-medium text-sm">
             <span class="material-symbols-outlined text-primary text-sm">${iconName}</span>
             ${label}
           </a>
@@ -954,9 +936,9 @@
 
         // Modificar clases del botón activo
         tabButtons.forEach(b => {
-          b.className = 'px-5 py-4 text-sm font-medium text-text-secondary hover:text-primary transition-all whitespace-nowrap';
+          b.className = 'px-4 py-2 text-sm font-medium text-text-secondary bg-surface-container-low hover:bg-surface-container hover:text-primary rounded-lg transition-all whitespace-nowrap';
         });
-        btn.className = 'px-5 py-4 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 transition-all whitespace-nowrap';
+        btn.className = 'px-4 py-2 text-sm font-semibold bg-primary text-white rounded-lg transition-all whitespace-nowrap shadow-sm';
 
         // Ocultar/Mostrar paneles
         const panels = document.querySelectorAll('.tab-panel');

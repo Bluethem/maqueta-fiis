@@ -1,12 +1,12 @@
 <div class="page-enter space-y-8">
   <!-- Hero Section -->
-  <section class="relative overflow-hidden bg-primary rounded-2xl px-8 py-14 md:py-16">
-    <div class="absolute inset-0 opacity-10"
-      style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+');">
-    </div>
-    <div class="relative z-10 text-center">
-      <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-4">Actualidad y Comunicaciones</h1>
-      <p class="text-on-primary/80 text-lg max-w-2xl mx-auto">Entérate de las últimas noticias, comunicados oficiales, agenda de eventos y convocatorias de la FIIS-UNI.</p>
+  <section class="relative bg-primary overflow-hidden rounded-2xl min-h-[320px] flex items-center">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
+    <div class="relative z-10 px-8 md:px-16 py-14 w-full">
+      <div class="max-w-3xl">
+        <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-4 leading-tight">Actualidad y Comunicaciones</h1>
+        <p class="text-on-primary/90 text-lg md:text-xl leading-relaxed">Entérate de las últimas noticias, comunicados oficiales, avisos, convocatorias y capacitaciones de la FIIS-UNI.</p>
+      </div>
     </div>
   </section>
 
@@ -21,13 +21,17 @@
         <span class="material-symbols-outlined text-xl">campaign</span>
         <span class="hidden sm:inline">Comunicados</span>
       </button>
-      <button class="flex-1 py-4 px-2 text-center text-sm font-medium border-b-2 border-transparent text-text-secondary flex items-center justify-center gap-2 hover:text-primary hover:bg-surface-container-low transition-all" data-type="evento">
-        <span class="material-symbols-outlined text-xl">event</span>
-        <span class="hidden sm:inline">Eventos</span>
-      </button>
       <button class="flex-1 py-4 px-2 text-center text-sm font-medium border-b-2 border-transparent text-text-secondary flex items-center justify-center gap-2 hover:text-primary hover:bg-surface-container-low transition-all" data-type="convocatoria">
         <span class="material-symbols-outlined text-xl">assignment</span>
         <span class="hidden sm:inline">Convocatorias</span>
+      </button>
+      <button class="flex-1 py-4 px-2 text-center text-sm font-medium border-b-2 border-transparent text-text-secondary flex items-center justify-center gap-2 hover:text-primary hover:bg-surface-container-low transition-all" data-type="aviso">
+        <span class="material-symbols-outlined text-xl">notifications</span>
+        <span class="hidden sm:inline">Avisos</span>
+      </button>
+      <button class="flex-1 py-4 px-2 text-center text-sm font-medium border-b-2 border-transparent text-text-secondary flex items-center justify-center gap-2 hover:text-primary hover:bg-surface-container-low transition-all" data-type="capacitacion">
+        <span class="material-symbols-outlined text-xl">school</span>
+        <span class="hidden sm:inline">Capacitaciones</span>
       </button>
     </div>
   </div>
@@ -180,64 +184,6 @@
       area: 'OTI FIIS'
     },
 
-    // --- Eventos (Resaltan fecha, hora, lugar, público e inscripción) ---
-    {
-      id: 10,
-      tipo: 'evento',
-      titulo: 'Seminario de Optimización en la Cadena de Suministros 4.0',
-      fecha: '20 jun 2026',
-      dia: '20',
-      mes: 'JUN',
-      hora: '16:00 - 19:30',
-      lugar: 'Auditorio Central FIIS (Presencial)',
-      publico: 'Estudiantes de Ing. Industrial y profesionales del sector.',
-      inscripcion: '#',
-      estado: 'Próximo',
-      area: 'Capítulo Estudiantil IISE'
-    },
-    {
-      id: 11,
-      tipo: 'evento',
-      titulo: 'Workshop: Metodologías Ágiles para el Desarrollo de Software',
-      fecha: '24 jun 2026',
-      dia: '24',
-      mes: 'JUN',
-      hora: '18:00 - 20:00',
-      lugar: 'Plataforma Zoom (Virtual)',
-      publico: 'Alumnos de Sistemas/Software e interesados en metodologías Scrum.',
-      inscripcion: '#',
-      estado: 'Próximo',
-      area: 'Escuela de Ing. de Sistemas'
-    },
-    {
-      id: 12,
-      tipo: 'evento',
-      titulo: 'Feria de Proyectos de Innovación Tecnológica FIIS 2026',
-      fecha: '05 jul 2026',
-      dia: '05',
-      mes: 'JUL',
-      hora: '09:00 - 17:00',
-      lugar: 'Explanada del Pabellón B (Presencial)',
-      publico: 'Comunidad UNI, postulantes, representantes de empresas y público general.',
-      inscripcion: '#',
-      estado: 'Próximo',
-      area: 'Dirección de Investigación FIIS'
-    },
-    {
-      id: 13,
-      tipo: 'evento',
-      titulo: 'Conferencia: Aplicaciones de IA en Logística de Consumo Masivo',
-      fecha: '18 may 2026',
-      dia: '18',
-      mes: 'MAY',
-      hora: '15:00 - 17:00',
-      lugar: 'Auditorio Central FIIS (Presencial)',
-      publico: 'Comunidad académica general',
-      inscripcion: null,
-      estado: 'Pasado',
-      area: 'Relaciones Empresariales / Alicorp'
-    },
-
     // --- Convocatorias (Resaltan cierre de postulaciones, requisitos y estado) ---
     {
       id: 14,
@@ -268,6 +214,70 @@
       requisitos: ['Haber completado el 50% de créditos de la carrera', 'Promedio ponderado acumulado superior a 14.5', 'Certificación de idioma inglés nivel intermedio (B2)'],
       estado: 'Cerrado',
       area: 'Oficina de Cooperación Internacional'
+    },
+
+    // --- Avisos (Avisos cortos, recordatorios, anuncios urgentes) ---
+    {
+      id: 17,
+      tipo: 'aviso',
+      titulo: 'Suspensión de actividades académicas por mantenimiento eléctrico',
+      fecha: '12 may 2026',
+      contenido: 'Se comunica a la comunidad FIIS que el día viernes 16 de mayo se suspenderán las actividades académicas presenciales por trabajos de mantenimiento eléctrico programados en los pabellones A y B.',
+      area: 'Secretaría Administrativa',
+      prioridad: 'Importante'
+    },
+    {
+      id: 18,
+      tipo: 'aviso',
+      titulo: 'Recordatorio: Vencimiento de matrícula extraordinaria',
+      fecha: '05 may 2026',
+      contenido: 'Se recuerda a los estudiantes que el plazo para solicitar matrícula extraordinaria vence el 30 de mayo. Presentar la solicitud en Mesa de Partes con los requisitos establecidos.',
+      area: 'Secretaría Académica',
+      prioridad: 'Recordatorio'
+    },
+    {
+      id: 19,
+      tipo: 'aviso',
+      titulo: 'Cambio de horario de atención en Biblioteca FIIS',
+      fecha: '25 abr 2026',
+      contenido: 'A partir del 1 de mayo, el horario de atención de la Biblioteca FIIS será de lunes a viernes de 8:00 a 20:00 y sábados de 8:00 a 16:00.',
+      area: 'Centro de Información FIIS',
+      prioridad: 'Informativo'
+    },
+
+    // --- Capacitaciones (Cursos, talleres, webinars, capacitaciones docentes) ---
+    {
+      id: 20,
+      tipo: 'capacitacion',
+      titulo: 'Curso: Power BI y Business Analytics para docentes',
+      fecha: '15 jun 2026',
+      descripcion: 'Capacitación intensiva en herramientas de business intelligence dirigida a docentes de la FIIS. Incluye Power Query, DAX y visualización de datos educativos.',
+      modalidad: 'Virtual',
+      duracion: '40 horas',
+      inscripcion: '#',
+      organizador: 'CEE'
+    },
+    {
+      id: 21,
+      tipo: 'capacitacion',
+      titulo: 'Taller: Metodologías Activas para la enseñanza en ingeniería',
+      fecha: '22 jun 2026',
+      descripcion: 'Taller práctico sobre aprendizaje basado en proyectos, aula invertida y gamificación aplicada a cursos de ingeniería.',
+      modalidad: 'Presencial',
+      duracion: '16 horas',
+      inscripcion: '#',
+      organizador: 'Dirección Académica'
+    },
+    {
+      id: 22,
+      tipo: 'capacitacion',
+      titulo: 'Webinar: Inteligencia Artificial generativa aplicada a la investigación',
+      fecha: '08 jul 2026',
+      descripcion: 'Seminario web sobre uso de herramientas de IA generativa (ChatGPT, Copilot) para la elaboración de artículos científicos y proyectos de investigación.',
+      modalidad: 'Virtual',
+      duracion: '8 horas',
+      inscripcion: '#',
+      organizador: 'Instituto de Investigación'
     }
   ];
 
@@ -299,7 +309,7 @@
     gridContainer.classList.remove('hidden');
 
     // Cambiar grilla a 1 columna en comunicados y convocatorias para mayor formalidad y espacio
-    if (activeType === 'comunicado' || activeType === 'convocatoria') {
+    if (activeType === 'comunicado' || activeType === 'convocatoria' || activeType === 'aviso') {
       gridContainer.className = 'grid grid-cols-1 gap-6 max-w-[900px] mx-auto';
     } else {
       gridContainer.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6';
@@ -335,7 +345,62 @@
             </div>
           </article>
         `;
-      } 
+      }
+      else if (pub.tipo === 'aviso') {
+        const prioridadColor = pub.prioridad === 'Importante'
+          ? 'bg-red-100 text-red-700'
+          : pub.prioridad === 'Recordatorio'
+          ? 'bg-amber-100 text-amber-700'
+          : 'bg-blue-100 text-blue-700';
+
+        cardHtml = `
+          <article class="bg-white rounded-xl border border-border-subtle p-6 hover:shadow-lg transition-all flex flex-col sm:flex-row gap-5">
+            <div class="w-14 h-14 rounded-xl bg-amber-50 flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-amber-600 text-3xl">notifications</span>
+            </div>
+            <div class="flex-grow space-y-3">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold ${prioridadColor}">${pub.prioridad}</span>
+                <span class="text-text-secondary text-xs">${pub.fecha}</span>
+              </div>
+              <h3 class="text-lg font-bold text-on-surface leading-tight">${pub.titulo}</h3>
+              <p class="text-on-surface-variant text-sm leading-relaxed">${pub.contenido}</p>
+              <p class="text-xs text-text-secondary font-medium pt-2">Área: ${pub.area}</p>
+            </div>
+          </article>
+        `;
+      }
+      else if (pub.tipo === 'capacitacion') {
+        const modalidadBadge = pub.modalidad === 'Virtual'
+          ? '<span class="bg-blue-100 text-blue-700 px-2.5 py-0.5 rounded-full text-xs font-semibold">Virtual</span>'
+          : '<span class="bg-green-100 text-green-700 px-2.5 py-0.5 rounded-full text-xs font-semibold">Presencial</span>';
+
+        cardHtml = `
+          <article class="bg-white rounded-xl border border-border-subtle overflow-hidden hover:shadow-lg transition-all flex flex-col group">
+            <div class="bg-gradient-to-r from-primary to-primary-container p-6 text-on-primary">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="material-symbols-outlined text-3xl" style="font-variation-settings:'FILL'1;">school</span>
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-wider opacity-80">${pub.organizador}</p>
+                  <h3 class="text-lg font-bold">${pub.titulo}</h3>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 mt-3 text-sm opacity-90">
+                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span>${pub.duracion}</span>
+                <span>·</span>
+                <span>${pub.fecha}</span>
+              </div>
+            </div>
+            <div class="p-5 space-y-4">
+              <p class="text-sm text-text-secondary leading-relaxed">${pub.descripcion}</p>
+              <div class="flex items-center justify-between">
+                ${modalidadBadge}
+                <a href="${pub.inscripcion}" class="inline-flex items-center gap-1.5 px-5 py-2 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-primary-container transition-all">Inscribirme <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+              </div>
+            </div>
+          </article>
+        `;
+      }
       else if (pub.tipo === 'comunicado') {
         // --- Formato Comunicado: Oficialidad y vigencia ---
         const badgeVigencia = pub.vigencia === 'Vigente' 
@@ -360,56 +425,6 @@
               <div class="flex justify-between items-center pt-2 text-xs text-text-secondary font-medium">
                 <span>Emitido por: ${pub.emisor}</span>
                 <span class="bg-surface-container-low px-2.5 py-1 rounded">Área Responsable: ${pub.area}</span>
-              </div>
-            </div>
-          </article>
-        `;
-      }
-      else if (pub.tipo === 'evento') {
-        // --- Formato Evento: Fecha destacada, hora, lugar, público, inscripción ---
-        const badgeEstado = pub.estado === 'Próximo'
-          ? '<span class="bg-blue-100 text-blue-800 px-2.5 py-0.5 rounded-full text-xs font-semibold">Próximo</span>'
-          : '<span class="bg-surface-variant text-on-surface-variant px-2.5 py-0.5 rounded-full text-xs font-semibold">Pasado</span>';
-
-        cardHtml = `
-          <article class="bg-white rounded-xl border border-border-subtle p-5 hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row gap-5 items-stretch">
-            <!-- Bloque de Calendario -->
-            <div class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-xl p-4 md:w-28 shrink-0 text-center shadow-md">
-              <span class="text-xs font-bold uppercase tracking-wider opacity-90">${pub.mes}</span>
-              <span class="text-4xl font-extrabold my-1">${pub.dia}</span>
-              <span class="text-[10px] font-medium opacity-85">${pub.fecha.split(' ')[2]}</span>
-            </div>
-            <!-- Datos del Evento -->
-            <div class="flex-grow flex flex-col justify-between space-y-3">
-              <div>
-                <div class="flex items-center justify-between gap-2">
-                  <span class="text-xs font-bold text-primary uppercase">Área: ${pub.area}</span>
-                  ${badgeEstado}
-                </div>
-                <h3 class="text-base font-bold text-on-surface mt-1 leading-tight">${pub.titulo}</h3>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-3 text-xs text-text-secondary">
-                  <div class="flex items-center gap-1.5">
-                    <span class="material-symbols-outlined text-sm text-primary">schedule</span>
-                    <span>Hora: ${pub.hora}</span>
-                  </div>
-                  <div class="flex items-center gap-1.5">
-                    <span class="material-symbols-outlined text-sm text-primary">location_on</span>
-                    <span class="truncate">${pub.lugar}</span>
-                  </div>
-                </div>
-                <p class="text-xs text-on-surface-variant mt-2.5 leading-relaxed bg-surface-container-low/50 p-2.5 rounded border border-border-subtle/30"><strong class="text-on-surface">Dirigido a:</strong> ${pub.publico}</p>
-              </div>
-              <div class="flex justify-end pt-2">
-                ${pub.inscripcion && pub.estado === 'Próximo'
-                  ? `<a class="bg-primary text-on-primary px-4 py-2 rounded-lg text-xs font-semibold hover:opacity-90 transition-all flex items-center gap-1 shadow-sm" href="${pub.inscripcion}">
-                      Inscribirse
-                      <span class="material-symbols-outlined text-xs">launch</span>
-                     </a>`
-                  : `<button class="border border-border-subtle text-text-secondary px-4 py-2 rounded-lg text-xs font-medium cursor-not-allowed" disabled>
-                      Inscripción no disponible
-                     </button>`
-                }
               </div>
             </div>
           </article>

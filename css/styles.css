@@ -172,6 +172,12 @@ body { font-family: 'Inter', sans-serif; background-color: #E8E7EA; color: #1c1b
 }
 
 /* ===== Countdown ===== */
+/* ===== Search ===== */
+#search-input:focus{outline:none}
+#search-overlay{animation:searchFadeIn .2s ease}
+#search-results a:not(:last-child){border-bottom:1px solid #EDECEF}
+@keyframes searchFadeIn{from{opacity:0}to{opacity:1}}
+
 .countdown{display:flex;gap:8px;align-items:center}
 .countdown-item{display:flex;flex-direction:column;align-items:center;min-width:40px}
 .countdown-number{font-size:18px;font-weight:800;color:#711610;line-height:1}
