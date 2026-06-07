@@ -55,11 +55,11 @@ const MEGA_MENU = [
     label: 'Empresas', icon: 'work',
     children: [
       { col: 0, items: [
-        { label: 'Empresas Aliadas', route: '/empresas', icon: 'handshake' },
-        { label: 'Bolsa de Trabajo', route: '/empresas', icon: 'work' },
-        { label: 'Prácticas Preprofesionales', route: '/empresas', icon: 'school' },
-        { label: 'Convenios Vigentes', route: '/empresas', icon: 'description' },
-        { label: 'Ser Empresa Aliada', route: '/empresas', icon: 'partner_exchange' },
+        { label: 'Empresas Aliadas', route: '/empresas/directorio', icon: 'handshake' },
+        { label: 'Bolsa de Trabajo', route: '/empresas/bolsa-trabajo', icon: 'work' },
+        { label: 'Convenios Vigentes', route: '/empresas/convenios', icon: 'description' },
+        { label: 'Actividades Empresariales', route: '/empresas/actividades', icon: 'event' },
+        { label: 'Soy Empresa', route: '/empresas/soy-empresa', icon: 'partner_exchange' },
       ]}
     ]
   },
@@ -267,7 +267,7 @@ function publicFooter() {
             <h5 class="text-sm font-bold text-primary uppercase mb-2">Enlaces de Interés</h5>
             <a class="text-on-surface-variant text-sm hover:text-primary" href="#/directorio-docentes">Directorio Docentes</a>
             <a class="text-on-surface-variant text-sm hover:text-primary" href="#/escuelas">Escuelas Profesionales</a>
-            <a class="text-on-surface-variant text-sm hover:text-primary" href="#/empresas">Bolsa de Trabajo</a>
+            <a class="text-on-surface-variant text-sm hover:text-primary" href="#/empresas/bolsa-trabajo">Bolsa de Trabajo</a>
             <a class="text-on-surface-variant text-sm hover:text-primary" href="#/cronogramas">Cronogramas</a>
           </div>
           <div class="flex flex-col gap-2">

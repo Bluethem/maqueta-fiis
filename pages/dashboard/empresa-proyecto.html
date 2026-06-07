@@ -1,40 +1,49 @@
 <div class="page-enter space-y-6">
+
   <!-- Header -->
   <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
     <div>
       <h2 class="text-2xl font-bold text-on-surface">Solicitar Proyecto</h2>
       <p class="text-text-secondary text-sm mt-0.5">Presenta propuestas de colaboración en I+D con la facultad</p>
     </div>
+    <button id="btn-nuevo-proyecto" class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-on-primary rounded-lg font-semibold text-sm hover:brightness-110 transition-all shadow-sm active:scale-95">
+      <span class="material-symbols-outlined text-sm">add</span>
+      Nueva propuesta
+    </button>
   </div>
 
-  <!-- Form -->
-  <div class="bg-white rounded-xl border border-border-subtle shadow-sm overflow-hidden">
-    <div class="px-5 py-4 border-b border-border-subtle">
-      <h3 class="text-base font-bold text-on-surface">Información del proyecto</h3>
+  <!-- Formulario colapsable -->
+  <div id="form-nuevo-proyecto" class="hidden bg-white rounded-xl border border-primary/30 shadow-sm overflow-hidden">
+    <div class="px-5 py-4 border-b border-border-subtle flex items-center justify-between bg-primary/5">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-base">science</span>
+        <h3 class="text-base font-bold text-on-surface">Información del proyecto</h3>
+      </div>
+      <button id="btn-cerrar-proy" class="p-1.5 hover:bg-surface-container-high rounded-lg transition-all">
+        <span class="material-symbols-outlined text-text-secondary text-base">close</span>
+      </button>
     </div>
     <div class="p-5 space-y-5">
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <!-- Nombre -->
         <div class="space-y-1.5 md:col-span-2">
-          <label class="text-sm font-semibold text-on-surface">Nombre del proyecto</label>
-          <input type="text" placeholder="Ej: Automatización de procesos de control de calidad con visión artificial" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
+          <label class="text-sm font-semibold text-on-surface">Nombre del proyecto <span class="text-danger">*</span></label>
+          <input id="nombre-proy-input" type="text" placeholder="Ej: Automatización de procesos de control de calidad con visión artificial" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
+          <p id="nombre-proy-error" class="text-xs text-danger hidden">El nombre del proyecto es obligatorio.</p>
         </div>
+        <!-- Área -->
         <div class="space-y-1.5">
-          <label class="text-sm font-semibold text-on-surface">Área de conocimiento</label>
-          <select class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
+          <label class="text-sm font-semibold text-on-surface">Área de conocimiento <span class="text-danger">*</span></label>
+          <select id="area-proy-input" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
             <option value="">Seleccionar área</option>
-            <option>Ing. Industrial — Operaciones</option>
-            <option>Ing. Industrial — Logística</option>
-            <option>Ing. Sistemas — TI</option>
-            <option>Ing. Software — Desarrollo</option>
-            <option>Investigación Operativa</option>
-            <option>Inteligencia Artificial</option>
-            <option>Big Data / Analytics</option>
-            <option>Automatización / IoT</option>
           </select>
+          <p id="area-proy-error" class="text-xs text-danger hidden">Selecciona un área de conocimiento.</p>
         </div>
+        <!-- Duración -->
         <div class="space-y-1.5">
           <label class="text-sm font-semibold text-on-surface">Duración estimada</label>
-          <select class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
+          <select id="duracion-proy-input" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
             <option>1 — 3 meses</option>
             <option>3 — 6 meses</option>
             <option>6 — 12 meses</option>
@@ -45,56 +54,58 @@
 
       <!-- Problema -->
       <div class="space-y-1.5">
-        <label class="text-sm font-semibold text-on-surface">Descripción del problema / necesidad empresarial</label>
-        <textarea rows="3" placeholder="Describe el problema de negocio que motiva este proyecto..." class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30 resize-none"></textarea>
+        <label class="text-sm font-semibold text-on-surface">Descripción del problema / necesidad empresarial <span class="text-danger">*</span></label>
+        <textarea id="desc-proy-input" rows="3" placeholder="Describe el problema de negocio que motiva este proyecto..." class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30 resize-none"></textarea>
+        <p id="desc-proy-error" class="text-xs text-danger hidden">La descripción del problema es obligatoria.</p>
       </div>
 
       <!-- Objetivo -->
       <div class="space-y-1.5">
-        <label class="text-sm font-semibold text-on-surface">Objetivo general</label>
-        <textarea rows="3" placeholder="Describe el objetivo principal del proyecto..." class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30 resize-none"></textarea>
+        <label class="text-sm font-semibold text-on-surface">Objetivo general <span class="text-danger">*</span></label>
+        <textarea id="objetivo-proy-input" rows="3" placeholder="Describe el objetivo principal del proyecto..." class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30 resize-none"></textarea>
+        <p id="objetivo-proy-error" class="text-xs text-danger hidden">El objetivo general es obligatorio.</p>
       </div>
 
-      <!-- Alcance -->
-      <div class="space-y-1.5">
-        <label class="text-sm font-semibold text-on-surface">Alcance y entregables</label>
-        <textarea rows="3" placeholder="Define el alcance, resultados esperados y entregables concretos..." class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30 resize-none"></textarea>
-      </div>
-
-      <!-- Requisitos -->
-      <div class="space-y-1.5">
-        <label class="text-sm font-semibold text-on-surface">Requisitos técnicos</label>
-        <textarea rows="3" placeholder="Recursos necesarios: equipos, software, perfiles de estudiantes/investigadores..." class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30 resize-none"></textarea>
+      <!-- Alcance y requisitos -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="space-y-1.5">
+          <label class="text-sm font-semibold text-on-surface">Alcance y entregables</label>
+          <textarea id="alcance-proy-input" rows="3" placeholder="Define el alcance, resultados esperados y entregables concretos..." class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30 resize-none"></textarea>
+        </div>
+        <div class="space-y-1.5">
+          <label class="text-sm font-semibold text-on-surface">Requisitos técnicos</label>
+          <textarea id="requisitos-proy-input" rows="3" placeholder="Recursos necesarios: equipos, software, perfiles de estudiantes/investigadores..." class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30 resize-none"></textarea>
+        </div>
       </div>
 
       <!-- Restricciones -->
       <div class="space-y-1.5">
         <label class="text-sm font-semibold text-on-surface">Restricciones y consideraciones</label>
-        <textarea rows="2" placeholder="Limitaciones técnicas, de tiempo, confidencialidad u otras restricciones relevantes..." class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30 resize-none"></textarea>
+        <textarea id="restricciones-proy-input" rows="2" placeholder="Limitaciones técnicas, de tiempo, confidencialidad u otras restricciones relevantes..." class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30 resize-none"></textarea>
       </div>
 
       <!-- Contacto -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div class="space-y-1.5">
-          <label class="text-sm font-semibold text-on-surface">Nombre del contacto</label>
-          <input type="text" placeholder="Ej: Juan Pérez" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
+          <label class="text-sm font-semibold text-on-surface">Nombre del contacto <span class="text-danger">*</span></label>
+          <input id="contacto-nombre-proy" type="text" placeholder="Ej: Juan Pérez" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
+          <p id="contacto-nombre-proy-error" class="text-xs text-danger hidden">El nombre del contacto es obligatorio.</p>
         </div>
         <div class="space-y-1.5">
           <label class="text-sm font-semibold text-on-surface">Correo electrónico</label>
-          <input type="email" placeholder="jperez@industriasacero.pe" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
+          <input id="contacto-email-proy" type="email" placeholder="jperez@empresa.com" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
         </div>
         <div class="space-y-1.5">
           <label class="text-sm font-semibold text-on-surface">Teléfono</label>
-          <input type="text" placeholder="+51 999 888 777" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
+          <input id="contacto-tel-proy" type="text" placeholder="+51 999 888 777" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
         </div>
         <div class="space-y-1.5">
           <label class="text-sm font-semibold text-on-surface">Cargo del contacto</label>
-          <input type="text" placeholder="Ej: Gerente de Operaciones" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
+          <input id="contacto-cargo-proy" type="text" placeholder="Ej: Gerente de Operaciones" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
         </div>
       </div>
-    </div>
-    <!-- Flujo de derivación -->
-    <div class="px-5 pb-4">
+
+      <!-- Flujo de derivación -->
       <div class="bg-primary/5 border border-primary/20 rounded-xl p-4 flex gap-3">
         <span class="material-symbols-outlined text-primary shrink-0 mt-0.5">account_tree</span>
         <div>
@@ -111,15 +122,196 @@
         </div>
       </div>
     </div>
-
     <div class="px-5 py-4 border-t border-border-subtle bg-surface-bg/20 flex items-center justify-end gap-3">
-      <button class="px-4 py-2 text-sm font-semibold text-text-secondary border border-border-subtle rounded-lg hover:bg-surface-container-low transition-all">Cancelar</button>
-      <button
-        class="inline-flex items-center gap-2 px-5 py-2 text-sm font-semibold bg-primary text-on-primary rounded-lg hover:brightness-110 transition-all shadow-sm"
-        onclick="var c=this.closest('.bg-white');c.innerHTML='<div class=\'p-10 text-center\'><span class=\'material-symbols-outlined text-success\' style=\'font-size:56px\'>task_alt</span><h3 class=\'font-bold text-on-surface text-lg mt-3\'>¡Propuesta enviada!</h3><p class=\'text-text-secondary text-sm mt-2 max-w-sm mx-auto\'>La Oficina de Vinculación FIIS revisará tu propuesta y la derivará al docente o investigador más adecuado en un plazo de 5 días hábiles.</p></div>'">
+      <button id="btn-cancelar-proy" class="px-4 py-2 text-sm font-semibold text-text-secondary border border-border-subtle rounded-lg hover:bg-surface-container-low transition-all">Cancelar</button>
+      <button id="btn-submit-proy" class="inline-flex items-center gap-2 px-5 py-2 text-sm font-semibold bg-primary text-on-primary rounded-lg hover:brightness-110 transition-all shadow-sm active:scale-95">
         <span class="material-symbols-outlined text-sm">send</span>
         Enviar solicitud
       </button>
     </div>
   </div>
+
+  <!-- Toast -->
+  <div id="proy-toast" class="hidden fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-on-surface text-surface px-5 py-3.5 rounded-xl shadow-xl">
+    <span class="material-symbols-outlined text-success text-base">check_circle</span>
+    <div>
+      <p class="text-sm font-semibold">Propuesta enviada para revisión</p>
+      <p class="text-xs opacity-70">La Oficina de Vinculación FIIS la revisará pronto</p>
+    </div>
+  </div>
+
+  <!-- Tabla de propuestas -->
+  <div class="bg-white rounded-xl border border-border-subtle shadow-sm overflow-hidden">
+    <div class="px-5 py-4 border-b border-border-subtle flex flex-wrap items-center justify-between gap-3">
+      <h3 class="text-base font-bold text-on-surface">Mis propuestas de proyecto</h3>
+      <div class="flex gap-1.5 flex-wrap">
+        <button class="proy-filter px-3 py-1.5 text-xs font-semibold bg-primary text-on-primary rounded-lg" data-filter="todos">Todos</button>
+        <button class="proy-filter px-3 py-1.5 text-xs font-medium text-text-secondary border border-border-subtle rounded-lg hover:bg-surface-container-low transition-all" data-filter="pendiente">Pendientes</button>
+        <button class="proy-filter px-3 py-1.5 text-xs font-medium text-text-secondary border border-border-subtle rounded-lg hover:bg-surface-container-low transition-all" data-filter="aprobado">Aprobados</button>
+        <button class="proy-filter px-3 py-1.5 text-xs font-medium text-text-secondary border border-border-subtle rounded-lg hover:bg-surface-container-low transition-all" data-filter="rechazado">Rechazados</button>
+      </div>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-surface-bg/50 border-b border-border-subtle">
+            <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Proyecto</th>
+            <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Área</th>
+            <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Duración</th>
+            <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Estado</th>
+            <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Solicitud</th>
+          </tr>
+        </thead>
+        <tbody id="proy-tbody" class="divide-y divide-border-subtle/60"></tbody>
+      </table>
+    </div>
+    <div class="px-5 py-3 border-t border-border-subtle bg-surface-container-low/20">
+      <p id="proy-count" class="text-xs text-text-secondary">—</p>
+    </div>
+  </div>
+
 </div>
+
+<script>
+(function () {
+  // Populate área de conocimiento from catalog
+  (function () {
+    var sel = document.getElementById('area-proy-input');
+    if (!sel) return;
+    var areas = (Store.getCatalogos().areasConocimiento || []);
+    areas.forEach(function (a) {
+      var opt = document.createElement('option');
+      opt.value = a;
+      opt.textContent = a;
+      sel.appendChild(opt);
+    });
+  })();
+
+  var ESTADO_CFG = {
+    pendiente: { cls: 'bg-warning/10 text-warning',  dot: 'bg-warning',  label: 'Pendiente' },
+    aprobado:  { cls: 'bg-success/10 text-success',  dot: 'bg-success',  label: 'Aprobado'  },
+    rechazado: { cls: 'bg-error/10 text-error',      dot: 'bg-error',    label: 'Rechazado' },
+  };
+
+  var activeFilter = 'todos';
+
+  function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  function getMisProyectos() {
+    var session = Auth.getSession();
+    return Store.getProyectos().filter(function (p) { return p.empresa === session.name; });
+  }
+
+  function renderTable() {
+    var proyectos = getMisProyectos();
+    var tbody = document.getElementById('proy-tbody');
+    var countEl = document.getElementById('proy-count');
+    if (!tbody) return;
+    var filtered = activeFilter === 'todos' ? proyectos : proyectos.filter(function (p) { return p.estado === activeFilter; });
+    if (filtered.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="5" class="px-5 py-10 text-center text-text-secondary text-sm">No hay propuestas con este filtro.</td></tr>';
+      countEl.textContent = '0 propuestas';
+      return;
+    }
+    var rows = filtered.map(function (p) {
+      var est = ESTADO_CFG[p.estado] || ESTADO_CFG.pendiente;
+      var obsRow = p.observacion ? '<p class="text-xs text-error mt-1 flex items-center gap-1"><span class="material-symbols-outlined text-xs">info</span>' + esc(p.observacion) + '</p>' : '';
+      return '<tr class="hover:bg-surface-container-low/40 transition-colors">'
+        + '<td class="px-5 py-3.5 max-w-[260px]"><p class="font-semibold text-on-surface leading-tight">' + esc(p.nombre) + '</p><p class="text-xs text-text-secondary mt-0.5">' + esc(p.id) + '</p>' + obsRow + '</td>'
+        + '<td class="px-5 py-3.5 text-xs text-text-secondary">' + esc(p.area) + '</td>'
+        + '<td class="px-5 py-3.5 text-xs text-text-secondary whitespace-nowrap">' + esc(p.duracion) + '</td>'
+        + '<td class="px-5 py-3.5"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold ' + est.cls + '"><span class="w-1.5 h-1.5 rounded-full ' + est.dot + '"></span>' + est.label + '</span></td>'
+        + '<td class="px-5 py-3.5 text-xs text-text-secondary">' + esc(p.fechaSolicitud) + '</td>'
+        + '</tr>';
+    }).join('');
+    tbody.innerHTML = rows;
+    countEl.textContent = filtered.length + ' propuesta' + (filtered.length === 1 ? '' : 's');
+  }
+
+  // Toggle form
+  var btnNuevo = document.getElementById('btn-nuevo-proyecto');
+  var formDiv  = document.getElementById('form-nuevo-proyecto');
+
+  function openForm()  { formDiv.classList.remove('hidden'); btnNuevo.disabled = true; }
+  function closeForm() { formDiv.classList.add('hidden'); btnNuevo.disabled = false; }
+
+  btnNuevo.addEventListener('click', openForm);
+  document.getElementById('btn-cerrar-proy').addEventListener('click', closeForm);
+  document.getElementById('btn-cancelar-proy').addEventListener('click', closeForm);
+
+  // Filtros
+  document.querySelectorAll('.proy-filter').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.proy-filter').forEach(function (b) {
+        b.className = 'proy-filter px-3 py-1.5 text-xs font-medium text-text-secondary border border-border-subtle rounded-lg hover:bg-surface-container-low transition-all';
+      });
+      this.className = 'proy-filter px-3 py-1.5 text-xs font-semibold bg-primary text-on-primary rounded-lg';
+      activeFilter = this.dataset.filter;
+      renderTable();
+    });
+  });
+
+  // Submit
+  document.getElementById('btn-submit-proy').addEventListener('click', function () {
+    var nombre    = document.getElementById('nombre-proy-input').value.trim();
+    var area      = document.getElementById('area-proy-input').value;
+    var duracion  = document.getElementById('duracion-proy-input').value;
+    var desc      = document.getElementById('desc-proy-input').value.trim();
+    var objetivo  = document.getElementById('objetivo-proy-input').value.trim();
+    var alcance   = document.getElementById('alcance-proy-input').value.trim();
+    var requisitos = document.getElementById('requisitos-proy-input').value.trim();
+    var restricciones = document.getElementById('restricciones-proy-input').value.trim();
+    var cNombre   = document.getElementById('contacto-nombre-proy').value.trim();
+    var cEmail    = document.getElementById('contacto-email-proy').value.trim();
+    var cTel      = document.getElementById('contacto-tel-proy').value.trim();
+    var cCargo    = document.getElementById('contacto-cargo-proy').value.trim();
+
+    var valid = true;
+    document.getElementById('nombre-proy-error').classList.toggle('hidden', nombre.length > 0);
+    if (!nombre) valid = false;
+    document.getElementById('area-proy-error').classList.toggle('hidden', area.length > 0);
+    if (!area) valid = false;
+    document.getElementById('desc-proy-error').classList.toggle('hidden', desc.length > 0);
+    if (!desc) valid = false;
+    document.getElementById('objetivo-proy-error').classList.toggle('hidden', objetivo.length > 0);
+    if (!objetivo) valid = false;
+    document.getElementById('contacto-nombre-proy-error').classList.toggle('hidden', cNombre.length > 0);
+    if (!cNombre) valid = false;
+    if (!valid) return;
+
+    var session = Auth.getSession();
+    Store.addProyecto({
+      empresa: session.name,
+      emailEmpresa: session.email,
+      nombre: nombre,
+      area: area,
+      duracion: duracion,
+      descripcion: desc,
+      objetivo: objetivo,
+      alcance: alcance,
+      requisitos: requisitos,
+      restricciones: restricciones,
+      contactoNombre: cNombre,
+      contactoEmail: cEmail,
+      contactoTelefono: cTel,
+      contactoCargo: cCargo,
+    });
+
+    closeForm();
+    ['nombre-proy-input','desc-proy-input','objetivo-proy-input','alcance-proy-input',
+     'requisitos-proy-input','restricciones-proy-input','contacto-nombre-proy',
+     'contacto-email-proy','contacto-tel-proy','contacto-cargo-proy'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) el.value = '';
+    });
+    document.getElementById('area-proy-input').value = '';
+
+    renderTable();
+    var toast = document.getElementById('proy-toast');
+    toast.classList.remove('hidden');
+    setTimeout(function () { toast.classList.add('hidden'); }, 3500);
+  });
+
+  renderTable();
+})();
+</script>

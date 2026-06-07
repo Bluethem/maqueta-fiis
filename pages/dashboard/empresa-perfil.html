@@ -1,134 +1,281 @@
-<div class="page-enter space-y-6">
-  <!-- Header -->
-  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-    <div>
-      <div class="flex items-center gap-2.5">
-        <h2 class="text-2xl font-bold text-on-surface">Perfil Empresarial</h2>
-        <span class="material-symbols-outlined text-success" style="font-variation-settings:'FILL'1;font-size:22px">verified</span>
-      </div>
-      <p class="text-text-secondary text-sm mt-0.5">Gestiona la información pública de tu empresa</p>
+<div class="empresa-profile-page page-enter w-full min-w-0 space-y-6">
+  <div class="empresa-profile-header flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+    <div class="min-w-0">
+      <p class="text-xs font-semibold uppercase tracking-wide text-primary">Empresa aliada</p>
+      <h1 class="mt-1 text-2xl font-extrabold text-on-surface break-words">Perfil Empresarial</h1>
+      <p class="mt-1 text-sm text-text-secondary">Gestiona la informacion publica que vera la comunidad FIIS.</p>
     </div>
-    <button class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-on-primary rounded-lg font-semibold text-sm hover:brightness-110 transition-all shadow-sm active:scale-95">
-      <span class="material-symbols-outlined text-sm">save</span>
-      Guardar cambios
-    </button>
-  </div>
-
-  <!-- Company Profile Card -->
-  <div class="bg-white rounded-xl border border-border-subtle p-6 shadow-sm">
-    <div class="flex flex-col sm:flex-row gap-6">
-      <div class="flex-shrink-0">
-        <div class="w-24 h-24 rounded-xl bg-surface-bg border border-border-subtle flex items-center justify-center">
-          <span class="material-symbols-outlined text-4xl text-text-secondary">business</span>
-        </div>
-      </div>
-      <div class="flex-1 min-w-0">
-        <div class="flex items-center gap-2 mb-1">
-          <h3 class="text-xl font-bold text-on-surface">Industrias Acero SAC</h3>
-          <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-success/10 text-success">
-            <span class="material-symbols-outlined text-xs" style="font-variation-settings:'FILL'1">verified</span>
-            Verificado
-          </span>
-        </div>
-        <p class="text-sm text-text-secondary mb-3">RUC: 20567890123 — Fundada en 1995</p>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
-          <div class="flex items-center gap-2 text-text-secondary">
-            <span class="material-symbols-outlined text-sm text-primary">category</span>
-            <span>Metalmecánica / Manufactura</span>
-          </div>
-          <div class="flex items-center gap-2 text-text-secondary">
-            <span class="material-symbols-outlined text-sm text-primary">location_on</span>
-            <span>Av. Industrial 420, Callao</span>
-          </div>
-          <div class="flex items-center gap-2 text-text-secondary">
-            <span class="material-symbols-outlined text-sm text-primary">globe</span>
-            <span>www.industriasacero.pe</span>
-          </div>
-        </div>
-        <p class="text-sm text-text-secondary mt-3 leading-relaxed">Empresa líder en fabricación de estructuras metálicas y componentes industriales con más de 25 años de experiencia en el mercado peruano. Aliada estratégica de FIIS desde 2018.</p>
-        <div class="flex items-center gap-3 mt-4">
-          <a href="#" class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary/20 transition-all"><span class="material-symbols-outlined text-sm">link</span></a>
-          <a href="#" class="w-8 h-8 rounded-full bg-[#1877F2]/10 text-[#1877F2] flex items-center justify-center hover:bg-[#1877F2]/20 transition-all"><span class="material-symbols-outlined text-sm">facebook</span></a>
-          <a href="#" class="w-8 h-8 rounded-full bg-[#1DA1F2]/10 text-[#1DA1F2] flex items-center justify-center hover:bg-[#1DA1F2]/20 transition-all"><span class="material-symbols-outlined text-sm">smart_display</span></a>
-          <a href="#" class="w-8 h-8 rounded-full bg-[#0A66C2]/10 text-[#0A66C2] flex items-center justify-center hover:bg-[#0A66C2]/20 transition-all"><span class="material-symbols-outlined text-sm">work</span></a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Aviso de revisión -->
-  <div class="bg-warning/5 border border-warning/30 rounded-xl p-4 flex items-start gap-3">
-    <span class="material-symbols-outlined text-warning shrink-0">info</span>
-    <div>
-      <p class="text-sm font-semibold text-on-surface">Cambios sujetos a revisión</p>
-      <p class="text-xs text-text-secondary mt-0.5">Cualquier modificación a tu perfil público será enviada como solicitud al administrador FIIS. Los cambios se publicarán una vez aprobados (plazo estimado: 2 días hábiles).</p>
-    </div>
-  </div>
-
-  <!-- Edit Form -->
-  <div class="bg-white rounded-xl border border-border-subtle shadow-sm overflow-hidden">
-    <div class="px-5 py-4 border-b border-border-subtle">
-      <h3 class="text-base font-bold text-on-surface">Editar información</h3>
-    </div>
-    <div class="p-5">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <div class="space-y-1.5">
-          <label class="text-sm font-semibold text-on-surface">Razón social</label>
-          <input type="text" value="Industrias Acero SAC" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
-        </div>
-        <div class="space-y-1.5">
-          <label class="text-sm font-semibold text-on-surface">RUC</label>
-          <input type="text" value="20567890123" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
-        </div>
-        <div class="space-y-1.5">
-          <label class="text-sm font-semibold text-on-surface">Rubro</label>
-          <select class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
-            <option>Metalmecánica / Manufactura</option>
-            <option>Tecnología / Software</option>
-            <option>Consultoría / Servicios</option>
-            <option>Minería / Energía</option>
-            <option>Banca / Finanzas</option>
-          </select>
-        </div>
-        <div class="space-y-1.5">
-          <label class="text-sm font-semibold text-on-surface">Sitio web</label>
-          <input type="text" value="https://www.industriasacero.pe" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
-        </div>
-        <div class="space-y-1.5">
-          <label class="text-sm font-semibold text-on-surface">Ubicación</label>
-          <input type="text" value="Av. Industrial 420, Callao" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
-        </div>
-        <div class="space-y-1.5">
-          <label class="text-sm font-semibold text-on-surface">Teléfono de contacto</label>
-          <input type="text" value="+51 1 555 6789" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
-        </div>
-        <div class="space-y-1.5 md:col-span-2">
-          <label class="text-sm font-semibold text-on-surface">Descripción</label>
-          <textarea rows="4" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30 resize-none">Empresa líder en fabricación de estructuras metálicas y componentes industriales con más de 25 años de experiencia en el mercado peruano. Aliada estratégica de FIIS desde 2018.</textarea>
-        </div>
-        <div class="space-y-1.5">
-          <label class="text-sm font-semibold text-on-surface">Enlace LinkedIn</label>
-          <input type="text" value="https://linkedin.com/company/industrias-acero" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
-        </div>
-        <div class="space-y-1.5">
-          <label class="text-sm font-semibold text-on-surface">Actualizar logo</label>
-          <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-lg bg-surface-bg border border-border-subtle flex items-center justify-center flex-shrink-0">
-              <span class="material-symbols-outlined text-text-secondary">image</span>
-            </div>
-            <button class="px-4 py-2 text-sm border border-border-subtle rounded-lg font-medium text-on-surface-variant hover:bg-surface-container-low transition-all">Cambiar logo</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="px-5 py-4 border-t border-border-subtle bg-surface-bg/20 flex items-center justify-end gap-3">
-      <button class="px-4 py-2 text-sm font-semibold text-text-secondary border border-border-subtle rounded-lg hover:bg-surface-container-low transition-all">Cancelar</button>
-      <button
-        class="inline-flex items-center gap-2 px-5 py-2 text-sm font-semibold bg-primary text-on-primary rounded-lg hover:brightness-110 transition-all shadow-sm"
-        onclick="var c=this.closest('.bg-white.rounded-xl');c.innerHTML='<div class=\'p-10 text-center\'><span class=\'material-symbols-outlined text-warning\' style=\'font-size:56px\'>pending_actions</span><h3 class=\'font-bold text-on-surface text-lg mt-3\'>Solicitud enviada</h3><p class=\'text-text-secondary text-sm mt-2\'>El administrador FIIS revisará tus cambios antes de publicarlos.</p><span class=\'inline-flex items-center gap-1.5 mt-4 px-3 py-1 rounded-full text-xs font-semibold bg-warning/10 text-warning\'><span class=\\\"w-1.5 h-1.5 rounded-full bg-warning inline-block\\\"></span>Pendiente de revisión</span></div>'">
-        <span class="material-symbols-outlined text-sm">pending_actions</span>
-        Solicitar actualización
+    <div class="empresa-profile-actions flex flex-wrap items-center gap-2">
+      <span class="inline-flex items-center rounded-full bg-success/10 px-3 py-1 text-xs font-bold text-success">Verificado</span>
+      <button id="empresa-profile-save-top" type="button" class="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-on-primary shadow-sm transition-all hover:brightness-110 active:scale-95">
+        Guardar cambios
       </button>
     </div>
   </div>
+
+  <section class="empresa-profile-summary w-full overflow-hidden rounded-xl border border-border-subtle bg-white shadow-sm">
+    <div class="empresa-profile-summary-grid grid grid-cols-1 lg:grid-cols-[220px_minmax(0,1fr)]">
+      <aside class="empresa-profile-brand border-b border-border-subtle bg-surface-container-low p-6 lg:border-b-0 lg:border-r">
+        <div class="flex flex-row items-center gap-4 lg:flex-col lg:items-start">
+          <div class="flex h-24 w-24 shrink-0 items-center justify-center rounded-xl border border-border-subtle bg-white text-3xl font-extrabold text-primary">
+            IA
+          </div>
+          <div class="min-w-0">
+            <p id="empresa-preview-nombre" class="text-lg font-bold text-on-surface break-words">Industrias Acero SAC</p>
+            <p id="empresa-preview-ruc" class="mt-1 text-xs font-semibold uppercase tracking-wide text-text-secondary">RUC 20567890123</p>
+          </div>
+        </div>
+      </aside>
+
+      <div class="empresa-profile-content min-w-0 p-6">
+        <div class="empresa-profile-facts grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+          <div class="empresa-profile-fact min-w-0 rounded-lg border border-border-subtle bg-surface-bg/40 p-4">
+            <p class="text-xs font-semibold uppercase tracking-wide text-text-secondary">Rubro</p>
+            <p id="empresa-preview-rubro" class="mt-1 text-sm font-semibold text-on-surface break-words">Metalmecanica / Manufactura</p>
+          </div>
+          <div class="empresa-profile-fact min-w-0 rounded-lg border border-border-subtle bg-surface-bg/40 p-4">
+            <p class="text-xs font-semibold uppercase tracking-wide text-text-secondary">Ubicacion</p>
+            <p id="empresa-preview-ubicacion" class="mt-1 text-sm font-semibold text-on-surface break-words">Av. Industrial 420, Callao</p>
+          </div>
+          <div class="empresa-profile-fact min-w-0 rounded-lg border border-border-subtle bg-surface-bg/40 p-4">
+            <p class="text-xs font-semibold uppercase tracking-wide text-text-secondary">Sitio web</p>
+            <p id="empresa-preview-web" class="mt-1 text-sm font-semibold text-on-surface break-all">www.industriasacero.pe</p>
+          </div>
+        </div>
+
+        <div class="mt-5 min-w-0">
+          <p class="text-xs font-semibold uppercase tracking-wide text-text-secondary">Descripcion publica</p>
+          <p id="empresa-preview-descripcion" class="mt-2 text-sm leading-relaxed text-text-secondary break-words">
+            Empresa lider en fabricacion de estructuras metalicas y componentes industriales con mas de 25 anos de experiencia en el mercado peruano. Aliada estrategica de FIIS desde 2018.
+          </p>
+        </div>
+
+        <div class="empresa-profile-links mt-5 flex flex-wrap gap-2">
+          <a id="empresa-link-web" href="https://www.industriasacero.pe" target="_blank" rel="noopener" class="rounded-full bg-primary/10 px-3 py-1.5 text-xs font-semibold text-primary hover:bg-primary/15">Sitio web</a>
+          <a id="empresa-link-linkedin" href="https://linkedin.com/company/industrias-acero" target="_blank" rel="noopener" class="rounded-full bg-primary/10 px-3 py-1.5 text-xs font-semibold text-primary hover:bg-primary/15">LinkedIn</a>
+          <a id="empresa-link-social" href="https://facebook.com/industriasacero" target="_blank" rel="noopener" class="rounded-full bg-primary/10 px-3 py-1.5 text-xs font-semibold text-primary hover:bg-primary/15">Redes sociales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="empresa-profile-notice w-full rounded-xl border border-warning/30 bg-warning/5 p-4">
+    <div class="flex flex-col gap-1 sm:flex-row sm:items-start sm:gap-3">
+      <span class="shrink-0 rounded-full bg-warning/15 px-2 py-1 text-xs font-bold text-warning">Aviso</span>
+      <div class="min-w-0">
+        <p class="text-sm font-bold text-on-surface">Cambios sujetos a revision</p>
+        <p class="mt-1 text-xs leading-relaxed text-text-secondary">
+          Las plataformas oficiales se actualizan en esta maqueta al guardar. Otros cambios del perfil representan una solicitud de revision institucional.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <form id="empresa-profile-form" class="empresa-profile-form w-full overflow-hidden rounded-xl border border-border-subtle bg-white shadow-sm">
+    <div class="border-b border-border-subtle px-5 py-4">
+      <h2 class="text-base font-bold text-on-surface">Editar informacion</h2>
+      <p class="mt-1 text-xs text-text-secondary">Gestiona los datos publicos y las plataformas oficiales de tu empresa.</p>
+    </div>
+
+    <div class="empresa-profile-form-grid grid grid-cols-1 gap-5 p-5 md:grid-cols-2">
+      <div class="min-w-0 space-y-1.5">
+        <label class="block text-sm font-semibold text-on-surface" for="empresa-razon">Razon social</label>
+        <input id="empresa-razon" type="text" value="Industrias Acero SAC" class="w-full rounded-lg border border-border-subtle bg-surface-bg/30 px-3.5 py-2.5 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20">
+      </div>
+
+      <div class="min-w-0 space-y-1.5">
+        <label class="block text-sm font-semibold text-on-surface" for="empresa-ruc">RUC</label>
+        <input id="empresa-ruc" type="text" value="20567890123" class="w-full rounded-lg border border-border-subtle bg-surface-bg/30 px-3.5 py-2.5 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20">
+      </div>
+
+      <div class="min-w-0 space-y-1.5">
+        <label class="block text-sm font-semibold text-on-surface" for="empresa-rubro">Rubro</label>
+        <select id="empresa-rubro" class="w-full rounded-lg border border-border-subtle bg-surface-bg/30 px-3.5 py-2.5 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20">
+          <option>Metalmecanica / Manufactura</option>
+          <option>Tecnologia / Software</option>
+          <option>Consultoria / Servicios</option>
+          <option>Mineria / Energia</option>
+          <option>Banca / Finanzas</option>
+        </select>
+      </div>
+
+      <div class="min-w-0 space-y-1.5">
+        <label class="block text-sm font-semibold text-on-surface" for="empresa-web">Sitio web</label>
+        <input id="empresa-web" type="url" value="https://www.industriasacero.pe" class="w-full rounded-lg border border-border-subtle bg-surface-bg/30 px-3.5 py-2.5 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20">
+      </div>
+
+      <div class="min-w-0 space-y-1.5">
+        <label class="block text-sm font-semibold text-on-surface" for="empresa-ubicacion">Ubicacion</label>
+        <input id="empresa-ubicacion" type="text" value="Av. Industrial 420, Callao" class="w-full rounded-lg border border-border-subtle bg-surface-bg/30 px-3.5 py-2.5 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20">
+      </div>
+
+      <div class="min-w-0 space-y-1.5">
+        <label class="block text-sm font-semibold text-on-surface" for="empresa-telefono">Telefono de contacto</label>
+        <input id="empresa-telefono" type="text" value="+51 1 555 6789" class="w-full rounded-lg border border-border-subtle bg-surface-bg/30 px-3.5 py-2.5 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20">
+      </div>
+
+      <div class="min-w-0 space-y-1.5 md:col-span-2">
+        <label class="block text-sm font-semibold text-on-surface" for="empresa-descripcion">Descripcion</label>
+        <textarea id="empresa-descripcion" rows="4" class="w-full resize-y rounded-lg border border-border-subtle bg-surface-bg/30 px-3.5 py-2.5 text-sm leading-relaxed focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20">Empresa lider en fabricacion de estructuras metalicas y componentes industriales con mas de 25 anos de experiencia en el mercado peruano. Aliada estrategica de FIIS desde 2018.</textarea>
+      </div>
+
+      <div class="min-w-0 space-y-1.5">
+        <label class="block text-sm font-semibold text-on-surface" for="empresa-linkedin">Enlace LinkedIn</label>
+        <input id="empresa-linkedin" type="url" value="https://linkedin.com/company/industrias-acero" class="w-full rounded-lg border border-border-subtle bg-surface-bg/30 px-3.5 py-2.5 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20">
+      </div>
+
+      <div class="min-w-0 space-y-1.5">
+        <label class="block text-sm font-semibold text-on-surface" for="empresa-red-social">Red social principal</label>
+        <input id="empresa-red-social" type="url" value="https://facebook.com/industriasacero" placeholder="https://facebook.com/tu-empresa" class="w-full rounded-lg border border-border-subtle bg-surface-bg/30 px-3.5 py-2.5 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20">
+      </div>
+
+      <div class="min-w-0 space-y-1.5">
+        <label class="block text-sm font-semibold text-on-surface">Actualizar logo</label>
+        <div class="flex flex-wrap items-center gap-3">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-border-subtle bg-surface-bg text-sm font-bold text-primary">IA</div>
+          <button type="button" class="rounded-lg border border-border-subtle px-4 py-2 text-sm font-semibold text-on-surface-variant transition-all hover:bg-surface-container-low">Cambiar logo</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="empresa-profile-form-actions flex flex-col-reverse gap-3 border-t border-border-subtle bg-surface-bg/20 px-5 py-4 sm:flex-row sm:justify-end">
+      <button type="button" class="rounded-lg border border-border-subtle px-4 py-2 text-sm font-semibold text-text-secondary transition-all hover:bg-surface-container-low">Cancelar</button>
+      <button type="submit" class="rounded-lg bg-primary px-5 py-2 text-sm font-semibold text-on-primary shadow-sm transition-all hover:brightness-110">Solicitar actualizacion</button>
+    </div>
+  </form>
+
+  <div id="empresa-profile-modal" class="empresa-profile-modal fixed inset-0 z-[80] hidden items-center justify-center bg-black/45 p-4">
+    <div class="w-full max-w-md rounded-xl bg-white p-6 text-center shadow-xl">
+      <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-warning/10 text-2xl font-bold text-warning">!</div>
+      <h3 class="mt-4 text-lg font-bold text-on-surface">Solicitud enviada</h3>
+      <p class="mt-2 text-sm leading-relaxed text-text-secondary">Las plataformas quedaron actualizadas y visibles en la vista previa del perfil.</p>
+      <button id="empresa-profile-modal-close" type="button" class="mt-5 rounded-lg bg-primary px-5 py-2 text-sm font-semibold text-on-primary hover:brightness-110">Entendido</button>
+    </div>
+  </div>
 </div>
+
+<script>
+(function() {
+  var PROFILE_SLUG = 'industrias-acero';
+  var form = document.getElementById('empresa-profile-form');
+  var modal = document.getElementById('empresa-profile-modal');
+  var close = document.getElementById('empresa-profile-modal-close');
+  var topSave = document.getElementById('empresa-profile-save-top');
+  if (!form || !modal || !close) return;
+
+  function normalizeUrl(value) {
+    var url = String(value || '').trim();
+    if (!url) return '';
+    return /^https?:\/\//i.test(url) ? url : 'https://' + url;
+  }
+
+  function displayUrl(value) {
+    return String(value || '').replace(/^https?:\/\//i, '').replace(/\/$/, '') || 'No publicado';
+  }
+
+  function setText(id, value) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = value;
+  }
+
+  function setPlatformLink(id, value) {
+    var el = document.getElementById(id);
+    var url = normalizeUrl(value);
+    if (!el) return;
+    if (url) {
+      el.href = url;
+      el.classList.remove('opacity-50', 'pointer-events-none');
+      el.setAttribute('aria-disabled', 'false');
+    } else {
+      el.href = '#';
+      el.classList.add('opacity-50', 'pointer-events-none');
+      el.setAttribute('aria-disabled', 'true');
+    }
+  }
+
+  function readForm() {
+    return {
+      nombre: document.getElementById('empresa-razon').value.trim(),
+      ruc: document.getElementById('empresa-ruc').value.trim(),
+      rubro: document.getElementById('empresa-rubro').value.trim(),
+      sitioWeb: normalizeUrl(document.getElementById('empresa-web').value),
+      ubicacion: document.getElementById('empresa-ubicacion').value.trim(),
+      telefono: document.getElementById('empresa-telefono').value.trim(),
+      descripcion: document.getElementById('empresa-descripcion').value.trim(),
+      linkedin: normalizeUrl(document.getElementById('empresa-linkedin').value),
+      redSocial: normalizeUrl(document.getElementById('empresa-red-social').value),
+    };
+  }
+
+  function fillForm(profile) {
+    if (!profile) return;
+    document.getElementById('empresa-razon').value = profile.nombre || '';
+    document.getElementById('empresa-ruc').value = profile.ruc || '';
+    document.getElementById('empresa-rubro').value = profile.rubro || '';
+    document.getElementById('empresa-web').value = profile.sitioWeb || '';
+    document.getElementById('empresa-ubicacion').value = profile.ubicacion || '';
+    document.getElementById('empresa-telefono').value = profile.telefono || '';
+    document.getElementById('empresa-descripcion').value = profile.descripcion || '';
+    document.getElementById('empresa-linkedin').value = profile.linkedin || '';
+    document.getElementById('empresa-red-social').value = profile.redSocial || '';
+  }
+
+  function renderPreview(profile) {
+    setText('empresa-preview-nombre', profile.nombre || 'Empresa');
+    setText('empresa-preview-ruc', 'RUC ' + (profile.ruc || '-'));
+    setText('empresa-preview-rubro', profile.rubro || '-');
+    setText('empresa-preview-ubicacion', profile.ubicacion || '-');
+    setText('empresa-preview-web', displayUrl(profile.sitioWeb));
+    setText('empresa-preview-descripcion', profile.descripcion || '-');
+    setPlatformLink('empresa-link-web', profile.sitioWeb);
+    setPlatformLink('empresa-link-linkedin', profile.linkedin);
+    setPlatformLink('empresa-link-social', profile.redSocial);
+  }
+
+  var initialProfile = null;
+  if (typeof Store !== 'undefined' && typeof Store.getEmpresaProfile === 'function') {
+    initialProfile = Store.getEmpresaProfile(PROFILE_SLUG);
+  }
+  if (initialProfile) {
+    fillForm(initialProfile);
+    renderPreview(initialProfile);
+  }
+
+  ['empresa-web', 'empresa-linkedin', 'empresa-red-social'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) {
+      el.addEventListener('blur', function() {
+        el.value = normalizeUrl(el.value);
+      });
+    }
+  });
+
+  if (topSave) {
+    topSave.addEventListener('click', function() {
+      if (typeof form.requestSubmit === 'function') form.requestSubmit();
+      else form.dispatchEvent(new Event('submit', { cancelable: true }));
+    });
+  }
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    var profile = readForm();
+    if (typeof Store !== 'undefined' && typeof Store.updateEmpresaProfile === 'function') {
+      profile = Store.updateEmpresaProfile(PROFILE_SLUG, profile);
+    }
+    fillForm(profile);
+    renderPreview(profile);
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  });
+
+  close.addEventListener('click', function() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  });
+})();
+</script>

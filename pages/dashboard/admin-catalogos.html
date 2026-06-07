@@ -1,0 +1,265 @@
+<div class="page-enter space-y-8">
+
+  <!-- Header -->
+  <div>
+    <h2 class="text-2xl font-bold text-on-surface">Catálogos del sistema</h2>
+    <p class="text-text-secondary text-sm mt-0.5">Gestiona los valores disponibles en los formularios de empresas. Los cambios se aplican de inmediato.</p>
+  </div>
+
+  <div class="flex items-start gap-3 bg-primary/5 border border-primary/20 rounded-lg px-4 py-3">
+    <span class="material-symbols-outlined text-primary text-base shrink-0 mt-0.5">info</span>
+    <p class="text-xs text-text-secondary">Eliminar un ítem no afecta los registros existentes que ya lo usaron. Solo dejará de aparecer como opción en nuevas solicitudes.</p>
+  </div>
+
+  <!-- Grid de catálogos -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+    <!-- Tipos de Convenio -->
+    <div class="bg-white rounded-xl border border-border-subtle shadow-sm overflow-hidden flex flex-col">
+      <div class="px-5 py-4 border-b border-border-subtle bg-surface-container-low/40">
+        <div class="flex items-center gap-2.5">
+          <span class="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-sm">article</span>
+          </span>
+          <div>
+            <h3 class="text-sm font-bold text-on-surface">Tipos de Convenio</h3>
+            <p class="text-xs text-text-secondary">Usado en: Solicitar Convenio</p>
+          </div>
+        </div>
+      </div>
+      <ul id="list-tiposConvenio" class="flex-1 divide-y divide-border-subtle/60 px-2 py-2 min-h-[120px]"></ul>
+      <div class="px-4 py-3 border-t border-border-subtle bg-surface-bg/30">
+        <div class="flex gap-2">
+          <input id="input-tiposConvenio" type="text" placeholder="Ej: Específico de Investigación" maxlength="60"
+            class="flex-1 px-3 py-2 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+          <button id="btn-add-tiposConvenio" class="px-3 py-2 bg-primary text-on-primary rounded-lg text-sm font-semibold hover:brightness-110 transition-all active:scale-95 shrink-0">
+            <span class="material-symbols-outlined text-sm">add</span>
+          </button>
+        </div>
+        <p id="error-tiposConvenio" class="hidden text-xs text-danger mt-1.5"></p>
+      </div>
+    </div>
+
+    <!-- Tipos de Evento -->
+    <div class="bg-white rounded-xl border border-border-subtle shadow-sm overflow-hidden flex flex-col">
+      <div class="px-5 py-4 border-b border-border-subtle bg-surface-container-low/40">
+        <div class="flex items-center gap-2.5">
+          <span class="w-8 h-8 rounded-lg bg-tertiary/10 text-tertiary flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-sm">event_note</span>
+          </span>
+          <div>
+            <h3 class="text-sm font-bold text-on-surface">Tipos de Evento</h3>
+            <p class="text-xs text-text-secondary">Usado en: Proponer Evento</p>
+          </div>
+        </div>
+      </div>
+      <ul id="list-tiposEvento" class="flex-1 divide-y divide-border-subtle/60 px-2 py-2 min-h-[120px]"></ul>
+      <div class="px-4 py-3 border-t border-border-subtle bg-surface-bg/30 space-y-2">
+        <div class="flex gap-2">
+          <input id="input-tiposEvento-label" type="text" placeholder="Nombre del tipo" maxlength="60"
+            class="flex-1 px-3 py-2 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+        </div>
+        <div class="flex gap-2">
+          <input id="input-tiposEvento-value" type="text" placeholder="Clave (sin espacios, ej: panel)" maxlength="30"
+            class="flex-1 px-3 py-2 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary font-mono">
+          <button id="btn-add-tiposEvento" class="px-3 py-2 bg-primary text-on-primary rounded-lg text-sm font-semibold hover:brightness-110 transition-all active:scale-95 shrink-0">
+            <span class="material-symbols-outlined text-sm">add</span>
+          </button>
+        </div>
+        <p id="error-tiposEvento" class="hidden text-xs text-danger"></p>
+      </div>
+    </div>
+
+    <!-- Áreas de Conocimiento -->
+    <div class="bg-white rounded-xl border border-border-subtle shadow-sm overflow-hidden flex flex-col">
+      <div class="px-5 py-4 border-b border-border-subtle bg-surface-container-low/40">
+        <div class="flex items-center gap-2.5">
+          <span class="w-8 h-8 rounded-lg bg-success/10 text-success flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-sm">school</span>
+          </span>
+          <div>
+            <h3 class="text-sm font-bold text-on-surface">Áreas de Conocimiento</h3>
+            <p class="text-xs text-text-secondary">Usado en: Solicitar Proyecto</p>
+          </div>
+        </div>
+      </div>
+      <ul id="list-areasConocimiento" class="flex-1 divide-y divide-border-subtle/60 px-2 py-2 min-h-[120px]"></ul>
+      <div class="px-4 py-3 border-t border-border-subtle bg-surface-bg/30">
+        <div class="flex gap-2">
+          <input id="input-areasConocimiento" type="text" placeholder="Ej: Robótica e Industria 4.0" maxlength="60"
+            class="flex-1 px-3 py-2 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+          <button id="btn-add-areasConocimiento" class="px-3 py-2 bg-primary text-on-primary rounded-lg text-sm font-semibold hover:brightness-110 transition-all active:scale-95 shrink-0">
+            <span class="material-symbols-outlined text-sm">add</span>
+          </button>
+        </div>
+        <p id="error-areasConocimiento" class="hidden text-xs text-danger mt-1.5"></p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Modal confirmación eliminar -->
+  <div id="cat-delete-modal" class="hidden fixed inset-0 z-[80] bg-black/40 px-4 py-6 flex items-center justify-center">
+    <div class="bg-white w-full max-w-sm rounded-xl shadow-2xl border border-border-subtle overflow-hidden">
+      <div class="px-5 py-4 border-b border-border-subtle flex items-center gap-3">
+        <span class="material-symbols-outlined text-error">delete_forever</span>
+        <h3 class="text-base font-bold text-on-surface">Eliminar ítem</h3>
+      </div>
+      <div class="p-5">
+        <p class="text-sm text-text-secondary">¿Seguro que quieres eliminar <strong id="cat-delete-label" class="text-on-surface"></strong> del catálogo? Los registros existentes que lo usaron no se verán afectados.</p>
+      </div>
+      <div class="px-5 py-4 border-t border-border-subtle flex justify-end gap-3">
+        <button id="cat-delete-cancel" class="px-4 py-2 text-sm font-semibold border border-border-subtle rounded-lg text-text-secondary hover:bg-surface-container-low transition-all">Cancelar</button>
+        <button id="cat-delete-confirm" class="px-4 py-2 text-sm font-semibold bg-error text-white rounded-lg hover:brightness-110 transition-all">Eliminar</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function () {
+  function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  function toSlug(s) {
+    return s.toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '');
+  }
+
+  // ---------- Render listas ----------
+
+  function renderList(catalogoKey) {
+    var cat = Store.getCatalogos();
+    var ul = document.getElementById('list-' + catalogoKey);
+    if (!ul) return;
+    var items = cat[catalogoKey] || [];
+
+    if (items.length === 0) {
+      ul.innerHTML = '<li class="px-3 py-4 text-center text-xs text-text-secondary">Sin ítems. Agrega el primero.</li>';
+      return;
+    }
+
+    if (catalogoKey === 'tiposEvento') {
+      ul.innerHTML = items.map(function (t) {
+        return '<li class="flex items-center justify-between gap-2 px-3 py-2.5 hover:bg-surface-container-low/50 rounded-lg transition-all group">'
+          + '<div><p class="text-sm font-medium text-on-surface">' + esc(t.label) + '</p>'
+          + '<p class="text-[10px] font-mono text-text-secondary">' + esc(t.value) + '</p></div>'
+          + '<button class="cat-delete-btn opacity-0 group-hover:opacity-100 p-1 rounded-lg hover:bg-error/10 text-error transition-all" data-catalogo="tiposEvento" data-identifier="' + esc(t.value) + '" data-label="' + esc(t.label) + '">'
+          + '<span class="material-symbols-outlined text-sm">close</span></button>'
+          + '</li>';
+      }).join('');
+    } else {
+      ul.innerHTML = items.map(function (item) {
+        return '<li class="flex items-center justify-between gap-2 px-3 py-2.5 hover:bg-surface-container-low/50 rounded-lg transition-all group">'
+          + '<span class="text-sm font-medium text-on-surface">' + esc(item) + '</span>'
+          + '<button class="cat-delete-btn opacity-0 group-hover:opacity-100 p-1 rounded-lg hover:bg-error/10 text-error transition-all" data-catalogo="' + esc(catalogoKey) + '" data-identifier="' + esc(item) + '" data-label="' + esc(item) + '">'
+          + '<span class="material-symbols-outlined text-sm">close</span></button>'
+          + '</li>';
+      }).join('');
+    }
+
+    ul.querySelectorAll('.cat-delete-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        openDeleteModal(this.dataset.catalogo, this.dataset.identifier, this.dataset.label);
+      });
+    });
+  }
+
+  function renderAll() {
+    renderList('tiposConvenio');
+    renderList('tiposEvento');
+    renderList('areasConocimiento');
+  }
+
+  // ---------- Agregar ítems ----------
+
+  function setError(key, msg) {
+    var el = document.getElementById('error-' + key);
+    if (!el) return;
+    el.textContent = msg || '';
+    el.classList.toggle('hidden', !msg);
+  }
+
+  // Tipos de Convenio
+  document.getElementById('btn-add-tiposConvenio').addEventListener('click', function () {
+    var val = document.getElementById('input-tiposConvenio').value.trim();
+    if (!val) { setError('tiposConvenio', 'Escribe el nombre del tipo.'); return; }
+    var ok = Store.addCatalogoItem('tiposConvenio', val);
+    if (!ok) { setError('tiposConvenio', 'Ese tipo ya existe en el catálogo.'); return; }
+    setError('tiposConvenio', '');
+    document.getElementById('input-tiposConvenio').value = '';
+    renderList('tiposConvenio');
+  });
+  document.getElementById('input-tiposConvenio').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') document.getElementById('btn-add-tiposConvenio').click();
+  });
+
+  // Tipos de Evento — auto-rellenar clave al escribir label
+  document.getElementById('input-tiposEvento-label').addEventListener('input', function () {
+    var valueInput = document.getElementById('input-tiposEvento-value');
+    if (!valueInput._edited) valueInput.value = toSlug(this.value);
+  });
+  document.getElementById('input-tiposEvento-value').addEventListener('input', function () {
+    this._edited = this.value.length > 0;
+  });
+
+  document.getElementById('btn-add-tiposEvento').addEventListener('click', function () {
+    var label = document.getElementById('input-tiposEvento-label').value.trim();
+    var value = document.getElementById('input-tiposEvento-value').value.trim().replace(/\s+/g, '-').toLowerCase();
+    if (!label) { setError('tiposEvento', 'Escribe el nombre del tipo de evento.'); return; }
+    if (!value) { setError('tiposEvento', 'La clave no puede estar vacía.'); return; }
+    if (!/^[a-z0-9-]+$/.test(value)) { setError('tiposEvento', 'La clave solo puede tener letras, números y guiones.'); return; }
+    var ok = Store.addCatalogoItem('tiposEvento', { value: value, label: label });
+    if (!ok) { setError('tiposEvento', 'Ya existe un tipo con esa clave.'); return; }
+    setError('tiposEvento', '');
+    document.getElementById('input-tiposEvento-label').value = '';
+    var vInput = document.getElementById('input-tiposEvento-value');
+    vInput.value = '';
+    vInput._edited = false;
+    renderList('tiposEvento');
+  });
+  document.getElementById('input-tiposEvento-value').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') document.getElementById('btn-add-tiposEvento').click();
+  });
+
+  // Áreas de Conocimiento
+  document.getElementById('btn-add-areasConocimiento').addEventListener('click', function () {
+    var val = document.getElementById('input-areasConocimiento').value.trim();
+    if (!val) { setError('areasConocimiento', 'Escribe el nombre del área.'); return; }
+    var ok = Store.addCatalogoItem('areasConocimiento', val);
+    if (!ok) { setError('areasConocimiento', 'Esa área ya existe en el catálogo.'); return; }
+    setError('areasConocimiento', '');
+    document.getElementById('input-areasConocimiento').value = '';
+    renderList('areasConocimiento');
+  });
+  document.getElementById('input-areasConocimiento').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') document.getElementById('btn-add-areasConocimiento').click();
+  });
+
+  // ---------- Eliminar con modal ----------
+  var pendingDelete = null;
+
+  function openDeleteModal(catalogo, identifier, label) {
+    pendingDelete = { catalogo: catalogo, identifier: identifier };
+    document.getElementById('cat-delete-label').textContent = '"' + label + '"';
+    document.getElementById('cat-delete-modal').classList.remove('hidden');
+  }
+
+  document.getElementById('cat-delete-cancel').addEventListener('click', function () {
+    document.getElementById('cat-delete-modal').classList.add('hidden');
+    pendingDelete = null;
+  });
+
+  document.getElementById('cat-delete-confirm').addEventListener('click', function () {
+    if (!pendingDelete) return;
+    Store.removeCatalogoItem(pendingDelete.catalogo, pendingDelete.identifier);
+    document.getElementById('cat-delete-modal').classList.add('hidden');
+    pendingDelete = null;
+    renderAll();
+  });
+
+  renderAll();
+})();
+</script>

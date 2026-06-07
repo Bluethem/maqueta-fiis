@@ -27,12 +27,6 @@
           <label class="text-sm font-semibold text-on-surface">Tipo de evento</label>
           <select id="tipo-input" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
             <option value="">Seleccionar tipo</option>
-            <option value="charla">Charla técnica</option>
-            <option value="taller">Taller / Workshop</option>
-            <option value="webinar">Webinar</option>
-            <option value="feria">Feria de reclutamiento</option>
-            <option value="conferencia">Conferencia</option>
-            <option value="visita">Visita industrial</option>
           </select>
         </div>
 
@@ -153,6 +147,19 @@
 
 <script>
 (function () {
+  // Populate tipo de evento from catalog
+  (function () {
+    var sel = document.getElementById('tipo-input');
+    if (!sel) return;
+    var tipos = (Store.getCatalogos().tiposEvento || []);
+    tipos.forEach(function (t) {
+      var opt = document.createElement('option');
+      opt.value = t.value;
+      opt.textContent = t.label;
+      sel.appendChild(opt);
+    });
+  })();
+
   // ── Restricciones de fecha ─────────────────────────────────────────────
   var today = new Date();
   today.setHours(0, 0, 0, 0);

@@ -56,6 +56,199 @@ body { font-family: 'Inter', sans-serif; background-color: #E8E7EA; color: #1c1b
   color: #711610;
   font-weight: 700;
 }
+#sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  width: 240px;
+  height: 100vh;
+  flex-direction: column;
+  border-right: 1px solid #CDCCCF;
+  background: #fff;
+  transform: translateX(-100%);
+  transition: transform 0.25s ease;
+}
+#sidebar nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 12px;
+}
+#sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 10px 16px;
+  border-radius: 8px;
+  color: #444652;
+  text-decoration: none;
+}
+#sidebar .material-symbols-outlined {
+  width: 24px;
+  min-width: 24px;
+  overflow: hidden;
+}
+#main-area {
+  display: flex;
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 100vh;
+  flex-direction: column;
+}
+#main-area > header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  min-height: 64px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #CDCCCF;
+  background: #fff;
+  padding: 0 24px;
+}
+#main-area > main {
+  width: 100%;
+  max-width: 1200px;
+  min-width: 0;
+  flex: 1 1 auto;
+  margin: 0 auto;
+  padding: 16px;
+}
+@media (min-width: 768px) {
+  #main-area > main { padding: 24px; }
+}
+@media (min-width: 1024px) {
+  #sidebar { transform: translateX(0); }
+  #main-area { margin-left: 240px; }
+  #main-area > main { padding: 32px; }
+}
+.empresa-profile-page,
+.empresa-profile-page * {
+  box-sizing: border-box;
+}
+.empresa-profile-page {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.empresa-profile-page p,
+.empresa-profile-page h1,
+.empresa-profile-page h2,
+.empresa-profile-page h3 {
+  margin: 0;
+}
+.empresa-profile-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.empresa-profile-actions,
+.empresa-profile-links,
+.empresa-profile-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.empresa-profile-summary,
+.empresa-profile-notice,
+.empresa-profile-form {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #CDCCCF;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+.empresa-profile-summary-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.empresa-profile-brand,
+.empresa-profile-content,
+.empresa-profile-form > div,
+.empresa-profile-notice {
+  padding: 24px;
+}
+.empresa-profile-brand {
+  border-bottom: 1px solid #CDCCCF;
+  background: #F3F2F5;
+}
+.empresa-profile-facts,
+.empresa-profile-form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+.empresa-profile-fact {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #CDCCCF;
+  border-radius: 8px;
+  background: rgba(232,231,234,0.35);
+}
+.empresa-profile-page input,
+.empresa-profile-page select,
+.empresa-profile-page textarea {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #CDCCCF;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font: inherit;
+}
+.empresa-profile-page button,
+.empresa-profile-page a {
+  overflow-wrap: anywhere;
+}
+.empresa-profile-links a[aria-disabled="true"] {
+  opacity: 0.55;
+  pointer-events: none;
+}
+.empresa-profile-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.45);
+  padding: 16px;
+}
+.empresa-profile-modal.hidden {
+  display: none;
+}
+.empresa-profile-modal.flex {
+  display: flex;
+}
+@media (min-width: 768px) {
+  .empresa-profile-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .empresa-profile-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .empresa-profile-summary-grid {
+    grid-template-columns: 220px minmax(0, 1fr);
+  }
+  .empresa-profile-brand {
+    border-right: 1px solid #CDCCCF;
+    border-bottom: 0;
+  }
+  .empresa-profile-facts {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .empresa-profile-form-actions {
+    justify-content: flex-end;
+  }
+}
 .nav-link {
   display: flex;
   align-items: center;

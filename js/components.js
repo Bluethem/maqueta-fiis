@@ -13,9 +13,9 @@ const Components = {
       <div class="flex min-h-screen relative">
         <div class="fixed inset-0 bg-black/30 z-40 hidden lg:hidden" id="sidebar-overlay"></div>
         ${this.sidebar(session)}
-        <div class="flex-1 ml-0 lg:ml-[240px] flex flex-col min-h-screen" id="main-area">
+        <div class="flex-1 min-w-0 ml-0 lg:ml-[240px] flex flex-col min-h-screen" id="main-area">
           ${this.topbar(session)}
-          <main class="flex-1 p-4 md:p-6 lg:p-8 max-w-[1200px] w-full mx-auto">
+          <main class="flex-1 w-full min-w-0 p-4 md:p-6 lg:p-8 max-w-[1200px] mx-auto">
             ${content}
           </main>
           ${this.footer()}

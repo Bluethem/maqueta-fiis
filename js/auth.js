@@ -70,6 +70,7 @@ const ROLES = {
       { icon: 'business', label: 'Perfil Empresarial', route: '/dashboard/empresa/perfil' },
       { icon: 'work', label: 'Mis Vacantes', route: '/dashboard/empresa/vacantes' },
       { icon: 'event_note', label: 'Proponer Evento', route: '/dashboard/empresa/evento' },
+      { icon: 'handshake', label: 'Mis Convenios', route: '/dashboard/empresa/convenios' },
       { icon: 'assignment', label: 'Solicitar Proyecto', route: '/dashboard/empresa/proyecto' },
       { icon: 'notifications', label: 'Notificaciones', route: '/dashboard/empresa/notificaciones' },
     ]
@@ -96,8 +97,11 @@ const ROLES = {
       { icon: 'event', label: 'Gestión de Calendario', route: '/calendar' },
       { icon: 'work', label: 'Moderación de Vacantes', route: '/dashboard/admin/vacantes' },
       { icon: 'event_note', label: 'Moderación de Eventos', route: '/dashboard/admin/eventos' },
+      { icon: 'handshake', label: 'Gestión de Convenios', route: '/dashboard/admin/convenios' },
+      { icon: 'science', label: 'Gestión de Proyectos', route: '/dashboard/admin/proyectos' },
       { icon: 'analytics', label: 'Reportes Globales', route: '/dashboard/admin/reportes' },
       { icon: 'settings', label: 'Configuración', route: '/dashboard/admin/configuracion' },
+      { icon: 'list', label: 'Catálogos', route: '/dashboard/admin/catalogos' },
     ]
   }
 };

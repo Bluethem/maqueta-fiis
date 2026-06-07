@@ -1,0 +1,303 @@
+<div class="page-enter space-y-6">
+
+  <!-- Header -->
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div>
+      <h2 class="text-2xl font-bold text-on-surface">Gestión de Convenios</h2>
+      <p class="text-text-secondary text-sm mt-0.5">Revisa y aprueba las solicitudes de convenio de empresas aliadas</p>
+    </div>
+    <a href="#/empresas/convenios" class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold border border-border-subtle rounded-lg text-text-secondary hover:text-primary hover:border-primary transition-all">
+      <span class="material-symbols-outlined text-sm">public</span>
+      Ver publicación
+    </a>
+  </div>
+
+  <div class="flex items-start gap-3 bg-warning/5 border border-warning/20 rounded-lg px-4 py-3">
+    <span class="material-symbols-outlined text-warning text-base shrink-0 mt-0.5">info</span>
+    <p class="text-xs text-text-secondary">Solo los convenios <strong>aprobados</strong> pasan a estado <strong>Vigente</strong> y se muestran en la sección pública de Empresas. Los rechazados quedan en el historial interno para seguimiento.</p>
+  </div>
+
+  <!-- Filtros -->
+  <div class="flex flex-wrap items-center gap-3">
+    <button class="admin-conv-filter px-3.5 py-1.5 text-sm font-semibold bg-primary text-on-primary rounded-lg" data-filter="todos">Todos</button>
+    <button class="admin-conv-filter px-3.5 py-1.5 text-sm font-medium text-text-secondary border border-border-subtle rounded-lg hover:bg-surface-container-low transition-all" data-filter="pendiente">Pendientes</button>
+    <button class="admin-conv-filter px-3.5 py-1.5 text-sm font-medium text-text-secondary border border-border-subtle rounded-lg hover:bg-surface-container-low transition-all" data-filter="vigente">Vigentes</button>
+    <button class="admin-conv-filter px-3.5 py-1.5 text-sm font-medium text-text-secondary border border-border-subtle rounded-lg hover:bg-surface-container-low transition-all" data-filter="vencido">Vencidos</button>
+    <button class="admin-conv-filter px-3.5 py-1.5 text-sm font-medium text-text-secondary border border-border-subtle rounded-lg hover:bg-surface-container-low transition-all" data-filter="rechazado">Rechazados</button>
+    <div class="ml-auto relative">
+      <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary text-sm pointer-events-none">search</span>
+      <input id="admin-conv-search" type="text" placeholder="Buscar empresa o tipo..." class="pl-9 pr-3 py-1.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary w-60">
+    </div>
+  </div>
+
+  <!-- Tabla -->
+  <div class="bg-white rounded-xl border border-border-subtle shadow-sm overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-surface-bg/50 border-b border-border-subtle">
+            <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Empresa</th>
+            <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Convenio</th>
+            <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Modalidades</th>
+            <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Vigencia propuesta</th>
+            <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Estado</th>
+            <th class="text-right px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="admin-conv-tbody" class="divide-y divide-border-subtle/60"></tbody>
+      </table>
+    </div>
+    <div class="px-5 py-3 border-t border-border-subtle bg-surface-container-low/20 flex flex-wrap items-center justify-between gap-3">
+      <p id="admin-conv-count" class="text-xs text-text-secondary">—</p>
+      <button id="admin-conv-refresh" class="px-3 py-1.5 text-xs border border-border-subtle rounded-lg text-text-secondary hover:bg-surface-container-low transition-all">Actualizar</button>
+    </div>
+  </div>
+
+  <!-- Modal de acción -->
+  <div id="conv-action-modal" class="hidden fixed inset-0 z-[80] bg-black/40 px-4 py-6 flex items-center justify-center">
+    <div class="bg-white w-full max-w-lg rounded-xl shadow-2xl border border-border-subtle overflow-hidden">
+      <div class="px-5 py-4 border-b border-border-subtle flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span id="conv-modal-icon" class="material-symbols-outlined text-primary">rule</span>
+          <h3 id="conv-modal-title" class="text-base font-bold text-on-surface">Confirmar acción</h3>
+        </div>
+        <button type="button" id="conv-modal-close" class="p-1.5 rounded-lg hover:bg-surface-container-low transition-all">
+          <span class="material-symbols-outlined text-text-secondary text-base">close</span>
+        </button>
+      </div>
+      <div class="p-5 space-y-4">
+        <div class="rounded-lg bg-surface-container-low/60 border border-border-subtle px-4 py-3">
+          <p id="conv-modal-empresa" class="text-xs text-text-secondary"></p>
+          <p id="conv-modal-desc" class="text-sm font-bold text-on-surface mt-0.5"></p>
+        </div>
+        <p id="conv-modal-message" class="text-sm text-text-secondary leading-relaxed"></p>
+        <div id="conv-reject-field" class="hidden space-y-1.5">
+          <label class="text-sm font-semibold text-on-surface" for="conv-reject-note">Motivo del rechazo</label>
+          <textarea id="conv-reject-note" rows="3" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary resize-none" placeholder="Ej: La empresa no cumple los requisitos mínimos para suscribir un convenio marco..."></textarea>
+          <p id="conv-reject-error" class="hidden text-xs text-error">Ingresa el motivo del rechazo para continuar.</p>
+        </div>
+      </div>
+      <div class="px-5 py-4 border-t border-border-subtle bg-surface-bg/30 flex justify-end gap-3">
+        <button type="button" id="conv-modal-cancel" class="px-4 py-2 text-sm font-semibold border border-border-subtle rounded-lg text-text-secondary hover:bg-surface-container-low transition-all">Cancelar</button>
+        <button type="button" id="conv-modal-confirm" class="px-5 py-2 text-sm font-semibold bg-primary text-on-primary rounded-lg hover:brightness-110 transition-all">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de resultado -->
+  <div id="conv-result-modal" class="hidden fixed inset-0 z-[90] bg-black/40 px-4 py-6 flex items-center justify-center">
+    <div class="bg-white w-full max-w-md rounded-xl shadow-2xl border border-border-subtle overflow-hidden">
+      <div class="p-6 text-center">
+        <div id="conv-result-icon-wrap" class="w-14 h-14 rounded-full bg-success/10 text-success mx-auto flex items-center justify-center mb-4">
+          <span id="conv-result-icon" class="material-symbols-outlined text-3xl">check_circle</span>
+        </div>
+        <h3 id="conv-result-title" class="text-lg font-bold text-on-surface">Operación realizada</h3>
+        <p id="conv-result-body" class="text-sm text-text-secondary mt-2 leading-relaxed"></p>
+        <button type="button" id="conv-result-close" class="mt-5 px-4 py-2 text-sm font-semibold border border-border-subtle rounded-lg text-text-secondary hover:bg-surface-container-low transition-all">Entendido</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function () {
+  var MODALIDAD_LABELS = { practicas: 'Prácticas', empleos: 'Empleos', eventos: 'Charlas/Eventos', proyectos: 'Proyectos I+D' };
+  var ESTADO_CFG = {
+    vigente:   { cls: 'bg-success/10 text-success',  dot: 'bg-success',  label: 'Vigente'   },
+    pendiente: { cls: 'bg-warning/10 text-warning',  dot: 'bg-warning',  label: 'Pendiente' },
+    vencido:   { cls: 'bg-surface-container-high text-text-secondary', dot: 'bg-text-secondary', label: 'Vencido' },
+    rechazado: { cls: 'bg-error/10 text-error',      dot: 'bg-error',    label: 'Rechazado' },
+  };
+
+  var ACTION_CFG = {
+    approve: {
+      estado: 'vigente',
+      icon: 'check_circle', iconClass: 'text-success',
+      title: 'Aprobar convenio',
+      message: 'El convenio cambiará a estado Vigente. La empresa podrá publicar vacantes y eventos bajo este convenio.',
+      confirm: 'Aprobar convenio',
+      resultTitle: 'Convenio aprobado',
+      resultBody: 'El estado cambió a Vigente. La empresa ya puede operar bajo este convenio.',
+      resultIcon: 'check_circle', resultClass: 'bg-success/10 text-success',
+    },
+    reject: {
+      estado: 'rechazado',
+      icon: 'cancel', iconClass: 'text-error',
+      title: 'Rechazar convenio',
+      message: 'El convenio pasará a estado Rechazado. Se guardará el motivo para el historial interno.',
+      confirm: 'Rechazar',
+      resultTitle: 'Convenio rechazado',
+      resultBody: 'El estado cambió a Rechazado. El convenio no será formalizado.',
+      resultIcon: 'cancel', resultClass: 'bg-error/10 text-error',
+    },
+    expire: {
+      estado: 'vencido',
+      icon: 'event_busy', iconClass: 'text-text-secondary',
+      title: 'Marcar como vencido',
+      message: 'El convenio pasará a estado Vencido. Dejará de aparecer como activo en la vista pública.',
+      confirm: 'Marcar vencido',
+      resultTitle: 'Convenio vencido',
+      resultBody: 'El estado cambió a Vencido. El convenio ya no aparece como activo.',
+      resultIcon: 'event_busy', resultClass: 'bg-surface-container-high text-text-secondary',
+    },
+    reopen: {
+      estado: 'pendiente',
+      icon: 'refresh', iconClass: 'text-warning',
+      title: 'Reabrir solicitud',
+      message: 'El convenio volverá a estado Pendiente para revisarse nuevamente.',
+      confirm: 'Reabrir como pendiente',
+      resultTitle: 'Solicitud reabierta',
+      resultBody: 'El estado cambió a Pendiente. El convenio debe aprobarse nuevamente.',
+      resultIcon: 'refresh', resultClass: 'bg-warning/10 text-warning',
+    },
+  };
+
+  var activeFilter = 'todos';
+  var searchTerm = '';
+  var pendingAction = null;
+
+  function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  function fmtDate(d) {
+    if (!d) return '—';
+    try { return new Date(d + 'T00:00:00').toLocaleDateString('es-PE', { day: '2-digit', month: 'short', year: 'numeric' }); } catch (e) { return d; }
+  }
+
+  function actionBtns(c) {
+    var btns = [];
+    if (c.estado === 'pendiente') {
+      btns.push('<button class="admin-conv-action px-3 py-1.5 text-xs font-semibold bg-success/10 text-success rounded-lg hover:bg-success/20 transition-all" data-id="' + esc(c.id) + '" data-action="approve">Aprobar</button>');
+      btns.push('<button class="admin-conv-action px-3 py-1.5 text-xs font-semibold bg-error/10 text-error rounded-lg hover:bg-error/20 transition-all" data-id="' + esc(c.id) + '" data-action="reject">Rechazar</button>');
+    }
+    if (c.estado === 'vigente') {
+      btns.push('<button class="admin-conv-action px-3 py-1.5 text-xs font-semibold bg-surface-container-high text-text-secondary rounded-lg hover:bg-surface-container-highest transition-all" data-id="' + esc(c.id) + '" data-action="expire">Vencer</button>');
+    }
+    if (c.estado === 'rechazado' || c.estado === 'vencido') {
+      btns.push('<button class="admin-conv-action px-3 py-1.5 text-xs font-semibold bg-warning/10 text-warning rounded-lg hover:bg-warning/20 transition-all" data-id="' + esc(c.id) + '" data-action="reopen">Reabrir</button>');
+    }
+    return btns.length ? '<div class="flex gap-2 justify-end flex-wrap">' + btns.join('') + '</div>' : '<span class="text-xs text-text-secondary">—</span>';
+  }
+
+  function renderTable() {
+    var convenios = Store.getConvenios();
+    var tbody = document.getElementById('admin-conv-tbody');
+    var countEl = document.getElementById('admin-conv-count');
+    if (!tbody) return;
+    var filtered = convenios.filter(function (c) {
+      var matchFilter = activeFilter === 'todos' || c.estado === activeFilter;
+      var matchSearch = !searchTerm || c.empresa.toLowerCase().includes(searchTerm) || c.tipo.toLowerCase().includes(searchTerm) || c.id.toLowerCase().includes(searchTerm);
+      return matchFilter && matchSearch;
+    });
+    if (filtered.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="6" class="px-5 py-10 text-center text-text-secondary text-sm">No hay convenios con este filtro.</td></tr>';
+      countEl.textContent = '0 convenios';
+      return;
+    }
+    var rows = filtered.map(function (c) {
+      var est = ESTADO_CFG[c.estado] || ESTADO_CFG.pendiente;
+      var mods = (c.modalidades || []).map(function (m) {
+        return '<span class="bg-primary/10 text-primary px-2 py-0.5 rounded-full text-[10px] font-semibold">' + esc(MODALIDAD_LABELS[m] || m) + '</span>';
+      }).join(' ');
+      var obsRow = c.observacion ? '<p class="text-[10px] text-error mt-0.5">Obs: ' + esc(c.observacion) + '</p>' : '';
+      return '<tr class="hover:bg-surface-container-low/40 transition-colors">'
+        + '<td class="px-5 py-3.5"><p class="font-semibold text-on-surface text-sm">' + esc(c.empresa) + '</p><p class="text-xs text-text-secondary">' + esc(c.emailEmpresa) + '</p><p class="text-[10px] text-text-secondary mt-0.5">Solicitado: ' + esc(c.fechaSolicitud) + '</p></td>'
+        + '<td class="px-5 py-3.5"><p class="font-semibold text-on-surface">' + esc(c.tipo) + '</p><p class="text-xs text-text-secondary">' + esc(c.id) + '</p>' + obsRow + '</td>'
+        + '<td class="px-5 py-3.5"><div class="flex flex-wrap gap-1">' + mods + '</div></td>'
+        + '<td class="px-5 py-3.5 text-xs text-text-secondary whitespace-nowrap">' + fmtDate(c.vigenciaDesde) + '<br>' + fmtDate(c.vigenciaHasta) + '</td>'
+        + '<td class="px-5 py-3.5"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold ' + est.cls + '"><span class="w-1.5 h-1.5 rounded-full ' + est.dot + '"></span>' + est.label + '</span></td>'
+        + '<td class="px-5 py-3.5 text-right">' + actionBtns(c) + '</td>'
+        + '</tr>';
+    }).join('');
+    tbody.innerHTML = rows;
+    countEl.textContent = filtered.length + ' convenio' + (filtered.length === 1 ? '' : 's');
+
+    tbody.querySelectorAll('.admin-conv-action').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        openActionModal(this.dataset.id, this.dataset.action);
+      });
+    });
+  }
+
+  // Filtros
+  document.querySelectorAll('.admin-conv-filter').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.admin-conv-filter').forEach(function (b) {
+        b.className = 'admin-conv-filter px-3.5 py-1.5 text-sm font-medium text-text-secondary border border-border-subtle rounded-lg hover:bg-surface-container-low transition-all';
+      });
+      this.className = 'admin-conv-filter px-3.5 py-1.5 text-sm font-semibold bg-primary text-on-primary rounded-lg';
+      activeFilter = this.dataset.filter;
+      renderTable();
+    });
+  });
+
+  document.getElementById('admin-conv-search').addEventListener('input', function () {
+    searchTerm = this.value.trim().toLowerCase();
+    renderTable();
+  });
+
+  document.getElementById('admin-conv-refresh').addEventListener('click', renderTable);
+
+  // Modal de acción
+  function openActionModal(id, action) {
+    var cfg = ACTION_CFG[action];
+    if (!cfg) return;
+    var convenio = Store.getConvenios().find(function (c) { return c.id === id; });
+    if (!convenio) return;
+    pendingAction = { id: id, action: action };
+
+    document.getElementById('conv-modal-icon').textContent = cfg.icon;
+    document.getElementById('conv-modal-icon').className = 'material-symbols-outlined ' + cfg.iconClass;
+    document.getElementById('conv-modal-title').textContent = cfg.title;
+    document.getElementById('conv-modal-empresa').textContent = convenio.empresa + ' — ' + convenio.id;
+    document.getElementById('conv-modal-desc').textContent = convenio.tipo + ' · ' + (convenio.modalidades || []).join(', ');
+    document.getElementById('conv-modal-message').textContent = cfg.message;
+    document.getElementById('conv-modal-confirm').textContent = cfg.confirm;
+
+    var rejectField = document.getElementById('conv-reject-field');
+    rejectField.classList.toggle('hidden', action !== 'reject');
+    if (action === 'reject') {
+      document.getElementById('conv-reject-note').value = '';
+      document.getElementById('conv-reject-error').classList.add('hidden');
+    }
+
+    document.getElementById('conv-action-modal').classList.remove('hidden');
+  }
+
+  function closeActionModal() {
+    document.getElementById('conv-action-modal').classList.add('hidden');
+    pendingAction = null;
+  }
+
+  document.getElementById('conv-modal-close').addEventListener('click', closeActionModal);
+  document.getElementById('conv-modal-cancel').addEventListener('click', closeActionModal);
+
+  document.getElementById('conv-modal-confirm').addEventListener('click', function () {
+    if (!pendingAction) return;
+    var cfg = ACTION_CFG[pendingAction.action];
+    var observacion = '';
+    if (pendingAction.action === 'reject') {
+      observacion = document.getElementById('conv-reject-note').value.trim();
+      if (!observacion) {
+        document.getElementById('conv-reject-error').classList.remove('hidden');
+        return;
+      }
+    }
+    Store.updateConvenioEstado(pendingAction.id, cfg.estado, observacion);
+    closeActionModal();
+    renderTable();
+
+    document.getElementById('conv-result-icon').textContent = cfg.resultIcon;
+    document.getElementById('conv-result-icon-wrap').className = 'w-14 h-14 rounded-full ' + cfg.resultClass + ' mx-auto flex items-center justify-center mb-4';
+    document.getElementById('conv-result-title').textContent = cfg.resultTitle;
+    document.getElementById('conv-result-body').textContent = cfg.resultBody;
+    document.getElementById('conv-result-modal').classList.remove('hidden');
+  });
+
+  document.getElementById('conv-result-close').addEventListener('click', function () {
+    document.getElementById('conv-result-modal').classList.add('hidden');
+  });
+
+  renderTable();
+})();
+</script>

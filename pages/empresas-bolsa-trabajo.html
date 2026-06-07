@@ -1,0 +1,248 @@
+<div class="page-enter bg-surface-bg min-h-screen">
+  <section class="bg-primary text-on-primary">
+    <div class="max-w-[1200px] mx-auto px-6 md:px-8 py-10">
+      <a href="#/empresas/directorio" class="inline-flex items-center gap-1.5 text-white/75 hover:text-white text-sm mb-5 transition-colors">
+        <span class="material-symbols-outlined text-sm">arrow_back</span>
+        Empresas
+      </a>
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+        <div>
+          <p class="text-white/70 text-xs font-semibold uppercase tracking-wide">Empresas / Bolsa de Trabajo</p>
+          <h1 id="bolsa-title" class="text-3xl md:text-4xl font-extrabold mt-2">Bolsa de Trabajo FIIS</h1>
+          <p id="bolsa-subtitle" class="text-white/80 text-sm md:text-base mt-2 max-w-2xl">
+            Practicas preprofesionales, ofertas laborales y proyectos empresa-FIIS publicados para la comunidad FIIS.
+          </p>
+        </div>
+        <div class="grid grid-cols-3 gap-3 text-center shrink-0">
+          <div class="bg-white/10 rounded-lg px-4 py-3">
+            <p id="count-practicas" class="text-2xl font-bold">0</p>
+            <p class="text-white/70 text-xs">Practicas</p>
+          </div>
+          <div class="bg-white/10 rounded-lg px-4 py-3">
+            <p id="count-ofertas" class="text-2xl font-bold">0</p>
+            <p class="text-white/70 text-xs">Ofertas</p>
+          </div>
+          <div class="bg-white/10 rounded-lg px-4 py-3">
+            <p id="count-proyectos" class="text-2xl font-bold">0</p>
+            <p class="text-white/70 text-xs">Proyectos</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="max-w-[1200px] mx-auto px-6 md:px-8 py-8">
+    <div class="bg-white rounded-xl border border-border-subtle p-4 mb-6 shadow-sm">
+      <div class="flex flex-wrap gap-2">
+        <a data-bolsa-nav="practica" href="#/empresas/bolsa-trabajo/practicas" class="bolsa-nav px-4 py-2 rounded-lg text-sm font-semibold border border-border-subtle text-on-surface-variant hover:bg-surface-container-low">Practicas preprofesionales</a>
+        <a data-bolsa-nav="empleo" href="#/empresas/bolsa-trabajo/ofertas" class="bolsa-nav px-4 py-2 rounded-lg text-sm font-semibold border border-border-subtle text-on-surface-variant hover:bg-surface-container-low">Ofertas laborales</a>
+        <a data-bolsa-nav="proyecto" href="#/empresas/bolsa-trabajo/proyectos" class="bolsa-nav px-4 py-2 rounded-lg text-sm font-semibold border border-border-subtle text-on-surface-variant hover:bg-surface-container-low">Proyectos empresa-FIIS</a>
+      </div>
+    </div>
+
+    <section class="bg-white rounded-xl border border-border-subtle p-5 shadow-sm mb-6">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div>
+            <p class="text-xs font-semibold text-text-secondary uppercase mb-2">Carrera</p>
+            <select id="bolsa-carrera-filter" class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+              <option value="todas">Todas las carreras</option>
+              <option value="industrial">Ing. Industrial</option>
+              <option value="sistemas">Ing. Sistemas</option>
+              <option value="software">Ing. Software</option>
+              <option value="ia">Inteligencia Artificial</option>
+            </select>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-text-secondary uppercase mb-2">Rubro</p>
+            <select id="bolsa-rubro-filter" class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+              <option value="todos">Todos los rubros</option>
+              <option value="industrial">Industrial</option>
+              <option value="sistemas">Sistemas</option>
+              <option value="logistica">Logistica</option>
+            </select>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-text-secondary uppercase mb-2">Modalidad</p>
+            <select id="bolsa-modalidad-filter" class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+              <option value="todas">Todas las modalidades</option>
+              <option value="presencial">Presencial</option>
+              <option value="hibrido">Hibrido</option>
+              <option value="remoto">Remoto</option>
+            </select>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-text-secondary uppercase mb-2">Estado</p>
+            <select id="bolsa-estado-filter" class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+              <option value="todos">Todos los estados</option>
+              <option value="vigente">Vigente</option>
+              <option value="cerrado">Cerrado</option>
+            </select>
+          </div>
+        </div>
+        <div class="lg:text-right">
+          <p id="bolsa-count" class="text-sm font-bold text-primary">0 oportunidades</p>
+          <p class="text-xs text-text-secondary mt-1">Resultados segun filtros activos</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="bolsa-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></section>
+
+    <section id="bolsa-empty" class="hidden text-center py-14">
+      <span class="material-symbols-outlined text-5xl text-text-secondary mb-2 block">work_off</span>
+      <p class="text-on-surface font-bold">No hay oportunidades con esos filtros</p>
+      <p class="text-text-secondary text-sm mt-1">Prueba con otra carrera, rubro, modalidad o estado.</p>
+    </section>
+  </main>
+</div>
+
+<script>
+(function() {
+  var initialType = window.__bolsaTrabajoTipo || 'practica';
+  window.__bolsaTrabajoTipo = null;
+
+  var filters = {
+    tipo: initialType,
+    carrera: 'todas',
+    rubro: 'todos',
+    modalidad: 'todas',
+    estado: 'todos'
+  };
+
+  var baseItems = [
+    { id: 'BOL-001', empresa: 'Alicorp', cargo: 'Practicante de Logistica', tipo: 'practica', carreras: ['industrial'], rubro: 'logistica', modalidad: 'presencial', estado: 'vigente', cierre: '2026-06-30', descripcion: 'Apoyo en planificacion y control de inventarios, coordinacion con proveedores y optimizacion de rutas.' },
+    { id: 'BOL-002', empresa: 'Interbank', cargo: 'Analista de Sistemas', tipo: 'empleo', carreras: ['sistemas'], rubro: 'sistemas', modalidad: 'hibrido', estado: 'vigente', cierre: '2026-07-12', descripcion: 'Desarrollo y mantenimiento de aplicaciones bancarias, integracion de APIs y soporte a plataformas digitales.' },
+    { id: 'BOL-003', empresa: 'Ferreyros', cargo: 'Asistente de Operaciones', tipo: 'empleo', carreras: ['industrial'], rubro: 'logistica', modalidad: 'presencial', estado: 'vigente', cierre: '2026-07-05', descripcion: 'Soporte en operaciones logisticas, seguimiento de indicadores y mejora continua de procesos.' },
+    { id: 'BOL-004', empresa: 'Scotiabank', cargo: 'Practicante de Desarrollo Backend', tipo: 'practica', carreras: ['software'], rubro: 'sistemas', modalidad: 'remoto', estado: 'vigente', cierre: '2026-07-18', descripcion: 'Desarrollo de microservicios, integracion con APIs y pruebas unitarias en entorno financiero.' },
+    { id: 'BOL-005', empresa: 'Komatsu-Mitsui', cargo: 'Proyecto de mantenimiento predictivo', tipo: 'proyecto', carreras: ['industrial', 'ia'], rubro: 'industrial', modalidad: 'hibrido', estado: 'vigente', cierre: '2026-08-01', descripcion: 'Reto empresa-FIIS para aplicar modelos predictivos a mantenimiento de flotas industriales.' },
+    { id: 'BOL-006', empresa: 'Industrias Acero SAC', cargo: 'Proyecto de optimizacion de produccion', tipo: 'proyecto', carreras: ['industrial', 'sistemas'], rubro: 'industrial', modalidad: 'presencial', estado: 'vigente', cierre: '2026-08-15', descripcion: 'Proyecto aplicado para analizar cuellos de botella y proponer mejoras con datos de planta.' },
+    { id: 'BOL-007', empresa: 'Backus', cargo: 'Practicante de TI Corporativa', tipo: 'practica', carreras: ['sistemas'], rubro: 'industrial', modalidad: 'presencial', estado: 'cerrado', cierre: '2026-05-20', descripcion: 'Soporte tecnico a infraestructura de TI, gestion de incidencias y redes corporativas.' }
+  ];
+
+  function esc(s) {
+    return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function getStoreItems() {
+    if (typeof Store === 'undefined' || typeof Store.getVacantesPublicas !== 'function') return [];
+    return Store.getVacantesPublicas().filter(function(v) {
+      return !/^VAC-2024/.test(v.id);
+    }).map(function(v) {
+      var carreras = v.carreras || [];
+      var rubro = carreras.indexOf('sistemas') !== -1 || carreras.indexOf('software') !== -1 || carreras.indexOf('ia') !== -1 ? 'sistemas' : 'industrial';
+      return {
+        id: v.id,
+        empresa: v.empresa || 'Empresa',
+        cargo: v.cargo || 'Oportunidad publicada',
+        tipo: v.tipo || 'practica',
+        carreras: carreras.length ? carreras : ['industrial'],
+        rubro: rubro,
+        modalidad: v.modalidad || 'presencial',
+        estado: v.estado === 'cerrada' ? 'cerrado' : 'vigente',
+        cierre: v.fechaLimite || '-',
+        descripcion: v.requisitos || 'Vacante aprobada por FIIS para la comunidad estudiantil y egresada.'
+      };
+    });
+  }
+
+  function allItems() {
+    return getStoreItems().concat(baseItems);
+  }
+
+  function carreraLabel(c) {
+    return ({ industrial: 'Ing. Industrial', sistemas: 'Ing. Sistemas', software: 'Ing. Software', ia: 'Int. Artificial' })[c] || c;
+  }
+
+  function tipoLabel(t) {
+    return ({ practica: 'Practica', empleo: 'Oferta laboral', proyecto: 'Proyecto' })[t] || t;
+  }
+
+  function tipoClass(t) {
+    return ({ practica: 'bg-orange-50 text-orange-700', empleo: 'bg-violet-50 text-violet-700', proyecto: 'bg-teal-50 text-teal-700' })[t] || 'bg-surface-container text-text-secondary';
+  }
+
+  function modalidadLabel(m) {
+    return ({ presencial: 'Presencial', hibrido: 'Hibrido', remoto: 'Remoto' })[m] || m;
+  }
+
+  function updateHeader() {
+    var copy = {
+      practica: ['Practicas preprofesionales', 'Oportunidades formativas para estudiantes FIIS, filtrables por carrera, rubro, modalidad y estado.'],
+      empleo: ['Ofertas laborales', 'Puestos laborales para estudiantes avanzados y egresados FIIS publicados por empresas aliadas.'],
+      proyecto: ['Proyectos empresa-FIIS', 'Retos y proyectos aplicados donde la comunidad FIIS colabora con empresas aliadas.']
+    }[filters.tipo] || ['Practicas preprofesionales', 'Oportunidades formativas para estudiantes FIIS, filtrables por carrera, rubro, modalidad y estado.'];
+    document.getElementById('bolsa-title').textContent = copy[0];
+    document.getElementById('bolsa-subtitle').textContent = copy[1];
+    document.querySelectorAll('.bolsa-nav').forEach(function(a) {
+      var active = a.dataset.bolsaNav === filters.tipo;
+      a.classList.toggle('bg-primary', active);
+      a.classList.toggle('text-on-primary', active);
+      a.classList.toggle('border-border-subtle', !active);
+      a.classList.toggle('text-on-surface-variant', !active);
+    });
+  }
+
+  function matches(item) {
+    var hasCarrera = filters.carrera === 'todas' || (item.carreras || []).indexOf(filters.carrera) !== -1;
+    return (filters.tipo === 'todos' || item.tipo === filters.tipo)
+      && hasCarrera
+      && (filters.rubro === 'todos' || item.rubro === filters.rubro)
+      && (filters.modalidad === 'todas' || item.modalidad === filters.modalidad)
+      && (filters.estado === 'todos' || item.estado === filters.estado);
+  }
+
+  function renderCard(item) {
+    var closed = item.estado === 'cerrado';
+    var carreras = (item.carreras || []).map(function(c) {
+      return '<span class="bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full text-[10px] font-semibold">' + esc(carreraLabel(c)) + '</span>';
+    }).join('');
+    return '<article class="op-card bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col">' +
+      '<div class="flex items-start justify-between gap-3 mb-3">' +
+        '<div class="min-w-0"><p class="text-xs text-text-secondary">' + esc(item.empresa) + '</p><h3 class="text-sm font-bold text-on-surface op-card-title">' + esc(item.cargo) + '</h3></div>' +
+        '<span class="' + (closed ? 'bg-danger/10 text-danger' : 'bg-success/10 text-success') + ' px-2 py-0.5 rounded-full text-[10px] font-semibold shrink-0">' + (closed ? 'Cerrado' : 'Vigente') + '</span>' +
+      '</div>' +
+      '<div class="flex flex-wrap gap-1.5 mb-3">' + carreras +
+        '<span class="' + tipoClass(item.tipo) + ' px-2 py-0.5 rounded-full text-[10px] font-semibold">' + esc(tipoLabel(item.tipo)) + '</span>' +
+        '<span class="bg-amber-50 text-amber-700 px-2 py-0.5 rounded-full text-[10px] font-semibold">' + esc(modalidadLabel(item.modalidad)) + '</span>' +
+      '</div>' +
+      '<p class="text-text-secondary text-xs mb-4 flex-grow op-card-description">' + esc(item.descripcion) + '</p>' +
+      '<div class="flex items-center justify-between pt-3 border-t border-border-subtle mt-auto op-card-footer">' +
+        '<p class="text-text-secondary text-[10px] op-card-meta">Cierre: ' + esc(item.cierre) + '</p>' +
+        '<button class="px-3 py-1.5 ' + (closed ? 'bg-surface-container-high text-text-secondary cursor-not-allowed' : 'bg-primary text-on-primary hover:brightness-110 active:scale-95') + ' rounded-lg text-xs font-semibold transition-all"' + (closed ? ' disabled' : '') + '>' + (closed ? 'Cerrado' : (item.tipo === 'proyecto' ? 'Ver proyecto' : 'Postular')) + '</button>' +
+      '</div>' +
+    '</article>';
+  }
+
+  function render() {
+    updateHeader();
+    var items = allItems();
+    var counts = { practica: 0, empleo: 0, proyecto: 0 };
+    items.forEach(function(item) { if (counts[item.tipo] !== undefined) counts[item.tipo]++; });
+    document.getElementById('count-practicas').textContent = counts.practica;
+    document.getElementById('count-ofertas').textContent = counts.empleo;
+    document.getElementById('count-proyectos').textContent = counts.proyecto;
+
+    var filtered = items.filter(matches);
+    document.getElementById('bolsa-count').textContent = filtered.length + (filtered.length === 1 ? ' oportunidad' : ' oportunidades');
+    document.getElementById('bolsa-grid').innerHTML = filtered.map(renderCard).join('');
+    document.getElementById('bolsa-empty').classList.toggle('hidden', filtered.length > 0);
+  }
+
+  function bindSelect(id, key) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('change', function() {
+      filters[key] = el.value;
+      render();
+    });
+  }
+
+  bindSelect('bolsa-carrera-filter', 'carrera');
+  bindSelect('bolsa-rubro-filter', 'rubro');
+  bindSelect('bolsa-modalidad-filter', 'modalidad');
+  bindSelect('bolsa-estado-filter', 'estado');
+
+  render();
+})();
+</script>

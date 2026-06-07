@@ -102,6 +102,23 @@ async function routePublic(section) {
   renderPublicLayout(html, '/' + section);
 }
 
+async function routeEmpresasSection(section) {
+  window.__empresasSection = section || null;
+  const html = await loadPage('empresas');
+  renderPublicLayout(html, '/empresas');
+}
+
+async function routeBolsaTrabajo(tipo) {
+  window.__bolsaTrabajoTipo = tipo || 'practica';
+  const html = await loadPage('empresas-bolsa-trabajo');
+  renderPublicLayout(html, '/empresas');
+}
+
+async function routeEmpresasHome() {
+  const html = await loadPage('empresas-home');
+  renderPublicLayout(html, '/empresas');
+}
+
 async function routePublicDetail(id) {
   const html = await loadPage('vida-estudiantil-detalle');
   renderPublicLayout(html, '/vida-estudiantil');
@@ -188,7 +205,18 @@ Router.add('/departamentos/sistemas-telematica', () => routePublic('departamento
 Router.add('/departamentos/tecnologia-produccion', () => routePublic('departamento-tecnologia-produccion'));
 Router.add('/cronogramas', () => routePublic('cronogramas'));
 Router.add('/directorio-docentes', () => routePublic('directorio-docentes'));
-Router.add('/empresas', () => routePublic('empresas'));
+Router.add('/empresas', routeEmpresasHome);
+Router.add('/empresas/directorio', () => routeEmpresasSection('directorio'));
+Router.add('/empresas/actividades', () => routePublic('empresas-actividades'));
+Router.add('/empresas/bolsa-trabajo', () => routeBolsaTrabajo('practica'));
+Router.add('/empresas/bolsa-trabajo/practicas', () => routeBolsaTrabajo('practica'));
+Router.add('/empresas/bolsa-trabajo/ofertas', () => routeBolsaTrabajo('empleo'));
+Router.add('/empresas/bolsa-trabajo/proyectos', () => routeBolsaTrabajo('proyecto'));
+Router.add('/empresas/oportunidades', () => routeBolsaTrabajo('practica'));
+Router.add('/empresas/practicas', () => routeBolsaTrabajo('practica'));
+Router.add('/empresas/convenios', () => routeEmpresasSection('convenios'));
+Router.add('/empresas/soy-empresa', () => routeEmpresasSection('soy-empresa'));
+Router.add('/empresas/contacto', () => routeEmpresasSection('contacto'));
 ['industrias-acero','grana-montero','backus','alicorp','scotiabank','komatsu','ferreyros','interbank'].forEach(function(slug) {
   Router.add('/empresa-detalle/' + slug, async function() {
     window.__empresaId = slug;
@@ -221,6 +249,10 @@ Router.add('/content', () => routeGeneric('content'));
 Router.add('/calendar', () => routeGeneric('calendar'));
 Router.add('/news', () => routeGeneric('news'));
 Router.add('/users', () => routeGeneric('users'));
+Router.add('/dashboard/empresa/convenios', () => routeDashboardSub('empresa', 'convenios'));
+Router.add('/dashboard/admin/convenios', () => routeDashboardSub('admin', 'convenios'));
+Router.add('/dashboard/admin/proyectos', () => routeDashboardSub('admin', 'proyectos'));
+Router.add('/dashboard/admin/catalogos', () => routeDashboardSub('admin', 'catalogos'));
 Router.add('/dashboard/estudiante/tramites', () => routeDashboardSub('estudiante', 'tramites'));
 Router.add('/dashboard/estudiante/convocatorias', () => routeDashboardSub('estudiante', 'convocatorias'));
 Router.add('/dashboard/estudiante/tutoria', () => routeDashboardSub('estudiante', 'tutoria'));

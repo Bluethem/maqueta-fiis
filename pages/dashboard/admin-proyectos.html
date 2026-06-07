@@ -1,0 +1,307 @@
+<div class="page-enter space-y-6">
+
+  <!-- Header -->
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div>
+      <h2 class="text-2xl font-bold text-on-surface">Gestión de Proyectos</h2>
+      <p class="text-text-secondary text-sm mt-0.5">Revisa y valida las propuestas de colaboración I+D enviadas por empresas</p>
+    </div>
+  </div>
+
+  <div class="flex items-start gap-3 bg-warning/5 border border-warning/20 rounded-lg px-4 py-3">
+    <span class="material-symbols-outlined text-warning text-base shrink-0 mt-0.5">info</span>
+    <p class="text-xs text-text-secondary">Las propuestas <strong>aprobadas</strong> se derivan a la Oficina de Vinculación para asignar un docente o investigador. Las rechazadas quedan en el historial con el motivo registrado.</p>
+  </div>
+
+  <!-- Filtros -->
+  <div class="flex flex-wrap items-center gap-3">
+    <button class="admin-proy-filter px-3.5 py-1.5 text-sm font-semibold bg-primary text-on-primary rounded-lg" data-filter="todos">Todos</button>
+    <button class="admin-proy-filter px-3.5 py-1.5 text-sm font-medium text-text-secondary border border-border-subtle rounded-lg hover:bg-surface-container-low transition-all" data-filter="pendiente">Pendientes</button>
+    <button class="admin-proy-filter px-3.5 py-1.5 text-sm font-medium text-text-secondary border border-border-subtle rounded-lg hover:bg-surface-container-low transition-all" data-filter="aprobado">Aprobados</button>
+    <button class="admin-proy-filter px-3.5 py-1.5 text-sm font-medium text-text-secondary border border-border-subtle rounded-lg hover:bg-surface-container-low transition-all" data-filter="rechazado">Rechazados</button>
+    <div class="ml-auto relative">
+      <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary text-sm pointer-events-none">search</span>
+      <input id="admin-proy-search" type="text" placeholder="Buscar empresa o proyecto..." class="pl-9 pr-3 py-1.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary w-60">
+    </div>
+  </div>
+
+  <!-- Tabla -->
+  <div class="bg-white rounded-xl border border-border-subtle shadow-sm overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-surface-bg/50 border-b border-border-subtle">
+            <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Empresa</th>
+            <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Proyecto</th>
+            <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Área / Duración</th>
+            <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Estado</th>
+            <th class="text-right px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="admin-proy-tbody" class="divide-y divide-border-subtle/60"></tbody>
+      </table>
+    </div>
+    <div class="px-5 py-3 border-t border-border-subtle bg-surface-container-low/20 flex flex-wrap items-center justify-between gap-3">
+      <p id="admin-proy-count" class="text-xs text-text-secondary">—</p>
+      <button id="admin-proy-refresh" class="px-3 py-1.5 text-xs border border-border-subtle rounded-lg text-text-secondary hover:bg-surface-container-low transition-all">Actualizar</button>
+    </div>
+  </div>
+
+  <!-- Modal detalle / acción -->
+  <div id="proy-action-modal" class="hidden fixed inset-0 z-[80] bg-black/40 px-4 py-6 flex items-center justify-center">
+    <div class="bg-white w-full max-w-2xl rounded-xl shadow-2xl border border-border-subtle overflow-hidden max-h-[90vh] flex flex-col">
+      <div class="px-5 py-4 border-b border-border-subtle flex items-center justify-between shrink-0">
+        <div class="flex items-center gap-3">
+          <span id="proy-modal-icon" class="material-symbols-outlined text-primary">rule</span>
+          <h3 id="proy-modal-title" class="text-base font-bold text-on-surface">Revisar propuesta</h3>
+        </div>
+        <button type="button" id="proy-modal-close" class="p-1.5 rounded-lg hover:bg-surface-container-low transition-all">
+          <span class="material-symbols-outlined text-text-secondary text-base">close</span>
+        </button>
+      </div>
+      <div class="p-5 space-y-4 overflow-y-auto flex-1">
+        <!-- Resumen empresa -->
+        <div class="rounded-lg bg-surface-container-low/60 border border-border-subtle px-4 py-3">
+          <p id="proy-modal-empresa" class="text-xs text-text-secondary"></p>
+          <p id="proy-modal-nombre" class="text-sm font-bold text-on-surface mt-0.5"></p>
+          <p id="proy-modal-area" class="text-xs text-text-secondary mt-0.5"></p>
+        </div>
+        <!-- Detalle del proyecto -->
+        <div id="proy-modal-detalle" class="space-y-3 text-sm"></div>
+        <p id="proy-modal-message" class="text-sm text-text-secondary leading-relaxed"></p>
+        <!-- Campo observación para rechazo -->
+        <div id="proy-reject-field" class="hidden space-y-1.5">
+          <label class="text-sm font-semibold text-on-surface" for="proy-reject-note">Motivo del rechazo</label>
+          <textarea id="proy-reject-note" rows="3" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary resize-none" placeholder="Ej: La propuesta no cumple el nivel de especificación mínima requerida. Se recomienda reformular el objetivo y los entregables..."></textarea>
+          <p id="proy-reject-error" class="hidden text-xs text-error">Ingresa el motivo del rechazo para continuar.</p>
+        </div>
+      </div>
+      <div class="px-5 py-4 border-t border-border-subtle bg-surface-bg/30 flex justify-end gap-3 shrink-0">
+        <button type="button" id="proy-modal-cancel" class="px-4 py-2 text-sm font-semibold border border-border-subtle rounded-lg text-text-secondary hover:bg-surface-container-low transition-all">Cancelar</button>
+        <button type="button" id="proy-modal-confirm" class="px-5 py-2 text-sm font-semibold bg-primary text-on-primary rounded-lg hover:brightness-110 transition-all">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal resultado -->
+  <div id="proy-result-modal" class="hidden fixed inset-0 z-[90] bg-black/40 px-4 py-6 flex items-center justify-center">
+    <div class="bg-white w-full max-w-md rounded-xl shadow-2xl border border-border-subtle overflow-hidden">
+      <div class="p-6 text-center">
+        <div id="proy-result-icon-wrap" class="w-14 h-14 rounded-full bg-success/10 text-success mx-auto flex items-center justify-center mb-4">
+          <span id="proy-result-icon" class="material-symbols-outlined text-3xl">check_circle</span>
+        </div>
+        <h3 id="proy-result-title" class="text-lg font-bold text-on-surface">Operación realizada</h3>
+        <p id="proy-result-body" class="text-sm text-text-secondary mt-2 leading-relaxed"></p>
+        <button type="button" id="proy-result-close" class="mt-5 px-4 py-2 text-sm font-semibold border border-border-subtle rounded-lg text-text-secondary hover:bg-surface-container-low transition-all">Entendido</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function () {
+  var ESTADO_CFG = {
+    pendiente: { cls: 'bg-warning/10 text-warning',  dot: 'bg-warning',  label: 'Pendiente' },
+    aprobado:  { cls: 'bg-success/10 text-success',  dot: 'bg-success',  label: 'Aprobado'  },
+    rechazado: { cls: 'bg-error/10 text-error',      dot: 'bg-error',    label: 'Rechazado' },
+  };
+
+  var ACTION_CFG = {
+    approve: {
+      estado: 'aprobado',
+      icon: 'check_circle', iconClass: 'text-success',
+      title: 'Aprobar propuesta',
+      message: 'La propuesta cambiará a Aprobada y se derivará a la Oficina de Vinculación para asignar un docente o investigador.',
+      confirm: 'Aprobar y derivar',
+      resultTitle: 'Propuesta aprobada',
+      resultBody: 'El estado cambió a Aprobado. La empresa recibirá respuesta del equipo FIIS en un plazo de 5 días hábiles.',
+      resultIcon: 'check_circle', resultClass: 'bg-success/10 text-success',
+    },
+    reject: {
+      estado: 'rechazado',
+      icon: 'cancel', iconClass: 'text-error',
+      title: 'Rechazar propuesta',
+      message: 'La propuesta pasará a estado Rechazada. Registra el motivo para que la empresa pueda reformularla.',
+      confirm: 'Rechazar',
+      resultTitle: 'Propuesta rechazada',
+      resultBody: 'El estado cambió a Rechazado. El motivo quedó registrado para que la empresa pueda reformular la propuesta.',
+      resultIcon: 'cancel', resultClass: 'bg-error/10 text-error',
+    },
+    reopen: {
+      estado: 'pendiente',
+      icon: 'refresh', iconClass: 'text-warning',
+      title: 'Reabrir propuesta',
+      message: 'La propuesta volverá a estado Pendiente para revisarse nuevamente.',
+      confirm: 'Reabrir como pendiente',
+      resultTitle: 'Propuesta reabierta',
+      resultBody: 'El estado cambió a Pendiente. La propuesta debe aprobarse nuevamente.',
+      resultIcon: 'refresh', resultClass: 'bg-warning/10 text-warning',
+    },
+  };
+
+  var activeFilter = 'todos';
+  var searchTerm = '';
+  var pendingAction = null;
+
+  function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  function actionBtns(p) {
+    var btns = [];
+    if (p.estado === 'pendiente') {
+      btns.push('<button class="admin-proy-action px-3 py-1.5 text-xs font-semibold bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-all" data-id="' + esc(p.id) + '" data-action="detail">Ver detalle</button>');
+      btns.push('<button class="admin-proy-action px-3 py-1.5 text-xs font-semibold bg-success/10 text-success rounded-lg hover:bg-success/20 transition-all" data-id="' + esc(p.id) + '" data-action="approve">Aprobar</button>');
+      btns.push('<button class="admin-proy-action px-3 py-1.5 text-xs font-semibold bg-error/10 text-error rounded-lg hover:bg-error/20 transition-all" data-id="' + esc(p.id) + '" data-action="reject">Rechazar</button>');
+    } else {
+      btns.push('<button class="admin-proy-action px-3 py-1.5 text-xs font-semibold bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-all" data-id="' + esc(p.id) + '" data-action="detail">Ver detalle</button>');
+      btns.push('<button class="admin-proy-action px-3 py-1.5 text-xs font-semibold bg-warning/10 text-warning rounded-lg hover:bg-warning/20 transition-all" data-id="' + esc(p.id) + '" data-action="reopen">Reabrir</button>');
+    }
+    return '<div class="flex gap-2 justify-end flex-wrap">' + btns.join('') + '</div>';
+  }
+
+  function renderTable() {
+    var proyectos = Store.getProyectos();
+    var tbody = document.getElementById('admin-proy-tbody');
+    var countEl = document.getElementById('admin-proy-count');
+    if (!tbody) return;
+    var filtered = proyectos.filter(function (p) {
+      var matchFilter = activeFilter === 'todos' || p.estado === activeFilter;
+      var matchSearch = !searchTerm || p.empresa.toLowerCase().includes(searchTerm) || p.nombre.toLowerCase().includes(searchTerm) || p.id.toLowerCase().includes(searchTerm);
+      return matchFilter && matchSearch;
+    });
+    if (filtered.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="5" class="px-5 py-10 text-center text-text-secondary text-sm">No hay propuestas con este filtro.</td></tr>';
+      countEl.textContent = '0 propuestas';
+      return;
+    }
+    var rows = filtered.map(function (p) {
+      var est = ESTADO_CFG[p.estado] || ESTADO_CFG.pendiente;
+      var obsRow = p.observacion ? '<p class="text-[10px] text-error mt-0.5">Obs: ' + esc(p.observacion) + '</p>' : '';
+      return '<tr class="hover:bg-surface-container-low/40 transition-colors">'
+        + '<td class="px-5 py-3.5"><p class="font-semibold text-on-surface text-sm">' + esc(p.empresa) + '</p><p class="text-xs text-text-secondary">' + esc(p.emailEmpresa) + '</p><p class="text-[10px] text-text-secondary mt-0.5">Solicitado: ' + esc(p.fechaSolicitud) + '</p></td>'
+        + '<td class="px-5 py-3.5 max-w-[220px]"><p class="font-semibold text-on-surface leading-tight line-clamp-2">' + esc(p.nombre) + '</p><p class="text-xs text-text-secondary mt-0.5">' + esc(p.id) + '</p>' + obsRow + '</td>'
+        + '<td class="px-5 py-3.5 text-xs text-text-secondary"><p>' + esc(p.area) + '</p><p class="mt-0.5">' + esc(p.duracion) + '</p></td>'
+        + '<td class="px-5 py-3.5"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold ' + est.cls + '"><span class="w-1.5 h-1.5 rounded-full ' + est.dot + '"></span>' + est.label + '</span></td>'
+        + '<td class="px-5 py-3.5 text-right">' + actionBtns(p) + '</td>'
+        + '</tr>';
+    }).join('');
+    tbody.innerHTML = rows;
+    countEl.textContent = filtered.length + ' propuesta' + (filtered.length === 1 ? '' : 's');
+
+    tbody.querySelectorAll('.admin-proy-action').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        openModal(this.dataset.id, this.dataset.action);
+      });
+    });
+  }
+
+  // Filtros
+  document.querySelectorAll('.admin-proy-filter').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.admin-proy-filter').forEach(function (b) {
+        b.className = 'admin-proy-filter px-3.5 py-1.5 text-sm font-medium text-text-secondary border border-border-subtle rounded-lg hover:bg-surface-container-low transition-all';
+      });
+      this.className = 'admin-proy-filter px-3.5 py-1.5 text-sm font-semibold bg-primary text-on-primary rounded-lg';
+      activeFilter = this.dataset.filter;
+      renderTable();
+    });
+  });
+
+  document.getElementById('admin-proy-search').addEventListener('input', function () {
+    searchTerm = this.value.trim().toLowerCase();
+    renderTable();
+  });
+
+  document.getElementById('admin-proy-refresh').addEventListener('click', renderTable);
+
+  // Modal
+  function openModal(id, action) {
+    var proyecto = Store.getProyectos().find(function (p) { return p.id === id; });
+    if (!proyecto) return;
+
+    if (action === 'detail') {
+      // Solo mostrar detalle, sin acción de confirmación
+      pendingAction = null;
+      document.getElementById('proy-modal-icon').textContent = 'description';
+      document.getElementById('proy-modal-icon').className = 'material-symbols-outlined text-primary';
+      document.getElementById('proy-modal-title').textContent = 'Detalle de propuesta';
+      document.getElementById('proy-modal-empresa').textContent = proyecto.empresa + ' · ' + proyecto.emailEmpresa;
+      document.getElementById('proy-modal-nombre').textContent = proyecto.nombre;
+      document.getElementById('proy-modal-area').textContent = proyecto.area + ' · ' + proyecto.duracion;
+      document.getElementById('proy-modal-message').textContent = '';
+      document.getElementById('proy-reject-field').classList.add('hidden');
+      document.getElementById('proy-modal-confirm').classList.add('hidden');
+
+      var detalle = '';
+      if (proyecto.descripcion) detalle += '<div><p class="text-xs font-semibold text-text-secondary uppercase tracking-wider mb-1">Problema / necesidad</p><p class="text-sm text-on-surface leading-relaxed">' + esc(proyecto.descripcion) + '</p></div>';
+      if (proyecto.objetivo)    detalle += '<div><p class="text-xs font-semibold text-text-secondary uppercase tracking-wider mb-1">Objetivo general</p><p class="text-sm text-on-surface leading-relaxed">' + esc(proyecto.objetivo) + '</p></div>';
+      if (proyecto.alcance)     detalle += '<div><p class="text-xs font-semibold text-text-secondary uppercase tracking-wider mb-1">Alcance y entregables</p><p class="text-sm text-on-surface leading-relaxed">' + esc(proyecto.alcance) + '</p></div>';
+      if (proyecto.requisitos)  detalle += '<div><p class="text-xs font-semibold text-text-secondary uppercase tracking-wider mb-1">Requisitos técnicos</p><p class="text-sm text-on-surface leading-relaxed">' + esc(proyecto.requisitos) + '</p></div>';
+      if (proyecto.restricciones) detalle += '<div><p class="text-xs font-semibold text-text-secondary uppercase tracking-wider mb-1">Restricciones</p><p class="text-sm text-on-surface leading-relaxed">' + esc(proyecto.restricciones) + '</p></div>';
+      if (proyecto.contactoNombre) detalle += '<div class="bg-surface-container-low/60 rounded-lg px-3 py-2.5"><p class="text-xs font-semibold text-text-secondary uppercase tracking-wider mb-1">Contacto</p><p class="text-sm font-semibold text-on-surface">' + esc(proyecto.contactoNombre) + (proyecto.contactoCargo ? ' — ' + esc(proyecto.contactoCargo) : '') + '</p>' + (proyecto.contactoEmail ? '<p class="text-xs text-text-secondary">' + esc(proyecto.contactoEmail) + '</p>' : '') + (proyecto.contactoTelefono ? '<p class="text-xs text-text-secondary">' + esc(proyecto.contactoTelefono) + '</p>' : '') + '</div>';
+      document.getElementById('proy-modal-detalle').innerHTML = detalle || '<p class="text-sm text-text-secondary">Sin detalle adicional.</p>';
+
+    } else {
+      var cfg = ACTION_CFG[action];
+      if (!cfg) return;
+      pendingAction = { id: id, action: action };
+
+      document.getElementById('proy-modal-icon').textContent = cfg.icon;
+      document.getElementById('proy-modal-icon').className = 'material-symbols-outlined ' + cfg.iconClass;
+      document.getElementById('proy-modal-title').textContent = cfg.title;
+      document.getElementById('proy-modal-empresa').textContent = proyecto.empresa + ' · ' + proyecto.id;
+      document.getElementById('proy-modal-nombre').textContent = proyecto.nombre;
+      document.getElementById('proy-modal-area').textContent = proyecto.area + ' · ' + proyecto.duracion;
+      document.getElementById('proy-modal-detalle').innerHTML = '';
+      document.getElementById('proy-modal-message').textContent = cfg.message;
+      document.getElementById('proy-modal-confirm').textContent = cfg.confirm;
+      document.getElementById('proy-modal-confirm').classList.remove('hidden');
+
+      var rejectField = document.getElementById('proy-reject-field');
+      rejectField.classList.toggle('hidden', action !== 'reject');
+      if (action === 'reject') {
+        document.getElementById('proy-reject-note').value = '';
+        document.getElementById('proy-reject-error').classList.add('hidden');
+      }
+    }
+
+    document.getElementById('proy-action-modal').classList.remove('hidden');
+  }
+
+  function closeModal() {
+    document.getElementById('proy-action-modal').classList.add('hidden');
+    pendingAction = null;
+  }
+
+  document.getElementById('proy-modal-close').addEventListener('click', closeModal);
+  document.getElementById('proy-modal-cancel').addEventListener('click', closeModal);
+
+  document.getElementById('proy-modal-confirm').addEventListener('click', function () {
+    if (!pendingAction) return;
+    var cfg = ACTION_CFG[pendingAction.action];
+    var observacion = '';
+    if (pendingAction.action === 'reject') {
+      observacion = document.getElementById('proy-reject-note').value.trim();
+      if (!observacion) {
+        document.getElementById('proy-reject-error').classList.remove('hidden');
+        return;
+      }
+    }
+    Store.updateProyectoEstado(pendingAction.id, cfg.estado, observacion);
+    closeModal();
+    renderTable();
+
+    document.getElementById('proy-result-icon').textContent = cfg.resultIcon;
+    document.getElementById('proy-result-icon-wrap').className = 'w-14 h-14 rounded-full ' + cfg.resultClass + ' mx-auto flex items-center justify-center mb-4';
+    document.getElementById('proy-result-title').textContent = cfg.resultTitle;
+    document.getElementById('proy-result-body').textContent = cfg.resultBody;
+    document.getElementById('proy-result-modal').classList.remove('hidden');
+  });
+
+  document.getElementById('proy-result-close').addEventListener('click', function () {
+    document.getElementById('proy-result-modal').classList.add('hidden');
+  });
+
+  renderTable();
+})();
+</script>
