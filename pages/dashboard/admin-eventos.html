@@ -60,6 +60,10 @@
     <button class="ev-filter-btn bg-primary text-on-primary px-3.5 py-1.5 text-sm font-semibold rounded-lg" data-estado="todos">Todas</button>
     <button class="ev-filter-btn border border-border-subtle text-text-secondary px-3.5 py-1.5 text-sm font-medium rounded-lg hover:bg-surface-container-low transition-all" data-estado="pendiente">Pendientes</button>
     <button class="ev-filter-btn border border-border-subtle text-text-secondary px-3.5 py-1.5 text-sm font-medium rounded-lg hover:bg-surface-container-low transition-all" data-estado="aprobado">Aprobadas</button>
+<<<<<<< HEAD
+=======
+    <button class="ev-filter-btn border border-border-subtle text-text-secondary px-3.5 py-1.5 text-sm font-medium rounded-lg hover:bg-surface-container-low transition-all" data-estado="observado">Observadas</button>
+>>>>>>> H3nr7M3d1n4
     <button class="ev-filter-btn border border-border-subtle text-text-secondary px-3.5 py-1.5 text-sm font-medium rounded-lg hover:bg-surface-container-low transition-all" data-estado="rechazado">Rechazadas</button>
     <div class="ml-auto relative">
       <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary text-sm pointer-events-none">search</span>
@@ -89,6 +93,43 @@
   </div>
 </div>
 
+<<<<<<< HEAD
+=======
+<!-- Modal de observación -->
+<div id="observe-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4" style="background:rgba(0,0,0,0.5)">
+  <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden">
+    <div class="flex items-center justify-between px-5 py-4 border-b border-border-subtle">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-base">visibility</span>
+        <h3 class="text-base font-bold text-on-surface">Observar evento</h3>
+      </div>
+      <button id="observe-modal-cancel" class="p-1.5 hover:bg-surface-container-high rounded-lg transition-all">
+        <span class="material-symbols-outlined text-text-secondary">close</span>
+      </button>
+    </div>
+    <div class="p-5 space-y-4">
+      <div class="rounded-lg bg-surface-container-low/60 border border-border-subtle px-4 py-3">
+        <p id="observe-modal-empresa" class="text-xs text-text-secondary"></p>
+        <p id="observe-modal-title" class="text-sm font-bold text-on-surface mt-0.5"></p>
+      </div>
+      <p class="text-sm text-text-secondary">El evento quedará en estado <strong class="text-primary">Observado</strong> y no se publicará hasta que sea aprobado. La empresa verá la observación.</p>
+      <div class="space-y-1.5">
+        <label class="text-sm font-semibold text-on-surface" for="observe-note-input">Observación para la empresa <span class="text-error">*</span></label>
+        <textarea id="observe-note-input" rows="3" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary resize-none" placeholder="Ej: Faltan datos de aforo, lugar o descripción del evento."></textarea>
+        <p id="observe-note-error" class="hidden text-xs text-error">Ingresa una observación para continuar.</p>
+      </div>
+    </div>
+    <div class="px-5 py-4 border-t border-border-subtle bg-surface-bg/30 flex justify-end gap-3">
+      <button type="button" onclick="document.getElementById('observe-modal').classList.add('hidden')" class="px-4 py-2 text-sm font-semibold border border-border-subtle rounded-lg text-text-secondary hover:bg-surface-container-low transition-all">Cancelar</button>
+      <button type="button" id="observe-modal-confirm" class="inline-flex items-center gap-2 px-5 py-2 text-sm font-semibold bg-primary text-on-primary rounded-lg hover:brightness-110 transition-all">
+        <span class="material-symbols-outlined text-sm">save</span>
+        Guardar observación
+      </button>
+    </div>
+  </div>
+</div>
+
+>>>>>>> H3nr7M3d1n4
 <!-- Modal de flyer -->
 <div id="flyer-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4" style="background:rgba(0,0,0,0.6)">
   <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full overflow-hidden">
@@ -114,6 +155,10 @@
   var ESTADO_CFG  = {
     pendiente: { cls: 'bg-warning/10 text-warning',  dot: 'bg-warning',  label: 'Pendiente' },
     aprobado:  { cls: 'bg-success/10 text-success',  dot: 'bg-success',  label: 'Aprobado'  },
+<<<<<<< HEAD
+=======
+    observado: { cls: 'bg-primary/10 text-primary',  dot: 'bg-primary',  label: 'Observado' },
+>>>>>>> H3nr7M3d1n4
     rechazado: { cls: 'bg-error/10 text-error',      dot: 'bg-error',    label: 'Rechazado' },
   };
 
@@ -152,6 +197,7 @@
       var flyerHtml = ev.flyerDataUrl
         ? '<button onclick="openFlyerModal(\'' + esc(ev.id) + '\')" class="inline-flex items-center gap-1 text-primary text-xs font-semibold hover:underline"><span class="material-symbols-outlined text-xs">visibility</span>Ver</button>'
         : '<span class="text-text-secondary text-xs">—</span>';
+<<<<<<< HEAD
       var actionHtml = ev.estado === 'pendiente'
         ? '<div class="flex items-center justify-center gap-2">'
           + '<button onclick="approveEvento(\'' + esc(ev.id) + '\')" class="inline-flex items-center gap-1 px-3 py-1.5 bg-success/10 text-success rounded-lg text-xs font-semibold hover:bg-success/20 transition-all"><span class="material-symbols-outlined text-xs">check</span>Aprobar</button>'
@@ -162,6 +208,28 @@
       return '<tr class="hover:bg-surface-container-low/40 transition-colors' + rowOpacity + '">'
         + '<td class="px-5 py-4"><p class="font-semibold text-on-surface">' + esc(ev.empresa) + '</p><p class="text-xs text-text-secondary">' + esc(ev.email) + '</p></td>'
         + '<td class="px-5 py-4"><p class="font-medium text-on-surface max-w-[200px]">' + esc(ev.titulo) + '</p><p class="text-xs text-text-secondary mt-0.5">' + esc(ev.modalidad) + ' — ' + esc(ev.lugar || '—') + '</p></td>'
+=======
+      var actionHtml;
+      if (ev.estado === 'pendiente') {
+        actionHtml = '<div class="flex items-center justify-center gap-1.5">'
+          + '<button onclick="approveEvento(\'' + esc(ev.id) + '\')" class="inline-flex items-center gap-1 px-3 py-1.5 bg-success/10 text-success rounded-lg text-xs font-semibold hover:bg-success/20 transition-all"><span class="material-symbols-outlined text-xs">check</span>Aprobar</button>'
+          + '<button onclick="openObserveModal(\'' + esc(ev.id) + '\')" class="inline-flex items-center gap-1 px-3 py-1.5 text-primary border border-primary rounded-lg text-xs font-semibold hover:bg-primary/5 transition-all"><span class="material-symbols-outlined text-xs">visibility</span>Observar</button>'
+          + '<button onclick="rejectEvento(\'' + esc(ev.id) + '\')" class="inline-flex items-center gap-1 px-3 py-1.5 bg-error/10 text-error rounded-lg text-xs font-semibold hover:bg-error/20 transition-all"><span class="material-symbols-outlined text-xs">close</span>Rechazar</button>'
+          + '</div>';
+      } else if (ev.estado === 'observado') {
+        actionHtml = '<div class="flex items-center justify-center gap-1.5">'
+          + '<button onclick="approveEvento(\'' + esc(ev.id) + '\')" class="inline-flex items-center gap-1 px-3 py-1.5 bg-success/10 text-success rounded-lg text-xs font-semibold hover:bg-success/20 transition-all"><span class="material-symbols-outlined text-xs">check</span>Aprobar</button>'
+          + '<button onclick="rejectEvento(\'' + esc(ev.id) + '\')" class="inline-flex items-center gap-1 px-3 py-1.5 bg-error/10 text-error rounded-lg text-xs font-semibold hover:bg-error/20 transition-all"><span class="material-symbols-outlined text-xs">close</span>Rechazar</button>'
+          + '</div>';
+      } else {
+        actionHtml = '<p class="text-center text-xs text-text-secondary">— ' + est.label.toLowerCase() + ' —</p>';
+      }
+      var rowOpacity = ev.estado !== 'pendiente' ? ' opacity-70' : '';
+      var obsNote = ev.observacion ? '<p class="text-xs text-primary mt-1">Obs: ' + esc(ev.observacion) + '</p>' : '';
+      return '<tr class="hover:bg-surface-container-low/40 transition-colors' + rowOpacity + '">'
+        + '<td class="px-5 py-4"><p class="font-semibold text-on-surface">' + esc(ev.empresa) + '</p><p class="text-xs text-text-secondary">' + esc(ev.email) + '</p></td>'
+        + '<td class="px-5 py-4"><p class="font-medium text-on-surface max-w-[200px]">' + esc(ev.titulo) + '</p><p class="text-xs text-text-secondary mt-0.5">' + esc(ev.modalidad) + ' — ' + esc(ev.lugar || '—') + '</p>' + obsNote + '</td>'
+>>>>>>> H3nr7M3d1n4
         + '<td class="px-5 py-4"><span class="px-2 py-0.5 rounded-full text-xs font-semibold ' + tipoCls + '">' + esc(tipo) + '</span></td>'
         + '<td class="px-5 py-4 text-text-secondary text-xs whitespace-nowrap">' + fmtFecha(ev.fechaInicio) + (ev.fechaFin !== ev.fechaInicio ? '<br>' + fmtFecha(ev.fechaFin) : '') + '</td>'
         + '<td class="px-5 py-4 text-text-secondary text-xs">' + esc(publicoStr) + '</td>'
@@ -172,10 +240,49 @@
     }).join('');
   }
 
+<<<<<<< HEAD
   // Aprobar / Rechazar — expuestas como globales para los onclick inline
   window.approveEvento = function (id) { Store.updateEventoEstado(id, 'aprobado');  renderEventosTable(); };
   window.rejectEvento  = function (id) { Store.updateEventoEstado(id, 'rechazado'); renderEventosTable(); };
 
+=======
+  // Aprobar / Rechazar / Observar — expuestas como globales para los onclick inline
+  window.approveEvento = function (id) { Store.updateEventoEstado(id, 'aprobado');  renderEventosTable(); };
+  window.rejectEvento  = function (id) { Store.updateEventoEstado(id, 'rechazado'); renderEventosTable(); };
+
+  window.openObserveModal = function (id) {
+    var eventos = Store.getEventos();
+    var ev = null;
+    for (var i = 0; i < eventos.length; i++) { if (eventos[i].id === id) { ev = eventos[i]; break; } }
+    if (!ev) return;
+    var modal = document.getElementById('observe-modal');
+    document.getElementById('observe-modal-title').textContent = ev.titulo;
+    document.getElementById('observe-modal-empresa').textContent = ev.empresa;
+    document.getElementById('observe-note-input').value = ev.observacion || '';
+    document.getElementById('observe-note-error').classList.add('hidden');
+    modal.dataset.eventoId = id;
+    modal.classList.remove('hidden');
+    document.getElementById('observe-note-input').focus();
+  };
+
+  document.getElementById('observe-modal-cancel').addEventListener('click', function () {
+    document.getElementById('observe-modal').classList.add('hidden');
+  });
+  document.getElementById('observe-modal').addEventListener('click', function (e) {
+    if (e.target === this) this.classList.add('hidden');
+  });
+  document.getElementById('observe-modal-confirm').addEventListener('click', function () {
+    var note = document.getElementById('observe-note-input').value.trim();
+    var errEl = document.getElementById('observe-note-error');
+    if (!note) { errEl.classList.remove('hidden'); document.getElementById('observe-note-input').focus(); return; }
+    errEl.classList.add('hidden');
+    var id = document.getElementById('observe-modal').dataset.eventoId;
+    Store.updateEventoEstado(id, 'observado', note);
+    document.getElementById('observe-modal').classList.add('hidden');
+    renderEventosTable();
+  });
+
+>>>>>>> H3nr7M3d1n4
   // Flyer modal
   window.openFlyerModal = function (id) {
     var eventos = Store.getEventos();

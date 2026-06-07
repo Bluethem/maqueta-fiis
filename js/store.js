@@ -155,8 +155,13 @@ window.Store = (function () {
       saveState();
     },
 
+<<<<<<< HEAD
     updateEventoEstado: function (id, estado) {
       updateById(_eventos, id, { estado: estado });
+=======
+    updateEventoEstado: function (id, estado, observacion) {
+      updateById(_eventos, id, { estado: estado, observacion: observacion || '' });
+>>>>>>> H3nr7M3d1n4
     },
 
     getConfig: function () {

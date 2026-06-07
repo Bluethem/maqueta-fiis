@@ -32,7 +32,15 @@ const MEGA_MENU = [
         { label: 'Tecnología de la Producción', route: '/departamentos/tecnologia-produccion', icon: 'biotech' },
       ]},
       { col: 0, title: 'Recursos', items: [
+<<<<<<< HEAD
         { label: 'Cronogramas', route: '/cronogramas', icon: 'calendar_month' },
+=======
+        { label: 'Horarios y Mallas', route: '/horarios-mallas', icon: 'calendar_view_month' },
+        { label: 'Cronogramas', route: '/cronogramas', icon: 'calendar_month' },
+        { label: 'Documentos Académicos', route: '/documentos-academicos', icon: 'gavel' },
+        { label: 'Guías Académicas', route: '/guias-academicas', icon: 'menu_book' },
+        { label: 'Directorio Docentes', route: '/directorio-docentes', icon: 'badge' },
+>>>>>>> H3nr7M3d1n4
       ]}
     ]
   },
@@ -140,6 +148,65 @@ const MEGA_MENU = [
       ]}
     ]
   },
+<<<<<<< HEAD
+=======
+  {
+    label: 'Egresados', icon: 'school',
+    children: [
+      { col: 0, items: [
+        { label: 'Comunidad de Egresados', route: '/egresados', icon: 'groups' },
+        { label: 'Bolsa de Trabajo', route: '/egresados', icon: 'work' },
+        { label: 'Red Alumni', route: '/egresados', icon: 'link' },
+        { label: 'Mentoría', route: '/egresados', icon: 'psychology' },
+        { label: 'Capacitaciones', route: '/egresados', icon: 'school' },
+      ]}
+    ]
+  },
+  {
+    label: 'Vida Estudiantil', icon: 'groups',
+    children: [
+      { col: 0, items: [
+        { label: 'Agrupaciones', route: '/vida-estudiantil', icon: 'groups' },
+        { label: 'Centros Culturales', route: '/vida-estudiantil', icon: 'palette' },
+        { label: 'CEIIS', route: '/vida-estudiantil', icon: 'group' },
+        { label: 'TEFIIS', route: '/vida-estudiantil', icon: 'how_to_vote' },
+        { label: 'Delegaturas', route: '/vida-estudiantil', icon: 'diversity_3' },
+        { label: 'Convocatorias', route: '/vida-estudiantil', icon: 'campaign' },
+      ]}
+    ]
+  },
+  {
+    label: 'Servicios', icon: 'support',
+    children: [
+      { col: 0, title: 'Plataformas', items: [
+        { label: 'Aula Virtual', route: '#', icon: 'computer' },
+        { label: 'Correo UNI', route: '#', icon: 'mail' },
+        { label: 'Yachay (Intranet Docente)', route: 'https://docentes.uni.edu.pe/login', icon: 'school', external: true },
+        { label: 'Biblioteca KOHA', route: '#', icon: 'library_books' },
+        { label: 'Mesa de Partes', route: '#', icon: 'mail' },
+      ]},
+      { col: 1, title: 'Atención', items: [
+        { label: 'Servicios FIIS', route: '/servicios', icon: 'apartment' },
+        { label: 'Laboratorios FIIS', route: '/laboratorios', icon: 'science' },
+        { label: 'Avisos Administrativos', route: '/avisos-administrativos', icon: 'campaign' },
+        { label: 'Tutoría FIIS', route: '/organigrama', icon: 'support' },
+        { label: 'UECPS', route: '/organigrama', icon: 'public' },
+        { label: 'Centro de Información', route: '/organigrama', icon: 'library_books' },
+        { label: 'CEE', route: '/organigrama', icon: 'school' },
+        { label: 'FAQ', route: '#', icon: 'help' },
+      ]}
+    ]
+  },
+  {
+    label: 'Transparencia', icon: 'visibility',
+    route: '/transparencia'
+  },
+  {
+    label: 'Contacto', icon: 'contact_support',
+    route: '/contacto'
+  },
+  { label: 'Portal Académico', route: '/login', icon: 'login' },
+>>>>>>> H3nr7M3d1n4
 ];
 
 const Router = {

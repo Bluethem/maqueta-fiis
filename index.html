@@ -93,8 +93,11 @@ tailwind.config = {
 <body>
 <div id="app"></div>
 <script src="js/store.js?v=20260603-admin-vacantes"></script>
+<<<<<<< HEAD
 <script src="js/search.js?v=2"></script>
 <script src="js/faq.js?v=2"></script>
+=======
+>>>>>>> H3nr7M3d1n4
 <script src="js/auth.js"></script>
 <script src="js/components.js"></script>
 <script src="js/router.js"></script>
@@ -207,6 +210,7 @@ Router.add('/iifiis', () => routePublic('iifiis'));
 Router.add('/proyectos-destacados', () => routePublic('proyectos-destacados'));
 Router.add('/directorio', () => routePublic('directorio'));
 Router.add('/calendario', () => routePublic('calendario'));
+<<<<<<< HEAD
 Router.add('/docentes/:id', (id) => routePublicDetailDocente(id));
 
 async function routePublicDetailDocente(id) {
@@ -238,6 +242,14 @@ Router.add('/laboratorio-quimica', () => routePublic('laboratorio-quimica'));
 Router.add('/laboratorio-academico', () => routePublic('laboratorio-academico'));
 Router.add('/laboratorio-ia', () => routePublic('laboratorio-ia'));
 Router.add('/consult-fiis', () => routePublic('consult-fiis'));
+=======
+Router.add('/guias-academicas', () => routePublic('guias-academicas'));
+Router.add('/avisos-academicos', () => routePublic('avisos-academicos'));
+Router.add('/avisos-administrativos', () => routePublic('avisos-administrativos'));
+Router.add('/documentos-academicos', () => routePublic('documentos-academicos'));
+Router.add('/horarios-mallas', () => routePublic('horarios-mallas'));
+Router.add('/servicios', () => routePublic('servicios'));
+>>>>>>> H3nr7M3d1n4
 Router.add('/laboratorios', () => routePublic('laboratorios'));
 Router.add('/dashboard/admin', () => routeDashboard('admin'));
 Router.add('/dashboard/admin-web', () => routeDashboard('admin'));
@@ -272,7 +284,10 @@ Router.add('/dashboard/laboratorio/pagina', () => routeDashboardSub('laboratorio
 Router.add('/dashboard/laboratorio/solicitar', () => routeDashboardSub('laboratorio', 'solicitar'));
 Router.add('/dashboard/laboratorio/servicios', () => routeDashboardSub('laboratorio', 'servicios'));
 Router.add('/dashboard/admin/vacantes', () => routeDashboardSub('admin', 'vacantes'));
+<<<<<<< HEAD
 Router.add('/dashboard/admin/repositorio', () => routeDashboardSub('admin', 'repositorio'));
+=======
+>>>>>>> H3nr7M3d1n4
 Router.add('/dashboard/admin/eventos', () => routeDashboardSub('admin', 'eventos'));
 Router.add('/dashboard/admin/reportes', () => routeDashboardSub('admin', 'reportes'));
 Router.add('/dashboard/admin/configuracion', () => routeDashboardSub('admin', 'configuracion'));

@@ -62,7 +62,12 @@ const ROLES = {
       { icon: 'newspaper', label: 'Gestión de Noticias', route: '/news' },
       { icon: 'event', label: 'Gestión de Calendario', route: '/calendar' },
       { icon: 'work', label: 'Moderación de Vacantes', route: '/dashboard/admin/vacantes' },
+<<<<<<< HEAD
       { icon: 'folder_open', label: 'Repositorio Central', route: '/dashboard/admin/repositorio' },
+=======
+      { icon: 'event_note', label: 'Moderación de Eventos', route: '/dashboard/admin/eventos' },
+      { icon: 'analytics', label: 'Reportes Globales', route: '/dashboard/admin/reportes' },
+>>>>>>> H3nr7M3d1n4
       { icon: 'settings', label: 'Configuración', route: '/dashboard/admin/configuracion' },
     ]
   }
