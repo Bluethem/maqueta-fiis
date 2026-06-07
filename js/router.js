@@ -198,6 +198,35 @@ async function loadPage(path) {
   }
 }
 
+async function loadPartial(name) {
+  try {
+    const res = await fetch(`pages/partials/${name}.html`);
+    if (!res.ok) throw new Error('Partial not found');
+    return await res.text();
+  } catch {
+    return '';
+  }
+}
+
+async function renderFullscreenHero({
+  imageSrc = 'assets/hero-slide-1.jpg',
+  imageAlt = 'Portada FIIS UNI',
+  slotHtml = ''
+} = {}) {
+  let html = await loadPartial('hero-fullscreen');
+  if (!html) return '';
+
+  html = html
+    .replace(/src="[^"]*"/, `src="${imageSrc}"`)
+    .replace(/alt="[^"]*"/, `alt="${imageAlt}"`)
+    .replace(
+      /<div class="hero-fullscreen__content" id="hero-bottom-left-slot">[\s\S]*?<\/div>/,
+      `<div class="hero-fullscreen__content" id="hero-bottom-left-slot">${slotHtml}</div>`
+    );
+
+  return html;
+}
+
 function navbar(active) {
     const items = MEGA_MENU.map(item => {
     const hasChildren = item.children && item.children.length > 0;

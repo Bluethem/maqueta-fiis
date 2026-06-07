@@ -113,8 +113,9 @@ async function routePublicDetail(id) {
 }
 
 async function routeLanding() {
-  const html = await loadPage('landing');
-  renderPublicLayout(html, '/');
+  const hero = await loadPartial('hero-fullscreen');
+  const content = await loadPage('landing');
+  renderPublicLayout(hero + content, '/');
 }
 
 async function routeLogin() {

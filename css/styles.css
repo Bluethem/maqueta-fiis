@@ -119,6 +119,82 @@ body { font-family: 'Inter', sans-serif; background-color: #E8E7EA; color: #1c1b
 .mega-dropdown-md{min-width:400px}
 .mega-dropdown-md .mega-grid{grid-template-columns:1fr 1fr}
 
+/* ===== Hero fullscreen ===== */
+.hero-fullscreen {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 520px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #711610, #8B2D26);
+}
+.hero-fullscreen__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.72);
+}
+.hero-fullscreen__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.35) 45%,
+      rgba(0, 0, 0, 0.18) 100%
+    );
+  z-index: 1;
+}
+.hero-fullscreen__content {
+  position: absolute;
+  left: 32px;
+  bottom: 300px;
+  z-index: 2;
+  max-width: min(720px, calc(100% - 64px));
+  color: #fff;
+}
+.hero-fullscreen__logo {
+  display: block;
+  width: auto;
+  height: clamp(80px, 20vw, 130px);
+  margin-bottom: 16px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+}
+.hero-fullscreen__eyebrow {
+  margin: 0 0 10px;
+  font-size: clamp(0.75rem, 1.5vw, 0.95rem);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+.hero-fullscreen__title {
+  margin: 0;
+  font-size: clamp(1.25rem, 3.2vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 640px) {
+  .hero-fullscreen__content {
+    left: 20px;
+    bottom: 80px;
+    max-width: calc(100% - 40px);
+  }
+  .hero-fullscreen__logo {
+    height: 56px;
+    margin-bottom: 12px;
+  }
+}
+
 /* ===== Carousel ===== */
 .carousel{position:relative;overflow:hidden;border-radius:16px}
 .carousel-inner{display:flex;transition:transform 0.6s cubic-bezier(0.4,0,0.2,1);will-change:transform}
