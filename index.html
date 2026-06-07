@@ -199,6 +199,12 @@ Router.add('/empresas', () => routePublic('empresas'));
   });
 });
 Router.add('/egresados', () => routePublic('egresados'));
+Router.add('/egresados/directorio', () => routePublic('egresados-directorio'));
+Router.add('/egresados/:slug', async function(slug) {
+  window.__EGRESADO_SLUG = slug;
+  const html = await loadPage('egresado-perfil');
+  renderPublicLayout(html, '/egresados');
+});
 Router.add('/comunidad', () => routePublic('comunidad'));
 Router.add('/comunidad/:id', (id) => routePublicDetail(id));
 Router.add('/academico', () => routePublic('academico'));
@@ -238,6 +244,16 @@ Router.add('/laboratorio-quimica', () => routePublic('laboratorio-quimica'));
 Router.add('/laboratorio-academico', () => routePublic('laboratorio-academico'));
 Router.add('/laboratorio-ia', () => routePublic('laboratorio-ia'));
 Router.add('/consult-fiis', () => routePublic('consult-fiis'));
+Router.add('/consult-fiis/consultor/:slug', async function(slug) {
+  window.__CONSULTOR_SLUG = slug;
+  const html = await loadPage('consult-fiis-consultor');
+  renderPublicLayout(html, '/consult-fiis');
+});
+Router.add('/consult-fiis/proyecto/:slug', async function(slug) {
+  window.__PROYECTO_SLUG = slug;
+  const html = await loadPage('consult-fiis-proyecto');
+  renderPublicLayout(html, '/consult-fiis');
+});
 Router.add('/laboratorios', () => routePublic('laboratorios'));
 Router.add('/dashboard/admin', () => routeDashboard('admin'));
 Router.add('/dashboard/admin-web', () => routeDashboard('admin'));
@@ -263,6 +279,12 @@ Router.add('/dashboard/centro/pagina', () => routeDashboardSub('centro', 'pagina
 Router.add('/dashboard/centro/convocatorias', () => routeDashboardSub('centro', 'convocatorias'));
 Router.add('/dashboard/centro/solicitar', () => routeDashboardSub('centro', 'solicitar'));
 Router.add('/dashboard/centro/repositorio', () => routeDashboardSub('centro', 'repositorio'));
+Router.add('/dashboard/egresado/perfil', () => routeDashboardSub('egresado', 'perfil'));
+Router.add('/dashboard/egresado/bolsa', () => routeDashboardSub('egresado', 'bolsa'));
+Router.add('/dashboard/egresado/alertas', () => routeDashboardSub('egresado', 'alertas'));
+Router.add('/dashboard/egresado/postulaciones', () => routeDashboardSub('egresado', 'postulaciones'));
+Router.add('/dashboard/egresado/alumni', () => routeDashboardSub('egresado', 'alumni'));
+Router.add('/dashboard/egresado/mentoria', () => routeDashboardSub('egresado', 'mentoria'));
 Router.add('/dashboard/empresa/perfil', () => routeDashboardSub('empresa', 'perfil'));
 Router.add('/dashboard/empresa/vacantes', () => routeDashboardSub('empresa', 'vacantes'));
 Router.add('/dashboard/empresa/evento', () => routeDashboardSub('empresa', 'evento'));

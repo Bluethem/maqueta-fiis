@@ -1,0 +1,79 @@
+<div class="page-enter space-y-8">
+  <section class="relative bg-primary py-16 md:py-20 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
+    <div class="max-w-[1200px] mx-auto px-6 relative z-10">
+      <nav class="flex items-center gap-2 text-brand-cream/70 text-sm mb-6 flex-wrap" aria-label="Breadcrumb">
+        <a href="#/consult-fiis" class="hover:text-brand-cream transition-colors">Consult FIIS</a>
+        <span class="material-symbols-outlined text-xs">chevron_right</span>
+        <span class="text-brand-cream font-medium" id="breadcrumb-name">Consultor</span>
+      </nav>
+      <div class="flex items-center gap-6 flex-wrap">
+        <div class="w-20 h-20 rounded-full bg-brand-cream flex items-center justify-center text-3xl font-bold text-primary flex-shrink-0" id="hero-avatar">--</div>
+        <div>
+          <h1 class="text-on-primary text-3xl md:text-4xl font-bold leading-tight" id="hero-name">Cargando...</h1>
+          <p class="text-on-primary/70 text-sm mt-2" id="hero-cargo"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-[1200px] mx-auto px-6 pb-16">
+    <div id="consultor-not-found" class="hidden text-center py-16 bg-white border border-border-subtle rounded-xl">
+      <p class="font-semibold text-on-surface">Consultor no encontrado</p>
+      <a href="#/consult-fiis" class="inline-flex items-center gap-1 text-primary font-semibold mt-4 hover:underline">Volver a Consult FIIS</a>
+    </div>
+    <div id="consultor-content" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-2 space-y-6">
+        <div class="bg-white border border-border-subtle rounded-xl p-6">
+          <h2 class="text-lg font-bold text-primary mb-4">Perfil profesional</h2>
+          <p class="text-sm text-on-surface-variant leading-relaxed" id="field-bio"></p>
+        </div>
+        <div class="bg-white border border-border-subtle rounded-xl p-6">
+          <h2 class="text-lg font-bold text-primary mb-4">Líneas de especialidad</h2>
+          <div id="field-especialidades" class="flex flex-wrap gap-2"></div>
+        </div>
+      </div>
+      <div class="space-y-6">
+        <div class="bg-white border border-border-subtle rounded-xl p-6">
+          <h2 class="text-sm font-bold text-primary uppercase tracking-wide mb-4">Información</h2>
+          <p class="text-xs text-text-secondary uppercase font-semibold">Grado académico</p>
+          <p class="text-sm font-medium text-on-surface mt-1 mb-4" id="field-grado">—</p>
+          <p class="text-xs text-text-secondary uppercase font-semibold">Línea estratégica</p>
+          <p class="text-sm font-medium text-on-surface mt-1" id="field-linea">—</p>
+        </div>
+        <a href="#/consult-fiis" class="flex items-center gap-2 text-primary text-sm font-semibold hover:underline">
+          <span class="material-symbols-outlined text-sm">arrow_back</span> Volver a Consult FIIS
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var CONSULTORES = {
+    'guillermo-cruz': { nombre: 'Ing. Guillermo Cruz Figueroa', iniciales: 'GC', cargo: 'Director Ejecutivo', grado: 'Ingeniero Industrial', linea: 'Gestión empresarial', bio: 'Director ejecutivo de Consult FIIS con amplia experiencia en consultoría estratégica, transformación organizacional y proyectos de mejora continua para sector público y privado.', especialidades: ['Dirección estratégica', 'Consultoría empresarial', 'Gestión de proyectos'] },
+    'victor-caicedo': { nombre: 'Dr. Víctor Caicedo B.', iniciales: 'VC', cargo: 'Consultor Senior', grado: 'Doctor en Ingeniería Industrial', linea: 'Industrial', bio: 'Consultor senior con experiencia en optimización de procesos, Lean Six Sigma y gestión de la producción. Docente universitario y asesor de empresas manufactureras.', especialidades: ['Lean Six Sigma', 'Procesos industriales', 'Calidad'] },
+    'silvio-quinteros': { nombre: 'Dr. Silvio Quinteros Ch.', iniciales: 'SQ', cargo: 'Consultor Senior', grado: 'Doctor en Ingeniería de Sistemas', linea: 'Sistemas', bio: 'Especialista en sistemas de información, auditoría informática y seguridad. Ha liderado proyectos de transformación digital en entidades públicas y privadas.', especialidades: ['Auditoría informática', 'Seguridad', 'Sistemas de información'] },
+    'maria-elena-torres': { nombre: 'Mg. María Elena Torres R.', iniciales: 'MT', cargo: 'Consultora', grado: 'Magíster en Gestión de Operaciones', linea: 'Industrial', bio: 'Consultora en supply chain, logística y gestión de operaciones. Experiencia en retail, manufactura y sector servicios con enfoque en mejora de indicadores operativos.', especialidades: ['Supply Chain', 'Logística', 'Operaciones'] }
+  };
+  var slug = window.__CONSULTOR_SLUG || '';
+  var c = CONSULTORES[slug];
+  if (!c) {
+    document.getElementById('consultor-not-found').classList.remove('hidden');
+    document.getElementById('consultor-content').classList.add('hidden');
+    document.getElementById('hero-name').textContent = 'Consultor no encontrado';
+    return;
+  }
+  document.getElementById('hero-avatar').textContent = c.iniciales;
+  document.getElementById('hero-name').textContent = c.nombre;
+  document.getElementById('hero-cargo').textContent = c.cargo;
+  document.getElementById('breadcrumb-name').textContent = c.nombre;
+  document.getElementById('field-bio').textContent = c.bio;
+  document.getElementById('field-grado').textContent = c.grado;
+  document.getElementById('field-linea').textContent = c.linea;
+  document.getElementById('field-especialidades').innerHTML = c.especialidades.map(function(e) {
+    return '<span class="bg-primary/5 text-primary px-3 py-1.5 rounded-lg text-sm font-medium border border-primary/10">' + e + '</span>';
+  }).join('');
+})();
+</script>

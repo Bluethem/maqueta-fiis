@@ -29,7 +29,21 @@ const ROLES = {
       { icon: 'dashboard', label: 'Dashboard', route: '/dashboard/centro' },
       { icon: 'web', label: 'Mi Página', route: '/dashboard/centro/pagina' },
       { icon: 'campaign', label: 'Convocatorias', route: '/dashboard/centro/convocatorias' },
-      { icon: 'add_circle', label: 'Solicitar publicación', route: '/dashboard/centro/solicitar' },
+      { icon: 'folder', label: 'Repositorio', route: '/dashboard/centro/repositorio' },
+      { icon: 'content_paste', label: 'Gestión de Contenido', route: '/content' },
+    ]
+  },
+  egresado: {
+    label: 'Egresado',
+    badge: 'bg-green-100 text-green-700',
+    sidebar: [
+      { icon: 'dashboard', label: 'Dashboard', route: '/dashboard/egresado' },
+      { icon: 'person', label: 'Mi Perfil', route: '/dashboard/egresado/perfil' },
+      { icon: 'work', label: 'Bolsa de Trabajo', route: '/dashboard/egresado/bolsa' },
+      { icon: 'notifications', label: 'Alertas de empleo', route: '/dashboard/egresado/alertas' },
+      { icon: 'assignment_turned_in', label: 'Mis Postulaciones', route: '/dashboard/egresado/postulaciones' },
+      { icon: 'groups', label: 'Red Alumni', route: '/dashboard/egresado/alumni' },
+      { icon: 'psychology', label: 'Mentoría', route: '/dashboard/egresado/mentoria' },
     ]
   },
   empresa: {
