@@ -1,0 +1,157 @@
+<div class="page-enter space-y-8">
+  <section class="relative bg-primary overflow-hidden rounded-2xl min-h-[260px] flex items-center">
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 18% 30%, #E6D9AA 0%, transparent 48%), radial-gradient(circle at 80% 70%, #fff 0%, transparent 42%);"></div>
+    <div class="relative z-10 px-8 py-12 md:px-12 max-w-[1200px] mx-auto w-full">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="material-symbols-outlined text-brand-cream text-3xl" style="font-variation-settings:'FILL'1;">gavel</span>
+        <span class="text-brand-cream font-semibold text-sm uppercase tracking-widest">Secretaria Academica</span>
+      </div>
+      <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-3 leading-tight">Documentos academicos oficiales</h1>
+      <p class="text-on-primary/90 text-lg leading-relaxed max-w-2xl">Resoluciones, reglamentos y cronogramas publicados por la Secretaria Academica para consulta de estudiantes, docentes y autoridades.</p>
+    </div>
+  </section>
+
+  <section class="max-w-[1200px] mx-auto px-6 md:px-8 space-y-6">
+    <div class="bg-white rounded-xl border border-border-subtle p-5 shadow-sm">
+      <div class="flex flex-col lg:flex-row gap-4 lg:items-center lg:justify-between">
+        <div class="flex flex-wrap gap-2">
+          <button data-doc-filter="todos" class="doc-filter bg-primary text-on-primary px-3.5 py-1.5 text-sm font-semibold rounded-lg transition-all">Todos</button>
+          <button data-doc-filter="resolucion" class="doc-filter border border-border-subtle text-text-secondary px-3.5 py-1.5 text-sm font-medium rounded-lg hover:border-primary hover:text-primary transition-all">Resoluciones</button>
+          <button data-doc-filter="reglamento" class="doc-filter border border-border-subtle text-text-secondary px-3.5 py-1.5 text-sm font-medium rounded-lg hover:border-primary hover:text-primary transition-all">Reglamentos</button>
+          <button data-doc-filter="cronograma" class="doc-filter border border-border-subtle text-text-secondary px-3.5 py-1.5 text-sm font-medium rounded-lg hover:border-primary hover:text-primary transition-all">Cronogramas</button>
+          <button data-doc-filter="formato" class="doc-filter border border-border-subtle text-text-secondary px-3.5 py-1.5 text-sm font-medium rounded-lg hover:border-primary hover:text-primary transition-all">Formatos</button>
+        </div>
+        <div class="relative w-full lg:w-80">
+          <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary text-sm pointer-events-none">search</span>
+          <input id="doc-search" type="search" placeholder="Buscar por titulo, area o codigo..." class="w-full pl-9 pr-3 py-2 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5" id="doc-grid">
+      <article class="doc-card bg-white rounded-xl border border-border-subtle p-5 shadow-sm hover:shadow-md transition-all" data-tipo="resolucion" data-keywords="resolucion examen final cronograma secretaria academica">
+        <div class="flex items-start justify-between gap-3 mb-3">
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-error/10 text-error">Resolucion</span>
+          <span class="text-xs text-text-secondary">28 Oct 2024</span>
+        </div>
+        <h2 class="font-bold text-on-surface text-base leading-snug">Resolucion SA-084-2024: Cronograma de evaluaciones finales</h2>
+        <p class="text-sm text-text-secondary mt-2 leading-relaxed">Aprueba las fechas oficiales de examenes finales para las cuatro escuelas profesionales.</p>
+        <dl class="mt-4 space-y-1 text-xs">
+          <div class="flex justify-between gap-3"><dt class="text-text-secondary">Area responsable</dt><dd class="font-semibold text-on-surface text-right">Secretaria Academica</dd></div>
+          <div class="flex justify-between gap-3"><dt class="text-text-secondary">Vigencia</dt><dd class="font-semibold text-success text-right">Vigente</dd></div>
+        </dl>
+        <a href="#" class="mt-4 inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold bg-primary text-on-primary rounded-lg hover:brightness-110 transition-all"><span class="material-symbols-outlined text-sm">download</span>Descargar PDF</a>
+      </article>
+
+      <article class="doc-card bg-white rounded-xl border border-border-subtle p-5 shadow-sm hover:shadow-md transition-all" data-tipo="reglamento" data-keywords="reglamento evaluacion academica asistencia notas secretaria academica">
+        <div class="flex items-start justify-between gap-3 mb-3">
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-primary/10 text-primary">Reglamento</span>
+          <span class="text-xs text-text-secondary">20 Oct 2024</span>
+        </div>
+        <h2 class="font-bold text-on-surface text-base leading-snug">Reglamento de evaluacion academica FIIS 2024</h2>
+        <p class="text-sm text-text-secondary mt-2 leading-relaxed">Documento vigente para criterios de evaluacion, recuperaciones, asistencia y registro de notas.</p>
+        <dl class="mt-4 space-y-1 text-xs">
+          <div class="flex justify-between gap-3"><dt class="text-text-secondary">Area responsable</dt><dd class="font-semibold text-on-surface text-right">Secretaria Academica</dd></div>
+          <div class="flex justify-between gap-3"><dt class="text-text-secondary">Actualizado</dt><dd class="font-semibold text-on-surface text-right">2024-II</dd></div>
+        </dl>
+        <a href="#" class="mt-4 inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold bg-primary text-on-primary rounded-lg hover:brightness-110 transition-all"><span class="material-symbols-outlined text-sm">download</span>Descargar PDF</a>
+      </article>
+
+      <article class="doc-card bg-white rounded-xl border border-border-subtle p-5 shadow-sm hover:shadow-md transition-all" data-tipo="cronograma" data-keywords="cronograma practicas calificadas examenes industrial sistemas software inteligencia artificial">
+        <div class="flex items-start justify-between gap-3 mb-3">
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-success/10 text-success">Cronograma</span>
+          <span class="text-xs text-text-secondary">15 Oct 2024</span>
+        </div>
+        <h2 class="font-bold text-on-surface text-base leading-snug">Cronogramas de PCs y examenes por escuela</h2>
+        <p class="text-sm text-text-secondary mt-2 leading-relaxed">Consolidado de practicas calificadas, examenes parciales y finales por periodo academico.</p>
+        <dl class="mt-4 space-y-1 text-xs">
+          <div class="flex justify-between gap-3"><dt class="text-text-secondary">Area responsable</dt><dd class="font-semibold text-on-surface text-right">Secretaria Academica</dd></div>
+          <div class="flex justify-between gap-3"><dt class="text-text-secondary">Periodo</dt><dd class="font-semibold text-on-surface text-right">2024-II</dd></div>
+        </dl>
+        <a href="#/cronogramas" class="mt-4 inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold bg-primary text-on-primary rounded-lg hover:brightness-110 transition-all"><span class="material-symbols-outlined text-sm">calendar_month</span>Ver cronogramas</a>
+      </article>
+
+      <article class="doc-card bg-white rounded-xl border border-border-subtle p-5 shadow-sm hover:shadow-md transition-all" data-tipo="reglamento" data-keywords="reglamento practicas preprofesionales procedimiento carta convenio">
+        <div class="flex items-start justify-between gap-3 mb-3">
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-primary/10 text-primary">Reglamento</span>
+          <span class="text-xs text-text-secondary">05 Sep 2024</span>
+        </div>
+        <h2 class="font-bold text-on-surface text-base leading-snug">Reglamento de practicas preprofesionales</h2>
+        <p class="text-sm text-text-secondary mt-2 leading-relaxed">Requisitos, documentos y validaciones para registrar practicas preprofesionales FIIS.</p>
+        <dl class="mt-4 space-y-1 text-xs">
+          <div class="flex justify-between gap-3"><dt class="text-text-secondary">Area responsable</dt><dd class="font-semibold text-on-surface text-right">Secretaria Academica</dd></div>
+          <div class="flex justify-between gap-3"><dt class="text-text-secondary">Relacion</dt><dd class="font-semibold text-on-surface text-right">Guia academica</dd></div>
+        </dl>
+        <a href="#/guias-academicas" class="mt-4 inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold bg-primary text-on-primary rounded-lg hover:brightness-110 transition-all"><span class="material-symbols-outlined text-sm">menu_book</span>Ver guia</a>
+      </article>
+
+      <article class="doc-card bg-white rounded-xl border border-border-subtle p-5 shadow-sm hover:shadow-md transition-all" data-tipo="formato" data-keywords="fut formato solicitud matricula extraordinaria convalidacion intercambio">
+        <div class="flex items-start justify-between gap-3 mb-3">
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-warning/10 text-warning">Formato</span>
+          <span class="text-xs text-text-secondary">01 Sep 2024</span>
+        </div>
+        <h2 class="font-bold text-on-surface text-base leading-snug">Formatos academicos frecuentes</h2>
+        <p class="text-sm text-text-secondary mt-2 leading-relaxed">FUT, solicitud de matricula extraordinaria, convalidacion e intercambio academico.</p>
+        <dl class="mt-4 space-y-1 text-xs">
+          <div class="flex justify-between gap-3"><dt class="text-text-secondary">Area responsable</dt><dd class="font-semibold text-on-surface text-right">Secretaria Academica</dd></div>
+          <div class="flex justify-between gap-3"><dt class="text-text-secondary">Uso</dt><dd class="font-semibold text-on-surface text-right">Tramites</dd></div>
+        </dl>
+        <a href="#/guias-academicas" class="mt-4 inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold bg-primary text-on-primary rounded-lg hover:brightness-110 transition-all"><span class="material-symbols-outlined text-sm">download</span>Ver formatos</a>
+      </article>
+
+      <article class="doc-card bg-white rounded-xl border border-border-subtle p-5 shadow-sm hover:shadow-md transition-all" data-tipo="resolucion" data-keywords="resolucion matricula extraordinaria secretaria academica estudiantes">
+        <div class="flex items-start justify-between gap-3 mb-3">
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-error/10 text-error">Resolucion</span>
+          <span class="text-xs text-text-secondary">22 Ago 2024</span>
+        </div>
+        <h2 class="font-bold text-on-surface text-base leading-snug">Resolucion SA-061-2024: Matricula extraordinaria</h2>
+        <p class="text-sm text-text-secondary mt-2 leading-relaxed">Aprueba el procedimiento excepcional para solicitudes de matricula fuera del plazo regular.</p>
+        <dl class="mt-4 space-y-1 text-xs">
+          <div class="flex justify-between gap-3"><dt class="text-text-secondary">Area responsable</dt><dd class="font-semibold text-on-surface text-right">Secretaria Academica</dd></div>
+          <div class="flex justify-between gap-3"><dt class="text-text-secondary">Estado</dt><dd class="font-semibold text-success text-right">Publicado</dd></div>
+        </dl>
+        <a href="#" class="mt-4 inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold bg-primary text-on-primary rounded-lg hover:brightness-110 transition-all"><span class="material-symbols-outlined text-sm">download</span>Descargar PDF</a>
+      </article>
+    </div>
+    <p id="doc-empty" class="hidden text-center text-sm text-text-secondary py-8">No se encontraron documentos con ese criterio.</p>
+  </section>
+</div>
+
+<script>
+(function () {
+  var active = 'todos';
+  var query = '';
+  var cards = document.querySelectorAll('.doc-card');
+  var empty = document.getElementById('doc-empty');
+
+  function applyFilters() {
+    var visible = 0;
+    cards.forEach(function (card) {
+      var matchType = active === 'todos' || card.dataset.tipo === active;
+      var matchQuery = !query || (card.textContent + ' ' + (card.dataset.keywords || '')).toLowerCase().indexOf(query) !== -1;
+      var show = matchType && matchQuery;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    if (empty) empty.classList.toggle('hidden', visible > 0);
+  }
+
+  document.querySelectorAll('.doc-filter').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      active = this.dataset.docFilter;
+      document.querySelectorAll('.doc-filter').forEach(function (b) {
+        b.classList.remove('bg-primary', 'text-on-primary', 'font-semibold');
+        b.classList.add('border', 'border-border-subtle', 'text-text-secondary', 'font-medium');
+      });
+      this.classList.remove('border', 'border-border-subtle', 'text-text-secondary', 'font-medium');
+      this.classList.add('bg-primary', 'text-on-primary', 'font-semibold');
+      applyFilters();
+    });
+  });
+
+  document.getElementById('doc-search').addEventListener('input', function () {
+    query = this.value.trim().toLowerCase();
+    applyFilters();
+  });
+})();
+</script>

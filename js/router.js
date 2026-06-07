@@ -72,6 +72,7 @@ const MEGA_MENU = [
         { label: 'UECPS', route: '/uecps', icon: 'public' },
         { label: 'Centro de Información', route: '/centro-informacion', icon: 'library_books' },
         { label: 'Repositorio Central', route: '/repositorio', icon: 'folder_open' },
+        { label: 'Guía y Procedimientos', route: '/guias-procedimientos', icon: 'description' },
       ]},
       { col: 2, title: 'Extensión', items: [
         { label: 'Sistemas UNI', route: '#', icon: 'computer' },
@@ -120,26 +121,10 @@ const MEGA_MENU = [
     ]
   },
   {
-    label: 'Egresados', icon: 'school', route: '/egresados',
-    children: [
-      { col: 0, items: [
-        { label: 'Comunidad de Egresados', route: '/egresados', icon: 'groups' },
-        { label: 'Directorio de Egresados', route: '/egresados/directorio', icon: 'badge' },
-        { label: 'Red Alumni', route: 'https://alumni.fiis.uni.edu.pe', icon: 'link', external: true },
-      ]}
-    ]
+    label: 'Egresados', icon: 'school', route: '/egresados'
   },
   {
-    label: 'Empresas', icon: 'work',
-    children: [
-      { col: 0, items: [
-        { label: 'Empresas Aliadas', route: '/empresas', icon: 'handshake' },
-        { label: 'Bolsa de Trabajo', route: '/empresas', icon: 'work' },
-        { label: 'Prácticas Preprofesionales', route: '/empresas', icon: 'school' },
-        { label: 'Convenios Vigentes', route: '/empresas', icon: 'description' },
-        { label: 'Ser Empresa Aliada', route: '/empresas', icon: 'partner_exchange' },
-      ]}
-    ]
+    label: 'Empresas', icon: 'work', route: '/empresas'
   },
 ];
 
@@ -191,7 +176,8 @@ async function loadPage(path) {
   try {
     if (path.startsWith('/')) path = path.slice(1);
     if (!path.endsWith('.html')) path += '.html';
-    const res = await fetch(`pages/${path}`);
+    const cb = typeof loadPageCacheBuster !== 'undefined' ? loadPageCacheBuster : Date.now();
+    const res = await fetch(`pages/${path}?v=${cb}`, { cache: 'no-cache' });
     if (!res.ok) throw new Error('Not found');
     return await res.text();
   } catch {
@@ -237,16 +223,30 @@ function navbar(active) {
   }).join('');
   const mobileItems = MEGA_MENU.map(item => {
     const hasChildren = item.children && item.children.length > 0;
-    if (!hasChildren && item.route) return `<a class="text-sm text-on-surface-variant transition-colors py-1" href="#${item.route}">${item.label}</a>`;
+    const icon = item.icon || 'link';
+    if (!hasChildren && item.route) {
+      return `<a class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-colors" href="#${item.route}">
+        <span class="material-symbols-outlined text-primary text-lg">${icon}</span>${item.label}
+      </a>`;
+    }
     if (hasChildren) {
       const links = item.children.flatMap(c => (c.items || []).map(sub => {
         const href = sub.external ? sub.route : '#' + sub.route;
-        return `<a class="text-sm text-on-surface-variant transition-colors py-1 pl-4" href="${href}"${sub.external ? ' target="_blank"' : ''}><span class="material-symbols-outlined text-sm align-middle mr-1">${sub.icon}</span>${sub.label}</a>`;
+        return `<a class="flex items-center gap-3 px-3 py-2 text-sm text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-colors" href="${href}"${sub.external ? ' target="_blank" rel="noopener"' : ''}>
+          <span class="material-symbols-outlined text-primary text-base">${sub.icon}</span>${sub.label}
+        </a>`;
       })).join('');
-      const label = item.route
-        ? `<a class="text-sm font-bold text-primary hover:text-primary transition-colors" href="#${item.route}">${item.label}</a>`
-        : `<span class="text-sm font-bold text-primary">${item.label}</span>`;
-      return `<div class="py-1">${label}${links}</div>`;
+      return `<div class="mobile-accordion-item">
+        <button class="mobile-accordion-trigger flex items-center justify-between w-full px-3 py-2.5 text-sm font-semibold text-on-surface hover:bg-surface-container-low rounded-lg transition-colors" type="button">
+          <span class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-lg">${icon}</span>${item.label}
+          </span>
+          <span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200 mobile-chevron">chevron_right</span>
+        </button>
+        <div class="mobile-accordion-content overflow-hidden transition-all duration-200 max-h-0">
+          <div class="pb-2 pl-4 flex flex-col gap-0.5">${links}</div>
+        </div>
+      </div>`;
     }
     return '';
   }).join('');
@@ -254,9 +254,10 @@ function navbar(active) {
     <nav class="bg-surface border-b border-border-subtle sticky top-0 z-50">
       <div class="flex justify-between items-center w-full px-6 max-w-[1200px] mx-auto h-16">
         <div class="flex items-center gap-2 lg:gap-6">
-          <a href="#/" class="text-xl font-extrabold text-primary flex items-center gap-2 shrink-0">
-            <span class="material-symbols-outlined text-primary" style="font-variation-settings:'FILL'1;">architecture</span>
-            <span class="hidden sm:inline">FIIS UNI</span>
+          <a href="#/" class="flex items-center gap-2 shrink-0">
+            <img src="assets/Uni-logo_transparente_granate.png" alt="UNI" class="h-7 w-auto">
+            <span class="hidden sm:block w-px h-5 bg-border-subtle"></span>
+            <img src="assets/logo-fiis.png" alt="FIIS" class="hidden sm:block h-7 w-auto">
           </a>
           <div class="hidden lg:flex items-center gap-4 xl:gap-5 text-sm font-medium">${items}</div>
         </div>
@@ -272,8 +273,8 @@ function navbar(active) {
           </button>
         </div>
       </div>
-      <div class="lg:hidden hidden border-t border-border-subtle px-6 py-4 bg-white max-h-[70vh] overflow-y-auto" id="mobile-nav">
-        <div class="flex flex-col gap-2">${mobileItems}</div>
+      <div class="lg:hidden hidden border-t border-border-subtle px-4 py-3 bg-white max-h-[80vh] overflow-y-auto" id="mobile-nav">
+        <div class="flex flex-col gap-0.5">${mobileItems}</div>
       </div>
     </nav>
 
@@ -310,9 +311,10 @@ function publicFooter() {
       <div class="max-w-[1200px] mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div>
-            <span class="text-xl font-extrabold text-primary flex items-center gap-2 mb-6">
-              <span class="material-symbols-outlined text-primary" style="font-variation-settings:'FILL'1;">architecture</span>
-              FIIS UNI
+            <span class="flex items-center gap-3 mb-6">
+              <img src="assets/Uni-logo_transparente_granate.png" alt="UNI" class="h-10 w-auto">
+              <span class="w-px h-8 bg-border-subtle"></span>
+              <img src="assets/logo-fiis.png" alt="FIIS" class="h-10 w-auto">
             </span>
             <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Facultad de Ingeniería Industrial y de Sistemas — Universidad Nacional de Ingeniería.</p>
             <div class="flex gap-4">
@@ -409,10 +411,30 @@ function renderPublicLayout(content, activeSection) {
   const toggle = document.getElementById('nav-menu-toggle');
   const mobileNav = document.getElementById('mobile-nav');
   if (toggle && mobileNav) {
-    toggle.addEventListener('click', () => {
-      mobileNav.classList.toggle('hidden');
+    const closeMobileNav = () => {
+      mobileNav.classList.add('hidden');
+      document.body.style.overflow = '';
+    };
+    const openMobileNav = () => {
+      mobileNav.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    };
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (mobileNav.classList.contains('hidden')) openMobileNav();
+      else closeMobileNav();
+    });
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMobileNav);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !mobileNav.classList.contains('hidden')) closeMobileNav();
+    });
+    document.addEventListener('click', (e) => {
+      if (!mobileNav.classList.contains('hidden') && !mobileNav.contains(e.target) && e.target !== toggle) closeMobileNav();
     });
   }
+  bindMobileAccordion();
 }
 
 function renderPublicPage(html) {
@@ -577,6 +599,25 @@ function doSearch() {
     });
   });
   results.innerHTML = html;
+}
+
+function bindMobileAccordion() {
+  document.querySelectorAll('.mobile-accordion-trigger').forEach(btn => {
+    btn.removeEventListener('click', accordionHandler);
+    btn.addEventListener('click', accordionHandler);
+  });
+}
+
+function accordionHandler(e) {
+  const trigger = e.currentTarget;
+  const item = trigger.closest('.mobile-accordion-item');
+  if (!item) return;
+  const content = item.querySelector('.mobile-accordion-content');
+  const chevron = trigger.querySelector('.mobile-chevron');
+  if (!content) return;
+  const isOpen = content.classList.contains('open');
+  content.classList.toggle('open');
+  if (chevron) chevron.style.transform = isOpen ? '' : 'rotate(90deg)';
 }
 
 function toggleTreeHandler(e) {

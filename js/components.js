@@ -41,10 +41,10 @@ const Components = {
     return `
       <aside class="fixed left-0 top-0 h-full w-[240px] bg-white border-r border-border-subtle flex flex-col z-50 -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out" id="sidebar">
         <div class="px-6 py-6">
-          <div class="flex items-center gap-3">
-            <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-sm">F</div>
+          <div class="flex items-center gap-2">
+            <img src="assets/Uni-logo_transparente_granate.png" alt="UNI" class="h-7 w-auto">
             <div>
-              <h1 class="text-base font-bold text-primary">Portal FIIS</h1>
+              <h1 class="text-sm font-bold text-primary">Portal FIIS</h1>
               <p class="text-[10px] text-text-secondary uppercase tracking-wider font-medium">${roleConfig.label}</p>
             </div>
           </div>
@@ -99,8 +99,9 @@ const Components = {
     return `
       <footer class="w-full py-6 px-6 bg-surface-container-high border-t border-border-subtle">
         <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <div class="flex items-center gap-2">
-            <span class="text-base font-bold text-primary">FIIS UNI</span>
+          <div class="flex items-center gap-3">
+            <img src="assets/logo-fiis.png" alt="FIIS" class="h-6 w-auto">
+            <span class="w-px h-4 bg-border-subtle"></span>
             <span class="text-text-secondary text-xs">© 2024 Facultad de Ingeniería Industrial y de Sistemas</span>
           </div>
           <div class="flex gap-6">

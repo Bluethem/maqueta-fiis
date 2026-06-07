@@ -1,0 +1,401 @@
+<div class="page-enter space-y-8">
+
+  <section class="relative bg-primary overflow-hidden rounded-2xl min-h-[260px] flex items-center">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
+    <div class="relative z-10 px-8 md:px-16 py-14 w-full">
+      <div class="flex items-center gap-2 mb-3">
+        <a href="#/" class="text-brand-cream/70 hover:text-brand-cream text-sm flex items-center gap-1 transition-colors">
+          <span class="material-symbols-outlined text-sm">arrow_back</span> Inicio
+        </a>
+      </div>
+      <div class="max-w-2xl">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="inline-flex items-center gap-1.5 bg-brand-cream/20 text-brand-cream px-3 py-1 rounded-full text-xs font-semibold">
+            <span class="material-symbols-outlined text-sm">menu_book</span>
+            Secretaría Académica
+          </span>
+        </div>
+        <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-4 leading-tight">Guías y Procedimientos</h1>
+        <p class="text-on-primary/90 text-lg md:text-xl leading-relaxed max-w-xl">Conoce paso a paso los trámites y procesos académicos de la FIIS-UNI para estudiantes y egresados.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-[1200px] mx-auto px-6 md:px-8 space-y-10 pb-12">
+
+    <!-- Filtro de procedimientos -->
+    <div class="flex flex-wrap gap-2" id="guiasFilters">
+      <button data-filter="all" class="guia-filter px-4 py-1.5 rounded-full text-sm font-semibold bg-primary text-on-primary transition-all">Todos</button>
+      <button data-filter="practicas" class="guia-filter px-4 py-1.5 rounded-full text-sm font-medium border border-border-subtle text-text-secondary hover:border-primary hover:text-primary transition-all">Prácticas preprofesionales</button>
+      <button data-filter="intercambio" class="guia-filter px-4 py-1.5 rounded-full text-sm font-medium border border-border-subtle text-text-secondary hover:border-primary hover:text-primary transition-all">Intercambio académico</button>
+      <button data-filter="matricula" class="guia-filter px-4 py-1.5 rounded-full text-sm font-medium border border-border-subtle text-text-secondary hover:border-primary hover:text-primary transition-all">Matrícula extraordinaria</button>
+      <button data-filter="convalidacion" class="guia-filter px-4 py-1.5 rounded-full text-sm font-medium border border-border-subtle text-text-secondary hover:border-primary hover:text-primary transition-all">Convalidaciones</button>
+    </div>
+
+    <!-- Procedimiento 1 — Prácticas preprofesionales -->
+    <div class="guia-card" data-categoria="practicas">
+      <div class="bg-white rounded-xl border border-border-subtle shadow-sm overflow-hidden card-hover">
+        <div class="flex items-center gap-4 px-6 py-5 border-b border-border-subtle bg-primary/5">
+          <div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-on-primary text-xl" style="font-variation-settings:'FILL'1;">engineering</span>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-on-surface">Prácticas Preprofesionales</h2>
+            <p class="text-sm text-text-secondary mt-0.5">Requisitos y procedimiento para registro y validación de prácticas</p>
+          </div>
+          <span class="ml-auto inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-success/10 text-success">
+            <span class="w-1.5 h-1.5 rounded-full bg-success inline-block"></span>Vigente
+          </span>
+        </div>
+        <div class="p-6">
+          <div class="mb-6">
+            <h3 class="text-sm font-bold text-on-surface mb-3 flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-primary">checklist</span>Requisitos previos
+            </h3>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <li class="flex items-start gap-2 text-sm text-text-secondary"><span class="material-symbols-outlined text-xs text-success mt-0.5" style="font-variation-settings:'FILL'1;">check_circle</span>Haber aprobado el 4.° ciclo</li>
+              <li class="flex items-start gap-2 text-sm text-text-secondary"><span class="material-symbols-outlined text-xs text-success mt-0.5" style="font-variation-settings:'FILL'1;">check_circle</span>No tener deudas académicas ni administrativas</li>
+              <li class="flex items-start gap-2 text-sm text-text-secondary"><span class="material-symbols-outlined text-xs text-success mt-0.5" style="font-variation-settings:'FILL'1;">check_circle</span>Carta de aceptación de la empresa</li>
+              <li class="flex items-start gap-2 text-sm text-text-secondary"><span class="material-symbols-outlined text-xs text-success mt-0.5" style="font-variation-settings:'FILL'1;">check_circle</span>Seguro SCTR o SIS vigente</li>
+            </ul>
+          </div>
+          <h3 class="text-sm font-bold text-on-surface mb-4 flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm text-primary">linear_scale</span>Pasos del procedimiento
+          </h3>
+          <div class="relative">
+            <div class="absolute left-5 top-0 bottom-0 w-0.5 bg-border-subtle"></div>
+            <div class="space-y-4">
+              <div class="flex gap-4 relative">
+                <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 font-bold text-sm z-10">1</div>
+                <div class="flex-1 bg-surface-container-low rounded-lg p-4">
+                  <p class="font-semibold text-on-surface text-sm">Solicitud en Secretaría Académica</p>
+                  <p class="text-xs text-text-secondary mt-1">Presenta carta de aceptación de empresa + DNI + ficha de matrícula vigente en ventanilla o correo institucional.</p>
+                </div>
+              </div>
+              <div class="flex gap-4 relative">
+                <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 font-bold text-sm z-10">2</div>
+                <div class="flex-1 bg-surface-container-low rounded-lg p-4">
+                  <p class="font-semibold text-on-surface text-sm">Asignación de asesor</p>
+                  <p class="text-xs text-text-secondary mt-1">La Dirección de Escuela asigna un docente asesor de prácticas según área de la empresa.</p>
+                </div>
+              </div>
+              <div class="flex gap-4 relative">
+                <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 font-bold text-sm z-10">3</div>
+                <div class="flex-1 bg-surface-container-low rounded-lg p-4">
+                  <p class="font-semibold text-on-surface text-sm">Ejecución de prácticas</p>
+                  <p class="text-xs text-text-secondary mt-1">Duración mínima: 3 meses (300 horas). Envía informes mensuales al asesor FIIS.</p>
+                </div>
+              </div>
+              <div class="flex gap-4 relative">
+                <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 font-bold text-sm z-10">4</div>
+                <div class="flex-1 bg-surface-container-low rounded-lg p-4">
+                  <p class="font-semibold text-on-surface text-sm">Informe final y calificación</p>
+                  <p class="text-xs text-text-secondary mt-1">Presenta informe final al asesor. La empresa emite constancia de finalización. La Escuela registra la nota.</p>
+                </div>
+              </div>
+              <div class="flex gap-4 relative">
+                <div class="w-10 h-10 rounded-full bg-success text-white flex items-center justify-center flex-shrink-0 font-bold text-sm z-10">
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL'1;">check</span>
+                </div>
+                <div class="flex-1 bg-success/5 border border-success/20 rounded-lg p-4">
+                  <p class="font-semibold text-on-surface text-sm">Registro en sistema académico</p>
+                  <p class="text-xs text-text-secondary mt-1">Secretaría Académica registra las prácticas en el expediente del estudiante dentro de los 5 días hábiles.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-5 flex flex-wrap items-center gap-3 pt-4 border-t border-border-subtle">
+            <a href="#" class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold bg-primary text-on-primary rounded-lg hover:brightness-110 transition-all active:scale-95">
+              <span class="material-symbols-outlined text-sm">download</span>Formatos descargables
+            </a>
+            <a href="#/contacto" class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold border border-border-subtle rounded-lg text-text-secondary hover:bg-surface-container-low transition-all active:scale-95">
+              <span class="material-symbols-outlined text-sm">mail</span>Consultar a Secretaría
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Procedimiento 2 — Intercambio académico -->
+    <div class="guia-card" data-categoria="intercambio">
+      <div class="bg-white rounded-xl border border-border-subtle shadow-sm overflow-hidden card-hover">
+        <div class="flex items-center gap-4 px-6 py-5 border-b border-border-subtle bg-blue-50">
+          <div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-on-primary text-xl" style="font-variation-settings:'FILL'1;">travel_explore</span>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-on-surface">Intercambio Académico</h2>
+            <p class="text-sm text-text-secondary mt-0.5">Movilidad estudiantil nacional e internacional y estudios en el extranjero</p>
+          </div>
+          <span class="ml-auto inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-success/10 text-success">
+            <span class="w-1.5 h-1.5 rounded-full bg-success inline-block"></span>Vigente
+          </span>
+        </div>
+        <div class="p-6">
+          <div class="mb-6">
+            <h3 class="text-sm font-bold text-on-surface mb-3 flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-primary">checklist</span>Requisitos previos
+            </h3>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <li class="flex items-start gap-2 text-sm text-text-secondary"><span class="material-symbols-outlined text-xs text-success mt-0.5" style="font-variation-settings:'FILL'1;">check_circle</span>Haber aprobado el 6.° ciclo</li>
+              <li class="flex items-start gap-2 text-sm text-text-secondary"><span class="material-symbols-outlined text-xs text-success mt-0.5" style="font-variation-settings:'FILL'1;">check_circle</span>Promedio ponderado ≥ 13.0</li>
+              <li class="flex items-start gap-2 text-sm text-text-secondary"><span class="material-symbols-outlined text-xs text-success mt-0.5" style="font-variation-settings:'FILL'1;">check_circle</span>Certificado de idioma (nivel B2 para destinos internacionales)</li>
+              <li class="flex items-start gap-2 text-sm text-text-secondary"><span class="material-symbols-outlined text-xs text-success mt-0.5" style="font-variation-settings:'FILL'1;">check_circle</span>No tener sanciones académicas</li>
+            </ul>
+          </div>
+          <h3 class="text-sm font-bold text-on-surface mb-4 flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm text-primary">linear_scale</span>Pasos del procedimiento
+          </h3>
+          <div class="relative">
+            <div class="absolute left-5 top-0 bottom-0 w-0.5 bg-border-subtle"></div>
+            <div class="space-y-4">
+              <div class="flex gap-4 relative">
+                <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 font-bold text-sm z-10">1</div>
+                <div class="flex-1 bg-surface-container-low rounded-lg p-4">
+                  <p class="font-semibold text-on-surface text-sm">Consultar convenios vigentes</p>
+                  <p class="text-xs text-text-secondary mt-1">Revisa la lista de universidades convenio con UNI en la Dirección de Relaciones Internacionales o en la web institucional.</p>
+                </div>
+              </div>
+              <div class="flex gap-4 relative">
+                <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 font-bold text-sm z-10">2</div>
+                <div class="flex-1 bg-surface-container-low rounded-lg p-4">
+                  <p class="font-semibold text-on-surface text-sm">Solicitud formal ante la Dirección de Escuela</p>
+                  <p class="text-xs text-text-secondary mt-1">Presenta carta de motivación, record académico y plan de estudios de la universidad de destino.</p>
+                </div>
+              </div>
+              <div class="flex gap-4 relative">
+                <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 font-bold text-sm z-10">3</div>
+                <div class="flex-1 bg-surface-container-low rounded-lg p-4">
+                  <p class="font-semibold text-on-surface text-sm">Aprobación y carta de presentación</p>
+                  <p class="text-xs text-text-secondary mt-1">La Dirección y el Decanato emiten carta oficial dirigida a la institución de destino.</p>
+                </div>
+              </div>
+              <div class="flex gap-4 relative">
+                <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 font-bold text-sm z-10">4</div>
+                <div class="flex-1 bg-surface-container-low rounded-lg p-4">
+                  <p class="font-semibold text-on-surface text-sm">Convalidación de créditos al retorno</p>
+                  <p class="text-xs text-text-secondary mt-1">Presenta certificados de notas al Jefe de Departamento. Se inicia proceso de convalidación (ver guía de convalidaciones).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-5 flex flex-wrap items-center gap-3 pt-4 border-t border-border-subtle">
+            <a href="#" class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold bg-primary text-on-primary rounded-lg hover:brightness-110 transition-all active:scale-95">
+              <span class="material-symbols-outlined text-sm">download</span>Descargar formularios
+            </a>
+            <a href="#/contacto" class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold border border-border-subtle rounded-lg text-text-secondary hover:bg-surface-container-low transition-all active:scale-95">
+              <span class="material-symbols-outlined text-sm">mail</span>Consultar
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Procedimiento 3 — Matrícula extraordinaria -->
+    <div class="guia-card" data-categoria="matricula">
+      <div class="bg-white rounded-xl border border-border-subtle shadow-sm overflow-hidden card-hover">
+        <div class="flex items-center gap-4 px-6 py-5 border-b border-border-subtle bg-warning/5">
+          <div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-on-primary text-xl" style="font-variation-settings:'FILL'1;">event_note</span>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-on-surface">Matrícula Extraordinaria</h2>
+            <p class="text-sm text-text-secondary mt-0.5">Solicitud de matrícula fuera del periodo ordinario establecido</p>
+          </div>
+          <span class="ml-auto inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-warning/10 text-warning">
+            <span class="w-1.5 h-1.5 rounded-full bg-warning inline-block"></span>Plazo limitado
+          </span>
+        </div>
+        <div class="p-6">
+          <div class="bg-warning/5 border border-warning/20 rounded-lg p-4 flex gap-3 mb-6">
+            <span class="material-symbols-outlined text-warning shrink-0">info</span>
+            <p class="text-sm text-text-secondary">La matrícula extraordinaria solo procede en casos de fuerza mayor debidamente justificados y dentro del plazo establecido por el Reglamento Académico UNI.</p>
+          </div>
+          <div class="mb-6">
+            <h3 class="text-sm font-bold text-on-surface mb-3 flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-primary">checklist</span>Documentos requeridos
+            </h3>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2 text-sm text-text-secondary"><span class="material-symbols-outlined text-xs text-success mt-0.5" style="font-variation-settings:'FILL'1;">check_circle</span>Solicitud dirigida al Decano (FUT) con justificación</li>
+              <li class="flex items-start gap-2 text-sm text-text-secondary"><span class="material-symbols-outlined text-xs text-success mt-0.5" style="font-variation-settings:'FILL'1;">check_circle</span>Documentos probatorios de la causal (médico, laboral, etc.)</li>
+              <li class="flex items-start gap-2 text-sm text-text-secondary"><span class="material-symbols-outlined text-xs text-success mt-0.5" style="font-variation-settings:'FILL'1;">check_circle</span>Recibo de pago por derecho de trámite</li>
+              <li class="flex items-start gap-2 text-sm text-text-secondary"><span class="material-symbols-outlined text-xs text-success mt-0.5" style="font-variation-settings:'FILL'1;">check_circle</span>Ficha de prematrícula impresa</li>
+            </ul>
+          </div>
+          <h3 class="text-sm font-bold text-on-surface mb-4 flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm text-primary">linear_scale</span>Pasos del procedimiento
+          </h3>
+          <div class="relative">
+            <div class="absolute left-5 top-0 bottom-0 w-0.5 bg-border-subtle"></div>
+            <div class="space-y-4">
+              <div class="flex gap-4 relative">
+                <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 font-bold text-sm z-10">1</div>
+                <div class="flex-1 bg-surface-container-low rounded-lg p-4">
+                  <p class="font-semibold text-on-surface text-sm">Presentar expediente en Mesa de Partes</p>
+                  <p class="text-xs text-text-secondary mt-1">Plazo: dentro de los 5 días hábiles posteriores al cierre de matrícula ordinaria.</p>
+                </div>
+              </div>
+              <div class="flex gap-4 relative">
+                <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 font-bold text-sm z-10">2</div>
+                <div class="flex-1 bg-surface-container-low rounded-lg p-4">
+                  <p class="font-semibold text-on-surface text-sm">Revisión por Secretaría Académica</p>
+                  <p class="text-xs text-text-secondary mt-1">Verifican causales y documentación. Plazo de resolución: 3 días hábiles.</p>
+                </div>
+              </div>
+              <div class="flex gap-4 relative">
+                <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 font-bold text-sm z-10">3</div>
+                <div class="flex-1 bg-surface-container-low rounded-lg p-4">
+                  <p class="font-semibold text-on-surface text-sm">Resolución del Decanato</p>
+                  <p class="text-xs text-text-secondary mt-1">En caso de aprobación, el Decano emite resolución. Se notifica al estudiante.</p>
+                </div>
+              </div>
+              <div class="flex gap-4 relative">
+                <div class="w-10 h-10 rounded-full bg-success text-white flex items-center justify-center flex-shrink-0 font-bold text-sm z-10">
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL'1;">check</span>
+                </div>
+                <div class="flex-1 bg-success/5 border border-success/20 rounded-lg p-4">
+                  <p class="font-semibold text-on-surface text-sm">Registro de matrícula en sistema</p>
+                  <p class="text-xs text-text-secondary mt-1">Con la resolución, el estudiante formaliza matrícula en Secretaría Académica.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-5 flex flex-wrap items-center gap-3 pt-4 border-t border-border-subtle">
+            <a href="#" class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold bg-primary text-on-primary rounded-lg hover:brightness-110 transition-all active:scale-95">
+              <span class="material-symbols-outlined text-sm">download</span>Descargar FUT
+            </a>
+            <a href="#/contacto" class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold border border-border-subtle rounded-lg text-text-secondary hover:bg-surface-container-low transition-all active:scale-95">
+              <span class="material-symbols-outlined text-sm">mail</span>Consultar
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Procedimiento 4 — Convalidaciones -->
+    <div class="guia-card" data-categoria="convalidacion">
+      <div class="bg-white rounded-xl border border-border-subtle shadow-sm overflow-hidden card-hover">
+        <div class="flex items-center gap-4 px-6 py-5 border-b border-border-subtle bg-purple-50">
+          <div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-on-primary text-xl" style="font-variation-settings:'FILL'1;">compare_arrows</span>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-on-surface">Convalidaciones de Cursos</h2>
+            <p class="text-sm text-text-secondary mt-0.5">Reconocimiento de estudios realizados en otras instituciones o programas</p>
+          </div>
+          <span class="ml-auto inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-success/10 text-success">
+            <span class="w-1.5 h-1.5 rounded-full bg-success inline-block"></span>Vigente
+          </span>
+        </div>
+        <div class="p-6">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+            <div class="bg-surface-container-low rounded-lg p-3 text-center">
+              <span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings:'FILL'1;">school</span>
+              <p class="text-xs font-semibold text-on-surface mt-1">Convalidación por traslado</p>
+            </div>
+            <div class="bg-surface-container-low rounded-lg p-3 text-center">
+              <span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings:'FILL'1;">travel_explore</span>
+              <p class="text-xs font-semibold text-on-surface mt-1">Por intercambio académico</p>
+            </div>
+            <div class="bg-surface-container-low rounded-lg p-3 text-center">
+              <span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings:'FILL'1;">workspace_premium</span>
+              <p class="text-xs font-semibold text-on-surface mt-1">Por certificaciones técnicas</p>
+            </div>
+          </div>
+          <div class="mb-6">
+            <h3 class="text-sm font-bold text-on-surface mb-3 flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-primary">checklist</span>Documentos requeridos
+            </h3>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2 text-sm text-text-secondary"><span class="material-symbols-outlined text-xs text-success mt-0.5" style="font-variation-settings:'FILL'1;">check_circle</span>Solicitud dirigida al Jefe de Departamento (FUT)</li>
+              <li class="flex items-start gap-2 text-sm text-text-secondary"><span class="material-symbols-outlined text-xs text-success mt-0.5" style="font-variation-settings:'FILL'1;">check_circle</span>Certificado de estudios con notas (original legalizado)</li>
+              <li class="flex items-start gap-2 text-sm text-text-secondary"><span class="material-symbols-outlined text-xs text-success mt-0.5" style="font-variation-settings:'FILL'1;">check_circle</span>Sumilla y/o sílabo del curso a convalidar</li>
+              <li class="flex items-start gap-2 text-sm text-text-secondary"><span class="material-symbols-outlined text-xs text-success mt-0.5" style="font-variation-settings:'FILL'1;">check_circle</span>Pago de derecho de trámite por curso</li>
+            </ul>
+          </div>
+          <h3 class="text-sm font-bold text-on-surface mb-4 flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm text-primary">linear_scale</span>Pasos del procedimiento
+          </h3>
+          <div class="relative">
+            <div class="absolute left-5 top-0 bottom-0 w-0.5 bg-border-subtle"></div>
+            <div class="space-y-4">
+              <div class="flex gap-4 relative">
+                <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 font-bold text-sm z-10">1</div>
+                <div class="flex-1 bg-surface-container-low rounded-lg p-4">
+                  <p class="font-semibold text-on-surface text-sm">Ingreso de expediente en Mesa de Partes</p>
+                  <p class="text-xs text-text-secondary mt-1">Presentar todos los documentos completos. Plazo máximo: 30 días calendario desde el inicio del semestre.</p>
+                </div>
+              </div>
+              <div class="flex gap-4 relative">
+                <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 font-bold text-sm z-10">2</div>
+                <div class="flex-1 bg-surface-container-low rounded-lg p-4">
+                  <p class="font-semibold text-on-surface text-sm">Evaluación por el Jefe de Departamento</p>
+                  <p class="text-xs text-text-secondary mt-1">El departamento verifica equivalencia de contenidos (mínimo 80% de coincidencia en sumilla).</p>
+                </div>
+              </div>
+              <div class="flex gap-4 relative">
+                <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 font-bold text-sm z-10">3</div>
+                <div class="flex-1 bg-surface-container-low rounded-lg p-4">
+                  <p class="font-semibold text-on-surface text-sm">Dictamen del Consejo de Facultad</p>
+                  <p class="text-xs text-text-secondary mt-1">Para convalidaciones de más de 4 cursos, el expediente pasa al Consejo de Facultad para aprobación.</p>
+                </div>
+              </div>
+              <div class="flex gap-4 relative">
+                <div class="w-10 h-10 rounded-full bg-success text-white flex items-center justify-center flex-shrink-0 font-bold text-sm z-10">
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL'1;">check</span>
+                </div>
+                <div class="flex-1 bg-success/5 border border-success/20 rounded-lg p-4">
+                  <p class="font-semibold text-on-surface text-sm">Notificación y registro</p>
+                  <p class="text-xs text-text-secondary mt-1">Resolución Decanal notificada en 15 días hábiles. La nota se registra en el sistema académico.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-5 flex flex-wrap items-center gap-3 pt-4 border-t border-border-subtle">
+            <a href="#" class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold bg-primary text-on-primary rounded-lg hover:brightness-110 transition-all active:scale-95">
+              <span class="material-symbols-outlined text-sm">download</span>Descargar FUT
+            </a>
+            <a href="#/contacto" class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold border border-border-subtle rounded-lg text-text-secondary hover:bg-surface-container-low transition-all active:scale-95">
+              <span class="material-symbols-outlined text-sm">mail</span>Consultar
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA contacto -->
+    <div class="bg-primary/5 border border-primary/20 rounded-xl p-6 flex flex-col sm:flex-row items-center gap-4">
+      <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings:'FILL'1;">support_agent</span>
+      </div>
+      <div class="flex-1 text-center sm:text-left">
+        <h3 class="font-bold text-on-surface">¿Tienes dudas sobre algún trámite?</h3>
+        <p class="text-sm text-text-secondary mt-0.5">Escríbenos a la Secretaría Académica FIIS o visítanos en nuestra oficina (Pabellón C, 2.° piso, Lun–Vie 8:00–16:00).</p>
+      </div>
+      <a href="#/contacto" class="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold bg-primary text-on-primary rounded-lg hover:brightness-110 transition-all active:scale-95">
+        <span class="material-symbols-outlined text-sm">mail</span>Contactar
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var filters = document.querySelectorAll('.guia-filter');
+  var cards = document.querySelectorAll('.guia-card');
+  filters.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      filters.forEach(function(b) {
+        b.classList.remove('bg-primary','text-on-primary');
+        b.classList.add('border','border-border-subtle','text-text-secondary');
+      });
+      btn.classList.add('bg-primary','text-on-primary');
+      btn.classList.remove('border','border-border-subtle','text-text-secondary');
+      var f = btn.dataset.filter;
+      cards.forEach(function(c) {
+        c.style.display = (f === 'all' || c.dataset.categoria === f) ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
