@@ -165,7 +165,7 @@ const Router = {
     let handler = this.routes[hash];
     if (!handler) {
       for (const [pattern, fn] of Object.entries(this.routes)) {
-        const regex = new RegExp('^' + pattern.replace(/:\w+/g, '(\\w+)') + '$');
+        const regex = new RegExp('^' + pattern.replace(/:\w+/g, '([\\w-]+)') + '$');
         if (regex.test(hash)) {
           const match = hash.match(regex);
           handler = () => fn(...match.slice(1));
