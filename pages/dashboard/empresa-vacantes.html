@@ -102,26 +102,16 @@
 
         <!-- Fecha límite -->
         <div class="space-y-1.5">
-<<<<<<< HEAD
-          <label class="text-sm font-semibold text-on-surface">Fecha límite de postulación</label>
-          <input id="fecha-limite-input" type="date" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
-=======
           <label class="text-sm font-semibold text-on-surface">Fecha límite de postulación <span class="text-danger">*</span></label>
           <input id="fecha-limite-input" type="date" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
           <p id="fecha-error" class="text-xs text-danger hidden">La fecha límite es obligatoria.</p>
->>>>>>> H3nr7M3d1n4
         </div>
 
         <!-- Requisitos -->
         <div class="space-y-1.5 md:col-span-2">
-<<<<<<< HEAD
-          <label class="text-sm font-semibold text-on-surface">Requisitos y descripción del puesto</label>
-          <textarea id="requisitos-input" rows="4" placeholder="Describe el perfil requerido, habilidades técnicas, experiencia previa y funciones del puesto..." class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30 resize-none"></textarea>
-=======
           <label class="text-sm font-semibold text-on-surface">Requisitos y descripción del puesto <span class="text-danger">*</span></label>
           <textarea id="requisitos-input" rows="4" placeholder="Describe el perfil requerido, habilidades técnicas, experiencia previa y funciones del puesto..." class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30 resize-none"></textarea>
           <p id="requisitos-error" class="text-xs text-danger hidden">Los requisitos del puesto son obligatorios.</p>
->>>>>>> H3nr7M3d1n4
         </div>
 
         <!-- Enlace / correo -->
@@ -256,8 +246,6 @@
     if (carreras.length === 0) { carreraErr.classList.remove('hidden'); return; }
     carreraErr.classList.add('hidden');
 
-<<<<<<< HEAD
-=======
     var fecha = document.getElementById('fecha-limite-input').value;
     var fechaErr = document.getElementById('fecha-error');
     if (!fecha) { fechaErr.classList.remove('hidden'); document.getElementById('fecha-limite-input').focus(); return; }
@@ -268,7 +256,6 @@
     if (!requisitos) { requisitosErr.classList.remove('hidden'); document.getElementById('requisitos-input').focus(); return; }
     requisitosErr.classList.add('hidden');
 
->>>>>>> H3nr7M3d1n4
     var tipoEl = document.querySelector('input[name="tipo-vacante"]:checked');
     var modEl  = document.querySelector('input[name="modalidad-vac"]:checked');
     var session = (typeof Auth !== 'undefined') ? Auth.getSession() : null;

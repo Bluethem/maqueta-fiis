@@ -1,0 +1,90 @@
+<div class="page-enter space-y-6">
+  <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <div>
+      <h1 class="text-2xl md:text-3xl font-extrabold text-primary">Solicitar publicación</h1>
+      <p class="text-text-secondary text-sm mt-1">Solicita la publicación de una noticia o evento empresarial en el portal FIIS</p>
+    </div>
+  </div>
+
+  <div class="bg-amber-50 border-l-4 border-amber-500 p-5 rounded-r-xl text-sm text-amber-800 leading-relaxed flex items-start gap-3">
+    <span class="material-symbols-outlined text-amber-600 text-lg shrink-0">info</span>
+    <div>
+      <p class="font-bold mb-0.5">Flujo editorial</p>
+      <p>Tu solicitud pasará a revisión del Administrador Web. Una vez aprobada, se publicará en el portal. Recibirás una notificación cuando sea aprobada o si requiere cambios.</p>
+    </div>
+  </div>
+
+  <div class="bg-white border border-border-subtle rounded-xl p-6">
+    <form class="space-y-5" onsubmit="event.preventDefault(); document.getElementById('solicitar-success').classList.remove('hidden'); this.reset(); setTimeout(function(){ document.getElementById('solicitar-success').classList.add('hidden'); }, 8000);">
+      <div>
+        <label class="block text-sm font-semibold text-on-surface mb-1.5">Tipo de publicación</label>
+        <div class="flex gap-3">
+          <label class="flex items-center gap-2 px-5 py-3 border border-border-subtle rounded-xl cursor-pointer hover:border-primary hover:bg-primary/5 transition-all has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="pub-tipo" value="noticia" checked class="accent-primary" />
+            <span class="material-symbols-outlined text-primary">newspaper</span>
+            <span class="text-sm font-medium text-on-surface">Noticia</span>
+          </label>
+          <label class="flex items-center gap-2 px-5 py-3 border border-border-subtle rounded-xl cursor-pointer hover:border-primary hover:bg-primary/5 transition-all has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="pub-tipo" value="evento" class="accent-primary" />
+            <span class="material-symbols-outlined text-primary">event</span>
+            <span class="text-sm font-medium text-on-surface">Evento</span>
+          </label>
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold text-on-surface mb-1.5">Título</label>
+        <input type="text" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" placeholder="Ej: Charla técnica: Transformación Digital en la Industria" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold text-on-surface mb-1.5">Descripción</label>
+        <textarea rows="4" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" placeholder="Describe brevemente el contenido de la noticia o evento..."></textarea>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-semibold text-on-surface mb-1.5">Categoría</label>
+          <select class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all">
+            <option>Empresarial</option>
+            <option>Charlas y Talleres</option>
+            <option>Convocatoria</option>
+            <option>Convenio</option>
+            <option>Proyecto</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-on-surface mb-1.5">Fecha del evento (si aplica)</label>
+          <input type="date" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold text-on-surface mb-1.5">Enlace externo (opcional)</label>
+        <input type="url" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" placeholder="https://..." />
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold text-on-surface mb-1.5">Imagen / Flyer (opcional)</label>
+        <div class="border-2 border-dashed border-border-subtle rounded-xl p-6 text-center hover:border-primary transition-all cursor-pointer">
+          <span class="material-symbols-outlined text-3xl text-text-secondary">cloud_upload</span>
+          <p class="text-sm text-text-secondary mt-2">Arrastra una imagen o haz clic para seleccionar</p>
+          <p class="text-xs text-text-secondary mt-1">PNG, JPG · Máx 5MB</p>
+        </div>
+      </div>
+
+      <button type="submit" class="px-6 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:brightness-110 transition-all active:scale-95 flex items-center gap-2">
+        <span class="material-symbols-outlined text-sm">send</span>
+        Enviar solicitud
+      </button>
+
+      <div id="solicitar-success" class="hidden p-4 bg-green-50 border border-green-200 text-green-800 rounded-lg text-sm flex items-start gap-2">
+        <span class="material-symbols-outlined text-green-600">check_circle</span>
+        <div>
+          <p class="font-bold">Solicitud enviada con éxito</p>
+          <p class="text-xs mt-0.5">Tu solicitud ha pasado a revisión. El Administrador Web evaluará y publicará el contenido. Te notificaremos cuando esté aprobado.</p>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

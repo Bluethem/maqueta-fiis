@@ -32,15 +32,7 @@ const MEGA_MENU = [
         { label: 'Tecnología de la Producción', route: '/departamentos/tecnologia-produccion', icon: 'biotech' },
       ]},
       { col: 0, title: 'Recursos', items: [
-<<<<<<< HEAD
         { label: 'Cronogramas', route: '/cronogramas', icon: 'calendar_month' },
-=======
-        { label: 'Horarios y Mallas', route: '/horarios-mallas', icon: 'calendar_view_month' },
-        { label: 'Cronogramas', route: '/cronogramas', icon: 'calendar_month' },
-        { label: 'Documentos Académicos', route: '/documentos-academicos', icon: 'gavel' },
-        { label: 'Guías Académicas', route: '/guias-academicas', icon: 'menu_book' },
-        { label: 'Directorio Docentes', route: '/directorio-docentes', icon: 'badge' },
->>>>>>> H3nr7M3d1n4
       ]}
     ]
   },
@@ -80,6 +72,7 @@ const MEGA_MENU = [
         { label: 'UECPS', route: '/uecps', icon: 'public' },
         { label: 'Centro de Información', route: '/centro-informacion', icon: 'library_books' },
         { label: 'Repositorio Central', route: '/repositorio', icon: 'folder_open' },
+        { label: 'Guía y Procedimientos', route: '/guias-procedimientos', icon: 'description' },
       ]},
       { col: 2, title: 'Extensión', items: [
         { label: 'Sistemas UNI', route: '#', icon: 'computer' },
@@ -128,85 +121,11 @@ const MEGA_MENU = [
     ]
   },
   {
-    label: 'Egresados', icon: 'school', route: '/egresados',
-    children: [
-      { col: 0, items: [
-        { label: 'Comunidad de Egresados', route: '/egresados', icon: 'groups' },
-        { label: 'Red Alumni', route: 'https://alumni.fiis.uni.edu.pe', icon: 'link', external: true },
-      ]}
-    ]
+    label: 'Egresados', icon: 'school', route: '/egresados'
   },
   {
-    label: 'Empresas', icon: 'work',
-    children: [
-      { col: 0, items: [
-        { label: 'Empresas Aliadas', route: '/empresas', icon: 'handshake' },
-        { label: 'Bolsa de Trabajo', route: '/empresas', icon: 'work' },
-        { label: 'Prácticas Preprofesionales', route: '/empresas', icon: 'school' },
-        { label: 'Convenios Vigentes', route: '/empresas', icon: 'description' },
-        { label: 'Ser Empresa Aliada', route: '/empresas', icon: 'partner_exchange' },
-      ]}
-    ]
+    label: 'Empresas', icon: 'work', route: '/empresas'
   },
-<<<<<<< HEAD
-=======
-  {
-    label: 'Egresados', icon: 'school',
-    children: [
-      { col: 0, items: [
-        { label: 'Comunidad de Egresados', route: '/egresados', icon: 'groups' },
-        { label: 'Bolsa de Trabajo', route: '/egresados', icon: 'work' },
-        { label: 'Red Alumni', route: '/egresados', icon: 'link' },
-        { label: 'Mentoría', route: '/egresados', icon: 'psychology' },
-        { label: 'Capacitaciones', route: '/egresados', icon: 'school' },
-      ]}
-    ]
-  },
-  {
-    label: 'Vida Estudiantil', icon: 'groups',
-    children: [
-      { col: 0, items: [
-        { label: 'Agrupaciones', route: '/vida-estudiantil', icon: 'groups' },
-        { label: 'Centros Culturales', route: '/vida-estudiantil', icon: 'palette' },
-        { label: 'CEIIS', route: '/vida-estudiantil', icon: 'group' },
-        { label: 'TEFIIS', route: '/vida-estudiantil', icon: 'how_to_vote' },
-        { label: 'Delegaturas', route: '/vida-estudiantil', icon: 'diversity_3' },
-        { label: 'Convocatorias', route: '/vida-estudiantil', icon: 'campaign' },
-      ]}
-    ]
-  },
-  {
-    label: 'Servicios', icon: 'support',
-    children: [
-      { col: 0, title: 'Plataformas', items: [
-        { label: 'Aula Virtual', route: '#', icon: 'computer' },
-        { label: 'Correo UNI', route: '#', icon: 'mail' },
-        { label: 'Yachay (Intranet Docente)', route: 'https://docentes.uni.edu.pe/login', icon: 'school', external: true },
-        { label: 'Biblioteca KOHA', route: '#', icon: 'library_books' },
-        { label: 'Mesa de Partes', route: '#', icon: 'mail' },
-      ]},
-      { col: 1, title: 'Atención', items: [
-        { label: 'Servicios FIIS', route: '/servicios', icon: 'apartment' },
-        { label: 'Laboratorios FIIS', route: '/laboratorios', icon: 'science' },
-        { label: 'Avisos Administrativos', route: '/avisos-administrativos', icon: 'campaign' },
-        { label: 'Tutoría FIIS', route: '/organigrama', icon: 'support' },
-        { label: 'UECPS', route: '/organigrama', icon: 'public' },
-        { label: 'Centro de Información', route: '/organigrama', icon: 'library_books' },
-        { label: 'CEE', route: '/organigrama', icon: 'school' },
-        { label: 'FAQ', route: '#', icon: 'help' },
-      ]}
-    ]
-  },
-  {
-    label: 'Transparencia', icon: 'visibility',
-    route: '/transparencia'
-  },
-  {
-    label: 'Contacto', icon: 'contact_support',
-    route: '/contacto'
-  },
-  { label: 'Portal Académico', route: '/login', icon: 'login' },
->>>>>>> H3nr7M3d1n4
 ];
 
 const Router = {
@@ -257,7 +176,8 @@ async function loadPage(path) {
   try {
     if (path.startsWith('/')) path = path.slice(1);
     if (!path.endsWith('.html')) path += '.html';
-    const res = await fetch(`pages/${path}`);
+    const cb = typeof loadPageCacheBuster !== 'undefined' ? loadPageCacheBuster : Date.now();
+    const res = await fetch(`pages/${path}?v=${cb}`, { cache: 'no-cache' });
     if (!res.ok) throw new Error('Not found');
     return await res.text();
   } catch {

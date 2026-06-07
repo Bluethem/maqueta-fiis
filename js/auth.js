@@ -37,10 +37,9 @@ const ROLES = {
     badge: 'bg-orange-100 text-orange-700',
     sidebar: [
       { icon: 'dashboard', label: 'Dashboard', route: '/dashboard/empresa' },
-      { icon: 'business', label: 'Perfil Empresarial', route: '/dashboard/empresa/perfil' },
+      { icon: 'business', label: 'Perfil', route: '/dashboard/empresa/perfil' },
       { icon: 'work', label: 'Mis Vacantes', route: '/dashboard/empresa/vacantes' },
-      { icon: 'event_note', label: 'Proponer Evento', route: '/dashboard/empresa/evento' },
-      { icon: 'content_paste', label: 'Solicitar noticia', route: '/content' },
+      { icon: 'add_circle', label: 'Solicitar publicación', route: '/dashboard/empresa/solicitar' },
     ]
   },
   laboratorio: {
@@ -62,12 +61,7 @@ const ROLES = {
       { icon: 'newspaper', label: 'Gestión de Noticias', route: '/news' },
       { icon: 'event', label: 'Gestión de Calendario', route: '/calendar' },
       { icon: 'work', label: 'Moderación de Vacantes', route: '/dashboard/admin/vacantes' },
-<<<<<<< HEAD
       { icon: 'folder_open', label: 'Repositorio Central', route: '/dashboard/admin/repositorio' },
-=======
-      { icon: 'event_note', label: 'Moderación de Eventos', route: '/dashboard/admin/eventos' },
-      { icon: 'analytics', label: 'Reportes Globales', route: '/dashboard/admin/reportes' },
->>>>>>> H3nr7M3d1n4
       { icon: 'settings', label: 'Configuración', route: '/dashboard/admin/configuracion' },
     ]
   }
