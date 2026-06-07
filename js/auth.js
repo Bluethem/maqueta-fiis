@@ -57,6 +57,7 @@ const ROLES = {
       { icon: 'dashboard', label: 'Dashboard', route: '/dashboard/egresado' },
       { icon: 'person', label: 'Mi Perfil', route: '/dashboard/egresado/perfil' },
       { icon: 'work', label: 'Bolsa de Trabajo', route: '/dashboard/egresado/bolsa' },
+      { icon: 'notifications', label: 'Alertas de empleo', route: '/dashboard/egresado/alertas' },
       { icon: 'assignment_turned_in', label: 'Mis Postulaciones', route: '/dashboard/egresado/postulaciones' },
       { icon: 'groups', label: 'Red Alumni', route: '/dashboard/egresado/alumni' },
       { icon: 'psychology', label: 'Mentoría', route: '/dashboard/egresado/mentoria' },

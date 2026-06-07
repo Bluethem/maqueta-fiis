@@ -1,0 +1,226 @@
+<div class="page-enter space-y-6">
+
+  <div>
+    <nav class="flex items-center gap-2 text-text-secondary text-sm mb-3" aria-label="Breadcrumb">
+      <a href="#/dashboard/egresado/bolsa" class="hover:text-primary transition-colors">Bolsa de Trabajo</a>
+      <span class="material-symbols-outlined text-xs">chevron_right</span>
+      <span class="text-on-surface font-medium">Alertas de empleo</span>
+    </nav>
+    <h1 class="text-2xl md:text-3xl font-extrabold text-primary">Alertas de Empleabilidad</h1>
+    <p class="text-text-secondary text-sm mt-1">Recibe notificaciones cuando una vacante coincida con tus preferencias (simulación MVP).</p>
+  </div>
+
+  <div id="alertas-success" class="hidden bg-green-50 border border-green-200 rounded-xl p-4 flex items-start gap-3">
+    <span class="material-symbols-outlined text-green-700">check_circle</span>
+    <div>
+      <p class="font-semibold text-green-800 text-sm">Preferencias guardadas correctamente</p>
+      <p class="text-green-700 text-xs mt-1">En la versión final recibirás correos cuando haya ofertas compatibles. Esta es una simulación sin envío real.</p>
+    </div>
+  </div>
+
+  <div id="alertas-saved-badge" class="hidden bg-primary/5 border border-primary/20 rounded-xl p-4 flex items-center gap-3">
+    <span class="material-symbols-outlined text-primary">notifications_active</span>
+    <p class="text-sm text-on-surface"><span class="font-semibold">Alertas activas.</span> Tus preferencias están guardadas en este dispositivo.</p>
+  </div>
+
+  <div class="bg-white border border-border-subtle rounded-xl p-6 md:p-8">
+    <h2 class="text-lg font-bold text-primary flex items-center gap-2 mb-2">
+      <span class="material-symbols-outlined">tune</span>
+      Configurar preferencias
+    </h2>
+    <p class="text-sm text-text-secondary mb-6">Indica tus áreas de interés y criterios de búsqueda para recibir alertas personalizadas.</p>
+
+    <form id="alertas-form" class="space-y-6" novalidate>
+      <div>
+        <label for="alertas-email" class="block text-sm font-semibold text-on-surface mb-1.5">Correo electrónico <span class="text-danger">*</span></label>
+        <input type="email" id="alertas-email" name="email" required placeholder="tu.correo@email.com" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all">
+        <p id="error-email" class="hidden text-danger text-xs mt-1.5">Ingresa un correo electrónico válido.</p>
+      </div>
+
+      <div>
+        <p class="text-sm font-semibold text-on-surface mb-3">Áreas de interés <span class="text-danger">*</span></p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="areas-interes">
+          <label class="flex items-center gap-2.5 cursor-pointer">
+            <input type="checkbox" name="area" value="procesos" class="rounded border-border-subtle text-primary focus:ring-primary/30">
+            <span class="text-sm text-on-surface">Procesos industriales</span>
+          </label>
+          <label class="flex items-center gap-2.5 cursor-pointer">
+            <input type="checkbox" name="area" value="datos" class="rounded border-border-subtle text-primary focus:ring-primary/30">
+            <span class="text-sm text-on-surface">Datos y analítica</span>
+          </label>
+          <label class="flex items-center gap-2.5 cursor-pointer">
+            <input type="checkbox" name="area" value="software" class="rounded border-border-subtle text-primary focus:ring-primary/30">
+            <span class="text-sm text-on-surface">Desarrollo de software</span>
+          </label>
+          <label class="flex items-center gap-2.5 cursor-pointer">
+            <input type="checkbox" name="area" value="logistica" class="rounded border-border-subtle text-primary focus:ring-primary/30">
+            <span class="text-sm text-on-surface">Logística y supply chain</span>
+          </label>
+          <label class="flex items-center gap-2.5 cursor-pointer">
+            <input type="checkbox" name="area" value="ciberseguridad" class="rounded border-border-subtle text-primary focus:ring-primary/30">
+            <span class="text-sm text-on-surface">Ciberseguridad</span>
+          </label>
+          <label class="flex items-center gap-2.5 cursor-pointer">
+            <input type="checkbox" name="area" value="proyectos" class="rounded border-border-subtle text-primary focus:ring-primary/30">
+            <span class="text-sm text-on-surface">Gestión de proyectos</span>
+          </label>
+        </div>
+        <p id="error-areas" class="hidden text-danger text-xs mt-1.5">Selecciona al menos un área de interés.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label for="alertas-modalidad" class="block text-sm font-semibold text-on-surface mb-1.5">Modalidad preferida</label>
+          <select id="alertas-modalidad" name="modalidad" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all">
+            <option value="">Cualquier modalidad</option>
+            <option value="presencial">Presencial</option>
+            <option value="hibrido">Híbrido</option>
+            <option value="remoto">Remoto</option>
+          </select>
+        </div>
+        <div>
+          <label for="alertas-ubicacion" class="block text-sm font-semibold text-on-surface mb-1.5">Ubicación</label>
+          <select id="alertas-ubicacion" name="ubicacion" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all">
+            <option value="">Cualquier ubicación</option>
+            <option value="lima">Lima Metropolitana</option>
+            <option value="provincias">Provincias</option>
+            <option value="internacional">Internacional</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label for="alertas-salario" class="block text-sm font-semibold text-on-surface mb-1.5">Rango salarial mínimo esperado (S/)</label>
+        <select id="alertas-salario" name="salario" class="w-full md:max-w-xs border border-border-subtle rounded-lg px-4 py-2.5 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all">
+          <option value="">Sin preferencia</option>
+          <option value="2500">Desde S/ 2,500</option>
+          <option value="3500">Desde S/ 3,500</option>
+          <option value="5000">Desde S/ 5,000</option>
+          <option value="7000">Desde S/ 7,000</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="alertas-keywords" class="block text-sm font-semibold text-on-surface mb-1.5">Palabras clave adicionales</label>
+        <input type="text" id="alertas-keywords" name="keywords" placeholder="Ej: SAP, Lean, Python, Power BI" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all">
+        <p class="text-xs text-text-secondary mt-1.5">Separa términos con comas. Se usarán para filtrar ofertas compatibles.</p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 pt-2">
+        <button type="submit" id="alertas-submit" class="btn-primary flex items-center gap-2">
+          <span class="material-symbols-outlined text-sm">save</span>
+          Guardar preferencias
+        </button>
+        <button type="button" id="alertas-reset" class="btn-outline text-sm">Restablecer</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="bg-surface-container-low border border-border-subtle rounded-xl p-5">
+    <p class="text-xs text-text-secondary flex items-start gap-2">
+      <span class="material-symbols-outlined text-sm shrink-0">info</span>
+      <span><strong>Nota MVP:</strong> No se envían correos ni notificaciones push reales. Las preferencias se guardan localmente para demostrar el flujo de configuración.</span>
+    </p>
+  </div>
+
+</div>
+
+<script>
+(function() {
+  var STORAGE_KEY = 'fiis_egresado_alertas';
+  var form = document.getElementById('alertas-form');
+  var emailInput = document.getElementById('alertas-email');
+  var errorEmail = document.getElementById('error-email');
+  var errorAreas = document.getElementById('error-areas');
+  var successBanner = document.getElementById('alertas-success');
+  var savedBadge = document.getElementById('alertas-saved-badge');
+  var submitBtn = document.getElementById('alertas-submit');
+
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  function getSelectedAreas() {
+    var checked = form.querySelectorAll('input[name="area"]:checked');
+    return Array.prototype.map.call(checked, function(el) { return el.value; });
+  }
+
+  function loadSaved() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return;
+      var data = JSON.parse(raw);
+      emailInput.value = data.email || '';
+      document.getElementById('alertas-modalidad').value = data.modalidad || '';
+      document.getElementById('alertas-ubicacion').value = data.ubicacion || '';
+      document.getElementById('alertas-salario').value = data.salario || '';
+      document.getElementById('alertas-keywords').value = data.keywords || '';
+      if (data.areas && data.areas.length) {
+        form.querySelectorAll('input[name="area"]').forEach(function(cb) {
+          cb.checked = data.areas.indexOf(cb.value) !== -1;
+        });
+      }
+      savedBadge.classList.remove('hidden');
+    } catch (e) { /* ignore */ }
+  }
+
+  function validate() {
+    var valid = true;
+    errorEmail.classList.add('hidden');
+    errorAreas.classList.add('hidden');
+    emailInput.classList.remove('border-danger');
+
+    if (!emailInput.value.trim() || !isValidEmail(emailInput.value.trim())) {
+      errorEmail.classList.remove('hidden');
+      emailInput.classList.add('border-danger');
+      valid = false;
+    }
+
+    if (getSelectedAreas().length === 0) {
+      errorAreas.classList.remove('hidden');
+      valid = false;
+    }
+
+    return valid;
+  }
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (!validate()) return;
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="material-symbols-outlined text-sm animate-spin">progress_activity</span> Guardando...';
+
+    setTimeout(function() {
+      var data = {
+        email: emailInput.value.trim(),
+        areas: getSelectedAreas(),
+        modalidad: document.getElementById('alertas-modalidad').value,
+        ubicacion: document.getElementById('alertas-ubicacion').value,
+        salario: document.getElementById('alertas-salario').value,
+        keywords: document.getElementById('alertas-keywords').value.trim(),
+        savedAt: new Date().toISOString()
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+
+      successBanner.classList.remove('hidden');
+      savedBadge.classList.remove('hidden');
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '<span class="material-symbols-outlined text-sm">save</span> Guardar preferencias';
+      successBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 800);
+  });
+
+  document.getElementById('alertas-reset').addEventListener('click', function() {
+    form.reset();
+    localStorage.removeItem(STORAGE_KEY);
+    successBanner.classList.add('hidden');
+    savedBadge.classList.add('hidden');
+    errorEmail.classList.add('hidden');
+    errorAreas.classList.add('hidden');
+    emailInput.classList.remove('border-danger');
+  });
+
+  loadSaved();
+})();
+</script>

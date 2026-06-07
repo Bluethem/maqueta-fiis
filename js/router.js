@@ -113,6 +113,7 @@ const MEGA_MENU = [
     children: [
       { col: 0, items: [
         { label: 'Comunidad de Egresados', route: '/egresados', icon: 'groups' },
+        { label: 'Directorio de Egresados', route: '/egresados/directorio', icon: 'badge' },
         { label: 'Bolsa de Trabajo', route: '/egresados', icon: 'work' },
         { label: 'Red Alumni', route: '/egresados', icon: 'link' },
         { label: 'Mentoría', route: '/egresados', icon: 'psychology' },
@@ -158,7 +159,7 @@ const Router = {
     let handler = this.routes[hash];
     if (!handler) {
       for (const [pattern, fn] of Object.entries(this.routes)) {
-        const regex = new RegExp('^' + pattern.replace(/:\w+/g, '(\\w+)') + '$');
+        const regex = new RegExp('^' + pattern.replace(/:\w+/g, '([\\w-]+)') + '$');
         if (regex.test(hash)) {
           const match = hash.match(regex);
           handler = () => fn(...match.slice(1));

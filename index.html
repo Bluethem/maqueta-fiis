@@ -199,6 +199,12 @@ Router.add('/empresas', () => routePublic('empresas'));
   });
 });
 Router.add('/egresados', () => routePublic('egresados'));
+Router.add('/egresados/directorio', () => routePublic('egresados-directorio'));
+Router.add('/egresados/:slug', async function(slug) {
+  window.__EGRESADO_SLUG = slug;
+  const html = await loadPage('egresado-perfil');
+  renderPublicLayout(html, '/egresados');
+});
 Router.add('/vida-estudiantil', () => routePublic('vida-estudiantil'));
 Router.add('/vida-estudiantil/:id', (id) => routePublicDetail(id));
 Router.add('/directorio', () => routePublic('directorio'));
@@ -258,6 +264,7 @@ Router.add('/dashboard/centro/convocatorias', () => routeDashboardSub('centro', 
 Router.add('/dashboard/centro/repositorio', () => routeDashboardSub('centro', 'repositorio'));
 Router.add('/dashboard/egresado/perfil', () => routeDashboardSub('egresado', 'perfil'));
 Router.add('/dashboard/egresado/bolsa', () => routeDashboardSub('egresado', 'bolsa'));
+Router.add('/dashboard/egresado/alertas', () => routeDashboardSub('egresado', 'alertas'));
 Router.add('/dashboard/egresado/postulaciones', () => routeDashboardSub('egresado', 'postulaciones'));
 Router.add('/dashboard/egresado/alumni', () => routeDashboardSub('egresado', 'alumni'));
 Router.add('/dashboard/egresado/mentoria', () => routeDashboardSub('egresado', 'mentoria'));
