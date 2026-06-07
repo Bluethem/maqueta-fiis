@@ -199,6 +199,12 @@ Router.add('/empresas', () => routePublic('empresas'));
   });
 });
 Router.add('/egresados', () => routePublic('egresados'));
+Router.add('/egresados/directorio', () => routePublic('egresados-directorio'));
+Router.add('/egresados/:slug', async function(slug) {
+  window.__EGRESADO_SLUG = slug;
+  const html = await loadPage('egresado-perfil');
+  renderPublicLayout(html, '/egresados');
+});
 Router.add('/comunidad', () => routePublic('comunidad'));
 Router.add('/comunidad/:id', (id) => routePublicDetail(id));
 Router.add('/academico', () => routePublic('academico'));
