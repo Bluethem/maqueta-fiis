@@ -171,6 +171,15 @@ body { font-family: 'Inter', sans-serif; background-color: #E8E7EA; color: #1c1b
   .mini-carousel .carousel-btn{width:30px;height:30px}
 }
 
+/* ===== Mobile Accordion ===== */
+.mobile-accordion-content {
+  max-height: 0;
+  transition: max-height 0.25s ease;
+}
+.mobile-accordion-content.open {
+  max-height: 600px;
+}
+
 /* ===== Countdown ===== */
 /* ===== Search ===== */
 #search-input:focus{outline:none}

@@ -223,16 +223,30 @@ function navbar(active) {
   }).join('');
   const mobileItems = MEGA_MENU.map(item => {
     const hasChildren = item.children && item.children.length > 0;
-    if (!hasChildren && item.route) return `<a class="text-sm text-on-surface-variant transition-colors py-1" href="#${item.route}">${item.label}</a>`;
+    const icon = item.icon || 'link';
+    if (!hasChildren && item.route) {
+      return `<a class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-colors" href="#${item.route}">
+        <span class="material-symbols-outlined text-primary text-lg">${icon}</span>${item.label}
+      </a>`;
+    }
     if (hasChildren) {
       const links = item.children.flatMap(c => (c.items || []).map(sub => {
         const href = sub.external ? sub.route : '#' + sub.route;
-        return `<a class="text-sm text-on-surface-variant transition-colors py-1 pl-4" href="${href}"${sub.external ? ' target="_blank"' : ''}><span class="material-symbols-outlined text-sm align-middle mr-1">${sub.icon}</span>${sub.label}</a>`;
+        return `<a class="flex items-center gap-3 px-3 py-2 text-sm text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-colors" href="${href}"${sub.external ? ' target="_blank" rel="noopener"' : ''}>
+          <span class="material-symbols-outlined text-primary text-base">${sub.icon}</span>${sub.label}
+        </a>`;
       })).join('');
-      const label = item.route
-        ? `<a class="text-sm font-bold text-primary hover:text-primary transition-colors" href="#${item.route}">${item.label}</a>`
-        : `<span class="text-sm font-bold text-primary">${item.label}</span>`;
-      return `<div class="py-1">${label}${links}</div>`;
+      return `<div class="mobile-accordion-item">
+        <button class="mobile-accordion-trigger flex items-center justify-between w-full px-3 py-2.5 text-sm font-semibold text-on-surface hover:bg-surface-container-low rounded-lg transition-colors" type="button">
+          <span class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-lg">${icon}</span>${item.label}
+          </span>
+          <span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200 mobile-chevron">chevron_right</span>
+        </button>
+        <div class="mobile-accordion-content overflow-hidden transition-all duration-200 max-h-0">
+          <div class="pb-2 pl-4 flex flex-col gap-0.5">${links}</div>
+        </div>
+      </div>`;
     }
     return '';
   }).join('');
@@ -258,8 +272,8 @@ function navbar(active) {
           </button>
         </div>
       </div>
-      <div class="lg:hidden hidden border-t border-border-subtle px-6 py-4 bg-white max-h-[70vh] overflow-y-auto" id="mobile-nav">
-        <div class="flex flex-col gap-2">${mobileItems}</div>
+      <div class="lg:hidden hidden border-t border-border-subtle px-4 py-3 bg-white max-h-[80vh] overflow-y-auto" id="mobile-nav">
+        <div class="flex flex-col gap-0.5">${mobileItems}</div>
       </div>
     </nav>
 
@@ -395,10 +409,30 @@ function renderPublicLayout(content, activeSection) {
   const toggle = document.getElementById('nav-menu-toggle');
   const mobileNav = document.getElementById('mobile-nav');
   if (toggle && mobileNav) {
-    toggle.addEventListener('click', () => {
-      mobileNav.classList.toggle('hidden');
+    const closeMobileNav = () => {
+      mobileNav.classList.add('hidden');
+      document.body.style.overflow = '';
+    };
+    const openMobileNav = () => {
+      mobileNav.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    };
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (mobileNav.classList.contains('hidden')) openMobileNav();
+      else closeMobileNav();
+    });
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMobileNav);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !mobileNav.classList.contains('hidden')) closeMobileNav();
+    });
+    document.addEventListener('click', (e) => {
+      if (!mobileNav.classList.contains('hidden') && !mobileNav.contains(e.target) && e.target !== toggle) closeMobileNav();
     });
   }
+  bindMobileAccordion();
 }
 
 function renderPublicPage(html) {
@@ -563,6 +597,25 @@ function doSearch() {
     });
   });
   results.innerHTML = html;
+}
+
+function bindMobileAccordion() {
+  document.querySelectorAll('.mobile-accordion-trigger').forEach(btn => {
+    btn.removeEventListener('click', accordionHandler);
+    btn.addEventListener('click', accordionHandler);
+  });
+}
+
+function accordionHandler(e) {
+  const trigger = e.currentTarget;
+  const item = trigger.closest('.mobile-accordion-item');
+  if (!item) return;
+  const content = item.querySelector('.mobile-accordion-content');
+  const chevron = trigger.querySelector('.mobile-chevron');
+  if (!content) return;
+  const isOpen = content.classList.contains('open');
+  content.classList.toggle('open');
+  if (chevron) chevron.style.transform = isOpen ? '' : 'rotate(90deg)';
 }
 
 function toggleTreeHandler(e) {
