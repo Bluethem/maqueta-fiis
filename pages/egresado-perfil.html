@@ -1,0 +1,173 @@
+<div class="page-enter space-y-8" id="egresado-perfil-page">
+
+  <section class="relative bg-primary py-16 md:py-20 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
+    <div class="max-w-[1200px] mx-auto px-6 relative z-10">
+      <nav class="flex items-center gap-2 text-brand-cream/70 text-sm mb-6 flex-wrap" aria-label="Breadcrumb">
+        <a href="#/egresados" class="hover:text-brand-cream transition-colors">Egresados</a>
+        <span class="material-symbols-outlined text-xs">chevron_right</span>
+        <a href="#/egresados/directorio" class="hover:text-brand-cream transition-colors">Directorio</a>
+        <span class="material-symbols-outlined text-xs">chevron_right</span>
+        <span class="text-brand-cream font-medium" id="breadcrumb-name">Perfil</span>
+      </nav>
+      <div class="flex items-center gap-6 flex-wrap">
+        <div class="w-20 h-20 rounded-full bg-brand-cream flex items-center justify-center text-3xl font-bold text-primary flex-shrink-0" id="hero-avatar">--</div>
+        <div>
+          <h1 class="text-on-primary text-3xl md:text-4xl font-bold leading-tight" id="hero-name">Cargando...</h1>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="inline-block text-[12px] font-bold px-3 py-1 rounded-full bg-green-100 text-green-700" id="hero-badge">Perfil activo</span>
+            <span class="text-on-primary/70 text-sm" id="hero-promocion"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-[1200px] mx-auto px-6 pb-16">
+    <div id="perfil-not-found" class="hidden text-center py-16 bg-white border border-border-subtle rounded-xl">
+      <span class="material-symbols-outlined text-5xl text-outline mb-4">person_off</span>
+      <p class="text-on-surface font-semibold">Perfil no encontrado</p>
+      <a href="#/egresados/directorio" class="inline-flex items-center gap-1 text-primary font-semibold mt-4 hover:underline">
+        <span class="material-symbols-outlined text-sm">arrow_back</span> Volver al directorio
+      </a>
+    </div>
+
+    <div id="perfil-content" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-2 space-y-6">
+        <div class="bg-white border border-border-subtle rounded-xl p-6">
+          <h2 class="text-lg font-bold text-primary flex items-center gap-2 mb-4">
+            <span class="material-symbols-outlined">work</span> Información profesional
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <p class="text-xs text-text-secondary uppercase tracking-wider font-semibold">Cargo actual</p>
+              <p class="text-sm font-medium text-on-surface mt-1" id="field-cargo">—</p>
+            </div>
+            <div>
+              <p class="text-xs text-text-secondary uppercase tracking-wider font-semibold">Empresa</p>
+              <p class="text-sm font-medium text-on-surface mt-1" id="field-empresa">—</p>
+            </div>
+            <div>
+              <p class="text-xs text-text-secondary uppercase tracking-wider font-semibold">Sector de especialidad</p>
+              <p class="text-sm font-medium text-on-surface mt-1" id="field-sector">—</p>
+            </div>
+            <div>
+              <p class="text-xs text-text-secondary uppercase tracking-wider font-semibold">Carrera FIIS</p>
+              <p class="text-sm font-medium text-on-surface mt-1" id="field-carrera">—</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-border-subtle rounded-xl p-6">
+          <h2 class="text-lg font-bold text-primary flex items-center gap-2 mb-4">
+            <span class="material-symbols-outlined">description</span> Resumen profesional
+          </h2>
+          <p class="text-sm text-on-surface-variant leading-relaxed" id="field-resumen"></p>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <div class="bg-white border border-border-subtle rounded-xl p-6">
+          <h2 class="text-sm font-bold text-primary uppercase tracking-wide mb-4">Contacto profesional</h2>
+          <div class="space-y-4">
+            <div>
+              <p class="text-xs text-text-secondary uppercase tracking-wider font-semibold">Promoción</p>
+              <p class="text-sm font-medium text-on-surface mt-1" id="field-promocion">—</p>
+            </div>
+            <div>
+              <p class="text-xs text-text-secondary uppercase tracking-wider font-semibold">LinkedIn</p>
+              <a id="field-linkedin" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-primary text-sm font-medium hover:underline mt-1">
+                <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                Ver perfil en LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-low border border-border-subtle rounded-xl p-6">
+          <h2 class="text-sm font-bold text-primary uppercase tracking-wide mb-3">Networking</h2>
+          <p class="text-sm text-on-surface-variant mb-4">Conecta con este egresado a través de la red alumni FIIS.</p>
+          <a href="#/login" class="w-full border border-primary text-primary font-semibold px-4 py-2.5 rounded-lg hover:bg-primary hover:text-on-primary transition-all text-sm flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-sm">diversity_3</span>
+            Iniciar sesión para conectar
+          </a>
+        </div>
+
+        <a href="#/egresados/directorio" class="flex items-center gap-2 text-primary text-sm font-semibold hover:underline">
+          <span class="material-symbols-outlined text-sm">arrow_back</span>
+          Volver al directorio
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function() {
+  var EGRESADOS = {
+    'ana-flores': {
+      nombre: 'Ana Flores', iniciales: 'AF', promocion: '2019', carrera: 'Ingeniería Industrial',
+      cargo: 'Analista Senior de Procesos', empresa: 'Alicorp', sector: 'Manufactura / Procesos',
+      linkedin: 'https://linkedin.com/in/anaflores',
+      resumen: 'Ingeniera Industrial con 6 años de experiencia en optimización de procesos, manufactura esbelta y transformación digital. Especialista en Lean Six Sigma Green Belt y Power BI.'
+    },
+    'carlos-quispe': {
+      nombre: 'Carlos Quispe', iniciales: 'CQ', promocion: '2020', carrera: 'Ingeniería de Sistemas',
+      cargo: 'Analista de Datos', empresa: 'Scotiabank Perú', sector: 'Tecnología / Datos',
+      linkedin: 'https://linkedin.com/in/carlosquispe',
+      resumen: 'Ingeniero de Sistemas especializado en analítica de datos, pipelines ETL y visualización con Power BI. Experiencia en sector financiero y modelos predictivos.'
+    },
+    'maria-rodriguez': {
+      nombre: 'María Rodríguez', iniciales: 'MR', promocion: '2018', carrera: 'Ingeniería Industrial',
+      cargo: 'Supervisora de Calidad', empresa: 'Grupo Graña y Montero', sector: 'Construcción / Calidad',
+      linkedin: 'https://linkedin.com/in/mariarodriguez',
+      resumen: 'Profesional con amplia experiencia en gestión de calidad en proyectos de infraestructura. Certificada en ISO 9001 y auditorías de procesos constructivos.'
+    },
+    'luis-paredes': {
+      nombre: 'Luis Paredes', iniciales: 'LP', promocion: '2021', carrera: 'Ingeniería de Software',
+      cargo: 'Full Stack Developer', empresa: 'Alicorp', sector: 'Software / SAP',
+      linkedin: 'https://linkedin.com/in/luisparedes',
+      resumen: 'Desarrollador full stack con enfoque en integraciones SAP y arquitecturas cloud. Experiencia en Node.js, React y módulos MM/SD de SAP.'
+    },
+    'diego-rivas': {
+      nombre: 'Diego Rivas', iniciales: 'DR', promocion: '2021', carrera: 'Ingeniería de Sistemas',
+      cargo: 'Ingeniero de Seguridad Informática', empresa: 'Scotiabank Perú', sector: 'Ciberseguridad',
+      linkedin: 'https://linkedin.com/in/diegorivas',
+      resumen: 'Especialista en ciberseguridad con experiencia en SOC, análisis de vulnerabilidades y cumplimiento normativo en entidades financieras.'
+    },
+    'maria-torres': {
+      nombre: 'María Torres', iniciales: 'MT', promocion: '2018', carrera: 'Ingeniería Industrial',
+      cargo: 'Jefa de Logística', empresa: 'Intercorp', sector: 'Logística / Supply Chain',
+      linkedin: 'https://linkedin.com/in/mariatorres',
+      resumen: 'Líder en supply chain con experiencia en planificación de demanda, gestión de inventarios y optimización de rutas de distribución retail.'
+    }
+  };
+
+  var slug = window.__EGRESADO_SLUG || '';
+  var eg = EGRESADOS[slug];
+  var notFound = document.getElementById('perfil-not-found');
+  var content = document.getElementById('perfil-content');
+
+  if (!eg) {
+    notFound.classList.remove('hidden');
+    content.classList.add('hidden');
+    document.getElementById('hero-name').textContent = 'Perfil no encontrado';
+    document.getElementById('breadcrumb-name').textContent = 'No encontrado';
+    return;
+  }
+
+  document.getElementById('hero-avatar').textContent = eg.iniciales;
+  document.getElementById('hero-name').textContent = eg.nombre;
+  document.getElementById('hero-promocion').textContent = 'Promoción ' + eg.promocion + ' · ' + eg.carrera;
+  document.getElementById('breadcrumb-name').textContent = eg.nombre;
+  document.getElementById('field-cargo').textContent = eg.cargo;
+  document.getElementById('field-empresa').textContent = eg.empresa;
+  document.getElementById('field-sector').textContent = eg.sector;
+  document.getElementById('field-carrera').textContent = eg.carrera;
+  document.getElementById('field-promocion').textContent = eg.promocion;
+  document.getElementById('field-resumen').textContent = eg.resumen;
+  var linkEl = document.getElementById('field-linkedin');
+  linkEl.href = eg.linkedin;
+})();
+</script>

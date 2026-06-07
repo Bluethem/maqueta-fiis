@@ -1,0 +1,148 @@
+<div class="page-enter space-y-8">
+
+  <section class="relative bg-primary py-16 md:py-20 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
+    <div class="max-w-[1200px] mx-auto px-6 relative z-10">
+      <nav class="flex items-center gap-2 text-brand-cream/70 text-sm mb-6 flex-wrap" aria-label="Breadcrumb">
+        <a href="#/egresados" class="hover:text-brand-cream transition-colors">Egresados</a>
+        <span class="material-symbols-outlined text-xs">chevron_right</span>
+        <span class="text-brand-cream font-medium">Directorio</span>
+      </nav>
+      <div class="flex items-center gap-4 mb-4">
+        <span class="material-symbols-outlined text-brand-cream text-3xl">groups</span>
+        <span class="text-brand-cream text-sm font-semibold uppercase tracking-widest">Comunidad FIIS</span>
+      </div>
+      <h1 class="text-on-primary text-4xl md:text-5xl font-bold leading-tight">Directorio de Egresados</h1>
+      <p class="text-on-primary/80 text-lg md:text-xl mt-4 max-w-2xl">Busca egresados por empresa o sector de especialidad para networking profesional.</p>
+    </div>
+  </section>
+
+  <section class="max-w-[1200px] mx-auto px-6 pb-16">
+    <div class="flex flex-col md:flex-row gap-4 mb-6">
+      <div class="relative flex-1">
+        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg">search</span>
+        <input id="egresadosSearch" class="w-full pl-10 pr-4 py-3 bg-white border border-border-subtle rounded-lg focus:ring-1 focus:ring-primary focus:border-primary transition-all outline-none text-sm" placeholder="Buscar por nombre, empresa o sector..." type="text">
+      </div>
+      <select id="filterEmpresa" class="px-4 py-3 bg-white border border-border-subtle rounded-lg focus:ring-1 focus:ring-primary focus:border-primary transition-all outline-none text-sm text-on-surface-variant min-w-[180px]">
+        <option value="">Todas las empresas</option>
+      </select>
+      <select id="filterSector" class="px-4 py-3 bg-white border border-border-subtle rounded-lg focus:ring-1 focus:ring-primary focus:border-primary transition-all outline-none text-sm text-on-surface-variant min-w-[200px]">
+        <option value="">Todos los sectores</option>
+      </select>
+    </div>
+
+    <p id="egresadosCounter" class="text-text-secondary text-sm mb-6">Cargando directorio...</p>
+
+    <div id="egresadosGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+
+    <div id="egresadosEmpty" class="hidden text-center py-16 bg-white border border-border-subtle rounded-xl">
+      <span class="material-symbols-outlined text-5xl text-outline mb-4">person_search</span>
+      <p class="text-on-surface font-semibold">No se encontraron egresados</p>
+      <p class="text-text-secondary text-sm mt-2">Prueba con otros filtros o términos de búsqueda.</p>
+    </div>
+  </section>
+
+  <section class="max-w-[1200px] mx-auto px-6 pb-16">
+    <div class="bg-gradient-to-r from-primary to-[#8a2a24] rounded-2xl p-8 md:p-10 text-on-primary relative overflow-hidden">
+      <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-20"></div>
+      <div class="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div>
+          <h2 class="text-xl md:text-2xl font-bold">¿Eres egresado FIIS?</h2>
+          <p class="text-on-primary/80 mt-2 max-w-lg text-sm">Actualiza tu perfil profesional y conecta con la red alumni desde tu portal personal.</p>
+        </div>
+        <a href="#/login" class="bg-brand-cream text-primary px-6 py-3 rounded-xl font-bold hover:opacity-90 transition-all active:scale-95 flex items-center gap-2 whitespace-nowrap">
+          Acceder al portal
+          <span class="material-symbols-outlined">login</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function() {
+  var EGRESADOS = [
+    { slug: 'ana-flores', nombre: 'Ana Flores', iniciales: 'AF', promocion: '2019', carrera: 'Ing. Industrial', cargo: 'Analista Senior de Procesos', empresa: 'Alicorp', sector: 'Manufactura / Procesos', linkedin: 'https://linkedin.com/in/anaflores', activo: true },
+    { slug: 'carlos-quispe', nombre: 'Carlos Quispe', iniciales: 'CQ', promocion: '2020', carrera: 'Ing. de Sistemas', cargo: 'Analista de Datos', empresa: 'Scotiabank Perú', sector: 'Tecnología / Datos', linkedin: 'https://linkedin.com/in/carlosquispe', activo: true },
+    { slug: 'maria-rodriguez', nombre: 'María Rodríguez', iniciales: 'MR', promocion: '2018', carrera: 'Ing. Industrial', cargo: 'Supervisora de Calidad', empresa: 'Grupo Graña y Montero', sector: 'Construcción / Calidad', linkedin: 'https://linkedin.com/in/mariarodriguez', activo: true },
+    { slug: 'luis-paredes', nombre: 'Luis Paredes', iniciales: 'LP', promocion: '2021', carrera: 'Ing. de Software', cargo: 'Full Stack Developer', empresa: 'Alicorp', sector: 'Software / SAP', linkedin: 'https://linkedin.com/in/luisparedes', activo: true },
+    { slug: 'diego-rivas', nombre: 'Diego Rivas', iniciales: 'DR', promocion: '2021', carrera: 'Ing. de Sistemas', cargo: 'Ingeniero de Seguridad Informática', empresa: 'Scotiabank Perú', sector: 'Ciberseguridad', linkedin: 'https://linkedin.com/in/diegorivas', activo: true },
+    { slug: 'maria-torres', nombre: 'María Torres', iniciales: 'MT', promocion: '2018', carrera: 'Ing. Industrial', cargo: 'Jefa de Logística', empresa: 'Intercorp', sector: 'Logística / Supply Chain', linkedin: 'https://linkedin.com/in/mariatorres', activo: true }
+  ];
+
+  var grid = document.getElementById('egresadosGrid');
+  var empty = document.getElementById('egresadosEmpty');
+  var counter = document.getElementById('egresadosCounter');
+  var searchInput = document.getElementById('egresadosSearch');
+  var filterEmpresa = document.getElementById('filterEmpresa');
+  var filterSector = document.getElementById('filterSector');
+
+  var empresas = [];
+  var sectores = [];
+  EGRESADOS.forEach(function(e) {
+    if (empresas.indexOf(e.empresa) === -1) empresas.push(e.empresa);
+    if (sectores.indexOf(e.sector) === -1) sectores.push(e.sector);
+  });
+  empresas.sort().forEach(function(emp) {
+    filterEmpresa.innerHTML += '<option value="' + emp + '">' + emp + '</option>';
+  });
+  sectores.sort().forEach(function(sec) {
+    filterSector.innerHTML += '<option value="' + sec + '">' + sec + '</option>';
+  });
+
+  function renderCard(eg) {
+    return '<div class="egresado-card bg-white border border-border-subtle rounded-xl p-5 hover:shadow-lg transition-shadow" data-empresa="' + eg.empresa + '" data-sector="' + eg.sector + '">' +
+      '<div class="flex items-start gap-4">' +
+        '<div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold text-lg flex-shrink-0">' + eg.iniciales + '</div>' +
+        '<div class="flex-1 min-w-0">' +
+          '<h3 class="font-bold text-on-surface text-base leading-tight">' + eg.nombre + '</h3>' +
+          '<span class="inline-block mt-1.5 text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-green-100 text-green-700">Perfil activo</span>' +
+          '<p class="text-text-secondary text-sm mt-1.5">Promoción ' + eg.promocion + ' · ' + eg.carrera + '</p>' +
+        '</div>' +
+      '</div>' +
+      '<div class="mt-4 flex flex-col gap-2 text-sm border-t border-border-subtle pt-4">' +
+        '<div class="flex items-center gap-2"><span class="material-symbols-outlined text-outline text-[16px]">work</span><span class="text-on-surface">' + eg.cargo + '</span></div>' +
+        '<div class="flex items-center gap-2"><span class="material-symbols-outlined text-outline text-[16px]">business</span><span class="text-text-secondary">' + eg.empresa + '</span></div>' +
+        '<div class="flex items-center gap-2"><span class="material-symbols-outlined text-outline text-[16px]">category</span><span class="text-text-secondary">' + eg.sector + '</span></div>' +
+      '</div>' +
+      '<button class="mt-4 w-full border border-primary text-primary font-semibold px-4 py-2 rounded-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 text-sm flex items-center justify-center gap-1.5" onclick="Router.navigate(\'/egresados/' + eg.slug + '\')">' +
+        'Ver perfil <span class="material-symbols-outlined text-sm">arrow_forward</span>' +
+      '</button>' +
+    '</div>';
+  }
+
+  grid.innerHTML = EGRESADOS.map(renderCard).join('');
+
+  function filterCards() {
+    var query = searchInput.value.toLowerCase().trim();
+    var empresa = filterEmpresa.value;
+    var sector = filterSector.value;
+    var cards = document.querySelectorAll('.egresado-card');
+    var visible = 0;
+
+    cards.forEach(function(card) {
+      var text = card.textContent.toLowerCase();
+      var matchesSearch = !query || text.indexOf(query) !== -1;
+      var matchesEmpresa = !empresa || card.dataset.empresa === empresa;
+      var matchesSector = !sector || card.dataset.sector === sector;
+
+      if (matchesSearch && matchesEmpresa && matchesSector) {
+        card.style.display = '';
+        visible++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    counter.textContent = 'Mostrando ' + visible + ' de ' + cards.length + ' egresados';
+    empty.classList.toggle('hidden', visible > 0);
+    grid.classList.toggle('hidden', visible === 0);
+  }
+
+  searchInput.addEventListener('input', filterCards);
+  filterEmpresa.addEventListener('change', filterCards);
+  filterSector.addEventListener('change', filterCards);
+  filterCards();
+})();
+</script>

@@ -239,6 +239,16 @@ Router.add('/laboratorio-quimica', () => routePublic('laboratorio-quimica'));
 Router.add('/laboratorio-academico', () => routePublic('laboratorio-academico'));
 Router.add('/laboratorio-ia', () => routePublic('laboratorio-ia'));
 Router.add('/consult-fiis', () => routePublic('consult-fiis'));
+Router.add('/consult-fiis/consultor/:slug', async function(slug) {
+  window.__CONSULTOR_SLUG = slug;
+  const html = await loadPage('consult-fiis-consultor');
+  renderPublicLayout(html, '/consult-fiis');
+});
+Router.add('/consult-fiis/proyecto/:slug', async function(slug) {
+  window.__PROYECTO_SLUG = slug;
+  const html = await loadPage('consult-fiis-proyecto');
+  renderPublicLayout(html, '/consult-fiis');
+});
 Router.add('/laboratorios', () => routePublic('laboratorios'));
 Router.add('/dashboard/admin', () => routeDashboard('admin'));
 Router.add('/dashboard/admin-web', () => routeDashboard('admin'));

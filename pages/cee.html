@@ -37,21 +37,21 @@
         </div>
         <p class="text-text-secondary text-sm leading-relaxed mb-6">El CEE ofrece programas de especialización, diplomados y capacitaciones ejecutivas diseñados para profesionales, egresados y público general interesado en potenciar sus competencias en las áreas de ingeniería y gestión.</p>
         <div class="flex gap-2 mb-6 overflow-x-auto" id="cee-month-filter">
-          <button class="px-4 py-1.5 rounded-full text-xs font-semibold bg-primary text-white transition-all shadow-sm" data-month="all">Todos</button>
+          <button class="px-4 py-1.5 rounded-full text-xs font-semibold bg-primary text-on-primary transition-all shadow-sm" data-month="all">Todos</button>
           <button class="px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-month="junio">Junio</button>
           <button class="px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-month="julio">Julio</button>
           <button class="px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-month="agosto">Agosto</button>
         </div>
         <div class="space-y-6" id="cee-programas-list">
-          <div class="border border-border-subtle rounded-xl overflow-hidden" data-month="junio">
+          <div class="cee-programa border border-border-subtle rounded-xl overflow-hidden" data-month="junio" data-id="pmbok">
             <div class="p-5 bg-surface-container-low border-b border-border-subtle">
               <div class="flex items-start justify-between gap-4">
                 <div>
-                  <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-100 text-blue-700">Diplomado</span>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-primary/10 text-primary">Diplomado</span>
                   <h3 class="text-lg font-bold text-on-surface mt-2">Gestión de Proyectos con PMBOK 7ma Edición</h3>
                   <p class="text-sm text-text-secondary mt-1">Formación integral en dirección de proyectos bajo el estándar del Project Management Institute.</p>
                 </div>
-                <button onclick="alert('Ficha completa del programa: Gestión de Proyectos con PMBOK 7ma Edición')" class="shrink-0 px-4 py-2 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary-container transition-all">Ver ficha</button>
+                <button type="button" data-ficha="pmbok" class="cee-ficha-btn shrink-0 px-4 py-2 bg-primary text-on-primary text-xs font-bold rounded-lg hover:bg-primary-container transition-all">Ver ficha</button>
               </div>
             </div>
             <div class="p-5 grid grid-cols-2 md:grid-cols-4 gap-4 text-xs text-text-secondary">
@@ -61,15 +61,15 @@
               <div><span class="material-symbols-outlined text-primary text-sm align-middle">calendar_month</span> <strong class="text-on-surface">Inicio:</strong> 10 Jun 2026</div>
             </div>
           </div>
-          <div class="border border-border-subtle rounded-xl overflow-hidden" data-month="junio">
+          <div class="cee-programa border border-border-subtle rounded-xl overflow-hidden" data-month="junio" data-id="powerbi">
             <div class="p-5 bg-surface-container-low border-b border-border-subtle">
               <div class="flex items-start justify-between gap-4">
                 <div>
-                  <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-green-100 text-green-700">Curso</span>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-success/10 text-success">Curso</span>
                   <h3 class="text-lg font-bold text-on-surface mt-2">Power BI y Business Analytics</h3>
                   <p class="text-sm text-text-secondary mt-1">Visualización de datos, dashboards interactivos y análisis de negocio con herramientas Microsoft.</p>
                 </div>
-                <button onclick="alert('Ficha completa del programa: Power BI y Business Analytics')" class="shrink-0 px-4 py-2 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary-container transition-all">Ver ficha</button>
+                <button type="button" data-ficha="powerbi" class="cee-ficha-btn shrink-0 px-4 py-2 bg-primary text-on-primary text-xs font-bold rounded-lg hover:bg-primary-container transition-all">Ver ficha</button>
               </div>
             </div>
             <div class="p-5 grid grid-cols-2 md:grid-cols-4 gap-4 text-xs text-text-secondary">
@@ -79,15 +79,15 @@
               <div><span class="material-symbols-outlined text-primary text-sm align-middle">calendar_month</span> <strong class="text-on-surface">Inicio:</strong> 15 Jun 2026</div>
             </div>
           </div>
-          <div class="border border-border-subtle rounded-xl overflow-hidden" data-month="julio">
+          <div class="cee-programa border border-border-subtle rounded-xl overflow-hidden" data-month="julio" data-id="supply-chain">
             <div class="p-5 bg-surface-container-low border-b border-border-subtle">
               <div class="flex items-start justify-between gap-4">
                 <div>
-                  <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-purple-100 text-purple-700">Especialización</span>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-tertiary/10 text-tertiary">Especialización</span>
                   <h3 class="text-lg font-bold text-on-surface mt-2">Supply Chain Management & Logística</h3>
                   <p class="text-sm text-text-secondary mt-1">Gestión de la cadena de suministro, optimización logística y estrategias de aprovisionamiento.</p>
                 </div>
-                <button onclick="alert('Ficha completa del programa: Supply Chain Management & Logística')" class="shrink-0 px-4 py-2 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary-container transition-all">Ver ficha</button>
+                <button type="button" data-ficha="supply-chain" class="cee-ficha-btn shrink-0 px-4 py-2 bg-primary text-on-primary text-xs font-bold rounded-lg hover:bg-primary-container transition-all">Ver ficha</button>
               </div>
             </div>
             <div class="p-5 grid grid-cols-2 md:grid-cols-4 gap-4 text-xs text-text-secondary">
@@ -97,15 +97,15 @@
               <div><span class="material-symbols-outlined text-primary text-sm align-middle">calendar_month</span> <strong class="text-on-surface">Inicio:</strong> 08 Jul 2026</div>
             </div>
           </div>
-          <div class="border border-border-subtle rounded-xl overflow-hidden" data-month="agosto">
+          <div class="cee-programa border border-border-subtle rounded-xl overflow-hidden" data-month="agosto" data-id="calidad">
             <div class="p-5 bg-surface-container-low border-b border-border-subtle">
               <div class="flex items-start justify-between gap-4">
                 <div>
-                  <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-700">Diplomado</span>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-warning/10 text-warning">Diplomado</span>
                   <h3 class="text-lg font-bold text-on-surface mt-2">Gestión de la Calidad y Mejora Continua</h3>
                   <p class="text-sm text-text-secondary mt-1">Implementación de sistemas de gestión de calidad basados en ISO 9001:2025 y Lean Six Sigma.</p>
                 </div>
-                <button onclick="alert('Ficha completa del programa: Gestión de la Calidad y Mejora Continua')" class="shrink-0 px-4 py-2 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary-container transition-all">Ver ficha</button>
+                <button type="button" data-ficha="calidad" class="cee-ficha-btn shrink-0 px-4 py-2 bg-primary text-on-primary text-xs font-bold rounded-lg hover:bg-primary-container transition-all">Ver ficha</button>
               </div>
             </div>
             <div class="p-5 grid grid-cols-2 md:grid-cols-4 gap-4 text-xs text-text-secondary">
@@ -115,6 +115,12 @@
               <div><span class="material-symbols-outlined text-primary text-sm align-middle">calendar_month</span> <strong class="text-on-surface">Inicio:</strong> 05 Ago 2026</div>
             </div>
           </div>
+        </div>
+        <div id="cee-ficha-panel" class="hidden mt-6 bg-primary/5 border border-primary/20 rounded-xl p-6">
+          <h3 class="text-lg font-bold text-primary mb-2" id="cee-ficha-titulo">Ficha del programa</h3>
+          <p class="text-sm text-on-surface-variant mb-4" id="cee-ficha-resumen"></p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm mb-4" id="cee-ficha-datos"></div>
+          <p class="text-xs text-text-secondary"><strong>Sílabo (simulación):</strong> <span id="cee-ficha-silabo"></span></p>
         </div>
       </div>
     </div>
@@ -134,9 +140,9 @@
             </div>
             <p class="text-xs text-text-secondary leading-relaxed">Director de proyectos PMP con más de 20 años de experiencia en gestión de proyectos mineros y de infraestructura. Docente de posgrado en la UNI y la USIL.</p>
             <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="px-2 py-0.5 bg-blue-100 text-blue-700 rounded text-[10px] font-medium">PMBOK</span>
-              <span class="px-2 py-0.5 bg-blue-100 text-blue-700 rounded text-[10px] font-medium">Gestión de proyectos</span>
-              <span class="px-2 py-0.5 bg-blue-100 text-blue-700 rounded text-[10px] font-medium">Riesgos</span>
+              <span class="px-2 py-0.5 bg-primary/10 text-primary rounded text-[10px] font-medium">PMBOK</span>
+              <span class="px-2 py-0.5 bg-primary/10 text-primary rounded text-[10px] font-medium">Gestión de proyectos</span>
+              <span class="px-2 py-0.5 bg-primary/10 text-primary rounded text-[10px] font-medium">Riesgos</span>
             </div>
           </div>
           <div class="border border-border-subtle rounded-xl p-5">
@@ -149,9 +155,9 @@
             </div>
             <p class="text-xs text-text-secondary leading-relaxed">Consultora en logística y cadena de suministro con experiencia en empresas del sector retail y manufactura. Docente en programas de maestría de la UNI y la UPC.</p>
             <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="px-2 py-0.5 bg-green-100 text-green-700 rounded text-[10px] font-medium">Supply Chain</span>
-              <span class="px-2 py-0.5 bg-green-100 text-green-700 rounded text-[10px] font-medium">Logística</span>
-              <span class="px-2 py-0.5 bg-green-100 text-green-700 rounded text-[10px] font-medium">SAP</span>
+              <span class="px-2 py-0.5 bg-success/10 text-success rounded text-[10px] font-medium">Supply Chain</span>
+              <span class="px-2 py-0.5 bg-success/10 text-success rounded text-[10px] font-medium">Logística</span>
+              <span class="px-2 py-0.5 bg-success/10 text-success rounded text-[10px] font-medium">SAP</span>
             </div>
           </div>
           <div class="border border-border-subtle rounded-xl p-5">
@@ -164,9 +170,9 @@
             </div>
             <p class="text-xs text-text-secondary leading-relaxed">Líder de inteligencia de negocios en entidades bancarias. Certificado en Power BI, Tableau y Azure Data Analytics. Docente de diplomados y cursos corporativos.</p>
             <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="px-2 py-0.5 bg-amber-100 text-amber-700 rounded text-[10px] font-medium">Power BI</span>
-              <span class="px-2 py-0.5 bg-amber-100 text-amber-700 rounded text-[10px] font-medium">Data Analytics</span>
-              <span class="px-2 py-0.5 bg-amber-100 text-amber-700 rounded text-[10px] font-medium">SQL</span>
+              <span class="px-2 py-0.5 bg-warning/10 text-warning rounded text-[10px] font-medium">Power BI</span>
+              <span class="px-2 py-0.5 bg-warning/10 text-warning rounded text-[10px] font-medium">Data Analytics</span>
+              <span class="px-2 py-0.5 bg-warning/10 text-warning rounded text-[10px] font-medium">SQL</span>
             </div>
           </div>
           <div class="border border-border-subtle rounded-xl p-5">
@@ -179,9 +185,9 @@
             </div>
             <p class="text-xs text-text-secondary leading-relaxed">Consultor senior en sistemas de gestión de calidad con experiencia en implementación de ISO 9001, ISO 14001 y certificaciones internacionales. Auditor líder certificado.</p>
             <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="px-2 py-0.5 bg-purple-100 text-purple-700 rounded text-[10px] font-medium">ISO 9001</span>
-              <span class="px-2 py-0.5 bg-purple-100 text-purple-700 rounded text-[10px] font-medium">Lean Six Sigma</span>
-              <span class="px-2 py-0.5 bg-purple-100 text-purple-700 rounded text-[10px] font-medium">Auditoría</span>
+              <span class="px-2 py-0.5 bg-tertiary/10 text-tertiary rounded text-[10px] font-medium">ISO 9001</span>
+              <span class="px-2 py-0.5 bg-tertiary/10 text-tertiary rounded text-[10px] font-medium">Lean Six Sigma</span>
+              <span class="px-2 py-0.5 bg-tertiary/10 text-tertiary rounded text-[10px] font-medium">Auditoría</span>
             </div>
           </div>
         </div>
@@ -195,7 +201,7 @@
         <div class="space-y-4">
           <div class="border border-border-subtle rounded-xl p-5">
             <div class="flex items-center gap-2 mb-2">
-              <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-100 text-blue-700">Cronograma</span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-primary/10 text-primary">Cronograma</span>
               <span class="text-xs text-text-secondary">25 May 2026</span>
             </div>
             <h3 class="text-sm font-bold text-on-surface">Cronograma de programas Julio - Diciembre 2026</h3>
@@ -203,7 +209,7 @@
           </div>
           <div class="border border-border-subtle rounded-xl p-5">
             <div class="flex items-center gap-2 mb-2">
-              <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-green-100 text-green-700">Comunicado</span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-success/10 text-success">Comunicado</span>
               <span class="text-xs text-text-secondary">15 May 2026</span>
             </div>
             <h3 class="text-sm font-bold text-on-surface">Descuento por pronto pago en diplomados</h3>
@@ -211,7 +217,7 @@
           </div>
           <div class="border border-border-subtle rounded-xl p-5">
             <div class="flex items-center gap-2 mb-2">
-              <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-700">Aviso</span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-warning/10 text-warning">Aviso</span>
               <span class="text-xs text-text-secondary">10 May 2026</span>
             </div>
             <h3 class="text-sm font-bold text-on-surface">Suspensión de atención por feriado</h3>
@@ -247,23 +253,25 @@
         <div class="bg-white rounded-xl border border-border-subtle p-6">
           <h3 class="text-base font-bold text-on-surface mb-4">Atención Rápida</h3>
           <p class="text-xs text-text-secondary mb-4">Déjanos tus datos y te contactaremos para brindarte información sobre los programas.</p>
-          <form class="space-y-3" onsubmit="event.preventDefault(); alert('Consulta enviada con éxito.'); this.reset();">
-            <input type="text" placeholder="Nombre" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
-            <input type="email" placeholder="Correo" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
-            <select class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all">
-              <option>Programa de interés</option>
-              <option>Gestión de Proyectos PMBOK</option>
-              <option>Power BI y Business Analytics</option>
-              <option>Supply Chain Management</option>
-              <option>Gestión de la Calidad</option>
+          <div id="cee-form-success" class="hidden bg-success/10 border border-success/30 rounded-lg p-3 text-sm text-success mb-3">Consulta enviada correctamente (simulación MVP).</div>
+          <form class="space-y-3" id="cee-contact-form">
+            <input type="text" id="cee-nombre" placeholder="Nombre" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+            <input type="email" id="cee-email" placeholder="Correo" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+            <select id="cee-programa" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all">
+              <option value="">Programa de interés</option>
+              <option value="pmbok">Gestión de Proyectos PMBOK</option>
+              <option value="powerbi">Power BI y Business Analytics</option>
+              <option value="supply-chain">Supply Chain Management</option>
+              <option value="calidad">Gestión de la Calidad</option>
             </select>
-            <button type="submit" class="w-full px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary-container transition-all flex items-center justify-center gap-2">
+            <p id="cee-form-error" class="hidden text-danger text-xs">Completa nombre, correo válido y programa.</p>
+            <button type="submit" class="w-full px-5 py-2.5 bg-primary text-on-primary text-sm font-semibold rounded-lg hover:bg-primary-container transition-all flex items-center justify-center gap-2">
               <span class="material-symbols-outlined text-sm">send</span>
               Enviar consulta
             </button>
           </form>
           <div class="mt-4">
-            <a href="https://wa.me/51XXXXXXXXX?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20los%20programas%20del%20CEE" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 px-5 py-2.5 bg-green-600 text-white text-sm font-bold rounded-lg hover:bg-green-700 transition-all">
+            <a href="https://wa.me/51XXXXXXXXX?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20los%20programas%20del%20CEE" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 px-5 py-2.5 bg-success text-on-primary text-sm font-bold rounded-lg hover:opacity-90 transition-all">
               <span class="material-symbols-outlined text-sm">chat</span>
               Consultar por WhatsApp
             </a>
@@ -274,3 +282,62 @@
 
   </div>
 </div>
+
+<script>
+(function() {
+  var FICHAS = {
+    pmbok: { titulo: 'Gestión de Proyectos con PMBOK 7ma Edición', resumen: 'Formación integral en dirección de proyectos bajo el estándar PMI.', duracion: '4 meses', inversion: 'S/ 2,800', modalidad: 'Virtual', inicio: '10 Jun 2026', docente: 'Dr. Miguel Rodríguez Paz', silabo: 'Marco PMBOK, planificación, ejecución, monitoreo y cierre de proyectos.' },
+    powerbi: { titulo: 'Power BI y Business Analytics', resumen: 'Dashboards, DAX, Power Query e integración con fuentes empresariales.', duracion: '2 meses', inversion: 'S/ 1,200', modalidad: 'Virtual', inicio: '15 Jun 2026', docente: 'Mg. Ana Lucía Vega', silabo: 'Modelado de datos, visualización avanzada y publicación de reportes.' },
+    'supply-chain': { titulo: 'Supply Chain Management & Logística', resumen: 'Cadena de suministro, logística y aprovisionamiento estratégico.', duracion: '3 meses', inversion: 'S/ 2,200', modalidad: 'Semi-presencial', inicio: '08 Jul 2026', docente: 'Mg. María Torres Rivas', silabo: 'Planificación de demanda, inventarios, transporte y KPIs logísticos.' },
+    calidad: { titulo: 'Gestión de la Calidad y Mejora Continua', resumen: 'ISO 9001:2025, Lean Six Sigma y cultura de mejora continua.', duracion: '4 meses', inversion: 'S/ 2,600', modalidad: 'Presencial', inicio: '05 Ago 2026', docente: 'Dr. Ricardo Mendoza', silabo: 'Sistemas de gestión, herramientas Lean y proyectos de mejora.' }
+  };
+
+  document.querySelectorAll('#cee-month-filter button').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('#cee-month-filter button').forEach(function(b) {
+        b.className = 'px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all';
+      });
+      btn.className = 'px-4 py-1.5 rounded-full text-xs font-semibold bg-primary text-on-primary transition-all shadow-sm';
+      var month = btn.getAttribute('data-month');
+      document.querySelectorAll('.cee-programa').forEach(function(card) {
+        card.style.display = (month === 'all' || card.getAttribute('data-month') === month) ? '' : 'none';
+      });
+    });
+  });
+
+  document.querySelectorAll('.cee-ficha-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var id = btn.getAttribute('data-ficha');
+      var f = FICHAS[id];
+      if (!f) return;
+      document.getElementById('cee-ficha-titulo').textContent = f.titulo;
+      document.getElementById('cee-ficha-resumen').textContent = f.resumen;
+      document.getElementById('cee-ficha-datos').innerHTML =
+        '<div><strong>Duración:</strong> ' + f.duracion + '</div>' +
+        '<div><strong>Inversión:</strong> ' + f.inversion + '</div>' +
+        '<div><strong>Modalidad:</strong> ' + f.modalidad + '</div>' +
+        '<div><strong>Inicio:</strong> ' + f.inicio + '</div>' +
+        '<div><strong>Docente:</strong> ' + f.docente + '</div>';
+      document.getElementById('cee-ficha-silabo').textContent = f.silabo;
+      document.getElementById('cee-ficha-panel').classList.remove('hidden');
+      document.getElementById('cee-ficha-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+
+  document.getElementById('cee-contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var email = document.getElementById('cee-email').value.trim();
+    var programa = document.getElementById('cee-programa').value;
+    var error = document.getElementById('cee-form-error');
+    var ok = document.getElementById('cee-form-success');
+    error.classList.add('hidden');
+    if (!document.getElementById('cee-nombre').value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !programa) {
+      error.classList.remove('hidden');
+      return;
+    }
+    ok.classList.remove('hidden');
+    e.target.reset();
+    setTimeout(function() { ok.classList.add('hidden'); }, 5000);
+  });
+})();
+</script>
