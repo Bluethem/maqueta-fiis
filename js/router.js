@@ -33,6 +33,7 @@ const MEGA_MENU = [
         { label: 'Horarios y Mallas', route: '/horarios-mallas', icon: 'calendar_view_month' },
         { label: 'Cronogramas', route: '/cronogramas', icon: 'calendar_month' },
         { label: 'Documentos Académicos', route: '/documentos-academicos', icon: 'gavel' },
+        { label: 'Avisos Académicos', route: '/avisos-academicos', icon: 'campaign' },
         { label: 'Guías Académicas', route: '/guias-academicas', icon: 'menu_book' },
         { label: 'Directorio Docentes', route: '/directorio-docentes', icon: 'badge' },
       ]}
