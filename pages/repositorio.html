@@ -1,0 +1,149 @@
+<div class="page-enter space-y-8">
+  <section class="relative bg-primary overflow-hidden rounded-2xl min-h-[320px] flex items-center">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
+    <div class="relative z-10 px-8 md:px-16 py-14 w-full">
+      <div class="max-w-3xl">
+        <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-4 leading-tight">Repositorio Central</h1>
+        <p class="text-on-primary/90 text-lg md:text-xl leading-relaxed">Documentos oficiales, reglamentos, resoluciones, cronogramas, mallas curriculares y formatos de la FIIS.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-[1200px] mx-auto px-6 md:px-8 space-y-6 pb-12">
+    <div class="flex flex-col sm:flex-row sm:items-center gap-4" id="repo-toolbar">
+      <div class="flex-1 flex flex-wrap gap-3">
+        <select id="repo-tipo" class="border border-border-subtle rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30">
+          <option value="all">Todos los tipos</option>
+          <option value="Reglamento">Reglamentos</option>
+          <option value="Resolución">Resoluciones</option>
+          <option value="Cronograma">Cronogramas</option>
+          <option value="Malla Curricular">Mallas Curriculares</option>
+          <option value="Comunicado">Comunicados</option>
+          <option value="Formato">Formatos</option>
+          <option value="Informe">Informes</option>
+        </select>
+        <select id="repo-ano" class="border border-border-subtle rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30">
+          <option value="all">Todos los años</option>
+          <option value="2026">2026</option>
+          <option value="2025">2025</option>
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
+          <option value="2022">2022</option>
+        </select>
+        <select id="repo-area" class="border border-border-subtle rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30">
+          <option value="all">Todas las áreas</option>
+          <option value="Decanato">Decanato</option>
+          <option value="Secretaría Académica">Secretaría Académica</option>
+          <option value="Secretaría Administrativa">Secretaría Administrativa</option>
+          <option value="Investigación">Investigación</option>
+          <option value="Bienestar">Bienestar</option>
+        </select>
+      </div>
+      <div id="repo-admin-bar" class="hidden shrink-0"></div>
+    </div>
+
+    <div class="bg-white rounded-xl border border-border-subtle overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-surface-container-low text-sm font-bold text-primary border-b border-border-subtle">
+              <th class="p-4">Título</th>
+              <th class="p-4">Tipo</th>
+              <th class="p-4">Área</th>
+              <th class="p-4">Fecha</th>
+              <th class="p-4 text-center">Descargar</th>
+            </tr>
+          </thead>
+          <tbody id="repo-body" class="text-sm text-text-secondary">
+            <tr class="border-b border-border-subtle hover:bg-surface-container-low transition-colors" data-tipo="Reglamento" data-ano="2024" data-area="Secretaría Académica">
+              <td class="p-4 font-medium text-on-surface">Reglamento General de Estudios de Pregrado</td>
+              <td class="p-4"><span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-blue-100 text-blue-700">Reglamento</span></td>
+              <td class="p-4">Secretaría Académica</td>
+              <td class="p-4">15/03/2024</td>
+              <td class="p-4 text-center"><button onclick="alert('Descargando...')" class="text-primary hover:text-primary-container"><span class="material-symbols-outlined">download</span></button></td>
+            </tr>
+            <tr class="border-b border-border-subtle hover:bg-surface-container-low transition-colors" data-tipo="Resolución" data-ano="2025" data-area="Decanato">
+              <td class="p-4 font-medium text-on-surface">Resolución N° 012-2025-FIIS: Modificación Calendario Académico</td>
+              <td class="p-4"><span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-amber-100 text-amber-700">Resolución</span></td>
+              <td class="p-4">Decanato</td>
+              <td class="p-4">10/01/2025</td>
+              <td class="p-4 text-center"><button onclick="alert('Descargando...')" class="text-primary hover:text-primary-container"><span class="material-symbols-outlined">download</span></button></td>
+            </tr>
+            <tr class="border-b border-border-subtle hover:bg-surface-container-low transition-colors" data-tipo="Cronograma" data-ano="2026" data-area="Secretaría Académica">
+              <td class="p-4 font-medium text-on-surface">Cronograma Académico 2026-I</td>
+              <td class="p-4"><span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-green-100 text-green-700">Cronograma</span></td>
+              <td class="p-4">Secretaría Académica</td>
+              <td class="p-4">01/03/2026</td>
+              <td class="p-4 text-center"><button onclick="alert('Descargando...')" class="text-primary hover:text-primary-container"><span class="material-symbols-outlined">download</span></button></td>
+            </tr>
+            <tr class="border-b border-border-subtle hover:bg-surface-container-low transition-colors" data-tipo="Malla Curricular" data-ano="2024" data-area="Secretaría Académica">
+              <td class="p-4 font-medium text-on-surface">Malla Curricular - Ingeniería Industrial 2024</td>
+              <td class="p-4"><span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-purple-100 text-purple-700">Malla Curricular</span></td>
+              <td class="p-4">Secretaría Académica</td>
+              <td class="p-4">20/12/2024</td>
+              <td class="p-4 text-center"><button onclick="alert('Descargando...')" class="text-primary hover:text-primary-container"><span class="material-symbols-outlined">download</span></button></td>
+            </tr>
+            <tr class="border-b border-border-subtle hover:bg-surface-container-low transition-colors" data-tipo="Malla Curricular" data-ano="2024" data-area="Secretaría Académica">
+              <td class="p-4 font-medium text-on-surface">Malla Curricular - Ingeniería de Sistemas 2024</td>
+              <td class="p-4"><span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-purple-100 text-purple-700">Malla Curricular</span></td>
+              <td class="p-4">Secretaría Académica</td>
+              <td class="p-4">20/12/2024</td>
+              <td class="p-4 text-center"><button onclick="alert('Descargando...')" class="text-primary hover:text-primary-container"><span class="material-symbols-outlined">download</span></button></td>
+            </tr>
+            <tr class="border-b border-border-subtle hover:bg-surface-container-low transition-colors" data-tipo="Formato" data-ano="2023" data-area="Secretaría Administrativa">
+              <td class="p-4 font-medium text-on-surface">FUT - Formulario Único de Trámite</td>
+              <td class="p-4"><span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-gray-100 text-gray-700">Formato</span></td>
+              <td class="p-4">Secretaría Administrativa</td>
+              <td class="p-4">05/06/2023</td>
+              <td class="p-4 text-center"><button onclick="alert('Descargando...')" class="text-primary hover:text-primary-container"><span class="material-symbols-outlined">download</span></button></td>
+            </tr>
+            <tr class="border-b border-border-subtle hover:bg-surface-container-low transition-colors" data-tipo="Comunicado" data-ano="2026" data-area="Decanato">
+              <td class="p-4 font-medium text-on-surface">Comunicado: Suspensión de actividades por feriado</td>
+              <td class="p-4"><span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-red-100 text-red-700">Comunicado</span></td>
+              <td class="p-4">Decanato</td>
+              <td class="p-4">20/04/2026</td>
+              <td class="p-4 text-center"><button onclick="alert('Descargando...')" class="text-primary hover:text-primary-container"><span class="material-symbols-outlined">download</span></button></td>
+            </tr>
+            <tr class="border-b border-border-subtle hover:bg-surface-container-low transition-colors" data-tipo="Informe" data-ano="2025" data-area="Investigación">
+              <td class="p-4 font-medium text-on-surface">Informe Anual de Investigación 2025</td>
+              <td class="p-4"><span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-indigo-100 text-indigo-700">Informe</span></td>
+              <td class="p-4">Investigación</td>
+              <td class="p-4">15/12/2025</td>
+              <td class="p-4 text-center"><button onclick="alert('Descargando...')" class="text-primary hover:text-primary-container"><span class="material-symbols-outlined">download</span></button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function() {
+    var session = null;
+    try { session = JSON.parse(sessionStorage.getItem('auth')); } catch(e) {}
+    if (session && (session.role === 'admin' || session.role === 'administrativo')) {
+      var bar = document.getElementById('repo-admin-bar');
+      if (bar) {
+        bar.innerHTML = '<a href="#/dashboard/admin-web" class="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary-container transition-all"><span class="material-symbols-outlined text-sm">upload</span> Subir documento</a>';
+        bar.classList.remove('hidden');
+      }
+    }
+
+    function filter() {
+      var tipo = document.getElementById('repo-tipo').value;
+      var ano = document.getElementById('repo-ano').value;
+      var area = document.getElementById('repo-area').value;
+      document.querySelectorAll('#repo-body tr').forEach(function(row) {
+        var mt = (tipo === 'all' || row.getAttribute('data-tipo') === tipo);
+        var ma = (ano === 'all' || row.getAttribute('data-ano') === ano);
+        var mr = (area === 'all' || row.getAttribute('data-area') === area);
+        row.style.display = (mt && ma && mr) ? '' : 'none';
+      });
+    }
+
+    document.getElementById('repo-tipo').addEventListener('change', filter);
+    document.getElementById('repo-ano').addEventListener('change', filter);
+    document.getElementById('repo-area').addEventListener('change', filter);
+  })();
+  </script>
+</div>

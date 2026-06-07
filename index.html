@@ -93,6 +93,8 @@ tailwind.config = {
 <body>
 <div id="app"></div>
 <script src="js/store.js?v=20260603-admin-vacantes"></script>
+<script src="js/search.js?v=2"></script>
+<script src="js/faq.js?v=2"></script>
 <script src="js/auth.js"></script>
 <script src="js/components.js"></script>
 <script src="js/router.js"></script>
@@ -103,10 +105,10 @@ async function routePublic(section) {
 }
 
 async function routePublicDetail(id) {
-  const html = await loadPage('vida-estudiantil-detalle');
-  renderPublicLayout(html, '/vida-estudiantil');
-  if (typeof initVidaEstudiantilDetalle === 'function') {
-    initVidaEstudiantilDetalle(id);
+  const html = await loadPage('comunidad-detalle');
+  renderPublicLayout(html, '/comunidad');
+  if (typeof initComunidadDetalle === 'function') {
+    initComunidadDetalle(id);
   }
 }
 
@@ -137,16 +139,14 @@ async function routeDashboard(role) {
     return;
   }
   const pageMap = {
-    estudiante: 'dashboard/estudiante',
     administrativo: 'dashboard/administrativo',
     docente: 'dashboard/docente',
     centro: 'dashboard/centro',
-    egresado: 'dashboard/egresado',
     empresa: 'dashboard/empresa',
     laboratorio: 'dashboard/laboratorio',
     admin: 'dashboard/admin-web',
   };
-  const path = pageMap[role] || 'dashboard/estudiante';
+  const path = pageMap[role] || 'dashboard/centro';
   const html = await loadPage(path);
   Components.render(Auth.getSession(), html);
 }
@@ -199,14 +199,12 @@ Router.add('/empresas', () => routePublic('empresas'));
   });
 });
 Router.add('/egresados', () => routePublic('egresados'));
-Router.add('/egresados/directorio', () => routePublic('egresados-directorio'));
-Router.add('/egresados/:slug', async function(slug) {
-  window.__EGRESADO_SLUG = slug;
-  const html = await loadPage('egresado-perfil');
-  renderPublicLayout(html, '/egresados');
-});
-Router.add('/vida-estudiantil', () => routePublic('vida-estudiantil'));
-Router.add('/vida-estudiantil/:id', (id) => routePublicDetail(id));
+Router.add('/comunidad', () => routePublic('comunidad'));
+Router.add('/comunidad/:id', (id) => routePublicDetail(id));
+Router.add('/academico', () => routePublic('academico'));
+Router.add('/investigacion', () => routePublic('investigacion'));
+Router.add('/iifiis', () => routePublic('iifiis'));
+Router.add('/proyectos-destacados', () => routePublic('proyectos-destacados'));
 Router.add('/directorio', () => routePublic('directorio'));
 Router.add('/calendario', () => routePublic('calendario'));
 Router.add('/docentes/:id', (id) => routePublicDetailDocente(id));
@@ -229,26 +227,29 @@ Router.add('/posgrado/doctorado-sistemas', () => routePublic('doctorado-sistemas
 Router.add('/posgrado/diplomados', () => routePublic('diplomado-project-management'));
 Router.add('/avisos-academicos', () => routePublic('avisos-academicos'));
 Router.add('/servicios', () => routePublic('servicios'));
+Router.add('/centro-informacion', () => routePublic('centro-informacion'));
+Router.add('/uecps', () => routePublic('uecps'));
+Router.add('/tutoria', () => routePublic('tutoria'));
+Router.add('/centro-automatizacion', () => routePublic('centro-automatizacion'));
+Router.add('/cee', () => routePublic('cee'));
+Router.add('/instituto-investigacion', () => routePublic('instituto-investigacion'));
+Router.add('/repositorio', () => routePublic('repositorio'));
+Router.add('/laboratorio-quimica', () => routePublic('laboratorio-quimica'));
+Router.add('/laboratorio-academico', () => routePublic('laboratorio-academico'));
+Router.add('/laboratorio-ia', () => routePublic('laboratorio-ia'));
+Router.add('/consult-fiis', () => routePublic('consult-fiis'));
 Router.add('/laboratorios', () => routePublic('laboratorios'));
 Router.add('/dashboard/admin', () => routeDashboard('admin'));
 Router.add('/dashboard/admin-web', () => routeDashboard('admin'));
 Router.add('/dashboard/empresa', () => routeDashboard('empresa'));
 Router.add('/dashboard/laboratorio', () => routeDashboard('laboratorio'));
-Router.add('/dashboard/egresado', () => routeDashboard('egresado'));
 Router.add('/dashboard/centro', () => routeDashboard('centro'));
 Router.add('/dashboard/docente', () => routeDashboard('docente'));
 Router.add('/dashboard/administrativo', () => routeDashboard('administrativo'));
-Router.add('/dashboard/estudiante', () => routeDashboard('estudiante'));
 Router.add('/content', () => routeGeneric('content'));
 Router.add('/calendar', () => routeGeneric('calendar'));
 Router.add('/news', () => routeGeneric('news'));
 Router.add('/users', () => routeGeneric('users'));
-Router.add('/dashboard/estudiante/tramites', () => routeDashboardSub('estudiante', 'tramites'));
-Router.add('/dashboard/estudiante/convocatorias', () => routeDashboardSub('estudiante', 'convocatorias'));
-Router.add('/dashboard/estudiante/tutoria', () => routeDashboardSub('estudiante', 'tutoria'));
-Router.add('/dashboard/estudiante/recursos', () => routeDashboardSub('estudiante', 'recursos'));
-Router.add('/dashboard/estudiante/eventos', () => routeDashboardSub('estudiante', 'eventos'));
-Router.add('/dashboard/estudiante/perfil', () => routeDashboardSub('estudiante', 'perfil'));
 Router.add('/dashboard/administrativo/tramites', () => routeDashboardSub('administrativo', 'tramites'));
 Router.add('/dashboard/administrativo/resoluciones', () => routeDashboardSub('administrativo', 'resoluciones'));
 Router.add('/dashboard/administrativo/horarios', () => routeDashboardSub('administrativo', 'horarios'));
@@ -259,23 +260,19 @@ Router.add('/dashboard/docente/recursos', () => routeDashboardSub('docente', 're
 Router.add('/dashboard/docente/eventos', () => routeDashboardSub('docente', 'eventos'));
 Router.add('/dashboard/docente/configuracion', () => routeDashboardSub('docente', 'configuracion'));
 Router.add('/dashboard/centro/pagina', () => routeDashboardSub('centro', 'pagina'));
-Router.add('/dashboard/centro/eventos', () => routeDashboardSub('centro', 'eventos'));
 Router.add('/dashboard/centro/convocatorias', () => routeDashboardSub('centro', 'convocatorias'));
+Router.add('/dashboard/centro/solicitar', () => routeDashboardSub('centro', 'solicitar'));
 Router.add('/dashboard/centro/repositorio', () => routeDashboardSub('centro', 'repositorio'));
-Router.add('/dashboard/egresado/perfil', () => routeDashboardSub('egresado', 'perfil'));
-Router.add('/dashboard/egresado/bolsa', () => routeDashboardSub('egresado', 'bolsa'));
-Router.add('/dashboard/egresado/alertas', () => routeDashboardSub('egresado', 'alertas'));
-Router.add('/dashboard/egresado/postulaciones', () => routeDashboardSub('egresado', 'postulaciones'));
-Router.add('/dashboard/egresado/alumni', () => routeDashboardSub('egresado', 'alumni'));
-Router.add('/dashboard/egresado/mentoria', () => routeDashboardSub('egresado', 'mentoria'));
 Router.add('/dashboard/empresa/perfil', () => routeDashboardSub('empresa', 'perfil'));
 Router.add('/dashboard/empresa/vacantes', () => routeDashboardSub('empresa', 'vacantes'));
 Router.add('/dashboard/empresa/evento', () => routeDashboardSub('empresa', 'evento'));
 Router.add('/dashboard/empresa/proyecto', () => routeDashboardSub('empresa', 'proyecto'));
 Router.add('/dashboard/empresa/notificaciones', () => routeDashboardSub('empresa', 'notificaciones'));
 Router.add('/dashboard/laboratorio/pagina', () => routeDashboardSub('laboratorio', 'pagina'));
+Router.add('/dashboard/laboratorio/solicitar', () => routeDashboardSub('laboratorio', 'solicitar'));
 Router.add('/dashboard/laboratorio/servicios', () => routeDashboardSub('laboratorio', 'servicios'));
 Router.add('/dashboard/admin/vacantes', () => routeDashboardSub('admin', 'vacantes'));
+Router.add('/dashboard/admin/repositorio', () => routeDashboardSub('admin', 'repositorio'));
 Router.add('/dashboard/admin/eventos', () => routeDashboardSub('admin', 'eventos'));
 Router.add('/dashboard/admin/reportes', () => routeDashboardSub('admin', 'reportes'));
 Router.add('/dashboard/admin/configuracion', () => routeDashboardSub('admin', 'configuracion'));

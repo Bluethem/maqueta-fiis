@@ -1,308 +1,279 @@
 <div class="page-enter space-y-8">
-
-  <section class="relative bg-primary overflow-hidden">
-    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 50%, #E6D9AA 0%, transparent 60%), radial-gradient(circle at 80% 30%, #E6D9AA 0%, transparent 50%);"></div>
-    <div class="relative px-8 py-14 md:py-20 max-w-[1200px] mx-auto">
-      <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-4">Eventos FIIS</h1>
-      <p class="text-on-primary/80 text-lg md:text-xl max-w-2xl">Descubre y participa en los eventos académicos, culturales, empresariales y gremiales de la facultad.</p>
+  <section class="relative bg-primary overflow-hidden rounded-2xl min-h-[320px] flex items-center">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
+    <div class="relative z-10 px-8 md:px-16 py-14 w-full">
+      <div class="max-w-3xl">
+        <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-4 leading-tight">Calendario FIIS</h1>
+        <p class="text-on-primary/90 text-lg md:text-xl leading-relaxed">Explora los eventos académicos, culturales, empresariales y de la facultad.</p>
+      </div>
     </div>
   </section>
 
-  <div class="max-w-[1200px] mx-auto px-6 md:px-8 flex flex-wrap gap-2">
-    <button class="px-4 py-2 rounded-full text-sm font-medium bg-primary text-on-primary transition-all">Todos</button>
-    <button class="px-4 py-2 rounded-full text-sm font-medium bg-white text-blue-600 border border-border-subtle hover:border-blue-400 transition-all">
-      <span class="inline-block w-2 h-2 rounded-full bg-blue-500 mr-1.5"></span>Académico
-    </button>
-    <button class="px-4 py-2 rounded-full text-sm font-medium bg-white text-amber-600 border border-border-subtle hover:border-amber-400 transition-all">
-      <span class="inline-block w-2 h-2 rounded-full bg-amber-500 mr-1.5"></span>Cultural
-    </button>
-    <button class="px-4 py-2 rounded-full text-sm font-medium bg-white text-primary border border-border-subtle hover:border-primary transition-all">
-      <span class="inline-block w-2 h-2 rounded-full bg-primary mr-1.5"></span>Empresarial
-    </button>
-    <button class="px-4 py-2 rounded-full text-sm font-medium bg-white text-purple-600 border border-border-subtle hover:border-purple-400 transition-all">
-      <span class="inline-block w-2 h-2 rounded-full bg-purple-500 mr-1.5"></span>Gremial
-    </button>
-  </div>
-
-  <div class="max-w-[1200px] mx-auto px-6 md:px-8">
-    <div class="bg-white rounded-xl border border-border-subtle overflow-hidden">
-      <div class="flex items-center justify-between px-6 py-4 border-b border-border-subtle bg-surface-container-low">
-        <button class="p-2 rounded-lg hover:bg-surface-container-high transition-all text-on-surface-variant hover:text-primary">
-          <span class="material-symbols-outlined">chevron_left</span>
+  <div class="max-w-[1200px] mx-auto px-6 md:px-8 space-y-6 pb-12">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <button class="p-2 rounded-lg hover:bg-surface-container-low transition-all" id="cal-prev">
+          <span class="material-symbols-outlined text-on-surface">chevron_left</span>
         </button>
-        <h2 class="text-xl font-bold text-primary">Mayo 2024</h2>
-        <button class="p-2 rounded-lg hover:bg-surface-container-high transition-all text-on-surface-variant hover:text-primary">
-          <span class="material-symbols-outlined">chevron_right</span>
+        <span class="text-xl font-bold text-on-surface min-w-[180px] text-center" id="cal-month-label">Junio 2026</span>
+        <button class="p-2 rounded-lg hover:bg-surface-container-low transition-all" id="cal-next">
+          <span class="material-symbols-outlined text-on-surface">chevron_right</span>
         </button>
+        <button class="px-4 py-1.5 text-sm font-semibold bg-primary text-white rounded-lg hover:bg-primary-container transition-all" id="cal-today">Hoy</button>
       </div>
-      <div class="p-6">
-        <div class="grid grid-cols-7 gap-1 text-center mb-2">
-          <div class="text-xs font-semibold text-text-secondary py-2">Dom</div>
-          <div class="text-xs font-semibold text-text-secondary py-2">Lun</div>
-          <div class="text-xs font-semibold text-text-secondary py-2">Mar</div>
-          <div class="text-xs font-semibold text-text-secondary py-2">Mié</div>
-          <div class="text-xs font-semibold text-text-secondary py-2">Jue</div>
-          <div class="text-xs font-semibold text-text-secondary py-2">Vie</div>
-          <div class="text-xs font-semibold text-text-secondary py-2">Sáb</div>
+      <div class="flex flex-wrap gap-2" id="cal-filters">
+        <button class="cal-filter px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary text-white transition-all" data-type="todos">Todos</button>
+        <button class="cal-filter px-3.5 py-1.5 rounded-full text-xs font-semibold border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-type="academico">Académico</button>
+        <button class="cal-filter px-3.5 py-1.5 rounded-full text-xs font-semibold border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-type="cultural">Cultural</button>
+        <button class="cal-filter px-3.5 py-1.5 rounded-full text-xs font-semibold border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-type="empresarial">Empresarial</button>
+        <button class="cal-filter px-3.5 py-1.5 rounded-full text-xs font-semibold border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-type="facultad">Facultad</button>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">
+      <div class="lg:col-span-3">
+        <div class="bg-white rounded-xl border border-border-subtle overflow-hidden">
+          <div class="grid grid-cols-7 border-b border-border-subtle bg-surface-container-low">
+            <div class="p-2 md:p-3 text-center text-[10px] md:text-xs font-bold text-text-secondary uppercase">Dom</div>
+            <div class="p-2 md:p-3 text-center text-[10px] md:text-xs font-bold text-text-secondary uppercase">Lun</div>
+            <div class="p-2 md:p-3 text-center text-[10px] md:text-xs font-bold text-text-secondary uppercase">Mar</div>
+            <div class="p-2 md:p-3 text-center text-[10px] md:text-xs font-bold text-text-secondary uppercase">Mié</div>
+            <div class="p-2 md:p-3 text-center text-[10px] md:text-xs font-bold text-text-secondary uppercase">Jue</div>
+            <div class="p-2 md:p-3 text-center text-[10px] md:text-xs font-bold text-text-secondary uppercase">Vie</div>
+            <div class="p-2 md:p-3 text-center text-[10px] md:text-xs font-bold text-text-secondary uppercase">Sáb</div>
+          </div>
+          <div class="grid grid-cols-7" id="cal-grid"></div>
         </div>
-        <div class="grid grid-cols-7 gap-1 text-center">
-          <div class="text-sm py-3 text-text-secondary">28</div>
-          <div class="text-sm py-3 text-text-secondary">29</div>
-          <div class="text-sm py-3 text-text-secondary">30</div>
-          <div class="text-sm py-3 font-semibold text-on-surface bg-primary/5 rounded-lg">1</div>
-          <div class="text-sm py-3 font-semibold text-on-surface">2</div>
-          <div class="text-sm py-3 font-semibold text-on-surface">3</div>
-          <div class="text-sm py-3 text-text-secondary">4</div>
-          <div class="text-sm py-3 font-semibold text-on-surface">5</div>
-          <div class="text-sm py-3 font-semibold text-on-surface">6</div>
-          <div class="text-sm py-3 font-semibold text-on-surface">7</div>
-          <div class="text-sm py-3 font-semibold text-on-surface">8</div>
-          <div class="text-sm py-3 font-semibold text-on-surface">9</div>
-          <div class="text-sm py-3 font-semibold text-on-surface">10</div>
-          <div class="text-sm py-3 text-text-secondary">11</div>
-          <div class="text-sm py-3 font-semibold text-on-surface">12</div>
-          <div class="text-sm py-3 font-semibold text-on-surface">13</div>
-          <div class="text-sm py-3 font-semibold text-on-surface">14</div>
-          <div class="text-sm py-3 font-semibold text-on-surface relative">
-            15
-            <span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-blue-500"></span>
-          </div>
-          <div class="text-sm py-3 font-semibold text-on-surface relative">
-            16
-            <span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-primary"></span>
-          </div>
-          <div class="text-sm py-3 text-text-secondary">18</div>
-          <div class="text-sm py-3 font-semibold text-on-surface">19</div>
-          <div class="text-sm py-3 font-semibold text-on-surface relative">
-            20
-            <span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-amber-500"></span>
-          </div>
-          <div class="text-sm py-3 font-semibold text-on-surface">21</div>
-          <div class="text-sm py-3 font-semibold text-on-surface">22</div>
-          <div class="text-sm py-3 font-semibold text-on-surface">23</div>
-          <div class="text-sm py-3 font-semibold text-on-surface">24</div>
-          <div class="text-sm py-3 text-text-secondary">25</div>
-          <div class="text-sm py-3 font-semibold text-on-surface">26</div>
-          <div class="text-sm py-3 font-semibold text-on-surface">27</div>
-          <div class="text-sm py-3 font-semibold text-on-surface relative">
-            28
-            <span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-primary"></span>
-          </div>
-          <div class="text-sm py-3 font-semibold text-on-surface">29</div>
-          <div class="text-sm py-3 font-semibold text-on-surface">30</div>
-          <div class="text-sm py-3 font-semibold text-on-surface">31</div>
-          <div class="text-sm py-3 text-text-secondary">1</div>
+      </div>
+
+      <div class="lg:col-span-2 space-y-4" id="cal-agenda">
+        <div class="flex items-center justify-between">
+          <h3 class="text-base font-bold text-on-surface" id="agenda-title">Eventos del día</h3>
+          <span class="text-xs text-text-secondary" id="agenda-count"></span>
         </div>
-        <div class="flex items-center gap-6 mt-4 pt-4 border-t border-border-subtle text-xs text-text-secondary">
-          <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>Académico</span>
-          <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>Cultural</span>
-          <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-primary"></span>Empresarial</span>
-          <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span>Gremial</span>
-        </div>
+        <div id="agenda-list" class="space-y-4"></div>
       </div>
     </div>
   </div>
-
-  <div class="max-w-[1200px] mx-auto px-6 md:px-8 space-y-4">
-    <div class="bg-white rounded-xl border border-border-subtle overflow-hidden">
-      <div class="flex flex-col sm:flex-row">
-        <div class="flex sm:flex-col items-center sm:items-stretch justify-center bg-primary text-on-primary px-5 py-3 sm:py-5 sm:w-24 sm:text-center flex-shrink-0">
-          <span class="text-2xl sm:text-3xl font-bold leading-none">20</span>
-          <span class="text-sm sm:text-xs font-medium uppercase tracking-wider ml-2 sm:ml-0">Jun</span>
-        </div>
-        <div class="flex-1 p-5">
-          <div class="flex items-start gap-3">
-            <span class="w-3 h-3 rounded-full bg-blue-500 mt-1.5 flex-shrink-0"></span>
-            <div class="flex-1 min-w-0">
-              <h3 class="text-lg font-semibold text-on-surface">Seminario de Optimización en Cadena de Suministros</h3>
-              <p class="text-text-secondary text-sm mt-0.5">Organizado por IISE FIIS</p>
-              <div class="flex flex-wrap items-center gap-2 mt-3">
-                <span class="px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 border border-blue-200">Presencial</span>
-                <span class="text-xs text-text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-sm">location_on</span> Auditorio FIIS</span>
-              </div>
-            </div>
-            <button class="flex-shrink-0 px-4 py-2 text-sm font-medium rounded-lg bg-brand-cream text-primary hover:opacity-90 transition-all whitespace-nowrap">Ver detalles</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-white rounded-xl border border-border-subtle overflow-hidden">
-      <div class="flex flex-col sm:flex-row">
-        <div class="flex sm:flex-col items-center sm:items-stretch justify-center bg-primary text-on-primary px-5 py-3 sm:py-5 sm:w-24 sm:text-center flex-shrink-0">
-          <span class="text-2xl sm:text-3xl font-bold leading-none">24</span>
-          <span class="text-sm sm:text-xs font-medium uppercase tracking-wider ml-2 sm:ml-0">Jun</span>
-        </div>
-        <div class="flex-1 p-5">
-          <div class="flex items-start gap-3">
-            <span class="w-3 h-3 rounded-full bg-blue-500 mt-1.5 flex-shrink-0"></span>
-            <div class="flex-1 min-w-0">
-              <h3 class="text-lg font-semibold text-on-surface">Workshop: Metodologías Ágiles</h3>
-              <p class="text-text-secondary text-sm mt-0.5">Organizado por Facultad de Sistemas</p>
-              <div class="flex flex-wrap items-center gap-2 mt-3">
-                <span class="px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-50 text-purple-700 border border-purple-200">Virtual</span>
-                <span class="text-xs text-text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-sm">videocam</span> Zoom</span>
-              </div>
-            </div>
-            <button class="flex-shrink-0 px-4 py-2 text-sm font-medium rounded-lg bg-brand-cream text-primary hover:opacity-90 transition-all whitespace-nowrap">Ver detalles</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-white rounded-xl border border-border-subtle overflow-hidden">
-      <div class="flex flex-col sm:flex-row">
-        <div class="flex sm:flex-col items-center sm:items-stretch justify-center bg-primary text-on-primary px-5 py-3 sm:py-5 sm:w-24 sm:text-center flex-shrink-0">
-          <span class="text-2xl sm:text-3xl font-bold leading-none">05</span>
-          <span class="text-sm sm:text-xs font-medium uppercase tracking-wider ml-2 sm:ml-0">Jul</span>
-        </div>
-        <div class="flex-1 p-5">
-          <div class="flex items-start gap-3">
-            <span class="w-3 h-3 rounded-full bg-blue-500 mt-1.5 flex-shrink-0"></span>
-            <div class="flex-1 min-w-0">
-              <h3 class="text-lg font-semibold text-on-surface">Feria de Proyectos de Innovación</h3>
-              <p class="text-text-secondary text-sm mt-0.5">Organizado por Dirección de Investigación</p>
-              <div class="flex flex-wrap items-center gap-2 mt-3">
-                <span class="px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 border border-blue-200">Presencial</span>
-                <span class="text-xs text-text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-sm">location_on</span> Lab L1</span>
-              </div>
-            </div>
-            <button class="flex-shrink-0 px-4 py-2 text-sm font-medium rounded-lg bg-brand-cream text-primary hover:opacity-90 transition-all whitespace-nowrap">Ver detalles</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-white rounded-xl border border-border-subtle overflow-hidden">
-      <div class="flex flex-col sm:flex-row">
-        <div class="flex sm:flex-col items-center sm:items-stretch justify-center bg-primary text-on-primary px-5 py-3 sm:py-5 sm:w-24 sm:text-center flex-shrink-0">
-          <span class="text-2xl sm:text-3xl font-bold leading-none">28</span>
-          <span class="text-sm sm:text-xs font-medium uppercase tracking-wider ml-2 sm:ml-0">Oct</span>
-        </div>
-        <div class="flex-1 p-5">
-          <div class="flex items-start gap-3">
-            <span class="w-3 h-3 rounded-full bg-amber-500 mt-1.5 flex-shrink-0"></span>
-            <div class="flex-1 min-w-0">
-              <h3 class="text-lg font-semibold text-on-surface">Hackathon FIIS 2024</h3>
-              <p class="text-text-secondary text-sm mt-0.5">Organizado por UNICODE</p>
-              <div class="flex flex-wrap items-center gap-2 mt-3">
-                <span class="px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 border border-blue-200">Presencial</span>
-                <span class="text-xs text-text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-sm">location_on</span> Lab de Cómputo</span>
-              </div>
-            </div>
-            <button class="flex-shrink-0 px-4 py-2 text-sm font-medium rounded-lg bg-brand-cream text-primary hover:opacity-90 transition-all whitespace-nowrap">Ver detalles</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-white rounded-xl border border-border-subtle overflow-hidden">
-      <div class="flex flex-col sm:flex-row">
-        <div class="flex sm:flex-col items-center sm:items-stretch justify-center bg-primary text-on-primary px-5 py-3 sm:py-5 sm:w-24 sm:text-center flex-shrink-0">
-          <span class="text-2xl sm:text-3xl font-bold leading-none">05</span>
-          <span class="text-sm sm:text-xs font-medium uppercase tracking-wider ml-2 sm:ml-0">Nov</span>
-        </div>
-        <div class="flex-1 p-5">
-          <div class="flex items-start gap-3">
-            <span class="w-3 h-3 rounded-full bg-blue-500 mt-1.5 flex-shrink-0"></span>
-            <div class="flex-1 min-w-0">
-              <h3 class="text-lg font-semibold text-on-surface">Charla: IA en la Industria</h3>
-              <p class="text-text-secondary text-sm mt-0.5">Organizado por Lab de IA</p>
-              <div class="flex flex-wrap items-center gap-2 mt-3">
-                <span class="px-2.5 py-0.5 rounded-full text-xs font-medium bg-cyan-50 text-cyan-700 border border-cyan-200">Híbrido</span>
-                <span class="text-xs text-text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-sm">location_on</span> Auditorio FIIS</span>
-              </div>
-            </div>
-            <button class="flex-shrink-0 px-4 py-2 text-sm font-medium rounded-lg bg-brand-cream text-primary hover:opacity-90 transition-all whitespace-nowrap">Ver detalles</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-white rounded-xl border border-border-subtle overflow-hidden">
-      <div class="flex flex-col sm:flex-row">
-        <div class="flex sm:flex-col items-center sm:items-stretch justify-center bg-primary text-on-primary px-5 py-3 sm:py-5 sm:w-24 sm:text-center flex-shrink-0">
-          <span class="text-2xl sm:text-3xl font-bold leading-none">15</span>
-          <span class="text-sm sm:text-xs font-medium uppercase tracking-wider ml-2 sm:ml-0">Nov</span>
-        </div>
-        <div class="flex-1 p-5">
-          <div class="flex items-start gap-3">
-            <span class="w-3 h-3 rounded-full bg-amber-500 mt-1.5 flex-shrink-0"></span>
-            <div class="flex-1 min-w-0">
-              <h3 class="text-lg font-semibold text-on-surface">Concurso de Programación</h3>
-              <p class="text-text-secondary text-sm mt-0.5">Organizado por CIBERSEC</p>
-              <div class="flex flex-wrap items-center gap-2 mt-3">
-                <span class="px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 border border-blue-200">Presencial</span>
-                <span class="text-xs text-text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-sm">location_on</span> Lab de Cómputo</span>
-              </div>
-            </div>
-            <button class="flex-shrink-0 px-4 py-2 text-sm font-medium rounded-lg bg-brand-cream text-primary hover:opacity-90 transition-all whitespace-nowrap">Ver detalles</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-white rounded-xl border border-border-subtle overflow-hidden">
-      <div class="flex flex-col sm:flex-row">
-        <div class="flex sm:flex-col items-center sm:items-stretch justify-center bg-primary text-on-primary px-5 py-3 sm:py-5 sm:w-24 sm:text-center flex-shrink-0">
-          <span class="text-2xl sm:text-3xl font-bold leading-none">20</span>
-          <span class="text-sm sm:text-xs font-medium uppercase tracking-wider ml-2 sm:ml-0">Nov</span>
-        </div>
-        <div class="flex-1 p-5">
-          <div class="flex items-start gap-3">
-            <span class="w-3 h-3 rounded-full bg-purple-500 mt-1.5 flex-shrink-0"></span>
-            <div class="flex-1 min-w-0">
-              <h3 class="text-lg font-semibold text-on-surface">Taller de Liderazgo</h3>
-              <p class="text-text-secondary text-sm mt-0.5">Organizado por CEIIS</p>
-              <div class="flex flex-wrap items-center gap-2 mt-3">
-                <span class="px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-50 text-purple-700 border border-purple-200">Virtual</span>
-                <span class="text-xs text-text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-sm">videocam</span> Google Meet</span>
-              </div>
-            </div>
-            <button class="flex-shrink-0 px-4 py-2 text-sm font-medium rounded-lg bg-brand-cream text-primary hover:opacity-90 transition-all whitespace-nowrap">Ver detalles</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-white rounded-xl border border-border-subtle overflow-hidden">
-      <div class="flex flex-col sm:flex-row">
-        <div class="flex sm:flex-col items-center sm:items-stretch justify-center bg-primary text-on-primary px-5 py-3 sm:py-5 sm:w-24 sm:text-center flex-shrink-0">
-          <span class="text-2xl sm:text-3xl font-bold leading-none">10</span>
-          <span class="text-sm sm:text-xs font-medium uppercase tracking-wider ml-2 sm:ml-0">Dic</span>
-        </div>
-        <div class="flex-1 p-5">
-          <div class="flex items-start gap-3">
-            <span class="w-3 h-3 rounded-full bg-blue-500 mt-1.5 flex-shrink-0"></span>
-            <div class="flex-1 min-w-0">
-              <h3 class="text-lg font-semibold text-on-surface">Ceremonia de Graduación 2024-I</h3>
-              <p class="text-text-secondary text-sm mt-0.5">Organizado por Decanato</p>
-              <div class="flex flex-wrap items-center gap-2 mt-3">
-                <span class="px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 border border-blue-200">Presencial</span>
-                <span class="text-xs text-text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-sm">location_on</span> Auditorio Central</span>
-              </div>
-            </div>
-            <button class="flex-shrink-0 px-4 py-2 text-sm font-medium rounded-lg bg-brand-cream text-primary hover:opacity-90 transition-all whitespace-nowrap">Ver detalles</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="max-w-[1200px] mx-auto px-6 md:px-8">
-    <div class="bg-white rounded-xl border border-border-subtle p-8 text-center">
-      <div class="max-w-lg mx-auto">
-        <div class="w-14 h-14 rounded-full bg-brand-cream flex items-center justify-center mx-auto mb-4">
-          <span class="material-symbols-outlined text-primary text-2xl">add</span>
-        </div>
-        <h3 class="text-xl font-bold text-on-surface">¿Organizas un evento?</h3>
-        <p class="text-text-secondary mt-2">Si representas a una agrupación, laboratorio o unidad académica, solicita la publicación de tu evento en el calendario institucional.</p>
-        <button class="mt-6 px-6 py-3 bg-brand-cream text-primary font-semibold rounded-lg hover:opacity-90 transition-all inline-flex items-center gap-2">
-          Solicitar evento
-          <span class="material-symbols-outlined">arrow_forward</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
 </div>
+
+<script>
+(function() {
+  var MONTHS = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Setiembre','Octubre','Noviembre','Diciembre'];
+  var COLORS = { academico: 'bg-blue-500', cultural: 'bg-amber-500', empresarial: 'bg-primary', facultad: 'bg-purple-500' };
+  var BADGES = { academico: 'bg-blue-100 text-blue-700', cultural: 'bg-amber-100 text-amber-700', empresarial: 'bg-primary/10 text-primary', facultad: 'bg-purple-100 text-purple-700' };
+
+  var today = new Date();
+  var currentMonth = today.getMonth();
+  var currentYear = today.getFullYear();
+  var activeFilter = 'todos';
+  var selectedDate = today;
+
+  var HARDCODED = [
+    { id: 'demo-1', titulo: 'Concurso Internacional de Talento Puente Chino', tipo: 'cultural', modalidad: 'presencial', lugar: 'Salas de Usos Múltiples (SUM)', aforo: 200, fechaInicio: '2026-06-06', fechaFin: '2026-06-06', descripcion: 'El Instituto Confucio de la PUCP, institución oficial de enseñanza y difusión de la lengua y la cultura china, invita a la Final a Nivel Nacional del Concurso Internacional del Talento Puente Chino 2026. Los asistentes podrán disfrutar de una exhibición de talento, creatividad y dominio del mandarín.', publico: ['Público Externo','Alumnos','Egresados','Docentes'], organizador: 'Instituto Confucio - PUCP', estado: 'aprobado', enlace: 'https://ejemplo.com/inscripcion' },
+    { id: 'demo-2', titulo: 'Seminario de Optimización de Procesos', tipo: 'academico', modalidad: 'presencial', lugar: 'Auditorio Central FIIS', aforo: 120, fechaInicio: '2026-06-12', fechaFin: '2026-06-12', descripcion: 'Seminario especializado en técnicas de optimización aplicadas a la industria manufacturera. Se abordarán casos prácticos de programación lineal, simulación y mejora continua.', publico: ['Alumnos','Egresados','Docentes'], organizador: 'Departamento de Gestión de la Producción', estado: 'aprobado' },
+    { id: 'demo-3', titulo: 'Feria de Prácticas Preprofesionales', tipo: 'empresarial', modalidad: 'presencial', lugar: 'Hall Principal - Pabellón A', aforo: 300, fechaInicio: '2026-06-16', fechaFin: '2026-06-16', descripcion: 'Las mejores empresas del país ofrecen vacantes de prácticas preprofesionales para estudiantes de todas las carreras. Trae tu CV y postula en vivo.', publico: ['Alumnos','Egresados'], organizador: 'UECPS - FIIS', estado: 'aprobado' },
+    { id: 'demo-4', titulo: 'Asamblea General Estudiantil', tipo: 'facultad', modalidad: 'presencial', lugar: 'Sala de Usos Múltiples (SUM)', aforo: 150, fechaInicio: '2026-06-20', fechaFin: '2026-06-20', descripcion: 'Reunión informativa y debate sobre la infraestructura estudiantil, presupuesto y calendario académico del próximo semestre.', publico: ['Alumnos'], organizador: 'CEIIS', estado: 'aprobado' },
+    { id: 'demo-5', titulo: 'Hackathon FIIS 2026: Innovación Sostenible', tipo: 'academico', modalidad: 'presencial', lugar: 'Laboratorio Académico FIIS', aforo: 60, fechaInicio: '2026-06-25', fechaFin: '2026-06-26', descripcion: 'Competencia intensiva de 24 horas para desarrollar soluciones tecnológicas que aborden problemáticas ambientales. Habrá premios para los 3 primeros lugares y mentoría de expertos.', publico: ['Alumnos','Egresados'], organizador: 'UNICODE', estado: 'aprobado' },
+    { id: 'demo-6', titulo: 'Noche de Talentos FIIS 2026', tipo: 'cultural', modalidad: 'presencial', lugar: 'Auditorio Central FIIS', aforo: 250, fechaInicio: '2026-06-28', fechaFin: '2026-06-28', descripcion: 'Velada cultural con presentaciones de danza folklórica, teatro corto, música en vivo y el coro de la facultad. Ingreso libre.', publico: ['Público Externo','Alumnos','Egresados','Docentes'], organizador: 'TEFIIS, Coro y Danza FIIS', estado: 'aprobado' },
+    { id: 'demo-7', titulo: 'Workshop: Ciberseguridad en Redes Corporativas', tipo: 'academico', modalidad: 'hibrido', lugar: 'Lab. de Redes FIIS + streaming', aforo: 40, fechaInicio: '2026-06-10', fechaFin: '2026-06-10', descripcion: 'Taller práctico de ciberseguridad enfocado en pentesting, análisis de vulnerabilidades y hardening de redes corporativas.', publico: ['Alumnos','Egresados','Docentes'], organizador: 'CIBERSEC', estado: 'aprobado' },
+    { id: 'demo-8', titulo: 'Charla: Lean Six Sigma en la Industria Alimentaria', tipo: 'empresarial', modalidad: 'presencial', lugar: 'Auditorio FIIS - Pabellón H', aforo: 120, fechaInicio: '2026-06-18', fechaFin: '2026-06-18', descripcion: 'Aplicación de metodologías de mejora continua en líneas de producción de alto volumen. Casos reales de implementación.', publico: ['Alumnos','Docentes','Egresados'], organizador: 'Alicorp', estado: 'aprobado' },
+  ];
+
+  function getAllEvents() {
+    var fromStore = (typeof Store !== 'undefined') ? Store.getEventos() : [];
+    var approved = fromStore.filter(function(e) { return e.estado === 'aprobado'; });
+    return HARDCODED.concat(approved);
+  }
+
+  function getTypeColor(type) {
+    var t = (type || '').toLowerCase();
+    return COLORS[t] || 'bg-gray-500';
+  }
+
+  function getTypeBadge(type) {
+    var t = (type || '').toLowerCase();
+    return BADGES[t] || 'bg-gray-100 text-gray-700';
+  }
+
+  function formatFecha(dateStr) {
+    var p = dateStr.split('-');
+    var d = new Date(+p[0], +p[1]-1, +p[2]);
+    return d.toLocaleDateString('es-PE', { day: 'numeric', month: 'long', year: 'numeric' });
+  }
+
+  function formatHora(dateStr) {
+    if (!dateStr) return '';
+    var p = dateStr.split('-');
+    var d = new Date(+p[0], +p[1]-1, +p[2]);
+    return d.toLocaleDateString('es-PE', { weekday: 'long' });
+  }
+
+  function renderCalendar() {
+    var grid = document.getElementById('cal-grid');
+    if (!grid) return;
+    var label = document.getElementById('cal-month-label');
+    label.textContent = MONTHS[currentMonth] + ' ' + currentYear;
+
+    var firstDay = new Date(currentYear, currentMonth, 1).getDay();
+    var daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+    var daysInPrev = new Date(currentYear, currentMonth, 0).getDate();
+    var events = getAllEvents();
+
+    var html = '';
+    for (var i = 0; i < firstDay; i++) {
+      var prevDay = daysInPrev - firstDay + 1 + i;
+      html += '<div class="min-h-[60px] md:min-h-[80px] p-1 border-b border-r border-border-subtle bg-surface-bg/30"><span class="text-xs text-text-secondary/40">' + prevDay + '</span></div>';
+    }
+
+    for (var d = 1; d <= daysInMonth; d++) {
+      var dateStr = currentYear + '-' + String(currentMonth + 1).padStart(2,'0') + '-' + String(d).padStart(2,'0');
+      var isToday = currentYear === today.getFullYear() && currentMonth === today.getMonth() && d === today.getDate();
+      var isSelected = selectedDate && dateStr === selectedDate;
+
+      var dayEvents = events.filter(function(e) {
+        if (activeFilter !== 'todos' && (e.tipo || '').toLowerCase() !== activeFilter) return false;
+        return e.fechaInicio <= dateStr && e.fechaFin >= dateStr;
+      });
+
+      var selClass = isSelected ? 'ring-2 ring-primary bg-primary/5' : '';
+      html += '<div class="min-h-[60px] md:min-h-[80px] p-1 border-b border-r border-border-subtle hover:bg-surface-container-low transition-all cursor-pointer day-cell ' + selClass + '" data-date="' + dateStr + '" data-events="' + encodeURIComponent(JSON.stringify(dayEvents)) + '">';
+      html += '<span class="text-xs font-bold ' + (isToday ? 'bg-primary text-white w-6 h-6 rounded-full inline-flex items-center justify-center' : 'text-on-surface') + '">' + d + '</span>';
+
+      if (dayEvents.length > 0) {
+        html += '<div class="mt-0.5 hidden md:block space-y-0.5">';
+        for (var j = 0; j < Math.min(dayEvents.length, 2); j++) {
+          var evt = dayEvents[j];
+          html += '<div class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full shrink-0 ' + getTypeColor(evt.tipo) + '"></span><span class="text-[9px] text-text-secondary truncate leading-tight">' + (evt.titulo || '').substring(0, 16) + '</span></div>';
+        }
+        if (dayEvents.length > 2) html += '<span class="text-[9px] text-primary font-semibold">+' + (dayEvents.length - 2) + ' más</span>';
+        html += '</div>';
+        html += '<div class="md:hidden flex mt-0.5"><span class="w-1.5 h-1.5 rounded-full ' + getTypeColor(dayEvents[0].tipo) + '"></span></div>';
+      }
+      html += '</div>';
+    }
+
+    var totalCells = firstDay + daysInMonth;
+    var remaining = (7 - (totalCells % 7)) % 7;
+    for (var i = 1; i <= remaining; i++) {
+      html += '<div class="min-h-[60px] md:min-h-[80px] p-1 border-b border-r border-border-subtle bg-surface-bg/30"><span class="text-xs text-text-secondary/40">' + i + '</span></div>';
+    }
+
+    grid.innerHTML = html;
+
+    grid.querySelectorAll('.day-cell').forEach(function(cell) {
+      cell.addEventListener('click', function() {
+        grid.querySelectorAll('.day-cell').forEach(function(c) { c.classList.remove('ring-2', 'ring-primary', 'bg-primary/5'); });
+        this.classList.add('ring-2', 'ring-primary', 'bg-primary/5');
+        var dateStr = this.getAttribute('data-date');
+        var raw = this.getAttribute('data-events');
+        var dayEvents = [];
+        try { dayEvents = JSON.parse(decodeURIComponent(raw)); } catch(e) {}
+        selectedDate = dateStr;
+        renderAgenda(dateStr, dayEvents);
+      });
+    });
+  }
+
+  function renderAgenda(dateStr, events) {
+    var list = document.getElementById('agenda-list');
+    var title = document.getElementById('agenda-title');
+    var count = document.getElementById('agenda-count');
+    if (!list) return;
+
+    var p = dateStr.split('-');
+    var d = new Date(+p[0], +p[1]-1, +p[2]);
+    var opts = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+    title.textContent = d.toLocaleDateString('es-PE', opts);
+
+    if (events.length === 0) {
+      count.textContent = 'Sin eventos';
+      list.innerHTML = '<div class="text-center py-10 text-text-secondary bg-white rounded-xl border border-border-subtle"><span class="material-symbols-outlined text-3xl">event_busy</span><p class="text-sm mt-2">No hay eventos para esta fecha</p></div>';
+      return;
+    }
+
+    count.textContent = events.length + ' evento' + (events.length !== 1 ? 's' : '');
+
+    list.innerHTML = events.map(function(e) {
+      var desde = e.fechaInicio === e.fechaFin ? formatFecha(e.fechaInicio) : 'Del ' + formatFecha(e.fechaInicio) + ' al ' + formatFecha(e.fechaFin);
+      var publicoStr = Array.isArray(e.publico) ? e.publico.join(', ') : (e.publico || '');
+      var badgeCls = getTypeBadge(e.tipo);
+      var colorDot = getTypeColor(e.tipo);
+      var modalidadBadge = e.modalidad ? '<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-surface-container-high text-text-secondary">' + e.modalidad + '</span>' : '';
+
+      return '<div class="bg-white rounded-xl border border-border-subtle overflow-hidden hover:shadow-md transition-all">' +
+        '<div class="p-5">' +
+          '<div class="flex items-start gap-3 mb-3">' +
+            '<div class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 mt-0.5 ' + (e.tipo === 'academico' ? 'bg-blue-100 text-blue-700' : e.tipo === 'cultural' ? 'bg-amber-100 text-amber-700' : e.tipo === 'empresarial' ? 'bg-primary/10 text-primary' : 'bg-purple-100 text-purple-700') + '">' +
+              '<span class="material-symbols-outlined text-lg" style="font-variation-settings:\'FILL\'1;">' + (e.tipo === 'academico' ? 'school' : e.tipo === 'cultural' ? 'theater_comedy' : e.tipo === 'empresarial' ? 'work' : 'how_to_vote') + '</span>' +
+            '</div>' +
+            '<div class="flex-1 min-w-0">' +
+              '<div class="flex items-center gap-2 flex-wrap">' +
+                '<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold ' + badgeCls + '">' + (e.tipo || '').charAt(0).toUpperCase() + (e.tipo || '').slice(1) + '</span>' +
+                modalidadBadge +
+              '</div>' +
+              '<h3 class="text-sm font-bold text-on-surface mt-1 leading-snug">' + e.titulo + '</h3>' +
+            '</div>' +
+          '</div>' +
+
+          '<div class="space-y-1.5 text-xs text-text-secondary mb-3">' +
+            '<div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">calendar_today</span><span>' + desde + '</span></div>' +
+            (e.lugar ? '<div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">location_on</span><span>' + e.lugar + '</span></div>' : '') +
+            (publicoStr ? '<div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">group</span><span>' + publicoStr + '</span></div>' : '') +
+            (e.organizador ? '<div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">apartment</span><span>' + e.organizador + '</span></div>' : '') +
+          '</div>' +
+
+          (e.descripcion ? '<p class="text-xs text-text-secondary leading-relaxed mb-4 line-clamp-3">' + e.descripcion + '</p>' : '') +
+
+          '<div class="flex flex-wrap gap-2 pt-3 border-t border-border-subtle">' +
+            (e.enlace ? '<a href="' + e.enlace + '" target="_blank" class="inline-flex items-center gap-1.5 px-4 py-1.5 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-primary-container transition-all">Inscribirme <span class="material-symbols-outlined text-sm">arrow_forward</span></a>' : '<button class="inline-flex items-center gap-1.5 px-4 py-1.5 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-primary-container transition-all" onclick="alert(\'Inscripción: ' + e.titulo + '\')">Inscribirme <span class="material-symbols-outlined text-sm">arrow_forward</span></button>') +
+            '<a href="https://www.google.com/calendar/render?action=TEMPLATE&text=' + encodeURIComponent(e.titulo) + '&dates=' + e.fechaInicio.replace(/-/g, '') + '/' + (e.fechaFin || e.fechaInicio).replace(/-/g, '') + '&details=' + encodeURIComponent(e.descripcion || '') + '&location=' + encodeURIComponent(e.lugar || '') + '" target="_blank" class="inline-flex items-center gap-1.5 px-4 py-1.5 border border-border-subtle text-xs font-semibold rounded-lg hover:bg-surface-container-low transition-all"><span class="material-symbols-outlined text-sm">calendar_add_on</span> Google Calendar</a>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  function updateFilter(type) {
+    activeFilter = type;
+    document.querySelectorAll('.cal-filter').forEach(function(b) {
+      b.className = 'cal-filter px-3.5 py-1.5 rounded-full text-xs font-semibold border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all';
+    });
+    var activeBtn = document.querySelector('.cal-filter[data-type="' + type + '"]');
+    if (activeBtn) activeBtn.className = 'cal-filter px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary text-white transition-all';
+    renderCalendar();
+    if (selectedDate) {
+      var events = getAllEvents().filter(function(e) {
+        if (activeFilter !== 'todos' && (e.tipo || '').toLowerCase() !== activeFilter) return false;
+        return e.fechaInicio <= selectedDate && e.fechaFin >= selectedDate;
+      });
+      renderAgenda(selectedDate, events);
+    }
+  }
+
+  function goToday() {
+    currentMonth = today.getMonth();
+    currentYear = today.getFullYear();
+    selectedDate = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2,'0') + '-' + String(today.getDate()).padStart(2,'0');
+    renderCalendar();
+    var events = getAllEvents().filter(function(e) {
+      if (activeFilter !== 'todos' && (e.tipo || '').toLowerCase() !== activeFilter) return false;
+      return e.fechaInicio <= selectedDate && e.fechaFin >= selectedDate;
+    });
+    renderAgenda(selectedDate, events);
+  }
+
+  document.getElementById('cal-prev').addEventListener('click', function() { currentMonth--; if (currentMonth < 0) { currentMonth = 11; currentYear--; } selectedDate = null; renderCalendar(); });
+  document.getElementById('cal-next').addEventListener('click', function() { currentMonth++; if (currentMonth > 11) { currentMonth = 0; currentYear++; } selectedDate = null; renderCalendar(); });
+  document.getElementById('cal-today').addEventListener('click', goToday);
+
+  document.querySelectorAll('.cal-filter').forEach(function(btn) {
+    btn.removeEventListener('click', filterHandler);
+    btn.addEventListener('click', filterHandler);
+  });
+
+  function filterHandler() { updateFilter(this.getAttribute('data-type')); }
+
+  goToday();
+})();
+</script>

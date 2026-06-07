@@ -3,15 +3,23 @@
   <div class="flex items-center justify-between">
     <div>
       <h1 class="text-2xl font-bold text-[#1C1C1C]">Horarios y Mallas Curriculares</h1>
-      <p class="text-text-secondary text-sm mt-1">Consulta las mallas curriculares vigentes por Escuela Profesional</p>
+      <p class="text-text-secondary text-sm mt-1">Gestiona mallas curriculares, cronogramas de pruebas y horarios académicos</p>
     </div>
-    <span class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1.5 rounded-full">Actualizado 2024-II</span>
   </div>
 
   <!-- Tabs -->
   <div class="bg-surface-container-lowest rounded-xl border border-border-subtle overflow-hidden">
     <div class="flex border-b border-border-subtle">
-      <button class="px-6 py-3.5 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 transition-colors">Ing. Industrial</button>
+      <button class="px-6 py-3.5 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 transition-colors" data-horario="mallas">Mallas Curriculares</button>
+      <button class="px-6 py-3.5 text-sm font-medium text-text-secondary hover:text-primary hover:bg-surface-bg/30 transition-colors" data-horario="cronogramas">Cronogramas</button>
+    </div>
+  </div>
+
+  <!-- Tab: Mallas Curriculares -->
+  <div id="horario-mallas">
+    <div class="bg-surface-container-lowest rounded-xl border border-border-subtle overflow-hidden">
+      <div class="flex border-b border-border-subtle">
+        <button class="px-6 py-3.5 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 transition-colors" data-escuela="industrial">Ing. Industrial</button>
       <button class="px-6 py-3.5 text-sm font-medium text-text-secondary hover:text-[#1C1C1C] hover:bg-surface-bg/30 transition-colors">Ing. Sistemas</button>
       <button class="px-6 py-3.5 text-sm font-medium text-text-secondary hover:text-[#1C1C1C] hover:bg-surface-bg/30 transition-colors">Ing. Software</button>
     </div>
@@ -298,5 +306,95 @@
       <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
       Descargar malla — Ing. Software (PDF)
     </button>
+    <button class="bg-primary text-white text-sm font-semibold px-5 py-2.5 rounded-lg flex items-center gap-2 hover:brightness-110 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+      Subir nueva malla (PDF)
+    </button>
   </div>
+</div>
+
+  <!-- Tab: Cronogramas -->
+  <div id="horario-cronogramas" class="hidden space-y-6">
+    <div class="flex items-center justify-between">
+      <div>
+        <h2 class="text-lg font-bold text-[#1C1C1C]">Cronogramas Académicos</h2>
+        <p class="text-text-secondary text-sm mt-0.5">Pruebas de Control (PC), exámenes parciales, finales y vacacionales</p>
+      </div>
+      <button class="bg-primary text-white text-sm font-semibold px-5 py-2.5 rounded-lg flex items-center gap-2 hover:brightness-110 transition-all">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+        Nuevo cronograma
+      </button>
+    </div>
+
+    <div class="bg-surface-container-lowest rounded-xl border border-border-subtle overflow-hidden">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="bg-surface-bg text-sm font-semibold text-[#1C1C1C] border-b border-border-subtle">
+            <th class="p-4">Nombre</th>
+            <th class="p-4">Escuela</th>
+            <th class="p-4">Ciclo</th>
+            <th class="p-4">Fecha</th>
+            <th class="p-4 text-center">Archivo</th>
+          </tr>
+        </thead>
+        <tbody class="text-sm">
+          <tr class="border-b border-border-subtle hover:bg-surface-bg/50 transition-colors">
+            <td class="p-4 font-medium">PC 1 — Cálculo I</td>
+            <td class="p-4">Ing. Industrial</td>
+            <td class="p-4">III</td>
+            <td class="p-4">15/04/2026</td>
+            <td class="p-4 text-center"><button onclick="alert('Descargando...')" class="text-primary hover:underline text-xs">PDF</button></td>
+          </tr>
+          <tr class="border-b border-border-subtle hover:bg-surface-bg/50 transition-colors">
+            <td class="p-4 font-medium">Examen Parcial — Matemática Básica</td>
+            <td class="p-4">Ing. Sistemas</td>
+            <td class="p-4">I</td>
+            <td class="p-4">22/05/2026</td>
+            <td class="p-4 text-center"><button onclick="alert('Descargando...')" class="text-primary hover:underline text-xs">PDF</button></td>
+          </tr>
+          <tr class="border-b border-border-subtle hover:bg-surface-bg/50 transition-colors">
+            <td class="p-4 font-medium">Examen Final — Algoritmos</td>
+            <td class="p-4">Ing. Software</td>
+            <td class="p-4">IV</td>
+            <td class="p-4">10/07/2026</td>
+            <td class="p-4 text-center"><button onclick="alert('Descargando...')" class="text-primary hover:underline text-xs">PDF</button></td>
+          </tr>
+          <tr class="border-b border-border-subtle hover:bg-surface-bg/50 transition-colors">
+            <td class="p-4 font-medium">Cronograma Vacacional 2026</td>
+            <td class="p-4">Todas</td>
+            <td class="p-4">—</td>
+            <td class="p-4">Enero 2026</td>
+            <td class="p-4 text-center"><button onclick="alert('Descargando...')" class="text-primary hover:underline text-xs">PDF</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="bg-surface-container-lowest rounded-xl border border-border-subtle p-5">
+      <h3 class="font-semibold text-[#1C1C1C] mb-4">Subir cronograma</h3>
+      <div class="border-2 border-dashed border-border-subtle rounded-xl p-6 text-center hover:border-primary transition-all cursor-pointer">
+        <svg class="w-8 h-8 mx-auto text-text-secondary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+        <p class="text-sm text-text-secondary mt-2">Arrastra un archivo o haz clic para seleccionar</p>
+        <p class="text-xs text-text-secondary mt-1">PDF · Máx 10MB</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function() {
+    var tabs = document.querySelectorAll('[data-horario]');
+    tabs.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var tab = this.getAttribute('data-horario');
+        tabs.forEach(function(b) {
+          b.className = 'px-6 py-3.5 text-sm font-medium text-text-secondary hover:text-primary hover:bg-surface-bg/30 transition-colors';
+        });
+        this.className = 'px-6 py-3.5 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 transition-colors';
+        document.getElementById('horario-mallas').classList.add('hidden');
+        document.getElementById('horario-cronogramas').classList.add('hidden');
+        document.getElementById('horario-' + tab).classList.remove('hidden');
+      });
+    });
+  })();
+  </script>
 </div>
