@@ -1,0 +1,75 @@
+<div class="page-enter space-y-8">
+  <section class="relative bg-primary py-16 md:py-20 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
+    <div class="max-w-[1200px] mx-auto px-6 relative z-10">
+      <nav class="flex items-center gap-2 text-brand-cream/70 text-sm mb-6 flex-wrap" aria-label="Breadcrumb">
+        <a href="#/consult-fiis" class="hover:text-brand-cream transition-colors">Consult FIIS</a>
+        <span class="material-symbols-outlined text-xs">chevron_right</span>
+        <span class="text-brand-cream font-medium">Proyecto</span>
+      </nav>
+      <span class="inline-block text-[12px] font-bold px-3 py-1 rounded-full bg-brand-cream/20 text-brand-cream mb-3" id="hero-cliente">Cliente</span>
+      <h1 class="text-on-primary text-3xl md:text-4xl font-bold leading-tight" id="hero-titulo">Cargando...</h1>
+    </div>
+  </section>
+
+  <div class="max-w-[1200px] mx-auto px-6 pb-16">
+    <div id="proyecto-not-found" class="hidden text-center py-16 bg-white border border-border-subtle rounded-xl">
+      <p class="font-semibold text-on-surface">Proyecto no encontrado</p>
+      <a href="#/consult-fiis" class="inline-flex items-center gap-1 text-primary font-semibold mt-4 hover:underline">Volver a Consult FIIS</a>
+    </div>
+    <div id="proyecto-content" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-2 space-y-6">
+        <div class="bg-white border border-border-subtle rounded-xl p-6">
+          <h2 class="text-lg font-bold text-primary mb-4">Descripción e impacto</h2>
+          <p class="text-sm text-on-surface-variant leading-relaxed" id="field-descripcion"></p>
+        </div>
+        <div class="bg-white border border-border-subtle rounded-xl p-6">
+          <h2 class="text-lg font-bold text-primary mb-4">Resultados</h2>
+          <ul id="field-resultados" class="space-y-2 text-sm text-on-surface-variant"></ul>
+        </div>
+      </div>
+      <div class="space-y-6">
+        <div class="bg-white border border-border-subtle rounded-xl p-6">
+          <h2 class="text-sm font-bold text-primary uppercase tracking-wide mb-4">Datos del proyecto</h2>
+          <p class="text-xs text-text-secondary uppercase font-semibold">Línea estratégica</p>
+          <p class="text-sm font-medium text-on-surface mt-1 mb-4" id="field-linea">—</p>
+          <p class="text-xs text-text-secondary uppercase font-semibold">Año</p>
+          <p class="text-sm font-medium text-on-surface mt-1 mb-4" id="field-anio">—</p>
+          <p class="text-xs text-text-secondary uppercase font-semibold">Estado</p>
+          <span class="inline-block mt-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-success/10 text-success" id="field-estado">Concluido</span>
+        </div>
+        <a href="#/consult-fiis" class="flex items-center gap-2 text-primary text-sm font-semibold hover:underline">
+          <span class="material-symbols-outlined text-sm">arrow_back</span> Volver a Consult FIIS
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var PROYECTOS = {
+    'qali-warma-buenas-practicas': { titulo: 'Buenas prácticas de manipulación de alimentos', cliente: 'Qali Warma', linea: 'Industrial', anio: '2023', descripcion: 'Capacitación y asistencia técnica para el Programa Nacional de Alimentación Escolar Qali Warma, orientada a estandarizar buenas prácticas de manipulación en comedores escolares a nivel nacional.', resultados: ['Capacitación a más de 500 manipuladores', 'Manual de buenas prácticas validado', 'Reducción de incidencias reportadas en auditorías'] },
+    'qali-warma-sgsi': { titulo: 'Diseño de SGSI basado en ISO 27001:2013', cliente: 'Qali Warma', linea: 'Sistemas', anio: '2022', descripcion: 'Implementación del Sistema de Gestión de Seguridad de la Información para el Programa Nacional de Alimentación Escolar, alineado a ISO 27001:2013.', resultados: ['Diagnóstico de riesgos completado', 'Políticas y procedimientos documentados', 'Plan de continuidad operativa'] },
+    'ocad-tarifario': { titulo: 'Actualización del tarifario de exámenes de admisión', cliente: 'OCAD', linea: 'Industrial', anio: '2021', descripcion: 'Estudio técnico de actualización del tarifario para exámenes de admisión universitaria, con análisis de costos, demanda y benchmarking institucional.', resultados: ['Modelo tarifario actualizado', 'Informe técnico aprobado', 'Recomendaciones de implementación gradual'] },
+    'sintad-sce-peritaje': { titulo: 'Peritaje de Software de Comercio Exterior (SCE)', cliente: 'Sintad S.A.C.', linea: 'Software', anio: '2020', descripcion: 'Auditoría y peritaje especializado del sistema de comercio exterior, evaluando arquitectura, calidad de código y cumplimiento normativo.', resultados: ['Informe pericial entregado', 'Hallazgos críticos documentados', 'Plan de remediación propuesto'] },
+    'produce-mipyme': { titulo: 'Taller de gestión financiera en la Mipyme', cliente: 'Ministerio de la Producción', linea: 'Industrial', anio: '2019', descripcion: 'Taller de sensibilización en gestión básica financiera para Mipymes en las regiones de Cajamarca, Lambayeque y La Libertad.', resultados: ['Más de 200 empresarios capacitados', 'Material didáctico regionalizado', 'Evaluación de satisfacción superior al 90%'] }
+  };
+  var slug = window.__PROYECTO_SLUG || '';
+  var p = PROYECTOS[slug];
+  if (!p) {
+    document.getElementById('proyecto-not-found').classList.remove('hidden');
+    document.getElementById('proyecto-content').classList.add('hidden');
+    document.getElementById('hero-titulo').textContent = 'Proyecto no encontrado';
+    return;
+  }
+  document.getElementById('hero-titulo').textContent = p.titulo;
+  document.getElementById('hero-cliente').textContent = p.cliente;
+  document.getElementById('field-descripcion').textContent = p.descripcion;
+  document.getElementById('field-linea').textContent = p.linea;
+  document.getElementById('field-anio').textContent = p.anio;
+  document.getElementById('field-resultados').innerHTML = p.resultados.map(function(r) {
+    return '<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>' + r + '</li>';
+  }).join('');
+})();
+</script>

@@ -64,7 +64,7 @@ const MEGA_MENU = [
         { label: 'Aula Virtual', route: '#', icon: 'computer' },
         { label: 'Correo UNI', route: '#', icon: 'mail' },
         { label: 'Yachay (Intranet Docente)', route: 'https://docentes.uni.edu.pe/login', icon: 'school', external: true },
-        { label: 'Biblioteca KOHA', route: '#', icon: 'library_books' },
+        { label: 'Biblioteca KOHA', route: '/centro-informacion', icon: 'library_books' },
         { label: 'Mesa de Partes', route: '#', icon: 'mail' },
       ]},
       { col: 1, title: 'Atención', items: [
