@@ -1,0 +1,138 @@
+<div class="page-enter space-y-6">
+  <div class="flex items-center justify-between">
+    <div>
+      <h1 class="text-2xl font-bold text-primary">Repositorio Central</h1>
+      <p class="text-text-secondary text-sm mt-1">Visualiza y administra los documentos del portal. Los documentos son subidos por cada área responsable.</p>
+    </div>
+  </div>
+
+  <div class="flex flex-wrap gap-3">
+    <select class="border border-border-subtle rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30">
+      <option>Todos los tipos</option>
+      <option>Reglamento</option>
+      <option>Resolución</option>
+      <option>Cronograma</option>
+      <option>Malla Curricular</option>
+      <option>Comunicado</option>
+      <option>Formato</option>
+      <option>Informe</option>
+    </select>
+    <select class="border border-border-subtle rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30">
+      <option>Todos los años</option>
+      <option>2026</option>
+      <option>2025</option>
+      <option>2024</option>
+    </select>
+    <select class="border border-border-subtle rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30">
+      <option>Todas las áreas</option>
+      <option>Decanato</option>
+      <option>Secretaría Académica</option>
+      <option>Secretaría Administrativa</option>
+      <option>Investigación</option>
+      <option>Bienestar</option>
+    </select>
+    <button class="bg-primary text-white text-sm font-semibold px-5 py-2 rounded-lg hover:bg-primary-container transition-all">Filtrar</button>
+  </div>
+
+  <div class="bg-white rounded-xl border border-border-subtle overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="bg-surface-container-low text-sm font-bold text-primary border-b border-border-subtle">
+            <th class="p-4">Título</th>
+            <th class="p-4">Tipo</th>
+            <th class="p-4">Área</th>
+            <th class="p-4">Fecha</th>
+            <th class="p-4 text-center">Archivo</th>
+            <th class="p-4 text-center">Acciones</th>
+          </tr>
+        </thead>
+        <tbody class="text-sm text-text-secondary">
+          <tr class="border-b border-border-subtle hover:bg-surface-container-low transition-colors">
+            <td class="p-4 font-medium text-on-surface">Reglamento General de Estudios de Pregrado</td>
+            <td class="p-4"><span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-blue-100 text-blue-700">Reglamento</span></td>
+            <td class="p-4">Secretaría Académica</td>
+            <td class="p-4">15/03/2024</td>
+            <td class="p-4 text-center"><button onclick="alert('Descargando...')" class="text-primary hover:underline">PDF</button></td>
+            <td class="p-4 text-center">
+              <div class="flex items-center justify-center gap-2">
+                <button onclick="alert('Editando...')" class="text-primary hover:text-primary-container"><span class="material-symbols-outlined text-sm">edit</span></button>
+                <button onclick="alert('Archivado')" class="text-warning hover:text-warning/80"><span class="material-symbols-outlined text-sm">archive</span></button>
+                <button onclick="if(confirm('¿Eliminar documento?'))alert('Eliminado')" class="text-danger hover:text-danger/80"><span class="material-symbols-outlined text-sm">delete</span></button>
+              </div>
+            </td>
+          </tr>
+          <tr class="border-b border-border-subtle hover:bg-surface-container-low transition-colors">
+            <td class="p-4 font-medium text-on-surface">Resolución N° 012-2025-FIIS</td>
+            <td class="p-4"><span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-amber-100 text-amber-700">Resolución</span></td>
+            <td class="p-4">Decanato</td>
+            <td class="p-4">10/01/2025</td>
+            <td class="p-4 text-center"><button onclick="alert('Descargando...')" class="text-primary hover:underline">PDF</button></td>
+            <td class="p-4 text-center">
+              <div class="flex items-center justify-center gap-2">
+                <button onclick="alert('Editando...')" class="text-primary hover:text-primary-container"><span class="material-symbols-outlined text-sm">edit</span></button>
+                <button onclick="alert('Archivado')" class="text-warning hover:text-warning/80"><span class="material-symbols-outlined text-sm">archive</span></button>
+                <button onclick="if(confirm('¿Eliminar documento?'))alert('Eliminado')" class="text-danger hover:text-danger/80"><span class="material-symbols-outlined text-sm">delete</span></button>
+              </div>
+            </td>
+          </tr>
+          <tr class="border-b border-border-subtle hover:bg-surface-container-low transition-colors">
+            <td class="p-4 font-medium text-on-surface">Cronograma Académico 2026-I</td>
+            <td class="p-4"><span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-green-100 text-green-700">Cronograma</span></td>
+            <td class="p-4">Secretaría Académica</td>
+            <td class="p-4">01/03/2026</td>
+            <td class="p-4 text-center"><button onclick="alert('Descargando...')" class="text-primary hover:underline">PDF</button></td>
+            <td class="p-4 text-center">
+              <div class="flex items-center justify-center gap-2">
+                <button onclick="alert('Editando...')" class="text-primary hover:text-primary-container"><span class="material-symbols-outlined text-sm">edit</span></button>
+                <button onclick="alert('Archivado')" class="text-warning hover:text-warning/80"><span class="material-symbols-outlined text-sm">archive</span></button>
+                <button onclick="if(confirm('¿Eliminar documento?'))alert('Eliminado')" class="text-danger hover:text-danger/80"><span class="material-symbols-outlined text-sm">delete</span></button>
+              </div>
+            </td>
+          </tr>
+          <tr class="border-b border-border-subtle hover:bg-surface-container-low transition-colors">
+            <td class="p-4 font-medium text-on-surface">Malla Curricular - Ing. Industrial 2024</td>
+            <td class="p-4"><span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-purple-100 text-purple-700">Malla Curricular</span></td>
+            <td class="p-4">Secretaría Académica</td>
+            <td class="p-4">20/12/2024</td>
+            <td class="p-4 text-center"><button onclick="alert('Descargando...')" class="text-primary hover:underline">PDF</button></td>
+            <td class="p-4 text-center">
+              <div class="flex items-center justify-center gap-2">
+                <button onclick="alert('Editando...')" class="text-primary hover:text-primary-container"><span class="material-symbols-outlined text-sm">edit</span></button>
+                <button onclick="alert('Archivado')" class="text-warning hover:text-warning/80"><span class="material-symbols-outlined text-sm">archive</span></button>
+                <button onclick="if(confirm('¿Eliminar documento?'))alert('Eliminado')" class="text-danger hover:text-danger/80"><span class="material-symbols-outlined text-sm">delete</span></button>
+              </div>
+            </td>
+          </tr>
+          <tr class="border-b border-border-subtle hover:bg-surface-container-low transition-colors">
+            <td class="p-4 font-medium text-on-surface">Informe Anual de Investigación 2025</td>
+            <td class="p-4"><span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-indigo-100 text-indigo-700">Informe</span></td>
+            <td class="p-4">Investigación</td>
+            <td class="p-4">15/12/2025</td>
+            <td class="p-4 text-center"><button onclick="alert('Descargando...')" class="text-primary hover:underline">PDF</button></td>
+            <td class="p-4 text-center">
+              <div class="flex items-center justify-center gap-2">
+                <button onclick="alert('Editando...')" class="text-primary hover:text-primary-container"><span class="material-symbols-outlined text-sm">edit</span></button>
+                <button onclick="alert('Archivado')" class="text-warning hover:text-warning/80"><span class="material-symbols-outlined text-sm">archive</span></button>
+                <button onclick="if(confirm('¿Eliminar documento?'))alert('Eliminado')" class="text-danger hover:text-danger/80"><span class="material-symbols-outlined text-sm">delete</span></button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="flex items-center justify-between">
+    <p class="text-sm text-text-secondary">Mostrando 1-5 de 24 documentos</p>
+    <div class="flex items-center gap-1">
+      <button class="w-9 h-9 flex items-center justify-center rounded-lg border border-border-subtle text-text-secondary hover:bg-surface-bg transition-colors" disabled><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+      <button class="w-9 h-9 flex items-center justify-center rounded-lg bg-primary text-white text-sm font-semibold">1</button>
+      <button class="w-9 h-9 flex items-center justify-center rounded-lg border border-border-subtle text-text-secondary hover:bg-surface-bg transition-colors text-sm">2</button>
+      <button class="w-9 h-9 flex items-center justify-center rounded-lg border border-border-subtle text-text-secondary hover:bg-surface-bg transition-colors text-sm">3</button>
+      <span class="px-1 text-text-secondary text-sm">...</span>
+      <button class="w-9 h-9 flex items-center justify-center rounded-lg border border-border-subtle text-text-secondary hover:bg-surface-bg transition-colors text-sm">8</button>
+      <button class="w-9 h-9 flex items-center justify-center rounded-lg border border-border-subtle text-text-secondary hover:bg-surface-bg transition-colors"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+    </div>
+  </div>
+</div>

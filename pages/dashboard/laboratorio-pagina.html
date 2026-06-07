@@ -1,127 +1,195 @@
 <div class="page-enter space-y-6">
-  <!-- Header -->
   <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
     <div>
-      <h2 class="text-2xl font-bold text-on-surface">Mi Página — Lab IA</h2>
-      <p class="text-text-secondary text-sm mt-0.5">Gestiona las secciones de tu página pública institucional</p>
+      <h2 class="text-2xl font-bold text-on-surface">Mi Página — Lab. IA</h2>
+      <p class="text-text-secondary text-sm mt-0.5">Gestiona el contenido público de tu laboratorio</p>
     </div>
     <div class="flex items-center gap-2">
-      <button class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm border border-border-subtle rounded-lg font-medium text-on-surface-variant hover:bg-surface-container-low transition-all">
-        <span class="material-symbols-outlined text-sm">visibility</span>
-        Vista previa
-      </button>
-      <button class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-on-primary rounded-lg font-semibold text-sm hover:brightness-110 transition-all shadow-sm">
+      <a href="#/laboratorio-ia" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm border border-border-subtle rounded-lg font-medium hover:bg-surface-container-low transition-all">
+        <span class="material-symbols-outlined text-sm">open_in_new</span>
+        Ver página pública
+      </a>
+      <button class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-white rounded-lg font-semibold text-sm hover:bg-primary-container transition-all shadow-sm">
         <span class="material-symbols-outlined text-sm">publish</span>
         Publicar cambios
       </button>
     </div>
   </div>
 
-  <!-- Preview thumbnail -->
-  <div class="bg-white rounded-xl border border-border-subtle shadow-sm overflow-hidden">
-    <div class="bg-gradient-to-r from-primary to-primary-container px-5 py-4">
-      <h3 class="text-base font-bold text-on-primary">Vista previa de la página</h3>
-    </div>
-    <div class="p-5">
-      <div class="border border-border-subtle rounded-xl overflow-hidden bg-surface-bg/20">
-        <div class="h-32 bg-gradient-to-br from-primary/20 via-brand-cream/20 to-surface-bg flex items-center justify-center">
-          <div class="text-center">
-            <span class="material-symbols-outlined text-3xl text-primary/40">camera</span>
-            <p class="text-xs text-text-secondary mt-1">Banner del laboratorio</p>
-          </div>
-        </div>
-        <div class="p-4 flex items-center gap-4 border-t border-border-subtle">
-          <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-            <span class="material-symbols-outlined text-primary">smart_toy</span>
-          </div>
-          <div>
-            <p class="text-sm font-bold text-on-surface">Laboratorio de Inteligencia Artificial</p>
-            <p class="text-xs text-text-secondary">FIIS — UNI | fundado 2021</p>
-          </div>
-        </div>
-      </div>
-      <p class="text-xs text-text-secondary mt-3">Última actualización: hace 3 días</p>
+  <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-xl text-xs text-amber-800 leading-relaxed flex items-start gap-3">
+    <span class="material-symbols-outlined text-amber-600 text-lg shrink-0">info</span>
+    <div>
+      <p class="font-bold text-sm mb-0.5">Flujo Editorial de Publicación</p>
+      <p>Cualquier actualización pasará a estado <strong>Borrador en Revisión</strong>. La publicación se hará efectiva tras la validación del Administrador Web.</p>
     </div>
   </div>
 
-  <!-- Section Checklist -->
-  <div class="bg-white rounded-xl border border-border-subtle shadow-sm overflow-hidden">
-    <div class="px-5 py-4 border-b border-border-subtle">
-      <h3 class="text-base font-bold text-on-surface">Secciones de la página</h3>
+  <div class="bg-white rounded-xl border border-border-subtle overflow-hidden">
+    <div class="p-6">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-lg font-bold text-primary flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary">visibility</span>
+          Vista previa de tu página pública
+        </h3>
+      </div>
+
+      <div class="border border-border-subtle rounded-xl overflow-hidden">
+        <div class="bg-gradient-to-br from-indigo-600 to-indigo-800 p-6 md:p-8 text-on-primary relative">
+          <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-20"></div>
+          <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div class="flex items-center gap-5">
+              <div class="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center border border-white/20 shadow-lg shrink-0">
+                <span class="material-symbols-outlined text-white text-3xl">psychology</span>
+              </div>
+              <div>
+                <h3 class="text-2xl md:text-3xl font-extrabold">Laboratorio de Inteligencia Artificial</h3>
+                <p class="text-on-primary/90 text-base mt-0.5 font-medium">LABIAR — FIIS UNI</p>
+              </div>
+            </div>
+            <button class="px-5 py-2 bg-white/20 text-white text-xs font-bold rounded-lg hover:bg-white/30 transition-all border border-white/10 flex items-center gap-1 shrink-0">
+              <span class="material-symbols-outlined text-sm">edit</span>
+              Editar hero
+            </button>
+          </div>
+        </div>
+
+        <div class="p-5 border-b border-border-subtle">
+          <div class="flex gap-1.5 overflow-x-auto">
+            <button class="px-4 py-2 text-sm font-semibold bg-primary text-white rounded-lg transition-all whitespace-nowrap shadow-sm">Presentación</button>
+            <button class="px-4 py-2 text-sm font-medium text-text-secondary bg-surface-container-low hover:bg-surface-container hover:text-primary rounded-lg transition-all whitespace-nowrap">Investigación</button>
+            <button class="px-4 py-2 text-sm font-medium text-text-secondary bg-surface-container-low hover:bg-surface-container hover:text-primary rounded-lg transition-all whitespace-nowrap">Equipos</button>
+            <button class="px-4 py-2 text-sm font-medium text-text-secondary bg-surface-container-low hover:bg-surface-container hover:text-primary rounded-lg transition-all whitespace-nowrap">Acceso</button>
+            <button class="px-4 py-2 text-sm font-medium text-text-secondary bg-surface-container-low hover:bg-surface-container hover:text-primary rounded-lg transition-all whitespace-nowrap">Contacto</button>
+          </div>
+        </div>
+
+        <div class="p-6">
+          <div class="space-y-6">
+            <div class="border border-border-subtle rounded-xl p-5">
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="text-sm font-bold text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary">description</span> Descripción</h4>
+                <button class="text-primary border border-primary px-3 py-1 rounded-lg text-xs font-bold hover:bg-primary hover:text-white transition-all">Editar</button>
+              </div>
+              <p class="text-sm text-text-secondary leading-relaxed">El Laboratorio de Inteligencia Artificial y Robótica (LABIAR) tiene como objetivo investigar, desarrollar y aplicar tecnologías avanzadas en el campo de la IA y la robótica. El laboratorio está disponible para alumnos de pregrado y posgrado de todas las carreras de la UNI.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="border border-border-subtle rounded-xl p-5">
+                <div class="flex items-center justify-between mb-3">
+                  <h4 class="text-sm font-bold text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary">visibility</span> Misión</h4>
+                  <button class="text-primary border border-primary px-3 py-1 rounded-lg text-xs font-bold hover:bg-primary hover:text-white transition-all">Editar</button>
+                </div>
+                <p class="text-sm text-text-secondary leading-relaxed">Impulsar la innovación en Inteligencia Artificial y Robótica para crear soluciones tecnológicas avanzadas que mejoren la calidad de vida.</p>
+              </div>
+              <div class="border border-border-subtle rounded-xl p-5">
+                <div class="flex items-center justify-between mb-3">
+                  <h4 class="text-sm font-bold text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary">lightbulb</span> Visión</h4>
+                  <button class="text-primary border border-primary px-3 py-1 rounded-lg text-xs font-bold hover:bg-primary hover:text-white transition-all">Editar</button>
+                </div>
+                <p class="text-sm text-text-secondary leading-relaxed">Ser reconocidos como un centro de excelencia de la Inteligencia Artificial y la Robótica a nivel nacional e internacional.</p>
+              </div>
+            </div>
+
+            <div class="border border-border-subtle rounded-xl p-5">
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="text-sm font-bold text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary">badge</span> Personal</h4>
+                <button class="text-primary border border-primary px-3 py-1 rounded-lg text-xs font-bold hover:bg-primary hover:text-white transition-all">Editar</button>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-lg">
+                <div class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">GR</div>
+                <div>
+                  <p class="text-sm font-bold text-on-surface">Dr. Glen Rodríguez Rafael</p>
+                  <p class="text-xs text-text-secondary">Jefe del Laboratorio de IA y Robótica</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="border border-border-subtle rounded-xl p-5">
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="text-sm font-bold text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary">schedule</span> Horario de Atención</h4>
+                <button class="text-primary border border-primary px-3 py-1 rounded-lg text-xs font-bold hover:bg-primary hover:text-white transition-all">Editar</button>
+              </div>
+              <p class="text-sm text-text-secondary">Lunes a Viernes: 9:00 - 12:00 / 14:00 - 17:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="divide-y divide-border-subtle/60">
-      <div class="px-5 py-4 flex items-center justify-between hover:bg-surface-container-low/30 transition-colors">
-        <div class="flex items-center gap-3">
-          <span class="w-6 h-6 rounded-full bg-success/10 text-success flex items-center justify-center">
-            <span class="material-symbols-outlined text-xs" style="font-variation-settings:'FILL'1">check_circle</span>
-          </span>
-          <div>
-            <p class="text-sm font-semibold text-on-surface">Descripción y Misión</p>
-            <p class="text-xs text-text-secondary">Visión, objetivos y alcance del laboratorio</p>
-          </div>
-        </div>
-        <button class="px-3 py-1.5 text-xs font-semibold text-primary border border-primary rounded-lg hover:bg-primary/5 transition-all">Editar</button>
+  </div>
+
+  <div class="bg-white rounded-xl border border-border-subtle p-6">
+    <h3 class="text-lg font-bold text-primary flex items-center gap-2 mb-5">
+      <span class="material-symbols-outlined text-primary">edit_square</span>
+      Editar secciones
+    </h3>
+    <form class="space-y-5">
+      <div>
+        <label class="block text-sm font-semibold text-on-surface mb-1.5">Descripción</label>
+        <textarea rows="3" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all">El Laboratorio de Inteligencia Artificial y Robótica (LABIAR) tiene como objetivo investigar, desarrollar y aplicar tecnologías avanzadas en el campo de la IA y la robótica. El laboratorio está disponible para alumnos de pregrado y posgrado de todas las carreras de la UNI.</textarea>
       </div>
-      <div class="px-5 py-4 flex items-center justify-between hover:bg-surface-container-low/30 transition-colors">
-        <div class="flex items-center gap-3">
-          <span class="w-6 h-6 rounded-full bg-success/10 text-success flex items-center justify-center">
-            <span class="material-symbols-outlined text-xs" style="font-variation-settings:'FILL'1">check_circle</span>
-          </span>
-          <div>
-            <p class="text-sm font-semibold text-on-surface">Líneas de Investigación</p>
-            <p class="text-xs text-text-secondary">Áreas: Machine Learning, Visión Computacional, PLN</p>
-          </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-semibold text-on-surface mb-1.5">Misión</label>
+          <textarea rows="3" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all">Impulsar la innovación en Inteligencia Artificial y Robótica para crear soluciones tecnológicas avanzadas que mejoren la calidad de vida.</textarea>
         </div>
-        <button class="px-3 py-1.5 text-xs font-semibold text-primary border border-primary rounded-lg hover:bg-primary/5 transition-all">Editar</button>
-      </div>
-      <div class="px-5 py-4 flex items-center justify-between hover:bg-surface-container-low/30 transition-colors">
-        <div class="flex items-center gap-3">
-          <span class="w-6 h-6 rounded-full bg-warning/10 text-warning flex items-center justify-center">
-            <span class="material-symbols-outlined text-xs">radio_button_unchecked</span>
-          </span>
-          <div>
-            <p class="text-sm font-semibold text-on-surface">Equipo de Investigadores</p>
-            <p class="text-xs text-text-secondary">Docentes, asistentes y miembros del laboratorio</p>
-          </div>
+        <div>
+          <label class="block text-sm font-semibold text-on-surface mb-1.5">Visión</label>
+          <textarea rows="3" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all">Ser reconocidos como un centro de excelencia de la Inteligencia Artificial y la Robótica a nivel nacional e internacional.</textarea>
         </div>
-        <button class="px-3 py-1.5 text-xs font-semibold text-primary border border-primary rounded-lg hover:bg-primary/5 transition-all">Editar</button>
       </div>
-      <div class="px-5 py-4 flex items-center justify-between hover:bg-surface-container-low/30 transition-colors">
-        <div class="flex items-center gap-3">
-          <span class="w-6 h-6 rounded-full bg-success/10 text-success flex items-center justify-center">
-            <span class="material-symbols-outlined text-xs" style="font-variation-settings:'FILL'1">check_circle</span>
-          </span>
-          <div>
-            <p class="text-sm font-semibold text-on-surface">Horarios y Acceso</p>
-            <p class="text-xs text-text-secondary">Disponibilidad, proceso de acceso, requisitos</p>
-          </div>
+      <div>
+        <label class="block text-sm font-semibold text-on-surface mb-1.5">Personal del Laboratorio</label>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input type="text" value="Dr. Glen Rodríguez Rafael" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+          <input type="text" value="Jefe del Laboratorio de IA y Robótica" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
         </div>
-        <button class="px-3 py-1.5 text-xs font-semibold text-primary border border-primary rounded-lg hover:bg-primary/5 transition-all">Editar</button>
       </div>
-      <div class="px-5 py-4 flex items-center justify-between hover:bg-surface-container-low/30 transition-colors">
-        <div class="flex items-center gap-3">
-          <span class="w-6 h-6 rounded-full bg-warning/10 text-warning flex items-center justify-center">
-            <span class="material-symbols-outlined text-xs">radio_button_unchecked</span>
-          </span>
-          <div>
-            <p class="text-sm font-semibold text-on-surface">Proyectos y Publicaciones</p>
-            <p class="text-xs text-text-secondary">Proyectos activos, papers y tesis asociadas</p>
-          </div>
+      <div>
+        <label class="block text-sm font-semibold text-on-surface mb-1.5">Horario de Atención</label>
+        <input type="text" value="Lunes a Viernes: 9:00 - 12:00 / 14:00 - 17:00" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-on-surface mb-1.5">Líneas de Investigación</label>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <input type="text" value="Natural Language Processing" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+          <input type="text" value="Computer Vision" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+          <input type="text" value="Optimización" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+          <input type="text" value="Internet of Things" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
         </div>
-        <button class="px-3 py-1.5 text-xs font-semibold text-primary border border-primary rounded-lg hover:bg-primary/5 transition-all">Editar</button>
       </div>
-      <div class="px-5 py-4 flex items-center justify-between hover:bg-surface-container-low/30 transition-colors">
-        <div class="flex items-center gap-3">
-          <span class="w-6 h-6 rounded-full bg-success/10 text-success flex items-center justify-center">
-            <span class="material-symbols-outlined text-xs" style="font-variation-settings:'FILL'1">check_circle</span>
-          </span>
-          <div>
-            <p class="text-sm font-semibold text-on-surface">Contacto</p>
-            <p class="text-xs text-text-secondary">Correo, ubicación, redes sociales</p>
-          </div>
+      <div>
+        <label class="block text-sm font-semibold text-on-surface mb-1.5">Equipamiento disponible</label>
+        <textarea rows="3" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all">Sistemas HPC con GPU, robots manipuladores y autónomos, simuladores, espacios colaborativos con videoconferencia.</textarea>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-on-surface mb-1.5">Proceso de Acceso</label>
+        <textarea rows="3" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all">1. Carta de presentación dirigida al jefe del laboratorio. 2. Revisión y verificación de disponibilidad. 3. Coordinación de horario. 4. Acceso autorizado.</textarea>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-semibold text-on-surface mb-1.5">Correo de contacto</label>
+          <input type="email" value="labia@fiis.uni.edu.pe" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
         </div>
-        <button class="px-3 py-1.5 text-xs font-semibold text-primary border border-primary rounded-lg hover:bg-primary/5 transition-all">Editar</button>
+        <div>
+          <label class="block text-sm font-semibold text-on-surface mb-1.5">Ubicación</label>
+          <input type="text" value="Pabellón de Laboratorios FIIS, Campus UNI" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+        </div>
       </div>
+      <div class="flex items-center gap-3 pt-2">
+        <button type="submit" class="px-6 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary-container transition-all flex items-center gap-2">
+          <span class="material-symbols-outlined text-sm">save</span>
+          Guardar cambios
+        </button>
+        <button type="button" class="px-6 py-2.5 border border-border-subtle rounded-lg text-sm font-semibold hover:bg-surface-container-low transition-all">Descartar</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="p-4 bg-blue-50 border border-blue-200 rounded-xl text-xs text-blue-800 flex items-start gap-2">
+    <span class="material-symbols-outlined text-sm shrink-0">info</span>
+    <div>
+      <p class="font-bold">Los cambios se reflejan tras validación del Admin Web</p>
+      <p class="mt-0.5">Cada sección editada pasará a revisión antes de publicarse en la página pública de tu laboratorio.</p>
     </div>
   </div>
 </div>

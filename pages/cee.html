@@ -1,0 +1,276 @@
+<div class="page-enter space-y-8">
+  <section class="relative bg-primary overflow-hidden rounded-2xl min-h-[320px] flex items-center">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
+    <div class="relative z-10 px-8 md:px-16 py-14 w-full">
+      <div class="flex items-center gap-2 mb-3">
+        <a href="#/organigrama" class="text-brand-cream/70 hover:text-brand-cream text-sm flex items-center gap-1 transition-colors">
+          <span class="material-symbols-outlined text-sm">arrow_back</span> Organigrama
+        </a>
+      </div>
+      <div class="max-w-3xl">
+        <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-4 leading-tight">Centro de Especialización Ejecutiva</h1>
+        <p class="text-on-primary/90 text-lg md:text-xl leading-relaxed">
+          Programas de especialización, diplomados y capacitación ejecutiva para profesionales, egresados y público general.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-[1200px] mx-auto px-6 md:px-8 space-y-10 pb-12">
+    <div class="flex border-b border-border-subtle gap-0 overflow-x-auto">
+      <button class="px-6 py-4 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 transition-colors whitespace-nowrap" data-tab="programas">Programas</button>
+      <button class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-tab="docentes">Docentes</button>
+      <button class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-tab="noticias">Noticias</button>
+      <button class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-tab="contacto">Contacto</button>
+    </div>
+
+    <div id="tab-programas" class="tab-content space-y-6">
+      <div class="bg-white rounded-xl border border-border-subtle p-6 md:p-8">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+            <span class="material-symbols-outlined text-3xl" style="font-variation-settings:'FILL'1;">school</span>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-on-surface">Catálogo de Programas</h2>
+            <p class="text-sm text-text-secondary">CEE — Centro de Especialización Ejecutiva FIIS</p>
+          </div>
+        </div>
+        <p class="text-text-secondary text-sm leading-relaxed mb-6">El CEE ofrece programas de especialización, diplomados y capacitaciones ejecutivas diseñados para profesionales, egresados y público general interesado en potenciar sus competencias en las áreas de ingeniería y gestión.</p>
+        <div class="flex gap-2 mb-6 overflow-x-auto" id="cee-month-filter">
+          <button class="px-4 py-1.5 rounded-full text-xs font-semibold bg-primary text-white transition-all shadow-sm" data-month="all">Todos</button>
+          <button class="px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-month="junio">Junio</button>
+          <button class="px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-month="julio">Julio</button>
+          <button class="px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-month="agosto">Agosto</button>
+        </div>
+        <div class="space-y-6" id="cee-programas-list">
+          <div class="border border-border-subtle rounded-xl overflow-hidden" data-month="junio">
+            <div class="p-5 bg-surface-container-low border-b border-border-subtle">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-100 text-blue-700">Diplomado</span>
+                  <h3 class="text-lg font-bold text-on-surface mt-2">Gestión de Proyectos con PMBOK 7ma Edición</h3>
+                  <p class="text-sm text-text-secondary mt-1">Formación integral en dirección de proyectos bajo el estándar del Project Management Institute.</p>
+                </div>
+                <button onclick="alert('Ficha completa del programa: Gestión de Proyectos con PMBOK 7ma Edición')" class="shrink-0 px-4 py-2 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary-container transition-all">Ver ficha</button>
+              </div>
+            </div>
+            <div class="p-5 grid grid-cols-2 md:grid-cols-4 gap-4 text-xs text-text-secondary">
+              <div><span class="material-symbols-outlined text-primary text-sm align-middle">schedule</span> <strong class="text-on-surface">Duración:</strong> 4 meses</div>
+              <div><span class="material-symbols-outlined text-primary text-sm align-middle">payments</span> <strong class="text-on-surface">Inversión:</strong> S/ 2,800</div>
+              <div><span class="material-symbols-outlined text-primary text-sm align-middle">group</span> <strong class="text-on-surface">Modalidad:</strong> Virtual</div>
+              <div><span class="material-symbols-outlined text-primary text-sm align-middle">calendar_month</span> <strong class="text-on-surface">Inicio:</strong> 10 Jun 2026</div>
+            </div>
+          </div>
+          <div class="border border-border-subtle rounded-xl overflow-hidden" data-month="junio">
+            <div class="p-5 bg-surface-container-low border-b border-border-subtle">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-green-100 text-green-700">Curso</span>
+                  <h3 class="text-lg font-bold text-on-surface mt-2">Power BI y Business Analytics</h3>
+                  <p class="text-sm text-text-secondary mt-1">Visualización de datos, dashboards interactivos y análisis de negocio con herramientas Microsoft.</p>
+                </div>
+                <button onclick="alert('Ficha completa del programa: Power BI y Business Analytics')" class="shrink-0 px-4 py-2 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary-container transition-all">Ver ficha</button>
+              </div>
+            </div>
+            <div class="p-5 grid grid-cols-2 md:grid-cols-4 gap-4 text-xs text-text-secondary">
+              <div><span class="material-symbols-outlined text-primary text-sm align-middle">schedule</span> <strong class="text-on-surface">Duración:</strong> 2 meses</div>
+              <div><span class="material-symbols-outlined text-primary text-sm align-middle">payments</span> <strong class="text-on-surface">Inversión:</strong> S/ 1,200</div>
+              <div><span class="material-symbols-outlined text-primary text-sm align-middle">group</span> <strong class="text-on-surface">Modalidad:</strong> Virtual</div>
+              <div><span class="material-symbols-outlined text-primary text-sm align-middle">calendar_month</span> <strong class="text-on-surface">Inicio:</strong> 15 Jun 2026</div>
+            </div>
+          </div>
+          <div class="border border-border-subtle rounded-xl overflow-hidden" data-month="julio">
+            <div class="p-5 bg-surface-container-low border-b border-border-subtle">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-purple-100 text-purple-700">Especialización</span>
+                  <h3 class="text-lg font-bold text-on-surface mt-2">Supply Chain Management & Logística</h3>
+                  <p class="text-sm text-text-secondary mt-1">Gestión de la cadena de suministro, optimización logística y estrategias de aprovisionamiento.</p>
+                </div>
+                <button onclick="alert('Ficha completa del programa: Supply Chain Management & Logística')" class="shrink-0 px-4 py-2 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary-container transition-all">Ver ficha</button>
+              </div>
+            </div>
+            <div class="p-5 grid grid-cols-2 md:grid-cols-4 gap-4 text-xs text-text-secondary">
+              <div><span class="material-symbols-outlined text-primary text-sm align-middle">schedule</span> <strong class="text-on-surface">Duración:</strong> 3 meses</div>
+              <div><span class="material-symbols-outlined text-primary text-sm align-middle">payments</span> <strong class="text-on-surface">Inversión:</strong> S/ 2,200</div>
+              <div><span class="material-symbols-outlined text-primary text-sm align-middle">group</span> <strong class="text-on-surface">Modalidad:</strong> Semi-presencial</div>
+              <div><span class="material-symbols-outlined text-primary text-sm align-middle">calendar_month</span> <strong class="text-on-surface">Inicio:</strong> 08 Jul 2026</div>
+            </div>
+          </div>
+          <div class="border border-border-subtle rounded-xl overflow-hidden" data-month="agosto">
+            <div class="p-5 bg-surface-container-low border-b border-border-subtle">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-700">Diplomado</span>
+                  <h3 class="text-lg font-bold text-on-surface mt-2">Gestión de la Calidad y Mejora Continua</h3>
+                  <p class="text-sm text-text-secondary mt-1">Implementación de sistemas de gestión de calidad basados en ISO 9001:2025 y Lean Six Sigma.</p>
+                </div>
+                <button onclick="alert('Ficha completa del programa: Gestión de la Calidad y Mejora Continua')" class="shrink-0 px-4 py-2 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary-container transition-all">Ver ficha</button>
+              </div>
+            </div>
+            <div class="p-5 grid grid-cols-2 md:grid-cols-4 gap-4 text-xs text-text-secondary">
+              <div><span class="material-symbols-outlined text-primary text-sm align-middle">schedule</span> <strong class="text-on-surface">Duración:</strong> 4 meses</div>
+              <div><span class="material-symbols-outlined text-primary text-sm align-middle">payments</span> <strong class="text-on-surface">Inversión:</strong> S/ 2,600</div>
+              <div><span class="material-symbols-outlined text-primary text-sm align-middle">group</span> <strong class="text-on-surface">Modalidad:</strong> Presencial</div>
+              <div><span class="material-symbols-outlined text-primary text-sm align-middle">calendar_month</span> <strong class="text-on-surface">Inicio:</strong> 05 Ago 2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-docentes" class="tab-content hidden space-y-6">
+      <div class="bg-white rounded-xl border border-border-subtle p-6 md:p-8">
+        <h2 class="text-xl font-bold text-on-surface mb-1">Docentes del CEE</h2>
+        <p class="text-sm text-text-secondary mb-6">Profesionales con amplia experiencia académica y empresarial.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="border border-border-subtle rounded-xl p-5">
+            <div class="flex items-center gap-4 mb-3">
+              <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-lg">DR</div>
+              <div>
+                <p class="text-sm font-bold text-on-surface">Dr. Miguel Rodríguez Paz</p>
+                <p class="text-xs text-text-secondary">PhD en Ingeniería Industrial</p>
+              </div>
+            </div>
+            <p class="text-xs text-text-secondary leading-relaxed">Director de proyectos PMP con más de 20 años de experiencia en gestión de proyectos mineros y de infraestructura. Docente de posgrado en la UNI y la USIL.</p>
+            <div class="flex flex-wrap gap-1.5 mt-3">
+              <span class="px-2 py-0.5 bg-blue-100 text-blue-700 rounded text-[10px] font-medium">PMBOK</span>
+              <span class="px-2 py-0.5 bg-blue-100 text-blue-700 rounded text-[10px] font-medium">Gestión de proyectos</span>
+              <span class="px-2 py-0.5 bg-blue-100 text-blue-700 rounded text-[10px] font-medium">Riesgos</span>
+            </div>
+          </div>
+          <div class="border border-border-subtle rounded-xl p-5">
+            <div class="flex items-center gap-4 mb-3">
+              <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-lg">MT</div>
+              <div>
+                <p class="text-sm font-bold text-on-surface">Mg. María Torres Rivas</p>
+                <p class="text-xs text-text-secondary">MBA, Especialista en Supply Chain</p>
+              </div>
+            </div>
+            <p class="text-xs text-text-secondary leading-relaxed">Consultora en logística y cadena de suministro con experiencia en empresas del sector retail y manufactura. Docente en programas de maestría de la UNI y la UPC.</p>
+            <div class="flex flex-wrap gap-1.5 mt-3">
+              <span class="px-2 py-0.5 bg-green-100 text-green-700 rounded text-[10px] font-medium">Supply Chain</span>
+              <span class="px-2 py-0.5 bg-green-100 text-green-700 rounded text-[10px] font-medium">Logística</span>
+              <span class="px-2 py-0.5 bg-green-100 text-green-700 rounded text-[10px] font-medium">SAP</span>
+            </div>
+          </div>
+          <div class="border border-border-subtle rounded-xl p-5">
+            <div class="flex items-center gap-4 mb-3">
+              <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-lg">CH</div>
+              <div>
+                <p class="text-sm font-bold text-on-surface">Ing. Carlos Huerta Sánchez</p>
+                <p class="text-xs text-text-secondary">Especialista en Business Intelligence</p>
+              </div>
+            </div>
+            <p class="text-xs text-text-secondary leading-relaxed">Líder de inteligencia de negocios en entidades bancarias. Certificado en Power BI, Tableau y Azure Data Analytics. Docente de diplomados y cursos corporativos.</p>
+            <div class="flex flex-wrap gap-1.5 mt-3">
+              <span class="px-2 py-0.5 bg-amber-100 text-amber-700 rounded text-[10px] font-medium">Power BI</span>
+              <span class="px-2 py-0.5 bg-amber-100 text-amber-700 rounded text-[10px] font-medium">Data Analytics</span>
+              <span class="px-2 py-0.5 bg-amber-100 text-amber-700 rounded text-[10px] font-medium">SQL</span>
+            </div>
+          </div>
+          <div class="border border-border-subtle rounded-xl p-5">
+            <div class="flex items-center gap-4 mb-3">
+              <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-lg">LP</div>
+              <div>
+                <p class="text-sm font-bold text-on-surface">Mg. Luis Paredes Rivas</p>
+                <p class="text-xs text-text-secondary">MBA, Especialista en Calidad</p>
+              </div>
+            </div>
+            <p class="text-xs text-text-secondary leading-relaxed">Consultor senior en sistemas de gestión de calidad con experiencia en implementación de ISO 9001, ISO 14001 y certificaciones internacionales. Auditor líder certificado.</p>
+            <div class="flex flex-wrap gap-1.5 mt-3">
+              <span class="px-2 py-0.5 bg-purple-100 text-purple-700 rounded text-[10px] font-medium">ISO 9001</span>
+              <span class="px-2 py-0.5 bg-purple-100 text-purple-700 rounded text-[10px] font-medium">Lean Six Sigma</span>
+              <span class="px-2 py-0.5 bg-purple-100 text-purple-700 rounded text-[10px] font-medium">Auditoría</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-noticias" class="tab-content hidden space-y-6">
+      <div class="bg-white rounded-xl border border-border-subtle p-6 md:p-8">
+        <h2 class="text-xl font-bold text-on-surface mb-1">Noticias y Avisos</h2>
+        <p class="text-sm text-text-secondary mb-6">Cronogramas, comunicados y novedades del CEE.</p>
+        <div class="space-y-4">
+          <div class="border border-border-subtle rounded-xl p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-100 text-blue-700">Cronograma</span>
+              <span class="text-xs text-text-secondary">25 May 2026</span>
+            </div>
+            <h3 class="text-sm font-bold text-on-surface">Cronograma de programas Julio - Diciembre 2026</h3>
+            <p class="text-xs text-text-secondary mt-1">Ya está disponible el cronograma de programas del CEE para el segundo semestre del año. Inscripciones abiertas hasta el 30 de junio.</p>
+          </div>
+          <div class="border border-border-subtle rounded-xl p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-green-100 text-green-700">Comunicado</span>
+              <span class="text-xs text-text-secondary">15 May 2026</span>
+            </div>
+            <h3 class="text-sm font-bold text-on-surface">Descuento por pronto pago en diplomados</h3>
+            <p class="text-xs text-text-secondary mt-1">Los participantes que se inscriban antes del 31 de mayo obtendrán un 15% de descuento en la inversión total del programa.</p>
+          </div>
+          <div class="border border-border-subtle rounded-xl p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-700">Aviso</span>
+              <span class="text-xs text-text-secondary">10 May 2026</span>
+            </div>
+            <h3 class="text-sm font-bold text-on-surface">Suspensión de atención por feriado</h3>
+            <p class="text-xs text-text-secondary mt-1">La oficina del CEE no atenderá los días 29 y 30 de junio por feriado institucional. Las inscripciones virtuales continúan habilitadas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-contacto" class="tab-content hidden space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-xl border border-border-subtle p-6">
+          <h3 class="text-base font-bold text-on-surface mb-4">Información de Contacto</h3>
+          <div class="space-y-3 text-sm">
+            <div class="flex items-center gap-3 text-text-secondary">
+              <span class="material-symbols-outlined text-primary">location_on</span>
+              <span>Pabellón de Administración, 2do piso — Campus UNI</span>
+            </div>
+            <div class="flex items-center gap-3 text-text-secondary">
+              <span class="material-symbols-outlined text-primary">phone</span>
+              <span>Anexo 5242</span>
+            </div>
+            <div class="flex items-center gap-3 text-text-secondary">
+              <span class="material-symbols-outlined text-primary">mail</span>
+              <a href="mailto:cee@fiis.uni.edu.pe" class="text-primary hover:underline">cee@fiis.uni.edu.pe</a>
+            </div>
+            <div class="flex items-center gap-3 text-text-secondary">
+              <span class="material-symbols-outlined text-primary">schedule</span>
+              <span>Lun - Vie: 9:00 - 17:00</span>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-6">
+          <h3 class="text-base font-bold text-on-surface mb-4">Atención Rápida</h3>
+          <p class="text-xs text-text-secondary mb-4">Déjanos tus datos y te contactaremos para brindarte información sobre los programas.</p>
+          <form class="space-y-3" onsubmit="event.preventDefault(); alert('Consulta enviada con éxito.'); this.reset();">
+            <input type="text" placeholder="Nombre" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+            <input type="email" placeholder="Correo" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+            <select class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all">
+              <option>Programa de interés</option>
+              <option>Gestión de Proyectos PMBOK</option>
+              <option>Power BI y Business Analytics</option>
+              <option>Supply Chain Management</option>
+              <option>Gestión de la Calidad</option>
+            </select>
+            <button type="submit" class="w-full px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary-container transition-all flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-sm">send</span>
+              Enviar consulta
+            </button>
+          </form>
+          <div class="mt-4">
+            <a href="https://wa.me/51XXXXXXXXX?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20los%20programas%20del%20CEE" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 px-5 py-2.5 bg-green-600 text-white text-sm font-bold rounded-lg hover:bg-green-700 transition-all">
+              <span class="material-symbols-outlined text-sm">chat</span>
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,363 @@
+<div class="page-enter space-y-8">
+  <section class="relative bg-primary overflow-hidden rounded-2xl min-h-[320px] flex items-center">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
+    <div class="relative z-10 px-8 md:px-16 py-14 w-full">
+      <div class="flex items-center gap-2 mb-3">
+        <a href="#/organigrama" class="text-brand-cream/70 hover:text-brand-cream text-sm flex items-center gap-1 transition-colors">
+          <span class="material-symbols-outlined text-sm">arrow_back</span> Organigrama
+        </a>
+      </div>
+      <div class="max-w-3xl">
+        <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-4 leading-tight">Laboratorio Académico y Red FIIS</h1>
+        <p class="text-on-primary/90 text-lg md:text-xl leading-relaxed">
+          Infraestructura informática, conectividad y soporte técnico para la comunidad FIIS. 125 computadoras, 5 ambientes y red Wi-Fi institucional.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-[1200px] mx-auto px-6 md:px-8 space-y-10 pb-12">
+    <div class="flex border-b border-border-subtle gap-0 overflow-x-auto">
+      <button class="px-6 py-4 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 transition-colors whitespace-nowrap" data-tab="infraestructura">Infraestructura</button>
+      <button class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-tab="actividades">Actividades</button>
+      <button class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-tab="disponibilidad">Disponibilidad</button>
+      <button class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-tab="wifi">Red Wi-Fi</button>
+      <button class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-tab="contacto">Contacto</button>
+    </div>
+
+    <div id="tab-infraestructura" class="tab-content space-y-6">
+      <div class="bg-white rounded-xl border border-border-subtle p-6 md:p-8">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+            <span class="material-symbols-outlined text-3xl" style="font-variation-settings:'FILL'1;">computer</span>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-on-surface">Laboratorio Académico FIIS</h2>
+            <p class="text-sm text-text-secondary">Infraestructura informática y conectividad</p>
+          </div>
+        </div>
+        <p class="text-text-secondary text-sm leading-relaxed mb-4">
+          El Laboratorio Académico de la FIIS cuenta con <strong class="text-on-surface">125 computadoras de última generación</strong> conectadas en red y con acceso a internet. Con ellas los alumnos acceden a herramientas modernas de software para el desarrollo de sus trabajos y proyectos académicos.
+        </p>
+        <p class="text-text-secondary text-sm leading-relaxed">
+          Las principales actividades del laboratorio son brindar apoyo informático a todas las áreas académicas y al Instituto de Investigación, apoyar las iniciativas estudiantiles en programas de capacitación, y proporcionar apoyo al Programa de Calificación de Procesamiento de Datos, según el convenio UNI con la Marina de Guerra del Perú.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl border border-border-subtle p-6 md:p-8">
+        <h2 class="text-xl font-bold text-on-surface mb-4">Ambientes</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="border border-border-subtle rounded-xl p-5 text-center">
+            <span class="text-2xl font-extrabold text-primary">5</span>
+            <p class="text-xs text-text-secondary mt-1">Ambientes acondicionados</p>
+          </div>
+          <div class="border border-border-subtle rounded-xl p-5 text-center">
+            <span class="text-2xl font-extrabold text-primary">125</span>
+            <p class="text-xs text-text-secondary mt-1">Computadoras disponibles</p>
+          </div>
+          <div class="border border-border-subtle rounded-xl p-5 text-center">
+            <span class="text-2xl font-extrabold text-primary">32</span>
+            <p class="text-xs text-text-secondary mt-1">Asignaturas soportadas</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl border border-border-subtle p-6 md:p-8">
+        <h2 class="text-xl font-bold text-on-surface mb-4">Software por Asignatura</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="border border-border-subtle rounded-xl p-4">
+            <h3 class="text-sm font-bold text-on-surface mb-2">Bases de Datos</h3>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 bg-blue-100 text-blue-700 rounded text-[10px]">Oracle 10g</span>
+              <span class="px-2 py-0.5 bg-blue-100 text-blue-700 rounded text-[10px]">MS SQL Server</span>
+              <span class="px-2 py-0.5 bg-blue-100 text-blue-700 rounded text-[10px]">Visual FoxPro</span>
+            </div>
+          </div>
+          <div class="border border-border-subtle rounded-xl p-4">
+            <h3 class="text-sm font-bold text-on-surface mb-2">Análisis y Diseño</h3>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 bg-green-100 text-green-700 rounded text-[10px]">BpWin</span>
+              <span class="px-2 py-0.5 bg-green-100 text-green-700 rounded text-[10px]">Erwin</span>
+              <span class="px-2 py-0.5 bg-green-100 text-green-700 rounded text-[10px]">Power Designer</span>
+              <span class="px-2 py-0.5 bg-green-100 text-green-700 rounded text-[10px]">Rational Rose</span>
+            </div>
+          </div>
+          <div class="border border-border-subtle rounded-xl p-4">
+            <h3 class="text-sm font-bold text-on-surface mb-2">Investigación de Operaciones</h3>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 bg-amber-100 text-amber-700 rounded text-[10px]">Lindo</span>
+              <span class="px-2 py-0.5 bg-amber-100 text-amber-700 rounded text-[10px]">Lingo</span>
+              <span class="px-2 py-0.5 bg-amber-100 text-amber-700 rounded text-[10px]">STORM</span>
+              <span class="px-2 py-0.5 bg-amber-100 text-amber-700 rounded text-[10px]">WinQSB</span>
+            </div>
+          </div>
+          <div class="border border-border-subtle rounded-xl p-4">
+            <h3 class="text-sm font-bold text-on-surface mb-2">Inteligencia Artificial</h3>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 bg-purple-100 text-purple-700 rounded text-[10px]">Matlab</span>
+              <span class="px-2 py-0.5 bg-purple-100 text-purple-700 rounded text-[10px]">Weka</span>
+              <span class="px-2 py-0.5 bg-purple-100 text-purple-700 rounded text-[10px]">AmziProlog</span>
+              <span class="px-2 py-0.5 bg-purple-100 text-purple-700 rounded text-[10px]">Lisp</span>
+            </div>
+          </div>
+          <div class="border border-border-subtle rounded-xl p-4">
+            <h3 class="text-sm font-bold text-on-surface mb-2">Diseño y Simulación</h3>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 bg-red-100 text-red-700 rounded text-[10px]">AutoCAD</span>
+              <span class="px-2 py-0.5 bg-red-100 text-red-700 rounded text-[10px]">Stella</span>
+              <span class="px-2 py-0.5 bg-red-100 text-red-700 rounded text-[10px]">Google SketchUp</span>
+              <span class="px-2 py-0.5 bg-red-100 text-red-700 rounded text-[10px]">VRML</span>
+            </div>
+          </div>
+          <div class="border border-border-subtle rounded-xl p-4">
+            <h3 class="text-sm font-bold text-on-surface mb-2">Arquitectura y Redes</h3>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 bg-teal-100 text-teal-700 rounded text-[10px]">Configuración PCs</span>
+              <span class="px-2 py-0.5 bg-teal-100 text-teal-700 rounded text-[10px]">Configuración Red</span>
+              <span class="px-2 py-0.5 bg-teal-100 text-teal-700 rounded text-[10px]">BIOS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-actividades" class="tab-content hidden space-y-6">
+      <div class="bg-white rounded-xl border border-border-subtle p-6 md:p-8">
+        <h2 class="text-xl font-bold text-on-surface mb-1">Calendario de Actividades</h2>
+        <p class="text-sm text-text-secondary mb-6">Capacitaciones, talleres y eventos programados en los laboratorios académicos.</p>
+        <div class="space-y-4">
+          <div class="flex items-start gap-4 p-4 border border-border-subtle rounded-xl">
+            <div class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-lg p-2.5 min-w-[72px] text-center">
+              <span class="text-[10px] font-bold uppercase">Jun</span>
+              <span class="text-xl font-extrabold">15</span>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-blue-100 text-blue-700">Taller</span>
+                <h4 class="text-sm font-bold text-on-surface">Capacitación en Matlab Avanzado</h4>
+              </div>
+              <p class="text-xs text-text-secondary">Lab. Académico - 10:00 a 12:00</p>
+              <p class="text-xs text-text-secondary mt-1">Dirigido a estudiantes deIng. de Sistemas y Software. Cupo limitado.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-4 border border-border-subtle rounded-xl">
+            <div class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-lg p-2.5 min-w-[72px] text-center">
+              <span class="text-[10px] font-bold uppercase">Jun</span>
+              <span class="text-xl font-extrabold">22</span>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-green-100 text-green-700">Curso</span>
+                <h4 class="text-sm font-bold text-on-surface">Administración de Bases de Datos Oracle</h4>
+              </div>
+              <p class="text-xs text-text-secondary">Lab. Académico - 14:00 a 17:00</p>
+              <p class="text-xs text-text-secondary mt-1">Dirigido a estudiantes de todas las escuelas. Incluye certificado.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-4 border border-border-subtle rounded-xl">
+            <div class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-lg p-2.5 min-w-[72px] text-center">
+              <span class="text-[10px] font-bold uppercase">Jul</span>
+              <span class="text-xl font-extrabold">06</span>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-amber-100 text-amber-700">Charla</span>
+                <h4 class="text-sm font-bold text-on-surface">Ciberseguridad en Redes Corporativas</h4>
+              </div>
+              <p class="text-xs text-text-secondary">Lab. de Redes - 15:00 a 17:00</p>
+              <p class="text-xs text-text-secondary mt-1">Charla abierta a toda la comunidad FIIS. Ingreso libre.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl border border-border-subtle p-6 md:p-8">
+        <h2 class="text-xl font-bold text-on-surface mb-4">Inscripción a Actividades</h2>
+        <p class="text-sm text-text-secondary mb-4">Inscríbete a las actividades programadas en los laboratorios académicos.</p>
+        <form class="space-y-4" onsubmit="event.preventDefault(); alert('Inscripción registrada con éxito.'); this.reset();">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input type="text" placeholder="Nombre completo" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+            <input type="email" placeholder="Correo institucional" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+          </div>
+          <select class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all">
+            <option>Selecciona la actividad</option>
+            <option>Capacitación en Matlab Avanzado - 15 Jun</option>
+            <option>Administración de BD Oracle - 22 Jun</option>
+            <option>Ciberseguridad en Redes - 06 Jul</option>
+          </select>
+          <button type="submit" class="px-6 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary-container transition-all flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">how_to_reg</span>
+            Inscribirme
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div id="tab-disponibilidad" class="tab-content hidden space-y-6">
+      <div class="bg-white rounded-xl border border-border-subtle p-6 md:p-8">
+        <h2 class="text-xl font-bold text-on-surface mb-1">Consulta de Disponibilidad</h2>
+        <p class="text-sm text-text-secondary mb-6">Verifica la disponibilidad de los laboratorios académicos para tus actividades.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <form class="space-y-4" onsubmit="event.preventDefault(); document.getElementById('disp-result').classList.remove('hidden');">
+              <div>
+                <label class="block text-sm font-semibold text-on-surface mb-1">Laboratorio</label>
+                <select class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all">
+                  <option>Lab. Académico Principal</option>
+                  <option>Lab. de Redes y Telecomunicaciones</option>
+                  <option>Lab. de Cómputo General</option>
+                  <option>Lab. de Software</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-on-surface mb-1">Fecha</label>
+                <input type="date" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+              </div>
+              <button type="submit" class="px-6 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary-container transition-all flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm">search</span>
+                Consultar disponibilidad
+              </button>
+            </form>
+          </div>
+          <div id="disp-result" class="hidden border border-border-subtle rounded-xl p-5 bg-green-50">
+            <span class="material-symbols-outlined text-success text-3xl" style="font-variation-settings:'FILL'1;">check_circle</span>
+            <h3 class="text-sm font-bold text-on-surface mt-2">Laboratorio disponible</h3>
+            <p class="text-xs text-text-secondary mt-1">El laboratorio seleccionado tiene disponibilidad en la fecha indicada. Para reservar, contáctanos al correo del área.</p>
+            <a href="mailto:labacademico@fiis.uni.edu.pe" class="mt-3 inline-flex items-center gap-2 px-4 py-2 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-primary-container transition-all">
+              <span class="material-symbols-outlined text-sm">mail</span>
+              Solicitar reserva
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-wifi" class="tab-content hidden space-y-6">
+      <div class="bg-white rounded-xl border border-border-subtle p-6 md:p-8">
+        <h2 class="text-xl font-bold text-on-surface mb-1">Red Wi-Fi FIIS</h2>
+        <p class="text-sm text-text-secondary mb-6">Información de cobertura, puntos de acceso y credenciales de la red inalámbrica institucional.</p>
+        <div class="bg-surface-container-low rounded-xl p-5 mb-6">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="material-symbols-outlined text-primary">wifi</span>
+            <h3 class="text-sm font-bold text-on-surface">Cobertura Wi-Fi</h3>
+          </div>
+          <p class="text-xs text-text-secondary mb-3">La red inalámbrica FIIS cubre los siguientes sectores del campus:</p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div class="bg-white border border-border-subtle rounded-lg p-3 text-center">
+              <p class="text-sm font-bold text-primary">S1</p>
+              <p class="text-[10px] text-text-secondary">Pabellón A - Administración</p>
+            </div>
+            <div class="bg-white border border-border-subtle rounded-lg p-3 text-center">
+              <p class="text-sm font-bold text-primary">S4</p>
+              <p class="text-[10px] text-text-secondary">Pabellón B - Aulas y Laboratorios</p>
+            </div>
+            <div class="bg-white border border-border-subtle rounded-lg p-3 text-center">
+              <p class="text-sm font-bold text-primary">S5-S6</p>
+              <p class="text[10px] text-text-secondary">Pabellón de Laboratorios</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-base font-bold text-on-surface mb-4">Contraseñas por Perfil</h3>
+        <div class="space-y-3">
+          <div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-blue-600">school</span>
+              <div>
+                <p class="text-sm font-bold text-on-surface">Estudiantes</p>
+                <p class="text-xs text-text-secondary">Red: FIIS-ALUMNOS</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-mono font-bold">••••••••</span>
+          </div>
+          <div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-green-600">badge</span>
+              <div>
+                <p class="text-sm font-bold text-on-surface">Docentes</p>
+                <p class="text-xs text-text-secondary">Red: FIIS-DOCENTES</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-mono font-bold">••••••••</span>
+          </div>
+          <div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-amber-600">groups</span>
+              <div>
+                <p class="text-sm font-bold text-on-surface">Visitantes</p>
+                <p class="text-xs text-text-secondary">Red: FIIS-VISITANTES</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-mono font-bold">••••••••</span>
+          </div>
+        </div>
+        <p class="text-xs text-text-secondary mt-4 p-3 bg-warning/5 border border-warning/20 rounded-lg">Las contraseñas se actualizan periódicamente. Acércate a la mesa de partes o escribe al correo del área para solicitar las credenciales vigentes.</p>
+      </div>
+    </div>
+
+    <div id="tab-contacto" class="tab-content hidden space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-xl border border-border-subtle p-6">
+          <h3 class="text-base font-bold text-on-surface mb-4">Contacto y Soporte</h3>
+          <div class="space-y-3 text-sm">
+            <div class="flex items-center gap-3 text-text-secondary">
+              <span class="material-symbols-outlined text-primary">mail</span>
+              <a href="mailto:labacademico@fiis.uni.edu.pe" class="text-primary hover:underline">labacademico@fiis.uni.edu.pe</a>
+            </div>
+            <div class="flex items-center gap-3 text-text-secondary">
+              <span class="material-symbols-outlined text-primary">phone</span>
+              <span>Anexo 5242</span>
+            </div>
+            <div class="flex items-center gap-3 text-text-secondary">
+              <span class="material-symbols-outlined text-primary">location_on</span>
+              <span>Pabellón B, 1er piso — Campus UNI</span>
+            </div>
+            <div class="flex items-center gap-3 text-text-secondary">
+              <span class="material-symbols-outlined text-primary">schedule</span>
+              <span>Lun - Vie: 8:00 - 20:00</span>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle p-6">
+          <h3 class="text-base font-bold text-on-surface mb-4">Soporte Técnico por Sector</h3>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between p-3 bg-surface-container-low rounded-xl">
+              <div>
+                <p class="text-sm font-bold text-on-surface">Sector S1</p>
+                <p class="text-xs text-text-secondary">Pabellón A</p>
+              </div>
+              <a href="mailto:soporte.s1@fiis.uni.edu.pe" class="text-xs text-primary hover:underline">soporte.s1@fiis.uni.edu.pe</a>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-surface-container-low rounded-xl">
+              <div>
+                <p class="text-sm font-bold text-on-surface">Sector S4</p>
+                <p class="text-xs text-text-secondary">Pabellón B</p>
+              </div>
+              <a href="mailto:soporte.s4@fiis.uni.edu.pe" class="text-xs text-primary hover:underline">soporte.s4@fiis.uni.edu.pe</a>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-surface-container-low rounded-xl">
+              <div>
+                <p class="text-sm font-bold text-on-surface">Sector S5-S6</p>
+                <p class="text-xs text-text-secondary">Pabellón Laboratorios</p>
+              </div>
+              <a href="mailto:soporte.s5@fiis.uni.edu.pe" class="text-xs text-primary hover:underline">soporte.s5@fiis.uni.edu.pe</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl border border-border-subtle p-6">
+        <h3 class="text-base font-bold text-on-surface mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary">help</span>
+          Consulta rápida de disponibilidad
+        </h3>
+        <p class="text-xs text-text-secondary mb-4">Si deseas consultar la disponibilidad de un laboratorio para una fecha específica, escríbenos y te responderemos a la brevedad.</p>
+        <a href="mailto:labacademico@fiis.uni.edu.pe?subject=Consulta%20de%20disponibilidad%20de%20laboratorio" class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary-container transition-all">
+          <span class="material-symbols-outlined text-sm">mail</span>
+          Consultar disponibilidad
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
