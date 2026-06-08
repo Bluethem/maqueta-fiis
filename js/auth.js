@@ -17,9 +17,6 @@ const ROLES = {
       { icon: 'description', label: 'Bandeja de Trámites', route: '/dashboard/administrativo/tramites' },
       { icon: 'gavel', label: 'Transparencia', route: '/dashboard/administrativo/resoluciones' },
       { icon: 'calendar_month', label: 'Horarios y Mallas', route: '/dashboard/administrativo/horarios' },
-      { icon: 'newspaper', label: 'Gestión de Noticias', route: '/news' },
-      { icon: 'event', label: 'Gestión de Calendario', route: '/calendar' },
-      { icon: 'content_paste', label: 'Solicitudes de Contenido', route: '/content' },
     ]
   },
   centro: {
