@@ -190,7 +190,12 @@ Router.add('/departamentos/sistemas-telematica', () => routePublic('departamento
 Router.add('/departamentos/tecnologia-produccion', () => routePublic('departamento-tecnologia-produccion'));
 Router.add('/cronogramas', () => routePublic('cronogramas'));
 Router.add('/directorio-docentes', () => routePublic('directorio-docentes'));
-Router.add('/empresas', () => routePublic('empresas'));
+Router.add('/empresas', () => routePublic('empresas-home'));
+Router.add('/empresas/directorio', () => routePublic('empresas'));
+Router.add('/empresas/bolsa-trabajo', () => routePublic('empresas-bolsa-trabajo'));
+Router.add('/empresas/actividades', () => routePublic('empresas-actividades'));
+Router.add('/empresas/soy-empresa', () => routePublic('empresas-soy-empresa'));
+Router.add('/empresas/convenios', () => routePublic('empresas-convenios'));
 ['industrias-acero','grana-montero','backus','alicorp','scotiabank','komatsu','ferreyros','interbank'].forEach(function(slug) {
   Router.add('/empresa-detalle/' + slug, async function() {
     window.__empresaId = slug;

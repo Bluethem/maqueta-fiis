@@ -124,7 +124,16 @@ const MEGA_MENU = [
     label: 'Egresados', icon: 'school', route: '/egresados'
   },
   {
-    label: 'Empresas', icon: 'work', route: '/empresas'
+    label: 'Empresas', icon: 'work', route: '/empresas',
+    children: [
+      { col: 0, title: 'Módulo Empresas', items: [
+        { label: 'Directorio de Empresas', route: '/empresas/directorio', icon: 'handshake' },
+        { label: 'Bolsa de Trabajo', route: '/empresas/bolsa-trabajo', icon: 'work' },
+        { label: 'Actividades Empresariales', route: '/empresas/actividades', icon: 'event' },
+        { label: 'Convenios Vigentes', route: '/empresas/convenios', icon: 'description' },
+        { label: 'Soy Empresa', route: '/empresas/soy-empresa', icon: 'partner_exchange' },
+      ]}
+    ]
   },
 ];
 

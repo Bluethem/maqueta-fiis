@@ -1,30 +1,56 @@
 <div class="page-enter space-y-8">
 
   <!-- Hero Header -->
-  <section class="relative bg-primary overflow-hidden rounded-2xl min-h-[260px] flex items-center">
+  <section class="relative overflow-hidden bg-primary rounded-2xl">
     <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
-    <div class="relative z-10 px-8 md:px-16 py-12 w-full">
-      <div class="max-w-3xl">
-        <a href="#/empresas" class="inline-flex items-center gap-1.5 text-white/70 hover:text-white text-sm mb-5 transition-colors">
-          <span class="material-symbols-outlined text-sm">arrow_back</span>
-          Empresas
-        </a>
+    <div class="relative z-10 px-8 py-14 md:py-20 md:px-12">
+      <div class="max-w-2xl">
         <div class="flex items-center gap-2 mb-4">
           <span class="inline-flex items-center gap-1.5 bg-brand-cream/20 text-brand-cream px-3 py-1 rounded-full text-xs font-semibold">
             <span class="material-symbols-outlined text-sm">handshake</span>
-            Directorio de Empresas
+            Bolsa de empleabilidad FIIS
           </span>
         </div>
-        <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-4 leading-tight">Directorio de Empresas Aliadas</h1>
+        <h1 class="text-on-primary text-4xl md:text-5xl font-bold mb-4 leading-tight">Empresas y Empleabilidad</h1>
         <p class="text-on-primary/85 text-lg md:text-xl leading-relaxed max-w-xl">
-          Explora las empresas aliadas a la FIIS, conoce su vínculo con la facultad
-          y las oportunidades disponibles para estudiantes y egresados.
+          Conectamos el talento de nuestros estudiantes y egresados con las mejores empresas del país.
+          Sea parte de la red de aliados estratégicos de la FIIS-UNI.
         </p>
+        <div class="flex flex-wrap gap-3 mt-8">
+          <button class="inline-flex items-center gap-2 bg-brand-cream text-primary px-6 py-3 rounded-lg font-semibold hover:brightness-95 transition-all active:scale-95 text-sm">
+            <span class="material-symbols-outlined text-sm">partner_exchange</span>
+            Ser empresa aliada
+          </button>
+          <button class="inline-flex items-center gap-2 border-2 border-on-primary/40 text-on-primary px-6 py-3 rounded-lg font-semibold hover:bg-on-primary/10 transition-all active:scale-95 text-sm">
+            <span class="material-symbols-outlined text-sm">work</span>
+            Ver vacantes
+          </button>
+        </div>
       </div>
     </div>
   </section>
 
-  <div class="max-w-[1200px] mx-auto px-6 md:px-8 space-y-10 pb-12">
+  <!-- Main tabbed content -->
+  <section class="max-w-[1200px] mx-auto px-6 md:px-8">
+
+    <!-- Tab navigation -->
+    <div class="flex gap-0 border-b-2 border-border-subtle mb-8">
+      <button data-tab="estudiante" class="px-6 py-4 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 transition-colors whitespace-nowrap">
+        Directorio
+      </button>
+      <button data-tab="empresa" class="px-6 py-4 text-sm font-medium text-text-secondary transition-colors whitespace-nowrap">
+        Soy Empresa
+      </button>
+    </div>
+
+    <!-- Tab description -->
+    <p class="text-text-secondary text-sm mb-8 -mt-4">
+      <span class="font-semibold text-on-surface">Directorio:</span> explora empresas aliadas por rubro, vinculo y estado de convenio.
+      <span class="font-semibold text-on-surface">Empresas:</span> conoce los beneficios de vincularse con la FIIS, revisa los convenios activos y contacta a nuestro equipo.
+    </p>
+
+    <!-- ===== TAB: ESTUDIANTE ===== -->
+    <div id="tab-estudiante" class="tab-content space-y-10">
 
       <!-- Directorio de Empresas Aliadas -->
       <div id="empresas-directorio">
@@ -710,14 +736,393 @@
     </div>
     <!-- END tab-estudiante -->
 
-      <!-- ===== Oportunidades ===== -->
+    <!-- ===== TAB: EMPRESA ===== -->
+    <div id="tab-empresa" class="tab-content hidden space-y-10">
 
-      <!-- Vacantes desde Store -->
+      <!-- ¿Por qué vincularse? -->
+      <div id="empresas-propuesta">
+        <div class="flex items-center gap-4 mb-8">
+          <h2 class="text-2xl md:text-3xl font-bold text-primary">¿Por qué vincularse con FIIS?</h2>
+          <div class="flex-grow h-px bg-border-subtle"></div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div class="bg-white rounded-xl border border-border-subtle p-6 card-hover">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined">school</span>
+            </div>
+            <h3 class="text-base font-bold text-on-surface mb-2">Talento Calificado</h3>
+            <p class="text-text-secondary text-sm leading-relaxed">
+              Acceda a estudiantes y egresados con formación de excelencia en Ingeniería Industrial y de Sistemas,
+              listos para aportar desde el primer día.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl border border-border-subtle p-6 card-hover">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined">military_tech</span>
+            </div>
+            <h3 class="text-base font-bold text-on-surface mb-2">Prestigio Académico</h3>
+            <p class="text-text-secondary text-sm leading-relaxed">
+              Vincule su marca con una facultad líder en ingeniería del Perú, acreditada internacionalmente
+              y reconocida por su calidad educativa.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl border border-border-subtle p-6 card-hover">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined">lightbulb</span>
+            </div>
+            <h3 class="text-base font-bold text-on-surface mb-2">Innovación</h3>
+            <p class="text-text-secondary text-sm leading-relaxed">
+              Participe en proyectos de investigación aplicada, laboratorios especializados y semilleros
+              de innovación tecnológica con enfoque en la industria 4.0.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl border border-border-subtle p-6 card-hover">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined">diversity_2</span>
+            </div>
+            <h3 class="text-base font-bold text-on-surface mb-2">Responsabilidad Social</h3>
+            <p class="text-text-secondary text-sm leading-relaxed">
+              Contribuya al desarrollo de proyectos de impacto social y sostenibilidad, formando
+              ingenieros comprometidos con el país.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Convenios vigentes -->
+      <div id="empresas-convenios">
+        <div class="flex items-center gap-4 mb-6">
+          <h2 class="text-2xl md:text-3xl font-bold text-primary">Convenios vigentes</h2>
+          <div class="flex-grow h-px bg-border-subtle"></div>
+        </div>
+        <div class="bg-white rounded-xl border border-border-subtle shadow-sm overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="bg-surface-bg/50 border-b border-border-subtle">
+                  <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Empresa</th>
+                  <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Tipo de convenio</th>
+                  <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Fecha</th>
+                  <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Estado</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-border-subtle/60">
+                <tr class="hover:bg-surface-container-low/40 transition-colors">
+                  <td class="px-5 py-3.5">
+                    <div class="flex items-center gap-3">
+                      <div class="w-8 h-8 rounded-full bg-amber-50 text-amber-700 flex items-center justify-center text-xs font-extrabold shrink-0">B</div>
+                      <span class="font-semibold text-on-surface">Backus</span>
+                    </div>
+                  </td>
+                  <td class="px-5 py-3.5 text-text-secondary">Prácticas Preprofesionales</td>
+                  <td class="px-5 py-3.5 text-text-secondary">15/03/2024</td>
+                  <td class="px-5 py-3.5">
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-success/10 text-success">
+                      <span class="w-1.5 h-1.5 rounded-full bg-success"></span>
+                      Vigente
+                    </span>
+                  </td>
+                </tr>
+                <tr class="hover:bg-surface-container-low/40 transition-colors">
+                  <td class="px-5 py-3.5">
+                    <div class="flex items-center gap-3">
+                      <div class="w-8 h-8 rounded-full bg-green-50 text-green-700 flex items-center justify-center text-xs font-extrabold shrink-0">A</div>
+                      <span class="font-semibold text-on-surface">Alicorp</span>
+                    </div>
+                  </td>
+                  <td class="px-5 py-3.5 text-text-secondary">Convenio Marco</td>
+                  <td class="px-5 py-3.5 text-text-secondary">10/01/2024</td>
+                  <td class="px-5 py-3.5">
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-success/10 text-success">
+                      <span class="w-1.5 h-1.5 rounded-full bg-success"></span>
+                      Vigente
+                    </span>
+                  </td>
+                </tr>
+                <tr class="hover:bg-surface-container-low/40 transition-colors">
+                  <td class="px-5 py-3.5">
+                    <div class="flex items-center gap-3">
+                      <div class="w-8 h-8 rounded-full bg-red-50 text-red-700 flex items-center justify-center text-xs font-extrabold shrink-0">S</div>
+                      <span class="font-semibold text-on-surface">Scotiabank Perú</span>
+                    </div>
+                  </td>
+                  <td class="px-5 py-3.5 text-text-secondary">Contrato de Colaboración</td>
+                  <td class="px-5 py-3.5 text-text-secondary">01/06/2024</td>
+                  <td class="px-5 py-3.5">
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-warning/10 text-warning">
+                      <span class="w-1.5 h-1.5 rounded-full bg-warning"></span>
+                      Próximo a vencer
+                    </span>
+                  </td>
+                </tr>
+                <tr class="hover:bg-surface-container-low/40 transition-colors">
+                  <td class="px-5 py-3.5">
+                    <div class="flex items-center gap-3">
+                      <div class="w-8 h-8 rounded-full bg-orange-50 text-orange-700 flex items-center justify-center text-xs font-extrabold shrink-0">K</div>
+                      <span class="font-semibold text-on-surface">Komatsu-Mitsui</span>
+                    </div>
+                  </td>
+                  <td class="px-5 py-3.5 text-text-secondary">Convenio Específico</td>
+                  <td class="px-5 py-3.5 text-text-secondary">20/11/2023</td>
+                  <td class="px-5 py-3.5">
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-success/10 text-success">
+                      <span class="w-1.5 h-1.5 rounded-full bg-success"></span>
+                      Vigente
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="px-5 py-3 border-t border-border-subtle bg-surface-container-low/20 flex items-center justify-between">
+            <p class="text-xs text-text-secondary">Mostrando 4 de 4 convenios activos</p>
+            <button class="text-xs text-primary font-semibold hover:underline">Ver historial completo</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Noticias empresariales (R19) -->
+      <div>
+        <div class="flex items-center gap-4 mb-6">
+          <h2 class="text-2xl md:text-3xl font-bold text-primary">Noticias empresariales</h2>
+          <div class="flex-grow h-px bg-border-subtle"></div>
+          <a href="#/noticias" class="text-xs text-primary font-semibold hover:underline shrink-0">Ver todas</a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+          <div class="bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col">
+            <span class="inline-block bg-primary/10 text-primary px-2 py-0.5 rounded-full text-[10px] font-semibold mb-3 self-start">Nuevo convenio</span>
+            <h3 class="text-sm font-bold text-on-surface mb-2">Backus y FIIS renuevan convenio para prácticas preprofesionales 2025-2027</h3>
+            <p class="text-text-secondary text-xs leading-relaxed flex-grow">El convenio renovado amplía las plazas disponibles para estudiantes de Ing. Industrial e incluye un programa de mentoría con profesionales senior de la empresa.</p>
+            <p class="text-[10px] text-text-secondary mt-3">15 mayo 2025</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col">
+            <span class="inline-block bg-success/10 text-success px-2 py-0.5 rounded-full text-[10px] font-semibold mb-3 self-start">Vinculación</span>
+            <h3 class="text-sm font-bold text-on-surface mb-2">Interbank lanza programa de becas de investigación para estudiantes FIIS</h3>
+            <p class="text-text-secondary text-xs leading-relaxed flex-grow">El programa cubrirá investigaciones en IA aplicada a banca digital. Incluye estipendio mensual, acceso a datos reales y posibilidad de contratación directa al egresar.</p>
+            <p class="text-[10px] text-text-secondary mt-3">08 mayo 2025</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-border-subtle p-5 card-hover flex flex-col">
+            <span class="inline-block bg-warning/10 text-warning px-2 py-0.5 rounded-full text-[10px] font-semibold mb-3 self-start">Evento</span>
+            <h3 class="text-sm font-bold text-on-surface mb-2">Ferreyros abre convocatoria para 8 plazas de prácticas en Logística e Industrial</h3>
+            <p class="text-text-secondary text-xs leading-relaxed flex-grow">Las plazas están disponibles para estudiantes de 7.° ciclo en adelante. El proceso incluye evaluación técnica y entrevista con el área de operaciones.</p>
+            <p class="text-[10px] text-text-secondary mt-3">02 mayo 2025</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Materiales de orientación para empresas (R22) -->
+      <div>
+        <div class="flex items-center gap-4 mb-6">
+          <h2 class="text-2xl md:text-3xl font-bold text-primary">Guía de vinculación</h2>
+          <div class="flex-grow h-px bg-border-subtle"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <!-- Proceso de vinculación -->
+          <div class="bg-white rounded-xl border border-border-subtle p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                <span class="material-symbols-outlined">route</span>
+              </div>
+              <h3 class="text-base font-bold text-on-surface">Proceso de vinculación</h3>
+            </div>
+            <ol class="space-y-3">
+              <li class="flex gap-3 text-sm">
+                <span class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</span>
+                <div><p class="font-semibold text-on-surface">Contacto inicial</p><p class="text-text-secondary text-xs">Completa el formulario de contacto o escríbenos a empresas@fiis.uni.edu.pe</p></div>
+              </li>
+              <li class="flex gap-3 text-sm">
+                <span class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span>
+                <div><p class="font-semibold text-on-surface">Reunión de coordinación</p><p class="text-text-secondary text-xs">El equipo FIIS organiza una reunión para definir el tipo de vínculo y condiciones</p></div>
+              </li>
+              <li class="flex gap-3 text-sm">
+                <span class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</span>
+                <div><p class="font-semibold text-on-surface">Firma de convenio</p><p class="text-text-secondary text-xs">Se formaliza el vínculo mediante convenio marco o específico según modalidad</p></div>
+              </li>
+              <li class="flex gap-3 text-sm">
+                <span class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">4</span>
+                <div><p class="font-semibold text-on-surface">Publicación y activación</p><p class="text-text-secondary text-xs">La empresa accede al portal para publicar vacantes, eventos o propuestas de proyecto</p></div>
+              </li>
+            </ol>
+          </div>
+
+          <!-- FAQ -->
+          <div class="bg-white rounded-xl border border-border-subtle p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                <span class="material-symbols-outlined">help</span>
+              </div>
+              <h3 class="text-base font-bold text-on-surface">Preguntas frecuentes</h3>
+            </div>
+            <div class="space-y-3">
+              <details class="group">
+                <summary class="text-sm font-semibold text-on-surface cursor-pointer flex items-center justify-between">
+                  ¿Qué modalidades de vínculo ofrece la FIIS?
+                  <span class="material-symbols-outlined text-text-secondary group-open:rotate-180 transition-transform text-sm">expand_more</span>
+                </summary>
+                <p class="text-xs text-text-secondary mt-2 leading-relaxed">Prácticas preprofesionales, empleos para egresados, convenios marco, proyectos de investigación aplicada, charlas/talleres y propuestas de retos académicos.</p>
+              </details>
+              <details class="group border-t border-border-subtle pt-3">
+                <summary class="text-sm font-semibold text-on-surface cursor-pointer flex items-center justify-between">
+                  ¿Cuánto demora registrar una empresa aliada?
+                  <span class="material-symbols-outlined text-text-secondary group-open:rotate-180 transition-transform text-sm">expand_more</span>
+                </summary>
+                <p class="text-xs text-text-secondary mt-2 leading-relaxed">El proceso desde el primer contacto hasta la firma de convenio toma entre 2 y 4 semanas, dependiendo de la modalidad y del proceso interno de cada empresa.</p>
+              </details>
+              <details class="group border-t border-border-subtle pt-3">
+                <summary class="text-sm font-semibold text-on-surface cursor-pointer flex items-center justify-between">
+                  ¿Tiene costo vincularse con la FIIS?
+                  <span class="material-symbols-outlined text-text-secondary group-open:rotate-180 transition-transform text-sm">expand_more</span>
+                </summary>
+                <p class="text-xs text-text-secondary mt-2 leading-relaxed">No. El convenio y el registro de la empresa son gratuitos. La empresa solo asume los costos propios del programa de prácticas o actividades que decida ofrecer.</p>
+              </details>
+              <details class="group border-t border-border-subtle pt-3">
+                <summary class="text-sm font-semibold text-on-surface cursor-pointer flex items-center justify-between">
+                  ¿Quién valida la información antes de publicarla?
+                  <span class="material-symbols-outlined text-text-secondary group-open:rotate-180 transition-transform text-sm">expand_more</span>
+                </summary>
+                <p class="text-xs text-text-secondary mt-2 leading-relaxed">El equipo de la Oficina de Empleabilidad y Vinculación Empresarial de la FIIS revisa y aprueba toda la información antes de ser visible en el portal.</p>
+              </details>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Contacto institucional -->
+      <div id="empresas-contacto" class="grid grid-cols-1 lg:grid-cols-5 gap-8 bg-surface-container-low rounded-2xl p-6 md:p-8">
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center">
+              <span class="material-symbols-outlined">mail</span>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold text-primary">Contacto para empresas</h2>
+          </div>
+          <p class="text-text-secondary text-sm leading-relaxed mb-6">
+            Si desea establecer una alianza, publicar vacantes o proponer eventos académicos,
+            complete el formulario y nuestro equipo de vinculación empresarial se comunicará con usted.
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-center gap-3 text-sm">
+              <div class="w-9 h-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-sm">mail</span>
+              </div>
+              <div>
+                <p class="text-xs text-text-secondary">Correo de contacto</p>
+                <p class="font-semibold text-on-surface text-sm">empresas@fiis.uni.edu.pe</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 text-sm">
+              <div class="w-9 h-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-sm">phone</span>
+              </div>
+              <div>
+                <p class="text-xs text-text-secondary">Teléfono</p>
+                <p class="font-semibold text-on-surface text-sm">(01) 481-1070 anexo 310</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 text-sm">
+              <div class="w-9 h-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-sm">schedule</span>
+              </div>
+              <div>
+                <p class="text-xs text-text-secondary">Atención</p>
+                <p class="font-semibold text-on-surface text-sm">Lun–Vie 9:00 a 17:00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-3 bg-white rounded-xl border border-border-subtle p-6 shadow-sm">
+          <form class="space-y-4" onsubmit="event.preventDefault();if(!this.checkValidity()){this.reportValidity();return;}this.innerHTML='<div class=\'text-center py-8\'><span class=\'material-symbols-outlined text-success\' style=\'font-size:48px\'>check_circle</span><p class=\'font-bold text-on-surface mt-3 text-base\'>Solicitud enviada</p><p class=\'text-sm text-text-secondary mt-1\'>Nuestro equipo de vinculación se comunicará con usted a la brevedad.</p></div>'">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-semibold text-on-surface mb-1.5">Nombre del contacto <span class="text-error">*</span></label>
+                <input type="text" placeholder="Ej: Carlos Mendoza" required class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-on-surface mb-1.5">Cargo <span class="text-error">*</span></label>
+                <input type="text" placeholder="Ej: Jefe de RRHH" required class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-semibold text-on-surface mb-1.5">Razón social <span class="text-error">*</span></label>
+                <input type="text" placeholder="Nombre legal de la empresa" required class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-on-surface mb-1.5">Rubro / Sector <span class="text-error">*</span></label>
+                <select required class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-white">
+                  <option value="" disabled selected>Seleccione un rubro</option>
+                  <option>Industrial / Manufactura</option>
+                  <option>Sistemas / Tecnología</option>
+                  <option>Logística / Supply Chain</option>
+                  <option>Banca / Finanzas</option>
+                  <option>Consultoría</option>
+                  <option>Energía / Minería</option>
+                  <option>Construcción / Infraestructura</option>
+                  <option>Otro</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-on-surface mb-1.5">Correo electrónico <span class="text-error">*</span></label>
+              <input type="email" placeholder="correo@empresa.com" required class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-on-surface mb-1.5">Tipo de interés <span class="text-error">*</span></label>
+              <div class="flex flex-wrap gap-2">
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" class="rounded border-border-subtle text-primary focus:ring-primary/20"> <span class="text-sm text-on-surface">Prácticas preprofesionales</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" class="rounded border-border-subtle text-primary focus:ring-primary/20"> <span class="text-sm text-on-surface">Ofertas laborales</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" class="rounded border-border-subtle text-primary focus:ring-primary/20"> <span class="text-sm text-on-surface">Convenio institucional</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" class="rounded border-border-subtle text-primary focus:ring-primary/20"> <span class="text-sm text-on-surface">Charla / Evento</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" class="rounded border-border-subtle text-primary focus:ring-primary/20"> <span class="text-sm text-on-surface">Proyecto de investigación</span>
+                </label>
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-on-surface mb-1.5">Mensaje</label>
+              <textarea rows="3" placeholder="Cuéntenos sobre su interés y cómo le gustaría vincularse con la FIIS..." class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"></textarea>
+            </div>
+            <div class="flex items-center justify-between pt-2">
+              <p class="text-[10px] text-text-secondary">Campos marcados con <span class="text-error">*</span> son obligatorios</p>
+              <button type="submit" class="inline-flex items-center gap-2 bg-primary text-on-primary px-6 py-2.5 rounded-lg font-semibold text-sm hover:brightness-110 transition-all active:scale-95">
+                <span class="material-symbols-outlined text-sm">send</span>
+                Enviar solicitud
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
 
     </div>
-    <!-- END directorio -->
+    <!-- END tab-empresa -->
 
-  </div>
+  </section>
+
+  <!-- Actualidad y Eventos de Empleabilidad (Bloque 1 Req 19) -->
+  <section class="max-w-[1200px] mx-auto px-6 md:px-8 pb-12">
+    <div class="flex items-center gap-4 mb-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-primary">Actualidad y Eventos de Empleabilidad</h2>
+      <div class="flex-grow h-px bg-border-subtle"></div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="empresas-news-feed">
+      <!-- Se inyecta dinámicamente por JS -->
+    </div>
+  </section>
 
 </div>
 
@@ -760,6 +1165,200 @@
   bindDirectorioSelect('directorio-vinculo-filter', function(value) { activeVinculo = value; });
   bindDirectorioSelect('directorio-estado-filter', function(value) { activeEstadoEmpresa = value; });
 
-  applyFilter();
+  // Oportunidades filters (R8, R9)
+  var activeOpCarrera = 'todas';
+  var activeOpRubro = 'todos';
+  var activeOpTipo = 'todos';
+  var activeOpModalidad = 'todas';
+  var activeOpEstado = 'todos';
+
+  function escFiis(s) {
+    return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function rubroFromCarreras(carreras) {
+    if ((carreras || []).indexOf('sistemas') !== -1 || (carreras || []).indexOf('software') !== -1 || (carreras || []).indexOf('ia') !== -1) return 'sistemas';
+    return 'industrial';
+  }
+
+  function carreraLabel(c) {
+    return ({ industrial: 'Ing. Industrial', sistemas: 'Ing. Sistemas', software: 'Ing. Software', ia: 'Int. Artificial' })[c] || c;
+  }
+
+  function modalidadLabel(m) {
+    return ({ presencial: 'Presencial', remoto: 'Remoto', hibrido: 'Hibrido' })[m] || m || '-';
+  }
+
+  function getStoreVacantesPublicas() {
+    if (typeof Store === 'undefined') return [];
+    if (typeof Store.getVacantesPublicas === 'function') {
+      return Store.getVacantesPublicas();
+    }
+    if (typeof Store.getVacantes === 'function') {
+      return Store.getVacantes().filter(function (v) {
+        return v.estado === 'activa' || v.estado === 'cerrando' || v.estado === 'cerrada';
+      });
+    }
+    return [];
+  }
+
+  function getStoreEventos() {
+    if (typeof Store === 'undefined' || typeof Store.getEventos !== 'function') return [];
+    return Store.getEventos();
+  }
+
+  function renderStoreVacantes() {
+    var grid = document.getElementById('op-grid');
+    if (!grid || typeof Store === 'undefined') return;
+    var vacantes = getStoreVacantesPublicas().filter(function (v) {
+      return !/^VAC-2024/.test(v.id);
+    });
+    if (vacantes.length === 0) return;
+    var html = vacantes.map(function (v) {
+      var estado = v.estado === 'cerrada' ? 'cerrado' : 'vigente';
+      var estadoLabel = estado === 'vigente' ? 'Vigente' : 'Cerrado';
+      var estadoCls = estado === 'vigente' ? 'bg-success/10 text-success' : 'bg-danger/10 text-danger';
+      var carreras = v.carreras || [];
+      var carreraData = carreras.join(' ') || 'industrial';
+      var carreraBadges = carreras.map(function (c) {
+        return '<span class="bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full text-[10px] font-semibold">' + escFiis(carreraLabel(c)) + '</span>';
+      }).join('');
+      var tipoLabel = v.tipo === 'empleo' ? 'Empleo' : 'Practica';
+      var tipoCls = v.tipo === 'empleo' ? 'bg-violet-50 text-violet-700' : 'bg-orange-50 text-orange-700';
+      var disabled = estado === 'cerrado';
+      return '<div class="op-card bg-white rounded-xl border border-primary/30 p-5 card-hover flex flex-col" data-op-carrera="' + escFiis(carreraData) + '" data-op-rubro="' + escFiis(rubroFromCarreras(carreras)) + '" data-op-tipo="' + escFiis(v.tipo || 'practica') + '" data-op-modalidad="' + escFiis(v.modalidad || 'presencial') + '" data-op-estado="' + estado + '">'
+        + '<div class="flex items-start justify-between mb-3"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm font-extrabold shrink-0">' + escFiis((v.empresa || 'E').charAt(0)) + '</div><div><p class="text-xs text-text-secondary">' + escFiis(v.empresa || 'Empresa') + '</p><h3 class="text-sm font-bold text-on-surface op-card-title">' + escFiis(v.cargo) + '</h3></div></div><span class="' + estadoCls + ' px-2 py-0.5 rounded-full text-[10px] font-semibold shrink-0">' + estadoLabel + '</span></div>'
+        + '<div class="flex flex-wrap gap-1.5 mb-3">' + carreraBadges + '<span class="' + tipoCls + ' px-2 py-0.5 rounded-full text-[10px] font-semibold">' + tipoLabel + '</span><span class="bg-amber-50 text-amber-700 px-2 py-0.5 rounded-full text-[10px] font-semibold">' + escFiis(modalidadLabel(v.modalidad)) + '</span></div>'
+        + '<p class="text-text-secondary text-xs mb-4 flex-grow op-card-description">' + escFiis(v.requisitos || 'Vacante aprobada por FIIS para la comunidad estudiantil y de egresados.') + '</p>'
+        + '<div class="flex items-center justify-between pt-3 border-t border-border-subtle mt-auto op-card-footer"><p class="text-text-secondary text-[10px] op-card-meta"><span class="material-symbols-outlined text-[10px] align-middle">calendar_today</span> Cierra: ' + escFiis(v.fechaLimite || '-') + '</p><button class="px-3 py-1.5 ' + (disabled ? 'bg-surface-container-high text-text-secondary cursor-not-allowed' : 'bg-primary text-on-primary hover:brightness-110 active:scale-95') + ' rounded-lg text-xs font-semibold transition-all"' + (disabled ? ' disabled' : '') + '>' + (disabled ? 'Cerrado' : 'Postular') + '</button></div>'
+        + '</div>';
+    }).join('');
+    grid.insertAdjacentHTML('afterbegin', html);
+  }
+
+  function renderStoreEventos() {
+    var grid = document.getElementById('actividades-grid');
+    if (!grid || typeof Store === 'undefined') return;
+    var eventos = getStoreEventos().filter(function (ev) {
+      return ev.estado === 'aprobado' && /^EVT-\d{10,}$/.test(ev.id);
+    });
+    if (eventos.length === 0) return;
+    var html = eventos.map(function (ev) {
+      var parts = (ev.fechaInicio || '').split('-');
+      var mes = parts.length === 3 ? parts[1] : '--';
+      var dia = parts.length === 3 ? parts[2] : '--';
+      return '<div class="bg-white rounded-xl border border-primary/30 p-5 card-hover flex gap-4"><div class="flex flex-col items-center justify-start w-14 shrink-0"><div class="bg-primary rounded-t-lg w-full text-center py-1"><p class="text-[10px] font-bold text-on-primary uppercase">' + escFiis(mes) + '</p></div><div class="bg-primary/10 rounded-b-lg w-full text-center py-1.5"><p class="text-2xl font-extrabold text-primary leading-none">' + escFiis(dia) + '</p></div></div><div><div class="flex flex-wrap gap-1.5 mb-2"><span class="bg-success/10 text-success px-2 py-0.5 rounded-full text-[10px] font-semibold">Aprobado</span><span class="bg-primary/10 text-primary px-2 py-0.5 rounded-full text-[10px] font-semibold">' + escFiis(ev.modalidad) + '</span></div><h3 class="font-bold text-on-surface">' + escFiis(ev.titulo) + '</h3><p class="text-text-secondary text-xs mt-1">' + escFiis(ev.empresa) + ' / ' + escFiis(ev.lugar || '-') + '</p><p class="text-text-secondary text-xs mt-2">' + escFiis(ev.descripcion || '') + '</p></div></div>';
+    }).join('');
+    grid.insertAdjacentHTML('afterbegin', html);
+  }
+
+  function applyOpFilter() {
+    var cards = document.querySelectorAll('.op-card');
+    var visible = 0;
+    cards.forEach(function(card) {
+      var cardCarreras = (card.dataset.opCarrera || '').split(/\s+/);
+      var matchC = activeOpCarrera === 'todas' || cardCarreras.indexOf(activeOpCarrera) !== -1;
+      var matchR = activeOpRubro === 'todos' || card.dataset.opRubro === activeOpRubro;
+      var matchT = activeOpTipo === 'todos' || card.dataset.opTipo === activeOpTipo;
+      var matchM = activeOpModalidad === 'todas' || card.dataset.opModalidad === activeOpModalidad;
+      var matchE = activeOpEstado === 'todos' || card.dataset.opEstado === activeOpEstado;
+      var show = matchC && matchR && matchT && matchM && matchE;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    var countEl = document.getElementById('op-count');
+    if (countEl) countEl.textContent = visible + (visible === 1 ? ' oportunidad' : ' oportunidades');
+    var noRes = document.getElementById('op-no-results');
+    if (noRes) noRes.classList.toggle('hidden', visible > 0);
+  }
+
+  function setActiveBtn(group, selected, shape) {
+    document.querySelectorAll('.' + group).forEach(function(b) {
+      if (shape === 'pill') {
+        b.classList.remove('bg-primary', 'text-on-primary', 'font-semibold');
+        b.classList.add('border', 'border-border-subtle', 'text-on-surface-variant', 'font-medium');
+      } else {
+        b.classList.remove('bg-primary', 'text-on-primary', 'font-semibold');
+        b.classList.add('border', 'border-border-subtle', 'text-on-surface-variant', 'font-medium');
+      }
+    });
+    selected.classList.remove('border', 'border-border-subtle', 'text-on-surface-variant', 'font-medium');
+    selected.classList.add('bg-primary', 'text-on-primary', 'font-semibold');
+  }
+
+  document.querySelectorAll('.op-carrera-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      setActiveBtn('op-carrera-btn', this, 'rect');
+      activeOpCarrera = this.dataset.opCarrera;
+      applyOpFilter();
+    });
+  });
+
+  document.querySelectorAll('.op-tipo-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      setActiveBtn('op-tipo-btn', this, 'pill');
+      activeOpTipo = this.dataset.opTipo;
+      applyOpFilter();
+    });
+  });
+
+  document.querySelectorAll('.op-rubro-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      setActiveBtn('op-rubro-btn', this, 'pill');
+      activeOpRubro = this.dataset.opRubro;
+      applyOpFilter();
+    });
+  });
+
+  document.querySelectorAll('.op-modalidad-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      setActiveBtn('op-modalidad-btn', this, 'pill');
+      activeOpModalidad = this.dataset.opModalidad;
+      applyOpFilter();
+    });
+  });
+
+  document.querySelectorAll('.op-estado-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      setActiveBtn('op-estado-btn', this, 'pill');
+      activeOpEstado = this.dataset.opEstadoFilter;
+      applyOpFilter();
+    });
+  });
+
+  renderStoreVacantes();
+  renderStoreEventos();
+  applyOpFilter();
+
+  var requestedSection = window.__empresasSection;
+  if (requestedSection) {
+    window.__empresasSection = null;
+    var sectionConfig = {
+      directorio: { tab: 'estudiante', targetId: 'empresas-directorio' },
+      actividades: { tab: 'estudiante', targetId: 'empresas-actividades' },
+      convenios: { tab: 'empresa', targetId: 'empresas-convenios' },
+      'soy-empresa': { tab: 'empresa', targetId: 'empresas-propuesta' },
+      contacto: { tab: 'empresa', targetId: 'empresas-contacto' }
+    };
+    var targetConfig = sectionConfig[requestedSection];
+    if (targetConfig) {
+      setTimeout(function() {
+        var tabBtn = document.querySelector('[data-tab="' + targetConfig.tab + '"]');
+        if (tabBtn) tabBtn.click();
+
+        if (targetConfig.tipo) {
+          var tipoBtn = document.querySelector('.op-tipo-btn[data-op-tipo="' + targetConfig.tipo + '"]');
+          if (tipoBtn) tipoBtn.click();
+        }
+
+        var targetEl = document.getElementById(targetConfig.targetId);
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          setTimeout(function() { window.scrollBy(0, -96); }, 120);
+        }
+      }, 80);
+    }
+  }
+
 })();
 </script>
