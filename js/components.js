@@ -102,7 +102,7 @@ const Components = {
           <div class="flex items-center gap-3">
             <img src="assets/logo-fiis.png" alt="FIIS" class="h-6 w-auto">
             <span class="w-px h-4 bg-border-subtle"></span>
-            <span class="text-text-secondary text-xs">© 2024 Facultad de Ingeniería Industrial y de Sistemas</span>
+            <span class="text-text-secondary text-xs">© 2026 Facultad de Ingeniería Industrial y de Sistemas</span>
           </div>
           <div class="flex gap-6">
             <a class="text-xs text-on-surface-variant hover:text-primary transition-colors" href="#">Contacto</a>

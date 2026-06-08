@@ -171,6 +171,18 @@ body { font-family: 'Inter', sans-serif; background-color: #E8E7EA; color: #1c1b
   .mini-carousel .carousel-btn{width:30px;height:30px}
 }
 
+/* Carousel de perfiles — misma altura que el panel de avisos */
+#usuariosCarousel,
+#usuariosCarousel .carousel-inner,
+#usuariosCarousel .carousel-slide,
+#usuariosCarousel .carousel-content{height:100%}
+#usuariosCarousel .carousel-slide,
+#usuariosCarousel .carousel-content{min-height:auto}
+@media(max-width:768px){
+  #usuariosCarousel .carousel-slide,
+  #usuariosCarousel .carousel-content{min-height:260px}
+}
+
 /* ===== Mobile Accordion ===== */
 .mobile-accordion-content {
   max-height: 0;
@@ -187,8 +199,15 @@ body { font-family: 'Inter', sans-serif; background-color: #E8E7EA; color: #1c1b
 #search-results a:not(:last-child){border-bottom:1px solid #EDECEF}
 @keyframes searchFadeIn{from{opacity:0}to{opacity:1}}
 
-.countdown{display:flex;gap:8px;align-items:center}
-.countdown-item{display:flex;flex-direction:column;align-items:center;min-width:40px}
-.countdown-number{font-size:18px;font-weight:800;color:#711610;line-height:1}
-.countdown-label{font-size:9px;color:#6B6B6B;text-transform:uppercase;letter-spacing:0.05em;margin-top:2px}
-.countdown-sep{font-size:18px;font-weight:700;color:#CDCCCF;margin:0 2px}
+.countdown{display:flex;gap:6px;align-items:center;flex-shrink:0}
+.countdown-item{display:flex;flex-direction:column;align-items:center;min-width:36px}
+.countdown-number{font-size:28px;font-weight:900;color:#711610;line-height:1}
+.countdown-label{font-size:10px;color:#6B6B6B;text-transform:uppercase;letter-spacing:0.05em;margin-top:2px;text-align:center}
+.countdown-sep{font-size:24px;font-weight:700;color:#CDCCCF;margin:0 1px}
+@media(max-width:640px){
+  .countdown{gap:4px}
+  .countdown-item{min-width:28px}
+  .countdown-number{font-size:20px}
+  .countdown-sep{font-size:18px}
+  .countdown-label{font-size:8px}
+}

@@ -33,6 +33,72 @@
       </div>
     </section>
 
+    <!-- Contador de próximos programas -->
+    <section class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl border border-primary/20 p-6 md:p-8 text-center">
+      <span class="material-symbols-outlined text-primary text-2xl mb-2 inline-block" style="font-variation-settings:'FILL'1;">rocket_launch</span>
+      <h2 class="text-lg font-bold text-primary mb-6">Próximos programas — Posgrado FIIS</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+        <!-- Maestría -->
+        <div class="bg-white rounded-xl border border-border-subtle p-5 card-hover">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2">
+            <span class="material-symbols-outlined text-primary">psychology</span>
+          </div>
+          <p class="text-sm font-bold text-on-surface leading-snug mb-1">Maestría en Inteligencia Artificial</p>
+          <p class="text-[11px] text-text-secondary mb-3">Inicia: 15 set 2026</p>
+          <div class="countdown justify-center" data-date="2026-09-15T00:00:00"></div>
+        </div>
+        <!-- Doctorado -->
+        <div class="bg-white rounded-xl border border-border-subtle p-5 card-hover">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2">
+            <span class="material-symbols-outlined text-primary">auto_stories</span>
+          </div>
+          <p class="text-sm font-bold text-on-surface leading-snug mb-1">Doctorado en Ingeniería de Sistemas</p>
+          <p class="text-[11px] text-text-secondary mb-3">Inicia: 22 set 2026</p>
+          <div class="countdown justify-center" data-date="2026-09-22T00:00:00"></div>
+        </div>
+        <!-- Diplomado -->
+        <div class="bg-white rounded-xl border border-border-subtle p-5 card-hover">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2">
+            <span class="material-symbols-outlined text-primary">workshop</span>
+          </div>
+          <p class="text-sm font-bold text-on-surface leading-snug mb-1">Diplomado en Project Management con IA</p>
+          <p class="text-[11px] text-text-secondary mb-3">Inicia: 08 ago 2026</p>
+          <div class="countdown justify-center" data-date="2026-08-08T00:00:00"></div>
+        </div>
+      </div>
+      <p class="text-xs text-text-secondary mt-5 flex items-center justify-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-success inline-block"></span>
+        Conoce todos los programas disponibles en las pestañas
+      </p>
+    </section>
+
+    <script>
+    (function(){
+      document.querySelectorAll('.countdown').forEach(function(el){
+        var targetDate = new Date(el.getAttribute('data-date')).getTime();
+        function update(){
+          var now = new Date().getTime();
+          var diff = targetDate - now;
+          if(diff <= 0){ el.innerHTML = '<span class="text-xs font-bold text-primary">Programa iniciado</span>'; return; }
+          var days = Math.floor(diff / (1000*60*60*24));
+          var hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+          var minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
+          var seconds = Math.floor((diff % (1000*60)) / 1000);
+          el.innerHTML =
+            '<div class="countdown-item"><span class="countdown-number">'+days+'</span><span class="countdown-label">Días</span></div>' +
+            '<span class="countdown-sep">:</span>' +
+            '<div class="countdown-item"><span class="countdown-number">'+String(hours).padStart(2,'0')+'</span><span class="countdown-label">Horas</span></div>' +
+            '<span class="countdown-sep">:</span>' +
+            '<div class="countdown-item"><span class="countdown-number">'+String(minutes).padStart(2,'0')+'</span><span class="countdown-label">Min</span></div>' +
+            '<span class="countdown-sep">:</span>' +
+            '<div class="countdown-item"><span class="countdown-number">'+String(seconds).padStart(2,'0')+'</span><span class="countdown-label">Seg</span></div>';
+        }
+        update();
+        setInterval(update, 1000);
+      });
+    })();
+    </script>
+
     <div class="flex border-b border-border-subtle gap-0 overflow-x-auto">
       <button class="px-6 py-4 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 transition-colors whitespace-nowrap" data-tab="maestrias">Maestrías</button>
       <button class="px-6 py-4 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-tab="doctorados">Doctorados</button>
