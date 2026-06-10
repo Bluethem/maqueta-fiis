@@ -231,7 +231,7 @@ Router.add('/docentes/:id', (id) => routePublicDetailDocente(id));
 async function routePublicDetailDocente(id) {
   window.__DOCENTE_ID = id;
   const html = await loadPage('docente-perfil');
-  renderPublicPage(html);
+  renderPublicLayout(html, '/directorio-docentes');
 }
 Router.add('/guias-academicas', () => routePublic('guias-academicas'));
 Router.add('/guias-procedimientos', () => routePublic('guias-procedimientos'));

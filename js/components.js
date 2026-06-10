@@ -100,7 +100,7 @@ const Components = {
       <footer class="w-full py-6 px-6 bg-surface-container-high border-t border-border-subtle">
         <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <div class="flex items-center gap-3">
-            <img src="assets/logo-fiis.png" alt="FIIS" class="h-6 w-auto">
+            <img src="assets/fiis-logo.png" alt="FIIS UNI" class="h-7 w-auto">
             <span class="w-px h-4 bg-border-subtle"></span>
             <span class="text-text-secondary text-xs">© 2026 Facultad de Ingeniería Industrial y de Sistemas</span>
           </div>

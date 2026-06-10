@@ -1,139 +1,381 @@
 const MEGA_MENU = [
   {
-    label: 'Facultad', icon: 'account_balance', route: '/facultad',
+    label: "Facultad",
+    icon: "account_balance",
+    route: "/facultad",
     children: [
-      { col: 0, title: 'La Facultad', items: [
-        { label: 'Nuestra Facultad', route: '/facultad', icon: 'school' },
-        { label: 'Autoridades', route: '/autoridades', icon: 'group' },
-        { label: 'Organigrama', route: '/organigrama', icon: 'account_tree' },
-      ]},
-      { col: 1, title: 'Gestión', items: [
-        { label: 'Oficina de Acreditación', route: '/acreditacion', icon: 'verified' },
-        { label: 'Portal de Transparencia', route: '/transparencia', icon: 'visibility' },
-        { label: 'Noticias FIIS', route: '/noticias', icon: 'newspaper' },
-        { label: 'Directorio Docentes', route: '/directorio-docentes', icon: 'badge' },
-      ]}
-    ]
+      {
+        col: 0,
+        title: "La Facultad",
+        items: [
+          { label: "Nuestra Facultad", route: "/facultad", icon: "school" },
+          { label: "Autoridades", route: "/autoridades", icon: "group" },
+          { label: "Organigrama", route: "/organigrama", icon: "account_tree" },
+        ],
+      },
+      {
+        col: 1,
+        title: "Gestión",
+        items: [
+          {
+            label: "Oficina de Acreditación",
+            route: "/acreditacion",
+            icon: "verified",
+          },
+          {
+            label: "Portal de Transparencia",
+            route: "/transparencia",
+            icon: "visibility",
+          },
+          { label: "Noticias FIIS", route: "/noticias", icon: "newspaper" },
+          {
+            label: "Directorio Docentes",
+            route: "/directorio-docentes",
+            icon: "badge",
+          },
+        ],
+      },
+    ],
   },
   {
-    label: 'Académico', icon: 'menu_book', route: '/academico',
+    label: "Académico",
+    icon: "menu_book",
+    route: "/academico",
     children: [
-      { col: 0, title: 'Escuelas Profesionales', items: [
-        { label: 'Ing. Industrial', route: '/escuelas/industrial', icon: 'precision_manufacturing' },
-        { label: 'Ing. de Sistemas', route: '/escuelas/sistemas', icon: 'computer' },
-        { label: 'Ing. de Software', route: '/escuelas/software', icon: 'terminal' },
-        { label: 'Ing. en Inteligencia Artificial', route: '/escuelas/inteligencia-artificial', icon: 'psychology' },
-      ]},
-      { col: 1, title: 'Departamentos', items: [
-        { label: 'Ciencias Básicas', route: '/departamentos/ciencias-basicas', icon: 'functions' },
-        { label: 'Gestión de la Producción', route: '/departamentos/gestion-produccion', icon: 'precision_manufacturing' },
-        { label: 'Humanidades', route: '/departamentos/humanidades', icon: 'psychology' },
-        { label: 'Sistemas y Telemática', route: '/departamentos/sistemas-telematica', icon: 'router' },
-        { label: 'Tecnología de la Producción', route: '/departamentos/tecnologia-produccion', icon: 'biotech' },
-      ]},
-      { col: 0, title: 'Recursos', items: [
-        { label: 'Cronogramas', route: '/cronogramas', icon: 'calendar_month' },
-      ]}
-    ]
+      {
+        col: 0,
+        title: "Escuelas Profesionales",
+        items: [
+          {
+            label: "Ing. Industrial",
+            route: "/escuelas/industrial",
+            icon: "precision_manufacturing",
+          },
+          {
+            label: "Ing. de Sistemas",
+            route: "/escuelas/sistemas",
+            icon: "computer",
+          },
+          {
+            label: "Ing. de Software",
+            route: "/escuelas/software",
+            icon: "terminal",
+          },
+          {
+            label: "Ing. en Inteligencia Artificial",
+            route: "/escuelas/inteligencia-artificial",
+            icon: "psychology",
+          },
+        ],
+      },
+      {
+        col: 1,
+        title: "Departamentos",
+        items: [
+          {
+            label: "Ciencias Básicas",
+            route: "/departamentos/ciencias-basicas",
+            icon: "functions",
+          },
+          {
+            label: "Gestión de la Producción",
+            route: "/departamentos/gestion-produccion",
+            icon: "precision_manufacturing",
+          },
+          {
+            label: "Humanidades",
+            route: "/departamentos/humanidades",
+            icon: "psychology",
+          },
+          {
+            label: "Sistemas y Telemática",
+            route: "/departamentos/sistemas-telematica",
+            icon: "router",
+          },
+          {
+            label: "Tecnología de la Producción",
+            route: "/departamentos/tecnologia-produccion",
+            icon: "biotech",
+          },
+        ],
+      },
+      {
+        col: 0,
+        title: "Recursos",
+        items: [
+          {
+            label: "Cronogramas",
+            route: "/cronogramas",
+            icon: "calendar_month",
+          },
+        ],
+      },
+    ],
   },
   {
-    label: 'Posgrado', icon: 'school', route: '/posgrado',
+    label: "Posgrado",
+    icon: "school",
+    route: "/posgrado",
     children: [
-      { col: 0, title: 'Maestrías', items: [
-        { label: 'Ingeniería Industrial', route: '/posgrado/maestria-industrial', icon: 'precision_manufacturing' },
-        { label: 'Ingeniería de Sistemas', route: '/posgrado/maestria-sistemas', icon: 'computer' },
-        { label: 'Inteligencia Artificial', route: '/posgrado/maestria-ia', icon: 'psychology' },
-        { label: 'Supply Chain Management', route: '/posgrado/maestria-supply-chain', icon: 'local_shipping' },
-        { label: 'Business Analytics e IA Aplicada', route: '/posgrado/maestria-business-analytics', icon: 'analytics' },
-        { label: 'Gestión de Operaciones', route: '/posgrado/maestria-gestion-operaciones', icon: 'settings' },
-      ]},
-      { col: 1, title: 'Doctorados', items: [
-        { label: 'Doctorado en Ingeniería Industrial', route: '/posgrado/doctorado-industrial', icon: 'auto_stories' },
-        { label: 'Doctorado en Ingeniería de Sistemas', route: '/posgrado/doctorado-sistemas', icon: 'auto_stories' },
-      ]},
-      { col: 1, title: 'Otros Programas', items: [
-        { label: 'Diplomados', route: '/posgrado/diplomados', icon: 'workshop' },
-        { label: 'Información General', route: '/posgrado', icon: 'info' },
-      ]}
-    ]
+      {
+        col: 0,
+        title: "Maestrías",
+        items: [
+          {
+            label: "Ingeniería Industrial",
+            route: "/posgrado/maestria-industrial",
+            icon: "precision_manufacturing",
+          },
+          {
+            label: "Ingeniería de Sistemas",
+            route: "/posgrado/maestria-sistemas",
+            icon: "computer",
+          },
+          {
+            label: "Inteligencia Artificial",
+            route: "/posgrado/maestria-ia",
+            icon: "psychology",
+          },
+          {
+            label: "Supply Chain Management",
+            route: "/posgrado/maestria-supply-chain",
+            icon: "local_shipping",
+          },
+          {
+            label: "Business Analytics e IA Aplicada",
+            route: "/posgrado/maestria-business-analytics",
+            icon: "analytics",
+          },
+          {
+            label: "Gestión de Operaciones",
+            route: "/posgrado/maestria-gestion-operaciones",
+            icon: "settings",
+          },
+        ],
+      },
+      {
+        col: 1,
+        title: "Doctorados",
+        items: [
+          {
+            label: "Doctorado en Ingeniería Industrial",
+            route: "/posgrado/doctorado-industrial",
+            icon: "auto_stories",
+          },
+          {
+            label: "Doctorado en Ingeniería de Sistemas",
+            route: "/posgrado/doctorado-sistemas",
+            icon: "auto_stories",
+          },
+        ],
+      },
+      {
+        col: 1,
+        title: "Otros Programas",
+        items: [
+          {
+            label: "Diplomados",
+            route: "/posgrado/diplomados",
+            icon: "workshop",
+          },
+          { label: "Información General", route: "/posgrado", icon: "info" },
+        ],
+      },
+    ],
   },
   {
-    label: 'Servicios', icon: 'support', route: '/servicios',
+    label: "Servicios",
+    icon: "support",
+    route: "/servicios",
     children: [
-      { col: 0, title: 'Plataformas', items: [
-        { label: 'Aula Virtual', route: '#', icon: 'computer' },
-        { label: 'Correo UNI', route: '#', icon: 'mail' },
-        { label: 'Yachay (Intranet Docente)', route: 'https://docentes.uni.edu.pe/login', icon: 'school', external: true },
-        { label: 'Biblioteca KOHA', route: '/centro-informacion', icon: 'library_books' },
-        { label: 'Mesa de Partes', route: '#', icon: 'mail' },
-      ]},
-      { col: 1, title: 'Atención', items: [
-        { label: 'Tutoría FIIS', route: '/tutoria', icon: 'support' },
-        { label: 'UECPS', route: '/uecps', icon: 'public' },
-        { label: 'Centro de Información', route: '/centro-informacion', icon: 'library_books' },
-        { label: 'Repositorio Central', route: '/repositorio', icon: 'folder_open' },
-        { label: 'Guía y Procedimientos', route: '/guias-procedimientos', icon: 'description' },
-      ]},
-      { col: 2, title: 'Extensión', items: [
-        { label: 'Sistemas UNI', route: '#', icon: 'computer' },
-        { label: 'Consult FIIS', route: '/consult-fiis', icon: 'handshake' },
-        { label: 'CEE', route: '/cee', icon: 'school' },
-      ]}
-    ]
+      {
+        col: 0,
+        title: "Plataformas",
+        items: [
+          { label: "Aula Virtual", route: "#", icon: "computer" },
+          { label: "Correo UNI", route: "#", icon: "mail" },
+          {
+            label: "Yachay (Intranet Docente)",
+            route: "https://docentes.uni.edu.pe/login",
+            icon: "school",
+            external: true,
+          },
+          {
+            label: "Biblioteca KOHA",
+            route: "/centro-informacion",
+            icon: "library_books",
+          },
+          { label: "Mesa de Partes", route: "#", icon: "mail" },
+        ],
+      },
+      {
+        col: 1,
+        title: "Atención",
+        items: [
+          { label: "Tutoría FIIS", route: "/tutoria", icon: "school" },
+          { label: "UECPS", route: "/uecps", icon: "public" },
+          {
+            label: "Centro de Información",
+            route: "/centro-informacion",
+            icon: "library_books",
+          },
+          {
+            label: "Repositorio Central",
+            route: "/repositorio",
+            icon: "folder",
+          },
+          {
+            label: "Guía y Procedimientos",
+            route: "/guias-procedimientos",
+            icon: "description",
+          },
+        ],
+      },
+      {
+        col: 2,
+        title: "Extensión",
+        items: [
+          { label: "Sistemas UNI", route: "#", icon: "computer" },
+          { label: "Consult FIIS", route: "/consult-fiis", icon: "handshake" },
+          { label: "CEE", route: "/cee", icon: "school" },
+        ],
+      },
+    ],
   },
   {
-    label: 'Calendario', icon: 'calendar_month',
-    route: '/calendario'
+    label: "Calendario",
+    icon: "calendar_month",
+    route: "/calendario",
   },
   {
-    label: 'Comunidad', icon: 'groups', route: '/comunidad',
+    label: "Comunidad",
+    icon: "groups",
+    route: "/comunidad",
     children: [
-      { col: 0, title: 'Organismos de la Facultad', items: [
-        { label: 'CEIIS', route: '/comunidad/ceiis', icon: 'group' },
-        { label: 'TEFIIS', route: '/comunidad/tefiis', icon: 'how_to_vote' },
-        { label: 'Delegaturas', route: '/comunidad/delegatura-industrial', icon: 'diversity_3' },
-      ]},
-      { col: 1, title: 'Agrupaciones Estudiantiles', items: [
-        { label: 'UNICODE', route: '/comunidad/unicode', icon: 'code' },
-        { label: 'CIBERSEC', route: '/comunidad/cibersec', icon: 'shield' },
-        { label: 'Núcleo', route: '/comunidad/nucleo', icon: 'data_object' },
-        { label: 'CCAT', route: '/comunidad/ccat', icon: 'palette' },
-        { label: 'Directorio Completo', route: '/comunidad', icon: 'groups' },
-      ]}
-    ]
+      {
+        col: 0,
+        title: "Organismos de la Facultad",
+        items: [
+          { label: "CEIIS", route: "/comunidad/ceiis", icon: "group" },
+          { label: "TEFIIS", route: "/comunidad/tefiis", icon: "how_to_vote" },
+          {
+            label: "Delegaturas",
+            route: "/comunidad/delegatura-industrial",
+            icon: "diversity_3",
+          },
+        ],
+      },
+      {
+        col: 1,
+        title: "Agrupaciones Estudiantiles",
+        items: [
+          { label: "UNICODE", route: "/comunidad/unicode", icon: "code" },
+          { label: "CIBERSEC", route: "/comunidad/cibersec", icon: "shield" },
+          { label: "Núcleo", route: "/comunidad/nucleo", icon: "data_object" },
+          { label: "CCAT", route: "/comunidad/ccat", icon: "palette" },
+          { label: "Directorio Completo", route: "/comunidad", icon: "groups" },
+        ],
+      },
+    ],
   },
   {
-    label: 'Investigación', icon: 'science', route: '/investigacion',
+    label: "Investigación",
+    icon: "science",
+    route: "/investigacion",
     children: [
-      { col: 0, title: 'Laboratorios', items: [
-        { label: 'Laboratorio de IA', route: '/laboratorio-ia', icon: 'psychology' },
-        { label: 'Laboratorio de Química', route: '/laboratorio-quimica', icon: 'biotech' },
-        { label: 'Laboratorio Académico y Red FIIS', route: '/laboratorio-academico', icon: 'router' },
-      ]},
-      { col: 1, title: 'Centros e Instituto', items: [
-        { label: 'Instituto de Investigación', route: '/instituto-investigacion', icon: 'science' },
-        { label: 'Centro de Automatización Industrial', route: '/centro-automatizacion', icon: 'precision_manufacturing' },
-      ]},
-      { col: 1, title: 'Recursos', items: [
-        { label: 'IIFIIS', route: '/iifiis', icon: 'auto_stories' },
-        { label: 'Proyectos Destacados', route: '/proyectos-destacados', icon: 'star' },
-      ]}
-    ]
+      {
+        col: 0,
+        title: "Laboratorios",
+        items: [
+          {
+            label: "Laboratorio de IA",
+            route: "/laboratorio-ia",
+            icon: "psychology",
+          },
+          {
+            label: "Laboratorio de Química",
+            route: "/laboratorio-quimica",
+            icon: "biotech",
+          },
+          {
+            label: "Laboratorio Académico y Red FIIS",
+            route: "/laboratorio-academico",
+            icon: "router",
+          },
+        ],
+      },
+      {
+        col: 1,
+        title: "Centros e Instituto",
+        items: [
+          {
+            label: "Instituto de Investigación",
+            route: "/instituto-investigacion",
+            icon: "science",
+          },
+          {
+            label: "Centro de Automatización Industrial",
+            route: "/centro-automatizacion",
+            icon: "precision_manufacturing",
+          },
+        ],
+      },
+      {
+        col: 1,
+        title: "Recursos",
+        items: [
+          { label: "IIFIIS", route: "/iifiis", icon: "auto_stories" },
+          {
+            label: "Proyectos Destacados",
+            route: "/proyectos-destacados",
+            icon: "star",
+          },
+        ],
+      },
+    ],
   },
   {
-    label: 'Egresados', icon: 'school', route: '/egresados'
+    label: "Egresados",
+    icon: "school",
+    route: "/egresados",
   },
   {
-    label: 'Empresas', icon: 'work', route: '/empresas',
+    label: "Empresas",
+    icon: "work",
+    route: "/empresas",
     children: [
-      { col: 0, title: 'Módulo Empresas', items: [
-        { label: 'Directorio de Empresas', route: '/empresas/directorio', icon: 'handshake' },
-        { label: 'Bolsa de Trabajo', route: '/empresas/bolsa-trabajo', icon: 'work' },
-        { label: 'Actividades Empresariales', route: '/empresas/actividades', icon: 'event' },
-        { label: 'Convenios Vigentes', route: '/empresas/convenios', icon: 'description' },
-        { label: 'Soy Empresa', route: '/empresas/soy-empresa', icon: 'partner_exchange' },
-      ]}
-    ]
+      {
+        col: 0,
+        title: "Módulo Empresas",
+        items: [
+          {
+            label: "Directorio de Empresas",
+            route: "/empresas/directorio",
+            icon: "handshake",
+          },
+          {
+            label: "Bolsa de Trabajo",
+            route: "/empresas/bolsa-trabajo",
+            icon: "work",
+          },
+          {
+            label: "Actividades Empresariales",
+            route: "/empresas/actividades",
+            icon: "event",
+          },
+          {
+            label: "Convenios Vigentes",
+            route: "/empresas/convenios",
+            icon: "description",
+          },
+          {
+            label: "Soy Empresa",
+            route: "/empresas/soy-empresa",
+            icon: "partner_exchange",
+          },
+        ],
+      },
+    ],
   },
 ];
 
@@ -146,21 +388,23 @@ const Router = {
   },
 
   async navigate(path) {
-    window.location.hash = '#' + path;
+    window.location.hash = "#" + path;
   },
 
   async resolve() {
-    const hash = window.location.hash.slice(1) || '/';
+    const hash = window.location.hash.slice(1) || "/";
     if (hash === this.currentPath) return;
     this.currentPath = hash;
 
-    const app = document.getElementById('app');
-    app.classList.remove('page-enter');
+    const app = document.getElementById("app");
+    app.classList.remove("page-enter");
 
     let handler = this.routes[hash];
     if (!handler) {
       for (const [pattern, fn] of Object.entries(this.routes)) {
-        const regex = new RegExp('^' + pattern.replace(/:\w+/g, '([\\w-]+)') + '$');
+        const regex = new RegExp(
+          "^" + pattern.replace(/:\w+/g, "([\\w-]+)") + "$",
+        );
         if (regex.test(hash)) {
           const match = hash.match(regex);
           handler = () => fn(...match.slice(1));
@@ -168,26 +412,30 @@ const Router = {
         }
       }
     }
-    if (!handler) handler = this.routes['404'] || (() => app.innerHTML = '<h1>404</h1>');
+    if (!handler)
+      handler = this.routes["404"] || (() => (app.innerHTML = "<h1>404</h1>"));
 
     await handler();
-    app.classList.add('page-enter');
+    app.classList.add("page-enter");
     window.scrollTo(0, 0);
   },
 
   init() {
-    window.addEventListener('hashchange', () => this.resolve());
+    window.addEventListener("hashchange", () => this.resolve());
     this.resolve();
-  }
+  },
 };
 
 async function loadPage(path) {
   try {
-    if (path.startsWith('/')) path = path.slice(1);
-    if (!path.endsWith('.html')) path += '.html';
-    const cb = typeof loadPageCacheBuster !== 'undefined' ? loadPageCacheBuster : Date.now();
-    const res = await fetch(`pages/${path}?v=${cb}`, { cache: 'no-cache' });
-    if (!res.ok) throw new Error('Not found');
+    if (path.startsWith("/")) path = path.slice(1);
+    if (!path.endsWith(".html")) path += ".html";
+    const cb =
+      typeof loadPageCacheBuster !== "undefined"
+        ? loadPageCacheBuster
+        : Date.now();
+    const res = await fetch(`pages/${path}?v=${cb}`, { cache: "no-cache" });
+    if (!res.ok) throw new Error("Not found");
     return await res.text();
   } catch {
     return '<div class="p-8 text-center"><h2 class="text-headline-lg text-primary">Página no encontrada</h2></div>';
@@ -195,56 +443,76 @@ async function loadPage(path) {
 }
 
 function navbar(active) {
-    const items = MEGA_MENU.map(item => {
+  const items = MEGA_MENU.map((item) => {
     const hasChildren = item.children && item.children.length > 0;
     const isSimpleLink = item.route && !hasChildren;
     if (isSimpleLink) {
-      const isPortal = item.route === '/login';
+      const isPortal = item.route === "/login";
       const cls = isPortal
-        ? 'text-sm bg-brand-cream text-primary font-bold px-4 py-1.5 rounded-lg hover:brightness-95 transition-all'
-        : `text-sm ${item.route === active ? 'text-primary font-bold' : 'text-on-surface-variant hover:text-primary'} transition-colors`;
+        ? "text-sm bg-brand-cream text-primary font-bold px-4 py-1.5 rounded-lg hover:brightness-95 transition-all"
+        : `text-sm ${item.route === active ? "text-primary font-bold" : "text-on-surface-variant hover:text-primary"} transition-colors`;
       return `<a class="${cls}" href="#${item.route}">${item.label}</a>`;
     }
     if (hasChildren) {
       const cols = item.children || [];
-      const maxCol = Math.max(...cols.map(c => c.col + 1), 1);
+      const maxCol = Math.max(...cols.map((c) => c.col + 1), 1);
       const gridCols = Math.min(maxCol, 3);
-      const sizeClass = gridCols <= 1 ? 'mega-dropdown-sm' : gridCols <= 2 ? 'mega-dropdown-md' : '';
+      const sizeClass =
+        gridCols <= 1
+          ? "mega-dropdown-sm"
+          : gridCols <= 2
+            ? "mega-dropdown-md"
+            : "";
       const sortedCols = [];
-      cols.forEach(c => { if (!sortedCols[c.col]) sortedCols[c.col] = []; sortedCols[c.col].push(c); });
-      const colHtml = sortedCols.map(colItems => {
-        return `<div class="mega-col">${colItems.map(c => `
-          ${c.title ? `<span class="mega-col-title">${c.title}</span>` : ''}
-          ${c.items.map(sub => {
-            const href = sub.external ? sub.route : '#' + sub.route;
-            return `<a class="mega-link" href="${href}"${sub.external ? ' target="_blank" rel="noopener"' : ''}>
+      cols.forEach((c) => {
+        if (!sortedCols[c.col]) sortedCols[c.col] = [];
+        sortedCols[c.col].push(c);
+      });
+      const colHtml = sortedCols
+        .map((colItems) => {
+          return `<div class="mega-col">${colItems
+            .map(
+              (c) => `
+          ${c.title ? `<span class="mega-col-title">${c.title}</span>` : ""}
+          ${c.items
+            .map((sub) => {
+              const href = sub.external ? sub.route : "#" + sub.route;
+              return `<a class="mega-link" href="${href}"${sub.external ? ' target="_blank" rel="noopener"' : ""}>
               <span class="material-symbols-outlined">${sub.icon}</span>${sub.label}
             </a>`;
-          }).join('')}
-        `).join('')}</div>`;
-      }).join('');
+            })
+            .join("")}
+        `,
+            )
+            .join("")}</div>`;
+        })
+        .join("");
       const trigger = item.route
         ? `<a class="mega-trigger text-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1" href="#${item.route}">${item.label} <span class="material-symbols-outlined text-sm">expand_more</span></a>`
         : `<span class="mega-trigger text-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1">${item.label} <span class="material-symbols-outlined text-sm">expand_more</span></span>`;
       return `<div class="mega-nav">${trigger}<div class="mega-dropdown ${sizeClass}"><div class="mega-grid" style="grid-template-columns:repeat(${gridCols},1fr)">${colHtml}</div></div></div>`;
     }
-    return '';
-  }).join('');
-  const mobileItems = MEGA_MENU.map(item => {
+    return "";
+  }).join("");
+  const mobileItems = MEGA_MENU.map((item) => {
     const hasChildren = item.children && item.children.length > 0;
-    const icon = item.icon || 'link';
+    const icon = item.icon || "link";
     if (!hasChildren && item.route) {
       return `<a class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-colors" href="#${item.route}">
         <span class="material-symbols-outlined text-primary text-lg">${icon}</span>${item.label}
       </a>`;
     }
     if (hasChildren) {
-      const links = item.children.flatMap(c => (c.items || []).map(sub => {
-        const href = sub.external ? sub.route : '#' + sub.route;
-        return `<a class="flex items-center gap-3 px-3 py-2 text-sm text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-colors" href="${href}"${sub.external ? ' target="_blank" rel="noopener"' : ''}>
+      const links = item.children
+        .flatMap((c) =>
+          (c.items || []).map((sub) => {
+            const href = sub.external ? sub.route : "#" + sub.route;
+            return `<a class="flex items-center gap-3 px-3 py-2 text-sm text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-colors" href="${href}"${sub.external ? ' target="_blank" rel="noopener"' : ""}>
           <span class="material-symbols-outlined text-primary text-base">${sub.icon}</span>${sub.label}
         </a>`;
-      })).join('');
+          }),
+        )
+        .join("");
       return `<div class="mobile-accordion-item">
         <button class="mobile-accordion-trigger flex items-center justify-between w-full px-3 py-2.5 text-sm font-semibold text-on-surface hover:bg-surface-container-low rounded-lg transition-colors" type="button">
           <span class="flex items-center gap-3">
@@ -257,16 +525,14 @@ function navbar(active) {
         </div>
       </div>`;
     }
-    return '';
-  }).join('');
+    return "";
+  }).join("");
   return `
     <nav class="bg-surface border-b border-border-subtle sticky top-0 z-50">
       <div class="flex justify-between items-center w-full px-6 max-w-[1200px] mx-auto h-16">
         <div class="flex items-center gap-2 lg:gap-6">
           <a href="#/" class="flex items-center gap-2 shrink-0">
-            <img src="assets/Uni-logo_transparente_granate.png" alt="UNI" class="h-7 w-auto">
-            <span class="hidden sm:block w-px h-5 bg-border-subtle"></span>
-            <img src="assets/logo-fiis.png" alt="FIIS" class="hidden sm:block h-7 w-auto">
+            <img src="assets/fiis-logo.png" alt="FIIS UNI" class="h-8 w-auto">
           </a>
           <div class="hidden lg:flex items-center gap-4 xl:gap-5 text-sm font-medium">${items}</div>
         </div>
@@ -321,9 +587,7 @@ function publicFooter() {
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-16">
           <div>
             <span class="flex items-center gap-3 mb-6">
-              <img src="assets/Uni-logo_transparente_granate.png" alt="UNI" class="h-10 w-auto">
-              <span class="w-px h-8 bg-border-subtle"></span>
-              <img src="assets/logo-fiis.png" alt="FIIS" class="h-10 w-auto">
+              <img src="assets/fiis-logo.png" alt="FIIS UNI" class="h-12 w-auto">
             </span>
             <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Facultad de Ingeniería Industrial y de Sistemas — Universidad Nacional de Ingeniería.</p>
             <div class="flex gap-3">
@@ -420,35 +684,41 @@ function publicFooter() {
 function renderPublicLayout(content, activeSection) {
   const html = navbar(activeSection) + content + publicFooter();
   const scripts = extractScripts(html);
-  document.getElementById('app').innerHTML = html;
+  document.getElementById("app").innerHTML = html;
   executeScripts(scripts);
   bindDynamicHandlers();
   initSearch();
-  if (typeof FAQ !== 'undefined') FAQ.init();
-  const toggle = document.getElementById('nav-menu-toggle');
-  const mobileNav = document.getElementById('mobile-nav');
+  if (typeof FAQ !== "undefined") FAQ.init();
+  const toggle = document.getElementById("nav-menu-toggle");
+  const mobileNav = document.getElementById("mobile-nav");
   if (toggle && mobileNav) {
     const closeMobileNav = () => {
-      mobileNav.classList.add('hidden');
-      document.body.style.overflow = '';
+      mobileNav.classList.add("hidden");
+      document.body.style.overflow = "";
     };
     const openMobileNav = () => {
-      mobileNav.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
+      mobileNav.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
     };
-    toggle.addEventListener('click', (e) => {
+    toggle.addEventListener("click", (e) => {
       e.stopPropagation();
-      if (mobileNav.classList.contains('hidden')) openMobileNav();
+      if (mobileNav.classList.contains("hidden")) openMobileNav();
       else closeMobileNav();
     });
-    mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', closeMobileNav);
+    mobileNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMobileNav);
     });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !mobileNav.classList.contains('hidden')) closeMobileNav();
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !mobileNav.classList.contains("hidden"))
+        closeMobileNav();
     });
-    document.addEventListener('click', (e) => {
-      if (!mobileNav.classList.contains('hidden') && !mobileNav.contains(e.target) && e.target !== toggle) closeMobileNav();
+    document.addEventListener("click", (e) => {
+      if (
+        !mobileNav.classList.contains("hidden") &&
+        !mobileNav.contains(e.target) &&
+        e.target !== toggle
+      )
+        closeMobileNav();
     });
   }
   bindMobileAccordion();
@@ -456,11 +726,11 @@ function renderPublicLayout(content, activeSection) {
 
 function renderPublicPage(html) {
   const scripts = extractScripts(html);
-  document.getElementById('app').innerHTML = html;
+  document.getElementById("app").innerHTML = html;
   executeScripts(scripts);
   bindDynamicHandlers();
   initSearch();
-  if (typeof FAQ !== 'undefined') FAQ.init();
+  if (typeof FAQ !== "undefined") FAQ.init();
 }
 
 async function renderDashboard(role, html) {
@@ -479,97 +749,129 @@ function extractScripts(html) {
 }
 
 function executeScripts(scripts) {
-  scripts.forEach(code => {
+  scripts.forEach((code) => {
     if (!code.trim()) return;
     try {
-      const el = document.createElement('script');
+      const el = document.createElement("script");
       el.textContent = code;
       document.body.appendChild(el);
       document.body.removeChild(el);
     } catch (e) {
-      console.warn('Script exec error:', e);
+      console.warn("Script exec error:", e);
     }
   });
 }
 
 function bindDynamicHandlers() {
-  const app = document.getElementById('app');
+  const app = document.getElementById("app");
   if (!app) return;
 
-  app.querySelectorAll('.cat-btn').forEach(btn => {
-    btn.removeEventListener('click', toggleTreeHandler);
-    btn.addEventListener('click', toggleTreeHandler);
+  app.querySelectorAll(".cat-btn").forEach((btn) => {
+    btn.removeEventListener("click", toggleTreeHandler);
+    btn.addEventListener("click", toggleTreeHandler);
   });
 
-  app.querySelectorAll('[data-tab]').forEach(btn => {
-    btn.removeEventListener('click', tabHandler);
-    btn.addEventListener('click', tabHandler);
+  app.querySelectorAll("[data-tab]").forEach((btn) => {
+    btn.removeEventListener("click", tabHandler);
+    btn.addEventListener("click", tabHandler);
   });
 }
 
 function initSearch() {
-  if (document.getElementById('btn-search')) {
-    document.getElementById('btn-search').removeEventListener('click', searchToggleHandler);
-    document.getElementById('btn-search').addEventListener('click', searchToggleHandler);
+  if (document.getElementById("btn-search")) {
+    document
+      .getElementById("btn-search")
+      .removeEventListener("click", searchToggleHandler);
+    document
+      .getElementById("btn-search")
+      .addEventListener("click", searchToggleHandler);
   }
-  if (document.getElementById('btn-search-close')) {
-    document.getElementById('btn-search-close').removeEventListener('click', searchCloseHandler);
-    document.getElementById('btn-search-close').addEventListener('click', searchCloseHandler);
+  if (document.getElementById("btn-search-close")) {
+    document
+      .getElementById("btn-search-close")
+      .removeEventListener("click", searchCloseHandler);
+    document
+      .getElementById("btn-search-close")
+      .addEventListener("click", searchCloseHandler);
   }
-  if (document.getElementById('search-backdrop')) {
-    document.getElementById('search-backdrop').removeEventListener('click', searchCloseHandler);
-    document.getElementById('search-backdrop').addEventListener('click', searchCloseHandler);
+  if (document.getElementById("search-backdrop")) {
+    document
+      .getElementById("search-backdrop")
+      .removeEventListener("click", searchCloseHandler);
+    document
+      .getElementById("search-backdrop")
+      .addEventListener("click", searchCloseHandler);
   }
-  if (document.getElementById('search-input')) {
-    document.getElementById('search-input').removeEventListener('input', searchInputHandler);
-    document.getElementById('search-input').addEventListener('input', searchInputHandler);
-    document.getElementById('search-input').removeEventListener('keydown', searchKeyHandler);
-    document.getElementById('search-input').addEventListener('keydown', searchKeyHandler);
+  if (document.getElementById("search-input")) {
+    document
+      .getElementById("search-input")
+      .removeEventListener("input", searchInputHandler);
+    document
+      .getElementById("search-input")
+      .addEventListener("input", searchInputHandler);
+    document
+      .getElementById("search-input")
+      .removeEventListener("keydown", searchKeyHandler);
+    document
+      .getElementById("search-input")
+      .addEventListener("keydown", searchKeyHandler);
   }
   buildSearchFilters();
 }
 
 function buildSearchFilters() {
-  var container = document.getElementById('search-filters');
-  if (!container || typeof SearchEngine === 'undefined') return;
+  var container = document.getElementById("search-filters");
+  if (!container || typeof SearchEngine === "undefined") return;
   var types = SearchEngine.getTypes();
-  var html = '<button class="search-filter px-3 py-1 rounded-full text-xs font-semibold bg-primary text-white transition-all" data-type="todos">Todos</button>';
-  types.forEach(function(t) {
-    html += '<button class="search-filter px-3 py-1 rounded-full text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-type="' + t + '">' + t + '</button>';
+  var html =
+    '<button class="search-filter px-3 py-1 rounded-full text-xs font-semibold bg-primary text-white transition-all" data-type="todos">Todos</button>';
+  types.forEach(function (t) {
+    html +=
+      '<button class="search-filter px-3 py-1 rounded-full text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-type="' +
+      t +
+      '">' +
+      t +
+      "</button>";
   });
   container.innerHTML = html;
-  container.querySelectorAll('.search-filter').forEach(function(btn) {
-    btn.removeEventListener('click', searchFilterHandler);
-    btn.addEventListener('click', searchFilterHandler);
+  container.querySelectorAll(".search-filter").forEach(function (btn) {
+    btn.removeEventListener("click", searchFilterHandler);
+    btn.addEventListener("click", searchFilterHandler);
   });
 }
 
-var _searchFilter = 'todos';
+var _searchFilter = "todos";
 var _searchTimer = null;
 
 function searchFilterHandler(e) {
-  var container = document.getElementById('search-filters');
-  container.querySelectorAll('.search-filter').forEach(function(b) {
-    b.className = 'search-filter px-3 py-1 rounded-full text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all';
+  var container = document.getElementById("search-filters");
+  container.querySelectorAll(".search-filter").forEach(function (b) {
+    b.className =
+      "search-filter px-3 py-1 rounded-full text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all";
   });
-  e.currentTarget.className = 'search-filter px-3 py-1 rounded-full text-xs font-semibold bg-primary text-white transition-all';
-  _searchFilter = e.currentTarget.getAttribute('data-type');
+  e.currentTarget.className =
+    "search-filter px-3 py-1 rounded-full text-xs font-semibold bg-primary text-white transition-all";
+  _searchFilter = e.currentTarget.getAttribute("data-type");
   doSearch();
 }
 
 function searchToggleHandler() {
-  var overlay = document.getElementById('search-overlay');
-  var input = document.getElementById('search-input');
-  if (overlay) overlay.classList.remove('hidden');
-  if (input) { setTimeout(function() { input.focus(); }, 100); }
-  document.body.style.overflow = 'hidden';
+  var overlay = document.getElementById("search-overlay");
+  var input = document.getElementById("search-input");
+  if (overlay) overlay.classList.remove("hidden");
+  if (input) {
+    setTimeout(function () {
+      input.focus();
+    }, 100);
+  }
+  document.body.style.overflow = "hidden";
   doSearch();
 }
 
 function searchCloseHandler() {
-  var overlay = document.getElementById('search-overlay');
-  if (overlay) overlay.classList.add('hidden');
-  document.body.style.overflow = '';
+  var overlay = document.getElementById("search-overlay");
+  if (overlay) overlay.classList.add("hidden");
+  document.body.style.overflow = "";
 }
 
 function searchInputHandler() {
@@ -578,86 +880,112 @@ function searchInputHandler() {
 }
 
 function searchKeyHandler(e) {
-  if (e.key === 'Escape') searchCloseHandler();
+  if (e.key === "Escape") searchCloseHandler();
 }
 
 function doSearch() {
-  var input = document.getElementById('search-input');
-  var results = document.getElementById('search-results');
-  if (!input || !results || typeof SearchEngine === 'undefined') return;
+  var input = document.getElementById("search-input");
+  var results = document.getElementById("search-results");
+  if (!input || !results || typeof SearchEngine === "undefined") return;
   var q = input.value.trim();
   if (q.length < 2) {
-    results.innerHTML = '<div class="text-center py-10 text-text-secondary"><span class="material-symbols-outlined text-4xl">search</span><p class="text-sm mt-2">Escribe al menos 2 caracteres para buscar</p></div>';
+    results.innerHTML =
+      '<div class="text-center py-10 text-text-secondary"><span class="material-symbols-outlined text-4xl">search</span><p class="text-sm mt-2">Escribe al menos 2 caracteres para buscar</p></div>';
     return;
   }
   var items = SearchEngine.search(q, _searchFilter);
   if (items.length === 0) {
-    results.innerHTML = '<div class="text-center py-10 text-text-secondary"><span class="material-symbols-outlined text-4xl">sentiment_dissatisfied</span><p class="text-sm mt-2">No se encontraron resultados para "' + q + '"</p></div>';
+    results.innerHTML =
+      '<div class="text-center py-10 text-text-secondary"><span class="material-symbols-outlined text-4xl">sentiment_dissatisfied</span><p class="text-sm mt-2">No se encontraron resultados para "' +
+      q +
+      '"</p></div>';
     return;
   }
 
   var grouped = {};
-  items.forEach(function(item) {
+  items.forEach(function (item) {
     if (!grouped[item.type]) grouped[item.type] = [];
     if (grouped[item.type].length < 6) grouped[item.type].push(item);
   });
 
-  var html = '';
-  Object.keys(grouped).forEach(function(type) {
-    html += '<div class="px-3 pt-4 pb-2"><span class="text-[10px] font-bold text-text-secondary uppercase tracking-widest">' + type + '</span></div>';
-    grouped[type].forEach(function(item) {
+  var html = "";
+  Object.keys(grouped).forEach(function (type) {
+    html +=
+      '<div class="px-3 pt-4 pb-2"><span class="text-[10px] font-bold text-text-secondary uppercase tracking-widest">' +
+      type +
+      "</span></div>";
+    grouped[type].forEach(function (item) {
       var icon = SearchEngine.getIcon(item.type);
-      html += '<a href="#' + item.route + '" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-surface-container-low transition-all group" onclick="searchCloseHandler()">';
-      html += '<span class="material-symbols-outlined text-primary text-sm mt-0.5">' + icon + '</span>';
-      html += '<div class="flex-1 min-w-0"><p class="text-sm font-bold text-on-surface group-hover:text-primary transition-colors truncate">' + item.title + '</p>';
-      html += '<p class="text-xs text-text-secondary truncate">' + item.desc + '</p></div>';
-      html += '<span class="material-symbols-outlined text-text-secondary text-sm opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>';
-      html += '</a>';
+      html +=
+        '<a href="#' +
+        item.route +
+        '" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-surface-container-low transition-all group" onclick="searchCloseHandler()">';
+      html +=
+        '<span class="material-symbols-outlined text-primary text-sm mt-0.5">' +
+        icon +
+        "</span>";
+      html +=
+        '<div class="flex-1 min-w-0"><p class="text-sm font-bold text-on-surface group-hover:text-primary transition-colors truncate">' +
+        item.title +
+        "</p>";
+      html +=
+        '<p class="text-xs text-text-secondary truncate">' +
+        item.desc +
+        "</p></div>";
+      html +=
+        '<span class="material-symbols-outlined text-text-secondary text-sm opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>';
+      html += "</a>";
     });
   });
   results.innerHTML = html;
 }
 
 function bindMobileAccordion() {
-  document.querySelectorAll('.mobile-accordion-trigger').forEach(btn => {
-    btn.removeEventListener('click', accordionHandler);
-    btn.addEventListener('click', accordionHandler);
+  document.querySelectorAll(".mobile-accordion-trigger").forEach((btn) => {
+    btn.removeEventListener("click", accordionHandler);
+    btn.addEventListener("click", accordionHandler);
   });
 }
 
 function accordionHandler(e) {
   const trigger = e.currentTarget;
-  const item = trigger.closest('.mobile-accordion-item');
+  const item = trigger.closest(".mobile-accordion-item");
   if (!item) return;
-  const content = item.querySelector('.mobile-accordion-content');
-  const chevron = trigger.querySelector('.mobile-chevron');
+  const content = item.querySelector(".mobile-accordion-content");
+  const chevron = trigger.querySelector(".mobile-chevron");
   if (!content) return;
-  const isOpen = content.classList.contains('open');
-  content.classList.toggle('open');
-  if (chevron) chevron.style.transform = isOpen ? '' : 'rotate(90deg)';
+  const isOpen = content.classList.contains("open");
+  content.classList.toggle("open");
+  if (chevron) chevron.style.transform = isOpen ? "" : "rotate(90deg)";
 }
 
 function toggleTreeHandler(e) {
   const btn = e.currentTarget;
   const parent = btn.parentElement;
-  const children = parent.querySelector('.cat-children');
-  const chevron = btn.querySelector('.cat-chevron');
+  const children = parent.querySelector(".cat-children");
+  const chevron = btn.querySelector(".cat-chevron");
   if (!children) return;
-  const expanded = children.classList.toggle('expanded');
-  if (chevron) chevron.style.transform = expanded ? 'rotate(90deg)' : '';
-  btn.setAttribute('aria-expanded', expanded || false);
+  const expanded = children.classList.toggle("expanded");
+  if (chevron) chevron.style.transform = expanded ? "rotate(90deg)" : "";
+  btn.setAttribute("aria-expanded", expanded || false);
 }
 
 function tabHandler(e) {
   const btn = e.currentTarget;
   const tabName = btn.dataset.tab;
-  const container = btn.closest('.max-w-\\[1200px\\]') || document;
-  container.querySelectorAll('[data-tab]').forEach(b => {
-    b.className = b.className.replace('text-primary border-b-2 border-primary bg-primary/5', 'text-text-secondary font-medium');
-    b.classList.add('text-text-secondary', 'font-medium');
+  const container = btn.closest(".max-w-\\[1200px\\]") || document;
+  container.querySelectorAll("[data-tab]").forEach((b) => {
+    b.className = b.className.replace(
+      "text-primary border-b-2 border-primary bg-primary/5",
+      "text-text-secondary font-medium",
+    );
+    b.classList.add("text-text-secondary", "font-medium");
   });
-  btn.className = 'px-6 py-4 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 transition-colors whitespace-nowrap';
-  container.querySelectorAll('.tab-content').forEach(t => t.classList.add('hidden'));
-  const target = container.querySelector('#tab-' + tabName);
-  if (target) target.classList.remove('hidden');
+  btn.className =
+    "px-6 py-4 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 transition-colors whitespace-nowrap";
+  container
+    .querySelectorAll(".tab-content")
+    .forEach((t) => t.classList.add("hidden"));
+  const target = container.querySelector("#tab-" + tabName);
+  if (target) target.classList.remove("hidden");
 }
