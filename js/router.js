@@ -264,9 +264,7 @@ function navbar(active) {
       <div class="flex justify-between items-center w-full px-6 max-w-[1200px] mx-auto h-16">
         <div class="flex items-center gap-2 lg:gap-6">
           <a href="#/" class="flex items-center gap-2 shrink-0">
-            <img src="assets/Uni-logo_transparente_granate.png" alt="UNI" class="h-7 w-auto">
-            <span class="hidden sm:block w-px h-5 bg-border-subtle"></span>
-            <img src="assets/logo-fiis.png" alt="FIIS" class="hidden sm:block h-7 w-auto">
+            <img src="assets/fiis-uni.png" alt="FIIS UNI" class="h-8 w-auto">
           </a>
           <div class="hidden lg:flex items-center gap-4 xl:gap-5 text-sm font-medium">${items}</div>
         </div>
@@ -321,9 +319,7 @@ function publicFooter() {
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-16">
           <div>
             <span class="flex items-center gap-3 mb-6">
-              <img src="assets/Uni-logo_transparente_granate.png" alt="UNI" class="h-10 w-auto">
-              <span class="w-px h-8 bg-border-subtle"></span>
-              <img src="assets/logo-fiis.png" alt="FIIS" class="h-10 w-auto">
+              <img src="assets/fiis-uni.png" alt="FIIS UNI" class="h-12 w-auto">
             </span>
             <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Facultad de Ingeniería Industrial y de Sistemas — Universidad Nacional de Ingeniería.</p>
             <div class="flex gap-3">
