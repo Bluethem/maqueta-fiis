@@ -281,22 +281,7 @@
         </div>
       </div>
 
-      <div class="bg-white rounded-xl border border-border-subtle p-6">
-        <h3 class="text-base font-bold text-on-surface mb-4 flex items-center gap-2">
-          <span class="material-symbols-outlined text-primary">send</span>
-          Envíanos un mensaje
-        </h3>
-        <div id="cai-form-success" class="hidden bg-success/10 border border-success/30 rounded-lg p-3 text-sm text-success mb-3">Mensaje enviado correctamente (simulación MVP).</div>
-        <form class="space-y-4" id="cai-contact-form">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input type="text" id="cai-nombre" placeholder="Nombre completo" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
-            <input type="email" id="cai-email" placeholder="Correo electrónico" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
-          </div>
-          <textarea rows="4" id="cai-mensaje" placeholder="Tu mensaje o consulta..." required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"></textarea>
-          <p id="cai-form-error" class="hidden text-danger text-xs">Completa todos los campos con un correo válido.</p>
-          <button type="submit" class="px-6 py-2.5 bg-primary text-on-primary text-sm font-semibold rounded-lg hover:bg-primary-container transition-all">Enviar mensaje</button>
-        </form>
-      </div>
+      <div id="cai-contact-form"></div>
     </div>
 
   </div>
@@ -312,22 +297,11 @@
       setTimeout(function() { okInscripcion.classList.add('hidden'); }, 5000);
     });
   }
-  var form = document.getElementById('cai-contact-form');
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var email = document.getElementById('cai-email').value.trim();
-      var error = document.getElementById('cai-form-error');
-      var ok = document.getElementById('cai-form-success');
-      error.classList.add('hidden');
-      if (!document.getElementById('cai-nombre').value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !document.getElementById('cai-mensaje').value.trim()) {
-        error.classList.remove('hidden');
-        return;
-      }
-      ok.classList.remove('hidden');
-      form.reset();
-      setTimeout(function() { ok.classList.add('hidden'); }, 5000);
-    });
-  }
+  FormBuilder.create('cai-contact-form', {
+    title: 'Envíanos un mensaje',
+    areaDestino: 'Centro de Automatización e Informática',
+    areaOptions: ['Dirección FIIS', 'Secretaría Académica', 'Mesa de Partes', 'Soporte Técnico'],
+    successText: 'Mensaje enviado correctamente. El equipo del CAI responderá a la brevedad.'
+  });
 })();
 </script>

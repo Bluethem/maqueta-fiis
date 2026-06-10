@@ -285,18 +285,18 @@
           </div>
           <h3 class="text-base font-bold text-on-surface mb-4">Agenda tu Cita</h3>
           <p class="text-xs text-text-secondary mb-4">Selecciona el servicio y el horario de tu preferencia. Te confirmaremos la cita vía correo institucional.</p>
-          <form class="space-y-4" id="tutoria-cita-form" onsubmit="event.preventDefault(); document.getElementById('tutoria-cita-success').classList.remove('hidden'); this.reset(); setTimeout(() => document.getElementById('tutoria-cita-success').classList.add('hidden'), 8000);">
+          <form class="space-y-4" id="tutoria-cita-form">
             <div>
               <label class="block text-sm font-semibold text-on-surface mb-1">Nombre Completo</label>
-              <input type="text" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" placeholder="Ej: Carlos Quispe" />
+              <input type="text" id="tut-nombre" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" placeholder="Ej: Carlos Quispe" />
             </div>
             <div>
               <label class="block text-sm font-semibold text-on-surface mb-1">Correo Institucional</label>
-              <input type="email" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" placeholder="usuario@uni.pe" />
+              <input type="email" id="tut-email" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" placeholder="usuario@uni.pe" />
             </div>
             <div>
               <label class="block text-sm font-semibold text-on-surface mb-1">Tipo de Atención</label>
-              <select required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all">
+              <select id="tut-tipo" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all">
                 <option value="">Selecciona un servicio</option>
                 <option>Tutoría Académica</option>
                 <option>Atención Psicológica</option>
@@ -308,11 +308,11 @@
             <div class="grid grid-cols-2 gap-4">
               <div>
                 <label class="block text-sm font-semibold text-on-surface mb-1">Fecha</label>
-                <input type="date" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+                <input type="date" id="tut-fecha" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
               </div>
               <div>
                 <label class="block text-sm font-semibold text-on-surface mb-1">Horario</label>
-                <select required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all">
+                <select id="tut-horario" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all">
                   <option value="">Selecciona</option>
                   <option>9:00 - 10:00</option>
                   <option>10:00 - 11:00</option>
@@ -325,8 +325,9 @@
             </div>
             <div>
               <label class="block text-sm font-semibold text-on-surface mb-1">Mensaje o Consulta</label>
-              <textarea rows="3" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" placeholder="Cuéntanos brevemente tu situación..."></textarea>
+              <textarea id="tut-mensaje" rows="3" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" placeholder="Cuéntanos brevemente tu situación..."></textarea>
             </div>
+            <p id="tut-form-error" class="hidden text-danger text-xs">Completa todos los campos con un correo válido.</p>
             <button type="submit" class="w-full px-5 py-2.5 bg-primary text-on-primary text-sm font-semibold rounded-lg hover:bg-primary-container transition-all flex items-center justify-center gap-2">
               <span class="material-symbols-outlined text-sm">send</span>
               Solicitar Cita
@@ -345,6 +346,39 @@
 
   </div>
 </div>
+
+<script>
+(function() {
+  var form = document.getElementById('tutoria-cita-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var email = document.getElementById('tut-email').value.trim();
+    var error = document.getElementById('tut-form-error');
+    var ok = document.getElementById('tutoria-cita-success');
+    error.classList.add('hidden');
+    ok.classList.add('hidden');
+    if (!document.getElementById('tut-nombre').value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      error.classList.remove('hidden');
+      return;
+    }
+    try {
+      Store.addSolicitud({
+        nombre: document.getElementById('tut-nombre').value.trim(),
+        correo: email,
+        perfil: 'Estudiante',
+        motivo: 'Cita de Tutoría - ' + document.getElementById('tut-tipo').value,
+        area: 'Tutoría FIIS',
+        mensaje: document.getElementById('tut-mensaje').value.trim() || document.getElementById('tut-tipo').value,
+        archivoNombre: ''
+      });
+    } catch (e) {}
+    ok.classList.remove('hidden');
+    form.reset();
+    setTimeout(function() { ok.classList.add('hidden'); }, 8000);
+  });
+})();
+</script>
 
 <!-- WhatsApp flotante (Req 6) -->
 <a href="https://wa.me/51981340356?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20el%20Programa%20de%20Tutor%C3%ADa%20FIIS" target="_blank" rel="noopener" class="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-success text-on-primary flex items-center justify-center shadow-lg hover:opacity-90 transition-all z-50 hover:scale-110" title="WhatsApp Tutoría">

@@ -242,45 +242,46 @@
       <div class="bg-white rounded-xl border border-border-subtle p-6 md:p-8">
         <h2 class="text-xl font-bold text-on-surface mb-1">Formulario de Solicitud de Convenio</h2>
         <p class="text-sm text-text-secondary mb-6">Completa el formulario para solicitar la firma de tu convenio de prácticas pre profesionales.</p>
-        <form class="space-y-5" id="uecps-convenio-form" onsubmit="event.preventDefault(); document.getElementById('uecps-form-success').classList.remove('hidden'); this.reset(); setTimeout(() => document.getElementById('uecps-form-success').classList.add('hidden'), 8000);">
+        <form class="space-y-5" id="uecps-convenio-form">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
               <label class="block text-sm font-semibold text-on-surface mb-1">Nombres y Apellidos</label>
-              <input type="text" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" placeholder="Ej: Carlos Quispe Huamán" />
+              <input type="text" id="uec-nombre" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" placeholder="Ej: Carlos Quispe Huamán" />
             </div>
             <div>
               <label class="block text-sm font-semibold text-on-surface mb-1">Código UNI</label>
-              <input type="text" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" placeholder="Ej: 2020xxxx" />
+              <input type="text" id="uec-codigo" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" placeholder="Ej: 2020xxxx" />
             </div>
             <div>
               <label class="block text-sm font-semibold text-on-surface mb-1">Correo Institucional</label>
-              <input type="email" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" placeholder="usuario@uni.pe" />
+              <input type="email" id="uec-email" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" placeholder="usuario@uni.pe" />
             </div>
             <div>
               <label class="block text-sm font-semibold text-on-surface mb-1">Celular</label>
-              <input type="tel" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" placeholder="Ej: 987 654 321" />
+              <input type="tel" id="uec-celular" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" placeholder="Ej: 987 654 321" />
             </div>
             <div>
               <label class="block text-sm font-semibold text-on-surface mb-1">Empresa / Institución</label>
-              <input type="text" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" placeholder="Nombre de la empresa" />
+              <input type="text" id="uec-empresa" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" placeholder="Nombre de la empresa" />
             </div>
             <div>
               <label class="block text-sm font-semibold text-on-surface mb-1">Cargo / Área</label>
-              <input type="text" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" placeholder="Ej: Practicante de Sistemas" />
+              <input type="text" id="uec-cargo" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" placeholder="Ej: Practicante de Sistemas" />
             </div>
             <div>
               <label class="block text-sm font-semibold text-on-surface mb-1">Fecha de Inicio</label>
-              <input type="date" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+              <input type="date" id="uec-fecha-inicio" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
             </div>
             <div>
               <label class="block text-sm font-semibold text-on-surface mb-1">Fecha de Término</label>
-              <input type="date" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+              <input type="date" id="uec-fecha-fin" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
             </div>
           </div>
           <div>
             <label class="block text-sm font-semibold text-on-surface mb-1">Observaciones</label>
-            <textarea rows="3" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" placeholder="Información adicional..."></textarea>
+            <textarea id="uec-observaciones" rows="3" class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" placeholder="Información adicional..."></textarea>
           </div>
+          <p id="uec-form-error" class="hidden text-danger text-xs">Completa todos los campos con un correo válido.</p>
           <button type="submit" class="px-6 py-2.5 bg-primary text-on-primary text-sm font-semibold rounded-lg hover:bg-primary-container transition-all flex items-center gap-2">
             <span class="material-symbols-outlined text-sm">send</span>
             Enviar Solicitud
@@ -293,6 +294,38 @@
             </div>
           </div>
         </form>
+        <script>
+        (function() {
+          var form = document.getElementById('uecps-convenio-form');
+          if (!form) return;
+          form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var email = document.getElementById('uec-email').value.trim();
+            var error = document.getElementById('uec-form-error');
+            var ok = document.getElementById('uecps-form-success');
+            error.classList.add('hidden');
+            ok.classList.add('hidden');
+            if (!document.getElementById('uec-nombre').value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+              error.classList.remove('hidden');
+              return;
+            }
+            try {
+              Store.addSolicitud({
+                nombre: document.getElementById('uec-nombre').value.trim(),
+                correo: email,
+                perfil: 'Estudiante',
+                motivo: 'Convenio de Prácticas',
+                area: 'UECPS',
+                mensaje: 'Empresa: ' + document.getElementById('uec-empresa').value + ' - Cargo: ' + document.getElementById('uec-cargo').value,
+                archivoNombre: ''
+              });
+            } catch (e) {}
+            ok.classList.remove('hidden');
+            form.reset();
+            setTimeout(function() { ok.classList.add('hidden'); }, 8000);
+          });
+        })();
+        </script>
       </div>
     </div>
 

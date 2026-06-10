@@ -185,25 +185,29 @@
         </div>
       </div>
       <div class="lg:col-span-3 bg-white rounded-xl border border-border-subtle p-6 shadow-sm">
-        <form class="space-y-4" onsubmit="event.preventDefault();if(!this.checkValidity()){this.reportValidity();return;}this.innerHTML='<div class=\'text-center py-8\'><span class=\'material-symbols-outlined text-success\' style=\'font-size:48px\'>check_circle</span><p class=\'font-bold text-on-surface mt-3 text-base\'>Solicitud enviada</p><p class=\'text-sm text-text-secondary mt-1\'>Nuestro equipo de vinculación se comunicará con usted a la brevedad.</p></div>'">
+        <div id="emp-vinc-success" class="hidden bg-success/10 border border-success/30 rounded-lg p-4 text-sm text-success mb-4 flex items-start gap-2">
+          <span class="material-symbols-outlined text-success">check_circle</span>
+          <div><p class="font-bold">Solicitud enviada</p><p class="text-xs">Nuestro equipo de vinculación se comunicará con usted a la brevedad.</p></div>
+        </div>
+        <form class="space-y-4" id="emp-vinc-form">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-sm font-semibold text-on-surface mb-1.5">Nombre del contacto <span class="text-error">*</span></label>
-              <input type="text" placeholder="Ej: Carlos Mendoza" required class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+              <input type="text" id="emp-nombre" placeholder="Ej: Carlos Mendoza" required class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
             </div>
             <div>
               <label class="block text-sm font-semibold text-on-surface mb-1.5">Cargo <span class="text-error">*</span></label>
-              <input type="text" placeholder="Ej: Jefe de RRHH" required class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+              <input type="text" id="emp-cargo" placeholder="Ej: Jefe de RRHH" required class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
             </div>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-sm font-semibold text-on-surface mb-1.5">Razón social <span class="text-error">*</span></label>
-              <input type="text" placeholder="Nombre legal de la empresa" required class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+              <input type="text" id="emp-razon" placeholder="Nombre legal de la empresa" required class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
             </div>
             <div>
               <label class="block text-sm font-semibold text-on-surface mb-1.5">Rubro / Sector <span class="text-error">*</span></label>
-              <select required class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-white">
+              <select id="emp-rubro" required class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-white">
                 <option value="" disabled selected>Seleccione un rubro</option>
                 <option>Industrial / Manufactura</option>
                 <option>Sistemas / Tecnología</option>
@@ -218,32 +222,33 @@
           </div>
           <div>
             <label class="block text-sm font-semibold text-on-surface mb-1.5">Correo electrónico <span class="text-error">*</span></label>
-            <input type="email" placeholder="correo@empresa.com" required class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+            <input type="email" id="emp-email" placeholder="correo@empresa.com" required class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
           </div>
           <div>
             <label class="block text-sm font-semibold text-on-surface mb-1.5">Tipo de interés <span class="text-error">*</span></label>
-            <div class="flex flex-wrap gap-2">
+            <div class="flex flex-wrap gap-2" id="emp-intereses">
               <label class="flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" class="rounded border-border-subtle text-primary focus:ring-primary/20"> <span class="text-sm text-on-surface">Prácticas preprofesionales</span>
+                <input type="checkbox" value="Prácticas preprofesionales" class="rounded border-border-subtle text-primary focus:ring-primary/20"> <span class="text-sm text-on-surface">Prácticas preprofesionales</span>
               </label>
               <label class="flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" class="rounded border-border-subtle text-primary focus:ring-primary/20"> <span class="text-sm text-on-surface">Ofertas laborales</span>
+                <input type="checkbox" value="Ofertas laborales" class="rounded border-border-subtle text-primary focus:ring-primary/20"> <span class="text-sm text-on-surface">Ofertas laborales</span>
               </label>
               <label class="flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" class="rounded border-border-subtle text-primary focus:ring-primary/20"> <span class="text-sm text-on-surface">Convenio institucional</span>
+                <input type="checkbox" value="Convenio institucional" class="rounded border-border-subtle text-primary focus:ring-primary/20"> <span class="text-sm text-on-surface">Convenio institucional</span>
               </label>
               <label class="flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" class="rounded border-border-subtle text-primary focus:ring-primary/20"> <span class="text-sm text-on-surface">Charla / Evento</span>
+                <input type="checkbox" value="Charla / Evento" class="rounded border-border-subtle text-primary focus:ring-primary/20"> <span class="text-sm text-on-surface">Charla / Evento</span>
               </label>
               <label class="flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" class="rounded border-border-subtle text-primary focus:ring-primary/20"> <span class="text-sm text-on-surface">Proyecto de investigación</span>
+                <input type="checkbox" value="Proyecto de investigación" class="rounded border-border-subtle text-primary focus:ring-primary/20"> <span class="text-sm text-on-surface">Proyecto de investigación</span>
               </label>
             </div>
           </div>
           <div>
             <label class="block text-sm font-semibold text-on-surface mb-1.5">Mensaje</label>
-            <textarea rows="3" placeholder="Cuéntenos sobre su interés y cómo le gustaría vincularse con la FIIS..." class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"></textarea>
+            <textarea id="emp-mensaje" rows="3" placeholder="Cuéntenos sobre su interés y cómo le gustaría vincularse con la FIIS..." class="w-full px-4 py-2.5 border border-border-subtle rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"></textarea>
           </div>
+          <p id="emp-form-error" class="hidden text-danger text-xs">Completa todos los campos con un correo válido.</p>
           <div class="flex items-center justify-between pt-2">
             <p class="text-[10px] text-text-secondary">Campos marcados con <span class="text-error">*</span> son obligatorios</p>
             <button type="submit" class="inline-flex items-center gap-2 bg-primary text-on-primary px-6 py-2.5 rounded-lg font-semibold text-sm hover:brightness-110 transition-all active:scale-95">
@@ -256,3 +261,40 @@
     </section>
   </div>
 </div>
+
+<script>
+(function() {
+  var form = document.getElementById('emp-vinc-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var email = document.getElementById('emp-email').value.trim();
+    var error = document.getElementById('emp-form-error');
+    var ok = document.getElementById('emp-vinc-success');
+    error.classList.add('hidden');
+    ok.classList.add('hidden');
+    if (!document.getElementById('emp-nombre').value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      error.classList.remove('hidden');
+      return;
+    }
+    var intereses = [];
+    document.querySelectorAll('#emp-intereses input[type=checkbox]:checked').forEach(function(cb) {
+      intereses.push(cb.value);
+    });
+    try {
+      Store.addSolicitud({
+        nombre: document.getElementById('emp-nombre').value.trim(),
+        correo: email,
+        perfil: 'Empresa',
+        motivo: intereses.join(', ') || 'Vinculación empresarial',
+        area: 'Vinculación Empresarial',
+        mensaje: document.getElementById('emp-mensaje').value.trim() || 'Empresa: ' + document.getElementById('emp-razon').value + ' - Rubro: ' + document.getElementById('emp-rubro').value,
+        archivoNombre: ''
+      });
+    } catch (e) {}
+    ok.classList.remove('hidden');
+    form.reset();
+    setTimeout(function() { ok.classList.add('hidden'); }, 8000);
+  });
+})();
+</script>

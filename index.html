@@ -97,6 +97,7 @@ tailwind.config = {
 <script src="js/faq.js?v=2"></script>
 <script src="js/auth.js?v=2"></script>
 <script src="js/components.js?v=2"></script>
+<script src="js/forms.js?v=1"></script>
 <script src="js/router.js?v=2"></script>
 <script>
 async function routePublic(section) {
@@ -168,6 +169,24 @@ async function routeDashboardSub(role, section) {
   Components.render(Auth.getSession(), html);
 }
 
+async function routeSolicitudes(role) {
+  if (!Auth.isLoggedIn()) { Router.navigate('/login'); return; }
+  if (role !== Auth.getRole()) { Router.navigate('/dashboard/' + Auth.getRole()); return; }
+  window.__solicitudesMode = 'user';
+  window.__solicitudesAreaFilter = null;
+  const html = await loadPage('dashboard/solicitudes');
+  Components.render(Auth.getSession(), html);
+}
+
+async function routeBandeja(role) {
+  if (!Auth.isLoggedIn()) { Router.navigate('/login'); return; }
+  if (role !== Auth.getRole()) { Router.navigate('/dashboard/' + Auth.getRole()); return; }
+  window.__solicitudesMode = 'bandeja';
+  window.__solicitudesAreaFilter = role === 'administrativo' ? 'Secretaría Administrativa' : null;
+  const html = await loadPage('dashboard/solicitudes');
+  Components.render(Auth.getSession(), html);
+}
+
 Router.add('/', routeLanding);
 Router.add('/login', routeLogin);
 Router.add('/facultad', () => routePublic('facultad'));
@@ -223,7 +242,7 @@ Router.add('/docentes/:id', (id) => routePublicDetailDocente(id));
 async function routePublicDetailDocente(id) {
   window.__DOCENTE_ID = id;
   const html = await loadPage('docente-perfil');
-  renderPublicPage(html);
+  renderPublicLayout(html, '/directorio-docentes');
 }
 Router.add('/guias-academicas', () => routePublic('guias-academicas'));
 Router.add('/guias-procedimientos', () => routePublic('guias-procedimientos'));
@@ -299,6 +318,12 @@ Router.add('/dashboard/admin/repositorio', () => routeDashboardSub('admin', 'rep
 Router.add('/dashboard/admin/eventos', () => routeDashboardSub('admin', 'eventos'));
 Router.add('/dashboard/admin/reportes', () => routeDashboardSub('admin', 'reportes'));
 Router.add('/dashboard/admin/configuracion', () => routeDashboardSub('admin', 'configuracion'));
+Router.add('/dashboard/docente/solicitudes', () => routeSolicitudes('docente'));
+Router.add('/dashboard/administrativo/solicitudes', () => routeBandeja('administrativo'));
+Router.add('/dashboard/centro/solicitudes', () => routeSolicitudes('centro'));
+Router.add('/dashboard/empresa/solicitudes', () => routeSolicitudes('empresa'));
+Router.add('/dashboard/laboratorio/solicitudes', () => routeSolicitudes('laboratorio'));
+Router.add('/dashboard/admin/solicitudes', () => routeBandeja('admin'));
 Router.add('404', () => document.getElementById('app').innerHTML = '<div class="flex items-center justify-center min-h-screen"><h1 class="text-headline-lg text-primary">404 — Página no encontrada</h1></div>');
 
 Router.init();

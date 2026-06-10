@@ -167,6 +167,7 @@
             </div>
           </div>
         </div>
+        <div id="teacher-contact-form"></div>
       </div>
     </div>
   </div>
@@ -953,6 +954,14 @@
     } else {
       projectsEl.innerHTML = '<p class="text-sm text-text-secondary">Sin proyectos registrados.</p>';
     }
+
+    FormBuilder.create('teacher-contact-form', {
+      title: 'Contactar al Docente',
+      areaDestino: teacher.name,
+      areaOptions: [teacher.dept, 'Dirección FIIS', 'Secretaría Académica', 'Mesa de Partes'],
+      submitText: 'Enviar mensaje',
+      successText: 'Mensaje enviado correctamente. ' + teacher.name + ' responderá a tu correo a la brevedad.'
+    });
   }
 })();
 </script>

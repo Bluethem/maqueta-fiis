@@ -378,6 +378,17 @@
       error.classList.remove('hidden');
       return;
     }
+    try {
+      Store.addSolicitud({
+        nombre: document.getElementById('redfi-nombre').value.trim(),
+        correo: email,
+        perfil: 'Estudiante',
+        motivo: 'Inscripción a actividad - ' + (document.getElementById('redfi-actividad').options[document.getElementById('redfi-actividad').selectedIndex]?.text || ''),
+        area: 'Laboratorio Académico',
+        mensaje: 'Inscripción solicitada para la actividad seleccionada.',
+        archivoNombre: ''
+      });
+    } catch (e) {}
     ok.classList.remove('hidden');
     form.reset();
     setTimeout(function() { ok.classList.add('hidden'); }, 5000);

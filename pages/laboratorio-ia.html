@@ -257,20 +257,7 @@
             </a>
           </div>
         </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-6">
-          <h3 class="text-base font-bold text-on-surface mb-4">Solicitud de Acceso</h3>
-          <div id="labia-form-success" class="hidden bg-success/10 border border-success/30 rounded-lg p-3 text-sm text-success mb-3">Solicitud enviada correctamente (simulación MVP).</div>
-          <form class="space-y-3" id="labia-acceso-form">
-            <input type="text" id="labia-nombre" placeholder="Nombre completo" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
-            <input type="email" id="labia-email" placeholder="Correo institucional" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
-            <textarea rows="3" id="labia-motivo" placeholder="Área de interés y propósito de la visita" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"></textarea>
-            <p id="labia-form-error" class="hidden text-danger text-xs">Completa todos los campos con un correo válido.</p>
-            <button type="submit" class="w-full px-5 py-2.5 bg-primary text-on-primary text-sm font-semibold rounded-lg hover:bg-primary-container transition-all flex items-center justify-center gap-2">
-              <span class="material-symbols-outlined text-sm">send</span>
-              Solicitar acceso
-            </button>
-          </form>
-        </div>
+        <div id="labia-contact-form"></div>
       </div>
     </div>
 
@@ -278,22 +265,12 @@
 </div>
 
 <script>
-(function() {
-  var form = document.getElementById('labia-acceso-form');
-  if (!form) return;
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    var email = document.getElementById('labia-email').value.trim();
-    var error = document.getElementById('labia-form-error');
-    var ok = document.getElementById('labia-form-success');
-    error.classList.add('hidden');
-    if (!document.getElementById('labia-nombre').value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !document.getElementById('labia-motivo').value.trim()) {
-      error.classList.remove('hidden');
-      return;
-    }
-    ok.classList.remove('hidden');
-    form.reset();
-    setTimeout(function() { ok.classList.add('hidden'); }, 5000);
-  });
-})();
+FormBuilder.create('labia-contact-form', {
+  title: 'Solicitud de Acceso',
+  areaDestino: 'Laboratorio de Inteligencia Artificial',
+  areaOptions: ['Dirección FIIS', 'Secretaría Académica', 'Centro de Cómputo'],
+  showArchivo: true,
+  submitText: 'Solicitar acceso',
+  successText: 'Solicitud enviada correctamente. El equipo del Laboratorio IA evaluará tu solicitud y te contactará.'
+});
 </script>

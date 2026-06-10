@@ -211,39 +211,7 @@
         </div>
       </div>
 
-      <!-- Formulario de Contacto (Req 15 & 20) -->
-      <div class="bg-white border border-border-subtle rounded-xl p-6 shadow-sm">
-        <h3 class="text-base font-bold text-on-surface mb-4 flex items-center gap-2">
-          <span class="material-symbols-outlined text-primary">mail</span>
-          Contacto Institucional
-        </h3>
-        <form class="space-y-4" id="group-contact-form">
-          <div>
-            <label class="block text-sm font-semibold text-on-surface mb-1">Nombre Completo</label>
-            <input type="text" id="contact-name" required placeholder="Ingresa tu nombre..." class="w-full border border-border-subtle rounded-lg px-4 py-3 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
-          </div>
-          <div>
-            <label class="block text-sm font-semibold text-on-surface mb-1">Correo Institucional</label>
-            <input type="email" id="contact-email" required placeholder="usuario@uni.pe" class="w-full border border-border-subtle rounded-lg px-4 py-3 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
-          </div>
-          <div>
-            <label class="block text-sm font-semibold text-on-surface mb-1">Mensaje o Consulta</label>
-            <textarea id="contact-msg" rows="4" required placeholder="¿En qué te podemos ayudar?..." class="w-full border border-border-subtle rounded-lg px-4 py-3 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"></textarea>
-          </div>
-          <button type="submit" class="w-full bg-primary text-white text-sm font-bold py-3 rounded-lg hover:bg-primary-container transition-all flex items-center justify-center gap-2">
-            <span class="material-symbols-outlined text-sm">send</span>
-            Enviar Solicitud
-          </button>
-        </form>
-        <!-- Toast de confirmación de envío -->
-        <div id="contact-success-toast" class="hidden mt-4 p-4 bg-green-50 border border-green-200 text-green-800 rounded-lg text-xs leading-relaxed flex items-start gap-2">
-          <span class="material-symbols-outlined text-green-600 text-base shrink-0">check_circle</span>
-          <div>
-            <p class="font-bold">¡Mensaje enviado con éxito!</p>
-            <p class="text-[11px] text-green-700 mt-0.5">La junta directiva responderá a tu correo institucional a la brevedad.</p>
-          </div>
-        </div>
-      </div>
+      <div id="group-contact-form"></div>
 
       <!-- Canales Oficiales y Ubicación (Req 20) -->
       <div class="bg-white border border-border-subtle rounded-xl p-6 shadow-sm space-y-5 text-sm text-text-secondary">
@@ -898,33 +866,13 @@
     }
   };
 
-  // --- Manejo del Formulario de Contacto (Req 15 & 20) ---
-  const contactForm = document.getElementById('group-contact-form');
-  const contactSuccess = document.getElementById('contact-success-toast');
-
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      const emailInput = document.getElementById('contact-email');
-      const email = emailInput.value.trim().toLowerCase();
-
-      // Validación simple de dominio institucional
-      if (!email.endsWith('@uni.pe') && !email.endsWith('@uni.edu.pe')) {
-        alert('Por favor, ingresa un correo institucional válido con terminación @uni.pe o @uni.edu.pe');
-        return;
-      }
-
-      // Simulación de envío exitoso
-      if (contactSuccess) {
-        contactSuccess.classList.remove('hidden');
-        contactForm.reset();
-        setTimeout(() => {
-          contactSuccess.classList.add('hidden');
-        }, 8000);
-      }
-    });
-  }
+  // --- Formulario de Contacto ---
+  FormBuilder.create('group-contact-form', {
+    title: 'Contacto Institucional',
+    areaDestino: document.getElementById('detail-title')?.textContent || 'Grupo Estudiantil',
+    areaOptions: ['Dirección FIIS', 'Bienestar Estudiantil', 'Secretaría Académica'],
+    successText: 'Mensaje enviado con éxito. La junta directiva responderá a tu correo institucional a la brevedad.'
+  });
 
   // --- Lógica del Tab Switching (L12) ---
   const tabContainer = document.getElementById('detail-tabs');

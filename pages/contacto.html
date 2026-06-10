@@ -160,6 +160,11 @@
       </div>
     </section>
 
+    <section>
+      <h2 class="text-2xl font-bold text-primary border-l-8 border-brand-cream pl-6 mb-8">Envíanos un mensaje</h2>
+      <div id="contacto-form"></div>
+    </section>
+
     <section class="bg-surface-container-low rounded-xl border border-border-subtle p-6 text-center">
       <h3 class="font-bold text-on-surface mb-2">¿Necesitas más información?</h3>
       <p class="text-text-secondary text-sm mb-4">Escríbenos al correo <strong>informes@fiis.uni.edu.pe</strong> o llama al (01) 481-1070 anexo 5201.</p>
@@ -170,3 +175,14 @@
 
   </div>
 </div>
+
+<script>
+FormBuilder.create('contacto-form', {
+  title: 'Formulario de Contacto General',
+  description: 'Completa tus datos y selecciona el área a la que deseas dirigirte. Te responderemos a la brevedad.',
+  areaDestino: 'Secretaría Administrativa',
+  areaOptions: ['Decanato', 'Secretaría Académica', 'Escuela de Ing. Industrial', 'Escuela de Ing. de Sistemas', 'Escuela de Ing. de Software', 'Escuela de Ing. en IA', 'Mesa de Partes', 'Biblioteca', 'Centro de Información'],
+  submitText: 'Enviar mensaje',
+  successText: 'Mensaje enviado correctamente. El área destino responderá a tu correo a la brevedad.'
+});
+</script>

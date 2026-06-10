@@ -1,0 +1,17 @@
+<div class="page-enter" id="solicitudes-page-container"></div>
+
+<script>
+(function() {
+  var mode = window.__solicitudesMode || 'user';
+  var areaFilter = window.__solicitudesAreaFilter || null;
+  var title = mode === 'bandeja'
+    ? (areaFilter ? 'Solicitudes de Contacto Institucional' : 'Bandeja de Solicitudes de Contacto')
+    : 'Mis Solicitudes de Contacto';
+
+  FormBuilder.renderSolicitudesTab('solicitudes-page-container', {
+    mode: mode,
+    title: title,
+    areaFilter: areaFilter
+  });
+})();
+</script>

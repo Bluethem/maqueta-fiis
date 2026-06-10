@@ -19,6 +19,7 @@ window.Store = (function () {
 
   var _vacantes = defaultVacantes.slice();
   var _eventos = defaultEventos.slice();
+  var _solicitudes = [];
   var _config = { maxDias: 31 };
   var _deletedIds = [];
 
@@ -31,6 +32,7 @@ window.Store = (function () {
       localStorage.setItem(STORAGE_KEY, JSON.stringify({
         vacantes: _vacantes,
         eventos: _eventos,
+        solicitudes: _solicitudes,
         config: _config,
         deletedIds: _deletedIds,
       }));
@@ -44,6 +46,7 @@ window.Store = (function () {
       var data = JSON.parse(raw);
       if (Array.isArray(data.vacantes)) _vacantes = data.vacantes;
       if (Array.isArray(data.eventos)) _eventos = data.eventos;
+      if (Array.isArray(data.solicitudes)) _solicitudes = data.solicitudes;
       if (data.config) _config = Object.assign(_config, data.config);
       if (Array.isArray(data.deletedIds)) _deletedIds = data.deletedIds;
       _vacantes.forEach(function (v) {
@@ -168,9 +171,34 @@ window.Store = (function () {
       saveState();
     },
 
+    getSolicitudes: function () {
+      return clone(_solicitudes);
+    },
+
+    addSolicitud: function (data) {
+      _solicitudes.unshift({
+        id: data.id || 'SOL-' + Date.now(),
+        nombre: data.nombre || '',
+        correo: data.correo || '',
+        perfil: data.perfil || '',
+        motivo: data.motivo || '',
+        area: data.area || '',
+        mensaje: data.mensaje || '',
+        archivoNombre: data.archivoNombre || '',
+        estado: data.estado || 'pendiente',
+        createdAt: data.createdAt || fmtToday(),
+      });
+      saveState();
+    },
+
+    updateSolicitudEstado: function (id, estado) {
+      updateById(_solicitudes, id, { estado: estado });
+    },
+
     reset: function () {
       _vacantes = defaultVacantes.slice();
       _eventos = defaultEventos.slice();
+      _solicitudes = [];
       _config = { maxDias: 31 };
       saveState();
     },

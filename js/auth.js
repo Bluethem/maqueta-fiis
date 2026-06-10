@@ -7,6 +7,7 @@ const ROLES = {
       { icon: 'person', label: 'Perfil Académico', route: '/dashboard/docente/perfil' },
       { icon: 'school', label: 'Capacitaciones', route: '/dashboard/docente/capacitaciones' },
       { icon: 'folder', label: 'Mis Recursos', route: '/dashboard/docente/recursos' },
+      { icon: 'mail', label: 'Mis Solicitudes', route: '/dashboard/docente/solicitudes' },
     ]
   },
   administrativo: {
@@ -14,6 +15,7 @@ const ROLES = {
     badge: 'bg-purple-100 text-purple-700',
     sidebar: [
       { icon: 'dashboard', label: 'Dashboard', route: '/dashboard/administrativo' },
+      { icon: 'inbox', label: 'Bandeja de Solicitudes', route: '/dashboard/administrativo/solicitudes' },
       { icon: 'description', label: 'Bandeja de Trámites', route: '/dashboard/administrativo/tramites' },
       { icon: 'gavel', label: 'Transparencia', route: '/dashboard/administrativo/resoluciones' },
       { icon: 'calendar_month', label: 'Horarios y Mallas', route: '/dashboard/administrativo/horarios' },
@@ -27,6 +29,7 @@ const ROLES = {
       { icon: 'web', label: 'Mi Página', route: '/dashboard/centro/pagina' },
       { icon: 'campaign', label: 'Convocatorias', route: '/dashboard/centro/convocatorias' },
       { icon: 'add_circle', label: 'Solicitar publicación', route: '/dashboard/centro/solicitar' },
+      { icon: 'mail', label: 'Mis Solicitudes', route: '/dashboard/centro/solicitudes' },
     ]
   },
   empresa: {
@@ -37,6 +40,7 @@ const ROLES = {
       { icon: 'business', label: 'Perfil', route: '/dashboard/empresa/perfil' },
       { icon: 'work', label: 'Mis Vacantes', route: '/dashboard/empresa/vacantes' },
       { icon: 'add_circle', label: 'Solicitar publicación', route: '/dashboard/empresa/solicitar' },
+      { icon: 'mail', label: 'Mis Solicitudes', route: '/dashboard/empresa/solicitudes' },
     ]
   },
   laboratorio: {
@@ -46,6 +50,7 @@ const ROLES = {
       { icon: 'dashboard', label: 'Dashboard', route: '/dashboard/laboratorio' },
       { icon: 'web', label: 'Mi Página', route: '/dashboard/laboratorio/pagina' },
       { icon: 'add_circle', label: 'Solicitar publicación', route: '/dashboard/laboratorio/solicitar' },
+      { icon: 'mail', label: 'Mis Solicitudes', route: '/dashboard/laboratorio/solicitudes' },
     ]
   },
   admin: {
@@ -54,7 +59,8 @@ const ROLES = {
     sidebar: [
       { icon: 'dashboard', label: 'Dashboard', route: '/dashboard/admin-web' },
       { icon: 'group', label: 'Gestión de Usuarios', route: '/users' },
-      { icon: 'description', label: 'Solicitudes Pendientes', route: '/content' },
+      { icon: 'inbox', label: 'Bandeja de Solicitudes', route: '/dashboard/admin/solicitudes' },
+      { icon: 'description', label: 'Gestión de Contenido', route: '/content' },
       { icon: 'newspaper', label: 'Gestión de Noticias', route: '/news' },
       { icon: 'event', label: 'Gestión de Calendario', route: '/calendar' },
       { icon: 'work', label: 'Moderación de Vacantes', route: '/dashboard/admin/vacantes' },

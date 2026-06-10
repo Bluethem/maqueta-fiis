@@ -250,27 +250,8 @@
             </div>
           </div>
         </div>
-        <div class="bg-white rounded-xl border border-border-subtle p-6">
-          <h3 class="text-base font-bold text-on-surface mb-4">Atención Rápida</h3>
-          <p class="text-xs text-text-secondary mb-4">Déjanos tus datos y te contactaremos para brindarte información sobre los programas.</p>
-          <div id="cee-form-success" class="hidden bg-success/10 border border-success/30 rounded-lg p-3 text-sm text-success mb-3">Consulta enviada correctamente (simulación MVP).</div>
-          <form class="space-y-3" id="cee-contact-form">
-            <input type="text" id="cee-nombre" placeholder="Nombre" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
-            <input type="email" id="cee-email" placeholder="Correo" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
-            <select id="cee-programa" required class="w-full border border-border-subtle rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all">
-              <option value="">Programa de interés</option>
-              <option value="pmbok">Gestión de Proyectos PMBOK</option>
-              <option value="powerbi">Power BI y Business Analytics</option>
-              <option value="supply-chain">Supply Chain Management</option>
-              <option value="calidad">Gestión de la Calidad</option>
-            </select>
-            <p id="cee-form-error" class="hidden text-danger text-xs">Completa nombre, correo válido y programa.</p>
-            <button type="submit" class="w-full px-5 py-2.5 bg-primary text-on-primary text-sm font-semibold rounded-lg hover:bg-primary-container transition-all flex items-center justify-center gap-2">
-              <span class="material-symbols-outlined text-sm">send</span>
-              Enviar consulta
-            </button>
-          </form>
-          <div class="mt-4">
+        <div id="cee-contact-form"></div>
+        <div class="mt-4">
             <a href="https://wa.me/51XXXXXXXXX?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20los%20programas%20del%20CEE" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 px-5 py-2.5 bg-success text-on-primary text-sm font-bold rounded-lg hover:opacity-90 transition-all">
               <span class="material-symbols-outlined text-sm">chat</span>
               Consultar por WhatsApp
@@ -324,20 +305,20 @@
     });
   });
 
-  document.getElementById('cee-contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    var email = document.getElementById('cee-email').value.trim();
-    var programa = document.getElementById('cee-programa').value;
-    var error = document.getElementById('cee-form-error');
-    var ok = document.getElementById('cee-form-success');
-    error.classList.add('hidden');
-    if (!document.getElementById('cee-nombre').value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !programa) {
-      error.classList.remove('hidden');
-      return;
-    }
-    ok.classList.remove('hidden');
-    e.target.reset();
-    setTimeout(function() { ok.classList.add('hidden'); }, 5000);
+  FormBuilder.create('cee-contact-form', {
+    title: 'Atención Rápida',
+    description: 'Déjanos tus datos y te contactaremos para brindarte información sobre los programas.',
+    areaDestino: 'CEE — Educación Continua',
+    areaOptions: ['Dirección FIIS', 'Secretaría Académica'],
+    submitText: 'Enviar consulta',
+    successText: 'Consulta enviada correctamente. El equipo del CEE te contactará a la brevedad.',
+    extraFields: [{
+      id: 'cee-programa',
+      label: 'Programa de interés',
+      type: 'select',
+      required: true,
+      options: ['Gestión de Proyectos PMBOK', 'Power BI y Business Analytics', 'Supply Chain Management', 'Gestión de la Calidad']
+    }]
   });
 })();
 </script>
