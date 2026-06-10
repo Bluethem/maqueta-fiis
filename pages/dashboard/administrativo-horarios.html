@@ -1,400 +1,215 @@
 <div class="page-enter space-y-6">
-  <!-- Header -->
   <div class="flex items-center justify-between">
     <div>
-      <h1 class="text-2xl font-bold text-[#1C1C1C]">Horarios y Mallas Curriculares</h1>
+      <h1 class="text-2xl font-bold text-on-surface">Horarios y Mallas Curriculares</h1>
       <p class="text-text-secondary text-sm mt-1">Gestiona mallas curriculares, cronogramas de pruebas y horarios académicos</p>
     </div>
   </div>
 
-  <!-- Tabs -->
-  <div class="bg-surface-container-lowest rounded-xl border border-border-subtle overflow-hidden">
+  <div class="bg-white rounded-xl border border-border-subtle overflow-hidden">
     <div class="flex border-b border-border-subtle">
       <button class="px-6 py-3.5 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 transition-colors" data-horario="mallas">Mallas Curriculares</button>
-      <button class="px-6 py-3.5 text-sm font-medium text-text-secondary hover:text-primary hover:bg-surface-bg/30 transition-colors" data-horario="cronogramas">Cronogramas</button>
+      <button class="px-6 py-3.5 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors" data-horario="cronogramas">Cronogramas</button>
     </div>
   </div>
 
-  <!-- Tab: Mallas Curriculares -->
   <div id="horario-mallas">
-    <div class="bg-surface-container-lowest rounded-xl border border-border-subtle overflow-hidden">
-      <div class="flex border-b border-border-subtle">
-        <button class="px-6 py-3.5 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 transition-colors" data-escuela="industrial">Ing. Industrial</button>
-      <button class="px-6 py-3.5 text-sm font-medium text-text-secondary hover:text-[#1C1C1C] hover:bg-surface-bg/30 transition-colors">Ing. Sistemas</button>
-      <button class="px-6 py-3.5 text-sm font-medium text-text-secondary hover:text-[#1C1C1C] hover:bg-surface-bg/30 transition-colors">Ing. Software</button>
-    </div>
-
-    <div class="p-6">
-      <!-- Malla timeline -->
-      <div class="space-y-6">
-        <!-- Cycle 1 -->
-        <div>
-          <div class="flex items-center gap-3 mb-3">
-            <span class="w-8 h-8 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shrink-0">1</span>
-            <h3 class="font-bold text-[#1C1C1C]">Ciclo I</h3>
-            <div class="flex-1 h-px bg-border-subtle"></div>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Matemática Básica</p>
-              <p class="text-xs text-text-secondary">5 créditos · Obligatorio</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Química General</p>
-              <p class="text-xs text-text-secondary">4 créditos · Obligatorio</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Introducción a la Ingeniería Industrial</p>
-              <p class="text-xs text-text-secondary">3 créditos · Obligatorio</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Comunicación Integral</p>
-              <p class="text-xs text-text-secondary">3 créditos · Obligatorio</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Cycle 2 -->
-        <div>
-          <div class="flex items-center gap-3 mb-3">
-            <span class="w-8 h-8 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shrink-0">2</span>
-            <h3 class="font-bold text-[#1C1C1C]">Ciclo II</h3>
-            <div class="flex-1 h-px bg-border-subtle"></div>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Cálculo I</p>
-              <p class="text-xs text-text-secondary">5 créditos · Obligatorio</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Física I</p>
-              <p class="text-xs text-text-secondary">4 créditos · Obligatorio</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Dibujo Técnico y CAD</p>
-              <p class="text-xs text-text-secondary">3 créditos · Obligatorio</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Metodología del Trabajo Universitario</p>
-              <p class="text-xs text-text-secondary">2 créditos · Obligatorio</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Cycle 3 -->
-        <div>
-          <div class="flex items-center gap-3 mb-3">
-            <span class="w-8 h-8 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shrink-0">3</span>
-            <h3 class="font-bold text-[#1C1C1C]">Ciclo III</h3>
-            <div class="flex-1 h-px bg-border-subtle"></div>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Cálculo II</p>
-              <p class="text-xs text-text-secondary">5 créditos · Obligatorio</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Física II</p>
-              <p class="text-xs text-text-secondary">4 créditos · Obligatorio</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Estadística Aplicada I</p>
-              <p class="text-xs text-text-secondary">4 créditos · Obligatorio</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Contabilidad General</p>
-              <p class="text-xs text-text-secondary">3 créditos · Obligatorio</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Cycle 4 -->
-        <div>
-          <div class="flex items-center gap-3 mb-3">
-            <span class="w-8 h-8 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shrink-0">4</span>
-            <h3 class="font-bold text-[#1C1C1C]">Ciclo IV</h3>
-            <div class="flex-1 h-px bg-border-subtle"></div>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Investigación de Operaciones I</p>
-              <p class="text-xs text-text-secondary">4 créditos · Obligatorio</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Gestión Empresarial</p>
-              <p class="text-xs text-text-secondary">3 créditos · Obligatorio</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Ingeniería de Métodos</p>
-              <p class="text-xs text-text-secondary">4 créditos · Obligatorio</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Economía General</p>
-              <p class="text-xs text-text-secondary">3 créditos · Obligatorio</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Cycle 5 -->
-        <div>
-          <div class="flex items-center gap-3 mb-3">
-            <span class="w-8 h-8 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shrink-0">5</span>
-            <h3 class="font-bold text-[#1C1C1C]">Ciclo V</h3>
-            <div class="flex-1 h-px bg-border-subtle"></div>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Investigación de Operaciones II</p>
-              <p class="text-xs text-text-secondary">4 créditos · Obligatorio</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Gestión de la Calidad</p>
-              <p class="text-xs text-text-secondary">3 créditos · Obligatorio</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Ingeniería de Procesos</p>
-              <p class="text-xs text-text-secondary">4 créditos · Obligatorio</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Matemática Aplicada a la Ingeniería</p>
-              <p class="text-xs text-text-secondary">4 créditos · Obligatorio</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Cycle 6 -->
-        <div>
-          <div class="flex items-center gap-3 mb-3">
-            <span class="w-8 h-8 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shrink-0">6</span>
-            <h3 class="font-bold text-[#1C1C1C]">Ciclo VI</h3>
-            <div class="flex-1 h-px bg-border-subtle"></div>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Simulación de Sistemas</p>
-              <p class="text-xs text-text-secondary">4 créditos · Obligatorio</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Planificación y Control de la Producción</p>
-              <p class="text-xs text-text-secondary">4 créditos · Obligatorio</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Logística Empresarial</p>
-              <p class="text-xs text-text-secondary">3 créditos · Obligatorio</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Seguridad y Salud Ocupacional</p>
-              <p class="text-xs text-text-secondary">3 créditos · Obligatorio</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Cycle 7 -->
-        <div>
-          <div class="flex items-center gap-3 mb-3">
-            <span class="w-8 h-8 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shrink-0">7</span>
-            <h3 class="font-bold text-[#1C1C1C]">Ciclo VII</h3>
-            <div class="flex-1 h-px bg-border-subtle"></div>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Ingeniería de Plantas</p>
-              <p class="text-xs text-text-secondary">4 créditos · Obligatorio</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Gestión del Talento Humano</p>
-              <p class="text-xs text-text-secondary">3 créditos · Obligatorio</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Investigación de Mercados</p>
-              <p class="text-xs text-text-secondary">3 créditos · Obligatorio</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Electivo I</p>
-              <p class="text-xs text-text-secondary">3 créditos · Electivo</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Cycle 8 -->
-        <div>
-          <div class="flex items-center gap-3 mb-3">
-            <span class="w-8 h-8 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shrink-0">8</span>
-            <h3 class="font-bold text-[#1C1C1C]">Ciclo VIII</h3>
-            <div class="flex-1 h-px bg-border-subtle"></div>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Formulación y Evaluación de Proyectos</p>
-              <p class="text-xs text-text-secondary">4 créditos · Obligatorio</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Gestión Ambiental</p>
-              <p class="text-xs text-text-secondary">3 créditos · Obligatorio</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Electivo II</p>
-              <p class="text-xs text-text-secondary">3 créditos · Electivo</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Electivo III</p>
-              <p class="text-xs text-text-secondary">3 créditos · Electivo</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Cycle 9 -->
-        <div>
-          <div class="flex items-center gap-3 mb-3">
-            <span class="w-8 h-8 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shrink-0">9</span>
-            <h3 class="font-bold text-[#1C1C1C]">Ciclo IX</h3>
-            <div class="flex-1 h-px bg-border-subtle"></div>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Proyecto de Tesis</p>
-              <p class="text-xs text-text-secondary">4 créditos · Obligatorio</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Prácticas Preprofesionales</p>
-              <p class="text-xs text-text-secondary">6 créditos · Obligatorio</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Electivo IV</p>
-              <p class="text-xs text-text-secondary">3 créditos · Electivo</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Cycle 10 -->
-        <div>
-          <div class="flex items-center gap-3 mb-3">
-            <span class="w-8 h-8 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shrink-0">10</span>
-            <h3 class="font-bold text-[#1C1C1C]">Ciclo X</h3>
-            <div class="flex-1 h-px bg-border-subtle"></div>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Desarrollo de Tesis</p>
-              <p class="text-xs text-text-secondary">6 créditos · Obligatorio</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Gestión de la Innovación</p>
-              <p class="text-xs text-text-secondary">3 créditos · Obligatorio</p>
-            </div>
-            <div class="bg-surface-bg rounded-lg px-4 py-3 border border-border-subtle">
-              <p class="text-sm font-medium text-[#1C1C1C]">Electivo V</p>
-              <p class="text-xs text-text-secondary">3 créditos · Electivo</p>
-            </div>
-          </div>
-        </div>
+    <div class="bg-white rounded-xl border border-border-subtle overflow-hidden">
+      <div class="flex border-b border-border-subtle overflow-x-auto">
+        <button class="px-6 py-3.5 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 transition-colors whitespace-nowrap" data-escuela="industrial">Ing. Industrial</button>
+        <button class="px-6 py-3.5 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-escuela="sistemas">Ing. Sistemas</button>
+        <button class="px-6 py-3.5 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-escuela="software">Ing. Software</button>
+        <button class="px-6 py-3.5 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap" data-escuela="ia">Ing. en IA</button>
       </div>
-    </div>
+
+      <div class="p-6" id="malla-content"></div>
+      <div class="px-6 pb-6" id="malla-download"></div>
   </div>
 
-  <!-- Download buttons -->
-  <div class="flex flex-wrap gap-3">
-    <button class="bg-brand-cream text-primary text-sm font-semibold px-5 py-2.5 rounded-lg flex items-center gap-2 hover:brightness-95 transition-all">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
-      Descargar malla — Ing. Industrial (PDF)
-    </button>
-    <button class="bg-brand-cream text-primary text-sm font-semibold px-5 py-2.5 rounded-lg flex items-center gap-2 hover:brightness-95 transition-all">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
-      Descargar malla — Ing. Sistemas (PDF)
-    </button>
-    <button class="bg-brand-cream text-primary text-sm font-semibold px-5 py-2.5 rounded-lg flex items-center gap-2 hover:brightness-95 transition-all">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
-      Descargar malla — Ing. Software (PDF)
-    </button>
-    <button class="bg-primary text-white text-sm font-semibold px-5 py-2.5 rounded-lg flex items-center gap-2 hover:brightness-110 transition-all">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
-      Subir nueva malla (PDF)
-    </button>
-  </div>
-</div>
-
-  <!-- Tab: Cronogramas -->
   <div id="horario-cronogramas" class="hidden space-y-6">
-    <div class="flex items-center justify-between">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
-        <h2 class="text-lg font-bold text-[#1C1C1C]">Cronogramas Académicos</h2>
+        <h2 class="text-lg font-bold text-on-surface">Cronogramas Académicos</h2>
         <p class="text-text-secondary text-sm mt-0.5">Pruebas de Control (PC), exámenes parciales, finales y vacacionales</p>
       </div>
-      <button class="bg-primary text-white text-sm font-semibold px-5 py-2.5 rounded-lg flex items-center gap-2 hover:brightness-110 transition-all">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+      <button class="inline-flex items-center gap-2 bg-primary text-on-primary px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-primary-container transition-all self-start">
+        <span class="material-symbols-outlined text-sm">add</span>
         Nuevo cronograma
       </button>
     </div>
 
-    <div class="bg-surface-container-lowest rounded-xl border border-border-subtle overflow-hidden">
-      <table class="w-full text-left border-collapse">
-        <thead>
-          <tr class="bg-surface-bg text-sm font-semibold text-[#1C1C1C] border-b border-border-subtle">
-            <th class="p-4">Nombre</th>
-            <th class="p-4">Escuela</th>
-            <th class="p-4">Ciclo</th>
-            <th class="p-4">Fecha</th>
-            <th class="p-4 text-center">Archivo</th>
-          </tr>
-        </thead>
-        <tbody class="text-sm">
-          <tr class="border-b border-border-subtle hover:bg-surface-bg/50 transition-colors">
-            <td class="p-4 font-medium">PC 1 — Cálculo I</td>
-            <td class="p-4">Ing. Industrial</td>
-            <td class="p-4">III</td>
-            <td class="p-4">15/04/2026</td>
-            <td class="p-4 text-center"><button onclick="alert('Descargando...')" class="text-primary hover:underline text-xs">PDF</button></td>
-          </tr>
-          <tr class="border-b border-border-subtle hover:bg-surface-bg/50 transition-colors">
-            <td class="p-4 font-medium">Examen Parcial — Matemática Básica</td>
-            <td class="p-4">Ing. Sistemas</td>
-            <td class="p-4">I</td>
-            <td class="p-4">22/05/2026</td>
-            <td class="p-4 text-center"><button onclick="alert('Descargando...')" class="text-primary hover:underline text-xs">PDF</button></td>
-          </tr>
-          <tr class="border-b border-border-subtle hover:bg-surface-bg/50 transition-colors">
-            <td class="p-4 font-medium">Examen Final — Algoritmos</td>
-            <td class="p-4">Ing. Software</td>
-            <td class="p-4">IV</td>
-            <td class="p-4">10/07/2026</td>
-            <td class="p-4 text-center"><button onclick="alert('Descargando...')" class="text-primary hover:underline text-xs">PDF</button></td>
-          </tr>
-          <tr class="border-b border-border-subtle hover:bg-surface-bg/50 transition-colors">
-            <td class="p-4 font-medium">Cronograma Vacacional 2026</td>
-            <td class="p-4">Todas</td>
-            <td class="p-4">—</td>
-            <td class="p-4">Enero 2026</td>
-            <td class="p-4 text-center"><button onclick="alert('Descargando...')" class="text-primary hover:underline text-xs">PDF</button></td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="bg-white rounded-xl border border-border-subtle overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left">
+          <thead class="bg-surface-bg border-b border-border-subtle">
+            <tr>
+              <th class="px-5 py-3 text-xs font-semibold text-text-secondary uppercase tracking-wider">Nombre</th>
+              <th class="px-5 py-3 text-xs font-semibold text-text-secondary uppercase tracking-wider">Escuela</th>
+              <th class="px-5 py-3 text-xs font-semibold text-text-secondary uppercase tracking-wider">Ciclo</th>
+              <th class="px-5 py-3 text-xs font-semibold text-text-secondary uppercase tracking-wider">Fecha</th>
+              <th class="px-5 py-3 text-xs font-semibold text-text-secondary uppercase tracking-wider text-center">Archivo</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border-subtle">
+            <tr class="hover:bg-surface-container-low transition-colors">
+              <td class="px-5 py-4 text-sm font-medium text-on-surface">PC 1 — Cálculo I</td>
+              <td class="px-5 py-4 text-sm text-on-surface-variant">Ing. Industrial</td>
+              <td class="px-5 py-4 text-sm text-on-surface-variant">III</td>
+              <td class="px-5 py-4 text-sm text-text-secondary">15/04/2026</td>
+              <td class="px-5 py-4 text-center"><button onclick="alert('Descargando...')" class="text-primary hover:underline text-sm font-medium">PDF</button></td>
+            </tr>
+            <tr class="hover:bg-surface-container-low transition-colors">
+              <td class="px-5 py-4 text-sm font-medium text-on-surface">Examen Parcial — Matemática Básica</td>
+              <td class="px-5 py-4 text-sm text-on-surface-variant">Ing. Sistemas</td>
+              <td class="px-5 py-4 text-sm text-on-surface-variant">I</td>
+              <td class="px-5 py-4 text-sm text-text-secondary">22/05/2026</td>
+              <td class="px-5 py-4 text-center"><button onclick="alert('Descargando...')" class="text-primary hover:underline text-sm font-medium">PDF</button></td>
+            </tr>
+            <tr class="hover:bg-surface-container-low transition-colors">
+              <td class="px-5 py-4 text-sm font-medium text-on-surface">Examen Final — Algoritmos</td>
+              <td class="px-5 py-4 text-sm text-on-surface-variant">Ing. Software</td>
+              <td class="px-5 py-4 text-sm text-on-surface-variant">IV</td>
+              <td class="px-5 py-4 text-sm text-text-secondary">10/07/2026</td>
+              <td class="px-5 py-4 text-center"><button onclick="alert('Descargando...')" class="text-primary hover:underline text-sm font-medium">PDF</button></td>
+            </tr>
+            <tr class="hover:bg-surface-container-low transition-colors">
+              <td class="px-5 py-4 text-sm font-medium text-on-surface">Cronograma Vacacional 2026</td>
+              <td class="px-5 py-4 text-sm text-on-surface-variant">Todas</td>
+              <td class="px-5 py-4 text-sm text-on-surface-variant">—</td>
+              <td class="px-5 py-4 text-sm text-text-secondary">Enero 2026</td>
+              <td class="px-5 py-4 text-center"><button onclick="alert('Descargando...')" class="text-primary hover:underline text-sm font-medium">PDF</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
-    <div class="bg-surface-container-lowest rounded-xl border border-border-subtle p-5">
-      <h3 class="font-semibold text-[#1C1C1C] mb-4">Subir cronograma</h3>
-      <div class="border-2 border-dashed border-border-subtle rounded-xl p-6 text-center hover:border-primary transition-all cursor-pointer">
-        <svg class="w-8 h-8 mx-auto text-text-secondary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
-        <p class="text-sm text-text-secondary mt-2">Arrastra un archivo o haz clic para seleccionar</p>
-        <p class="text-xs text-text-secondary mt-1">PDF · Máx 10MB</p>
+    <div class="bg-white rounded-xl border border-border-subtle p-6">
+      <h3 class="text-sm font-bold text-on-surface mb-4">Subir cronograma</h3>
+      <div class="border-2 border-dashed border-border-subtle rounded-xl p-6 text-center hover:border-primary transition-all cursor-pointer flex flex-col items-center gap-2">
+        <span class="material-symbols-outlined text-3xl text-text-secondary">upload_file</span>
+        <p class="text-sm text-text-secondary">Arrastra un archivo o haz clic para seleccionar</p>
+        <p class="text-xs text-text-secondary">PDF · Máx 10MB</p>
       </div>
     </div>
   </div>
-
-  <script>
-  (function() {
-    var tabs = document.querySelectorAll('[data-horario]');
-    tabs.forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var tab = this.getAttribute('data-horario');
-        tabs.forEach(function(b) {
-          b.className = 'px-6 py-3.5 text-sm font-medium text-text-secondary hover:text-primary hover:bg-surface-bg/30 transition-colors';
-        });
-        this.className = 'px-6 py-3.5 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 transition-colors';
-        document.getElementById('horario-mallas').classList.add('hidden');
-        document.getElementById('horario-cronogramas').classList.add('hidden');
-        document.getElementById('horario-' + tab).classList.remove('hidden');
-      });
-    });
-  })();
-  </script>
 </div>
+
+<script>
+var CURRICULA = {
+  industrial: {
+    label: 'Ing. Industrial',
+    cycles: [
+      { num: 'I', courses: [{ n:'Matemática Básica',c:5 },{ n:'Química General',c:4 },{ n:'Introducción a la Ingeniería Industrial',c:3 },{ n:'Comunicación Integral',c:3 }] },
+      { num: 'II', courses: [{ n:'Cálculo I',c:5 },{ n:'Física I',c:4 },{ n:'Dibujo Técnico y CAD',c:3 },{ n:'Metodología del Trabajo Universitario',c:2 }] },
+      { num: 'III', courses: [{ n:'Cálculo II',c:5 },{ n:'Física II',c:4 },{ n:'Estadística Aplicada I',c:4 },{ n:'Contabilidad General',c:3 }] },
+      { num: 'IV', courses: [{ n:'Investigación de Operaciones I',c:4 },{ n:'Gestión Empresarial',c:3 },{ n:'Ingeniería de Métodos',c:4 },{ n:'Economía General',c:3 }] },
+      { num: 'V', courses: [{ n:'Investigación de Operaciones II',c:4 },{ n:'Gestión de la Calidad',c:3 },{ n:'Ingeniería de Procesos',c:4 },{ n:'Matemática Aplicada a la Ingeniería',c:4 }] },
+      { num: 'VI', courses: [{ n:'Simulación de Sistemas',c:4 },{ n:'Planificación y Control de la Producción',c:4 },{ n:'Logística Empresarial',c:3 },{ n:'Seguridad y Salud Ocupacional',c:3 }] },
+      { num: 'VII', courses: [{ n:'Ingeniería de Plantas',c:4 },{ n:'Gestión del Talento Humano',c:3 },{ n:'Investigación de Mercados',c:3 },{ n:'Electivo I',c:3,e:true }] },
+      { num: 'VIII', courses: [{ n:'Formulación y Evaluación de Proyectos',c:4 },{ n:'Gestión Ambiental',c:3 },{ n:'Electivo II',c:3,e:true },{ n:'Electivo III',c:3,e:true }] },
+      { num: 'IX', courses: [{ n:'Proyecto de Tesis',c:4 },{ n:'Prácticas Preprofesionales',c:6 },{ n:'Electivo IV',c:3,e:true }] },
+      { num: 'X', courses: [{ n:'Desarrollo de Tesis',c:6 },{ n:'Gestión de la Innovación',c:3 },{ n:'Electivo V',c:3,e:true }] },
+    ]
+  },
+  sistemas: {
+    label: 'Ing. Sistemas',
+    cycles: [
+      { num: 'I', courses: [{ n:'Matemática Básica',c:5 },{ n:'Química General',c:4 },{ n:'Introducción a la Ingeniería de Sistemas',c:3 },{ n:'Comunicación Integral',c:3 }] },
+      { num: 'II', courses: [{ n:'Cálculo I',c:5 },{ n:'Física I',c:4 },{ n:'Algoritmos y Estructuras de Datos',c:4 },{ n:'Metodología del Trabajo Universitario',c:2 }] },
+      { num: 'III', courses: [{ n:'Cálculo II',c:5 },{ n:'Física II',c:4 },{ n:'Matemática Discreta',c:4 },{ n:'Programación Orientada a Objetos',c:4 }] },
+      { num: 'IV', courses: [{ n:'Base de Datos',c:4 },{ n:'Arquitectura de Computadoras',c:4 },{ n:'Análisis y Diseño de Sistemas',c:3 },{ n:'Estadística Aplicada',c:3 }] },
+      { num: 'V', courses: [{ n:'Redes de Computadoras',c:4 },{ n:'Sistemas Operativos',c:4 },{ n:'Ingeniería de Software',c:3 },{ n:'Investigación de Operaciones',c:4 }] },
+      { num: 'VI', courses: [{ n:'Sistemas de Información',c:4 },{ n:'Administración de Redes',c:4 },{ n:'Desarrollo de Aplicaciones Web',c:3 },{ n:'Electivo I',c:3,e:true }] },
+      { num: 'VII', courses: [{ n:'Seguridad Informática',c:4 },{ n:'Gestión de TI',c:3 },{ n:'Inteligencia de Negocios',c:4 },{ n:'Electivo II',c:3,e:true }] },
+      { num: 'VIII', courses: [{ n:'Arquitectura Empresarial',c:4 },{ n:'Gobierno de Datos',c:3 },{ n:'Electivo III',c:3,e:true },{ n:'Electivo IV',c:3,e:true }] },
+      { num: 'IX', courses: [{ n:'Proyecto de Tesis',c:4 },{ n:'Prácticas Preprofesionales',c:6 },{ n:'Electivo V',c:3,e:true }] },
+      { num: 'X', courses: [{ n:'Desarrollo de Tesis',c:6 },{ n:'Gestión de Proyectos TI',c:3 },{ n:'Auditoría de Sistemas',c:3 }] },
+    ]
+  },
+  software: {
+    label: 'Ing. Software',
+    cycles: [
+      { num: 'I', courses: [{ n:'Matemática Básica',c:5 },{ n:'Química General',c:4 },{ n:'Introducción a la Ingeniería de Software',c:3 },{ n:'Comunicación Integral',c:3 }] },
+      { num: 'II', courses: [{ n:'Cálculo I',c:5 },{ n:'Física I',c:4 },{ n:'Algoritmos y Estructuras de Datos',c:4 },{ n:'Metodología del Trabajo Universitario',c:2 }] },
+      { num: 'III', courses: [{ n:'Cálculo II',c:5 },{ n:'Estadística Aplicada',c:4 },{ n:'Matemática Discreta',c:4 },{ n:'Programación Orientada a Objetos',c:4 }] },
+      { num: 'IV', courses: [{ n:'Base de Datos',c:4 },{ n:'Desarrollo Web',c:4 },{ n:'Arquitectura de Software',c:3 },{ n:'Ingeniería de Requisitos',c:3 }] },
+      { num: 'V', courses: [{ n:'Diseño de Interfaces',c:4 },{ n:'Calidad de Software',c:4 },{ n:'Pruebas de Software',c:3 },{ n:'Metodologías Ágiles',c:3 }] },
+      { num: 'VI', courses: [{ n:'Desarrollo Móvil',c:4 },{ n:'Arquitectura de Microservicios',c:4 },{ n:'DevOps',c:3 },{ n:'Electivo I',c:3,e:true }] },
+      { num: 'VII', courses: [{ n:'Desarrollo de APIs',c:4 },{ n:'Computación en la Nube',c:4 },{ n:'Seguridad en Aplicaciones',c:3 },{ n:'Electivo II',c:3,e:true }] },
+      { num: 'VIII', courses: [{ n:'Arquitectura Empresarial',c:4 },{ n:'Gestión de Proyectos de Software',c:3 },{ n:'Electivo III',c:3,e:true },{ n:'Electivo IV',c:3,e:true }] },
+      { num: 'IX', courses: [{ n:'Proyecto de Tesis',c:4 },{ n:'Prácticas Preprofesionales',c:6 },{ n:'Electivo V',c:3,e:true }] },
+      { num: 'X', courses: [{ n:'Desarrollo de Tesis',c:6 },{ n:'Innovación Tecnológica',c:3 },{ n:'Gestión de la Calidad',c:3 }] },
+    ]
+  },
+  ia: {
+    label: 'Ing. en IA',
+    cycles: [
+      { num: 'I', courses: [{ n:'Matemática Básica',c:5 },{ n:'Química General',c:4 },{ n:'Introducción a la IA',c:3 },{ n:'Comunicación Integral',c:3 }] },
+      { num: 'II', courses: [{ n:'Cálculo I',c:5 },{ n:'Física I',c:4 },{ n:'Algoritmos y Estructuras de Datos',c:4 },{ n:'Metodología del Trabajo Universitario',c:2 }] },
+      { num: 'III', courses: [{ n:'Cálculo II',c:5 },{ n:'Álgebra Lineal',c:4 },{ n:'Probabilidad y Estadística',c:4 },{ n:'Programación en Python',c:4 }] },
+      { num: 'IV', courses: [{ n:'Base de Datos',c:4 },{ n:'Aprendizaje Automático',c:4 },{ n:'Matemáticas para IA',c:4 },{ n:'Procesamiento de Señales',c:3 }] },
+      { num: 'V', courses: [{ n:'Redes Neuronales',c:4 },{ n:'Visión Computacional',c:4 },{ n:'Procesamiento de Lenguaje Natural',c:4 },{ n:'Ética en IA',c:2 }] },
+      { num: 'VI', courses: [{ n:'Deep Learning',c:4 },{ n:'Robótica Inteligente',c:4 },{ n:'Ciencia de Datos',c:4 },{ n:'Electivo I',c:3,e:true }] },
+      { num: 'VII', courses: [{ n:'Sistemas Recomendadores',c:4 },{ n:'IA en la Industria',c:3 },{ n:'Big Data',c:4 },{ n:'Electivo II',c:3,e:true }] },
+      { num: 'VIII', courses: [{ n:'IA Explicable',c:4 },{ n:'Aprendizaje por Refuerzo',c:4 },{ n:'Electivo III',c:3,e:true },{ n:'Electivo IV',c:3,e:true }] },
+      { num: 'IX', courses: [{ n:'Proyecto de Tesis',c:4 },{ n:'Prácticas Preprofesionales',c:6 },{ n:'Electivo V',c:3,e:true }] },
+      { num: 'X', courses: [{ n:'Desarrollo de Tesis',c:6 },{ n:'Innovación en IA',c:3 },{ n:'Consultoría en IA',c:3 }] },
+    ]
+  }
+};
+
+(function() {
+  var horarioTabs = document.querySelectorAll('[data-horario]');
+  horarioTabs.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var tab = this.getAttribute('data-horario');
+      horarioTabs.forEach(function(b) {
+        b.className = 'px-6 py-3.5 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors';
+      });
+      this.className = 'px-6 py-3.5 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 transition-colors';
+      document.getElementById('horario-mallas').classList.add('hidden');
+      document.getElementById('horario-cronogramas').classList.add('hidden');
+      document.getElementById('horario-' + tab).classList.remove('hidden');
+    });
+  });
+
+  function renderMalla(key) {
+    var data = CURRICULA[key];
+    if (!data) return;
+    var content = document.getElementById('malla-content');
+    var download = document.getElementById('malla-download');
+    var html = '<div class="space-y-6">';
+    data.cycles.forEach(function(cycle) {
+      html += '<div class="flex items-center gap-3 mb-3"><span class="w-8 h-8 rounded-full bg-primary text-on-primary text-xs font-bold flex items-center justify-center shrink-0">' + cycle.num + '</span><h3 class="font-bold text-on-surface">Ciclo ' + cycle.num + '</h3><div class="flex-1 h-px bg-border-subtle"></div></div>';
+      html += '<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">';
+      cycle.courses.forEach(function(c) {
+        var isElect = c.e;
+        html += '<div class="bg-white rounded-lg px-4 py-3 border border-border-subtle hover:shadow-sm transition-all">';
+        html += '<p class="text-sm font-medium text-on-surface">' + c.n + '</p>';
+        html += '<div class="flex items-center gap-2 mt-1">';
+        html += '<span class="text-xs font-semibold ' + (isElect ? 'text-tertiary bg-tertiary/10' : 'text-success bg-success/10') + ' px-2 py-0.5 rounded-full">' + c.c + ' cr\u00e9d.</span>';
+        html += '<span class="text-xs ' + (isElect ? 'font-medium text-tertiary' : 'text-text-secondary') + '">' + (isElect ? 'Electivo' : 'Obligatorio') + '</span>';
+        html += '</div></div>';
+      });
+      html += '</div>';
+    });
+    html += '</div>';
+    content.innerHTML = html;
+    download.innerHTML = '<div class="flex flex-wrap gap-3"><button class="inline-flex items-center gap-2 bg-brand-cream text-primary px-5 py-2.5 rounded-lg text-sm font-semibold hover:brightness-95 transition-all"><span class="material-symbols-outlined text-sm">download</span> Descargar malla \u2014 ' + data.label + ' (PDF)</button><button class="inline-flex items-center gap-2 bg-primary text-on-primary px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-primary-container transition-all"><span class="material-symbols-outlined text-sm">add</span> Subir nueva malla (PDF)</button></div>';
+  }
+
+  var escuelaTabs = document.querySelectorAll('[data-escuela]');
+  escuelaTabs.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      escuelaTabs.forEach(function(b) {
+        b.className = 'px-6 py-3.5 text-sm font-medium text-text-secondary hover:text-on-surface hover:bg-surface-bg/30 transition-colors whitespace-nowrap';
+      });
+      this.className = 'px-6 py-3.5 text-sm font-semibold text-primary border-b-2 border-primary bg-primary/5 transition-colors whitespace-nowrap';
+      renderMalla(this.getAttribute('data-escuela'));
+    });
+  });
+
+  renderMalla('industrial');
+})();
+</script>

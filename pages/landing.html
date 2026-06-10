@@ -1,475 +1,1391 @@
 <!-- Content starts here - nav is rendered by SPA layout -->
 
 <!-- ===== Hero full-width ===== -->
-<section class="relative overflow-hidden min-h-[72vh] flex items-center" style="background: linear-gradient(135deg, #711610 0%, #4a0e0a 60%, #2a0705 100%)">
-  <div class="absolute inset-0 z-0">
-    <img src="assets/facultad-de-ingenieria-industrial-sistemas.jpg" alt="" class="w-full h-full object-cover opacity-30" loading="eager">
-  </div>
-  <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent z-10"></div>
-  <div class="relative z-20 w-full max-w-[1200px] mx-auto px-6 py-24">
-    <p class="text-brand-cream text-sm font-semibold uppercase tracking-widest mb-4">Universidad Nacional de Ingeniería</p>
-    <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-3xl mb-6">
-      Facultad de Ingeniería Industrial y de Sistemas
-    </h1>
-    <p class="text-white/80 text-lg md:text-xl max-w-xl leading-relaxed mb-10">
-      Formando ingenieros de excelencia, comprometidos con la innovación tecnológica y el desarrollo sostenible del país.
-    </p>
-    <div class="flex flex-wrap gap-4">
-      <a href="#/facultad" class="inline-flex items-center gap-2 bg-brand-cream text-primary px-7 py-3.5 rounded-lg font-semibold hover:brightness-95 transition-all text-sm">
-        Conoce la facultad
-        <!-- arrow-right -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
-      <a href="#/login" class="inline-flex items-center gap-2 border border-white/40 text-white px-7 py-3.5 rounded-lg font-semibold hover:bg-white/10 transition-all text-sm">
-        Portal de ingreso
-        <!-- log-in -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" x2="3" y1="12" y2="12"/></svg>
-      </a>
+<section
+    class="relative overflow-hidden min-h-[72vh] flex items-center"
+    style="
+        background: linear-gradient(
+            135deg,
+            #711610 0%,
+            #4a0e0a 60%,
+            #2a0705 100%
+        );
+    "
+>
+    <div class="absolute inset-0 z-0">
+        <img
+            src="assets/facultad-de-ingenieria-industrial-sistemas.jpg"
+            alt=""
+            class="w-full h-full object-cover opacity-30"
+            loading="eager"
+        />
     </div>
-  </div>
-  <!-- Cifras institucionales -->
-  <div class="absolute bottom-0 left-0 right-0 z-20 bg-black/40 backdrop-blur-sm border-t border-white/10">
-    <div class="max-w-[1200px] mx-auto px-6 py-5 grid grid-cols-2 md:grid-cols-4 gap-6">
-      <div class="text-center">
-        <p class="font-serif text-2xl md:text-3xl font-bold text-brand-cream">4</p>
-        <p class="text-white/70 text-xs mt-0.5 uppercase tracking-wide">Escuelas profesionales</p>
-      </div>
-      <div class="text-center">
-        <p class="font-serif text-2xl md:text-3xl font-bold text-brand-cream">+4,000</p>
-        <p class="text-white/70 text-xs mt-0.5 uppercase tracking-wide">Egresados</p>
-      </div>
-      <div class="text-center">
-        <p class="font-serif text-2xl md:text-3xl font-bold text-brand-cream">ISO 9001</p>
-        <p class="text-white/70 text-xs mt-0.5 uppercase tracking-wide">Certificación de calidad</p>
-      </div>
-      <div class="text-center">
-        <p class="font-serif text-2xl md:text-3xl font-bold text-brand-cream">+60</p>
-        <p class="text-white/70 text-xs mt-0.5 uppercase tracking-wide">Años de excelencia</p>
-      </div>
+    <div
+        class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent z-10"
+    ></div>
+    <div class="relative z-20 w-full max-w-[1200px] mx-auto px-6 py-24">
+        <p
+            class="text-brand-cream text-sm font-semibold uppercase tracking-widest mb-4"
+        >
+            Universidad Nacional de Ingeniería
+        </p>
+        <h1
+            class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-3xl mb-6"
+        >
+            Facultad de Ingeniería Industrial y de Sistemas
+        </h1>
+        <p
+            class="text-white/80 text-lg md:text-xl max-w-xl leading-relaxed mb-10"
+        >
+            Formando ingenieros de excelencia, comprometidos con la innovación
+            tecnológica y el desarrollo sostenible del país.
+        </p>
+        <div class="flex flex-wrap gap-4">
+            <a
+                href="#/facultad"
+                class="inline-flex items-center gap-2 bg-brand-cream text-primary px-7 py-3.5 rounded-lg font-semibold hover:brightness-95 transition-all text-sm"
+            >
+                Conoce la facultad
+                <!-- arrow-right -->
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                </svg>
+            </a>
+            <a
+                href="#/login"
+                class="inline-flex items-center gap-2 border border-white/40 text-white px-7 py-3.5 rounded-lg font-semibold hover:bg-white/10 transition-all text-sm"
+            >
+                Portal de ingreso
+                <!-- log-in -->
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                    <polyline points="10 17 15 12 10 7" />
+                    <line x1="15" x2="3" y1="12" y2="12" />
+                </svg>
+            </a>
+        </div>
     </div>
-  </div>
+    <!-- Cifras institucionales -->
+    <div
+        class="absolute bottom-0 left-0 right-0 z-20 bg-black/40 backdrop-blur-sm border-t border-white/10"
+    >
+        <div
+            class="max-w-[1200px] mx-auto px-6 py-5 grid grid-cols-2 md:grid-cols-4 gap-6"
+        >
+            <div class="text-center">
+                <p
+                    class="font-serif text-2xl md:text-3xl font-bold text-brand-cream"
+                >
+                    4
+                </p>
+                <p class="text-white/70 text-xs mt-0.5 uppercase tracking-wide">
+                    Escuelas profesionales
+                </p>
+            </div>
+            <div class="text-center">
+                <p
+                    class="font-serif text-2xl md:text-3xl font-bold text-brand-cream"
+                >
+                    +4,000
+                </p>
+                <p class="text-white/70 text-xs mt-0.5 uppercase tracking-wide">
+                    Egresados
+                </p>
+            </div>
+            <div class="text-center">
+                <p
+                    class="font-serif text-2xl md:text-3xl font-bold text-brand-cream"
+                >
+                    ISO 9001
+                </p>
+                <p class="text-white/70 text-xs mt-0.5 uppercase tracking-wide">
+                    Certificación de calidad
+                </p>
+            </div>
+            <div class="text-center">
+                <p
+                    class="font-serif text-2xl md:text-3xl font-bold text-brand-cream"
+                >
+                    +60
+                </p>
+                <p class="text-white/70 text-xs mt-0.5 uppercase tracking-wide">
+                    Años de excelencia
+                </p>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- ===== Acceso por perfil ===== -->
 <section class="py-16 md:py-20 bg-surface-container-low">
-  <div class="max-w-[1200px] mx-auto px-6">
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10 md:mb-12">
-      <h2 class="font-serif text-3xl md:text-4xl font-bold text-primary border-l-4 border-primary pl-5">
-        Accede según tu perfil
-      </h2>
-      <p class="text-on-surface-variant text-sm max-w-sm pl-5 md:pl-0">Cada perfil tiene acceso a recursos, servicios y funciones específicas de la FIIS.</p>
+    <div class="max-w-[1200px] mx-auto px-6">
+        <div
+            class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10 md:mb-12"
+        >
+            <h2
+                class="font-serif text-3xl md:text-4xl font-bold text-primary border-l-4 border-primary pl-5"
+            >
+                Accede según tu perfil
+            </h2>
+            <p class="text-on-surface-variant text-sm max-w-sm pl-5 md:pl-0">
+                Cada perfil tiene acceso a recursos, servicios y funciones
+                específicas de la FIIS.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Estudiante -->
+            <div
+                class="bg-white rounded-xl border border-border-subtle/40 shadow-sm overflow-hidden flex flex-col md:flex-row hover:shadow-md transition-shadow"
+            >
+                <div
+                    class="md:w-2/5 min-h-[140px] md:min-h-0 bg-primary flex items-center justify-center shrink-0"
+                >
+                    <!-- graduation-cap -->
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="56"
+                        height="56"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#E6D9AA"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                        <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                    </svg>
+                </div>
+                <div class="flex-1 p-6 md:p-8 flex flex-col justify-center">
+                    <h3
+                        class="font-serif text-xl md:text-2xl font-bold text-on-surface mb-2"
+                    >
+                        Estudiante
+                    </h3>
+                    <p
+                        class="text-on-surface-variant text-sm leading-relaxed mb-4"
+                    >
+                        Recursos académicos, trámites en línea, convocatorias,
+                        horarios y tutoría.
+                    </p>
+                    <a
+                        class="group inline-flex items-center gap-1.5 text-primary font-semibold text-sm hover:underline"
+                        href="#/escuelas"
+                    >
+                        Ver recursos
+                        <svg
+                            class="transition-transform duration-200 group-hover:translate-x-1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!-- Docente -->
+            <div
+                class="bg-white rounded-xl border border-border-subtle/40 shadow-sm overflow-hidden flex flex-col md:flex-row hover:shadow-md transition-shadow"
+            >
+                <div
+                    class="md:w-2/5 min-h-[140px] md:min-h-0 bg-[#1a2744] flex items-center justify-center shrink-0"
+                >
+                    <!-- id-card / user-check -->
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="56"
+                        height="56"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#E6D9AA"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <rect width="18" height="14" x="3" y="5" rx="0" />
+                        <circle cx="9" cy="10" r="2" />
+                        <path d="M6 14c0-1.1.9-2 2-2h2a2 2 0 0 1 2 2" />
+                        <path d="M15 8h2" />
+                        <path d="M15 11h2" />
+                    </svg>
+                </div>
+                <div class="flex-1 p-6 md:p-8 flex flex-col justify-center">
+                    <h3
+                        class="font-serif text-xl md:text-2xl font-bold text-on-surface mb-2"
+                    >
+                        Docente
+                    </h3>
+                    <p
+                        class="text-on-surface-variant text-sm leading-relaxed mb-4"
+                    >
+                        Directorio académico, publicaciones y perfil
+                        sincronizado con ORCID.
+                    </p>
+                    <a
+                        class="group inline-flex items-center gap-1.5 text-primary font-semibold text-sm hover:underline"
+                        href="#/directorio-docentes"
+                    >
+                        Ver directorio
+                        <svg
+                            class="transition-transform duration-200 group-hover:translate-x-1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!-- Egresado -->
+            <div
+                class="bg-white rounded-xl border border-border-subtle/40 shadow-sm overflow-hidden flex flex-col md:flex-row hover:shadow-md transition-shadow"
+            >
+                <div
+                    class="md:w-2/5 min-h-[140px] md:min-h-0 bg-[#1e3a2f] flex items-center justify-center shrink-0"
+                >
+                    <!-- users -->
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="56"
+                        height="56"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#E6D9AA"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                </div>
+                <div class="flex-1 p-6 md:p-8 flex flex-col justify-center">
+                    <h3
+                        class="font-serif text-xl md:text-2xl font-bold text-on-surface mb-2"
+                    >
+                        Egresado
+                    </h3>
+                    <p
+                        class="text-on-surface-variant text-sm leading-relaxed mb-4"
+                    >
+                        Red Alumni, bolsa de trabajo, mentoría y capacitaciones
+                        continuas.
+                    </p>
+                    <a
+                        class="group inline-flex items-center gap-1.5 text-primary font-semibold text-sm hover:underline"
+                        href="#/egresados"
+                    >
+                        Red Alumni
+                        <svg
+                            class="transition-transform duration-200 group-hover:translate-x-1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!-- Empresa -->
+            <div
+                class="bg-white rounded-xl border border-border-subtle/40 shadow-sm overflow-hidden flex flex-col md:flex-row hover:shadow-md transition-shadow"
+            >
+                <div
+                    class="md:w-2/5 min-h-[140px] md:min-h-0 bg-[#2d1a0e] flex items-center justify-center shrink-0"
+                >
+                    <!-- handshake -->
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="56"
+                        height="56"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#E6D9AA"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path d="m11 17 2 2a1 1 0 1 0 3-3" />
+                        <path
+                            d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"
+                        />
+                        <path d="m21 3 1 11h-2" />
+                        <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" />
+                        <path d="M3 4h8" />
+                    </svg>
+                </div>
+                <div class="flex-1 p-6 md:p-8 flex flex-col justify-center">
+                    <h3
+                        class="font-serif text-xl md:text-2xl font-bold text-on-surface mb-2"
+                    >
+                        Empresa
+                    </h3>
+                    <p
+                        class="text-on-surface-variant text-sm leading-relaxed mb-4"
+                    >
+                        Publica vacantes, participa en eventos y forma parte de
+                        la red aliada FIIS.
+                    </p>
+                    <a
+                        class="group inline-flex items-center gap-1.5 text-primary font-semibold text-sm hover:underline"
+                        href="#/empresas"
+                    >
+                        Soy empresa
+                        <svg
+                            class="transition-transform duration-200 group-hover:translate-x-1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <!-- Estudiante -->
-      <div class="bg-white rounded-xl border border-border-subtle/40 shadow-sm overflow-hidden flex flex-col md:flex-row hover:shadow-md transition-shadow">
-        <div class="md:w-2/5 min-h-[140px] md:min-h-0 bg-primary flex items-center justify-center shrink-0">
-          <!-- graduation-cap -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#E6D9AA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-        </div>
-        <div class="flex-1 p-6 md:p-8 flex flex-col justify-center">
-          <h3 class="font-serif text-xl md:text-2xl font-bold text-on-surface mb-2">Estudiante</h3>
-          <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Recursos académicos, trámites en línea, convocatorias, horarios y tutoría.</p>
-          <a class="group inline-flex items-center gap-1.5 text-primary font-semibold text-sm hover:underline" href="#/escuelas">
-            Ver recursos
-            <svg class="transition-transform duration-200 group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-      <!-- Docente -->
-      <div class="bg-white rounded-xl border border-border-subtle/40 shadow-sm overflow-hidden flex flex-col md:flex-row hover:shadow-md transition-shadow">
-        <div class="md:w-2/5 min-h-[140px] md:min-h-0 bg-[#1a2744] flex items-center justify-center shrink-0">
-          <!-- id-card / user-check -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#E6D9AA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="14" x="3" y="5" rx="0"/><circle cx="9" cy="10" r="2"/><path d="M6 14c0-1.1.9-2 2-2h2a2 2 0 0 1 2 2"/><path d="M15 8h2"/><path d="M15 11h2"/></svg>
-        </div>
-        <div class="flex-1 p-6 md:p-8 flex flex-col justify-center">
-          <h3 class="font-serif text-xl md:text-2xl font-bold text-on-surface mb-2">Docente</h3>
-          <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Directorio académico, publicaciones y perfil sincronizado con ORCID.</p>
-          <a class="group inline-flex items-center gap-1.5 text-primary font-semibold text-sm hover:underline" href="#/directorio-docentes">
-            Ver directorio
-            <svg class="transition-transform duration-200 group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-      <!-- Egresado -->
-      <div class="bg-white rounded-xl border border-border-subtle/40 shadow-sm overflow-hidden flex flex-col md:flex-row hover:shadow-md transition-shadow">
-        <div class="md:w-2/5 min-h-[140px] md:min-h-0 bg-[#1e3a2f] flex items-center justify-center shrink-0">
-          <!-- users -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#E6D9AA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <div class="flex-1 p-6 md:p-8 flex flex-col justify-center">
-          <h3 class="font-serif text-xl md:text-2xl font-bold text-on-surface mb-2">Egresado</h3>
-          <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Red Alumni, bolsa de trabajo, mentoría y capacitaciones continuas.</p>
-          <a class="group inline-flex items-center gap-1.5 text-primary font-semibold text-sm hover:underline" href="#/egresados">
-            Red Alumni
-            <svg class="transition-transform duration-200 group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-      <!-- Empresa -->
-      <div class="bg-white rounded-xl border border-border-subtle/40 shadow-sm overflow-hidden flex flex-col md:flex-row hover:shadow-md transition-shadow">
-        <div class="md:w-2/5 min-h-[140px] md:min-h-0 bg-[#2d1a0e] flex items-center justify-center shrink-0">
-          <!-- handshake -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#E6D9AA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>
-        </div>
-        <div class="flex-1 p-6 md:p-8 flex flex-col justify-center">
-          <h3 class="font-serif text-xl md:text-2xl font-bold text-on-surface mb-2">Empresa</h3>
-          <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Publica vacantes, participa en eventos y forma parte de la red aliada FIIS.</p>
-          <a class="group inline-flex items-center gap-1.5 text-primary font-semibold text-sm hover:underline" href="#/empresas">
-            Soy empresa
-            <svg class="transition-transform duration-200 group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- ===== Noticias ===== -->
 <section class="py-16 md:py-20 bg-white">
-  <div class="max-w-[1200px] mx-auto px-6">
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10 md:mb-12">
-      <h2 class="font-serif text-3xl md:text-4xl font-bold text-primary border-l-4 border-primary pl-5">
-        Noticias FIIS
-      </h2>
-      <a class="group inline-flex items-center gap-1.5 text-primary font-semibold text-sm hover:underline pl-5 md:pl-0" href="#/noticias">
-        Ver todas las noticias
-        <svg class="transition-transform duration-200 group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
+    <div class="max-w-[1200px] mx-auto px-6">
+        <div
+            class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10 md:mb-12"
+        >
+            <h2
+                class="font-serif text-3xl md:text-4xl font-bold text-primary border-l-4 border-primary pl-5"
+            >
+                Noticias FIIS
+            </h2>
+            <a
+                class="group inline-flex items-center gap-1.5 text-primary font-semibold text-sm hover:underline pl-5 md:pl-0"
+                href="#/noticias"
+            >
+                Ver todas las noticias
+                <svg
+                    class="transition-transform duration-200 group-hover:translate-x-1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <article
+                class="bg-white rounded-xl overflow-hidden border border-border-subtle/40 shadow-sm hover:shadow-md transition-shadow group"
+            >
+                <div
+                    class="aspect-[16/9] bg-surface-container-high flex items-center justify-center text-text-secondary relative"
+                >
+                    <!-- image placeholder: newspaper -->
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="48"
+                        height="48"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="opacity-25"
+                    >
+                        <path
+                            d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"
+                        />
+                        <path d="M18 14h-8" />
+                        <path d="M15 18h-5" />
+                        <path d="M10 6h8v4h-8V6Z" />
+                    </svg>
+                    <span
+                        class="absolute top-4 left-4 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-primary text-white"
+                        >Institucional</span
+                    >
+                </div>
+                <div class="p-5 md:p-6">
+                    <p class="text-xs text-text-secondary mb-3">
+                        15 de mayo, 2025
+                    </p>
+                    <h3
+                        class="font-serif text-lg font-bold text-on-surface leading-snug mb-3"
+                    >
+                        Inauguración del nuevo Laboratorio de Inteligencia
+                        Artificial
+                    </h3>
+                    <p
+                        class="text-sm text-on-surface-variant leading-relaxed line-clamp-3 mb-4"
+                    >
+                        Nuevas instalaciones equipadas con tecnología de punta
+                        para el desarrollo de proyectos de investigación
+                        aplicada en IA y automatización.
+                    </p>
+                    <a
+                        class="group/link inline-flex items-center gap-1.5 text-primary font-semibold text-sm hover:underline"
+                        href="#/noticias"
+                    >
+                        Leer noticia
+                        <svg
+                            class="transition-transform duration-200 group-hover/link:translate-x-1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </article>
+            <article
+                class="bg-white rounded-xl overflow-hidden border border-border-subtle/40 shadow-sm hover:shadow-md transition-shadow group"
+            >
+                <div
+                    class="aspect-[16/9] bg-surface-container-high flex items-center justify-center text-text-secondary relative"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="48"
+                        height="48"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="opacity-25"
+                    >
+                        <path
+                            d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"
+                        />
+                        <path d="M18 14h-8" />
+                        <path d="M15 18h-5" />
+                        <path d="M10 6h8v4h-8V6Z" />
+                    </svg>
+                    <span
+                        class="absolute top-4 left-4 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-primary/10 text-primary"
+                        >Académica</span
+                    >
+                </div>
+                <div class="p-5 md:p-6">
+                    <p class="text-xs text-text-secondary mb-3">
+                        12 de mayo, 2025
+                    </p>
+                    <h3
+                        class="font-serif text-lg font-bold text-on-surface leading-snug mb-3"
+                    >
+                        Estudiantes de Industrial destacan en Certamen Nacional
+                        de Optimización
+                    </h3>
+                    <p
+                        class="text-sm text-on-surface-variant leading-relaxed line-clamp-3 mb-4"
+                    >
+                        Nuestro equipo obtuvo el primer puesto en la competencia
+                        nacional de optimización de procesos industriales 2025.
+                    </p>
+                    <a
+                        class="group/link inline-flex items-center gap-1.5 text-primary font-semibold text-sm hover:underline"
+                        href="#/noticias"
+                    >
+                        Leer noticia
+                        <svg
+                            class="transition-transform duration-200 group-hover/link:translate-x-1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </article>
+            <article
+                class="bg-white rounded-xl overflow-hidden border border-border-subtle/40 shadow-sm hover:shadow-md transition-shadow group"
+            >
+                <div
+                    class="aspect-[16/9] bg-surface-container-high flex items-center justify-center text-text-secondary relative"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="48"
+                        height="48"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="opacity-25"
+                    >
+                        <path
+                            d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"
+                        />
+                        <path d="M18 14h-8" />
+                        <path d="M15 18h-5" />
+                        <path d="M10 6h8v4h-8V6Z" />
+                    </svg>
+                    <span
+                        class="absolute top-4 left-4 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-primary/10 text-primary"
+                        >Empresas</span
+                    >
+                </div>
+                <div class="p-5 md:p-6">
+                    <p class="text-xs text-text-secondary mb-3">
+                        10 de mayo, 2025
+                    </p>
+                    <h3
+                        class="font-serif text-lg font-bold text-on-surface leading-snug mb-3"
+                    >
+                        Nueva alianza estratégica con líderes del sector
+                        tecnológico
+                    </h3>
+                    <p
+                        class="text-sm text-on-surface-variant leading-relaxed line-clamp-3 mb-4"
+                    >
+                        Convenio permitirá a estudiantes realizar prácticas en
+                        proyectos de transformación digital en empresas líderes
+                        del sector.
+                    </p>
+                    <a
+                        class="group/link inline-flex items-center gap-1.5 text-primary font-semibold text-sm hover:underline"
+                        href="#/noticias"
+                    >
+                        Leer noticia
+                        <svg
+                            class="transition-transform duration-200 group-hover/link:translate-x-1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </article>
+        </div>
     </div>
-    <div class="grid md:grid-cols-3 gap-6">
-      <article class="bg-white rounded-xl overflow-hidden border border-border-subtle/40 shadow-sm hover:shadow-md transition-shadow group">
-        <div class="aspect-[16/9] bg-surface-container-high flex items-center justify-center text-text-secondary relative">
-          <!-- image placeholder: newspaper -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="opacity-25"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>
-          <span class="absolute top-4 left-4 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-primary text-white">Institucional</span>
-        </div>
-        <div class="p-5 md:p-6">
-          <p class="text-xs text-text-secondary mb-3">15 de mayo, 2025</p>
-          <h3 class="font-serif text-lg font-bold text-on-surface leading-snug mb-3">Inauguración del nuevo Laboratorio de Inteligencia Artificial</h3>
-          <p class="text-sm text-on-surface-variant leading-relaxed line-clamp-3 mb-4">Nuevas instalaciones equipadas con tecnología de punta para el desarrollo de proyectos de investigación aplicada en IA y automatización.</p>
-          <a class="group/link inline-flex items-center gap-1.5 text-primary font-semibold text-sm hover:underline" href="#/noticias">
-            Leer noticia
-            <svg class="transition-transform duration-200 group-hover/link:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-        </div>
-      </article>
-      <article class="bg-white rounded-xl overflow-hidden border border-border-subtle/40 shadow-sm hover:shadow-md transition-shadow group">
-        <div class="aspect-[16/9] bg-surface-container-high flex items-center justify-center text-text-secondary relative">
-          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="opacity-25"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>
-          <span class="absolute top-4 left-4 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-primary/10 text-primary">Académica</span>
-        </div>
-        <div class="p-5 md:p-6">
-          <p class="text-xs text-text-secondary mb-3">12 de mayo, 2025</p>
-          <h3 class="font-serif text-lg font-bold text-on-surface leading-snug mb-3">Estudiantes de Industrial destacan en Certamen Nacional de Optimización</h3>
-          <p class="text-sm text-on-surface-variant leading-relaxed line-clamp-3 mb-4">Nuestro equipo obtuvo el primer puesto en la competencia nacional de optimización de procesos industriales 2025.</p>
-          <a class="group/link inline-flex items-center gap-1.5 text-primary font-semibold text-sm hover:underline" href="#/noticias">
-            Leer noticia
-            <svg class="transition-transform duration-200 group-hover/link:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-        </div>
-      </article>
-      <article class="bg-white rounded-xl overflow-hidden border border-border-subtle/40 shadow-sm hover:shadow-md transition-shadow group">
-        <div class="aspect-[16/9] bg-surface-container-high flex items-center justify-center text-text-secondary relative">
-          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="opacity-25"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>
-          <span class="absolute top-4 left-4 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-primary/10 text-primary">Empresas</span>
-        </div>
-        <div class="p-5 md:p-6">
-          <p class="text-xs text-text-secondary mb-3">10 de mayo, 2025</p>
-          <h3 class="font-serif text-lg font-bold text-on-surface leading-snug mb-3">Nueva alianza estratégica con líderes del sector tecnológico</h3>
-          <p class="text-sm text-on-surface-variant leading-relaxed line-clamp-3 mb-4">Convenio permitirá a estudiantes realizar prácticas en proyectos de transformación digital en empresas líderes del sector.</p>
-          <a class="group/link inline-flex items-center gap-1.5 text-primary font-semibold text-sm hover:underline" href="#/noticias">
-            Leer noticia
-            <svg class="transition-transform duration-200 group-hover/link:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-        </div>
-      </article>
-    </div>
-  </div>
 </section>
 
 <!-- ===== Logros y Reconocimientos — sección oscura ===== -->
 <section class="py-16 md:py-20 bg-[#181D1C]">
-  <div class="max-w-[1200px] mx-auto px-6">
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10 md:mb-12">
-      <h2 class="font-serif text-3xl md:text-4xl font-bold text-white border-l-4 border-brand-cream pl-5">
-        Logros y Reconocimientos
-      </h2>
-      <a class="group inline-flex items-center gap-1.5 text-brand-cream font-semibold text-sm hover:underline pl-5 md:pl-0" href="#/noticias">
-        Ver todos los logros
-        <svg class="transition-transform duration-200 group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
+    <div class="max-w-[1200px] mx-auto px-6">
+        <div
+            class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10 md:mb-12"
+        >
+            <h2
+                class="font-serif text-3xl md:text-4xl font-bold text-white border-l-4 border-brand-cream pl-5"
+            >
+                Logros y Reconocimientos
+            </h2>
+            <a
+                class="group inline-flex items-center gap-1.5 text-brand-cream font-semibold text-sm hover:underline pl-5 md:pl-0"
+                href="#/noticias"
+            >
+                Ver todos los logros
+                <svg
+                    class="transition-transform duration-200 group-hover:translate-x-1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div
+                class="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/8 transition-colors"
+            >
+                <span
+                    class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-amber-400/20 text-amber-300 mb-4"
+                    >Competencia Académica</span
+                >
+                <h3
+                    class="font-serif text-lg font-bold text-white leading-snug mb-3"
+                >
+                    Equipo FIIS gana Hackathon Nacional 2025
+                </h3>
+                <p class="text-sm text-white/60 leading-relaxed mb-4">
+                    Estudiantes de Ingeniería de Software obtuvieron el primer
+                    puesto en el Hackathon Nacional organizado por la IEEE con
+                    una solución de IA para gestión de residuos.
+                </p>
+                <p class="text-xs text-white/40 uppercase tracking-wide">
+                    Mayo 2025
+                </p>
+            </div>
+            <div
+                class="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/8 transition-colors"
+            >
+                <span
+                    class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-blue-400/20 text-blue-300 mb-4"
+                    >Innovación</span
+                >
+                <h3
+                    class="font-serif text-lg font-bold text-white leading-snug mb-3"
+                >
+                    Proyecto Smart Irrigation premiado por IEEE CIS
+                </h3>
+                <p class="text-sm text-white/60 leading-relaxed mb-4">
+                    Sistema de riego inteligente basado en IoT y machine
+                    learning, ganador del IEEE Computational Intelligence
+                    Society Award 2025.
+                </p>
+                <p class="text-xs text-white/40 uppercase tracking-wide">
+                    Marzo 2025
+                </p>
+            </div>
+            <div
+                class="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/8 transition-colors"
+            >
+                <span
+                    class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-emerald-400/20 text-emerald-300 mb-4"
+                    >Acreditación</span
+                >
+                <h3
+                    class="font-serif text-lg font-bold text-white leading-snug mb-3"
+                >
+                    Renovación certificación ISO 9001:2015
+                </h3>
+                <p class="text-sm text-white/60 leading-relaxed mb-4">
+                    La FIIS-UNI renueva su certificación de calidad ISO
+                    9001:2015, consolidando su compromiso con la excelencia
+                    académica e institucional.
+                </p>
+                <p class="text-xs text-white/40 uppercase tracking-wide">
+                    Enero 2025
+                </p>
+            </div>
+        </div>
     </div>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/8 transition-colors">
-        <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-amber-400/20 text-amber-300 mb-4">Competencia Académica</span>
-        <h3 class="font-serif text-lg font-bold text-white leading-snug mb-3">Equipo FIIS gana Hackathon Nacional 2025</h3>
-        <p class="text-sm text-white/60 leading-relaxed mb-4">Estudiantes de Ingeniería de Software obtuvieron el primer puesto en el Hackathon Nacional organizado por la IEEE con una solución de IA para gestión de residuos.</p>
-        <p class="text-xs text-white/40 uppercase tracking-wide">Mayo 2025</p>
-      </div>
-      <div class="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/8 transition-colors">
-        <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-blue-400/20 text-blue-300 mb-4">Innovación</span>
-        <h3 class="font-serif text-lg font-bold text-white leading-snug mb-3">Proyecto Smart Irrigation premiado por IEEE CIS</h3>
-        <p class="text-sm text-white/60 leading-relaxed mb-4">Sistema de riego inteligente basado en IoT y machine learning, ganador del IEEE Computational Intelligence Society Award 2025.</p>
-        <p class="text-xs text-white/40 uppercase tracking-wide">Marzo 2025</p>
-      </div>
-      <div class="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/8 transition-colors">
-        <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-emerald-400/20 text-emerald-300 mb-4">Acreditación</span>
-        <h3 class="font-serif text-lg font-bold text-white leading-snug mb-3">Renovación certificación ISO 9001:2015</h3>
-        <p class="text-sm text-white/60 leading-relaxed mb-4">La FIIS-UNI renueva su certificación de calidad ISO 9001:2015, consolidando su compromiso con la excelencia académica e institucional.</p>
-        <p class="text-xs text-white/40 uppercase tracking-wide">Enero 2025</p>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- ===== Próximos Eventos ===== -->
 <section class="py-16 md:py-20 bg-surface-container-low">
-  <div class="max-w-[1200px] mx-auto px-6">
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10 md:mb-12">
-      <h2 class="font-serif text-3xl md:text-4xl font-bold text-primary border-l-4 border-primary pl-5">
-        Próximos Eventos
-      </h2>
-      <a class="group inline-flex items-center gap-1.5 text-primary font-semibold text-sm hover:underline pl-5 md:pl-0" href="#/calendario">
-        Ver calendario completo
-        <svg class="transition-transform duration-200 group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
+    <div class="max-w-[1200px] mx-auto px-6">
+        <div
+            class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10 md:mb-12"
+        >
+            <h2
+                class="font-serif text-3xl md:text-4xl font-bold text-primary border-l-4 border-primary pl-5"
+            >
+                Próximos Eventos
+            </h2>
+            <a
+                class="group inline-flex items-center gap-1.5 text-primary font-semibold text-sm hover:underline pl-5 md:pl-0"
+                href="#/calendario"
+            >
+                Ver calendario completo
+                <svg
+                    class="transition-transform duration-200 group-hover:translate-x-1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+        <div class="flex flex-col gap-4">
+            <div
+                class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 bg-white border border-border-subtle/40 shadow-sm p-5 sm:p-6 rounded-xl hover:border-primary transition-colors"
+            >
+                <div
+                    class="flex sm:flex-col items-center sm:justify-center gap-3 sm:gap-0 bg-primary text-white rounded-lg p-3 sm:p-4 min-w-[80px] sm:min-w-[90px] shrink-0 text-center"
+                >
+                    <span
+                        class="text-xs font-bold uppercase tracking-wide opacity-80"
+                        >Jun</span
+                    >
+                    <span
+                        class="font-serif text-2xl sm:text-3xl font-bold leading-none"
+                        >20</span
+                    >
+                </div>
+                <div class="flex-grow min-w-0">
+                    <div
+                        class="flex flex-col sm:flex-row items-start justify-between gap-3"
+                    >
+                        <div class="min-w-0 flex-1">
+                            <div class="flex items-center gap-3 mb-2 flex-wrap">
+                                <span
+                                    class="bg-primary/10 text-primary px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase"
+                                    >Presencial</span
+                                >
+                                <span class="text-text-secondary text-xs"
+                                    >Auditorio Central FIIS</span
+                                >
+                            </div>
+                            <h4
+                                class="font-serif text-base sm:text-lg font-bold text-on-surface mb-1 leading-snug"
+                            >
+                                Seminario de Optimización en la Cadena de
+                                Suministros
+                            </h4>
+                            <p class="text-text-secondary text-sm">
+                                Organizado por el Capítulo Estudiantil IISE
+                            </p>
+                        </div>
+                        <div
+                            class="countdown pt-0 sm:pt-1 shrink-0"
+                            data-date="2026-06-20T09:00:00"
+                        ></div>
+                    </div>
+                </div>
+                <button
+                    class="bg-surface-container-high text-on-surface px-5 py-2 rounded-lg text-sm font-medium hover:bg-primary hover:text-white transition-all shrink-0 self-start sm:self-center"
+                >
+                    Detalles
+                </button>
+            </div>
+            <div
+                class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 bg-white border border-border-subtle/40 shadow-sm p-5 sm:p-6 rounded-xl hover:border-primary transition-colors"
+            >
+                <div
+                    class="flex sm:flex-col items-center sm:justify-center gap-3 sm:gap-0 bg-primary text-white rounded-lg p-3 sm:p-4 min-w-[80px] sm:min-w-[90px] shrink-0 text-center"
+                >
+                    <span
+                        class="text-xs font-bold uppercase tracking-wide opacity-80"
+                        >Jun</span
+                    >
+                    <span
+                        class="font-serif text-2xl sm:text-3xl font-bold leading-none"
+                        >24</span
+                    >
+                </div>
+                <div class="flex-grow min-w-0">
+                    <div
+                        class="flex flex-col sm:flex-row items-start justify-between gap-3"
+                    >
+                        <div class="min-w-0 flex-1">
+                            <div class="flex items-center gap-3 mb-2 flex-wrap">
+                                <span
+                                    class="bg-brand-cream text-primary px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase"
+                                    >Virtual</span
+                                >
+                                <span class="text-text-secondary text-xs"
+                                    >Zoom Institucional</span
+                                >
+                            </div>
+                            <h4
+                                class="font-serif text-base sm:text-lg font-bold text-on-surface mb-1 leading-snug"
+                            >
+                                Workshop: Metodologías Ágiles para el Desarrollo
+                                de Software
+                            </h4>
+                            <p class="text-text-secondary text-sm">
+                                Facultad de Ingeniería de Sistemas
+                            </p>
+                        </div>
+                        <div
+                            class="countdown pt-0 sm:pt-1 shrink-0"
+                            data-date="2026-06-24T15:00:00"
+                        ></div>
+                    </div>
+                </div>
+                <button
+                    class="bg-surface-container-high text-on-surface px-5 py-2 rounded-lg text-sm font-medium hover:bg-primary hover:text-white transition-all shrink-0 self-start sm:self-center"
+                >
+                    Detalles
+                </button>
+            </div>
+            <div
+                class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 bg-white border border-border-subtle/40 shadow-sm p-5 sm:p-6 rounded-xl hover:border-primary transition-colors"
+            >
+                <div
+                    class="flex sm:flex-col items-center sm:justify-center gap-3 sm:gap-0 bg-primary text-white rounded-lg p-3 sm:p-4 min-w-[80px] sm:min-w-[90px] shrink-0 text-center"
+                >
+                    <span
+                        class="text-xs font-bold uppercase tracking-wide opacity-80"
+                        >Jul</span
+                    >
+                    <span
+                        class="font-serif text-2xl sm:text-3xl font-bold leading-none"
+                        >05</span
+                    >
+                </div>
+                <div class="flex-grow min-w-0">
+                    <div
+                        class="flex flex-col sm:flex-row items-start justify-between gap-3"
+                    >
+                        <div class="min-w-0 flex-1">
+                            <div class="flex items-center gap-3 mb-2 flex-wrap">
+                                <span
+                                    class="bg-primary/10 text-primary px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase"
+                                    >Presencial</span
+                                >
+                                <span class="text-text-secondary text-xs"
+                                    >Laboratorio L1</span
+                                >
+                            </div>
+                            <h4
+                                class="font-serif text-base sm:text-lg font-bold text-on-surface mb-1 leading-snug"
+                            >
+                                Feria de Proyectos de Innovación Tecnológica
+                                FIIS
+                            </h4>
+                            <p class="text-text-secondary text-sm">
+                                Dirección de Investigación
+                            </p>
+                        </div>
+                        <div
+                            class="countdown pt-0 sm:pt-1 shrink-0"
+                            data-date="2026-07-05T10:00:00"
+                        ></div>
+                    </div>
+                </div>
+                <button
+                    class="bg-surface-container-high text-on-surface px-5 py-2 rounded-lg text-sm font-medium hover:bg-primary hover:text-white transition-all shrink-0 self-start sm:self-center"
+                >
+                    Detalles
+                </button>
+            </div>
+        </div>
     </div>
-    <div class="flex flex-col gap-4">
-      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 bg-white border border-border-subtle/40 shadow-sm p-5 sm:p-6 rounded-xl hover:border-primary transition-colors">
-        <div class="flex sm:flex-col items-center sm:justify-center gap-3 sm:gap-0 bg-primary text-white rounded-lg p-3 sm:p-4 min-w-[80px] sm:min-w-[90px] shrink-0 text-center">
-          <span class="text-xs font-bold uppercase tracking-wide opacity-80">Jun</span>
-          <span class="font-serif text-2xl sm:text-3xl font-bold leading-none">20</span>
-        </div>
-        <div class="flex-grow min-w-0">
-          <div class="flex flex-col sm:flex-row items-start justify-between gap-3">
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center gap-3 mb-2 flex-wrap">
-                <span class="bg-primary/10 text-primary px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase">Presencial</span>
-                <span class="text-text-secondary text-xs">Auditorio Central FIIS</span>
-              </div>
-              <h4 class="font-serif text-base sm:text-lg font-bold text-on-surface mb-1 leading-snug">Seminario de Optimización en la Cadena de Suministros</h4>
-              <p class="text-text-secondary text-sm">Organizado por el Capítulo Estudiantil IISE</p>
-            </div>
-            <div class="countdown pt-0 sm:pt-1 shrink-0" data-date="2026-06-20T09:00:00"></div>
-          </div>
-        </div>
-        <button class="bg-surface-container-high text-on-surface px-5 py-2 rounded-lg text-sm font-medium hover:bg-primary hover:text-white transition-all shrink-0 self-start sm:self-center">Detalles</button>
-      </div>
-      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 bg-white border border-border-subtle/40 shadow-sm p-5 sm:p-6 rounded-xl hover:border-primary transition-colors">
-        <div class="flex sm:flex-col items-center sm:justify-center gap-3 sm:gap-0 bg-primary text-white rounded-lg p-3 sm:p-4 min-w-[80px] sm:min-w-[90px] shrink-0 text-center">
-          <span class="text-xs font-bold uppercase tracking-wide opacity-80">Jun</span>
-          <span class="font-serif text-2xl sm:text-3xl font-bold leading-none">24</span>
-        </div>
-        <div class="flex-grow min-w-0">
-          <div class="flex flex-col sm:flex-row items-start justify-between gap-3">
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center gap-3 mb-2 flex-wrap">
-                <span class="bg-brand-cream text-primary px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase">Virtual</span>
-                <span class="text-text-secondary text-xs">Zoom Institucional</span>
-              </div>
-              <h4 class="font-serif text-base sm:text-lg font-bold text-on-surface mb-1 leading-snug">Workshop: Metodologías Ágiles para el Desarrollo de Software</h4>
-              <p class="text-text-secondary text-sm">Facultad de Ingeniería de Sistemas</p>
-            </div>
-            <div class="countdown pt-0 sm:pt-1 shrink-0" data-date="2026-06-24T15:00:00"></div>
-          </div>
-        </div>
-        <button class="bg-surface-container-high text-on-surface px-5 py-2 rounded-lg text-sm font-medium hover:bg-primary hover:text-white transition-all shrink-0 self-start sm:self-center">Detalles</button>
-      </div>
-      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 bg-white border border-border-subtle/40 shadow-sm p-5 sm:p-6 rounded-xl hover:border-primary transition-colors">
-        <div class="flex sm:flex-col items-center sm:justify-center gap-3 sm:gap-0 bg-primary text-white rounded-lg p-3 sm:p-4 min-w-[80px] sm:min-w-[90px] shrink-0 text-center">
-          <span class="text-xs font-bold uppercase tracking-wide opacity-80">Jul</span>
-          <span class="font-serif text-2xl sm:text-3xl font-bold leading-none">05</span>
-        </div>
-        <div class="flex-grow min-w-0">
-          <div class="flex flex-col sm:flex-row items-start justify-between gap-3">
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center gap-3 mb-2 flex-wrap">
-                <span class="bg-primary/10 text-primary px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase">Presencial</span>
-                <span class="text-text-secondary text-xs">Laboratorio L1</span>
-              </div>
-              <h4 class="font-serif text-base sm:text-lg font-bold text-on-surface mb-1 leading-snug">Feria de Proyectos de Innovación Tecnológica FIIS</h4>
-              <p class="text-text-secondary text-sm">Dirección de Investigación</p>
-            </div>
-            <div class="countdown pt-0 sm:pt-1 shrink-0" data-date="2026-07-05T10:00:00"></div>
-          </div>
-        </div>
-        <button class="bg-surface-container-high text-on-surface px-5 py-2 rounded-lg text-sm font-medium hover:bg-primary hover:text-white transition-all shrink-0 self-start sm:self-center">Detalles</button>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- ===== Video Institucional — sección oscura ===== -->
 <section class="py-16 md:py-20 bg-[#181D1C]">
-  <div class="max-w-[1200px] mx-auto px-6">
-    <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-      <div>
-        <h2 class="font-serif text-3xl md:text-4xl font-bold text-white border-l-4 border-brand-cream pl-5 mb-6">
-          Conoce la FIIS
-        </h2>
-        <p class="text-white/70 leading-relaxed mb-6 pl-5">
-          Más de seis décadas formando ingenieros industriales y de sistemas que lideran el cambio tecnológico y el desarrollo del Perú.
-        </p>
-        <div class="pl-5 flex flex-col gap-4">
-          <div class="flex items-start gap-3">
-            <!-- shield-check -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E6D9AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 shrink-0"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-            <p class="text-white/70 text-sm leading-relaxed">Cuatro escuelas profesionales con programas de pregrado y posgrado acreditados.</p>
-          </div>
-          <div class="flex items-start gap-3">
-            <!-- flask-conical -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E6D9AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 shrink-0"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
-            <p class="text-white/70 text-sm leading-relaxed">Laboratorios de IA, automatización industrial y redes con tecnología de punta.</p>
-          </div>
-          <div class="flex items-start gap-3">
-            <!-- building-2 (empresas aliadas) -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E6D9AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 shrink-0"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
-            <p class="text-white/70 text-sm leading-relaxed">Red de empresas aliadas para prácticas preprofesionales y bolsa de trabajo.</p>
-          </div>
+    <div class="max-w-[1200px] mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+            <div>
+                <h2
+                    class="font-serif text-3xl md:text-4xl font-bold text-white border-l-4 border-brand-cream pl-5 mb-6"
+                >
+                    Conoce la FIIS
+                </h2>
+                <p class="text-white/70 leading-relaxed mb-6 pl-5">
+                    Más de seis décadas formando ingenieros industriales y de
+                    sistemas que lideran el cambio tecnológico y el desarrollo
+                    del Perú.
+                </p>
+                <div class="pl-5 flex flex-col gap-4">
+                    <div class="flex items-start gap-3">
+                        <!-- shield-check -->
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#E6D9AA"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="mt-0.5 shrink-0"
+                        >
+                            <path
+                                d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                            />
+                            <path d="m9 12 2 2 4-4" />
+                        </svg>
+                        <p class="text-white/70 text-sm leading-relaxed">
+                            Cuatro escuelas profesionales con programas de
+                            pregrado y posgrado acreditados.
+                        </p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <!-- flask-conical -->
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#E6D9AA"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="mt-0.5 shrink-0"
+                        >
+                            <path
+                                d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"
+                            />
+                            <path d="M8.5 2h7" />
+                            <path d="M7 16h10" />
+                        </svg>
+                        <p class="text-white/70 text-sm leading-relaxed">
+                            Laboratorios de IA, automatización industrial y
+                            redes con tecnología de punta.
+                        </p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <!-- building-2 (empresas aliadas) -->
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#E6D9AA"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="mt-0.5 shrink-0"
+                        >
+                            <path
+                                d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"
+                            />
+                            <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" />
+                            <path
+                                d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"
+                            />
+                            <path d="M10 6h4" />
+                            <path d="M10 10h4" />
+                            <path d="M10 14h4" />
+                            <path d="M10 18h4" />
+                        </svg>
+                        <p class="text-white/70 text-sm leading-relaxed">
+                            Red de empresas aliadas para prácticas
+                            preprofesionales y bolsa de trabajo.
+                        </p>
+                    </div>
+                </div>
+                <div class="pl-5 mt-8">
+                    <a
+                        class="group inline-flex items-center gap-1.5 text-brand-cream font-semibold text-sm hover:underline"
+                        href="#/facultad"
+                    >
+                        Más sobre la facultad
+                        <svg
+                            class="transition-transform duration-200 group-hover:translate-x-1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div
+                class="rounded-xl overflow-hidden shadow-2xl bg-black aspect-video"
+            >
+                <video class="w-full h-full object-cover" controls playsinline>
+                    <source
+                        src="imagenes/video_inicio_fiis.mp4"
+                        type="video/mp4"
+                    />
+                    <div
+                        class="w-full h-full flex items-center justify-center bg-surface-container-high text-text-secondary"
+                    >
+                        <!-- play-circle -->
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="48"
+                            height="48"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <circle cx="12" cy="12" r="10" />
+                            <polygon points="10 8 16 12 10 16 10 8" />
+                        </svg>
+                    </div>
+                </video>
+            </div>
         </div>
-        <div class="pl-5 mt-8">
-          <a class="group inline-flex items-center gap-1.5 text-brand-cream font-semibold text-sm hover:underline" href="#/facultad">
-            Más sobre la facultad
-            <svg class="transition-transform duration-200 group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-      <div class="rounded-xl overflow-hidden shadow-2xl bg-black aspect-video">
-        <video class="w-full h-full object-cover" controls playsinline>
-          <source src="imagenes/video_inicio_fiis.mp4" type="video/mp4">
-          <div class="w-full h-full flex items-center justify-center bg-surface-container-high text-text-secondary">
-            <!-- play-circle -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
-          </div>
-        </video>
-      </div>
     </div>
-  </div>
 </section>
 
 <!-- ===== Plataformas Institucionales ===== -->
 <section class="py-16 md:py-20 bg-white">
-  <div class="max-w-[1200px] mx-auto px-6">
-    <div class="mb-10 md:mb-12">
-      <h2 class="font-serif text-3xl md:text-4xl font-bold text-primary border-l-4 border-primary pl-5 mb-3">
-        Plataformas Institucionales
-      </h2>
-      <p class="text-on-surface-variant text-sm max-w-lg pl-5">Accede a los sistemas y plataformas de la FIIS-UNI desde un solo lugar.</p>
+    <div class="max-w-[1200px] mx-auto px-6">
+        <div class="mb-10 md:mb-12">
+            <h2
+                class="font-serif text-3xl md:text-4xl font-bold text-primary border-l-4 border-primary pl-5 mb-3"
+            >
+                Plataformas Institucionales
+            </h2>
+            <p class="text-on-surface-variant text-sm max-w-lg pl-5">
+                Accede a los sistemas y plataformas de la FIIS-UNI desde un solo
+                lugar.
+            </p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <a
+                href="https://univirtual.uni.pe/"
+                target="_blank"
+                rel="noopener"
+                class="group bg-white border border-border-subtle/40 rounded-xl p-6 hover:shadow-md hover:border-primary transition-all flex flex-col items-center text-center gap-4"
+            >
+                <div
+                    class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+                >
+                    <!-- monitor -->
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <rect width="20" height="14" x="2" y="3" rx="0" />
+                        <line x1="8" x2="16" y1="21" y2="21" />
+                        <line x1="12" x2="12" y1="17" y2="21" />
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-sm font-bold text-on-surface">
+                        Aula Virtual
+                    </p>
+                    <p class="text-xs text-text-secondary mt-1 leading-relaxed">
+                        Cursos en línea y materiales académicos
+                    </p>
+                </div>
+            </a>
+            <a
+                href="#"
+                class="group bg-white border border-border-subtle/40 rounded-xl p-6 hover:shadow-md hover:border-primary transition-all flex flex-col items-center text-center gap-4"
+            >
+                <div
+                    class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+                >
+                    <!-- mail -->
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <rect width="20" height="16" x="2" y="4" rx="0" />
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-sm font-bold text-on-surface">Correo UNI</p>
+                    <p class="text-xs text-text-secondary mt-1 leading-relaxed">
+                        Correo institucional @uni.pe
+                    </p>
+                </div>
+            </a>
+            <a
+                href="https://docentes.uni.edu.pe/login"
+                target="_blank"
+                rel="noopener"
+                class="group bg-white border border-border-subtle/40 rounded-xl p-6 hover:shadow-md hover:border-primary transition-all flex flex-col items-center text-center gap-4"
+            >
+                <div
+                    class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+                >
+                    <!-- book-open -->
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-sm font-bold text-on-surface">
+                        Yachay Docentes
+                    </p>
+                    <p class="text-xs text-text-secondary mt-1 leading-relaxed">
+                        Intranet para gestión académica docente
+                    </p>
+                </div>
+            </a>
+            <a
+                href="#/centro-informacion"
+                class="group bg-white border border-border-subtle/40 rounded-xl p-6 hover:shadow-md hover:border-primary transition-all flex flex-col items-center text-center gap-4"
+            >
+                <div
+                    class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+                >
+                    <!-- library / archive -->
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <rect width="20" height="5" x="2" y="3" rx="0" />
+                        <path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8" />
+                        <path d="M10 12h4" />
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-sm font-bold text-on-surface">
+                        Biblioteca KOHA
+                    </p>
+                    <p class="text-xs text-text-secondary mt-1 leading-relaxed">
+                        Catálogo digital y repositorio bibliográfico
+                    </p>
+                </div>
+            </a>
+        </div>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <a href="#" class="group bg-white border border-border-subtle/40 rounded-xl p-6 hover:shadow-md hover:border-primary transition-all flex flex-col items-center text-center gap-4">
-        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-          <!-- monitor -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="0"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
-        </div>
-        <div>
-          <p class="text-sm font-bold text-on-surface">Aula Virtual</p>
-          <p class="text-xs text-text-secondary mt-1 leading-relaxed">Cursos en línea y materiales académicos</p>
-        </div>
-      </a>
-      <a href="#" class="group bg-white border border-border-subtle/40 rounded-xl p-6 hover:shadow-md hover:border-primary transition-all flex flex-col items-center text-center gap-4">
-        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-          <!-- mail -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="0"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        </div>
-        <div>
-          <p class="text-sm font-bold text-on-surface">Correo UNI</p>
-          <p class="text-xs text-text-secondary mt-1 leading-relaxed">Correo institucional @uni.pe</p>
-        </div>
-      </a>
-      <a href="https://docentes.uni.edu.pe/login" target="_blank" rel="noopener" class="group bg-white border border-border-subtle/40 rounded-xl p-6 hover:shadow-md hover:border-primary transition-all flex flex-col items-center text-center gap-4">
-        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-          <!-- book-open -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-        </div>
-        <div>
-          <p class="text-sm font-bold text-on-surface">Yachay Docentes</p>
-          <p class="text-xs text-text-secondary mt-1 leading-relaxed">Intranet para gestión académica docente</p>
-        </div>
-      </a>
-      <a href="#/centro-informacion" class="group bg-white border border-border-subtle/40 rounded-xl p-6 hover:shadow-md hover:border-primary transition-all flex flex-col items-center text-center gap-4">
-        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-          <!-- library / archive -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="5" x="2" y="3" rx="0"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></svg>
-        </div>
-        <div>
-          <p class="text-sm font-bold text-on-surface">Biblioteca KOHA</p>
-          <p class="text-xs text-text-secondary mt-1 leading-relaxed">Catálogo digital y repositorio bibliográfico</p>
-        </div>
-      </a>
-    </div>
-  </div>
 </section>
 
 <!-- ===== Avisos importantes ===== -->
 <section class="py-16 md:py-20 bg-surface-container-low">
-  <div class="max-w-[1200px] mx-auto px-6">
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10 md:mb-12">
-      <h2 class="font-serif text-3xl md:text-4xl font-bold text-primary border-l-4 border-primary pl-5">
-        Avisos Importantes
-      </h2>
-      <a class="group inline-flex items-center gap-1.5 text-primary font-semibold text-sm hover:underline pl-5 md:pl-0" href="#/avisos-academicos">
-        Ver todos los avisos
-        <svg class="transition-transform duration-200 group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
+    <div class="max-w-[1200px] mx-auto px-6">
+        <div
+            class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10 md:mb-12"
+        >
+            <h2
+                class="font-serif text-3xl md:text-4xl font-bold text-primary border-l-4 border-primary pl-5"
+            >
+                Avisos Importantes
+            </h2>
+            <a
+                class="group inline-flex items-center gap-1.5 text-primary font-semibold text-sm hover:underline pl-5 md:pl-0"
+                href="#/avisos-academicos"
+            >
+                Ver todos los avisos
+                <svg
+                    class="transition-transform duration-200 group-hover:translate-x-1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-4">
+            <div
+                class="bg-white rounded-xl border border-border-subtle/40 shadow-sm p-5 md:p-6 hover:shadow-md transition-shadow"
+            >
+                <div class="flex items-center gap-2 mb-3">
+                    <span
+                        class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-error/10 text-error"
+                        >Resolución</span
+                    >
+                    <span class="text-xs text-text-secondary">Académico</span>
+                </div>
+                <h3
+                    class="font-serif text-base font-bold text-on-surface leading-snug mb-2"
+                >
+                    Cronograma de Evaluaciones Finales 2025-II
+                </h3>
+                <p class="text-sm text-on-surface-variant leading-relaxed">
+                    Se aprueba el cronograma oficial de exámenes finales para
+                    todas las Escuelas Profesionales.
+                </p>
+            </div>
+            <div
+                class="bg-white rounded-xl border border-border-subtle/40 shadow-sm p-5 md:p-6 hover:shadow-md transition-shadow"
+            >
+                <div class="flex items-center gap-2 mb-3">
+                    <span
+                        class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-warning/10 text-warning"
+                        >Comunicado</span
+                    >
+                    <span class="text-xs text-text-secondary">Académico</span>
+                </div>
+                <h3
+                    class="font-serif text-base font-bold text-on-surface leading-snug mb-2"
+                >
+                    Actualización Reglamento de Evaluación Académica
+                </h3>
+                <p class="text-sm text-on-surface-variant leading-relaxed">
+                    Modificaciones aprobadas con vigencia a partir del semestre
+                    2025-I.
+                </p>
+            </div>
+            <div
+                class="bg-white rounded-xl border border-border-subtle/40 shadow-sm p-5 md:p-6 hover:shadow-md transition-shadow"
+            >
+                <div class="flex items-center gap-2 mb-3">
+                    <span
+                        class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-primary/10 text-primary"
+                        >Convocatoria</span
+                    >
+                    <span class="text-xs text-text-secondary"
+                        >Investigación</span
+                    >
+                </div>
+                <h3
+                    class="font-serif text-base font-bold text-on-surface leading-snug mb-2"
+                >
+                    Convocatoria Proyectos de Investigación 2025
+                </h3>
+                <p class="text-sm text-on-surface-variant leading-relaxed">
+                    Plazo de inscripción hasta el 30 de junio. Bases y
+                    formularios disponibles en la Dirección de Investigación.
+                </p>
+            </div>
+        </div>
     </div>
-    <div class="grid md:grid-cols-3 gap-4">
-      <div class="bg-white rounded-xl border border-border-subtle/40 shadow-sm p-5 md:p-6 hover:shadow-md transition-shadow">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-error/10 text-error">Resolución</span>
-          <span class="text-xs text-text-secondary">Académico</span>
-        </div>
-        <h3 class="font-serif text-base font-bold text-on-surface leading-snug mb-2">Cronograma de Evaluaciones Finales 2025-II</h3>
-        <p class="text-sm text-on-surface-variant leading-relaxed">Se aprueba el cronograma oficial de exámenes finales para todas las Escuelas Profesionales.</p>
-      </div>
-      <div class="bg-white rounded-xl border border-border-subtle/40 shadow-sm p-5 md:p-6 hover:shadow-md transition-shadow">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-warning/10 text-warning">Comunicado</span>
-          <span class="text-xs text-text-secondary">Académico</span>
-        </div>
-        <h3 class="font-serif text-base font-bold text-on-surface leading-snug mb-2">Actualización Reglamento de Evaluación Académica</h3>
-        <p class="text-sm text-on-surface-variant leading-relaxed">Modificaciones aprobadas con vigencia a partir del semestre 2025-I.</p>
-      </div>
-      <div class="bg-white rounded-xl border border-border-subtle/40 shadow-sm p-5 md:p-6 hover:shadow-md transition-shadow">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-primary/10 text-primary">Convocatoria</span>
-          <span class="text-xs text-text-secondary">Investigación</span>
-        </div>
-        <h3 class="font-serif text-base font-bold text-on-surface leading-snug mb-2">Convocatoria Proyectos de Investigación 2025</h3>
-        <p class="text-sm text-on-surface-variant leading-relaxed">Plazo de inscripción hasta el 30 de junio. Bases y formularios disponibles en la Dirección de Investigación.</p>
-      </div>
-    </div>
-  </div>
 </section>
 
 <script>
-(function() {
-  // Countdown
-  function initCountdowns() {
-    document.querySelectorAll('.countdown').forEach(function(el) {
-      var targetDate = new Date(el.getAttribute('data-date')).getTime();
-      function update() {
-        var now = new Date().getTime();
-        var diff = targetDate - now;
-        if (diff <= 0) {
-          el.innerHTML = '<span class="text-sm font-bold text-primary">Evento en curso</span>';
-          return;
+    (function () {
+        // Countdown
+        function initCountdowns() {
+            document.querySelectorAll(".countdown").forEach(function (el) {
+                var targetDate = new Date(
+                    el.getAttribute("data-date"),
+                ).getTime();
+                function update() {
+                    var now = new Date().getTime();
+                    var diff = targetDate - now;
+                    if (diff <= 0) {
+                        el.innerHTML =
+                            '<span class="text-sm font-bold text-primary">Evento en curso</span>';
+                        return;
+                    }
+                    var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor(
+                        (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+                    );
+                    var minutes = Math.floor(
+                        (diff % (1000 * 60 * 60)) / (1000 * 60),
+                    );
+                    var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                    el.innerHTML =
+                        '<div class="countdown-item"><span class="countdown-number">' +
+                        days +
+                        '</span><span class="countdown-label">Días</span></div>' +
+                        '<span class="countdown-sep">:</span>' +
+                        '<div class="countdown-item"><span class="countdown-number">' +
+                        String(hours).padStart(2, "0") +
+                        '</span><span class="countdown-label">Hrs</span></div>' +
+                        '<span class="countdown-sep">:</span>' +
+                        '<div class="countdown-item"><span class="countdown-number">' +
+                        String(minutes).padStart(2, "0") +
+                        '</span><span class="countdown-label">Min</span></div>';
+                }
+                update();
+                setInterval(update, 1000);
+            });
         }
-        var days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((diff % (1000 * 60)) / 1000);
-        el.innerHTML =
-          '<div class="countdown-item"><span class="countdown-number">' + days + '</span><span class="countdown-label">Días</span></div>' +
-          '<span class="countdown-sep">:</span>' +
-          '<div class="countdown-item"><span class="countdown-number">' + String(hours).padStart(2,'0') + '</span><span class="countdown-label">Hrs</span></div>' +
-          '<span class="countdown-sep">:</span>' +
-          '<div class="countdown-item"><span class="countdown-number">' + String(minutes).padStart(2,'0') + '</span><span class="countdown-label">Min</span></div>';
-      }
-      update();
-      setInterval(update, 1000);
-    });
-  }
-  initCountdowns();
-})();
+        initCountdowns();
+    })();
 </script>

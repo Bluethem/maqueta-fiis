@@ -54,17 +54,17 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="border border-border-subtle rounded-xl p-5 text-center">
+        <div class="border border-border-subtle rounded-xl p-5 text-center flex flex-col items-center">
           <span class="material-symbols-outlined text-primary text-3xl">work</span>
           <h3 class="text-sm font-bold text-on-surface mt-2">Bolsa de Trabajo</h3>
           <p class="text-xs text-text-secondary mt-1">Vacantes exclusivas para egresados y estudiantes FIIS</p>
         </div>
-        <div class="border border-border-subtle rounded-xl p-5 text-center">
+        <div class="border border-border-subtle rounded-xl p-5 text-center flex flex-col items-center">
           <span class="material-symbols-outlined text-primary text-3xl">diversity_3</span>
           <h3 class="text-sm font-bold text-on-surface mt-2">Red Alumni</h3>
           <p class="text-xs text-text-secondary mt-1">Plataforma externa de networking profesional</p>
         </div>
-        <div class="border border-border-subtle rounded-xl p-5 text-center">
+        <div class="border border-border-subtle rounded-xl p-5 text-center flex flex-col items-center">
           <span class="material-symbols-outlined text-primary text-3xl">school</span>
           <h3 class="text-sm font-bold text-on-surface mt-2">Formación Continua</h3>
           <p class="text-xs text-text-secondary mt-1">Cursos, diplomados y especializaciones con descuento</p>
@@ -74,13 +74,17 @@
       <div class="bg-white rounded-xl border border-border-subtle p-6 md:p-8">
         <h2 class="text-xl font-bold text-on-surface mb-1">Directorio de Egresados</h2>
         <p class="text-sm text-text-secondary mb-6">Conoce a los egresados de la FIIS por promoción. Conecta con ellos a través de LinkedIn.</p>
+        <div class="relative mb-4">
+          <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary text-sm pointer-events-none">search</span>
+          <input type="text" id="egresados-search" placeholder="Buscar egresado por nombre, empresa o cargo..." class="w-full pl-9 pr-3 py-2 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all">
+        </div>
         <div class="flex gap-2 mb-6 overflow-x-auto">
-          <button class="promo-filter px-4 py-1.5 rounded-full text-xs font-semibold bg-primary text-white transition-all shadow-sm" data-promo="2026-1">2026-1</button>
+          <button class="promo-filter px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-promo="2026-1">2026-1</button>
           <button class="promo-filter px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-promo="2025-2">2025-2</button>
           <button class="promo-filter px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-promo="2025-1">2025-1</button>
           <button class="promo-filter px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-promo="2024-2">2024-2</button>
           <button class="promo-filter px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-promo="2024-1">2024-1</button>
-          <button class="promo-filter px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-promo="todas">Todas</button>
+          <button class="promo-filter px-4 py-1.5 rounded-full text-xs font-semibold bg-primary text-white transition-all shadow-sm" data-promo="todas">Todas</button>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4" id="egresados-grid">
           <div class="border border-border-subtle rounded-xl p-5 text-center hover:shadow-md transition-all" data-promo="2026-1">
@@ -130,95 +134,21 @@
     </div>
 
     <div id="tab-bolsa" class="tab-content hidden space-y-6">
-      <div class="bg-white rounded-xl border border-border-subtle p-6 md:p-8">
-        <h2 class="text-xl font-bold text-on-surface mb-1">Bolsa de Trabajo</h2>
-        <p class="text-sm text-text-secondary mb-6">Vacantes disponibles para egresados y estudiantes de la FIIS.</p>
-        <div class="flex gap-2 mb-6 flex-wrap">
-          <button class="px-4 py-1.5 rounded-full text-xs font-semibold bg-primary text-white transition-all" data-filter="all">Todos</button>
-          <button class="px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-filter="industrial">Industrial</button>
-          <button class="px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-filter="sistemas">Sistemas</button>
-          <button class="px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all" data-filter="software">Software</button>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="bolsa-grid">
-          <div class="bg-white rounded-xl border border-border-subtle p-6 hover:shadow-md transition-all" data-career="industrial">
-            <div class="flex justify-between items-start mb-4">
-              <div>
-                <p class="font-bold text-on-surface text-lg">Grupo Graña y Montero</p>
-                <p class="text-text-secondary text-sm mt-0.5">Jr. De la Unión 260, Lima</p>
-              </div>
-              <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary">Presencial</span>
-            </div>
-            <h4 class="text-base font-semibold text-on-surface mb-3">Analista de Procesos Industriales</h4>
-            <div class="flex items-center gap-3 text-sm text-text-secondary mb-4">
-              <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">payments</span>S/ 2,500 - 3,800</span>
-              <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">calendar_today</span>Cierre: 15 jun</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-700">Ing. Industrial</span>
-              <button class="bg-brand-cream text-primary px-5 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition-all">Postular</button>
-            </div>
-          </div>
-          <div class="bg-white rounded-xl border border-border-subtle p-6 hover:shadow-md transition-all" data-career="sistemas">
-            <div class="flex justify-between items-start mb-4">
-              <div>
-                <p class="font-bold text-on-surface text-lg">Scotiabank Perú</p>
-                <p class="text-text-secondary text-sm mt-0.5">Av. Canaval y Moreyra 380, San Isidro</p>
-              </div>
-              <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-700">Híbrido</span>
-            </div>
-            <h4 class="text-base font-semibold text-on-surface mb-3">Ingeniero de Sistemas - Seguridad Informática</h4>
-            <div class="flex items-center gap-3 text-sm text-text-secondary mb-4">
-              <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">payments</span>S/ 4,000 - 5,500</span>
-              <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">calendar_today</span>Cierre: 20 jun</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-700">Ing. Sistemas</span>
-              <button class="bg-brand-cream text-primary px-5 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition-all">Postular</button>
-            </div>
-          </div>
-          <div class="bg-white rounded-xl border border-border-subtle p-6 hover:shadow-md transition-all" data-career="software">
-            <div class="flex justify-between items-start mb-4">
-              <div>
-                <p class="font-bold text-on-surface text-lg">Alicorp</p>
-                <p class="text-text-secondary text-sm mt-0.5">Av. Argentina 479, Callao</p>
-              </div>
-              <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary">Presencial</span>
-            </div>
-            <h4 class="text-base font-semibold text-on-surface mb-3">Software Developer - Módulo SAP</h4>
-            <div class="flex items-center gap-3 text-sm text-text-secondary mb-4">
-              <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">payments</span>S/ 3,200 - 4,600</span>
-              <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">calendar_today</span>Cierre: 25 jun</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700">Ing. Software</span>
-              <button class="bg-brand-cream text-primary px-5 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition-all">Postular</button>
-            </div>
-          </div>
-          <div class="bg-white rounded-xl border border-border-subtle p-6 hover:shadow-md transition-all" data-career="industrial">
-            <div class="flex justify-between items-start mb-4">
-              <div>
-                <p class="font-bold text-on-surface text-lg">Backus</p>
-                <p class="text-text-secondary text-sm mt-0.5">Av. Nicolas Ayllón 3986, Ate</p>
-              </div>
-              <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700">Remoto</span>
-            </div>
-            <h4 class="text-base font-semibold text-on-surface mb-3">Jefe de Planeamiento de Producción</h4>
-            <div class="flex items-center gap-3 text-sm text-text-secondary mb-4">
-              <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">payments</span>S/ 5,000 - 7,000</span>
-              <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">calendar_today</span>Cierre: 30 jun</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-700">Ing. Industrial</span>
-              <button class="bg-brand-cream text-primary px-5 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition-all">Postular</button>
-            </div>
-          </div>
-        </div>
+      <div class="rounded-xl p-8 md:p-10 text-center" style="background: linear-gradient(135deg, #711610 0%, #4a0e0a 60%, #2a0705 100%)">
+        <span class="material-symbols-outlined text-5xl mb-4 block mx-auto text-brand-cream">work</span>
+        <h2 class="text-2xl font-bold text-on-primary mb-2">Bolsa de Trabajo FIIS</h2>
+        <p class="text-on-primary/80 text-sm max-w-xl mx-auto mb-6">
+          Explora las vacantes publicadas por nuestras empresas aliadas. Encuentra prácticas, empleos y proyectos acorde a tu perfil.
+        </p>
+        <a href="#/empresas/bolsa-trabajo" class="inline-flex items-center gap-2 bg-brand-cream text-primary px-6 py-3 rounded-lg font-semibold hover:brightness-95 transition-all">
+          Ir a la Bolsa de Trabajo
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
       </div>
     </div>
 
     <div id="tab-alumni" class="tab-content hidden space-y-6">
-      <div class="bg-gradient-to-r from-primary to-[#8a2a24] rounded-2xl p-8 md:p-12 text-on-primary overflow-hidden relative">
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-20"></div>
+      <div class="rounded-2xl p-8 md:p-12 text-on-primary overflow-hidden relative" style="background: linear-gradient(135deg, #711610 0%, #4a0e0a 60%, #2a0705 100%)">
         <div class="relative z-10">
           <div class="flex items-center gap-3 mb-4">
             <span class="material-symbols-outlined text-brand-cream text-3xl" style="font-variation-settings:'FILL'1;">diversity_3</span>
@@ -251,55 +181,55 @@
         <h2 class="text-xl font-bold text-on-surface mb-1">Todo lo que puedes hacer en Red Alumni</h2>
         <p class="text-sm text-text-secondary mb-6">Funcionalidades exclusivas disponibles en la plataforma de egresados. Accede con tu cuenta institucional.</p>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="border border-border-subtle rounded-xl p-6 text-center hover:shadow-lg hover:border-primary transition-all group">
+          <div class="border border-border-subtle rounded-xl p-6 text-center hover:shadow-lg hover:border-primary transition-all group flex flex-col items-center">
             <span class="material-symbols-outlined text-primary text-4xl">badge</span>
             <h3 class="text-sm font-bold text-on-surface mt-3">Directorio Profesional</h3>
             <p class="text-xs text-text-secondary mt-2 leading-relaxed">Busca egresados por empresa, sector o promoción. Conecta con colegas y expande tu red.</p>
             <a href="https://alumni.fiis.uni.edu.pe" target="_blank" class="mt-4 inline-flex items-center gap-1 text-sm text-primary font-semibold hover:underline transition-all">Ir a Red Alumni <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
           </div>
-          <div class="border border-border-subtle rounded-xl p-6 text-center hover:shadow-lg hover:border-primary transition-all group">
+          <div class="border border-border-subtle rounded-xl p-6 text-center hover:shadow-lg hover:border-primary transition-all group flex flex-col items-center">
             <span class="material-symbols-outlined text-primary text-4xl">psychology</span>
             <h3 class="text-sm font-bold text-on-surface mt-3">Mentoría Senior-Junior</h3>
             <p class="text-xs text-text-secondary mt-2 leading-relaxed">Conecta con egresados experimentados que te guiarán en tu desarrollo profesional.</p>
             <a href="https://alumni.fiis.uni.edu.pe" target="_blank" class="mt-4 inline-flex items-center gap-1 text-sm text-primary font-semibold hover:underline transition-all">Ir a Red Alumni <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
           </div>
-          <div class="border border-border-subtle rounded-xl p-6 text-center hover:shadow-lg hover:border-primary transition-all group">
+          <div class="border border-border-subtle rounded-xl p-6 text-center hover:shadow-lg hover:border-primary transition-all group flex flex-col items-center">
             <span class="material-symbols-outlined text-primary text-4xl">assignment_turned_in</span>
             <h3 class="text-sm font-bold text-on-surface mt-3">Asesoría de Empleabilidad</h3>
             <p class="text-xs text-text-secondary mt-2 leading-relaxed">Agenda sesiones con orientadores para mejorar tu CV, preparación de entrevistas y perfil profesional.</p>
             <a href="https://alumni.fiis.uni.edu.pe" target="_blank" class="mt-4 inline-flex items-center gap-1 text-sm text-primary font-semibold hover:underline transition-all">Ir a Red Alumni <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
           </div>
-          <div class="border border-border-subtle rounded-xl p-6 text-center hover:shadow-lg hover:border-primary transition-all group">
+          <div class="border border-border-subtle rounded-xl p-6 text-center hover:shadow-lg hover:border-primary transition-all group flex flex-col items-center">
             <span class="material-symbols-outlined text-primary text-4xl">notifications</span>
             <h3 class="text-sm font-bold text-on-surface mt-3">Alertas de Empleabilidad</h3>
             <p class="text-xs text-text-secondary mt-2 leading-relaxed">Recibe notificaciones personalizadas cuando una nueva oferta coincida con tu perfil.</p>
             <a href="https://alumni.fiis.uni.edu.pe" target="_blank" class="mt-4 inline-flex items-center gap-1 text-sm text-primary font-semibold hover:underline transition-all">Ir a Red Alumni <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
           </div>
-          <div class="border border-border-subtle rounded-xl p-6 text-center hover:shadow-lg hover:border-primary transition-all group">
+          <div class="border border-border-subtle rounded-xl p-6 text-center hover:shadow-lg hover:border-primary transition-all group flex flex-col items-center">
             <span class="material-symbols-outlined text-primary text-4xl">school</span>
             <h3 class="text-sm font-bold text-on-surface mt-3">Capacitación Especializada</h3>
             <p class="text-xs text-text-secondary mt-2 leading-relaxed">Accede a cursos SAP, Python, Power BI y más con descuentos exclusivos para egresados FIIS.</p>
             <a href="https://alumni.fiis.uni.edu.pe" target="_blank" class="mt-4 inline-flex items-center gap-1 text-sm text-primary font-semibold hover:underline transition-all">Ir a Red Alumni <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
           </div>
-          <div class="border border-border-subtle rounded-xl p-6 text-center hover:shadow-lg hover:border-primary transition-all group">
+          <div class="border border-border-subtle rounded-xl p-6 text-center hover:shadow-lg hover:border-primary transition-all group flex flex-col items-center">
             <span class="material-symbols-outlined text-primary text-4xl">forum</span>
             <h3 class="text-sm font-bold text-on-surface mt-3">Foro Comunitario</h3>
             <p class="text-xs text-text-secondary mt-2 leading-relaxed">Espacio de discusión e intercambio entre egresados para resolver dudas técnicas y laborales.</p>
             <a href="https://alumni.fiis.uni.edu.pe" target="_blank" class="mt-4 inline-flex items-center gap-1 text-sm text-primary font-semibold hover:underline transition-all">Ir a Red Alumni <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
           </div>
-          <div class="border border-border-subtle rounded-xl p-6 text-center hover:shadow-lg hover:border-primary transition-all group">
+          <div class="border border-border-subtle rounded-xl p-6 text-center hover:shadow-lg hover:border-primary transition-all group flex flex-col items-center">
             <span class="material-symbols-outlined text-primary text-4xl">volunteer_activism</span>
             <h3 class="text-sm font-bold text-on-surface mt-3">Donaciones</h3>
             <p class="text-xs text-text-secondary mt-2 leading-relaxed">Contribuye al financiamiento de proyectos, becas y laboratorios de la FIIS.</p>
             <a href="https://alumni.fiis.uni.edu.pe" target="_blank" class="mt-4 inline-flex items-center gap-1 text-sm text-primary font-semibold hover:underline transition-all">Ir a Red Alumni <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
           </div>
-          <div class="border border-border-subtle rounded-xl p-6 text-center hover:shadow-lg hover:border-primary transition-all group">
+          <div class="border border-border-subtle rounded-xl p-6 text-center hover:shadow-lg hover:border-primary transition-all group flex flex-col items-center">
             <span class="material-symbols-outlined text-primary text-4xl">event</span>
             <h3 class="text-sm font-bold text-on-surface mt-3">Eventos y Webinars</h3>
             <p class="text-xs text-text-secondary mt-2 leading-relaxed">Calendario de ferias laborales, charlas de tendencias y eventos de networking.</p>
             <a href="https://alumni.fiis.uni.edu.pe" target="_blank" class="mt-4 inline-flex items-center gap-1 text-sm text-primary font-semibold hover:underline transition-all">Ir a Red Alumni <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
           </div>
-          <div class="border border-border-subtle rounded-xl p-6 text-center hover:shadow-lg hover:border-primary transition-all group">
+          <div class="border border-border-subtle rounded-xl p-6 text-center hover:shadow-lg hover:border-primary transition-all group flex flex-col items-center">
             <span class="material-symbols-outlined text-primary text-4xl">meeting_room</span>
             <h3 class="text-sm font-bold text-on-surface mt-3">Reserva de Instalaciones</h3>
             <p class="text-xs text-text-secondary mt-2 leading-relaxed">Gestiona el acceso a biblioteca, espacios de estudio e instalaciones deportivas.</p>
@@ -316,21 +246,38 @@
 (function() {
   const filterBtns = document.querySelectorAll('.promo-filter');
   const cards = document.querySelectorAll('#egresados-grid [data-promo]');
+  const searchInput = document.getElementById('egresados-search');
+
+  function doFilter(promo, query) {
+    cards.forEach(function(card) {
+      var showPromo = promo === 'todas' || card.getAttribute('data-promo') === promo;
+      var matchesSearch = true;
+      if (query) {
+        var text = card.textContent.toLowerCase();
+        matchesSearch = text.indexOf(query.toLowerCase()) !== -1;
+      }
+      card.classList.toggle('hidden', !(showPromo && matchesSearch));
+    });
+  }
+
   filterBtns.forEach(function(btn) {
     btn.addEventListener('click', function() {
       filterBtns.forEach(function(b) {
         b.className = 'promo-filter px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-border-subtle text-text-secondary hover:bg-primary/5 transition-all';
       });
       btn.className = 'promo-filter px-4 py-1.5 rounded-full text-xs font-semibold bg-primary text-white transition-all shadow-sm';
-      const promo = btn.getAttribute('data-promo');
-      cards.forEach(function(card) {
-        if (promo === 'todas' || card.getAttribute('data-promo') === promo) {
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
-        }
-      });
+      doFilter(btn.getAttribute('data-promo'), searchInput ? searchInput.value : '');
     });
   });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', function() {
+      var active = document.querySelector('.promo-filter.bg-primary');
+      var promo = active ? active.getAttribute('data-promo') : 'todas';
+      doFilter(promo, searchInput.value);
+    });
+  }
+
+  doFilter('todas', '');
 })();
 </script>

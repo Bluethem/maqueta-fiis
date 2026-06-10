@@ -63,12 +63,22 @@
 <script>
 (function() {
   var EGRESADOS = [
-    { slug: 'ana-flores', nombre: 'Ana Flores', iniciales: 'AF', promocion: '2019', carrera: 'Ing. Industrial', cargo: 'Analista Senior de Procesos', empresa: 'Alicorp', sector: 'Manufactura / Procesos', linkedin: 'https://linkedin.com/in/anaflores', activo: true },
-    { slug: 'carlos-quispe', nombre: 'Carlos Quispe', iniciales: 'CQ', promocion: '2020', carrera: 'Ing. de Sistemas', cargo: 'Analista de Datos', empresa: 'Scotiabank Perú', sector: 'Tecnología / Datos', linkedin: 'https://linkedin.com/in/carlosquispe', activo: true },
-    { slug: 'maria-rodriguez', nombre: 'María Rodríguez', iniciales: 'MR', promocion: '2018', carrera: 'Ing. Industrial', cargo: 'Supervisora de Calidad', empresa: 'Grupo Graña y Montero', sector: 'Construcción / Calidad', linkedin: 'https://linkedin.com/in/mariarodriguez', activo: true },
-    { slug: 'luis-paredes', nombre: 'Luis Paredes', iniciales: 'LP', promocion: '2021', carrera: 'Ing. de Software', cargo: 'Full Stack Developer', empresa: 'Alicorp', sector: 'Software / SAP', linkedin: 'https://linkedin.com/in/luisparedes', activo: true },
-    { slug: 'diego-rivas', nombre: 'Diego Rivas', iniciales: 'DR', promocion: '2021', carrera: 'Ing. de Sistemas', cargo: 'Ingeniero de Seguridad Informática', empresa: 'Scotiabank Perú', sector: 'Ciberseguridad', linkedin: 'https://linkedin.com/in/diegorivas', activo: true },
-    { slug: 'maria-torres', nombre: 'María Torres', iniciales: 'MT', promocion: '2018', carrera: 'Ing. Industrial', cargo: 'Jefa de Logística', empresa: 'Intercorp', sector: 'Logística / Supply Chain', linkedin: 'https://linkedin.com/in/mariatorres', activo: true }
+    { slug: 'ana-flores', nombre: 'Ana Flores', iniciales: 'AF', promocion: '2019', carrera: 'Ing. Industrial', cargo: 'Analista Senior de Procesos', empresa: 'Alicorp', sector: 'Manufactura / Procesos', linkedin: '#', activo: true },
+    { slug: 'carlos-quispe', nombre: 'Carlos Quispe', iniciales: 'CQ', promocion: '2020', carrera: 'Ing. de Sistemas', cargo: 'Analista de Datos', empresa: 'Scotiabank Perú', sector: 'Tecnología / Datos', linkedin: '#', activo: true },
+    { slug: 'maria-rodriguez', nombre: 'María Rodríguez', iniciales: 'MR', promocion: '2018', carrera: 'Ing. Industrial', cargo: 'Supervisora de Calidad', empresa: 'Graña y Montero', sector: 'Construcción / Calidad', linkedin: '#', activo: true },
+    { slug: 'luis-paredes', nombre: 'Luis Paredes', iniciales: 'LP', promocion: '2021', carrera: 'Ing. de Software', cargo: 'Full Stack Developer', empresa: 'Alicorp', sector: 'Software / SAP', linkedin: '#', activo: true },
+    { slug: 'diego-rivas', nombre: 'Diego Rivas', iniciales: 'DR', promocion: '2021', carrera: 'Ing. de Sistemas', cargo: 'Ing. Seguridad Informática', empresa: 'Scotiabank Perú', sector: 'Ciberseguridad', linkedin: '#', activo: true },
+    { slug: 'maria-torres', nombre: 'María Torres', iniciales: 'MT', promocion: '2018', carrera: 'Ing. Industrial', cargo: 'Jefa de Logística', empresa: 'Intercorp', sector: 'Logística / Supply Chain', linkedin: '#', activo: true },
+    { slug: 'sofia-vela', nombre: 'Sofía Vela', iniciales: 'SV', promocion: '2022-1', carrera: 'Ing. de Sistemas', cargo: 'Analista de BI', empresa: 'Backus', sector: 'Tecnología / Datos', linkedin: '#', activo: true },
+    { slug: 'ricardo-mendoza', nombre: 'Ricardo Mendoza', iniciales: 'RM', promocion: '2022-1', carrera: 'Ing. Industrial', cargo: 'Ing. de Proyectos', empresa: 'Ferreyros', sector: 'Construcción / Calidad', linkedin: '#', activo: true },
+    { slug: 'carla-vega', nombre: 'Carla Vega', iniciales: 'CV', promocion: '2023-1', carrera: 'Ing. de Software', cargo: 'Frontend Developer', empresa: 'Interbank', sector: 'Software / SAP', linkedin: '#', activo: true },
+    { slug: 'pedro-ramirez', nombre: 'Pedro Ramírez', iniciales: 'PR', promocion: '2023-1', carrera: 'Ing. de Sistemas', cargo: 'Arquitecto Cloud', empresa: 'Komatsu-Mitsui', sector: 'Tecnología / Datos', linkedin: '#', activo: true },
+    { slug: 'lucia-castro', nombre: 'Lucía Castro', iniciales: 'LC', promocion: '2024-1', carrera: 'Ing. Industrial', cargo: 'Analista de Supply Chain', empresa: 'Alicorp', sector: 'Logística / Supply Chain', linkedin: '#', activo: true },
+    { slug: 'jorge-lopez', nombre: 'Jorge López', iniciales: 'JL', promocion: '2024-1', carrera: 'Ing. de Software', cargo: 'Backend Developer', empresa: 'Scotiabank Perú', sector: 'Software / SAP', linkedin: '#', activo: false },
+    { slug: 'andrea-paz', nombre: 'Andrea Paz', iniciales: 'AP', promocion: '2025-1', carrera: 'Ing. de Sistemas', cargo: 'Data Scientist Jr.', empresa: 'Intercorp', sector: 'Tecnología / Datos', linkedin: '#', activo: true },
+    { slug: 'fernando-silva', nombre: 'Fernando Silva', iniciales: 'FS', promocion: '2025-1', carrera: 'Ing. Industrial', cargo: 'Asistente de Planeamiento', empresa: 'Ferreyros', sector: 'Manufactura / Procesos', linkedin: '#', activo: true },
+    { slug: 'valeria-montes', nombre: 'Valeria Montes', iniciales: 'VM', promocion: '2026-1', carrera: 'Ing. de Sistemas', cargo: 'Practicante de Ciberseguridad', empresa: 'Backus', sector: 'Ciberseguridad', linkedin: '#', activo: true },
+    { slug: 'sebastian-rojas', nombre: 'Sebastián Rojas', iniciales: 'SR', promocion: '2026-1', carrera: 'Ing. de Software', cargo: 'Practicante de Desarrollo', empresa: 'Interbank', sector: 'Software / SAP', linkedin: '#', activo: true }
   ];
 
   var grid = document.getElementById('egresadosGrid');
