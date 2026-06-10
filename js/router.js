@@ -192,7 +192,12 @@ const MEGA_MENU = [
         col: 0,
         title: "Plataformas",
         items: [
-          { label: "Aula Virtual", route: "#", icon: "computer" },
+          {
+            label: "Aula Virtual",
+            route: "https://univirtual.uni.pe/",
+            icon: "computer",
+            external: true,
+          },
           { label: "Correo UNI", route: "#", icon: "mail" },
           {
             label: "Yachay (Intranet Docente)",
@@ -235,7 +240,12 @@ const MEGA_MENU = [
         col: 2,
         title: "Extensión",
         items: [
-          { label: "Sistemas UNI", route: "#", icon: "computer" },
+          {
+            label: "Sistemas UNI",
+            route: "https://www.sistemasuni.edu.pe/",
+            icon: "computer",
+            external: true,
+          },
           { label: "Consult FIIS", route: "/consult-fiis", icon: "handshake" },
           { label: "CEE", route: "/cee", icon: "school" },
         ],
@@ -554,14 +564,14 @@ function navbar(active) {
     </nav>
 
     <!-- Search Overlay -->
-    <div id="search-overlay" class="hidden fixed inset-0 z-[60]">
+    <div id="search-overlay" class="hidden fixed inset-0 z-[60]" role="dialog" aria-modal="true" aria-label="Buscador del portal">
       <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" id="search-backdrop"></div>
-      <div class="relative z-10 max-w-[700px] mx-auto px-4 pt-[15vh]">
+      <div class="relative z-10 max-w-[700px] mx-auto px-4 pt-[10vh]">
         <div class="bg-white rounded-2xl shadow-2xl border border-border-subtle overflow-hidden">
           <div class="flex items-center gap-3 px-5 py-4 border-b border-border-subtle">
             <span class="material-symbols-outlined text-text-secondary">search</span>
-            <input type="text" id="search-input" class="flex-1 text-base text-on-surface bg-transparent border-none outline-none placeholder:text-text-secondary" placeholder="Buscar páginas, docentes, laboratorios, servicios..." autocomplete="off" />
-            <button class="p-1 hover:bg-surface-container-low rounded-full transition-all" id="btn-search-close">
+            <input type="text" id="search-input" class="flex-1 text-base text-on-surface bg-transparent border-none outline-none placeholder:text-text-secondary" placeholder="Buscar páginas, docentes, laboratorios..." autocomplete="off" />
+            <button class="p-1 hover:bg-surface-container-low rounded-full transition-all" id="btn-search-close" aria-label="Cerrar búsqueda">
               <span class="material-symbols-outlined text-text-secondary">close</span>
             </button>
           </div>
@@ -569,9 +579,8 @@ function navbar(active) {
             <button class="search-filter px-3 py-1 rounded-full text-xs font-semibold bg-primary text-white transition-all" data-type="todos">Todos</button>
           </div>
           <div id="search-results" class="max-h-[50vh] overflow-y-auto p-2">
-            <div class="text-center py-10 text-text-secondary">
-              <span class="material-symbols-outlined text-4xl">search</span>
-              <p class="text-sm mt-2">Escribe al menos 2 caracteres para buscar</p>
+            <div class="text-center py-12 text-text-secondary">
+              <p class="text-sm">Escribe al menos 2 caracteres para comenzar a buscar</p>
             </div>
           </div>
         </div>
@@ -621,7 +630,7 @@ function publicFooter() {
           </div>
           <div class="flex flex-col gap-2">
             <h5 class="text-sm font-bold text-primary uppercase mb-2">Plataformas</h5>
-            <a class="text-on-surface-variant text-sm hover:text-primary" href="#">Aula Virtual</a>
+            <a class="text-on-surface-variant text-sm hover:text-primary" href="https://univirtual.uni.pe/" target="_blank">Aula Virtual</a>
             <a class="text-on-surface-variant text-sm hover:text-primary" href="https://docentes.uni.edu.pe/login" target="_blank">Yachay Docentes</a>
             <a class="text-on-surface-variant text-sm hover:text-primary" href="#">Correo UNI</a>
             <a class="text-on-surface-variant text-sm hover:text-primary" href="#/transparencia">Portal de Transparencia</a>
@@ -879,24 +888,23 @@ function searchInputHandler() {
   _searchTimer = setTimeout(doSearch, 200);
 }
 
-function searchKeyHandler(e) {
-  if (e.key === "Escape") searchCloseHandler();
-}
+var _searchIndex = -1;
 
 function doSearch() {
   var input = document.getElementById("search-input");
   var results = document.getElementById("search-results");
   if (!input || !results || typeof SearchEngine === "undefined") return;
   var q = input.value.trim();
+  _searchIndex = -1;
   if (q.length < 2) {
     results.innerHTML =
-      '<div class="text-center py-10 text-text-secondary"><span class="material-symbols-outlined text-4xl">search</span><p class="text-sm mt-2">Escribe al menos 2 caracteres para buscar</p></div>';
+      '<div class="text-center py-12 text-text-secondary"><p class="text-sm">Escribe al menos 2 caracteres para comenzar a buscar</p></div>';
     return;
   }
   var items = SearchEngine.search(q, _searchFilter);
   if (items.length === 0) {
     results.innerHTML =
-      '<div class="text-center py-10 text-text-secondary"><span class="material-symbols-outlined text-4xl">sentiment_dissatisfied</span><p class="text-sm mt-2">No se encontraron resultados para "' +
+      '<div class="text-center py-12 text-text-secondary"><p class="text-sm">No se encontraron resultados para "' +
       q +
       '"</p></div>';
     return;
@@ -908,6 +916,7 @@ function doSearch() {
     if (grouped[item.type].length < 6) grouped[item.type].push(item);
   });
 
+  var idx = 0;
   var html = "";
   Object.keys(grouped).forEach(function (type) {
     html +=
@@ -919,7 +928,9 @@ function doSearch() {
       html +=
         '<a href="#' +
         item.route +
-        '" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-surface-container-low transition-all group" onclick="searchCloseHandler()">';
+        '" class="search-result-item flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-surface-container-low transition-all group" data-index="' +
+        idx +
+        '" onclick="searchCloseHandler()">';
       html +=
         '<span class="material-symbols-outlined text-primary text-sm mt-0.5">' +
         icon +
@@ -935,9 +946,38 @@ function doSearch() {
       html +=
         '<span class="material-symbols-outlined text-text-secondary text-sm opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>';
       html += "</a>";
+      idx++;
     });
   });
   results.innerHTML = html;
+}
+
+function searchKeyHandler(e) {
+  if (e.key === "Escape") {
+    searchCloseHandler();
+    return;
+  }
+  if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+    e.preventDefault();
+    var items = document.querySelectorAll(".search-result-item");
+    if (!items.length) return;
+    if (e.key === "ArrowDown")
+      _searchIndex = Math.min(_searchIndex + 1, items.length - 1);
+    else _searchIndex = Math.max(_searchIndex - 1, 0);
+    items.forEach(function (el, i) {
+      el.classList.toggle("bg-surface-container-low", i === _searchIndex);
+      el.classList.toggle("ring-1", i === _searchIndex);
+      el.classList.toggle("ring-primary/20", i === _searchIndex);
+    });
+    if (_searchIndex >= 0)
+      items[_searchIndex].scrollIntoView({ block: "nearest" });
+  }
+  if (e.key === "Enter" && _searchIndex >= 0) {
+    var items = document.querySelectorAll(".search-result-item");
+    if (items[_searchIndex]) {
+      items[_searchIndex].click();
+    }
+  }
 }
 
 function bindMobileAccordion() {

@@ -33,6 +33,10 @@
         <span class="material-symbols-outlined text-xl">school</span>
         <span class="hidden sm:inline">Capacitaciones</span>
       </button>
+      <button class="flex-1 py-4 px-2 text-center text-sm font-medium border-b-2 border-transparent text-text-secondary flex items-center justify-center gap-2 hover:text-primary hover:bg-surface-container-low transition-all" data-type="logro">
+        <span class="material-symbols-outlined text-xl">emoji_events</span>
+        <span class="hidden sm:inline">Logros</span>
+      </button>
     </div>
   </div>
 
@@ -278,6 +282,74 @@
       duracion: '8 horas',
       inscripcion: '#',
       organizador: 'Instituto de Investigación'
+    },
+
+    // --- Logros y Reconocimientos (Req 31) ---
+    {
+      id: 23,
+      tipo: 'logro',
+      categoria: 'academica',
+      titulo: 'Equipo FIIS gana Hackathon Nacional de Innovación 2025',
+      fecha: '15 dic 2025',
+      resumen: 'Estudiantes de las cuatro escuelas profesionales obtuvieron el primer lugar en el Hackathon Nacional organizado por CONCYTEC, presentando una solución basada en IA para la gestión de residuos sólidos urbanos.',
+      area: 'Vida Estudiantil',
+      imagen: 'assets/campo-central-fiis.jpg',
+      badgeCls: 'bg-blue-100 text-blue-700'
+    },
+    {
+      id: 24,
+      tipo: 'logro',
+      categoria: 'investigacion',
+      titulo: 'Proyecto Smart Irrigation premiado por IEEE CIS',
+      fecha: '28 nov 2025',
+      resumen: 'El sistema de riego inteligente desarrollado por el Laboratorio de IA FIIS recibió el premio al mejor proyecto estudiantil de la Computational Intelligence Society Capitulo Peru.',
+      area: 'Laboratorio de IA',
+      imagen: 'assets/facultad-de-ingenieria-industrial-sistemas.jpg',
+      badgeCls: 'bg-indigo-100 text-indigo-700'
+    },
+    {
+      id: 25,
+      tipo: 'logro',
+      categoria: 'institucional',
+      titulo: 'Renovación certificación ISO 9001:2015 por tres años más',
+      fecha: '10 nov 2025',
+      resumen: 'La FIIS renovó exitosamente la certificación ISO 9001:2015 para sus procesos académicos y administrativos, tras una exhaustiva auditoría externa que destacó la mejora continua institucional.',
+      area: 'Decanatura FIIS',
+      imagen: 'assets/centro-de-informacion.jpg',
+      badgeCls: 'bg-primary/10 text-primary'
+    },
+    {
+      id: 26,
+      tipo: 'logro',
+      categoria: 'academica',
+      titulo: 'Docente de Sistemas obtiene premio nacional de investigación',
+      fecha: '05 oct 2025',
+      resumen: 'El Dr. Miguel Rodríguez fue galardonado con el Premio Nacional de Investigación 2025 por su trabajo en ciberseguridad industrial, siendo reconocido por el Colegio de Ingenieros del Perú.',
+      area: 'Departamento de Sistemas',
+      imagen: 'assets/alameda--fis.jpg',
+      badgeCls: 'bg-blue-100 text-blue-700'
+    },
+    {
+      id: 27,
+      tipo: 'logro',
+      categoria: 'estudiantil',
+      titulo: 'Selección de Robótica FIIS clasifica a competencia internacional',
+      fecha: '20 sep 2025',
+      resumen: 'El equipo de robótica de la FIIS clasificó al RoboCup 2026 que se realizará en Japón, tras obtener el primer puesto en la categoría de robots autónomos en la competencia latinoamericana.',
+      area: 'Agrupación CIBERSEC',
+      imagen: 'assets/campo-central-fiis.jpg',
+      badgeCls: 'bg-green-100 text-green-700'
+    },
+    {
+      id: 28,
+      tipo: 'logro',
+      categoria: 'empresarial',
+      titulo: 'Convenio FIIS-Komatsu genera becas para prácticas internacionales',
+      fecha: '01 sep 2025',
+      resumen: 'Gracias al convenio marco con Komatsu-Mitsui, 10 estudiantes de Ingeniería Industrial y Sistemas realizarán prácticas profesionales remuneradas en las sedes de Chile y Brasil durante el 2026.',
+      area: 'Vinculación Empresarial',
+      imagen: 'assets/facultad-de-ingenieria-industrial-sistemas.jpg',
+      badgeCls: 'bg-amber-100 text-amber-700'
     }
   ];
 
@@ -308,7 +380,7 @@
     noPubsMsg.classList.add('hidden');
     gridContainer.classList.remove('hidden');
 
-    // Cambiar grilla a 1 columna en comunicados y convocatorias para mayor formalidad y espacio
+    // Cambiar grilla a 1 columna en comunicados, convocatorias y avisos para mayor formalidad
     if (activeType === 'comunicado' || activeType === 'convocatoria' || activeType === 'aviso') {
       gridContainer.className = 'grid grid-cols-1 gap-6 max-w-[900px] mx-auto';
     } else {
@@ -425,6 +497,31 @@
               <div class="flex justify-between items-center pt-2 text-xs text-text-secondary font-medium">
                 <span>Emitido por: ${pub.emisor}</span>
                 <span class="bg-surface-container-low px-2.5 py-1 rounded">Área Responsable: ${pub.area}</span>
+              </div>
+            </div>
+          </article>
+        `;
+      }
+      else if (pub.tipo === 'logro') {
+        cardHtml = `
+          <article class="bg-white rounded-xl overflow-hidden border border-border-subtle hover:shadow-xl transition-all duration-300 flex flex-col group">
+            <div class="h-44 relative overflow-hidden shrink-0">
+              <img src="${pub.imagen}" alt="${pub.titulo}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none'">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+              <span class="absolute top-4 left-4 text-xs font-bold px-3 py-1 rounded-full ${pub.badgeCls}">${pub.categoria.charAt(0).toUpperCase() + pub.categoria.slice(1)}</span>
+              <span class="absolute bottom-4 left-4 text-xs text-white/90 flex items-center gap-1"><span class="material-symbols-outlined text-xs">calendar_today</span> ${pub.fecha}</span>
+            </div>
+            <div class="p-6 flex flex-col flex-grow justify-between">
+              <div>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-text-secondary">${pub.area}</span>
+                <h3 class="text-lg font-bold text-on-surface mt-1 mb-2 line-clamp-2 group-hover:text-primary transition-colors">${pub.titulo}</h3>
+                <p class="text-on-surface-variant text-sm line-clamp-3 leading-relaxed">${pub.resumen}</p>
+              </div>
+              <div class="pt-4 border-t border-border-subtle/50 mt-4">
+                <a class="text-primary text-xs font-semibold flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                  Ver logro completo
+                  <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                </a>
               </div>
             </div>
           </article>
