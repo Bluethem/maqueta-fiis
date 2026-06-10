@@ -1,4 +1,17 @@
 *, *::before, *::after { box-sizing: border-box; }
+
+/* ===== OVERRIDE GLOBAL: Sin bordes suavizados en boxes ===== */
+/* Tailwind rounded utilities */
+.rounded-sm, .rounded, .rounded-md, .rounded-lg, .rounded-xl,
+.rounded-2xl, .rounded-3xl, .rounded-t-sm, .rounded-t, .rounded-t-md,
+.rounded-t-lg, .rounded-t-xl, .rounded-t-2xl, .rounded-b-sm, .rounded-b,
+.rounded-b-md, .rounded-b-lg, .rounded-b-xl, .rounded-b-2xl,
+.rounded-l-sm, .rounded-l, .rounded-l-md, .rounded-l-lg,
+.rounded-r-sm, .rounded-r, .rounded-r-md, .rounded-r-lg { border-radius: 0 !important; }
+/* Inputs, selects, textareas */
+input, select, textarea, button { border-radius: 0 !important; }
+/* Imágenes y contenedores generales */
+img:not(.rounded-full):not([class*="rounded-full"]) { border-radius: 0 !important; }
 body { font-family: 'Inter', sans-serif; background-color: #E8E7EA; color: #1c1b1b; margin: 0; }
 .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
 .scrollbar-hide::-webkit-scrollbar { display: none; }
@@ -62,7 +75,7 @@ body { font-family: 'Inter', sans-serif; background-color: #E8E7EA; color: #1c1b
   gap: 0.75rem;
   padding: 0.75rem 1rem;
   color: #444652;
-  border-radius: 0.5rem;
+  border-radius: 0;
   transition: all 0.2s;
   cursor: pointer;
   text-decoration: none;
@@ -73,7 +86,7 @@ body { font-family: 'Inter', sans-serif; background-color: #E8E7EA; color: #1c1b
   color: #711610;
   font-weight: 600;
   padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
+  border-radius: 0;
   border: none;
   cursor: pointer;
   transition: all 0.2s;
@@ -86,7 +99,7 @@ body { font-family: 'Inter', sans-serif; background-color: #E8E7EA; color: #1c1b
   border: 2px solid #711610;
   font-weight: 600;
   padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
+  border-radius: 0;
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -102,12 +115,12 @@ body { font-family: 'Inter', sans-serif; background-color: #E8E7EA; color: #1c1b
 .mega-nav > .mega-trigger{cursor:pointer;position:relative}
 .mega-nav > .mega-trigger::after{content:'';position:absolute;bottom:-8px;left:0;right:0;height:8px}
 .mega-nav:hover > .mega-dropdown{opacity:1;visibility:visible;transform:translateX(-50%);pointer-events:auto}
-.mega-dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid #CDCCCF;border-radius:12px;padding:24px;box-shadow:0 12px 40px rgba(0,0,0,0.12);opacity:0;visibility:hidden;transition:all 0.2s ease;z-index:100;min-width:600px;pointer-events:none}
+.mega-dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid #CDCCCF;border-radius:0;padding:24px;box-shadow:0 12px 40px rgba(0,0,0,0.12);opacity:0;visibility:hidden;transition:all 0.2s ease;z-index:100;min-width:600px;pointer-events:none}
 .mega-dropdown::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%) rotate(45deg);width:12px;height:12px;background:#fff;border-left:1px solid #CDCCCF;border-top:1px solid #CDCCCF}
 .mega-grid{display:grid;gap:8px}
 .mega-col{display:flex;flex-direction:column;gap:2px}
 .mega-col-title{font-size:11px;font-weight:700;color:#711610;text-transform:uppercase;letter-spacing:0.05em;padding:6px 10px 4px;border-bottom:1px solid #E5E4E8;margin-bottom:4px}
-.mega-link{display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:6px;font-size:13px;color:#444652;text-decoration:none;transition:all 0.15s}
+.mega-link{display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:0;font-size:13px;color:#444652;text-decoration:none;transition:all 0.15s}
 .mega-link:hover{background:#F3F2F5;color:#711610}
 .mega-link .material-symbols-outlined{font-size:16px;color:#711610;opacity:0.7}
 .mega-link:hover .material-symbols-outlined{opacity:1}
@@ -120,13 +133,13 @@ body { font-family: 'Inter', sans-serif; background-color: #E8E7EA; color: #1c1b
 .mega-dropdown-md .mega-grid{grid-template-columns:1fr 1fr}
 
 /* ===== Carousel ===== */
-.carousel{position:relative;overflow:hidden;border-radius:16px}
+.carousel{position:relative;overflow:hidden;border-radius:0}
 .carousel-inner{display:flex;transition:transform 0.6s cubic-bezier(0.4,0,0.2,1);will-change:transform}
 .carousel-slide{min-width:100%;position:relative}
 .carousel-slide > img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
 .carousel-slide > .carousel-bg{position:absolute;inset:0;background-size:cover;background-position:center}
 .carousel-content{position:relative;z-index:2;padding:60px 48px;min-height:420px;display:flex;flex-direction:column;justify-content:center}
-.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.9);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#1c1b1b;box-shadow:0 2px 8px rgba(0,0,0,0.1);transition:all 0.2s}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:44px;height:44px;border-radius:0;background:rgba(255,255,255,0.9);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#1c1b1b;box-shadow:0 2px 8px rgba(0,0,0,0.1);transition:all 0.2s}
 .carousel-btn:hover{background:#fff;box-shadow:0 4px 12px rgba(0,0,0,0.15);transform:translateY(-50%) scale(1.05)}
 .carousel-btn-prev{left:16px}
 .carousel-btn-next{right:16px}
@@ -153,12 +166,12 @@ body { font-family: 'Inter', sans-serif; background-color: #E8E7EA; color: #1c1b
 .carousel-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,0.65),rgba(0,0,0,0.3));z-index:1}
 
 /* ===== Mini Carousel (perfiles, reconocimientos) ===== */
-.mini-carousel{position:relative;overflow:hidden;border-radius:16px}
+.mini-carousel{position:relative;overflow:hidden;border-radius:0}
 .mini-carousel .carousel-inner{display:flex;transition:transform 0.6s cubic-bezier(0.4,0,0.2,1);will-change:transform}
 .mini-carousel .carousel-slide{min-width:100%;position:relative;min-height:320px}
 .mini-carousel .carousel-slide > img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
 .mini-carousel .carousel-content{position:relative;z-index:2;padding:48px 40px;min-height:320px;display:flex;flex-direction:column;justify-content:center}
-.mini-carousel .carousel-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.85);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#1c1b1b;box-shadow:0 2px 8px rgba(0,0,0,0.1);transition:all 0.2s}
+.mini-carousel .carousel-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:36px;height:36px;border-radius:0;background:rgba(255,255,255,0.85);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#1c1b1b;box-shadow:0 2px 8px rgba(0,0,0,0.1);transition:all 0.2s}
 .mini-carousel .carousel-btn:hover{background:#fff;transform:translateY(-50%) scale(1.05)}
 .mini-carousel .carousel-btn-prev{left:12px}
 .mini-carousel .carousel-btn-next{right:12px}
