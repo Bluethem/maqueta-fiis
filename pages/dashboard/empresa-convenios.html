@@ -1,0 +1,298 @@
+<div class="page-enter space-y-6">
+
+  <!-- Header -->
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div>
+      <h2 class="text-2xl font-bold text-on-surface">Mis Convenios</h2>
+      <p class="text-text-secondary text-sm mt-0.5">Convenios vigentes con la FIIS y solicitudes en curso</p>
+    </div>
+    <button id="btn-nuevo-convenio" class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-on-primary rounded-lg font-semibold text-sm hover:brightness-110 transition-all shadow-sm active:scale-95">
+      <span class="material-symbols-outlined text-sm">add</span>
+      Solicitar nuevo convenio
+    </button>
+  </div>
+
+  <!-- Formulario colapsable -->
+  <div id="form-nuevo-convenio" class="hidden bg-white rounded-xl border border-primary/30 shadow-sm overflow-hidden">
+    <div class="px-5 py-4 border-b border-border-subtle flex items-center justify-between bg-primary/5">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-base">handshake</span>
+        <h3 class="text-base font-bold text-on-surface">Solicitar nuevo convenio</h3>
+      </div>
+      <button id="btn-cerrar-conv" class="p-1.5 hover:bg-surface-container-high rounded-lg transition-all">
+        <span class="material-symbols-outlined text-text-secondary text-base">close</span>
+      </button>
+    </div>
+    <div class="p-5 space-y-5">
+
+      <!-- Tipo de convenio -->
+      <div class="space-y-2">
+        <label class="text-sm font-semibold text-on-surface">Tipo de convenio</label>
+        <div id="tipo-conv-container" class="flex flex-wrap gap-3"></div>
+      </div>
+
+      <!-- Modalidades -->
+      <div class="space-y-2">
+        <label class="text-sm font-semibold text-on-surface">Modalidades de vínculo <span class="text-danger">*</span></label>
+        <p class="text-xs text-text-secondary -mt-1">Selecciona al menos una</p>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <label class="inline-flex items-center gap-2 px-3 py-2.5 border border-border-subtle rounded-lg cursor-pointer hover:bg-surface-container-low transition-all has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="checkbox" class="modalidad-check accent-primary" value="practicas">
+            <span class="text-sm font-medium text-on-surface">Prácticas</span>
+          </label>
+          <label class="inline-flex items-center gap-2 px-3 py-2.5 border border-border-subtle rounded-lg cursor-pointer hover:bg-surface-container-low transition-all has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="checkbox" class="modalidad-check accent-primary" value="empleos">
+            <span class="text-sm font-medium text-on-surface">Empleos</span>
+          </label>
+          <label class="inline-flex items-center gap-2 px-3 py-2.5 border border-border-subtle rounded-lg cursor-pointer hover:bg-surface-container-low transition-all has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="checkbox" class="modalidad-check accent-primary" value="eventos">
+            <span class="text-sm font-medium text-on-surface">Charlas / Eventos</span>
+          </label>
+          <label class="inline-flex items-center gap-2 px-3 py-2.5 border border-border-subtle rounded-lg cursor-pointer hover:bg-surface-container-low transition-all has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="checkbox" class="modalidad-check accent-primary" value="proyectos">
+            <span class="text-sm font-medium text-on-surface">Proyectos I+D</span>
+          </label>
+        </div>
+        <p id="modalidad-error" class="text-xs text-danger hidden">Selecciona al menos una modalidad.</p>
+      </div>
+
+      <!-- Descripcion -->
+      <div class="space-y-1.5">
+        <label class="text-sm font-semibold text-on-surface">Descripción del convenio <span class="text-danger">*</span></label>
+        <textarea id="desc-conv-input" rows="3" placeholder="Describe el alcance, áreas involucradas, número estimado de beneficiarios y objetivos del convenio..." class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30 resize-none"></textarea>
+        <p id="desc-conv-error" class="text-xs text-danger hidden">La descripción es obligatoria.</p>
+      </div>
+
+      <!-- Vigencia propuesta -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="space-y-1.5">
+          <label class="text-sm font-semibold text-on-surface">Vigencia desde <span class="text-danger">*</span></label>
+          <input id="vigencia-desde-input" type="date" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
+          <p id="vigencia-desde-error" class="text-xs text-danger hidden">La fecha de inicio es obligatoria.</p>
+        </div>
+        <div class="space-y-1.5">
+          <label class="text-sm font-semibold text-on-surface">Vigencia hasta <span class="text-danger">*</span></label>
+          <input id="vigencia-hasta-input" type="date" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
+          <p id="vigencia-hasta-error" class="text-xs text-danger hidden">La fecha de fin es obligatoria y debe ser posterior a la de inicio.</p>
+        </div>
+      </div>
+
+      <!-- Responsable -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="space-y-1.5">
+          <label class="text-sm font-semibold text-on-surface">Responsable de contacto <span class="text-danger">*</span></label>
+          <input id="responsable-conv-input" type="text" placeholder="Nombre completo" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
+          <p id="responsable-conv-error" class="text-xs text-danger hidden">El nombre del responsable es obligatorio.</p>
+        </div>
+        <div class="space-y-1.5">
+          <label class="text-sm font-semibold text-on-surface">Cargo</label>
+          <input id="cargo-conv-input" type="text" placeholder="Ej: Gerente de RRHH" class="w-full px-3.5 py-2.5 text-sm border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-surface-bg/30">
+        </div>
+      </div>
+
+      <!-- Nota -->
+      <div class="flex items-start gap-3 bg-warning/5 border border-warning/20 rounded-lg px-4 py-3">
+        <span class="material-symbols-outlined text-warning text-base shrink-0 mt-0.5">info</span>
+        <p class="text-xs text-text-secondary">Tu solicitud será revisada por el equipo FIIS. El proceso desde el primer contacto hasta la firma del convenio toma entre 2 y 4 semanas según la modalidad.</p>
+      </div>
+    </div>
+    <div class="px-5 py-4 border-t border-border-subtle bg-surface-bg/20 flex items-center justify-end gap-3">
+      <button id="btn-cancelar-conv" class="px-4 py-2 text-sm font-semibold text-text-secondary border border-border-subtle rounded-lg hover:bg-surface-container-low transition-all">Cancelar</button>
+      <button id="btn-submit-conv" class="inline-flex items-center gap-2 px-5 py-2 text-sm font-semibold bg-primary text-on-primary rounded-lg hover:brightness-110 transition-all shadow-sm active:scale-95">
+        <span class="material-symbols-outlined text-sm">send</span>
+        Enviar solicitud
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="conv-toast" class="hidden fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-on-surface text-surface px-5 py-3.5 rounded-xl shadow-xl">
+    <span class="material-symbols-outlined text-success text-base">check_circle</span>
+    <div>
+      <p class="text-sm font-semibold">Solicitud enviada para revisión</p>
+      <p class="text-xs opacity-70">El equipo FIIS la revisará pronto</p>
+    </div>
+  </div>
+
+  <!-- Tabla -->
+  <div class="bg-white rounded-xl border border-border-subtle shadow-sm overflow-hidden">
+    <div class="px-5 py-4 border-b border-border-subtle flex flex-wrap items-center justify-between gap-3">
+      <h3 class="text-base font-bold text-on-surface">Mis convenios con FIIS</h3>
+      <div class="flex gap-1.5 flex-wrap">
+        <button class="conv-filter px-3 py-1.5 text-xs font-semibold bg-primary text-on-primary rounded-lg" data-filter="todos">Todos</button>
+        <button class="conv-filter px-3 py-1.5 text-xs font-medium text-text-secondary border border-border-subtle rounded-lg hover:bg-surface-container-low transition-all" data-filter="vigente">Vigentes</button>
+        <button class="conv-filter px-3 py-1.5 text-xs font-medium text-text-secondary border border-border-subtle rounded-lg hover:bg-surface-container-low transition-all" data-filter="pendiente">Pendientes</button>
+        <button class="conv-filter px-3 py-1.5 text-xs font-medium text-text-secondary border border-border-subtle rounded-lg hover:bg-surface-container-low transition-all" data-filter="vencido">Vencidos</button>
+        <button class="conv-filter px-3 py-1.5 text-xs font-medium text-text-secondary border border-border-subtle rounded-lg hover:bg-surface-container-low transition-all" data-filter="rechazado">Rechazados</button>
+      </div>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-surface-bg/50 border-b border-border-subtle">
+            <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Convenio</th>
+            <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Modalidades</th>
+            <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Vigencia</th>
+            <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Estado</th>
+            <th class="text-left px-5 py-3.5 text-xs font-semibold text-text-secondary uppercase tracking-wider">Solicitud</th>
+          </tr>
+        </thead>
+        <tbody id="conv-tbody" class="divide-y divide-border-subtle/60"></tbody>
+      </table>
+    </div>
+    <div class="px-5 py-3 border-t border-border-subtle bg-surface-container-low/20">
+      <p id="conv-count" class="text-xs text-text-secondary">—</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function () {
+  // Populate tipo de convenio radios from catalog
+  (function () {
+    var container = document.getElementById('tipo-conv-container');
+    if (!container) return;
+    var tipos = (Store.getCatalogos().tiposConvenio || []);
+    if (tipos.length === 0) tipos = ['Marco'];
+    container.innerHTML = tipos.map(function (t, i) {
+      return '<label class="inline-flex items-center gap-2.5 px-4 py-2.5 border border-border-subtle rounded-lg cursor-pointer hover:bg-surface-container-low transition-all has-[:checked]:border-primary has-[:checked]:bg-primary/5">'
+        + '<input type="radio" name="tipo-conv" value="' + t.replace(/"/g, '&quot;') + '" class="accent-primary"' + (i === 0 ? ' checked' : '') + '>'
+        + '<p class="text-sm font-semibold text-on-surface">' + t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</p>'
+        + '</label>';
+    }).join('');
+  })();
+
+  var MODALIDAD_LABELS = { practicas: 'Prácticas', empleos: 'Empleos', eventos: 'Charlas/Eventos', proyectos: 'Proyectos I+D' };
+  var ESTADO_CFG = {
+    vigente:   { cls: 'bg-success/10 text-success',  dot: 'bg-success',  label: 'Vigente'   },
+    pendiente: { cls: 'bg-warning/10 text-warning',  dot: 'bg-warning',  label: 'Pendiente' },
+    vencido:   { cls: 'bg-error/10 text-error',      dot: 'bg-error',    label: 'Vencido'   },
+    rechazado: { cls: 'bg-error/10 text-error',      dot: 'bg-error',    label: 'Rechazado' },
+  };
+
+  var activeFilter = 'todos';
+
+  function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  function fmtDate(d) {
+    if (!d) return '—';
+    try { return new Date(d + 'T00:00:00').toLocaleDateString('es-PE', { day: '2-digit', month: 'short', year: 'numeric' }); } catch (e) { return d; }
+  }
+
+  function getMisConvenios() {
+    var session = Auth.getSession();
+    return Store.getConvenios().filter(function (c) { return c.empresa === session.name; });
+  }
+
+  function renderTable() {
+    var convenios = getMisConvenios();
+    var tbody = document.getElementById('conv-tbody');
+    var countEl = document.getElementById('conv-count');
+    if (!tbody) return;
+    var filtered = activeFilter === 'todos' ? convenios : convenios.filter(function (c) { return c.estado === activeFilter; });
+    if (filtered.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="5" class="px-5 py-10 text-center text-text-secondary text-sm">No hay convenios con este filtro.</td></tr>';
+      countEl.textContent = '0 convenios';
+      return;
+    }
+    var rows = filtered.map(function (c) {
+      var est = ESTADO_CFG[c.estado] || ESTADO_CFG.pendiente;
+      var mods = (c.modalidades || []).map(function (m) {
+        return '<span class="bg-primary/10 text-primary px-2 py-0.5 rounded-full text-[10px] font-semibold">' + esc(MODALIDAD_LABELS[m] || m) + '</span>';
+      }).join(' ');
+      var obsRow = c.observacion ? '<p class="text-xs text-error mt-1 flex items-center gap-1"><span class="material-symbols-outlined text-xs">info</span>' + esc(c.observacion) + '</p>' : '';
+      return '<tr class="hover:bg-surface-container-low/40 transition-colors">'
+        + '<td class="px-5 py-3.5"><p class="font-semibold text-on-surface">' + esc(c.tipo) + '</p><p class="text-xs text-text-secondary mt-0.5">' + esc(c.id) + '</p>' + obsRow + '</td>'
+        + '<td class="px-5 py-3.5"><div class="flex flex-wrap gap-1">' + mods + '</div></td>'
+        + '<td class="px-5 py-3.5 text-xs text-text-secondary whitespace-nowrap">' + fmtDate(c.vigenciaDesde) + '<br>' + fmtDate(c.vigenciaHasta) + '</td>'
+        + '<td class="px-5 py-3.5"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold ' + est.cls + '"><span class="w-1.5 h-1.5 rounded-full ' + est.dot + '"></span>' + est.label + '</span></td>'
+        + '<td class="px-5 py-3.5 text-xs text-text-secondary">' + esc(c.fechaSolicitud) + '</td>'
+        + '</tr>';
+    }).join('');
+    tbody.innerHTML = rows;
+    countEl.textContent = filtered.length + ' convenio' + (filtered.length === 1 ? '' : 's');
+  }
+
+  // Toggle form
+  var btnNuevo = document.getElementById('btn-nuevo-convenio');
+  var formDiv = document.getElementById('form-nuevo-convenio');
+
+  function openForm() { formDiv.classList.remove('hidden'); btnNuevo.disabled = true; }
+  function closeForm() { formDiv.classList.add('hidden'); btnNuevo.disabled = false; }
+
+  btnNuevo.addEventListener('click', openForm);
+  document.getElementById('btn-cerrar-conv').addEventListener('click', closeForm);
+  document.getElementById('btn-cancelar-conv').addEventListener('click', closeForm);
+
+  // Filtros
+  document.querySelectorAll('.conv-filter').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.conv-filter').forEach(function (b) {
+        b.className = 'conv-filter px-3 py-1.5 text-xs font-medium text-text-secondary border border-border-subtle rounded-lg hover:bg-surface-container-low transition-all';
+      });
+      this.className = 'conv-filter px-3 py-1.5 text-xs font-semibold bg-primary text-on-primary rounded-lg';
+      activeFilter = this.dataset.filter;
+      renderTable();
+    });
+  });
+
+  // Submit
+  document.getElementById('btn-submit-conv').addEventListener('click', function () {
+    var tipo = document.querySelector('input[name="tipo-conv"]:checked');
+    var modalidades = Array.from(document.querySelectorAll('.modalidad-check:checked')).map(function (c) { return c.value; });
+    var desc = document.getElementById('desc-conv-input').value.trim();
+    var desde = document.getElementById('vigencia-desde-input').value;
+    var hasta = document.getElementById('vigencia-hasta-input').value;
+    var responsable = document.getElementById('responsable-conv-input').value.trim();
+    var cargo = document.getElementById('cargo-conv-input').value.trim();
+
+    var valid = true;
+    document.getElementById('modalidad-error').classList.toggle('hidden', modalidades.length > 0);
+    if (!modalidades.length) valid = false;
+    document.getElementById('desc-conv-error').classList.toggle('hidden', desc.length > 0);
+    if (!desc) valid = false;
+    document.getElementById('vigencia-desde-error').classList.toggle('hidden', !!desde);
+    if (!desde) valid = false;
+    var hastaOk = hasta && (!desde || hasta > desde);
+    document.getElementById('vigencia-hasta-error').classList.toggle('hidden', hastaOk);
+    if (!hastaOk) valid = false;
+    document.getElementById('responsable-conv-error').classList.toggle('hidden', responsable.length > 0);
+    if (!responsable) valid = false;
+    if (!valid) return;
+
+    var session = Auth.getSession();
+    Store.addConvenio({
+      empresa: session.name,
+      emailEmpresa: session.email,
+      tipo: tipo ? tipo.value : 'Marco',
+      modalidades: modalidades,
+      descripcion: desc,
+      vigenciaDesde: desde,
+      vigenciaHasta: hasta,
+      responsable: responsable,
+      cargo: cargo,
+    });
+
+    closeForm();
+    document.querySelectorAll('.modalidad-check').forEach(function (c) { c.checked = false; });
+    document.getElementById('desc-conv-input').value = '';
+    document.getElementById('vigencia-desde-input').value = '';
+    document.getElementById('vigencia-hasta-input').value = '';
+    document.getElementById('responsable-conv-input').value = '';
+    document.getElementById('cargo-conv-input').value = '';
+
+    renderTable();
+    var toast = document.getElementById('conv-toast');
+    toast.classList.remove('hidden');
+    setTimeout(function () { toast.classList.add('hidden'); }, 3500);
+  });
+
+  if (sessionStorage.getItem('openConvForm') === '1') {
+    sessionStorage.removeItem('openConvForm');
+    openForm();
+  }
+
+  renderTable();
+})();
+</script>
