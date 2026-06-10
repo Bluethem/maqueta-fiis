@@ -34,9 +34,12 @@ const ROLES = {
     badge: 'bg-orange-100 text-orange-700',
     sidebar: [
       { icon: 'dashboard', label: 'Dashboard', route: '/dashboard/empresa' },
-      { icon: 'business', label: 'Perfil', route: '/dashboard/empresa/perfil' },
+      { icon: 'business', label: 'Perfil Empresarial', route: '/dashboard/empresa/perfil' },
       { icon: 'work', label: 'Mis Vacantes', route: '/dashboard/empresa/vacantes' },
-      { icon: 'add_circle', label: 'Solicitar publicación', route: '/dashboard/empresa/solicitar' },
+      { icon: 'event_note', label: 'Proponer Evento', route: '/dashboard/empresa/evento' },
+      { icon: 'handshake', label: 'Mis Convenios', route: '/dashboard/empresa/convenios' },
+      { icon: 'assignment', label: 'Solicitar Proyecto', route: '/dashboard/empresa/proyecto' },
+      { icon: 'notifications', label: 'Notificaciones', route: '/dashboard/empresa/notificaciones' },
     ]
   },
   laboratorio: {
